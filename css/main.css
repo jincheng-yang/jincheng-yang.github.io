@@ -8,15 +8,9 @@ nav ul, footer ul {
     padding: 0px;
     list-style: none;
     font-weight: bold;
-    position: -webkit-sticky;  // required for Safari
+    position: -webkit-sticky;
     position: sticky;
-    top: 0; // required as well.
-    //width:100%;
-    //height:50px;
-    //display:block;
-    //position:absolute;
-    //top:0;
-    //left:0;
+    top: 0;
 }
 nav ul li, footer ul li {
     display: inline;
@@ -24,7 +18,7 @@ nav ul li, footer ul li {
 }
 a {
     text-decoration: none;
-    color: #872;
+    color: #999;
 }
 a:hover {
     text-decoration: underline;
@@ -36,7 +30,7 @@ h1 {
 p {
     font-size: 1.5em;
     line-height: 1.4em;
-    color: #7403ab;
+    color: #333;
 }
 footer {
     border-top: 1px solid #d5d5d5;
@@ -46,9 +40,9 @@ footer {
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
-    position: -webkit-sticky;  // required for Safari
+    position: -webkit-sticky;
     position: sticky;
-    top: 0; // required as well.
+    top: 0;
 }
 
 ul.posts li {
