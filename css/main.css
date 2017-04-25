@@ -8,13 +8,13 @@ nav ul, footer ul {
     padding: 0px;
     list-style: none;
     font-weight: bold;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
 }
 nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
+}
+nav ul, nav ul li{
+    text-align: center;
 }
 a {
     text-decoration: none;
@@ -40,9 +40,6 @@ footer {
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
 }
 
 ul.posts li {
