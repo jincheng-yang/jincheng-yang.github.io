@@ -37,6 +37,9 @@ footer {
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
+    position: -webkit-sticky;  // required for Safari
+    position: sticky;
+    top: 0; // required as well.
 }
 
 ul.posts li {
