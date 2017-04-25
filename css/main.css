@@ -8,6 +8,9 @@ nav ul, footer ul {
     padding: 0px;
     list-style: none;
     font-weight: bold;
+    position: -webkit-sticky;  // required for Safari
+    position: sticky;
+    top: 0; // required as well.
 }
 nav ul li, footer ul li {
     display: inline;
