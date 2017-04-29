@@ -20,7 +20,15 @@ nav ul {
     border-top: 2px solid #d5d5d5;
     border-bottom: 1px solid #d5d5d5;
 }
-nav ul li {
+a {
+    text-decoration: none;
+    color: #999;
+}
+a:hover {
+    text-decoration: underline;
+    color: #888;
+}
+nav ul li a{
 	color: #507ec9;
     transition: color 0.3s, background 0.3s;
     text-decoration: none;
@@ -30,17 +38,9 @@ nav ul li {
     border-color: white;
     border-radius: 8px;
 }
-nav ul li:hover {
+nav ul li a:hover {
 	color: white;
     background: #507ec9;
-}
-a {
-    text-decoration: none;
-    color: #999;
-}
-a:hover {
-    text-decoration: underline;
-    color: #888;
 }
 h1 {
     font-size: 3em;
