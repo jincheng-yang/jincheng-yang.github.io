@@ -29,18 +29,19 @@ a:hover {
     color: #888;
 }
 nav ul li a{
-	color: #507ec9;
+    color: #507ec9;
     transition: color 0.3s, background 0.3s;
     text-decoration: none;
-    padding: 6px 	6px		6px		6px;
+    padding: 6px 6px 6px 6px;
     border-width: 1px;
     border-style: solid;
     border-color: white;
     border-radius: 8px;
 }
 nav ul li a:hover {
-	color: white;
+    color: white;
     background: #507ec9;
+    text-decoration: none;
 }
 h1 {
     font-size: 3em;
