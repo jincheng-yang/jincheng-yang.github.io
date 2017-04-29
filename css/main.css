@@ -32,6 +32,7 @@ a {
 }
 a:hover {
     text-decoration: underline;
+    color: #888;
 }
 h1 {
     font-size: 3em;
