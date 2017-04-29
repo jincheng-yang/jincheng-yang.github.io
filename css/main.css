@@ -46,6 +46,7 @@ nav ul li a:hover {
 nav ul li a div {
     width: 39px;
     height: 39px;
+    display: inline;
     background: white;
     -webkit-transition: background 0.3s, background-image 0.3s; /* For Safari 3.1 to 6.0 */
     transition: background-image 0.3s;
