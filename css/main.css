@@ -21,10 +21,18 @@ nav ul {
     border-bottom: 1px solid #d5d5d5;
 }
 nav ul li {
-    transition: color 0.5s;
+	color: #507ec9;
+    transition: color 0.3s, background 0.3s;
+    text-decoration: none;
+    padding: 6px 	6px		6px		6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 8px;
 }
 nav ul li:hover {
-    color: #888;
+	color: white;
+    background: #507ec9;
 }
 a {
     text-decoration: none;
