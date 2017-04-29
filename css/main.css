@@ -43,7 +43,7 @@ nav ul li a:hover {
     background: #507ec9;
     text-decoration: none;
 }
-nav ul li div {
+nav ul li a div {
     width: 39px;
     height: 39px;
     display: inline;
@@ -52,7 +52,7 @@ nav ul li div {
     transition: background-image 0.3s;
     background-image:url("/assets/images/icon.jpeg");
 }
-nav ul li div:hover {
+nav ul li a div:hover {
     background: #507ec9;
     background-image:url("/assets/images/icon2.jpeg");
 }
