@@ -28,8 +28,7 @@ a:hover {
     text-decoration: underline;
     color: #888;
 }
-<!--nav ul li a -->
-.pagelist {
+nav ul li a.pagelist {
     color: #507ec9;
     transition: color 0.3s, background 0.3s;
     text-decoration: none;
@@ -39,8 +38,7 @@ a:hover {
     border-color: white;
     border-radius: 8px;
 }
-<!--nav ul li a -->
-.pagelist:hover {
+nav ul li a.pagelist:hover {
     color: white;
     background: #507ec9;
     text-decoration: none;
