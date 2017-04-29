@@ -23,7 +23,7 @@ nav ul {
 nav ul li {
     transition: color 0.5s;
 }
-nav ul li : hover {
+nav ul li:hover {
     color: #888;
 }
 a {
