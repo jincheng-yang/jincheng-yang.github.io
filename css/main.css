@@ -38,6 +38,7 @@ nav ul li a.pagelist {
     border-style: solid;
     border-color: white;
     border-radius: 8px;
+    vertical-align: middle;
 }
 nav ul li a.pagelist:hover {
     color: white;
@@ -61,6 +62,7 @@ nav ul li a.icon{
     background-image: url("/assets/images/icon.jpg");
     background-size: 45px;
     background-position: center;
+    vertical-align: middle;
 }
 nav ul li a.icon:hover {
     background-image: url("/assets/images/icon2.jpg");
