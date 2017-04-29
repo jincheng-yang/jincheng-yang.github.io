@@ -43,11 +43,10 @@ nav ul li a:hover {
     background: #507ec9;
     text-decoration: none;
 }
-<!--
 nav ul li a div {
     width: 39px;
     height: 39px;
-    display: inline;
+    display: inline-block;
     background: white;
     -webkit-transition: background 0.3s, background-image 0.3s; /* For Safari 3.1 to 6.0 */
     transition: background-image 0.3s;
@@ -57,7 +56,6 @@ nav ul li a div:hover {
     background: #507ec9;
     background-image: url("/assets/images/icon2.jpg");
 }
--->
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
