@@ -50,11 +50,11 @@ nav ul li a div {
     background: white;
     -webkit-transition: background 0.3s, background-image 0.3s; /* For Safari 3.1 to 6.0 */
     transition: background-image 0.3s;
-    background-image:url("/assets/images/icon.jpeg");
+    background-image: url("/assets/images/icon.jpeg");
 }
 nav ul li a div:hover {
     background: #507ec9;
-    background-image:url("/assets/images/icon2.jpeg");
+    background-image: url("/assets/images/icon2.jpeg");
 }
 h1 {
     font-size: 3em;
