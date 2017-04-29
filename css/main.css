@@ -43,27 +43,26 @@ nav ul li a.pagelist:hover {
     background: #507ec9;
     text-decoration: none;
 }
-nav ul li div {
-    color: unset;
-    border-width: 0px;
-    border-style: none;
-    border-color: unset;
+nav ul li a.icon{   
+	color: #507ec9;
+    transition: color 0.3s, background 0.3s;
+    text-decoration: none;
+    padding: 6px 6px 6px 6px;
+    width: 30px;
+    height: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
     border-radius: 8px;
-    width: 39px;
-    height: 39px;
     display: inline-block;
     -webkit-transition: background-image 0.3s; /* For Safari 3.1 to 6.0 */
     transition: background-image 0.3s;
-    background: unset;
     background-image: url("/assets/images/icon.jpg");
-    background-size: 39px;
+    background-size: 45px;
     background-position: center;
 }
-nav ul li div:hover {
+nav ul li a.icon:hover {
     background-image: url("/assets/images/icon2.jpg");
-    color: unset;
-    background: unset;
-    text-decoration: none;
 }
 h1 {
     font-size: 3em;
