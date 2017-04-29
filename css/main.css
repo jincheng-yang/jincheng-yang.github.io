@@ -7,7 +7,7 @@ nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 5px;
     list-style: none;
-    font-weight: bold;
+    font-weight: 100;
 }
 nav ul li, footer ul li {
     display: inline;
