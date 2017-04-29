@@ -15,6 +15,7 @@ nav ul li, footer ul li {
 }
 nav ul, nav ul li {
     text-align: center;
+    vertical-align: middle;
 }
 nav ul {
     border-top: 2px solid #d5d5d5;
