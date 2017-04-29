@@ -43,7 +43,7 @@ nav ul li a:hover {
     background: #507ec9;
     text-decoration: none;
 }
-nav ul li a div {
+nav ul li div {
     color: unset;
     border-width: 0px;
     border-style: none;
@@ -59,7 +59,7 @@ nav ul li a div {
     background-size: 39px;
     background-position: center;
 }
-nav ul li a div:hover {
+nav ul li div:hover {
     background-image: url("/assets/images/icon2.jpg");
 }
 h1 {
