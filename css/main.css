@@ -20,6 +20,12 @@ nav ul {
     border-top: 2px solid #d5d5d5;
     border-bottom: 1px solid #d5d5d5;
 }
+nav ul li {
+    transition: color 0.5s;
+}
+nav ul li : hover {
+    color: #888;
+}
 a {
     text-decoration: none;
     color: #999;
