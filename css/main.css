@@ -44,6 +44,11 @@ nav ul li a:hover {
     text-decoration: none;
 }
 nav ul li a div {
+    color: unset;
+    border-width: 0px;
+    border-style: none;
+    border-color: unset;
+    border-radius: 8px;
     width: 39px;
     height: 39px;
     display: inline-block;
