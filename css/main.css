@@ -47,10 +47,12 @@ nav ul li a div {
     width: 39px;
     height: 39px;
     display: inline-block;
-    -webkit-transition: background 0.3s, background-image 0.3s; /* For Safari 3.1 to 6.0 */
+    -webkit-transition: background-image 0.3s; /* For Safari 3.1 to 6.0 */
     transition: background-image 0.3s;
+    background: unset;
     background-image: url("/assets/images/icon.jpg");
     background-size: 39px;
+    background-position: center;
 }
 nav ul li a div:hover {
     background-image: url("/assets/images/icon2.jpg");
