@@ -5,16 +5,21 @@ body {
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 0px;
+    padding: 5px;
     list-style: none;
-    font-weight: bold;
+    font-weight: 100;
 }
 nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
-nav ul, nav ul li{
+nav ul, nav ul li {
     text-align: center;
+    vertical-align: middle;
+}
+nav ul {
+    border-top: 2px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
 }
 a {
     text-decoration: none;
@@ -22,6 +27,45 @@ a {
 }
 a:hover {
     text-decoration: underline;
+    color: #888;
+}
+nav ul li a.pagelist {
+    color: #507ec9;
+    transition: color 0.3s, background 0.3s;
+    text-decoration: none;
+    padding: 6px 6px 6px 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 8px;
+    vertical-align: middle;
+}
+nav ul li a.pagelist:hover {
+    color: white;
+    background: #507ec9;
+    text-decoration: none;
+}
+nav ul li a.icon{   
+    color: #507ec9;
+    transition: color 0.3s, background 0.3s;
+    text-decoration: none;
+    padding: 6px 6px 6px 6px;
+    width: 30px;
+    height: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 8px;
+    display: inline-block;
+    -webkit-transition: background-image 0.3s; /* For Safari 3.1 to 6.0 */
+    transition: background-image 0.3s;
+    background-image: url("/assets/images/icon.jpg");
+    background-size: 45px;
+    background-position: center;
+    vertical-align: middle;
+}
+nav ul li a.icon:hover {
+    background-image: url("/assets/images/icon2.jpg");
 }
 h1 {
     font-size: 3em;
@@ -35,6 +79,7 @@ p {
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
+    text-align: right;
 }
 
 ul.posts { 
