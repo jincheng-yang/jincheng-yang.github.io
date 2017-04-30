@@ -46,6 +46,11 @@ nav ul li a.pagelist:hover {
     background: #507ec9;
     text-decoration: none;
 }
+nav ul li a.pagelist:active {
+    color: white;
+    background: #507ec9;
+    text-decoration: none;
+}
 nav ul li ul.dropdown {
     color: white;
     transition: color 0.3s, background 0.3s, display 0.3s;
