@@ -45,6 +45,24 @@ nav ul li a.pagelist:hover {
     background: #507ec9;
     text-decoration: none;
 }
+nav ul li a.dropdown {
+    color: #507ec9;
+    transition: color 0.3s, background 0.3s;
+    text-decoration: none;
+    padding: 6px 6px 6px 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 8px;
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+}
+nav ul li a.dropdown:hover {
+    color: white;
+    background: #507ec9;
+    text-decoration: none;
+}
 nav ul li a.icon{   
     color: #507ec9;
     transition: color 0.3s, background 0.3s;
@@ -59,14 +77,43 @@ nav ul li a.icon{
     display: inline-block;
     -webkit-transition: background-image 0.3s; /* For Safari 3.1 to 6.0 */
     transition: background-image 0.3s;
-    background-image: url("/assets/images/icon.jpg");
+    background-image: url("../assets/images/icon.jpg");
     background-size: 45px;
     background-position: center;
     vertical-align: middle;
 }
 nav ul li a.icon:hover {
-    background-image: url("/assets/images/icon2.jpg");
+    background-image: url("../assets/images/icon2.jpg");
 }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 110px;
+    box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.2);
+    z-index: 1;
+	border-radius: 8px;
+	margin: 6px 0px 16px -6px;
+}
+
+.dropdown-content a {
+    color: #507ec9;
+    padding: 8px 6px;
+    text-decoration: none;
+    display: block;
+	border-radius: 8px;
+    transition: color 0.3s, background 0.3s;
+}
+
+.dropdown-content a:hover {
+	color: white;
+	background-color: #507ec9;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
