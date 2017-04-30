@@ -111,7 +111,7 @@ nav ul li a.icon:hover {
 }
 
 nav ul li a.dropdown:hover .dropdown-content:hover + .dropdown-content {
-    display: block;
+    display: inline-block;
 }
 
 h1 {
