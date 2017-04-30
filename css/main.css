@@ -110,7 +110,7 @@ nav ul li a.icon:hover {
 	background-color: #507ec9;
 }
 
-nav ul li a.dropdown:hover .dropdown-content {
+nav ul li a.dropdown:hover + .dropdown-content {
     display: block;
 }
 
