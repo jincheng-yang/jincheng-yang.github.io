@@ -1,6 +1,6 @@
 body {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    margin: 60px auto;
+    margin: 30px auto;
     width: 70%;
 }
 nav ul, footer ul {
@@ -111,7 +111,7 @@ nav ul li a.icon:hover {
 }
 
 nav ul li a.dropdown:hover + .dropdown-content {
-    display: inline;
+    display: block;
 }
 
 h1 {
