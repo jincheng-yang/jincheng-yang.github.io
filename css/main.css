@@ -106,6 +106,12 @@ nav ul li a.icon{
 nav ul li a.icon:hover {
     background-image: url("/assets/images/icon2.jpg");
 }
+    nav ul li{
+        display: inline-block;
+        position: relative;
+        line-height: 21px;
+        text-align: left;
+    }
     nav ul li a{
         display: inline-block;
         padding: 8px 25px;
