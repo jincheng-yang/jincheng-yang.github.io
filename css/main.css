@@ -56,7 +56,7 @@ nav ul li ul.dropdown {
     border-radius: 8px;
     vertical-align: middle;
     position: relative;
-    display: block;
+    display: none;
 	min-width: 100%;
 	z-index: 999;
 }
