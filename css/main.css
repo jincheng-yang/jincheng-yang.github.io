@@ -108,28 +108,28 @@ footer {
     font-size: .8em;
     text-align: right;
 }
- ul{
+nav ul{
         padding: 0;
         list-style: none;
         background: #f2f2f2;
     }
-    ul li{
+  nav ul li{
         display: inline-block;
         position: relative;
         line-height: 21px;
         text-align: left;
     }
-    ul li a{
+   nav ul li a{
         display: block;
         padding: 8px 25px;
         color: #333;
         text-decoration: none;
     }
-    ul li a:hover{
+    nav ul li a:hover{
         color: #fff;
         background: #939393;
     }
-    ul li ul.dropdown{
+    nav ul li ul.dropdown{
         min-width: 100%; /* Set width of the dropdown */
         background: #f2f2f2;
         display: none;
@@ -137,10 +137,10 @@ footer {
         z-index: 999;
         left: 0;
     }
-    ul li:hover ul.dropdown{
+    nav ul li:hover ul.dropdown{
         display: block;	/* Display the dropdown */
     }
-    ul li ul.dropdown li{
+    nav ul li ul.dropdown li{
         display: block;
     }
 
