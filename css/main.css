@@ -79,7 +79,7 @@ nav ul li ul.dropdown li{
     border-radius: 8px;
     vertical-align: middle;
     position: relative;
-    display: none;
+    display: block;
     min-width: 100%;
     z-index: 999;
 }
