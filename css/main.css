@@ -67,9 +67,21 @@ nav ul li:hover ul.dropdown {
     background: #507ec9;
     text-decoration: none;
 }
-
 nav ul li ul.dropdown li{
     display: block;
+    color: #507ec9;
+    transition: color 0.3s, background 0.3s;
+    text-decoration: none;
+    padding: 6px 6px 6px 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 8px;
+    vertical-align: middle;
+    position: absolute;
+    display: none;
+    min-width: 100%;
+    z-index: 999;
 }
 
 nav ul li a.icon{   
@@ -86,13 +98,13 @@ nav ul li a.icon{
     display: inline-block;
     -webkit-transition: background-image 0.3s; /* For Safari 3.1 to 6.0 */
     transition: background-image 0.3s;
-    background-image: url("../assets/images/icon.jpg");
+    background-image: url("/assets/images/icon.jpg");
     background-size: 45px;
     background-position: center;
     vertical-align: middle;
 }
 nav ul li a.icon:hover {
-    background-image: url("../assets/images/icon2.jpg");
+    background-image: url("/assets/images/icon2.jpg");
 }
 
 h1 {
@@ -108,9 +120,7 @@ footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
     text-align: right;
-}
-  
-   
+}  
 
 ul.posts { 
     margin: 20px auto 40px; 
