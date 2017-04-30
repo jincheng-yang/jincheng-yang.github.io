@@ -10,7 +10,7 @@ nav ul, footer ul {
     font-weight: 100;
 }
 nav ul li, footer ul li {
-    display: inline;
+    display: inline-block;
     margin-right: 20px;
 }
 nav ul, nav ul li {
@@ -108,6 +108,11 @@ footer {
     font-size: .8em;
     text-align: right;
 }
+  nav ul li{
+        position: relative;
+        line-height: 21px;
+        text-align: left;
+    }
    nav ul li a{
         display: block;
         padding: 8px 25px;
