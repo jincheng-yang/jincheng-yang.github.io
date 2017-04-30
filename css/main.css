@@ -55,10 +55,10 @@ nav ul li ul.dropdown {
     border-color: white;
     border-radius: 8px;
     vertical-align: middle;
-    position: relative;
+    position: absolute;
     display: none;
-	min-width: 100%;
-	z-index: 999;
+    min-width: 100%;
+    z-index: 999;
 }
 nav ul li:hover ul.dropdown {
     display: block;
