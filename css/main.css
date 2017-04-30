@@ -45,7 +45,7 @@ nav ul li a.pagelist:hover {
     background: #507ec9;
     text-decoration: none;
 }
-nav ul li a.dropdown {
+nav ul li ul.dropdown {
     color: #507ec9;
     transition: color 0.3s, background 0.3s;
     text-decoration: none;
@@ -56,13 +56,21 @@ nav ul li a.dropdown {
     border-radius: 8px;
     vertical-align: middle;
     position: relative;
-    display: inline-block;
+    display: block;
+	min-width: 100%;
+	z-index: 999;
 }
-nav ul li a.dropdown:hover {
+nav ul li: hover ul.dropdown {
+	display: block;
     color: white;
     background: #507ec9;
     text-decoration: none;
 }
+
+nav ull li ul.dropdown li{
+	display: block;
+}
+
 nav ul li a.icon{   
     color: #507ec9;
     transition: color 0.3s, background 0.3s;
@@ -84,38 +92,6 @@ nav ul li a.icon{
 }
 nav ul li a.icon:hover {
     background-image: url("../assets/images/icon2.jpg");
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 110px;
-    box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.2);
-    z-index: 1;
-	border-radius: 8px;
-	margin: -10px 0px 0px 530px;
-}
-
-.dropdown-content a {
-    color: #507ec9;
-    padding: 8px 6px;
-    text-decoration: none;
-    display: block;
-    border-radius: 8px;
-    transition: color 0.3s, background 0.3s;
-}
-
-.dropdown-content a:hover {
-	color: white;
-	background-color: #507ec9;
-}
-
-.dropdown-content:hover {
-	display: block;
-}
-
-nav ul li a.dropdown:hover + .dropdown-content {
-    display: block;
 }
 
 h1 {
