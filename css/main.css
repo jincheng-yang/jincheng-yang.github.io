@@ -108,12 +108,6 @@ footer {
     font-size: .8em;
     text-align: right;
 }
-  nav ul li{
-        display: inline-block;
-        position: relative;
-        line-height: 21px;
-        text-align: left;
-    }
    nav ul li a{
         display: block;
         padding: 8px 25px;
