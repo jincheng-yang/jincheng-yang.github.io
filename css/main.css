@@ -57,21 +57,23 @@ nav ul li ul.dropdown {
     border-radius: 8px;
     vertical-align: middle;
     position: absolute;
-    display: block;
+    display: none;
     min-width: 100%;
     z-index: 999;
 }
-nav ul li:hover ul.dropdown {
+nav ul li:hover nav ul li ul.dropdown {
     display: block;
-    color: white;
-    background: #507ec9;
+    color: #507ec9;
+    background: white;
     text-decoration: none;
 }
 nav ul li ul.dropdown li{
     display: block;
     color: #507ec9;
+    background: white;
     transition: color 0.3s, background 0.3s;
     text-decoration: none;
+    text-align: center;
     padding: 6px 6px 6px 6px;
     border-width: 1px;
     border-style: solid;
@@ -83,7 +85,11 @@ nav ul li ul.dropdown li{
     min-width: 100%;
     z-index: 999;
 }
-
+nav ul li ul.dropdown li:hover {
+    color: white;
+    background: #507ec9;
+    text-decoration: none;
+}
 nav ul li a.icon{   
     color: #507ec9;
     transition: color 0.3s, background 0.3s;
