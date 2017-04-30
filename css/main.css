@@ -60,15 +60,15 @@ nav ul li ul.dropdown {
 	min-width: 100%;
 	z-index: 999;
 }
-nav ul li: hover ul.dropdown {
-	display: block;
+nav ul li:hover ul.dropdown {
+    display: block;
     color: white;
     background: #507ec9;
     text-decoration: none;
 }
 
-nav ull li ul.dropdown li{
-	display: block;
+nav ul li ul.dropdown li{
+    display: block;
 }
 
 nav ul li a.icon{   
