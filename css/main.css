@@ -61,7 +61,7 @@ nav ul li ul.dropdown {
     min-width: 100%;
     z-index: 999;
 }
-nav ul li:hover nav ul li ul.dropdown {
+nav ul li:hover ul.dropdown {
     display: block;
 }
 nav ul li ul.dropdown li{
