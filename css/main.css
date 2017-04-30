@@ -47,42 +47,51 @@ nav ul li a.pagelist:hover {
     text-decoration: none;
 }
 nav ul li ul.dropdown {
-    color: #507ec9;
-    transition: color 0.3s, background 0.3s;
+    color: white;
+    transition: color 0.3s, background 0.3s, display 0.3s;
     text-decoration: none;
-    padding: 6px 6px 6px 6px;
+    padding: 3px 3px 3px 3px;
+    margin: 6px 0px 0px 0px;
     border-width: 1px;
     border-style: solid;
-    border-color: white;
+    border-color: #507ec9;
     border-radius: 8px;
-    vertical-align: middle;
     position: absolute;
     display: none;
-    min-width: 100%;
+    max-width: 100%;
     z-index: 999;
 }
 nav ul li:hover ul.dropdown {
     display: block;
-}
-nav ul li ul.dropdown li{
-    display: block;
     color: #507ec9;
     background: white;
+    text-decoration: none;
+}
+nav ul li ul.dropdown li {
+    color: #507ec9;
     transition: color 0.3s, background 0.3s;
     text-decoration: none;
-    text-align: center;
     padding: 6px 6px 6px 6px;
     border-width: 1px;
     border-style: solid;
     border-color: white;
     border-radius: 8px;
     vertical-align: middle;
-    position: relative;
-    display: block;
-    min-width: 100%;
-    z-index: 999;
+    margin-right: 0px;
 }
-nav ul li ul.dropdown li:hover {
+
+nav ul li ul.dropdown li a{
+    color: #507ec9;
+    transition: color 0.3s, background 0.3s;
+    text-decoration: none;
+    padding: 6px 6px 6px 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 8px;
+    vertical-align: middle;
+}
+nav ul li ul.dropdown li a:hover {
     color: white;
     background: #507ec9;
     text-decoration: none;
