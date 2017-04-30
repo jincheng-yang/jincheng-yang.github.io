@@ -89,9 +89,9 @@ nav ul li a.icon:hover {
     display: none;
     position: relative;
     background-color: white;
-    min-width: 110px;
+    min-width: 100%;
     box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 999;
     border-radius: 8px;
     margin: -6px -6px -6px -6px;
 }
