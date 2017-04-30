@@ -89,12 +89,11 @@ nav ul li a.icon:hover {
     display: none;
     position: absolute;
     background-color: white;
-    width: 100%;
-	
+    min-width: 110px;
     box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.2);
-    z-index: 999;
-    border-radius: 8px;
-    margin: -6px -6px -6px -6px;
+    z-index: 1;
+	border-radius: 8px;
+	margin: 6px 0px 16px -6px;
 }
 
 .dropdown-content a {
