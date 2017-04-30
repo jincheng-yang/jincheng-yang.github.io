@@ -86,7 +86,7 @@ nav ul li a.icon:hover {
     background-image: url("../assets/images/icon2.jpg");
 }
 .dropdown-content {
-    display: inline-block;
+    display: block;
     position: absolute;
     background-color: white;
     min-width: 110px;
@@ -111,7 +111,7 @@ nav ul li a.icon:hover {
 }
 
 nav ul li a.dropdown:hover + .dropdown-content {
-    display: inline;
+    display: block;
 }
 
 h1 {
