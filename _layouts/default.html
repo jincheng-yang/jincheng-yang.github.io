@@ -3,7 +3,7 @@
 		<head>
 			<title>{{ page.title }}</title>
 			<!-- link to main stylesheet -->
-			<link rel="stylesheet" type="text/css" href="../css/main.css">
+			<link rel="stylesheet" type="text/css" href="/css/main.css">
 			<script type="text/javascript">
 				function allowDrop(ev) {
 					ev.preventDefault();
@@ -14,17 +14,17 @@
 				}
 
 				function drop(ev) {
-					window.location.href="../assets/files/Jincheng Yang.pdf";
+					window.location.href="/assets/files/Jincheng Yang.pdf";
 				}
 			</script>
 		</head>
 		<body>
 			<nav>
 	    		<ul>
-		        	<li><a class = "pagelist" href="../about">About Me</a></li>
-	        		<li><a class = "pagelist" href="../assets/files/Jincheng Yang.pdf">Curriculum Vitae</a></li>
+		        	<li><a class = "pagelist" href="/about">About Me</a></li>
+	        		<li><a class = "pagelist" href="/assets/files/Jincheng Yang.pdf">Curriculum Vitae</a></li>
 					<li><a class = "icon" href="/" draggable="true" ondragstart="drag(event)"></a></li>
-	        		<li><a class = "pagelist" href="../blog">Blog</a></li>
+	        		<li><a class = "pagelist" href="/blog">Blog</a></li>
 	        		<li><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)">Miscellaneous &#9662;</a>
 	        			<ul class="dropdown">
 						<li><a href="#">Piano</a></li>
