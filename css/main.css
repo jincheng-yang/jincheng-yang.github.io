@@ -24,11 +24,12 @@ nav ul {
 }
 a {
     text-decoration: none;
-    color: #999;
+	transition: color 0.3s;
+    color: #507ec9;
 }
 a:hover {
     text-decoration: underline;
-    color: #888;
+    color: #636FCF;
 }
 nav ul li a.pagelist {
     color: #507ec9;
