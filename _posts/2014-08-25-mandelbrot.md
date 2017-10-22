@@ -2,6 +2,7 @@
 layout: post
 title: "Mandelbrot Set"
 date: 2014-08-25
+comments: true
 ---
 
 This is the first program I wrote with Processing. It can draw Mandelbrot set in a simple way. You can press the mouse button to zoom in or out, and change the speed with your keyboard.

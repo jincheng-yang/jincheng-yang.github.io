@@ -1,145 +1,128 @@
 body {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-weight: lighter;
     margin: 30px auto;
-    width: 70%;
+    background-color: #F7F7F7;
+    color: #333;
 }
-nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 5px;
-    list-style: none;
-    font-weight: 100;
-}
-nav ul li, footer ul li {
-    display: inline-block;
-    position: relative;
-    margin-right: 20px;
-}
-nav ul, nav ul li {
-    text-align: center;
-    vertical-align: middle;
-}
-nav ul {
-    border-top: 2px solid #d5d5d5;
-    border-bottom: 1px solid #d5d5d5;
-}
+
 a {
     text-decoration: none;
 	transition: color 0.3s;
     color: #507ec9;
 }
+
 a:hover {
-    text-decoration: underline;
-    color: #1E3963;
+    color: #2D5493;
 }
-nav ul li a.pagelist {
-    color: #507ec9;
-    transition: color 0.3s, background 0.3s;
-    text-decoration: none;
-    padding: 6px 6px 6px 6px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: white;
-    border-radius: 8px;
+
+h1 {
+    font-size: 2em;
+	font-weight: normal;
+    color: #333;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.8em;
+    color: #555;
+}
+
+.container {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+nav ul {
+	padding: 0px;
+    text-align: center;
     vertical-align: middle;
+    border-top: 2px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    background-color: white;
 }
-nav ul li a.pagelist:hover {
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+    margin: 5px 15px;
+}
+
+nav ul li a {
+    display: inline-block;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+nav ul li a:hover {
     color: white;
     background: #507ec9;
-    text-decoration: none;
 }
+
 nav ul li ul.dropdown {
-    color: white;
-    transition: color 0.3s, background 0.3s, display 0.3s;
-    text-decoration: none;
-    padding: 3px 3px 3px 3px;
-    margin: 6px 0px 0px 0px;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 3px;
     border-width: 1px;
     border-style: solid;
     border-color: #507ec9;
     border-radius: 8px;
     position: absolute;
     display: none;
-    max-width: 100%;
     z-index: 999;
 }
+
 nav ul li:hover ul.dropdown {
     display: block;
-    color: #507ec9;
-    background: white;
-    text-decoration: none;
-}
-nav ul li ul.dropdown li {
-    color: #507ec9;
-    transition: color 0.3s, background 0.3s;
-    text-decoration: none;
-    padding: 6px 6px 6px 6px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: white;
-    border-radius: 8px;
-    vertical-align: middle;
-    margin-right: 0px;
 }
 
-nav ul li ul.dropdown li a{
-    color: #507ec9;
-    transition: color 0.3s, background 0.3s;
-    text-decoration: none;
-    padding: 6px 6px 6px 6px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: white;
-    border-radius: 8px;
-    vertical-align: middle;
+nav ul li ul.dropdown li {
+    margin: 1.5px 6px;
 }
-nav ul li ul.dropdown li a:hover {
-    color: white;
-    background: #507ec9;
-    text-decoration: none;
-}
-nav ul li a.icon{   
-    color: #507ec9;
-    transition: color 0.3s, background 0.3s;
-    text-decoration: none;
-    padding: 6px 6px 6px 6px;
+
+nav ul li a.icon{
+    transition: background-image 0.3s;
     width: 30px;
     height: 30px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: white;
     border-radius: 8px;
-    display: inline-block;
     -webkit-transition: background-image 0.3s; /* For Safari 3.1 to 6.0 */
-    transition: background-image 0.3s;
     background-image: url("../assets/images/icon-s.jpg");
     background-size: 45px;
     background-position: center;
     vertical-align: middle;
 }
+
 nav ul li a.icon:hover {
     background-image: url("../assets/images/icon2-s.jpg");
 }
-h1 {
-    font-size: 3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-}
-p {
-    font-size: 1.5em;
-    line-height: 1.4em;
-    color: #333;
-}
-footer {
+
+footer ul {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
-    text-align: right;
-}  
+	margin: auto 15%;
+	padding: 6px 0px;
+}
 
-ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
+footer ul li {
+    display: inline-block;
+	float: right;
+}
+
+footer ul li a {
+    margin-left: 20px;
+}
+
+footer ul li.copyright {
+	color: #BFBFBF;
+    float: left;
+}
+
+ul.posts {
+    margin: 20px 20px 40px;
+    font-size: 1.2em;
 }
 
 ul.posts li {
     list-style: none;
+	margin: 10px auto;
 }
-

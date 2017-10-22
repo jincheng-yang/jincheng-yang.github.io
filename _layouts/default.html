@@ -4,17 +4,14 @@
 			<title>{{ page.title }}</title>
 			<!-- link to main stylesheet -->
 			<link rel="stylesheet" type="text/css" href="/css/main.css">
-			<script type="text/javascript"
-				src="/plugin/LaTeXMathML.js">
-			</script>
-			<script type="text/javascript"
-				src="/plugin/drag-and-drop.js">			</script>
+			<script type="text/javascript" src="/plugin/LaTeXMathML.js"></script>
+			<script type="text/javascript" src="/plugin/drag-and-drop.js"></script>
 		</head>
 		<body>
 			<nav>
 	    		<ul>
 		        	<li><a class = "pagelist" href="/about">About Me</a></li>
-	        		<li><a class = "pagelist" href="/assets/files/Jincheng Yang.pdf">Curriculum Vitae</a></li>
+	        		<li><a class = "pagelist" href="/assets/files/cv.pdf">Curriculum Vitae</a></li>
 				<li><a class = "icon" href="/" draggable="true" ondragstart="drag(event)"></a></li>
 				<li><a class = "pagelist" href="/teaching">Teaching</a></li>
 	        		<li><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)">Miscellaneous &#9662;</a>
@@ -30,13 +27,14 @@
 				</li>
 	    		</ul>
 			</nav>
+			
 			<div class="container">
-			
-			{{ content }}
-			
+				{{ content }}
 			</div><!-- /.container -->
+			
 			<footer>
 	    		<ul>
+	        		<li class="copyright">Copyright &#169 2017 Jincheng Yang</li>
 	        		<li><a href="mailto:teddyyjc@gmail.com">email</a></li>
 	        		<li><a href="https://github.com/teddyyjc">github.com/teddyyjc</a></li>
 				</ul>
