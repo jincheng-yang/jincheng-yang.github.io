@@ -7,5 +7,5 @@ function drag(ev) {
 }
 
 function drop(ev) {
-	window.location.href="/assets/files/cv.pdf";
+	window.location.href="/users/jcyang/assets/files/cv.pdf";
 }
