@@ -28,6 +28,18 @@ p {
     color: #555;
 }
 
+.container ul li {
+    font-size: 1.2em;
+    line-height: 1.8em;
+    color: #555;
+}
+
+.container ul li ul li{
+    font-size: 1.2em;
+    line-height: 1.8em;
+    color: #555;
+}
+
 .container {
     padding-left: 15%;
     padding-right: 15%;
