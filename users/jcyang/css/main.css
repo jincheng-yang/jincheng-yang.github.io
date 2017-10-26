@@ -1,7 +1,7 @@
 body {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     font-weight: lighter;
-    margin: 30px auto;
+    margin: 2em auto;
     background-color: #F7F7F7;
     color: #333;
 }
@@ -17,32 +17,45 @@ a:hover {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 1.8em;
 	font-weight: normal;
     color: #333;
 }
 
-p {
+h2 {
+    font-size: 1.5em;
+	font-weight: normal;
+    color: #444;
+}
+
+h3 {
     font-size: 1.2em;
-    line-height: 1.8em;
+	font-weight: 400;
+    color: #444;
+}
+
+p {
+    font-size: 1.0em;
+    line-height: 1.5em;
     color: #555;
 }
 
 .container ul li {
-    font-size: 1.2em;
+    font-size: 1.0em;
     line-height: 1.8em;
     color: #555;
 }
 
 .container ul li ul li{
-    font-size: 1.2em;
+    font-size: 0.8em;
     line-height: 1.8em;
-    color: #555;
+    color: #666;
 }
 
 .container {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding: 0% 5% 0% 5%;
+	max-width: 50em;
+	margin: 0 auto;
 }
 
 nav ul {
@@ -57,14 +70,14 @@ nav ul {
 nav ul li {
     display: inline-block;
     position: relative;
-    margin: 5px 15px;
+    margin: 0.3em 0.6em;
 }
 
 nav ul li a {
     display: inline-block;
     transition: color 0.3s, background-color 0.3s;
-    padding: 6px;
-    border-radius: 8px;
+    padding: 0.4em;
+    border-radius: 0.6em;
 }
 
 nav ul li a:hover {
@@ -74,11 +87,11 @@ nav ul li a:hover {
 
 nav ul li ul.dropdown {
     transition: color 0.3s, background-color 0.3s;
-    padding: 3px;
+    padding: 0.2em;
     border-width: 1px;
     border-style: solid;
     border-color: #507ec9;
-    border-radius: 8px;
+    border-radius: 0.6em;
     position: absolute;
     display: none;
     z-index: 999;
@@ -89,17 +102,16 @@ nav ul li:hover ul.dropdown {
 }
 
 nav ul li ul.dropdown li {
-    margin: 1.5px 6px;
+    margin: 0.15em 0.4em;
 }
 
 nav ul li a.icon{
     transition: background-image 0.3s;
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
+    width: 2em;
+    height: 2em;
     -webkit-transition: background-image 0.3s; /* For Safari 3.1 to 6.0 */
     background-image: url("../assets/images/icon-s.jpg");
-    background-size: 45px;
+    background-size: 3em;
     background-position: center;
     vertical-align: middle;
 }
@@ -108,20 +120,28 @@ nav ul li a.icon:hover {
     background-image: url("../assets/images/icon2-s.jpg");
 }
 
+footer {
+    padding: 0.4em 5% 0% 5%;
+	max-width: 50em;
+	margin: 0 auto;
+}
+
 footer ul {
-    border-top: 1px solid #d5d5d5;
     font-size: .8em;
-	margin: auto 15%;
-	padding: 6px 0px;
+	padding: 0em;
+}
+
+footer hr {
+	border-top: 0px;
 }
 
 footer ul li {
-    display: inline-block;
+    list-style: none;
 	float: right;
 }
 
 footer ul li a {
-    margin-left: 20px;
+    margin-left: 0.8em;
 }
 
 footer ul li.copyright {
@@ -130,11 +150,9 @@ footer ul li.copyright {
 }
 
 ul.posts {
-    margin: 20px 20px 40px;
-    font-size: 1.2em;
+    margin: 1em 1em 2em;
 }
 
 ul.posts li {
     list-style: none;
-	margin: 10px auto;
 }

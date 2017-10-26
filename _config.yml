@@ -1,6 +1,6 @@
 name: Jincheng Yang's Home Page
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
+permalink: /users/jcyang/blog/:year/:month/:day/:title
 disqus: 
   shortname: jcyang
 
