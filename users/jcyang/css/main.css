@@ -127,12 +127,13 @@ footer {
 }
 
 footer ul {
-    font-size: .8em;
+    font-size: 0.6em;
 	padding: 0em;
 }
 
 footer hr {
-	border-top: 0px;
+    border-width: 0.01em;
+    border-color: #F7F7F7;
 }
 
 footer ul li {
@@ -145,7 +146,7 @@ footer ul li a {
 }
 
 footer ul li.copyright {
-	color: #BFBFBF;
+	color: #BBB;
     float: left;
 }
 
