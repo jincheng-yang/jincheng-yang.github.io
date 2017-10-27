@@ -17,6 +17,7 @@ function drop(ev) {
 		window.location = "/users/jcyang/assets/flash/jswj.html";
 	}
 	if (ev.target.id == "nav3") {
-		window.location = "http://www.4399.com";
+		window.location = "http://www.dashenti.com/Public/Games/326029/201605240441409210/html5/index.html?gameID=58&from=singlemessage&isappinstalled=0";
+		//<!--"http://www.4399.com"-->;
 	}
 }
