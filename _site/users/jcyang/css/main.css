@@ -1,0 +1,159 @@
+body {
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-weight: lighter;
+    margin: 2em auto;
+    background-color: #F7F7F7;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+	transition: color 0.3s;
+    color: #507ec9;
+}
+
+a:hover {
+    color: #2D5493;
+}
+
+h1 {
+    font-size: 1.8em;
+	font-weight: normal;
+    color: #333;
+}
+
+h2 {
+    font-size: 1.5em;
+	font-weight: normal;
+    color: #444;
+}
+
+h3 {
+    font-size: 1.2em;
+	font-weight: 400;
+    color: #444;
+}
+
+p {
+    font-size: 1.0em;
+    line-height: 1.5em;
+    color: #555;
+}
+
+.container ul li {
+    font-size: 1.0em;
+    line-height: 1.8em;
+    color: #555;
+}
+
+.container ul li ul li{
+    font-size: 0.8em;
+    line-height: 1.8em;
+    color: #666;
+}
+
+.container {
+    padding: 0% 5% 0% 5%;
+	max-width: 50em;
+	margin: 0 auto;
+}
+
+nav ul {
+	padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+    border-top: 2px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    background-color: white;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0.3em 0.6em;
+}
+
+nav ul li a {
+    display: inline-block;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 0.4em;
+    border-radius: 0.6em;
+}
+
+nav ul li a:hover {
+    color: white;
+    background: #507ec9;
+}
+
+nav ul li ul.dropdown {
+    transition: color 0.3s, background-color 0.3s;
+    padding: 0.2em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #507ec9;
+    border-radius: 0.6em;
+    position: absolute;
+    display: none;
+    z-index: 999;
+}
+
+nav ul li:hover ul.dropdown {
+    display: block;
+}
+
+nav ul li ul.dropdown li {
+    margin: 0.15em 0.4em;
+}
+
+nav ul li a.icon{
+    transition: background-image 0.3s;
+    width: 2em;
+    height: 2em;
+    -webkit-transition: background-image 0.3s; /* For Safari 3.1 to 6.0 */
+    background-image: url("../assets/images/icon-s.jpg");
+    background-size: 3em;
+    background-position: center;
+    vertical-align: middle;
+}
+
+nav ul li a.icon:hover {
+    background-image: url("../assets/images/icon2-s.jpg");
+}
+
+footer {
+    padding: 0.4em 5% 0% 5%;
+	max-width: 50em;
+	margin: 0 auto;
+}
+
+footer ul {
+    font-size: 0.6em;
+	padding: 0em;
+}
+
+footer hr {
+    border-width: 1pt;
+    border-color: #F7F7F7;
+}
+
+footer ul li {
+    list-style: none;
+	float: right;
+}
+
+footer ul li a {
+    margin-left: 0.8em;
+}
+
+footer ul li.copyright {
+	color: #BBB;
+    float: left;
+}
+
+ul.posts {
+    margin: 1em 1em 2em;
+}
+
+ul.posts li {
+    list-style: none;
+}
