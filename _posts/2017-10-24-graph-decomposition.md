@@ -21,7 +21,7 @@ This is a graph.
 </div>
 </div>
 
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script>				
 $(window).scroll(function() {
