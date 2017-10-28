@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Jincheng's Website | Welcome</title>
+		<title>Graph Decomposition</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
@@ -47,32 +47,89 @@
 <p class="meta">24 Oct 2017</p>
 
 <div class="post">
-  <p>This is a graph.</p>
+  <h2 id="introduction">Introduction</h2>
+
+<p>A graph <script type="math/tex">(V, E)</script> contains a vertex set <script type="math/tex">V</script> connected by a set of edges <script type="math/tex">E \subset V \times V</script>. The <strong>complete graph</strong> <script type="math/tex">K _n</script> has <script type="math/tex">n</script> vertices, and each pair is connected by an edge. The followings are examples of complete graphs.</p>
+
+<div style="text-align:center">
+<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k5.svg" height="200px" />
+<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k6.svg" height="200px" />
+<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" height="200px" />
+</div>
+
+<p class="figure">Complete graphs \(K _5\), \(K _6\) and \(K _7\)</p>
+
+<p>A <strong>Hamiltonian cycle</strong> of a graph is a cycle that pass all vertices exactly once without walking repeated edges. For example, the orange cycle <script type="math/tex">C _7</script> (a cycle with 7 vertices) is a Hamiltonian cycle in <script type="math/tex">K _7</script>.</p>
+
+<div class="emerge" style="opacity:0; position:absolute; margin-left:250px">
+	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-c7.svg" width="300px" />
+</div>
+
+<div class="disappear" style="text-align:center">
+	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" width="300px" />
+</div>
+
+<p class="figure">A Hamiltonian Cycle \(C _7\) in \(K _7\)</p>
+
+<p>Can we decompose a complete graph into Hamiltonian cycles? This is a classical problem in the field of graph decomposition. More specifically, we want to know if we can write the edge set <script type="math/tex">E</script> as a union of cycles, each passes all the vertices.</p>
+
+<h2 id="decomposition-of-k_n-into-c_ns">Decomposition of <script type="math/tex">K_n</script> into <script type="math/tex">C_n</script>’s</h2>
 
 <div style="margin-left:250px">
-<div class="mvright" style="position:absolute">
-	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig1.svg" width="300px" />
+	<div class="mvright" style="position:absolute">
+		<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig3.svg" width="300px" />
+	</div>
+	
+	<div style="position:absolute">
+		<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig2.svg" width="300px" />
+	</div>
+	
+	<div class="mvleft">
+		<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig1.svg" width="300px" />
+	</div>
 </div>
 
-<div style="position:absolute">
-	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig3.svg" width="300px" />
-</div>
+<p class="figure">Decompose \(K _7\) into \(3C _7\)</p>
 
-<div class="mvleft">
-	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig2.svg" width="300px" />
-</div>
-</div>
+<p>For what <script type="math/tex">n</script> can we decompose <script type="math/tex">K_n</script> into <script type="math/tex">mC_n</script>? First, let’s check number of edges. If <script type="math/tex">K _n</script> can be decomposed, then the number of edges of <script type="math/tex">K _n</script> must be a multiple of number of edges in <script type="math/tex">C _n</script>, which has <script type="math/tex">n</script> edges. A complete graph <script type="math/tex">K _n</script> has <script type="math/tex">\left(
+\begin{array}{c}
+n\\
+2
+\end{array}
+\right) = \displaystyle{\frac{n(n-1)}{2}}</script> edges. It is a multiple of <script type="math/tex">n</script> if and only if <script type="math/tex">\displaystyle{\frac{n-1}{2}}</script> is an integer, i.e. <script type="math/tex">n</script> must be odd.</p>
+
+<p>Therefore, <script type="math/tex">K _{2n}</script> can never be decomposed into <script type="math/tex">m C _{2n}</script>, but it is possible for <script type="math/tex">K _{2n + 1}</script> to be decomposed into <script type="math/tex">n</script> <script type="math/tex">C _{2n+1}</script>’s for <script type="math/tex">n \geq 1</script>. <script type="math/tex">K _3 = C _3</script> is trivial, <script type="math/tex">K _5 = 2 C _5</script> because it can be decomposed into a pentagon and a star. <script type="math/tex">K _7</script> can be decomposed as the animation above. How about general <script type="math/tex">K _{2n + 1}</script>?</p>
+
+<p>If <script type="math/tex">2n+1</script> is a prime number, then the decomposition can be easily done as the following. Let</p>
+
+<script type="math/tex; mode=display">\begin{align*}
+V = \mathbb{Z} _{2n + 1} = \left\lbrace 1, w, w ^2, \dots, w ^{2n} \right\rbrace,
+\end{align*}</script>
+
+<p>where <script type="math/tex">w = e^{\frac{2\pi i}{2n + 1}}</script>. Then <script type="math/tex">w ^0 \rightarrow w ^1 \rightarrow w ^2 \rightarrow \cdots w ^{2n} \rightarrow w ^0</script> is a cycle. <script type="math/tex">w ^0 \rightarrow w ^2 \rightarrow w ^4 \rightarrow \cdots w ^{4n} \rightarrow w ^0</script> is another cycle. Similarly, we can draw a cycle <script type="math/tex">w ^0 \rightarrow w ^m \rightarrow w ^{2m} \rightarrow \cdots w ^{2nm} \rightarrow w ^0</script> in <script type="math/tex">K _{2n + 1}</script>, as long as <script type="math/tex">m</script> and <script type="math/tex">2n + 1</script> are relatively prime. Therefore, if <script type="math/tex">2n + 1</script> is prime, then any integer between <script type="math/tex">1</script> and <script type="math/tex">n</script> is relatively prime to <script type="math/tex">2n + 1</script>, so we can break <script type="math/tex">K _{2n + 1}</script> into <script type="math/tex">n</script> cycles.</p>
+
+<p>For convenience, we call edge connecting <script type="math/tex">w ^k</script> and <script type="math/tex">w ^{k + p}</script> an <strong>edge of length</strong> <script type="math/tex">\boldsymbol{p}</script>. Thus edges of length <script type="math/tex">p</script> form a Hamilton cycle in <script type="math/tex">K _{n}</script> iff <script type="math/tex">(p, n) = 1</script>. For example, <script type="math/tex">1</script>-edges (blue edges), <script type="math/tex">2</script>-edges (green edges) and <script type="math/tex">3</script>-edges (orange edges) form three Hamiltonian cycles in <script type="math/tex">K _7</script>. <script type="math/tex">1</script>-edges form a Hamiltonian cycle in <script type="math/tex">K _6</script>, but <script type="math/tex">2</script>-edges do not form a Hamiltonian cycle, but two triangles in <script type="math/tex">K _6</script> instead.</p>
+
+<p>Up to now, we can decompose any complete graph with odd prime number of vertices into Hamiltonian cycles. How about odd composite number of vertices? It is more tricky to think about, but there is actually a universal way to deal with any complete graph with odd number of vertices.</p>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script>				
 $(window).scroll(function() {
-			var displacement = Math.min(Math.max($(window).scrollTop() * 1.5, 0), 300);
+			var displacement1 = Math.min(Math.max(($(window).scrollTop() - 200) * 1.5, 0), 300);
+			
+			var displacement2 = Math.min(Math.max(($(window).scrollTop() - 700) * 1.5, 0), 300);
+			  $(".emerge").css({
+				"opacity": "" + displacement1 / 300
+			  });
+			  $(".disappear").css({
+				"opacity": "" + 1 - displacement1 / 350
+			  });
 			  $(".mvright").css({
-				"margin-left": displacement + "px"
+				"margin-left": displacement2 + "px"
 			  });
 			  $(".mvleft").css({
-				"margin-left": - displacement + "px"
+				"margin-left": - displacement2 + "px"
 			  });
 			});
 </script>

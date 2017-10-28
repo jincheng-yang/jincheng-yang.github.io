@@ -40,6 +40,12 @@ p {
     color: #555;
 }
 
+.figure {
+    text-align: center;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
 .container ul li {
     font-size: 1.0em;
     line-height: 1.8em;
