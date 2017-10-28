@@ -43,21 +43,66 @@
 		</nav>
 		
 		<div class="container">
-			<h1 id="jinchengs-blog">Jincheng’s Blog</h1>
+			<h1>Graph Decomposition</h1>
+<p class="meta">24 Oct 2017</p>
 
-<ul class="posts">
+<div class="post">
+  <p>This is a graph.</p>
 
-	<li><span>24 Oct 2017</span> » <a href="/users/jcyang/blog/2017/10/24/graph-decomposition" title="Graph Decomposition">Graph Decomposition</a></li>
+<div style="margin-left:250px">
+<div class="mvright" style="position:absolute">
+	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig1.svg" width="300px" />
+</div>
 
-	<li><span>01 Sep 2017</span> » <a href="/users/jcyang/blog/2017/09/01/guessing-letter" title="Guessing Letter">Guessing Letter</a></li>
+<div style="position:absolute">
+	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig3.svg" width="300px" />
+</div>
 
-	<li><span>14 Jun 2017</span> » <a href="/users/jcyang/blog/2017/06/14/graduation" title="毕业设计答辩">毕业设计答辩</a></li>
+<div class="mvleft">
+	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig2.svg" width="300px" />
+</div>
+</div>
 
-	<li><span>26 Apr 2017</span> » <a href="/users/jcyang/blog/2017/04/26/Talk-on-inviscid-damping" title="Seminar on Inviscid Damping of Couette Flow in a Stratified Fluid">Seminar on Inviscid Damping of Couette Flow in a Stratified Fluid</a></li>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 
-	<li><span>25 Aug 2014</span> » <a href="/users/jcyang/blog/2014/08/25/mandelbrot" title="Mandelbrot Set">Mandelbrot Set</a></li>
+<script>				
+$(window).scroll(function() {
+			var displacement = Math.min(Math.max($(window).scrollTop() * 1.5, 0), 300);
+			  $(".mvright").css({
+				"margin-left": displacement + "px"
+			  });
+			  $(".mvleft").css({
+				"margin-left": - displacement + "px"
+			  });
+			});
+</script>
 
-</ul>
+
+</div>
+
+
+  <div id="disqus_thread"></div>
+  <script>
+
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://jcyang.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 		</div><!-- /.container -->
 		
