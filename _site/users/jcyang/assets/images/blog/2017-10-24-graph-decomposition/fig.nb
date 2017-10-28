@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     11637,        299]
-NotebookOptionsPosition[     11083,        274]
-NotebookOutlinePosition[     11437,        290]
-CellTagsIndexPosition[     11394,        287]
+NotebookDataLength[     33124,        766]
+NotebookOptionsPosition[     31948,        720]
+NotebookOutlinePosition[     32303,        736]
+CellTagsIndexPosition[     32260,        733]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -28,30 +28,19 @@ Cell[BoxData[
      "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{"Style", "[", 
-      RowBox[{
-       RowBox[{"1", "\[UndirectedEdge]", "4"}], ",", "Orange"}], "]"}], ",", 
-     RowBox[{"Style", "[", 
-      RowBox[{
-       RowBox[{"2", "\[UndirectedEdge]", "5"}], ",", "Orange"}], "]"}], ",", 
-     RowBox[{"Style", "[", 
-      RowBox[{
-       RowBox[{"3", "\[UndirectedEdge]", "6"}], ",", "Orange"}], "]"}], ",", 
-     RowBox[{"Style", "[", 
-      RowBox[{
-       RowBox[{"4", "\[UndirectedEdge]", "7"}], ",", "Orange"}], "]"}], ",", 
-     RowBox[{"Style", "[", 
-      RowBox[{
-       RowBox[{"5", "\[UndirectedEdge]", "1"}], ",", "Orange"}], "]"}], ",", 
-     RowBox[{"Style", "[", 
-      RowBox[{
-       RowBox[{"6", "\[UndirectedEdge]", "2"}], ",", "Orange"}], "]"}], ",", 
-     RowBox[{"Style", "[", 
-      RowBox[{
-       RowBox[{"7", "\[UndirectedEdge]", "3"}], ",", "Orange"}], "]"}]}], 
-    "}"}]}], "]"}]], "Input",
+     RowBox[{"1", "\[UndirectedEdge]", "4"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "5"}], ",", 
+     RowBox[{"3", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "7"}], ",", 
+     RowBox[{"5", "\[UndirectedEdge]", "1"}], ",", 
+     RowBox[{"6", "\[UndirectedEdge]", "2"}], ",", 
+     RowBox[{"7", "\[UndirectedEdge]", "3"}]}], "}"}], ",", 
+   RowBox[{"BaseStyle", "\[Rule]", "Thick"}], ",", 
+   RowBox[{"EdgeStyle", "\[Rule]", "Orange"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.718146961701481*^9, 3.718147252400669*^9}, {
-   3.7181472846962147`*^9, 3.718147291576433*^9}, 3.7181473484761267`*^9}],
+   3.7181472846962147`*^9, 3.718147291576433*^9}, 3.7181473484761267`*^9, {
+   3.7181875301742*^9, 3.718187585492838*^9}, {3.718187638088612*^9, 
+   3.718187663087425*^9}}],
 
 Cell[BoxData[
  GraphicsBox[
@@ -59,14 +48,8 @@ Cell[BoxData[
    DynamicModuleBox[{Typeset`graph = HoldComplete[
      Graph[{1, 2, 3, 4, 5, 6, 7}, {
       Null, {{1, 4}, {2, 5}, {3, 6}, {4, 7}, {5, 1}, {6, 2}, {7, 3}}}, {
-      EdgeStyle -> {UndirectedEdge[6, 2] -> {
-           RGBColor[1, 0.5, 0]}, UndirectedEdge[1, 4] -> {
-           RGBColor[1, 0.5, 0]}, UndirectedEdge[4, 7] -> {
-           RGBColor[1, 0.5, 0]}, UndirectedEdge[7, 3] -> {
-           RGBColor[1, 0.5, 0]}, UndirectedEdge[3, 6] -> {
-           RGBColor[1, 0.5, 0]}, UndirectedEdge[5, 1] -> {
-           RGBColor[1, 0.5, 0]}, UndirectedEdge[2, 5] -> {
-           RGBColor[1, 0.5, 0]}}}]]}, 
+      BaseStyle -> Thickness[Large], EdgeStyle -> {
+         RGBColor[1, 0.5, 0]}}]]}, 
     TagBox[
      GraphicsGroupBox[
       GraphicsComplexBox[{{-0.7818314824680302, 
@@ -75,35 +58,33 @@ Cell[BoxData[
        0.43388373911755884`, -0.9009688679024196}, {
        0.9749279121818237, -0.2225209339563155}, {0.7818314824680294, 
        0.6234898018587326}, {-7.044813998280222*^-16, 1.}}, {
-        {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
-         {RGBColor[1, 0.5, 0], 
-          {Arrowheads[0.], ArrowBox[{1, 4}, 0.02220329551621769]}}, 
-         {RGBColor[1, 0.5, 0], 
-          {Arrowheads[0.], ArrowBox[{1, 5}, 0.02220329551621769]}}, 
-         {RGBColor[1, 0.5, 0], 
-          {Arrowheads[0.], ArrowBox[{2, 5}, 0.02220329551621769]}}, 
-         {RGBColor[1, 0.5, 0], 
-          {Arrowheads[0.], ArrowBox[{2, 6}, 0.02220329551621769]}}, 
-         {RGBColor[1, 0.5, 0], 
-          {Arrowheads[0.], ArrowBox[{3, 6}, 0.02220329551621769]}}, 
-         {RGBColor[1, 0.5, 0], 
-          {Arrowheads[0.], ArrowBox[{3, 7}, 0.02220329551621769]}}, 
-         {RGBColor[1, 0.5, 0], 
-          {Arrowheads[0.], ArrowBox[{4, 7}, 0.02220329551621769]}}}, 
-        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
-         DiskBox[1, 0.02220329551621769], DiskBox[2, 0.02220329551621769], 
-         DiskBox[3, 0.02220329551621769], DiskBox[4, 0.02220329551621769], 
-         DiskBox[5, 0.02220329551621769], DiskBox[6, 0.02220329551621769], 
-         DiskBox[7, 0.02220329551621769]}}]],
+        {RGBColor[1, 0.5, 0], Thickness[Large], Opacity[0.7], 
+         {Arrowheads[0.], ArrowBox[{1, 4}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{1, 5}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{2, 5}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{2, 6}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{3, 6}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{3, 7}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{4, 7}, 0.02220329551621769]}}, 
+        {Hue[0.6, 0.2, 0.8], Thickness[Large], EdgeForm[{GrayLevel[0], 
+         Opacity[0.7]}], DiskBox[1, 0.02220329551621769], 
+         DiskBox[2, 0.02220329551621769], DiskBox[3, 0.02220329551621769], 
+         DiskBox[4, 0.02220329551621769], DiskBox[5, 0.02220329551621769], 
+         DiskBox[6, 0.02220329551621769], DiskBox[7, 0.02220329551621769]}}]],
+     
      MouseAppearanceTag["NetworkGraphics"]],
     AllowKernelInitialization->False]],
+  BaseStyle->{
+    Thickness[Large]},
   DefaultBaseStyle->{
    "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
   FormatType->TraditionalForm,
   FrameTicks->None,
   GridLinesStyle->Directive[
     GrayLevel[0.5, 0.4]]]], "Output",
- CellChangeTimes->{3.718147349718586*^9}]
+ CellChangeTimes->{
+  3.718147349718586*^9, {3.718187534779387*^9, 3.718187585958856*^9}, {
+   3.718187639597282*^9, 3.718187663567387*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -122,15 +103,18 @@ Cell[BoxData[
      RowBox[{"4", "\[UndirectedEdge]", "5"}], ",", 
      RowBox[{"5", "\[UndirectedEdge]", "6"}], ",", 
      RowBox[{"6", "\[UndirectedEdge]", "7"}], ",", 
-     RowBox[{"7", "\[UndirectedEdge]", "1"}]}], "}"}]}], "]"}]], "Input",
- CellChangeTimes->{3.718147340526132*^9}],
+     RowBox[{"7", "\[UndirectedEdge]", "1"}]}], "}"}], ",", 
+   RowBox[{"BaseStyle", "\[Rule]", "Thick"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.718147340526132*^9, {3.718187676807366*^9, 3.7181876821997833`*^9}}],
 
 Cell[BoxData[
  GraphicsBox[
   NamespaceBox["NetworkGraphics",
    DynamicModuleBox[{Typeset`graph = HoldComplete[
      Graph[{1, 2, 3, 4, 5, 6, 7}, {
-      Null, {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 1}}}]]}, 
+      Null, {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 1}}}, {
+      BaseStyle -> Thickness[Large]}]]}, 
     TagBox[
      GraphicsGroupBox[
       GraphicsComplexBox[{{-0.7818314824680302, 
@@ -139,7 +123,7 @@ Cell[BoxData[
        0.43388373911755884`, -0.9009688679024196}, {
        0.9749279121818237, -0.2225209339563155}, {0.7818314824680294, 
        0.6234898018587326}, {-7.044813998280222*^-16, 1.}}, {
-        {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+        {Hue[0.6, 0.7, 0.5], Thickness[Large], Opacity[0.7], 
          {Arrowheads[0.], ArrowBox[{1, 2}, 0.02220329551621769]}, 
          {Arrowheads[0.], ArrowBox[{1, 7}, 0.02220329551621769]}, 
          {Arrowheads[0.], ArrowBox[{2, 3}, 0.02220329551621769]}, 
@@ -147,20 +131,453 @@ Cell[BoxData[
          {Arrowheads[0.], ArrowBox[{4, 5}, 0.02220329551621769]}, 
          {Arrowheads[0.], ArrowBox[{5, 6}, 0.02220329551621769]}, 
          {Arrowheads[0.], ArrowBox[{6, 7}, 0.02220329551621769]}}, 
-        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
-         DiskBox[1, 0.02220329551621769], DiskBox[2, 0.02220329551621769], 
-         DiskBox[3, 0.02220329551621769], DiskBox[4, 0.02220329551621769], 
-         DiskBox[5, 0.02220329551621769], DiskBox[6, 0.02220329551621769], 
-         DiskBox[7, 0.02220329551621769]}}]],
+        {Hue[0.6, 0.2, 0.8], Thickness[Large], EdgeForm[{GrayLevel[0], 
+         Opacity[0.7]}], DiskBox[1, 0.02220329551621769], 
+         DiskBox[2, 0.02220329551621769], DiskBox[3, 0.02220329551621769], 
+         DiskBox[4, 0.02220329551621769], DiskBox[5, 0.02220329551621769], 
+         DiskBox[6, 0.02220329551621769], DiskBox[7, 0.02220329551621769]}}]],
+     
      MouseAppearanceTag["NetworkGraphics"]],
     AllowKernelInitialization->False]],
+  BaseStyle->{
+    Thickness[Large]},
   DefaultBaseStyle->{
    "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
   FormatType->TraditionalForm,
   FrameTicks->None,
   GridLinesStyle->Directive[
     GrayLevel[0.5, 0.4]]]], "Output",
- CellChangeTimes->{3.718147341031753*^9}]
+ CellChangeTimes->{
+  3.718147341031753*^9, {3.718187677754531*^9, 3.7181876831814947`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graph", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "\[UndirectedEdge]", "3"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "4"}], ",", 
+     RowBox[{"3", "\[UndirectedEdge]", "5"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"5", "\[UndirectedEdge]", "7"}], ",", 
+     RowBox[{"6", "\[UndirectedEdge]", "1"}], ",", 
+     RowBox[{"7", "\[UndirectedEdge]", "2"}]}], "}"}], ",", 
+   RowBox[{"BaseStyle", "\[Rule]", "Thick"}], ",", 
+   RowBox[{"EdgeStyle", "\[Rule]", 
+    RowBox[{"Darker", "[", "Green", "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.71814985456091*^9, 3.718149918588423*^9}, {
+  3.7181876923198423`*^9, 3.7181877117809134`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5, 6, 7}, {
+      Null, {{1, 3}, {2, 4}, {3, 5}, {4, 6}, {5, 7}, {6, 1}, {7, 2}}}, {
+      BaseStyle -> Thickness[Large], EdgeStyle -> {
+         RGBColor[0, 
+          Rational[2, 3], 0]}}]]}, 
+    TagBox[
+     GraphicsGroupBox[
+      GraphicsComplexBox[{{-0.7818314824680302, 
+       0.6234898018587343}, {-0.9749279121818235, -0.22252093395631342`}, \
+{-0.43388373911755757`, -0.9009688679024187}, {
+       0.43388373911755884`, -0.9009688679024196}, {
+       0.9749279121818237, -0.2225209339563155}, {0.7818314824680294, 
+       0.6234898018587326}, {-7.044813998280222*^-16, 1.}}, {
+        {RGBColor[0, 
+          NCache[
+           Rational[2, 3], 0.6666666666666666], 0], Thickness[Large], Opacity[
+         0.7], 
+         {Arrowheads[0.], ArrowBox[{1, 3}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{1, 6}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{2, 4}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{2, 7}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{3, 5}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{4, 6}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{5, 7}, 0.02220329551621769]}}, 
+        {Hue[0.6, 0.2, 0.8], Thickness[Large], EdgeForm[{GrayLevel[0], 
+         Opacity[0.7]}], DiskBox[1, 0.02220329551621769], 
+         DiskBox[2, 0.02220329551621769], DiskBox[3, 0.02220329551621769], 
+         DiskBox[4, 0.02220329551621769], DiskBox[5, 0.02220329551621769], 
+         DiskBox[6, 0.02220329551621769], DiskBox[7, 0.02220329551621769]}}]],
+     
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  BaseStyle->{
+    Thickness[Large]},
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]]]], "Output",
+ CellChangeTimes->{{3.7181498522048397`*^9, 3.718149865066112*^9}, 
+   3.718149919290169*^9, 3.718187712721416*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graph", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "\[UndirectedEdge]", "3"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "4"}], ",", 
+     RowBox[{"3", "\[UndirectedEdge]", "5"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "1"}], ",", 
+     RowBox[{"5", "\[UndirectedEdge]", "2"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "1"}], ",", 
+     RowBox[{"3", "\[UndirectedEdge]", "2"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "3"}], ",", 
+     RowBox[{"5", "\[UndirectedEdge]", "4"}], ",", 
+     RowBox[{"1", "\[UndirectedEdge]", "5"}]}], "}"}], ",", 
+   RowBox[{"BaseStyle", "\[Rule]", "Thick"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.718192169624692*^9, 3.7181921826138353`*^9}, {
+  3.718192343201251*^9, 3.7181923526063747`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5}, {
+      Null, {{1, 3}, {2, 4}, {3, 5}, {4, 1}, {5, 2}, {2, 1}, {3, 2}, {4, 3}, {
+       5, 4}, {1, 5}}}, {BaseStyle -> Thickness[Large]}]]}, 
+    TagBox[
+     GraphicsGroupBox[
+      GraphicsComplexBox[{{-0.9510565162951538, 
+       0.3090169943749484}, {-0.5877852522924726, -0.8090169943749468}, {
+       0.5877852522924738, -0.8090169943749481}, {0.9510565162951533, 
+       0.30901699437494634`}, {-7.044813998280222*^-16, 1.}}, {
+        {Hue[0.6, 0.7, 0.5], Thickness[Large], Opacity[0.7], 
+         {Arrowheads[0.], ArrowBox[{1, 2}, 0.021812234931106983`]}, 
+         {Arrowheads[0.], ArrowBox[{1, 3}, 0.021812234931106983`]}, 
+         {Arrowheads[0.], ArrowBox[{1, 4}, 0.021812234931106983`]}, 
+         {Arrowheads[0.], ArrowBox[{1, 5}, 0.021812234931106983`]}, 
+         {Arrowheads[0.], ArrowBox[{2, 3}, 0.021812234931106983`]}, 
+         {Arrowheads[0.], ArrowBox[{2, 4}, 0.021812234931106983`]}, 
+         {Arrowheads[0.], ArrowBox[{2, 5}, 0.021812234931106983`]}, 
+         {Arrowheads[0.], ArrowBox[{3, 4}, 0.021812234931106983`]}, 
+         {Arrowheads[0.], ArrowBox[{3, 5}, 0.021812234931106983`]}, 
+         {Arrowheads[0.], ArrowBox[{4, 5}, 0.021812234931106983`]}}, 
+        {Hue[0.6, 0.2, 0.8], Thickness[Large], EdgeForm[{GrayLevel[0], 
+         Opacity[0.7]}], DiskBox[1, 0.021812234931106983`], 
+         DiskBox[2, 0.021812234931106983`], DiskBox[3, 0.021812234931106983`],
+          DiskBox[4, 0.021812234931106983`], 
+         DiskBox[5, 0.021812234931106983`]}}]],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  BaseStyle->{
+    Thickness[Large]},
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]]]], "Output",
+ CellChangeTimes->{{3.718192173932582*^9, 3.718192184508979*^9}, 
+   3.718192353312613*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graph", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "\[UndirectedEdge]", "3"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "4"}], ",", 
+     RowBox[{"3", "\[UndirectedEdge]", "5"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "1"}], ",", 
+     RowBox[{"5", "\[UndirectedEdge]", "2"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "1"}], ",", 
+     RowBox[{"3", "\[UndirectedEdge]", "2"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "3"}], ",", 
+     RowBox[{"5", "\[UndirectedEdge]", "4"}], ",", 
+     RowBox[{"1", "\[UndirectedEdge]", "5"}], ",", 
+     RowBox[{"1", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"3", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"5", "\[UndirectedEdge]", "6"}]}], "}"}], ",", 
+   RowBox[{"BaseStyle", "\[Rule]", "Thick"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.718192421141468*^9, 3.718192443923243*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5, 6}, {
+      Null, {{1, 3}, {2, 4}, {3, 5}, {4, 1}, {5, 2}, {2, 1}, {3, 2}, {4, 3}, {
+       5, 4}, {1, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}}}, {
+      BaseStyle -> Thickness[Large]}]]}, 
+    TagBox[
+     GraphicsGroupBox[
+      GraphicsComplexBox[{{-0.8660254037844389, 
+       0.5000000000000008}, {-0.8660254037844384, -0.4999999999999994}, {
+       3.8285686989269494`*^-16, -1.}, {
+       0.8660254037844389, -0.5000000000000012}, {0.8660254037844386, 
+       0.4999999999999993}, {1.8369701987210297`*^-16, 1.}}, {
+        {Hue[0.6, 0.7, 0.5], Thickness[Large], Opacity[0.7], 
+         {Arrowheads[0.], ArrowBox[{1, 2}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{1, 3}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{1, 4}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{1, 5}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{1, 6}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{2, 3}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{2, 4}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{2, 5}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{2, 6}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{3, 4}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{3, 5}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{3, 6}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{4, 5}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{4, 6}, 0.02261146496815286]}, 
+         {Arrowheads[0.], ArrowBox[{5, 6}, 0.02261146496815286]}}, 
+        {Hue[0.6, 0.2, 0.8], Thickness[Large], EdgeForm[{GrayLevel[0], 
+         Opacity[0.7]}], DiskBox[1, 0.02261146496815286], 
+         DiskBox[2, 0.02261146496815286], DiskBox[3, 0.02261146496815286], 
+         DiskBox[4, 0.02261146496815286], DiskBox[5, 0.02261146496815286], 
+         DiskBox[6, 0.02261146496815286]}}]],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  BaseStyle->{
+    Thickness[Large]},
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]]]], "Output",
+ CellChangeTimes->{3.7181924446206837`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graph", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "\[UndirectedEdge]", "3"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "4"}], ",", 
+     RowBox[{"3", "\[UndirectedEdge]", "5"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "1"}], ",", 
+     RowBox[{"5", "\[UndirectedEdge]", "2"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "1"}], ",", 
+     RowBox[{"3", "\[UndirectedEdge]", "2"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "3"}], ",", 
+     RowBox[{"5", "\[UndirectedEdge]", "4"}], ",", 
+     RowBox[{"1", "\[UndirectedEdge]", "5"}], ",", 
+     RowBox[{"1", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"3", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"5", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"6", "\[UndirectedEdge]", "7"}], ",", 
+     RowBox[{"1", "\[UndirectedEdge]", "7"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "7"}], ",", 
+     RowBox[{"3", "\[UndirectedEdge]", "7"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "7"}], ",", 
+     RowBox[{"5", "\[UndirectedEdge]", "7"}]}], "}"}], ",", 
+   RowBox[{"BaseStyle", "\[Rule]", "Thick"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.71819247677391*^9, 3.718192510379456*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5, 6, 7}, {
+      Null, {{1, 3}, {2, 4}, {3, 5}, {4, 1}, {5, 2}, {2, 1}, {3, 2}, {4, 3}, {
+       5, 4}, {1, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}, {6, 7}, {1, 
+       7}, {2, 7}, {3, 7}, {4, 7}, {5, 7}}}, {
+      BaseStyle -> Thickness[Large]}]]}, 
+    TagBox[
+     GraphicsGroupBox[
+      GraphicsComplexBox[{{-0.7818314824680302, 
+       0.6234898018587343}, {-0.9749279121818235, -0.22252093395631342`}, \
+{-0.43388373911755757`, -0.9009688679024187}, {
+       0.43388373911755884`, -0.9009688679024196}, {
+       0.9749279121818237, -0.2225209339563155}, {0.7818314824680294, 
+       0.6234898018587326}, {-7.044813998280222*^-16, 1.}}, {
+        {Hue[0.6, 0.7, 0.5], Thickness[Large], Opacity[0.7], 
+         {Arrowheads[0.], ArrowBox[{1, 2}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{1, 3}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{1, 4}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{1, 5}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{1, 6}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{1, 7}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{2, 3}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{2, 4}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{2, 5}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{2, 6}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{2, 7}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{3, 4}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{3, 5}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{3, 6}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{3, 7}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{4, 5}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{4, 6}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{4, 7}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{5, 6}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{5, 7}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{6, 7}, 0.02220329551621769]}}, 
+        {Hue[0.6, 0.2, 0.8], Thickness[Large], EdgeForm[{GrayLevel[0], 
+         Opacity[0.7]}], DiskBox[1, 0.02220329551621769], 
+         DiskBox[2, 0.02220329551621769], DiskBox[3, 0.02220329551621769], 
+         DiskBox[4, 0.02220329551621769], DiskBox[5, 0.02220329551621769], 
+         DiskBox[6, 0.02220329551621769], DiskBox[7, 0.02220329551621769]}}]],
+     
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  BaseStyle->{
+    Thickness[Large]},
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]]]], "Output",
+ CellChangeTimes->{3.7181925110228252`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graph", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "\[UndirectedEdge]", "3"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "4"}], ",", 
+     RowBox[{"3", "\[UndirectedEdge]", "5"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"4", "\[UndirectedEdge]", "1"}], ",", "Orange"}], "]"}], ",", 
+     RowBox[{"5", "\[UndirectedEdge]", "2"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "1"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"3", "\[UndirectedEdge]", "2"}], ",", "Orange"}], "]"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "3"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"5", "\[UndirectedEdge]", "4"}], ",", "Orange"}], "]"}], ",", 
+     RowBox[{"1", "\[UndirectedEdge]", "5"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"1", "\[UndirectedEdge]", "6"}], ",", "Orange"}], "]"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"2", "\[UndirectedEdge]", "6"}], ",", "Orange"}], "]"}], ",", 
+     RowBox[{"3", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"5", "\[UndirectedEdge]", "6"}], ",", 
+     RowBox[{"6", "\[UndirectedEdge]", "7"}], ",", 
+     RowBox[{"1", "\[UndirectedEdge]", "7"}], ",", 
+     RowBox[{"2", "\[UndirectedEdge]", "7"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"3", "\[UndirectedEdge]", "7"}], ",", "Orange"}], "]"}], ",", 
+     RowBox[{"4", "\[UndirectedEdge]", "7"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"5", "\[UndirectedEdge]", "7"}], ",", "Orange"}], "]"}]}], 
+    "}"}], ",", 
+   RowBox[{"BaseStyle", "\[Rule]", "Thick"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.71819428581334*^9, 3.7181944079685383`*^9}, {
+  3.718194443924563*^9, 3.718194459090312*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5, 6, 7}, {
+      Null, {{1, 3}, {2, 4}, {3, 5}, {4, 1}, {5, 2}, {2, 1}, {3, 2}, {4, 3}, {
+       5, 4}, {1, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}, {6, 7}, {1, 
+       7}, {2, 7}, {3, 7}, {4, 7}, {5, 7}}}, {
+      BaseStyle -> Thickness[Large], EdgeStyle -> {UndirectedEdge[3, 2] -> {
+           RGBColor[1, 0.5, 0]}, UndirectedEdge[4, 1] -> {
+           RGBColor[1, 0.5, 0]}, UndirectedEdge[2, 6] -> {
+           RGBColor[1, 0.5, 0]}, UndirectedEdge[5, 4] -> {
+           RGBColor[1, 0.5, 0]}, UndirectedEdge[5, 7] -> {
+           RGBColor[1, 0.5, 0]}, UndirectedEdge[3, 7] -> {
+           RGBColor[1, 0.5, 0]}, UndirectedEdge[1, 6] -> {
+           RGBColor[1, 0.5, 0]}}}]]}, 
+    TagBox[
+     GraphicsGroupBox[
+      GraphicsComplexBox[{{-0.7818314824680302, 
+       0.6234898018587343}, {-0.9749279121818235, -0.22252093395631342`}, \
+{-0.43388373911755757`, -0.9009688679024187}, {
+       0.43388373911755884`, -0.9009688679024196}, {
+       0.9749279121818237, -0.2225209339563155}, {0.7818314824680294, 
+       0.6234898018587326}, {-7.044813998280222*^-16, 1.}}, {
+        {Hue[0.6, 0.7, 0.5], Thickness[Large], Opacity[0.7], 
+         {Arrowheads[0.], ArrowBox[{1, 2}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{1, 3}, 0.02220329551621769]}, 
+         {RGBColor[1, 0.5, 0], 
+          {Arrowheads[0.], ArrowBox[{1, 4}, 0.02220329551621769]}}, 
+         {Arrowheads[0.], ArrowBox[{1, 5}, 0.02220329551621769]}, 
+         {RGBColor[1, 0.5, 0], 
+          {Arrowheads[0.], ArrowBox[{1, 6}, 0.02220329551621769]}}, 
+         {Arrowheads[0.], ArrowBox[{1, 7}, 0.02220329551621769]}, 
+         {RGBColor[1, 0.5, 0], 
+          {Arrowheads[0.], ArrowBox[{2, 3}, 0.02220329551621769]}}, 
+         {Arrowheads[0.], ArrowBox[{2, 4}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{2, 5}, 0.02220329551621769]}, 
+         {RGBColor[1, 0.5, 0], 
+          {Arrowheads[0.], ArrowBox[{2, 6}, 0.02220329551621769]}}, 
+         {Arrowheads[0.], ArrowBox[{2, 7}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{3, 4}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{3, 5}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{3, 6}, 0.02220329551621769]}, 
+         {RGBColor[1, 0.5, 0], 
+          {Arrowheads[0.], ArrowBox[{3, 7}, 0.02220329551621769]}}, 
+         {RGBColor[1, 0.5, 0], 
+          {Arrowheads[0.], ArrowBox[{4, 5}, 0.02220329551621769]}}, 
+         {Arrowheads[0.], ArrowBox[{4, 6}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{4, 7}, 0.02220329551621769]}, 
+         {Arrowheads[0.], ArrowBox[{5, 6}, 0.02220329551621769]}, 
+         {RGBColor[1, 0.5, 0], 
+          {Arrowheads[0.], ArrowBox[{5, 7}, 0.02220329551621769]}}, 
+         {Arrowheads[0.], ArrowBox[{6, 7}, 0.02220329551621769]}}, 
+        {Hue[0.6, 0.2, 0.8], Thickness[Large], EdgeForm[{GrayLevel[0], 
+         Opacity[0.7]}], DiskBox[1, 0.02220329551621769], 
+         DiskBox[2, 0.02220329551621769], DiskBox[3, 0.02220329551621769], 
+         DiskBox[4, 0.02220329551621769], DiskBox[5, 0.02220329551621769], 
+         DiskBox[6, 0.02220329551621769], DiskBox[7, 0.02220329551621769]}}]],
+     
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  BaseStyle->{
+    Thickness[Large]},
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]]]], "Output",
+ CellChangeTimes->{{3.718194302177999*^9, 3.718194408510323*^9}, {
+  3.718194449861595*^9, 3.71819445940917*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -175,56 +592,47 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"Style", "[", 
       RowBox[{
-       RowBox[{"1", "\[UndirectedEdge]", "3"}], ",", 
-       RowBox[{"Darker", "[", "Green", "]"}]}], "]"}], ",", 
+       RowBox[{"4", "\[UndirectedEdge]", "1"}], ",", 
+       RowBox[{"Lighter", "[", "Orange", "]"}]}], "]"}], ",", 
      RowBox[{"Style", "[", 
       RowBox[{
-       RowBox[{"2", "\[UndirectedEdge]", "4"}], ",", 
-       RowBox[{"Darker", "[", "Green", "]"}]}], "]"}], ",", 
+       RowBox[{"3", "\[UndirectedEdge]", "2"}], ",", "Orange"}], "]"}], ",", 
      RowBox[{"Style", "[", 
       RowBox[{
-       RowBox[{"3", "\[UndirectedEdge]", "5"}], ",", 
-       RowBox[{"Darker", "[", "Green", "]"}]}], "]"}], ",", 
+       RowBox[{"5", "\[UndirectedEdge]", "4"}], ",", "Orange"}], "]"}], ",", 
      RowBox[{"Style", "[", 
       RowBox[{
-       RowBox[{"4", "\[UndirectedEdge]", "6"}], ",", 
-       RowBox[{"Darker", "[", "Green", "]"}]}], "]"}], ",", 
+       RowBox[{"1", "\[UndirectedEdge]", "6"}], ",", "Orange"}], "]"}], ",", 
      RowBox[{"Style", "[", 
       RowBox[{
-       RowBox[{"5", "\[UndirectedEdge]", "7"}], ",", 
-       RowBox[{"Darker", "[", "Green", "]"}]}], "]"}], ",", 
+       RowBox[{"2", "\[UndirectedEdge]", "6"}], ",", "Orange"}], "]"}], ",", 
      RowBox[{"Style", "[", 
       RowBox[{
-       RowBox[{"6", "\[UndirectedEdge]", "1"}], ",", 
-       RowBox[{"Darker", "[", "Green", "]"}]}], "]"}], ",", 
+       RowBox[{"3", "\[UndirectedEdge]", "7"}], ",", "Orange"}], "]"}], ",", 
      RowBox[{"Style", "[", 
       RowBox[{
-       RowBox[{"7", "\[UndirectedEdge]", "2"}], ",", 
-       RowBox[{"Darker", "[", "Green", "]"}]}], "]"}]}], "}"}]}], 
-  "]"}]], "Input",
- CellChangeTimes->{{3.71814985456091*^9, 3.718149918588423*^9}}],
+       RowBox[{"5", "\[UndirectedEdge]", "7"}], ",", "Orange"}], "]"}]}], 
+    "}"}], ",", 
+   RowBox[{"BaseStyle", "\[Rule]", "Thick"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.71819428581334*^9, 3.7181944079685383`*^9}, {
+  3.718194443924563*^9, 3.718194459090312*^9}, {3.718194543564784*^9, 
+  3.718194556842774*^9}, {3.7181955124212093`*^9, 3.718195517020466*^9}}],
 
 Cell[BoxData[
  GraphicsBox[
   NamespaceBox["NetworkGraphics",
    DynamicModuleBox[{Typeset`graph = HoldComplete[
      Graph[{1, 2, 3, 4, 5, 6, 7}, {
-      Null, {{1, 3}, {2, 4}, {3, 5}, {4, 6}, {5, 7}, {6, 1}, {7, 2}}}, {
-      EdgeStyle -> {UndirectedEdge[7, 2] -> {
-           RGBColor[0, 
-            Rational[2, 3], 0]}, UndirectedEdge[2, 4] -> {
-           RGBColor[0, 
-            Rational[2, 3], 0]}, UndirectedEdge[5, 7] -> {
-           RGBColor[0, 
-            Rational[2, 3], 0]}, UndirectedEdge[6, 1] -> {
-           RGBColor[0, 
-            Rational[2, 3], 0]}, UndirectedEdge[3, 5] -> {
-           RGBColor[0, 
-            Rational[2, 3], 0]}, UndirectedEdge[4, 6] -> {
-           RGBColor[0, 
-            Rational[2, 3], 0]}, UndirectedEdge[1, 3] -> {
-           RGBColor[0, 
-            Rational[2, 3], 0]}}}]]}, 
+      Null, {{4, 1}, {3, 2}, {5, 4}, {1, 6}, {2, 6}, {3, 7}, {5, 7}}}, {
+      BaseStyle -> Thickness[Large], EdgeStyle -> {UndirectedEdge[3, 2] -> {
+           RGBColor[1, 0.5, 0]}, UndirectedEdge[4, 1] -> {
+           RGBColor[1, 0.6666666666666666, 
+            Rational[1, 3]]}, UndirectedEdge[2, 6] -> {
+           RGBColor[1, 0.5, 0]}, UndirectedEdge[5, 4] -> {
+           RGBColor[1, 0.5, 0]}, UndirectedEdge[5, 7] -> {
+           RGBColor[1, 0.5, 0]}, UndirectedEdge[3, 7] -> {
+           RGBColor[1, 0.5, 0]}, UndirectedEdge[1, 6] -> {
+           RGBColor[1, 0.5, 0]}}}]]}, 
     TagBox[
      GraphicsGroupBox[
       GraphicsComplexBox[{{-0.7818314824680302, 
@@ -233,47 +641,85 @@ Cell[BoxData[
        0.43388373911755884`, -0.9009688679024196}, {
        0.9749279121818237, -0.2225209339563155}, {0.7818314824680294, 
        0.6234898018587326}, {-7.044813998280222*^-16, 1.}}, {
-        {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
-         {RGBColor[0, 
-           Rational[2, 3], 0], 
-          {Arrowheads[0.], ArrowBox[{1, 3}, 0.02220329551621769]}}, 
-         {RGBColor[0, 
-           Rational[2, 3], 0], 
+        {Hue[0.6, 0.7, 0.5], Thickness[Large], Opacity[0.7], 
+         {RGBColor[1, 0.6666666666666666, 
+           Rational[1, 3]], 
+          {Arrowheads[0.], ArrowBox[{1, 4}, 0.02220329551621769]}}, 
+         {RGBColor[1, 0.5, 0], 
           {Arrowheads[0.], ArrowBox[{1, 6}, 0.02220329551621769]}}, 
-         {RGBColor[0, 
-           Rational[2, 3], 0], 
-          {Arrowheads[0.], ArrowBox[{2, 4}, 0.02220329551621769]}}, 
-         {RGBColor[0, 
-           Rational[2, 3], 0], 
-          {Arrowheads[0.], ArrowBox[{2, 7}, 0.02220329551621769]}}, 
-         {RGBColor[0, 
-           Rational[2, 3], 0], 
-          {Arrowheads[0.], ArrowBox[{3, 5}, 0.02220329551621769]}}, 
-         {RGBColor[0, 
-           Rational[2, 3], 0], 
-          {Arrowheads[0.], ArrowBox[{4, 6}, 0.02220329551621769]}}, 
-         {RGBColor[0, 
-           Rational[2, 3], 0], 
+         {RGBColor[1, 0.5, 0], 
+          {Arrowheads[0.], ArrowBox[{2, 3}, 0.02220329551621769]}}, 
+         {RGBColor[1, 0.5, 0], 
+          {Arrowheads[0.], ArrowBox[{2, 6}, 0.02220329551621769]}}, 
+         {RGBColor[1, 0.5, 0], 
+          {Arrowheads[0.], ArrowBox[{3, 7}, 0.02220329551621769]}}, 
+         {RGBColor[1, 0.5, 0], 
+          {Arrowheads[0.], ArrowBox[{4, 5}, 0.02220329551621769]}}, 
+         {RGBColor[1, 0.5, 0], 
           {Arrowheads[0.], ArrowBox[{5, 7}, 0.02220329551621769]}}}, 
-        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
-         DiskBox[1, 0.02220329551621769], DiskBox[2, 0.02220329551621769], 
-         DiskBox[3, 0.02220329551621769], DiskBox[4, 0.02220329551621769], 
-         DiskBox[5, 0.02220329551621769], DiskBox[6, 0.02220329551621769], 
-         DiskBox[7, 0.02220329551621769]}}]],
+        {Hue[0.6, 0.2, 0.8], Thickness[Large], EdgeForm[{GrayLevel[0], 
+         Opacity[0.7]}], DiskBox[1, 0.02220329551621769], 
+         DiskBox[2, 0.02220329551621769], DiskBox[3, 0.02220329551621769], 
+         DiskBox[4, 0.02220329551621769], DiskBox[5, 0.02220329551621769], 
+         DiskBox[6, 0.02220329551621769], DiskBox[7, 0.02220329551621769]}}]],
+     
      MouseAppearanceTag["NetworkGraphics"]],
     AllowKernelInitialization->False]],
+  BaseStyle->{
+    Thickness[Large]},
   DefaultBaseStyle->{
    "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
   FormatType->TraditionalForm,
   FrameTicks->None,
   GridLinesStyle->Directive[
     GrayLevel[0.5, 0.4]]]], "Output",
- CellChangeTimes->{{3.7181498522048397`*^9, 3.718149865066112*^9}, 
-   3.718149919290169*^9}]
-}, Open  ]]
+ CellChangeTimes->{3.7181945580170727`*^9, 3.718195518112946*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Graph", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"4", "\[UndirectedEdge]", "1"}], ",", 
+       RowBox[{"Lighter", "[", "Orange", "]"}]}], "]"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"3", "\[UndirectedEdge]", "2"}], ",", 
+       RowBox[{"Lighter", "[", "Orange", "]"}]}], "]"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"5", "\[UndirectedEdge]", "4"}], ",", 
+       RowBox[{"Lighter", "[", "Orange", "]"}]}], "]"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"1", "\[UndirectedEdge]", "6"}], ",", 
+       RowBox[{"Lighter", "[", "Orange", "]"}]}], "]"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"2", "\[UndirectedEdge]", "6"}], ",", 
+       RowBox[{"Lighter", "[", "Orange", "]"}]}], "]"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"3", "\[UndirectedEdge]", "7"}], ",", 
+       RowBox[{"Lighter", "[", "Orange", "]"}]}], "]"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"5", "\[UndirectedEdge]", "7"}], ",", 
+       RowBox[{"Lighter", "[", "Orange", "]"}]}], "]"}]}], "}"}], ",", 
+   RowBox[{"BaseStyle", "\[Rule]", "Thick"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.71819428581334*^9, 3.7181944079685383`*^9}, {
+  3.718194443924563*^9, 3.718194459090312*^9}, {3.718194543564784*^9, 
+  3.718194556842774*^9}, {3.7181955124212093`*^9, 3.718195532348297*^9}, {
+  3.718195568078391*^9, 3.718195576269726*^9}}]
 },
 WindowSize->{808, 755},
-WindowMargins->{{4, Automatic}, {Automatic, 4}},
+WindowMargins->{{17, Automatic}, {Automatic, 9}},
 FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 9, \
 2015)",
 StyleDefinitions->"Default.nb"
@@ -290,20 +736,40 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 1208, 31, 63, "Input"],
-Cell[1791, 55, 2494, 50, 366, "Output"]
+Cell[580, 22, 923, 20, 46, "Input"],
+Cell[1506, 44, 2085, 42, 366, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4322, 110, 620, 15, 28, "Input"],
-Cell[4945, 127, 1819, 35, 366, "Output"]
+Cell[3628, 91, 723, 17, 46, "Input"],
+Cell[4354, 110, 1990, 40, 366, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6801, 167, 1388, 37, 63, "Input"],
-Cell[8192, 206, 2875, 65, 400, "Output"]
-}, Open  ]]
+Cell[6381, 155, 835, 19, 46, "Input"],
+Cell[7219, 176, 2154, 45, 366, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9410, 226, 880, 19, 46, "Input"],
+Cell[10293, 247, 2066, 40, 358, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12396, 292, 1101, 24, 46, "Input"],
+Cell[13500, 318, 2446, 46, 426, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15983, 369, 1423, 30, 63, "Input"],
+Cell[17409, 401, 3007, 55, 366, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20453, 461, 1962, 46, 80, "Input"],
+Cell[22418, 509, 3743, 70, 366, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26198, 584, 1370, 34, 63, "Input"],
+Cell[27571, 620, 2710, 55, 366, "Output"]
+}, Open  ]],
+Cell[30296, 678, 1648, 40, 97, "Input"]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
