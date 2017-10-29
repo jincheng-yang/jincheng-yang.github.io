@@ -52,21 +52,17 @@
 <p>A graph <script type="math/tex">(V, E)</script> contains a vertex set <script type="math/tex">V</script> connected by a set of edges <script type="math/tex">E \subset V \times V</script>. The <strong>complete graph</strong> <script type="math/tex">K _n</script> has <script type="math/tex">n</script> vertices, and each pair is connected by an edge. The followings are examples of complete graphs.</p>
 
 <div style="text-align:center">
-<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k5.svg" height="200px" />
-<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k6.svg" height="200px" />
-<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" height="200px" />
+	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k5.svg" width="30%" />
+	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k6.svg" width="25%" />
+	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" width="30%" />
 </div>
 
 <p class="figure">Complete graphs \(K _5\), \(K _6\) and \(K _7\)</p>
 
 <p>A <strong>Hamiltonian cycle</strong> of a graph is a cycle that pass all vertices exactly once without walking repeated edges. For example, the orange cycle <script type="math/tex">C _7</script> (a cycle with 7 vertices) is a Hamiltonian cycle in <script type="math/tex">K _7</script>.</p>
 
-<div class="emerge" style="opacity:0; position:absolute; margin-left:250px">
-	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-c7.svg" width="300px" />
-</div>
-
-<div class="disappear" style="text-align:center">
-	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" width="300px" />
+<div id="fig2" style="text-align:center">
+	<img class="emerge" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-c7.svg" width="40%" /><img class="disappear" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" width="40%" />
 </div>
 
 <p class="figure">A Hamiltonian Cycle \(C _7\) in \(K _7\)</p>
@@ -75,28 +71,18 @@
 
 <h2 id="decomposition-of-k_n-into-c_ns">Decomposition of <script type="math/tex">K_n</script> into <script type="math/tex">C_n</script>’s</h2>
 
-<div style="margin-left:250px">
-	<div class="mvright" style="position:absolute">
-		<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig3.svg" width="300px" />
-	</div>
-	
-	<div style="position:absolute">
-		<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig2.svg" width="300px" />
-	</div>
-	
-	<div class="mvleft">
-		<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig1.svg" width="300px" />
-	</div>
-</div>
-
-<p class="figure">Decompose \(K _7\) into \(3C _7\)</p>
-
 <p>For what <script type="math/tex">n</script> can we decompose <script type="math/tex">K_n</script> into <script type="math/tex">mC_n</script>? First, let’s check number of edges. If <script type="math/tex">K _n</script> can be decomposed, then the number of edges of <script type="math/tex">K _n</script> must be a multiple of number of edges in <script type="math/tex">C _n</script>, which has <script type="math/tex">n</script> edges. A complete graph <script type="math/tex">K _n</script> has <script type="math/tex">\left(
 \begin{array}{c}
 n\\
 2
 \end{array}
 \right) = \displaystyle{\frac{n(n-1)}{2}}</script> edges. It is a multiple of <script type="math/tex">n</script> if and only if <script type="math/tex">\displaystyle{\frac{n-1}{2}}</script> is an integer, i.e. <script type="math/tex">n</script> must be odd.</p>
+
+<div id="fig3" style="text-align:center">
+	<img class="mvleft" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig1.svg" width="30%" /><img class="mvmiddle" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig2.svg" width="30%" /><img class="mvright" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig3.svg" width="30%" />
+</div>
+
+<p class="figure">Decompose \(K _7\) into \(3C _7\)</p>
 
 <p>Therefore, <script type="math/tex">K _{2n}</script> can never be decomposed into <script type="math/tex">m C _{2n}</script>, but it is possible for <script type="math/tex">K _{2n + 1}</script> to be decomposed into <script type="math/tex">n</script> <script type="math/tex">C _{2n+1}</script>’s for <script type="math/tex">n \geq 1</script>. <script type="math/tex">K _3 = C _3</script> is trivial, <script type="math/tex">K _5 = 2 C _5</script> because it can be decomposed into a pentagon and a star. <script type="math/tex">K _7</script> can be decomposed as the animation above. How about general <script type="math/tex">K _{2n + 1}</script>?</p>
 
@@ -114,29 +100,71 @@ V = \mathbb{Z} _{2n + 1} = \left\lbrace 1, w, w ^2, \dots, w ^{2n} \right\rbrace
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-<script>				
-$(window).scroll(function() {
-			var displacement1 = Math.min(Math.max(($(window).scrollTop() - 200) * 1.5, 0), 300);
-			
-			var displacement2 = Math.min(Math.max(($(window).scrollTop() - 700) * 1.5, 0), 300);
-			  $(".emerge").css({
-				"opacity": "" + displacement1 / 300
-			  });
-			  $(".disappear").css({
-				"opacity": "" + 1 - displacement1 / 350
-			  });
-			  $(".mvright").css({
-				"margin-left": displacement2 + "px"
-			  });
-			  $(".mvleft").css({
-				"margin-left": - displacement2 + "px"
-			  });
-			});
+<script>
+	$(".emerge").css({
+		"opacity": 0, 
+		"position": "relative",
+		"left": 20 + "%"
+	});
+	$(".disappear").css({
+		"position": "relative",
+		"left": -20 + "%"
+	});
+	$(".mvleft").css({
+		"position": "relative",
+		"left": -30 + "%"
+	});
+	$(".mvmiddle").css({
+		"position": "relative",
+	});
+	$(".mvright").css({
+		"position": "relative",
+		"left": 30 + "%"
+	});
+	$(window).scroll(function() {
+		var displacement1 = Math.min(Math.max(($(window).scrollTop() - document.getElementById('fig2').offsetTop + $(window).height() / 2) * 1.5, 0), 300);
+		var displacement2 = Math.min(Math.max(($(window).scrollTop() - document.getElementById('fig3').offsetTop + $(window).height() / 2) * 1.5, 0), 300) / 9;
+		$(".emerge").css({
+			"opacity": "" + displacement1 / 300
+		});
+		$(".disappear").css({
+			"opacity": "" + 1 - displacement1 / 350
+		});
+		$(".mvleft").css({
+			"left": 30 - displacement2 + "%"
+		});
+		$(".mvright").css({
+			"left": -30 + displacement2 + "%"
+		});
+	});
 </script>
 
 
 </div>
 
+
+  <div id="disqus_thread"></div>
+  <script>
+
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://jcyang.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 		</div><!-- /.container -->
 		
