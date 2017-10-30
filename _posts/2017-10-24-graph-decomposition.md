@@ -58,6 +58,92 @@ For convenience, we call edge connecting $$w ^k$$ and $$w ^{k + p}$$ an **edge o
 
 Up to now, we can decompose any complete graph with odd prime number of vertices into Hamiltonian cycles. How about odd composite number of vertices? It is more tricky to think about, but there is actually a universal way to deal with any complete graph with odd number of vertices.
 
+**Proposition (Walecki)** There exist a Hamiltonian cycle decomposition of $$K _{2n + 1}$$ when $$n \in \mathbb{N}^*$$.
+
+*Proof*  Label the points as $$\{0, 1, w, w^2, \dots, w^{2n - 1} \}$$ where $$w = e^{\frac{2\pi i}{2n}}$$. Then 
+
+$$
+\begin{align*}
+C^0 := 0 \rightarrow 1 \rightarrow w \rightarrow w^{-1} \rightarrow w ^2 \rightarrow w ^{-2} \rightarrow \dots \rightarrow w ^{n - 1} \rightarrow w ^{-n + 1} \rightarrow -1 \rightarrow 0
+\end{align*}
+$$ 
+
+is a Hamiltonian cycle. $$C^k := w^k C ^0$$ (element-wise multiplication) is also a Hamiltonian cycle, since it is just a rotation of $$C ^0$$. The quotient of consecutive endpoints in each cycle are $$\{\infty, w, w^{-2}, w^3, w^{-4}, \dots, w^{-(2n-2)}, w^{2n-1}, 0\}$$, which are all different. Therefore, if considering dirction of edges, then $$\{C ^k, k = 0, 1, \dots, 2n-1 \}$$ are $$2n$$ pairwise disjoint directed Hamiltonian cycles. But $$C ^k$$ and $$C ^{k + n}$$ are exactly the same graph with opposite directioning. Therefore, $$\{C ^k, k = 0, 1, \dots, n - 1 \}$$ are $$n$$ pairwise disjoint (nondirected) Hamiltonian cycles.
+
+Graphically, it can be seen as the following.
+
+<div id="fig4" style="text-align:center">
+	<img class="mvll" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/w9-0.svg" width="25%"><img class="mvl" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/w9-2.svg" width="25%"><img class="mvr" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/w9-1.svg" width="25%"><img class="mvrr" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/w9-3.svg" width="25%">
+</div>
+
+<p class="figure">Walecki Decomposition of \(K _9\) into \(4C_3\)</p>
+
+# Subgraph with Edges of Two Lengths
+
+We known that all the edges of length $$k$$ forms a Hamiltonian cycle in $$K_n$$ iff $$(k, n)=1$$. Moreover, if $$(k, n)=d$$, then edges of length $$k$$ forms $$d$$ cycles $$C_{n/d}$$. The main question is the following.
+
+>Can we divide the subgraph of $$K _n$$, which is consisted by edges of length $$k$$ and length $$l$$, into two Hamiltonian cycles?
+
+For convenience, we denote the subgraph of $$K _n$$ consisted by edges of length $$k$$ and length $$l$$ by $$K _n ^{k, l}$$. The following is an example of $$K _9 ^{1, 3}$$, with blue 1-edges and orange 3-edges.
+
+<div class="boxl">
+
+<div id="fig5" style="text-align:center">
+	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3.svg" width="40%">
+</div>
+
+<p class="figure">Graph \(K _9 ^{1, 3}\)</p>
+
+</div>
+
+<div class="boxr">
+<div id="fig6" style="text-align:center">
+	<img class="mvlll" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3-1.svg" width="40%"><img class="mvrrr" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3-2.svg" width="40%">
+</div>
+
+<p class="figure">\(K _9 ^{1, 3} = 2C _9 \)</p>
+
+</div>
+
+Why we are interested in $$K _9 ^{1, 3}$$? We know that $$K _9 ^1$$, $$K _9 ^2$$, $$K _9 ^4$$ are Hamiltonian cycles, but $$K _9 ^3$$ is not. However, since $$K _9 ^{1, 3}$$ can be decomposed into 2 Hamiltonian cycles, we can still break $$K _9$$ into four Hamiltonian cycles.
+
+It is not clear to me what kind of $$K _n ^{k, l}$$ can be broken into two Hamiltonian cycles. Never the less, there are some simple observations.
+
+**Proposition 1** If $$(n, k) = (n, l) = 1$$, then $$K _n ^{k, l}$$ can be broken into two Hamiltonian cycles.
+
+*Proof* $$K _n ^{k}$$ and $$K _n ^{l}$$ are both Hamiltonian cycles, so.
+
+**Proposition 2** If $$(n, k, l) > 1$$, then $$K _n ^{k, l}$$ cannot be broken into two Hamiltonian cycles.
+
+*Proof* If $$d = (n, k, l) > 1$$, then $$w ^m$$ can only be in the same cycle with $$w ^{m + dp}$$. $$w ^{m + 1}$$, for instance, cannot be reached via any path.
+
+**Proposition 3** If $$K _n ^{k, l}$$ is breakable, then $$K _n ^{mk, ml}$$ is breakable, where $$m$$ is relatively prime to $$n$$.
+
+*Proof* $$w \mapsto w^m$$ is a bijection.
+
+I barely know anything more than these.
+
+It should be noted that even though most cases I constructed are symmetric, there are still non-symmetric cases, for example $$K _{12} ^{1,4}$$.
+
+<div class="boxl">
+
+<div id="fig5" style="text-align:center">
+	<img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4.svg" width="40%">
+</div>
+
+<p class="figure">Graph \(K _{12} ^{1, 4}\)</p>
+
+</div>
+
+<div class="boxr">
+<div id="fig7" style="text-align:center">
+	<img class="mvllll" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4-1.svg" width="40%"><img class="mvrrrr" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4-2.svg" width="40%">
+</div>
+
+<p class="figure">\(K _{12} ^{1, 4} = 2C _{12} \)</p>
+
+</div>
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script>
@@ -81,9 +167,49 @@ Up to now, we can decompose any complete graph with odd prime number of vertices
 		"position": "relative",
 		"left": 30 + "%"
 	});
+	$(".mvll").css({
+		"position": "relative",
+		"left": -37.5 + "%"
+	});
+	$(".mvl").css({
+		"position": "relative",
+		"left": -12.5 + "%"
+	});
+	$(".mvr").css({
+		"position": "relative",
+		"left": 12.5 + "%"
+	});
+	$(".mvrr").css({
+		"position": "relative",
+		"left": 37.5 + "%"
+	});
+	$(".mvlll").css({
+		"position": "relative",
+		"left": -20 + "%"
+	});
+	$(".mvrrr").css({
+		"position": "relative",
+		"left": 20 + "%"
+	});
+	$(".mvllll").css({
+		"position": "relative",
+		"left": -20 + "%"
+	});
+	$(".mvrrrr").css({
+		"position": "relative",
+		"left": 20 + "%"
+	});
+	$(".boxl").css({
+		"width": "50%",
+		"float": "left"
+	});
+	$(".boxr").css({
+		"width": "50%",
+		"float": "left"
+	});
 	$(window).scroll(function() {
 		var displacement1 = Math.min(Math.max(($(window).scrollTop() - document.getElementById('fig2').offsetTop + $(window).height() / 2) * 1.5, 0), 300);
-		var displacement2 = Math.min(Math.max(($(window).scrollTop() - document.getElementById('fig3').offsetTop + $(window).height() / 2) * 1.5, 0), 300) / 9;
+		var displacement2 = Math.min(Math.max(($(window).scrollTop() - document.getElementById('fig3').offsetTop + $(window).height() / 2) * 1.5, 0), 300) / 9;		var displacement3 = Math.min(Math.max(($(window).scrollTop() - document.getElementById('fig4').offsetTop + $(window).height() / 2) * 1.5, 0), 300) / 7.5;		var displacement4 = Math.min(Math.max(($(window).scrollTop() - document.getElementById('fig6').offsetTop + $(window).height() / 2) * 1.5, 0), 300) / 12;		var displacement5 = Math.min(Math.max(($(window).scrollTop() - document.getElementById('fig7').offsetTop + $(window).height() / 2) * 1.5, 0), 300) / 12;
 		$(".emerge").css({
 			"opacity": "" + displacement1 / 300
 		});
@@ -95,6 +221,30 @@ Up to now, we can decompose any complete graph with odd prime number of vertices
 		});
 		$(".mvright").css({
 			"left": -30 + displacement2 + "%"
+		});
+		$(".mvll").css({
+			"left": 37.5 - displacement3 + "%"
+		});
+		$(".mvl").css({
+			"left": 12.5 + displacement3 / 3 + "%"
+		});
+		$(".mvr").css({
+			"left": -12.5 - displacement3 / 3 + "%"
+		});
+		$(".mvrr").css({
+			"left": -37.5 + displacement3 + "%"
+		});
+		$(".mvlll").css({
+			"left": 20 + displacement4 + "%"
+		});
+		$(".mvrrr").css({
+			"left": -20 - displacement4 + "%"
+		});
+		$(".mvllll").css({
+			"left": 20 + displacement5 + "%"
+		});
+		$(".mvrrrr").css({
+			"left": -20 - displacement5 + "%"
 		});
 	});
 </script>
