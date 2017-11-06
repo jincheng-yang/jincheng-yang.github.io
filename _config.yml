@@ -3,5 +3,10 @@ markdown: kramdown
 permalink: /users/jcyang/blog/:year/:month/:day/:title
 disqus: 
   shortname: jcyang
+defaults:
+  - scope:
+      path: "users/jcyang/assets/files/shorthand-scans"
+    values:
+      shorthand-scan: true
 
   
