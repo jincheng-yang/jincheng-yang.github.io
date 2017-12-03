@@ -184,43 +184,35 @@ nav ul li a.icon:hover {
     background-image: url("../assets/images/icon2-s.jpg");
 }
 
-.footer-container {
-    background-color: white;
-    vertical-align: center;
-    min-height: 4em;
-}
-
-.footer {
-    padding: 0 5% 0 5%;
-	max-width: 50em;
-    margin: 0 auto 0 auto;
-    height: 4em;
-    text-align: center;
-}
-
-.helper {
+.vertical-center::before {
+    content: "";
     display: inline-block;
     height: 100%;
     vertical-align: middle;
 }
 
-.footer .float-left {
+#footer {
+    height: 4em;
+    text-align: center;
+}
+
+#float-left {
     float: left;
     height: 100%;
 }
 
-.footer .float-right {
+#float-right {
     float: right;
     height: 100%;
 }
 
-.float-left a img {
+#logo {
     display: inline-block;
     vertical-align: middle;
     width: 8em;
 }
 
-.float-right ul {
+#float-right ul {
     display: inline-block;
     vertical-align: middle;
     font-size: 0.6em;
@@ -228,14 +220,14 @@ nav ul li a.icon:hover {
     padding: 0;
 }
 
-.float-right ul li {
+#float-right ul li {
     display: inline-block;
     vertical-align: middle;
     list-style: none;
     margin-left: 0.8em;
 }
 
-.footer p.copyright {
+#footer p.copyright {
     display: inline-block;
     vertical-align: middle;
     font-size: 0.6em;
@@ -281,5 +273,11 @@ ul.posts li {
 }
 
 .vertical-expand {
+    padding-top: 2em;
+    padding-bottom: 2em;
     min-height: 25em;
+}
+
+.footer-container {
+    background-color: white;
 }
