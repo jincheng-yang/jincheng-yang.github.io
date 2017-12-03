@@ -6,6 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="/users/jcyang/css/main.css">
+		<!-- link to fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Roboto:300|Roboto+Condensed:300" rel="stylesheet">
 		<!-- JavaScrips -->
 		<script type="text/javascript" src="/users/jcyang/plugin/drag-and-drop.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML"></script>
@@ -18,7 +20,14 @@
 			gtag('config', 'UA-108717380-1');
 		</script>
 	</head>
+
 	<body>
+		
+		<div class="main-title">
+			<p class="name">Jincheng Yang</p>
+			<p class="institute">The University of Texas at Austin</p>
+		</div>
+
 		<nav>
 			<ul>
 				<li><a class = "pagelist" href="/users/jcyang/about" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav0">About</a></li>
@@ -42,33 +51,46 @@
 			</ul>
 		</nav>
 		
-		<div class="container">
-			<h1 id="welcome-to-jinchengs-homepage">Welcome to Jincheng’s Homepage!</h1>
+		<div class="vertical-expand">
+	<div class="container">
+		<h2 id="welcome-to-jinchengs-homepage">Welcome to Jincheng’s Homepage!</h2>
 
-<h2 id="introduction">Introduction</h2>
+<h3 id="introduction">Introduction</h3>
 
 <p>Hi, I am a graduate student from The University of Texas at Austin. I major in Mathematics, and I am interested in differential equations. Besides, I also love programming and piano performance.</p>
 
-<h2 id="research-interest">Research Interest</h2>
+<h3 id="research-interest">Research Interest</h3>
 <p>Analysis, Partial Differential Equations, Fluid Mechanics. Visualized Computer Programming.</p>
 
 <p>I am currently working on the linear inviscid damping for Couette flow in a stratified fluid.</p>
 
-<h2 id="curriculum-vitae">Curriculum Vitae</h2>
+<h3 id="curriculum-vitae">Curriculum Vitae</h3>
 
 <p>Click <a href="/users/jcyang/assets/files/cv.pdf">here</a> to see my CV.</p>
 
-		</div><!-- /.container -->
+	</div><!-- /.container -->
+</div>	
 		
 		<footer>
-			<hr>
-			<ul>
-				<li class="copyright">Copyright &#169 2017 Jincheng Yang</li>
-				<li><a href="mailto:jcyang@math.utexas.edu">Email</a></li>
-				<li><a href="https://github.com/teddyyjc">GitHub</a></li>
-				<li><a href="https://www.linkedin.com/in/jincheng-yang/">LinkedIn</a></li>
-				<li><a href="https://www.ma.utexas.edu/" style="color:#BF5700">UT Math</a></li>
-			</ul>
+			<div class="footer-container">
+				<div class="footer">
+					<div class="float-left">
+						<span class="helper"></span>
+						<a href="https://www.utexas.edu"><img src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a>
+					</div>
+					<span class="helper"></span>
+					<p class="copyright">Copyright &#169 2017 Jincheng Yang</p>
+					<div class="float-right">
+						<span class="helper"></span>
+						<ul>
+							<li id="utmath"><a href="https://www.ma.utexas.edu/">UT Math</a></li>
+							<li><a href="https://www.linkedin.com/in/jincheng-yang/">LinkedIn</a></li>
+							<li><a href="https://github.com/teddyyjc">GitHub</a></li>
+							<li><a href="mailto:jcyang@math.utexas.edu">Email</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</footer>
 	</body>
 </html>

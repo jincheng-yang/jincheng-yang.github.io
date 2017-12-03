@@ -3,7 +3,7 @@ layout: default
 title: Jincheng's Website | Flowers
 ---
 
-# Flowers
+## Flowers
 	
 
 <script type="text/javascript" src="/users/jcyang/plugin/processing.min.js"></script>

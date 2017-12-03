@@ -3,7 +3,7 @@ layout: default
 title: Jincheng's Website | Blog
 ---
 
-# Jincheng's Blog
+# My Research Blog
 
 <ul class="posts">
 {% for post in site.posts %}

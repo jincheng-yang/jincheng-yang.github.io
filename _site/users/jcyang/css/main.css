@@ -1,9 +1,12 @@
 body {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    font-weight: lighter;
-    margin: 2em auto;
-    background-color: #F7F7F7;
-    color: #333;
+    font-family: 'Roboto', 'Helvetica', 'Arial', 'Sans-Serif';
+    margin: 0 auto;
+    background-color: #DDD;
+    color: #333;    
+    background-image: url("https://static.wixstatic.com/media/e99b4e_2c9a153bef0445d3bfb520bac8ad96ed.png/v1/fill/w_1920,h_1080,al_c/e99b4e_2c9a153bef0445d3bfb520bac8ad96ed.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 a {
@@ -17,18 +20,31 @@ a:hover {
 }
 
 h1 {
-    font-size: 1.8em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5em;
 	font-weight: normal;
     color: #333;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5em;
 	font-weight: normal;
-    color: #444;
+    color: #333;
 }
 
 h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: italic;
+    font-size: 1.5em;
+	font-weight: lighter;
+    color: #749696;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    padding-bottom: 0.3em;
+}
+
+h4 {
     font-size: 1.2em;
 	font-weight: 400;
     color: #444;
@@ -38,6 +54,45 @@ p {
     font-size: 1.0em;
     line-height: 1.5em;
     color: #555;
+    text-align: justify;
+}
+
+blockquote {
+    border-left: solid 0.2em #888;
+    padding-left: 1em;
+}
+
+.main-title {
+	margin: 0em;
+	padding: auto;
+	height: 20em;
+	background-image: url("../assets/images/head.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #898989;
+}
+
+p.name {
+    margin: 0px;
+    padding-top: 1.5em;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    color: aliceblue;
+    text-align: center;
+	font-size: 4em;
+    letter-spacing: 0.16em;
+}
+
+p.institute {
+    margin: 0px;
+    padding: 0.2em;
+    color: aliceblue;
+    text-align: center;
+    font-size: 1.0em;
+    letter-spacing: 0.16em;
+    font-family: 'Cinzel', serif;
 }
 
 .figure {
@@ -61,11 +116,12 @@ p {
 .container {
     padding: 0% 5% 0% 5%;
 	max-width: 50em;
-	margin: 0 auto;
+    margin: 0 auto;
 }
 
 nav ul {
-	padding: 0px;
+    padding: 0px;
+    margin: 0px auto;
     text-align: center;
     vertical-align: middle;
     border-top: 2px solid #d5d5d5;
@@ -77,6 +133,8 @@ nav ul li {
     display: inline-block;
     position: relative;
     margin: 0.3em 0.6em;
+    margin-left: 4%;
+    margin-right: 4%;
 }
 
 nav ul li a {
@@ -126,34 +184,71 @@ nav ul li a.icon:hover {
     background-image: url("../assets/images/icon2-s.jpg");
 }
 
-footer {
-    padding: 0.4em 5% 0% 5%;
+.footer-container {
+    background-color: white;
+    vertical-align: center;
+    min-height: 4em;
+}
+
+.footer {
+    padding: 0 5% 0 5%;
 	max-width: 50em;
-	margin: 0 auto;
+    margin: 0 auto 0 auto;
+    height: 4em;
+    text-align: center;
 }
 
-footer ul {
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.footer .float-left {
+    float: left;
+    height: 100%;
+}
+
+.footer .float-right {
+    float: right;
+    height: 100%;
+}
+
+.float-left a img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 8em;
+}
+
+.float-right ul {
+    display: inline-block;
+    vertical-align: middle;
     font-size: 0.6em;
-	padding: 0em;
+    margin: 0;
+    padding: 0;
 }
 
-footer hr {
-    border-width: 1pt;
-    border-color: #F7F7F7;
-}
-
-footer ul li {
+.float-right ul li {
+    display: inline-block;
+    vertical-align: middle;
     list-style: none;
-	float: right;
-}
-
-footer ul li a {
     margin-left: 0.8em;
 }
 
-footer ul li.copyright {
-	color: #BBB;
-    float: left;
+.footer p.copyright {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.6em;
+    margin: 0;
+    color: #BBB;
+}
+
+#utmath {
+    margin-left: 0;
+}
+
+#utmath a {
+    color: #BF5700; 
 }
 
 ul.posts {
@@ -161,5 +256,30 @@ ul.posts {
 }
 
 ul.posts li {
-    list-style: none;
+    list-style: square;
+}
+
+.post {
+    background: white;
+    padding: 2em;
+    border: solid;
+    border-width: 1px;
+    border-color: #DDD;
+    box-shadow: 0em 0em 0.3em 0em #BBB;
+    margin: 2em 0em 2em 0em;
+}
+
+.transparent {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.eggshell {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background: antiquewhite;
+}
+
+.vertical-expand {
+    min-height: 25em;
 }

@@ -3,7 +3,7 @@ layout: default
 title: M408K Differential Calculus
 ---
 
-# {{ page.title }}
+## {{ page.title }}
  
 Syllabus: Click [53835](https://www.ma.utexas.edu/users/pmorales/syllabus/syllabus.php?unique=53835) or [53840](https://www.ma.utexas.edu/users/pmorales/syllabus/syllabus.php?unique=53840).
 
