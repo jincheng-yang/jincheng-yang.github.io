@@ -6,6 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="/users/jcyang/css/main.css">
+		<!-- link to fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Roboto:300|Roboto+Condensed:300" rel="stylesheet">
 		<!-- JavaScrips -->
 		<script type="text/javascript" src="/users/jcyang/plugin/drag-and-drop.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML"></script>
@@ -18,14 +20,21 @@
 			gtag('config', 'UA-108717380-1');
 		</script>
 	</head>
+
 	<body>
+		
+		<div class="main-title">
+			<p class="name">Jincheng Yang</p>
+			<p class="institute">The University of Texas at Austin</p>
+		</div>
+
 		<nav>
 			<ul>
-				<li><a class = "pagelist" href="/users/jcyang/about" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav0">About</a></li>
-				<li><a class = "pagelist" href="/users/jcyang/assets/files/cv.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav1">CV</a></li>
+				<li><a class = "pagelist" href="/users/jcyang/publication" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav0">Publication</a></li>
+				<li><a class = "pagelist" href="/users/jcyang/assets/files/cv.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav1">Curriculum Vitae</a></li>
 				<li><a class = "icon" href="/users/jcyang" draggable="true" ondragstart="drag(event)"></a></li>
-				<li><a class = "pagelist" href="/users/jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav2">Teach</a></li>
-				<li><a class = "pagelist" href="/users/jcyang/blog" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav3">Blog</a></li>
+				<li><a class = "pagelist" href="/users/jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav2">Teaching</a></li>
+				<li><a class = "pagelist" href="/users/jcyang/blog" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav3">Research Blog</a></li>
 				<!--
 				<li><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)">Miscellaneous &#9662;</a>
 					<ul class="dropdown">
@@ -34,7 +43,6 @@
 						<li><a href="#">Rock Music</a></li>
 						<li><a href="#">Shorthand</a></li>
 						<li><a href="#">Calligraphy</a></li>
-						<li><a href="#">Programming</a></li>
 						<li><a href="#">Travel</a></li>
 					</ul>
 				</li>
@@ -42,12 +50,16 @@
 			</ul>
 		</nav>
 		
-		<div class="container">
-			<h1>Graph Decomposition</h1>
-<p class="meta">24 Oct 2017</p>
+		<div class="vertical-expand">
+	<div class="container">
+		<h1>Research Blog</h1>
 
 <div class="post">
-  <h2 id="introduction">Introduction</h2>
+
+<h2>Graph Decomposition</h2>
+<p class="meta">2017, October 24</p>
+
+  <h3 id="introduction">Introduction</h3>
 
 <p>A graph <script type="math/tex">(V, E)</script> contains a vertex set <script type="math/tex">V</script> connected by a set of edges <script type="math/tex">E \subset V \times V</script>. The <strong>complete graph</strong> <script type="math/tex">K _n</script> has <script type="math/tex">n</script> vertices, and each pair is connected by an edge. The followings are examples of complete graphs.</p>
 
@@ -69,7 +81,7 @@
 
 <p>Can we decompose a complete graph into Hamiltonian cycles? This is a classical problem in the field of graph decomposition. More specifically, we want to know if we can write the edge set <script type="math/tex">E</script> as a union of cycles, each passes all the vertices.</p>
 
-<h2 id="decomposition-of-k_n-into-c_ns">Decomposition of <script type="math/tex">K_n</script> into <script type="math/tex">C_n</script>’s</h2>
+<h3 id="decomposition-of-k_n-into-c_ns">Decomposition of <script type="math/tex">K_n</script> into <script type="math/tex">C_n</script>’s</h3>
 
 <p>For what <script type="math/tex">n</script> can we decompose <script type="math/tex">K_n</script> into <script type="math/tex">mC_n</script>? First, let’s check number of edges. If <script type="math/tex">K _n</script> can be decomposed, then the number of edges of <script type="math/tex">K _n</script> must be a multiple of number of edges in <script type="math/tex">C _n</script>, which has <script type="math/tex">n</script> edges. A complete graph <script type="math/tex">K _n</script> has <script type="math/tex">\left(
 \begin{array}{c}
@@ -116,7 +128,7 @@ C^0 := 0 \rightarrow 1 \rightarrow w \rightarrow w^{-1} \rightarrow w ^2 \righta
 
 <p class="figure">Walecki Decomposition of \(K _9\) into \(4C_3\)</p>
 
-<h1 id="subgraph-with-edges-of-two-lengths">Subgraph with Edges of Two Lengths</h1>
+<h3 id="subgraph-with-edges-of-two-lengths">Subgraph with Edges of Two Lengths</h3>
 
 <p>We known that all the edges of length <script type="math/tex">k</script> forms a Hamiltonian cycle in <script type="math/tex">K_n</script> iff <script type="math/tex">(k, n)=1</script>. Moreover, if <script type="math/tex">(k, n)=d</script>, then edges of length <script type="math/tex">k</script> forms <script type="math/tex">d</script> cycles <script type="math/tex">C_{n/d}</script>. The main question is the following.</p>
 
@@ -290,43 +302,89 @@ C^0 := 0 \rightarrow 1 \rightarrow w \rightarrow w^{-1} \rightarrow w ^2 \righta
 </script>
 
 
+
+  
+    <div id="disqus_thread"></div>
+    <script>
+
+      /**
+      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      
+      var disqus_config = function () {
+        this.page.url = page.url;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = page.id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+
+      (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://jcyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+  
+  <h3>Recent <a href="/users/jcyang/blog/" style="color:#749696">Posts</a></h3>
+    
+    
+    
+    
+    <div class="thumb">
+      
+    
+    <a href="/users/jcyang/blog/2017/10/24/graph-decomposition" title="Graph Decomposition">
+    <div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/graph-decomposition.png')"></div>
+    </a>
+    <h5>24 Oct 2017</h5>
+    <a href="/users/jcyang/blog/2017/10/24/graph-decomposition" title="Graph Decomposition">
+      <h4>Graph Decomposition</h4>
+    </a>
+    </div><div class="thumb" style="margin-left:5%">
+    
+    <a href="/users/jcyang/blog/2016/03/22/flower" title="Flower">
+    <div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/flower.gif')"></div>
+    </a>
+    <h5>22 Mar 2016</h5>
+    <a href="/users/jcyang/blog/2016/03/22/flower" title="Flower">
+      <h4>Flower</h4>
+    </a>
+    </div><div class="thumb" style="margin-left:5%">
+    
+    <a href="/users/jcyang/blog/2014/08/25/mandelbrot" title="Mandelbrot Set">
+    <div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/mandelbrot.gif')"></div>
+    </a>
+    <h5>25 Aug 2014</h5>
+    <a href="/users/jcyang/blog/2014/08/25/mandelbrot" title="Mandelbrot Set">
+      <h4>Mandelbrot Set</h4>
+    </a>
+    </div>
+
 </div>
-
-
-  <div id="disqus_thread"></div>
-  <script>
-
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-
-    (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
-      s.src = 'https://jcyang.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-		</div><!-- /.container -->
+	</div><!-- /.container -->
+</div>	
 		
 		<footer>
-			<hr>
-			<ul>
-				<li class="copyright">Copyright &#169 2017 Jincheng Yang</li>
-				<li><a href="mailto:jcyang@math.utexas.edu">Email</a></li>
-				<li><a href="https://github.com/teddyyjc">GitHub</a></li>
-				<li><a href="https://www.linkedin.com/in/jincheng-yang/">LinkedIn</a></li>
-				<li><a href="https://www.ma.utexas.edu/" style="color:#BF5700">UT Math</a></li>
-			</ul>
+			<div class="footer-container">
+				<div class="container">
+					<div id="footer" class="vertical-center">
+						<div id="float-left" class="vertical-center">
+							<a href="https://www.utexas.edu"><img id="logo" src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a>
+						</div>
+						<p class="copyright">Copyright &#169 2018 Jincheng Yang</p>
+						<div id="float-right" class="vertical-center">
+							<ul>
+								<li id="utmath"><a href="https://www.ma.utexas.edu/">UT Math</a></li>
+								<li><a href="https://www.linkedin.com/in/jincheng-yang/">LinkedIn</a></li>
+								<li><a href="https://github.com/teddyyjc">GitHub</a></li>
+								<li><a href="mailto:jcyang@math.utexas.edu">Email</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 		</footer>
 	</body>
 </html>

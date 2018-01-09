@@ -1,10 +1,9 @@
 ---
-layout: default
+layout: general
 title: M408K Differential Calculus
+outer-class: Teaching Assistant
 ---
 
-# {{ page.title }}
- 
 Syllabus: Click [53835](https://www.ma.utexas.edu/users/pmorales/syllabus/syllabus.php?unique=53835) or [53840](https://www.ma.utexas.edu/users/pmorales/syllabus/syllabus.php?unique=53840).
 
 - Regular Class: TTh 3:30-5:00 pm @ PHR 2.110
@@ -14,4 +13,4 @@ Syllabus: Click [53835](https://www.ma.utexas.edu/users/pmorales/syllabus/syllab
 - Dr. He's Office Hour: TTh 12:30 pm @ RLM 13.140
 - My Office Hour: MWF 1:00-2:00 pm @ RLM 11.130
 
-I typed some [note](note-00.pdf) that might be helpful.
+<!--I typed some [note](note-00.pdf) that might be helpful.-->

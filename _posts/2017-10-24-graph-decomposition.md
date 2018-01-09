@@ -3,9 +3,11 @@ layout: post
 title: "Graph Decomposition"
 date: 2017-10-24
 comments: true
+image: true
+thumb: graph-decomposition.png
 ---
 
-## Introduction
+### Introduction
 
 A graph $$(V, E)$$ contains a vertex set $$V$$ connected by a set of edges $$E \subset V \times V$$. The **complete graph** $$K _n$$ has $$n$$ vertices, and each pair is connected by an edge. The followings are examples of complete graphs.
 
@@ -27,7 +29,7 @@ A **Hamiltonian cycle** of a graph is a cycle that pass all vertices exactly onc
 
 Can we decompose a complete graph into Hamiltonian cycles? This is a classical problem in the field of graph decomposition. More specifically, we want to know if we can write the edge set $$E$$ as a union of cycles, each passes all the vertices.
 
-## Decomposition of $$K_n$$ into $$C_n$$'s
+### Decomposition of $$K_n$$ into $$C_n$$'s
 
 For what $$n$$ can we decompose $$K_n$$ into $$mC_n$$? First, let's check number of edges. If $$K _n$$ can be decomposed, then the number of edges of $$K _n$$ must be a multiple of number of edges in $$C _n$$, which has $$n$$ edges. A complete graph $$K _n$$ has $$\left(
 \begin{array}{c}
@@ -78,11 +80,11 @@ Graphically, it can be seen as the following.
 
 <p class="figure">Walecki Decomposition of \(K _9\) into \(4C_3\)</p>
 
-# Subgraph with Edges of Two Lengths
+### Subgraph with Edges of Two Lengths
 
 We known that all the edges of length $$k$$ forms a Hamiltonian cycle in $$K_n$$ iff $$(k, n)=1$$. Moreover, if $$(k, n)=d$$, then edges of length $$k$$ forms $$d$$ cycles $$C_{n/d}$$. The main question is the following.
 
->Can we divide the subgraph of $$K _n$$, which is consisted by edges of length $$k$$ and length $$l$$, into two Hamiltonian cycles?
+> Can we divide the subgraph of $$K _n$$, which is consisted by edges of length $$k$$ and length $$l$$, into two Hamiltonian cycles?
 
 For convenience, we denote the subgraph of $$K _n$$ consisted by edges of length $$k$$ and length $$l$$ by $$K _n ^{k, l}$$. The following is an example of $$K _9 ^{1, 3}$$, with blue 1-edges and orange 3-edges.
 
