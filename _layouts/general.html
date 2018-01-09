@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<h1> {{ page.outer-class }} </h1>
+
+<div class="post">
+
+<h3>{{ page.title }}</h3>
+<p class="meta">{{ page.date | date: "%Y, %B %d" }}</p>
+
+  {{ content }}
+
+</div>

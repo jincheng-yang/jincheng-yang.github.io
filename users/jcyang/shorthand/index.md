@@ -3,7 +3,7 @@ layout: default
 title: Jincheng's Website | Shorthand
 ---
 
-## Learning List
+# Learning List
 
 - [Online Template](/users/jcyang/assets/files/Gregg-ruled_shorthand_paper.pdf).
 - [My modified version](/users/jcyang/assets/files/Gregg-ruled-edited.pdf).

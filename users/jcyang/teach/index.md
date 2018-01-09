@@ -3,7 +3,9 @@ layout: default
 title: Jincheng's Website | Teaching
 ---
 
-## Teaching Assistant
+# Teaching Assistant
+
+<div class="post" markdown="1">
 
 #### Xi'an Jiaotong University
 
@@ -12,3 +14,5 @@ title: Jincheng's Website | Teaching
 #### The University of Texas at Austin
 
 - 2017 Fall: M408K [Differential Calculus](2017/m408k)
+
+</div>

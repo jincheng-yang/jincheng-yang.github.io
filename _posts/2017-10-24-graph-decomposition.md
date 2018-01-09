@@ -3,6 +3,8 @@ layout: post
 title: "Graph Decomposition"
 date: 2017-10-24
 comments: true
+image: true
+thumb: graph-decomposition.png
 ---
 
 ### Introduction
