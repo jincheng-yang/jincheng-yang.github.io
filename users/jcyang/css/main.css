@@ -277,7 +277,7 @@ ul.posts {
 .gallery {
     padding-top: 2em;
     padding-bottom: 2em;
-    background-image: url("../assets/images/gallary.jpg");
+    background-image: url("../assets/images/background.jpg");
     color: white;
 }
 
@@ -305,10 +305,6 @@ ul.posts {
     filter: alpha(Opacity=50);
     -moz-opacity: 0.5;
     opacity: 0.5;
-}
-
-.gallery h3 {
-    color: white;
 }
 
 .thumbpic {
