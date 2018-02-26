@@ -18,7 +18,15 @@ $$
 
 converges in the complex plane. The black section in the picture is the Mandelbrot set.
 
-![](/users/jcyang/assets/images/mandelbrot.gif){:width="100%"}
+<script type="text/javascript" src="/users/jcyang/plugin/processing.min.js"></script>
+<canvas data-processing-sources="/users/jcyang/assets/files/Mandelbrot.pde"></canvas>
+
+Left click to zoom in, right click to zoom out.
+
+<!--
+---
+
+![](/users/jcyang/assets/images/mandelbrot.gif){:width="100%"}-->
 
 ---
 
