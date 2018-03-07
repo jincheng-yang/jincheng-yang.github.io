@@ -634,7 +634,7 @@ void readStuff() {
     ntal.add(new TAItem(y, m, d, p));
   }
   
-  for (int i = 0; i < 8; i++) {
+  for (int i = 0; i < 10; i++) {
     int y = int(lines[j++]);
     int m = int(lines[j++]);
     int d = int(lines[j++]);
