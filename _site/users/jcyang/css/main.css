@@ -334,3 +334,8 @@ ul.posts {
 li {
     list-style: square;
 }
+
+.pde {
+    margin: 2em auto;
+    max-width: 1080px;
+}
