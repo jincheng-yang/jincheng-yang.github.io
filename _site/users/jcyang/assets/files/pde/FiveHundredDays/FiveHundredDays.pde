@@ -34,11 +34,13 @@ static String[] dateSuffixes =
 String dateString;
 int dateCount;
 String tInstitute, cInstitute;
+float act1time;
+float act2time;
+float waitingTime;
 
 boolean parted;
 
 float tx1, tx2, ty1, ty2, cx1, cx2, cy1, cy2;
-int movingStage;
 int cTimeZone;
 int tTimeZone;
 int oldTimeDiff, currentTimeDiff;
@@ -69,7 +71,6 @@ void setup() {
   }
   
   act = 1;
-  movingStage = 0;
   
   dateCount = 0;
     
@@ -121,20 +122,29 @@ void setup() {
   background(255);
   image(worldMap, 0, worldMapPaddingTop);
   updateInfos();
+  
+  act1time = 0.13;
+  act2time = 1.0;
+  waitingTime = 0;
 }
 
 void draw() {  
-  image(worldMap, 0, worldMapPaddingTop); //<>//
+  if (frameCount % 20 == 0 && act < 3) image(worldMap, 0, worldMapPaddingTop); //<>//
   
   if (keyPressed && key == 'K') {
     act = 3;
-    movingStage = 0;
+    waitingTime = 0;
+  }
+
+  if (act < 3) {
+    cDot.erase();
+    tDot.erase();
   }
   
   if (act == 2) {
-    movingStage++;
-    if (movingStage < 60) {
-      float t = movingStage / 60.0;
+    waitingTime += 1 / frameRate;
+    if (waitingTime < act2time) {
+      float t = waitingTime;
       t = (3 - 2 * t) * t * t;
       tDot.x = tx1 * (1 - t) + tx2 * t;
       tDot.y = ty1 * (1 - t) + ty2 * t;
@@ -143,7 +153,7 @@ void draw() {
       currentTimeDiff = round(oldTimeDiff * (1 - t) + t * (tTimeZone - cTimeZone));
     } else {
       act = 1;
-      movingStage = 0;
+      waitingTime = 0;
       tDot.x = tx2;
       tDot.y = ty2;
       cDot.x = cx2;
@@ -154,19 +164,23 @@ void draw() {
   }
   
   if (act == 1) {
-    if (frameCount % 8 == 0) //<>//
+    waitingTime += 1 / frameRate;
+    if (waitingTime > act1time) { //<>//
       updateInfos();
+      waitingTime = 0;
+    }
     for (int i = 0; i < dateCount; i++) {
       bubbles[i].angle += PI / 500 / Bubble.bubbleWidth;
     }
   }
   
   if (act == 3) {
-    fill(255, (movingStage++) * 2);
+    waitingTime += 1 / frameRate;
+    fill(255, waitingTime * 120);
     noStroke();
     rect(0, worldMapPaddingTop, width, height);
-    if (movingStage == 30) {
-      movingStage = 0;
+    if (waitingTime > 2) {
+      waitingTime = 0;
       act = 4;
     }
   }
@@ -178,12 +192,12 @@ void draw() {
   
   if (act == 4) {
     background(255);
-    float t = (movingStage++) / 120.0;
+    waitingTime += 1 / frameRate;
+    float t = waitingTime / 2;
     t = (3 - 2 * t) * t * t ;
-    translate(0, t * (height - worldMapPaddingTop));
-    if (movingStage == 120) {
+      translate(0, t * (height - worldMapPaddingTop));
+    if (waitingTime > 2) 
       act = 5;
-    }
   }
   
   fill(color(255));
@@ -401,7 +415,10 @@ void updateInfos() {
   for (int i = 0; i < dateCount; i++) {
     bubbles[i].angle = 2 * PI * (dateCount - i) / 500;
   }
-  if(++dateCount == 500) act = 3;
+  if(++dateCount == 500) {
+    act = 3;
+    waitingTime = 0;
+  }
 }
 
 color colorAdjust(color c, boolean darken) {
@@ -467,7 +484,7 @@ class Dot {
     ellipse(px, py, 12 + life, 12 + life);
     noStroke();
     
-    life++;
+    life += 60 / frameRate;
     life %= 60;
   }
   
@@ -491,10 +508,21 @@ class Dot {
     ellipse(px, py, 12 + life, 12 + life);
     noStroke();
     
-    life++;
+    life += 60 / frameRate;
     life %= 60;
-    d.life++;
+    d.life += 60 / frameRate;
     d.life %= 60;
+  }
+  
+  void erase() {
+    float px = floor(map(x + 180, -124.32 + 180, 134.78 + 180, 132, 910));
+    float py = floor(map(90 - y, 90 - 9.51, 90 -48.96, 412 - 3.4, 279 - 3.4));
+    
+    for (int i = -125; i <= 125; i++) {
+      for (int j = -50; j <= 50; j++) {
+        set(floor(px) + i, floor(py) + j, worldMap.get(floor(px) + i, floor(py) + j - worldMapPaddingTop));
+      }
+    }
   }
 }
 
@@ -546,8 +574,8 @@ class Bubble {
   }
   
   void show() {
-    tint(255, (life+= 4));
-    if (life == 256) life = 252;
+    tint(255, (life += 4 * 60 / frameRate));
+    if (life > 256) life = 255;
     px = width / 2 - R * sin(angle);
     py = - 300 + worldMapPaddingTop / 2 + R * cos(angle);
     if (photo) {
