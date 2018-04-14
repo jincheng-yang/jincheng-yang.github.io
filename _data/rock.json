@@ -1,0 +1,74 @@
+{
+    "Rock": [
+        {
+            "Title": "\"不可盖章\"蒲公英吉他社冬季摇滚专场",
+            "Date": "2014-11-22",
+            "Repertoire": [
+                {
+                    "Artist": "萧敬腾",
+                    "Title": "王妃"
+                },
+                {
+                    "Artist": "逃跑计划",
+                    "Title": "一万次悲伤"
+                },
+                {
+                    "Artist": "Green Day",
+                    "Title": "Wake Me Up When September Ends"
+                },
+                {
+                    "Artist": "Muse",
+                    "Title": "Supermassive Black Hole"
+                }
+            ]
+        },
+        {
+            "Title": "高压电乐队毕业摇滚专场",
+            "Date": "2015-07-04",
+            "Repertoire": [
+                {
+                    "Artist": "Green Day",
+                    "Title": "Holiday"
+                },
+                {
+                    "Artist": "陈粒",
+                    "Title": "易燃易爆炸"
+                },
+                {
+                    "Artist": "Nirvana",
+                    "Title": "Smell like Teen Spirit"
+                }
+            ]
+        },
+        {
+            "Title": "\"且行且歌\"蒲公英音乐节摇滚专场",
+            "Date": "2017-06-28",
+            "Repertoire": [
+                {
+                    "Artist": "Europe",
+                    "Title": "Final Countdown"
+                },
+                {
+                    "Artist": "The White Stripes",
+                    "Title": "Seven Nation Army"
+                },
+                {
+                    "Artist": "Muse",
+                    "Title": "Plug in Baby"
+                },
+                {
+                    "Artist": "Muse",
+                    "Title": "Time is Running Out"
+                },
+                {
+                    "Artist": "Muse",
+                    "Title": "Supermassive Black Hole"
+                },
+                {
+                    "Artist": "万能青年旅店",
+                    "Title": "大石碎胸口"
+                }
+            ]
+        }
+    ]
+}
