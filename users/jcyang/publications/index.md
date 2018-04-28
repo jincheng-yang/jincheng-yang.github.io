@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Jincheng's Website | Publication
+title: Jincheng's Website | Publications
 ---
 
-# Publication
+# Publications
 
 <div class="post" markdown="1">
 
