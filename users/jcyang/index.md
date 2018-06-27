@@ -6,9 +6,9 @@ title: Jincheng's Website | About
 <div class="transparent">
 <div class="container" markdown="1">
 
-# About Me
+<img src="/users/jcyang/assets/images/photo5.jpg" style="float:right; width:200px; max-width:100%; padding-left: 100px">
 
-<img src="/users/jcyang/assets/images/photo3.jpg" style="float:right; width:300px; max-width:100%; padding-left: 30px">
+# About Me
 
 Hi, I am a first year graduate student at [The University of Texas at Austin](https://www.utexas.edu). I major in Mathematics, and I am interested in differential equations. I received my bachelor degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of [Special Class for the Gifted Young](http://www.xajdsnb.com) before my undergraduate study. 
 
