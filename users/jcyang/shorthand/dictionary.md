@@ -7,7 +7,7 @@ title: Shorthand Dictionary
 
 # Gregg Shorthand Dictionary
 
-<p><input id="txt1" type="text" value="happiness">
+<p><input id="txt1" type="text" value="happiness" onkeydown="if(event.keyCode==13){hideSuggestion();refreshImage()}">
 <input id="submit" type="button" value="Load" onclick="hideSuggestion();refreshImage()"></p>
 
 <p id="record"></p>

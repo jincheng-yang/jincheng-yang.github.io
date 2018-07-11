@@ -56,7 +56,7 @@
 
 <h1 id="gregg-shorthand-dictionary">Gregg Shorthand Dictionary</h1>
 
-<p><input id="txt1" type="text" value="happiness" />
+<p><input id="txt1" type="text" value="happiness" onkeydown="if(event.keyCode==13){hideSuggestion();refreshImage()}" />
 <input id="submit" type="button" value="Load" onclick="hideSuggestion();refreshImage()" /></p>
 
 <p id="record"></p>
