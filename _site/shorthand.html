@@ -35,7 +35,7 @@
 				<p id="record"></p>
 
 				<div id="suggest" style="display:none">
-					<p>Similar words</p>
+					<h2>Suggestions</h2>
 					<input id="bt0" type="button" value="bt0" onclick="document.getElementById('txt1').value = document.getElementById('bt0').value;refreshImage()" />
 					<input id="bt1" type="button" value="bt1" onclick="document.getElementById('txt1').value = document.getElementById('bt1').value;refreshImage()" />
 					<input id="bt2" type="button" value="bt2" onclick="document.getElementById('txt1').value = document.getElementById('bt2').value;refreshImage()" />
@@ -55,8 +55,10 @@
 						<div id="float-right" class="vertical-center">
 							<ul>
 								<li class="copyright">Copyright &#169 2018 Jincheng Yang</li>
-								<li><a href="https://github.com/teddyyjc">GitHub</a></li>
-								<li><a href="mailto:jcyang@math.utexas.edu">Email</a></li>
+								<li><a onclick="loadAbout()">About</a></li>
+								<li><a href="https://greggshorthand.proboards.com">Forum</a></li>
+								<li id="debug"><a href="mailto:jcyang@math.utexas.edu?subject=Bug in Gregg Shorthand Dictionary&body=Dear Jincheng, there is something wrong with the word 'happiness'.">Report a Mistake</a></li>
+								<li><a href="mailto:jcyang@math.utexas.edu">Contact</a></li>
 							</ul>
 						</div>
 					</div>

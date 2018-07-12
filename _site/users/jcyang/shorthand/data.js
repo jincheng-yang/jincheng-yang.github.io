@@ -82,9 +82,11 @@ function refreshImage() {
 	var order_reverse = findOrderReverse(word);
 	var path = '<img src=/users/jcyang/shorthand/data/';
 	if (wordId >= 0) {
-		path = path.concat(wordId.toString(), '.png><p>', wordId, '</p>');
+		path = path.concat(wordId.toString(), '.png>');//, wordId, '</p>');
 	} else {
-		path = path.concat('not_found.png><p>', wordId, '</p>');
+		//path = path.concat('not_found.png>');//<p>', wordId, '</p>');
+		path = "<p>Sorry, the word '";
+		path = path.concat(word, "' is not collected in <i>Gregg Shorthand Dictionary.</i></p>");
 		var starting = -order - 3;
 		if (starting < 0) starting = 0;
 		if (starting > 18663) starting = 18663;
@@ -101,5 +103,15 @@ function refreshImage() {
 		}
 		document.getElementById("suggest").style.display="inline";
 	}
-	document.getElementById('record').innerHTML = path
+	document.getElementById('record').innerHTML = path;
+	var debugLink = "<a href=\"mailto:jcyang@math.utexas.edu?subject=Bug in Gregg Shorthand Dictionary&body=Dear Jincheng, there is something wrong with the word \'";
+	debugLink = debugLink.concat(word, "\'. \">Report a Mistake</a>")
+	document.getElementById("debug").innerHTML = debugLink;
 }
+
+function loadAbout() {
+	var aboutText = "<h2>About</h2>";
+	aboutText = aboutText.concat("<p><i>Gregg Shorthand Dictionary</i> is a book published by The Gregg Publishing Company in 1930, including 18667 shorthand plates written by Winifred Kenna Richmond. A <a href=\"http://gregg.angelfishy.net/gsd.pdf\">pdf version</a> dictionary can be found on <a href=\"http://gregg.angelfishy.net\">this site</a>.</p><p>I extracted all the writings in this dictionary and made this website for easier search on computers and mobile devices.</p>");
+	document.getElementById('record').innerHTML = aboutText;
+}
+
