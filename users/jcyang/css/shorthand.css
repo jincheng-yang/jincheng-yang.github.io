@@ -23,6 +23,14 @@ h1 {
     color: #333;
 }
 
+h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.5em;
+    font-weight: normal;
+    text-align: left;
+    color: #333;
+}
+
 p {
     font-size: 1.0em;
     line-height: 1.5em;
@@ -49,6 +57,7 @@ p {
 }
 
 #footer {
+    padding: 1em;
     text-align: center;
 }
 
@@ -146,3 +155,19 @@ p {
 #record {
     text-align: center;
 }
+
+#suggest input {
+    font-size: 1.0em;
+    background-color: #EEE;
+    border: 1px solid #507ec9;
+    border-radius: 0.3em;
+    color: #507ec9;
+    transition-duration: 0.3s;
+    margin: 0.2em;
+}
+
+#suggest input:hover {
+    background-color: #507ec9;
+    color: #EEE;
+}
+
