@@ -10,7 +10,7 @@ title: Jincheng's Website | About
 
 # About Me
 
-Hi, I am a first year graduate student at [The University of Texas at Austin](https://www.utexas.edu). I major in Mathematics, and I am interested in differential equations. I received my bachelor degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of [Special Class for the Gifted Young](http://www.xajdsnb.com) before my undergraduate study. 
+Hi, I am a second year graduate student at [The University of Texas at Austin](https://www.utexas.edu). I major in Mathematics, and I am interested in differential equations. I received my bachelor degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of [Special Class for the Gifted Young](http://www.xajdsnb.com) before my undergraduate study. 
 
 Currently, I do not have an academic advisor. 
 
@@ -26,7 +26,7 @@ Apart from the math study, I also love programming and piano performance.
 
 <div style="float:right">
 <div style="display:inline" markdown="1">
-- Office: RLM 11.134
+- Office: RLM 11.130
 - Email: [jcyang@math.utexas.edu](mailto:jcyang@math.utexas.edu)
 - Tel: +1 (512) 317-7231
 </div>
@@ -37,7 +37,7 @@ Apart from the math study, I also love programming and piano performance.
 Jincheng Yang (杨 金成)
 </p>
 <p style="margin:0px; padding:0px">
-Department of Mathematics, RLM 11.130
+Department of Mathematics
 </p>
 <p style="margin:0px; padding:0px">
 The University of Texas at Austin
@@ -59,7 +59,7 @@ Austin, TX 78712-1202, USA
 ### Education
 
 - **Xi'an Jiaotong University**, B.Sc. in Mathematics and Applied Mathematics (Aug. 2013 - June 2017)
-- **The University of Texas at Austin**, Ph.D. candidate in Mathematics (Aug. 2017 - Present)
+- **The University of Texas at Austin**, Ph.D. student in Mathematics (Aug. 2017 - Present)
 
 </div>
 </div>
@@ -88,3 +88,4 @@ Austin, TX 78712-1202, USA
 
 </div>
 </div>
+
