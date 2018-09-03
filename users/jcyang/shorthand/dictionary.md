@@ -3,6 +3,7 @@ layout: default
 title: Shorthand Dictionary
 ---
 
+<script type="text/javascript" src="/users/jcyang/shorthand/dataset.js"></script>
 <script type="text/javascript" src="/users/jcyang/shorthand/data.js"></script>
 
 # Gregg Shorthand Dictionary
