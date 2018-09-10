@@ -76,10 +76,10 @@ blockquote {
 	margin: 0em;
 	padding: auto;
 	height: 20em;
-	/* background-image: url("../assets/images/head.png"); */
+	background-image: url("../assets/images/head.png");
     background-size: 100%;
     background-repeat: no-repeat;
-    /* background-color: #898989; */
+    background-color: #898989;
 }
 
 p.name {

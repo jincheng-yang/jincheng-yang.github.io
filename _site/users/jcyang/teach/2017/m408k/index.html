@@ -11,6 +11,7 @@
 		<!-- JavaScrips -->
 		<script type="text/javascript" src="/users/jcyang/plugin/drag-and-drop.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML"></script>
+		<script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108717380-1"></script>
 		<script>
@@ -23,10 +24,16 @@
 
 	<body>
 		
-		<div class="main-title">
+		<canvas id="myCanvas" width="1000" height="360" style="position: absolute; top: 0; left: 0; z-index: -1">
+			Your browser does not support the canvas element.
+		</canvas>
+
+		<div id="mt" class="main-title">
 			<p class="name">Jincheng Yang</p>
 			<p class="institute">The University of Texas at Austin</p>
 		</div>
+
+		<script type="text/javascript" src="/users/jcyang/plugin/Escher.js"></script>
 
 		<nav>
 			<ul>
