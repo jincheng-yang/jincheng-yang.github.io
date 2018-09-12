@@ -1,14 +1,8 @@
-// const width = .offsetWidth;
-// const height = document.getElementById("mt").offsetHeight;
-//$("#mt").height();//document.getElementById('mt').style.height;
-// console.log("height" + height);
 var mainTitle = document.getElementById("mt");
 var width = mainTitle.offsetWidth;
-const height = mainTitle.offsetHeight;
+var height = mainTitle.offsetHeight;
 
 var canvas = document.getElementById("myCanvas");
-canvas.setAttribute("width", "" + width);
-canvas.setAttribute("height", "" + height);
 
 const PI = Math.PI;
 const HALF_PI = Math.PI / 2;
@@ -23,7 +17,7 @@ class PVector {
   }
 }
 
-var absolute_center = new PVector(width / 2, width);
+var absolute_center = new PVector();
 init();
 
 function modPI(x) {
@@ -504,8 +498,22 @@ window.onload = function () {
 
 function init() {
   width = mainTitle.offsetWidth;
-  canvas.setAttribute("width", "" + width);
+  
+  if (window.devicePixelRatio != 1) {
+    canvas.width = width * window.devicePixelRatio;
+    canvas.height = height * window.devicePixelRatio;
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+  } else {
+    canvas.width = width;
+  }
+
   ctx = canvas.getContext("2d");
+
+  if (window.devicePixelRatio != 1) {
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+
   ctx.strokeStyle = "rgba(137, 67, 140, 0.7)";
   ctx.lineWidth = 0.5;
   absolute_center.x = width / 2;
