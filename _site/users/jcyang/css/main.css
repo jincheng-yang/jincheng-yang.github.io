@@ -2,8 +2,7 @@ body {
     font-family: 'Roboto', 'Helvetica', 'Arial', 'Sans-Serif';
     margin: 0 auto;
     background-color: #DDD;
-    color: #333;    
-    background-image: url("https://static.wixstatic.com/media/e99b4e_2c9a153bef0445d3bfb520bac8ad96ed.png/v1/fill/w_1920,h_1080,al_c/e99b4e_2c9a153bef0445d3bfb520bac8ad96ed.png");
+    color: #333;
     background-image: url("/users/jcyang/assets/images/background.jpg");
     background-position: center center;
     background-attachment: fixed;
