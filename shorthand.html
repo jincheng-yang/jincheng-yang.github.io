@@ -66,5 +66,17 @@
 				</div>
 			</div>
 		</footer>
+		
+		
+		<script>
+			var word = "happiness";
+			var args = window.location.href.split('=');
+			if (args.length > 1) {
+				word = args[1];
+				document.getElementById("txt1").setAttribute("value", word);
+				refreshImage();
+			}
+		</script>
+		
 	</body>
 </html>
