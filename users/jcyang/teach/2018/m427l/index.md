@@ -11,6 +11,8 @@ Syllabus: Click [Here](Syllabus 54050.pdf).
 - Dr. Shen's Office Hour: MW 11:00-12:00 am, T 10:30-11:30 am @ RLM 13.142
 - My Office Hour: W 12:00-2:00 pm @ RLM 11.130
 
+Download handout 2018-10-23 [here](M427J_Handout.pdf).
+
 ### Syllabus
 
 <div markdown="1">
