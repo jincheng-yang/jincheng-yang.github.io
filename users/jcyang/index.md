@@ -10,11 +10,12 @@ title: Jincheng's Website | About
 
 # About Me
 
-Hi, I am a second year graduate student at [The University of Texas at Austin](https://www.utexas.edu). I major in Mathematics, and I am interested in differential equations. I received my bachelor degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of [Special Class for the Gifted Young](http://www.xajdsnb.com) before my undergraduate study. 
+Hi, I am a second year graduate student at [The University of Texas at Austin](https://www.utexas.edu). I major in Mathematics, and my research interest include analysis, partial differential equations, dynamic systems, fluid equations and so on. I received my bachelor degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of Special Class for the Gifted Young before my undergraduate study. 
 
-Currently, I do not have an academic advisor. 
+Apart from mathematics, I also love programming and music.
 
-Apart from the math study, I also love programming and piano performance.
+It is my honor to be coadvised by [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/).
+
 
 </div>
 </div>
@@ -61,6 +62,12 @@ Austin, TX 78712-1202, USA
 - **Xi'an Jiaotong University**, B.Sc. in Mathematics and Applied Mathematics (Aug. 2013 - June 2017)
 - **The University of Texas at Austin**, Ph.D. student in Mathematics (Aug. 2017 - Present)
 
+### Visiting
+
+- **Columbia University in the City of New York**, Visiting Undergraduate Student (Jan. 2015 - May 2015)
+- **Georgia Institute of Technology**, School of Mathematics and Language Institute Visiting Honors Student Program (Jan. 2016 - May 2016)
+- **Georgia Institute of Technology**, Visiting Research Student (Jan. 2017 - May 2017)
+
 </div>
 </div>
 
@@ -70,12 +77,13 @@ Austin, TX 78712-1202, USA
 
 <h3>Gallery</h3>
 
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap">
 {% assign my_posts = site.posts | where:"image",true %}
 {% assign firstPost = true %}
-{% for post in my_posts limit: 3 %}{% if firstPost == true %}
+{% for post in my_posts limit: 6 %}{% if firstPost == true %}
 <div class="thumb">
 	{% assign firstPost = false %}
-{% else %}<div class="thumb" style="margin-left:5%">
+{% else %}<div class="thumb">
 {% endif %}
 <a href="{{ post.url }}" title="{{ post.title }}">
 <div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/{{ post.thumb }}')"></div>
@@ -85,6 +93,7 @@ Austin, TX 78712-1202, USA
 	<h4>{{ post.title }}</h4>
 </a>
 </div>{% endfor %}
+</div>
 
 </div>
 </div>
