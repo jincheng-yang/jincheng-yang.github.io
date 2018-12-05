@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>列紧与紧性</title>
+		<title>Project Escher</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
@@ -63,59 +63,61 @@
 
 <div class="post">
 
-<h2>列紧与紧性</h2>
+<h2>Project Escher</h2>
 
-<p class="meta">2018, November 01</p>
+  <h4>Tiling regular polygons on hyperbolic half space (Joint work with Tianhao Xian)</h4>
 
-  <h3 id="概念">概念</h3>
+<p class="meta">2016, April 24</p>
 
-<p><script type="math/tex">A</script>是度量空间<script type="math/tex">X</script>中的一个点集。<script type="math/tex">A</script>被称为</p>
+  <p>In Riemannian Geometry class, we wanted to have a more intuitive understanding about hyperbolic halfspace (admitting negative constant Gauss curvature). At first we created a tool that enabled us to draw lines, circles, and polygons in a hyperbolic half space. You can also move, rotate and reflect shapes along geodesics.</p>
 
-<ul>
-  <li>列紧：<script type="math/tex">A</script>的任何子集（列）都有收敛子列</li>
-  <li>自列紧：<script type="math/tex">A</script>的任何子集（列）都有收敛到<script type="math/tex">A</script>中点的子列</li>
-  <li>自列紧=列紧+闭</li>
-  <li>列紧空间：全空间<script type="math/tex">X</script>是一个（自）列紧集</li>
-</ul>
+<p><img width="100%" src="/users/jcyang/assets/images/blog/2016-04-24-project-escher/drawing.gif" /></p>
 
-<hr />
+<p>Now we can draw regular polygons on hyperbolic half plane with negative constant curvature, and map it onto an open ball isometrically. Moreover, we can tile polygons over the whole place.</p>
 
-<ul>
-  <li>完全有界：对于任何<script type="math/tex">\epsilon</script>存在有限<script type="math/tex">\epsilon</script>网<script type="math/tex">N_\epsilon</script>，即<script type="math/tex">N_\epsilon</script>的<script type="math/tex">\epsilon</script>邻域覆盖<script type="math/tex">A</script>（参考龙猫中的煤球）
-    <ul>
-      <li><script type="math/tex">A</script>的<script type="math/tex">\epsilon</script>网<script type="math/tex">N</script>：是一个<script type="math/tex">A</script>的子集，并且对<script type="math/tex">A</script>中的任意点<script type="math/tex">x</script>，<script type="math/tex">% <![CDATA[
-d(x, N) < \epsilon %]]></script></li>
-    </ul>
-  </li>
-  <li>可分：存在可数稠密子集</li>
-  <li>完全有界<script type="math/tex">\to</script>可分（<script type="math/tex">1/n</script>网的并是稠密的）</li>
-  <li>列紧 -&gt; 完全有界 –(全空间完备)-&gt; 列紧
-    <ul>
-      <li>列紧 -&gt; 完全有界：反证。完全无界则存在无穷个两两<script type="math/tex">\epsilon</script>远的点集，它没有收敛子列</li>
-      <li>(Hausdorff)完全有界 + 全空间完备 -&gt; 列紧：有一个点列<script type="math/tex">x_n</script>，不停地挑子列在同一个<script type="math/tex">1/n</script>球中，对角线构造得到一个Cauchy列</li>
-    </ul>
-  </li>
-</ul>
+<p>The following is an example of tiling pentagons on the half space. There are four pentagons around each point, and all the inner angles are right angles.</p>
+
+<p><img width="100%" src="/users/jcyang/assets/images/blog/2016-04-24-project-escher/pentagon.png" /></p>
+
+<p>The header of my homepage is a skeleton of this. You can actually try to hold and drag to see the deck transformation.</p>
+
+<p>The following is a picture of tiling octagons on the half space. Likewise all the angles are right angles.</p>
+
+<p><img width="100%" src="/users/jcyang/assets/images/blog/2016-04-24-project-escher/octagon.gif" /></p>
+
+<p>Notice that by quotient map of the half plane dividing its deck transformation group, we obtain a torus with genus 2. Thus we obtained a Riemannian metric on genus two torus which admits constant curvature. The following gif is to show the deck transform.</p>
+
+<p><img width="100%" src="/users/jcyang/assets/images/blog/2016-04-24-project-escher/octagon-deck.gif" /></p>
+
+<p>We found that for any integer <script type="math/tex">n > 4</script>, one can always tile 4 regular <script type="math/tex">n</script>-gons with right angles around a point, and cover the entire plane accordingly. Moreover, if <script type="math/tex">n > 2</script>, <script type="math/tex">m > 2</script>, one can always tile <script type="math/tex">m</script> regular <script type="math/tex">n</script>-gons with inner angle <script type="math/tex">\frac{2\pi}{m}</script> around each vertex, if <script type="math/tex">n-2 > \frac{2n}{m}</script>.</p>
 
 <hr />
 
-<ul>
-  <li>紧：任意开覆盖有有限子覆盖（any open cover admits a finite subcover）</li>
-  <li>紧空间：全空间是紧的</li>
-  <li>紧 = 自列紧 = 闭 + 列紧 =（全空间完备）= 闭 + 完全有界
-    <ul>
-      <li>紧 -&gt; 自列紧：<script type="math/tex">A=\{x_n\}</script>没有收敛子列，则<script type="math/tex">x_n</script>有邻域<script type="math/tex">U_n</script>不包含其他的点，那现在<script type="math/tex">U_n</script>就没有有限子覆盖</li>
-      <li>自列紧 -&gt; 紧：给一堆开覆盖<script type="math/tex">U_n</script>，因为有限个<script type="math/tex">1/m</script>球可以盖住<script type="math/tex">A</script>，所以存在一个<script type="math/tex">1/m</script>球不能被有限覆盖，球心这个点列的子列的极限<script type="math/tex">x</script>却被一个开集<script type="math/tex">U</script>盖住了，那<script type="math/tex">U</script>必然也要盖住离<script type="math/tex">x</script>足够近并且半径足够小的<script type="math/tex">1/m</script>球</li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<h2 id="arzela-ascoli">Arzela-Ascoli</h2>
-<p><script type="math/tex">(C(M), d)</script>是紧集<script type="math/tex">M</script>上的连续函数按sup范数得到的度量空间。那么对它的子集<script type="math/tex">F</script>，列紧=一致有界+等度连续</p>
+<p>Environment: Processing 3.0</p>
 
 
+  
+    <div id="disqus_thread"></div>
+    <script>
+
+      /**
+      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      
+      var disqus_config = function () {
+        this.page.url = page.url;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = page.id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+
+      (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://jcyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   
   
   <h3>Recent <a href="/users/jcyang/blog/" style="color:#749696">Posts</a></h3>

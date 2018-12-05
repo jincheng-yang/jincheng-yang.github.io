@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Flower"
+title: "Blooming Flower"
 date: 2016-03-22
 comments: true
 image: true
 thumb: flower.gif
 ---	
 
-The angle between two pedals of a flower is not random. It is a golden section of the circle. At this angle $$\left(3-\sqrt{5}\right)\pi$$, petals can spread out without overlapping, so that each petal is exposed to the sunshine.
+The angle between two pedals of a flower is not random. It is a golden section of the circle. At this angle $$(3-\sqrt{5})\pi$$, petals can spread out without overlapping, so that each petal is exposed to the sunshine.
 
 These petals form a spiral shape. The number of spirals is always a Fibonacci number (1, 1, 2, 3, 5, 8, 13, 21, 34, ...). In the following coloring, you can identify 21 spirals.
 

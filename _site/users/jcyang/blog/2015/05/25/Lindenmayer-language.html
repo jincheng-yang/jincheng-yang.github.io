@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Flower</title>
+		<title>Lindenmayer Language</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
@@ -63,23 +63,37 @@
 
 <div class="post">
 
-<h2>Flower</h2>
-<p class="meta">2016, March 22</p>
+<h2>Lindenmayer Language</h2>
 
-  <p>The angle between two pedals of a flower is not random. It is a golden section of the circle. At this angle <script type="math/tex">\left(3-\sqrt{5}\right)\pi</script>, petals can spread out without overlapping, so that each petal is exposed to the sunshine.</p>
+  <h4>Discovering the fractal world</h4>
 
-<p>These petals form a spiral shape. The number of spirals is always a Fibonacci number (1, 1, 2, 3, 5, 8, 13, 21, 34, …). In the following coloring, you can identify 21 spirals.</p>
+<p class="meta">2015, May 25</p>
 
-<div class="pde" style="max-width:600px">
-<script type="text/javascript" src="/users/jcyang/plugin/processing.min.js"></script>
-<canvas data-processing-sources="/users/jcyang/assets/files/pde/Flower.pde"></canvas>
-</div>
+  <p>Lindenmayer language, or L-language, is a system which can be used to produces numerous fractals. The principle is to start with a word, and follow some rules to replace certain letters by other expressions. After repeating replacing several times we obtain a very long, nonsensical word. Then give each letter some meaning in “turtle geometry”, like “moving forward” or “turning right”. The “turtle” will draw a lot of beautiful shapes.</p>
 
-<p>This artwork is inspired by Vi Hart. Click this <a href="https://www.youtube.com/watch?v=ahXIMUkSXX0">link</a> to watch her video.</p>
+<p>The one on the thumbnail is a brilliant example from nature. Using only two letters and four signs, following two rules, we can draw a very sophisticated pine tree.</p>
+
+<p><img width="100%" src="/users/jcyang/assets/images/blog/2015-05-25-lindenmayer/tree.png" /></p>
+
+<p>This tool is programmed in Matlab language, with its GUI design tool. You can create your own words, use different rules to create thousands of fractals by yourself!</p>
+
+<p>Here are some classic examples.</p>
+
+<h4 id="koch-snowflake">Koch Snowflake</h4>
+
+<p><img width="100%" src="/users/jcyang/assets/images/blog/2015-05-25-lindenmayer/koch.png" /></p>
+
+<h4 id="sierpinski-carpet">Sierpinski Carpet</h4>
+
+<p><img width="100%" src="/users/jcyang/assets/images/blog/2015-05-25-lindenmayer/sierpinski.png" /></p>
+
+<h4 id="dragon-curve">Dragon Curve</h4>
+
+<p><img width="100%" src="/users/jcyang/assets/images/blog/2015-05-25-lindenmayer/dragon.png" /></p>
 
 <hr />
 
-<p>Environment: Processing 3.0</p>
+<p>Environment: Matlab</p>
 
 
   
@@ -123,21 +137,21 @@
     </a>
     </div><div class="thumb" style="margin-left:5%">
     
-    <a href="/users/jcyang/blog/2016/03/22/flower" title="Flower">
-    <div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/flower.gif')"></div>
+    <a href="/users/jcyang/blog/2016/04/24/Escher" title="Project Escher">
+    <div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/escher.png')"></div>
     </a>
-    <h5>22 Mar 2016</h5>
-    <a href="/users/jcyang/blog/2016/03/22/flower" title="Flower">
-      <h4>Flower</h4>
+    <h5>24 Apr 2016</h5>
+    <a href="/users/jcyang/blog/2016/04/24/Escher" title="Project Escher">
+      <h4>Project Escher</h4>
     </a>
     </div><div class="thumb" style="margin-left:5%">
     
-    <a href="/users/jcyang/blog/2014/10/25/conjugate-circles" title="Conjugate Circles">
-    <div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/magnetic-field.gif')"></div>
+    <a href="/users/jcyang/blog/2016/03/22/blooming-flower" title="Blooming Flower">
+    <div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/flower.gif')"></div>
     </a>
-    <h5>25 Oct 2014</h5>
-    <a href="/users/jcyang/blog/2014/10/25/conjugate-circles" title="Conjugate Circles">
-      <h4>Conjugate Circles</h4>
+    <h5>22 Mar 2016</h5>
+    <a href="/users/jcyang/blog/2016/03/22/blooming-flower" title="Blooming Flower">
+      <h4>Blooming Flower</h4>
     </a>
     </div>
 

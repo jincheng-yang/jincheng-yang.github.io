@@ -7,6 +7,9 @@ layout: default
 <div class="post">
 
 <h2>{{ page.title }}</h2>
+{% if page.subtitle %}
+  <h4>{{ page.subtitle }}</h4>
+{% endif %}
 <p class="meta">{{ page.date | date: "%Y, %B %d" }}</p>
 
   {{ content }}

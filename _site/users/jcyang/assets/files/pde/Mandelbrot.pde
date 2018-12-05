@@ -64,7 +64,7 @@ void keyPressed(){
 int iteratorTime(float x, float y) {                     //calculate iterator time
   float zx = 0;
   float zy = 0;
-  for (int i = 0; i < 30; i++) {
+  for (int i = 0; i < 50; i++) {
     float zd = zx * zx + zy * zy;
     if (zd > 4) {                                        //if the length of complex number z(n) is bigger than 2, it is out of bound
       return i + 1;
