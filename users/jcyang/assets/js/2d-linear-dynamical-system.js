@@ -87,7 +87,7 @@ function updateArgument() {
   det = a11 * a22 - a12 * a21;
   tr = a11 * 1 + a22 * 1;
   document.getElementById("det_tr").innerHTML = "Det(A) = " + det + ", Tr(A) = " + tr + ".";
-  document.getElementById("cir").setAttribute("cx", tr / 4 * 50);
+  document.getElementById("cir").setAttribute("cx", tr / 8 * 50);
   document.getElementById("cir").setAttribute("cy", -det / 16 * 50);
 
   clear2All();
