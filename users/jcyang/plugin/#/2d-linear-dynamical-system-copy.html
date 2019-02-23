@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Shorthand Dictionary</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+
+	<body>
+		<canvas id="myCanvas2" width="400" height="400" style="border:1px solid #d3d3d3;"></canvas>
+		<!--script type="text/javascript" src="/users/jcyang/plugin/2d-linear-dynamical-system.js"></script-->
+		<script>
+			var canvas = document.getElementById("myCanvas2");
+			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = 'rgba(200, 200, 250, 0.8)';
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+			ctx.beginPath();
+			ctx.moveTo(0, 0);
+			ctx.lineTo(200, 100);
+			ctx.arc(100, 100, 10, 0, 2 * Math.PI);
+			ctx.stroke();
+		</script>
+		
+	</body>
+</html>
