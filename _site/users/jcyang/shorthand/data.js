@@ -6,7 +6,7 @@ function findId(input) {
 
 function findOrder(input) {
 	var left = 0;
-	var right = 18666;
+	var right = 18667;
 	var center = 9333;
 	var comp;
 	input = input.toLowerCase();
@@ -28,7 +28,7 @@ function findOrder(input) {
 
 function findOrderReverse(input) {
 	var left = 0;
-	var right = 18666;
+	var right = 18667;
 	var center = 9333;
 	var comp;
 	var input_reverse = input.toLowerCase().split("").reverse().join("");
@@ -65,14 +65,14 @@ function refreshImage() {
 		path = path.concat(word, "' is not collected in <i>Gregg Shorthand Dictionary.</i></p>");
 		var starting = -order - 3;
 		if (starting < 0) starting = 0;
-		if (starting > 18663) starting = 18663;
+		if (starting > 18664) starting = 18664;
 		for (i = 0; i < 4; i++) {
 			var thisWord = dict[starting + i];
 			document.getElementById('bt'.concat(i.toString())).value = thisWord;
 		}
 		starting = -order_reverse - 3;
 		if (starting < 0) starting = 0;
-		if (starting > 18663) starting = 18663;
+		if (starting > 18664) starting = 18664;
 		for (i = 0; i < 4; i++) {
 			var thisWord = dict_reverse[starting + i].split("").reverse().join("");
 			document.getElementById('bt'.concat((i + 4).toString())).value = thisWord;
