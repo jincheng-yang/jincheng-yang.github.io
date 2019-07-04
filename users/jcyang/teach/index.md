@@ -9,7 +9,7 @@ title: Jincheng's Website | Teaching
 
 #### Xi'an Jiaotong University
 
-- 2016 Summer: BIO101 [Introductory Biology for non-majors](http://www.lioneducation.org/downloadRepository/00efeba5-3934-4aca-840e-9b903d4aed01.pdf)
+- 2016 Summer: BIO101 Introductory Biology for non-majors
 
 #### The University of Texas at Austin
 
@@ -17,5 +17,18 @@ title: Jincheng's Website | Teaching
 - 2018 Spring: M408D [Sequences, Series, and Multivariable Calculus](2018/m408d)
 - 2018 Fall: M427L [Advanced Calculus for Applications II](2018/m427l)
 - 2019 Spring: M427L [Differential Equations with Linear Algebra](2019/m427j)
+
+</div>
+
+# Directed Reading Program
+
+<div class="post" markdown="1">
+
+The [Directed Reading Program](https://web.ma.utexas.edu/users/drp/about.html) is an RTG program that pairs undergraduate students with graduate student mentors to undertake independent projects in mathematics. 
+
+#### Mentees
+
+- 2018 Spring: Yan Cheng, on the topic of Probability and Martingale
+- 2019 Spring: Trey Minor, on the topic of Differential Equations and Dynamical Systems
 
 </div>

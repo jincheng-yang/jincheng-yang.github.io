@@ -94,16 +94,18 @@ float vx(float x, float y) {
   float ix = map(x, 0, width, -5, 5);
   float iy = map(y, 0, height, 5, -5);
   float delta = 1; float m = 1; 
+  return -4 * iy + 2 * ix * iy - 8;
   //return ix * (ix + iy - 1) * speed;
-  return (4 * ix + 3 * iy) * speed;
+  //return (4 * ix + 3 * iy) * speed;
 }
 
 float vy(float x, float y) {
   float ix = map(x, 0, width, -5, 5);
   float iy = map(y, 0, height, 5, -5);
   float a = 1;
+  return -4 * iy *iy + ix * ix;
   //return -iy * (2 * ix + 3 * iy / 2 - 3) * speed;
-  return -(-10 * ix - 3 * iy) * speed;
+  //return -(-10 * ix - 3 * iy) * speed;
 }
 
 class Agent {
@@ -141,6 +143,16 @@ class Agent {
     /*
     Here is the tangent vector space.
     */
+    
+    float xori = x / U;
+    float yori = y / U;
+    float xoridot = vx(xori, yori);
+    float yoridot = vy(xori, yori);
+    //float dx = (y * y / U / U + 1) * U * U * U * xoridot 
+              //- (x * y / U / U) * U * U * U * yoridot;
+    //float dy = -(x * y / U / U) * U * U * U * xoridot 
+              //+ (x * x / U / U + 1) * U * U * U * yoridot;
+    
     
     float dx = x/2/U*(-2*U*U*U+4*U*y*y+2*R*U*U*(x+y)-R*y*y*(2*x+y));
     float dy = y/2/U*(-6*U*U*U-4*U*x+R*x*x*(2*x+y)+R*U*U*(4*x+3*y));

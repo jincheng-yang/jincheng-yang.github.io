@@ -93,7 +93,7 @@ $$
 <p id="det_tr"></p>
 
 <p>
-	<svg width="136" height="120">
+	<svg width="136" height="120" onload="makeDraggable(evt)">
 		<g transform="translate(50,65)"> 
 			<line x1="-50" y1="0" x2="50" y2="0" style="stroke:rgb(0,0,0);stroke-width:2" />
 			<line x1="0" y1="-50" x2="0" y2="50" style="stroke:rgb(0,0,0);stroke-width:2" />
@@ -104,7 +104,7 @@ $$
 			<text x="-16" y="-39" style="font-family:Helvetica;font-size:12">16</text>
 			<text x="-33" y="-54" style="font-family:Helvetica;font-size:12">Determinent</text>
 			<text x="52" y="4" style="font-family:Helvetica;font-size:12">Trace</text>
-			<circle id="cir" cx="0" cy="0" r="5" stroke="#333366" stroke-width="1" fill="#6666cc" />
+			<circle id="cir" class="draggable" cx="0" cy="0" r="5" stroke="#333366" stroke-width="1" fill="#6666cc" style="cursor:move" />
 		</g>
 	</svg>	
 </p>

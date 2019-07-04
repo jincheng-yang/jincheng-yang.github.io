@@ -92,7 +92,7 @@
                 },
                 {
                     "Artist": "Ludwig van Beethoven",
-                    "Title": "Violin Sonata No.5, Op.24 Spring"
+                    "Title": "Violin Sonata No.5, Op.24, \"Spring\""
                 },
                 {
                     "Artist": "Fritz Kreisler",
@@ -135,7 +135,7 @@
             ]
         },
         {
-            "Title": "Recital of Excellence",
+            "Title": "50th Recital of Excellence",
             "Date": "2018-04-12",
             "Repertoire": [
                 {
@@ -145,12 +145,22 @@
             ]
         },
         {
-            "Title": "Recital of Excellence",
+            "Title": "51st Recital of Excellence",
             "Date": "2018-11-16",
             "Repertoire": [
                 {
                     "Artist": "Sergei Rachmaninoff",
-                    "Title": "Etude-Tableaux in D Minor, Op. 33 No. 4"
+                    "Title": "Etude-Tableaux in D minor, Op. 33 No. 4"
+                }
+            ]
+        },
+        {
+            "Title": "52nd Recital of Excellence",
+            "Date": "2019-04-18",
+            "Repertoire": [
+                {
+                    "Artist": "Ludwig van Beethoven",
+                    "Title": "Rondo a capriccio in G major, Op. 129, \"Rage over a lost penny\""
                 }
             ]
         }
