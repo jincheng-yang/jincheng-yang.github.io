@@ -440,9 +440,9 @@ function draw() {
     oldMouse.y = newMouse.y;
   }
 
-  window.requestAnimationFrame(draw);
   ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
   ctx.fillRect(0, 0, canvas.width, canvas.height)
+  window.requestAnimationFrame(draw);
 }
 
 function clear() {
