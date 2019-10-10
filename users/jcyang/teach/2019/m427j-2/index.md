@@ -26,7 +26,7 @@ Download sample solution to Braun Section 3.1, Question 4, 6 [here](sample-solut
 
 * $\subsetneqq$ means **proper subset**. For two sets $A$ and $B$, $B \subsetneqq A$ means $B$ is a subset of $A$, but $B \neq A$.
 
-* $\forall$ means **for all**. $\forall x \in A \dots$ means for all element $x$ in the set $A$ such that $\dots$.
+* $\forall$ means **for all**. $\forall x \in A \dots$ means for all elements $x$ in the set $A$ we have $\dots$.
 
 * $\exists$ means **there exists**. $\exists x \in A \dots$ means there exists an element $x$ in the set $A$ such that $\dots$.
 
@@ -54,25 +54,25 @@ Download sample solution to Braun Section 3.1, Question 4, 6 [here](sample-solut
 
 * $\mathcal{M} _{n}$ is the set of all $n$ by $n$ **matrices**.
 
-* For a matrix $A$, $\mathrm{Ker} (A)$ or $\mathrm{Nul} (A)$ is the **Kernal** of $A$, that is the solutions to $A\boldsymbol{x}=\boldsymbol{0}$.
+* For a matrix $A$, $\mathrm{Ker} (A)$ or $\mathrm{Nul} (A)$ is the **Kernel** of $A$, that is the solutions to $A\boldsymbol{x}=\boldsymbol{0}$.
 
 #### Function spaces
 
 * $C ^0$, $C (\mathbb R)$, $C ^0 (\mathbb R)$, $C (\mathbb R, \mathbb R)$, $C ^0 (\mathbb R, \mathbb R)$ is the set of continuous functions from $\mathbb R$ to $\mathbb R$, that is, continuous real-valued functions.
 
-* $C ^k$, $C ^k (\mathbb R)$, $C ^k (\mathbb R, \mathbb R)$, is the set of $k$ time continuously differentiable functions, that is, continuous functions whose first through $n$th derivatives are continuous.
+* $C ^k$, $C ^k (\mathbb R)$, $C ^k (\mathbb R, \mathbb R)$ is the set of $k$ time continuously differentiable functions, that is, continuous functions whose first through $n$th derivatives are continuous.
 
 * $C ^\infty$, $C ^\infty (\mathbb R)$, $C ^\infty (\mathbb R, \mathbb R)$ is the set of smooth functions, that is, any order of derivative is continuous.
 
 * $C (\mathbb R, \mathbb R ^n)$, $C ^0 (\mathbb R, \mathbb R ^n)$ is the set of continuous functions from $\mathbb R$ to $\mathbb R ^n$, that is, continuous vector-valued functions.
 
-* $C ^k (\mathbb R, \mathbb R ^n)$, is the set of $k$ time continuously differentiable vector-valued functions.
+* $C ^k (\mathbb R, \mathbb R ^n)$ is the set of $k$ time continuously differentiable vector-valued functions.
 
 * $C ^\infty (\mathbb R, \mathbb R ^n)$ is the set of smooth vector-valued functions, that is, any order of derivative is continuous.
 
 * $\mathcal{P} _m$, $\mathcal{P} _m[t]$ is the set of all polynomials of $t$ with real coefficients and degree less or equal than $m$.
 
-* $\mathcal{P}$, $\mathcal{P}[t]$, is the set of all polynomials of $t$.
+* $\mathcal{P}$, $\mathcal{P}[t]$ is the set of all polynomials of $t$.
 
 #### Differential Calculus
 
