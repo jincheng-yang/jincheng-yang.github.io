@@ -10,7 +10,7 @@ title: Jincheng's Website | About
 
 # About Me
 
-Hi, I am a second year graduate student at [The University of Texas at Austin](https://www.utexas.edu). I major in Mathematics, and my research interest include analysis, partial differential equations, dynamic systems, fluid equations and so on. I received my bachelor degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of Special Class for the Gifted Young before my undergraduate study. 
+Hi, I am a third year graduate student at [The University of Texas at Austin](https://www.utexas.edu). I major in Mathematics, and my research interest include analysis, partial differential equations, dynamic systems, fluid equations and so on. I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of the Special Class for the Gifted Young before my undergraduate study. 
 
 Apart from mathematics, I also love programming and music.
 

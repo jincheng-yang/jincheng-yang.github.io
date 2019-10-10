@@ -4,6 +4,7 @@ title: "Nonlinear Dynamical System"
 date: 2019-04-21
 comments: true
 image: false
+hide: true
 ---
 
 ### Animation

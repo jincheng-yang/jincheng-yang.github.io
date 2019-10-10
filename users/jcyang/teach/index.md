@@ -16,7 +16,8 @@ title: Jincheng's Website | Teaching
 - 2017 Fall: M408K [Differential Calculus](2017/m408k)
 - 2018 Spring: M408D [Sequences, Series, and Multivariable Calculus](2018/m408d)
 - 2018 Fall: M427L [Advanced Calculus for Applications II](2018/m427l)
-- 2019 Spring: M427L [Differential Equations with Linear Algebra](2019/m427j)
+- 2019 Spring: M427J [Differential Equations with Linear Algebra](2019/m427j)
+- 2019 Fall: M427J [Differential Equations with Linear Algebra](2019/m427j-2)
 
 </div>
 
