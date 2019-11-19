@@ -120,7 +120,7 @@
             "Repertoire": [
                 {
                     "Artist": "Edward Grieg",
-                    "Title": "Edward Grieg: Lyric Pieces Book V, Op.54 - 3. March Of The Trolls"
+                    "Title": "Lyric Pieces Book V, Op.54 - 3. March Of The Trolls"
                 }
             ]
         },
@@ -145,6 +145,16 @@
             ]
         },
         {
+            "Title": "2018届毕业生音乐会",
+            "Date": "2018-06-25",
+            "Repertoire": [
+                {
+                    "Artist": "Sergei Rachmaninoff",
+                    "Title": "Fritz Kreisler: Liebeslied"
+                }
+            ]
+        },
+        {
             "Title": "51st Recital of Excellence",
             "Date": "2018-11-16",
             "Repertoire": [
@@ -161,6 +171,16 @@
                 {
                     "Artist": "Ludwig van Beethoven",
                     "Title": "Rondo a capriccio in G major, Op. 129, \"Rage over a lost penny\""
+                }
+            ]
+        },
+        {
+            "Title": "53rd Recital of Excellence",
+            "Date": "2019-11-15",
+            "Repertoire": [
+                {
+                    "Artist": "Frederic Chopin",
+                    "Title": "Ballade No. 1 in G minor, Op. 23"
                 }
             ]
         }

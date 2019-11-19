@@ -426,8 +426,6 @@ var mouseDown = false;
 var oldMouse = new PVector(width / 4, height / 4);
 var newMouse = new PVector(width / 4, height / 4);
 
-window.requestAnimationFrame(draw);
-
 function draw() {
   clear();
   parallelTranslateCenter(oldMouse, newMouse);
@@ -442,7 +440,6 @@ function draw() {
 
   ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
   ctx.fillRect(0, 0, canvas.width, canvas.height)
-  window.requestAnimationFrame(draw);
 }
 
 function clear() {
@@ -450,26 +447,15 @@ function clear() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
-// canvas.addEventListener('mousedown', function(e) {
-//   mouseDown = true;
-//   oldMouse.x = e.clientX;
-//   oldMouse.y = e.clientY;
-//   newMouse.x = e.clientX;
-//   newMouse.y = e.clientY;
-// });
-
-// canvas.addEventListener('mousemove', function(e) {
-//   if (mouseDown) {
-//     newMouse.x = e.clientX;
-//     newMouse.y = e.clientY;
-//   }
-// });
-
-// canvas.addEventListener('mouseup', function(e) {
-//   mouseDown = false;
-// });
-
 mainTitle.addEventListener('mousedown', function(e) {
+  mouseDown = true;
+  oldMouse.x = e.clientX;
+  oldMouse.y = e.clientY;
+  newMouse.x = e.clientX;
+  newMouse.y = e.clientY;
+});
+
+mainTitle.addEventListener('touchstart', function(e) {
   mouseDown = true;
   oldMouse.x = e.clientX;
   oldMouse.y = e.clientY;
@@ -481,10 +467,23 @@ mainTitle.addEventListener('mousemove', function(e) {
   if (mouseDown) {
     newMouse.x = e.clientX;
     newMouse.y = e.clientY;
+    refresh();
+  }
+});
+
+mainTitle.addEventListener('touchmove', function(e) {
+  if (mouseDown) {
+    newMouse.x = e.clientX;
+    newMouse.y = e.clientY;
+    refresh();
   }
 });
 
 mainTitle.addEventListener('mouseup', function(e) {
+  mouseDown = false;
+});
+
+mainTitle.addEventListener('touchend', function(e) {
   mouseDown = false;
 });
 
@@ -518,4 +517,9 @@ function init() {
   ctx.lineWidth = 0.5;
   absolute_center.x = width / 2;
   absolute_center.y = width;
+  refresh();
+}
+
+function refresh() {
+  window.requestAnimationFrame(draw);
 }
