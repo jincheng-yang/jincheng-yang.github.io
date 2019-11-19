@@ -59,27 +59,23 @@
 			<p class="institute">The University of Texas at Austin</p>
 		</div>
 
-		<script type="text/javascript" src="/users/jcyang/plugin/Escher.js"></script>
-
 		<nav>
 			<ul>
 				<li><a class = "pagelist" href="/users/jcyang/publications" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav0">Publications</a></li>
 				<li><a class = "pagelist" href="/users/jcyang/assets/files/cv.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav1">Curriculum Vitae</a></li>
 				<li><a class = "icon" href="/users/jcyang" draggable="true" ondragstart="drag(event)"></a></li>
 				<li><a class = "pagelist" href="/users/jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav2">Teaching</a></li>
-				<li><a class = "pagelist" href="/users/jcyang/blog" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav3">Research Blog</a></li>
 				<!--
+				<li><a class = "pagelist" href="/users/jcyang/blog" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav3">Research Blog</a></li>
+				-->
 				<li><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)">Miscellaneous &#9662;</a>
 					<ul class="dropdown">
 						<li><a href="/users/jcyang/blog">Blog</a></li>
-						<li><a href="#">Piano</a></li>
-						<li><a href="#">Rock Music</a></li>
-						<li><a href="#">Shorthand</a></li>
-						<li><a href="#">Calligraphy</a></li>
-						<li><a href="#">Travel</a></li>
+						<li><a href="/users/jcyang/music">Music</a></li>
+						<li><a href="/users/jcyang/shorthand">Shorthand</a></li>
+						<li><a href="/users/jcyang/academic">Academic</a></li>
 					</ul>
 				</li>
-				-->
 			</ul>
 		</nav>
 		
@@ -118,13 +114,30 @@ y
 
 <h3 id="bifurcation-diagram">Bifurcation Diagram</h3>
 
-<!--p id="det_tr"></p-->
-
-<p>$a _{11} = $ <input type="text" id="a11" onchange="updateArgument()" value="1" size="4" />,
-$a _{12} = $ <input type="text" id="a12" onchange="updateArgument()" value="3" size="4" /></p>
-
-<p>$a _{21} = $ <input type="text" id="a21" onchange="updateArgument()" value="-3" size="4" />,
-$a _{22} = $ <input type="text" id="a22" onchange="updateArgument()" value="1" size="4" /></p>
+<div>
+$\begin{pmatrix}
+a _{11} &amp; a _{12} \\
+a _{21} &amp; a _{22}
+\end{pmatrix} = \bigg($
+<table style="border:0px;display:inline-table;vertical-align:middle">
+	<tr>
+		<td style="padding:3px">
+			<input type="text" id="a11" onchange="updateArgument()" value="1" size="4" />
+		</td>
+		<td style="padding:3px">
+			<input type="text" id="a12" onchange="updateArgument()" value="3" size="4" /> 
+		</td>
+	</tr><tr>
+		<td style="padding:3px">
+			<input type="text" id="a21" onchange="updateArgument()" value="-3" size="4" />
+		</td>
+		<td style="padding:3px">
+			<input type="text" id="a22" onchange="updateArgument()" value="1" size="4" />
+		</td>		
+	</tr>
+</table>
+$\bigg).$
+</div>
 
 <p>
     <svg width="136" height="120" onload="makeDraggable(evt)">
@@ -146,33 +159,33 @@ $a _{22} = $ <input type="text" id="a22" onchange="updateArgument()" value="1" s
 <p>$\det (A) = $ <input type="text" id="det" onchange="updateArgumentByDetTr()" value="1" size="8" />,
 $\mathrm{tr} (A) = $ <input type="text" id="tr" onchange="updateArgumentByDetTr()" value="3" size="8" /></p>
 
-<p><input id="realEigens" type="radio" name="real-imag" value="Real" checked="" /> Real Eigenvalues
-<input id="complexEigens" type="radio" name="real-imag" value="Complex" /> Complex Eigenvalues</p>
+<p><input id="realEigens" type="radio" name="real-imag" value="Real" checked="" onclick="updateArgumentByLambda()" /> Real Eigenvalues
+<input id="complexEigens" type="radio" name="real-imag" value="Complex" onclick="updateArgumentByLambda()" /> Complex Eigenvalues</p>
 
 <p>$\lambda _1 = $ 
 <input type="text" id="lambda1" onchange="updateArgumentByLambda()" value="1" size="8" />,</p>
 
 <p>$\lambda _2 = $
-<input type="text" id="lambda2" onchange="updateArgumentByEigens()" value="1" size="8" /></p>
+<input type="text" id="lambda2" onchange="updateArgumentByLambda()" value="1" size="8" /></p>
 
 <p>$\lambda = $
-<input type="text" id="lambdaa" onchange="updateArgumentByEigens()" value="1" size="8" />
+<input type="text" id="lambdaa" onchange="updateArgumentByLambda()" value="1" size="8" />
 $\pm$
-<input type="text" id="lambdab" onchange="updateArgumentByEigens()" value="1" size="8" />
+<input type="text" id="lambdab" onchange="updateArgumentByLambda()" value="1" size="8" />
 $i$.</p>
 
-<p>$v _1 = ($ <input type="text" id="v11" onchange="updateArgumentByEigens()" value="1" size="8" />
-$,$ <input type="text" id="v12" onchange="updateArgumentByEigens()" value="0" size="8" />
+<p>$v _1 = ($ <input type="text" id="v11" onchange="updateArgumentByDirection()" value="1" size="8" />
+$,$ <input type="text" id="v12" onchange="updateArgumentByDirection()" value="0" size="8" />
 $)$, 
-$v _2 = ($ <input type="text" id="v21" onchange="updateArgumentByEigens()" value="0" size="8" />
-$,$ <input type="text" id="v22" onchange="updateArgumentByEigens()" value="1" size="8" />
+$v _2 = ($ <input type="text" id="v21" onchange="updateArgumentByDirection()" value="0" size="8" />
+$,$ <input type="text" id="v22" onchange="updateArgumentByDirection()" value="1" size="8" />
 $)$</p>
 
 <p>Eccentricity $ = $
-<input type="text" id="eccentricity" onchange="updateArgumentByEigens()" value="1" size="8" /></p>
+<input type="text" id="eccentricity" onchange="updateArgumentByDirection()" value="1" size="8" /></p>
 
-<p>$v _3 = ($ <input type="text" id="v31" onchange="updateArgumentByEigens()" value="1" size="8" />
-$,$ <input type="text" id="v32" onchange="updateArgumentByEigens()" value="0" size="8" />
+<p>$v _3 = ($ <input type="text" id="v31" onchange="updateArgumentByDirection()" value="1" size="8" />
+$,$ <input type="text" id="v32" onchange="updateArgumentByDirection()" value="0" size="8" />
 $)$</p>
 
 <script type="text/javascript" src="/users/jcyang/assets/js/2d-linear-dynamical-system.js"></script>
@@ -249,7 +262,7 @@ $)$</p>
 						<div id="float-left" class="vertical-center">
 							<a href="https://www.utexas.edu"><img id="logo" src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a>
 						</div>
-						<p class="copyright">Copyright &#169 2018 Jincheng Yang</p>
+						<p class="copyright">Copyright &#169 2019 Jincheng Yang</p>
 						<div id="float-right" class="vertical-center">
 							<ul>
 								<li id="utmath"><a href="https://www.ma.utexas.edu/">UT Math</a></li>
@@ -262,5 +275,7 @@ $)$</p>
 				</div>
 			</div>
 		</footer>
+
+		<script type="text/javascript" src="/users/jcyang/plugin/Escher.js"></script>
 	</body>
 </html>

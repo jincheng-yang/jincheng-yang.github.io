@@ -8,7 +8,7 @@ use-math: true
 Syllabus: See [Homepage](https://web.ma.utexas.edu/users/jmeth/DEFall19/DEFall19Syll52800.html) and [Calendar](https://web.ma.utexas.edu/users/jmeth/DEFall19/DELessons.html).
 
 - Regular Class: MWF 10:00-11:00 am @ JGB 2.216
-- Discussion Session: TTh 1:00-2:00 pm @ JGB 2.216
+- Discussion Session: TTh 3:30-4:30 pm @ JGB 2.216
 - Dr. Meth's Office Hour: MWF 11:05-11:55 @ RLM 9.144
 - My Office Hour: W 12:00-2:00 pm @ RLM 11.130
 

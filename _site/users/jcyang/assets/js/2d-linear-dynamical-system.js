@@ -110,8 +110,8 @@ function updateArgument() {
     eccentricity = (eccentricity_coeff - Math.sqrt(eccentricity_coeff * eccentricity_coeff - 4)) / 2; // Choose the one between 0 and 1
     rotational_angle = Math.atan2(a22 - a11, a12 + a21) / 2;
     rotational_vector = [Math.cos(rotational_angle), Math.sin(rotational_angle)];
-    eigenvector1 = [Math.cos(rotational_angle), Math.sin(rotational_angle)];
-    eigenvector2 = [Math.cos(rotational_angle), Math.sin(rotational_angle)];
+    eigenvector1 = rotational_vector;
+    eigenvector2 = [eigenvector1[1], -eigenvector1[0]];
   }
 
   setArgumentToPage();
@@ -120,57 +120,28 @@ function updateArgument() {
 
 function updateArgumentByDetTr() {
   receiveArgumentFromPage();
-  if (tr * tr - 4 * det >= 0) {
-    isReal = true;
-    lambda1 = (tr + Math.sqrt(tr * tr - 4 * det)) / 2;
-    lambda2 = (tr - Math.sqrt(tr * tr - 4 * det)) / 2;
-    LambdaMatrix = [[lambda1, 0], [0, lambda2]];
-  } else {
-    isReal = false;
-    lambda_alpha = tr / 2;
-    lambda_beta = Math.sqrt(-tr * tr + 4 * det) / 2 * Math.sign(lambda_beta); // do not change sign suddenly
-    LambdaMatrix = [[lambda_alpha, -lambda_beta], [lambda_beta, lambda_alpha]];
-  }
-
-  AMatrix = matrixMultiplication(matrixMultiplication(PMatrix, LambdaMatrix), matrixInverse(PMatrix));
-  a11 = AMatrix[0][0];
-  a12 = AMatrix[0][1];
-  a21 = AMatrix[1][0];
-  a22 = AMatrix[1][1];
+  computeLambdabyTrDet();
+  computeL();
+  computeAfromLP();
   setArgumentToPage();
   clear2All();
 }
 
 function updateArgumentByLambda() {
   receiveArgumentFromPage();
-  if (isReal) {
-    tr = lambda1 + lambda2;
-    det = lambda1 * lambda2;
-    LambdaMatrix = [[lambda1, 0], [0, lambda2]];
-  } else {
-    tr = 2 * lambda_alpha;
-    det = lambda_alpha * lambda_alpha + lambda_beta * lambda_beta;
-    LambdaMatrix = [[lambda_alpha, -lambda_beta], [lambda_beta, lambda_alpha]];
-  }
-  AMatrix = matrixMultiplication(matrixMultiplication(PMatrix, LambdaMatrix), matrixInverse(PMatrix));
-  a11 = AMatrix[0][0];
-  a12 = AMatrix[0][1];
-  a21 = AMatrix[1][0];
-  a22 = AMatrix[1][1];
+  computeTrDetbyLambda();
+  computeL();
+  computeAfromLP();
+  setArgumentToPage();
+  clear2All();
 }
 
 function updateArgumentByDirection() {
   receiveArgumentFromPage();
-  if (isReal) {
-    PMatrix = [eigenvector1, eigenvector2];
-  } else {
-    PMatrix = [[Math.cos(rotational_angle), -eccentricity * Math.sin(rotational_angle)], [Math.sin(rotational_angle), eccentricity * Math.cos(rotational_angle)]];
-  }
-  AMatrix = matrixMultiplication(matrixMultiplication(PMatrix, LambdaMatrix), matrixInverse(PMatrix));
-  a11 = AMatrix[0][0];
-  a12 = AMatrix[0][1];
-  a21 = AMatrix[1][0];
-  a22 = AMatrix[1][1];
+  computeP();
+  computeAfromLP();
+  setArgumentToPage();
+  clear2All();
 }
 
 function receiveArgumentFromPage() {
@@ -178,8 +149,6 @@ function receiveArgumentFromPage() {
 	a12 = parseFloat(document.getElementById("a12").value);
 	a21 = parseFloat(document.getElementById("a21").value);
   a22 = parseFloat(document.getElementById("a22").value);
-  det = parseFloat(document.getElementById("cir").getAttribute("cy")) * (-16) / 50;
-  tr = parseFloat(document.getElementById("cir").getAttribute("cx")) * 8 / 50;
   det = parseFloat(document.getElementById("det").value);
   tr = parseFloat(document.getElementById("tr").value);
   isReal = document.getElementById("realEigens").checked;
@@ -187,12 +156,32 @@ function receiveArgumentFromPage() {
   lambda2 = parseFloat(document.getElementById("lambda2").value);
   lambda_alpha = parseFloat(document.getElementById("lambdaa").value);
   lambda_beta = parseFloat(document.getElementById("lambdab").value);
-  LambdaMatrix = [[lambda_alpha, -lambda_beta], [lambda_beta, lambda_alpha]];
+  computeL();
   eigenvector1 = normalize([parseFloat(document.getElementById("v11").value), parseFloat(document.getElementById("v12").value)]);
   eigenvector2 = normalize([parseFloat(document.getElementById("v21").value), parseFloat(document.getElementById("v22").value)]);
   rotational_vector = normalize([parseFloat(document.getElementById("v31").value), parseFloat(document.getElementById("v32").value)]);
   rotational_angle = Math.atan2(rotational_vector[1], rotational_vector[0])
   eccentricity = parseFloat(document.getElementById("eccentricity").value);
+  computeP();
+}
+
+function computeAfromLP() {
+  AMatrix = matrixMultiplication(matrixMultiplication(PMatrix, LambdaMatrix), matrixInverse(PMatrix));
+  a11 = AMatrix[0][0];
+  a12 = AMatrix[0][1];
+  a21 = AMatrix[1][0];
+  a22 = AMatrix[1][1];
+}
+
+function computeL() {
+  if (isReal) {
+    LambdaMatrix = [[lambda1, 0], [0, lambda2]];
+  } else {
+    LambdaMatrix = [[lambda_alpha, -lambda_beta], [lambda_beta, lambda_alpha]];
+  }
+}
+
+function computeP() {
   if (isReal) {
     PMatrix = [eigenvector1, eigenvector2];
   } else {
@@ -200,29 +189,70 @@ function receiveArgumentFromPage() {
   }
 }
 
-function setArgumentToPage() {
+function computeTrDetbyLambda() {
+  if (isReal) {
+    tr = lambda1 + lambda2;
+    det = lambda1 * lambda2;
+  } else {
+    tr = 2 * lambda_alpha;
+    det = lambda_alpha * lambda_alpha + lambda_beta * lambda_beta;
+  }
+}
+
+function computeLambdabyTrDet() {
+  if (tr * tr - 4 * det >= 0) {
+    isReal = true;
+    lambda1 = (tr + Math.sqrt(tr * tr - 4 * det)) / 2;
+    lambda2 = (tr - Math.sqrt(tr * tr - 4 * det)) / 2;
+  } else {
+    isReal = false;
+    lambda_alpha = tr / 2;
+    lambda_beta = Math.sqrt(-tr * tr + 4 * det) / 2 * Math.sign(lambda_beta); // do not change sign suddenly
+  }
+}
+
+function setA() {
   document.getElementById("a11").value = a11;
   document.getElementById("a12").value = a12;
   document.getElementById("a21").value = a21;
   document.getElementById("a22").value = a22;
-  document.getElementById("tr").value = tr;
-  document.getElementById("det").value = det;
-  document.getElementById("realEigens").checked = isReal;
-  document.getElementById("complexEigens").checked = !isReal;
+}
+
+function setLambda() {
   document.getElementById("lambda1").value = lambda1;
   document.getElementById("lambda2").value = lambda2;
+  document.getElementById("lambdaa").value = lambda_alpha;
+  document.getElementById("lambdab").value = lambda_beta;
+  document.getElementById("realEigens").checked = isReal;
+  document.getElementById("complexEigens").checked = !isReal;
+}
+
+function setDirection() {
   document.getElementById("v11").value = eigenvector1[0];
   document.getElementById("v12").value = eigenvector1[1];
   document.getElementById("v21").value = eigenvector2[0];
   document.getElementById("v22").value = eigenvector2[1];
-  document.getElementById("lambdaa").value = lambda_alpha;
-  document.getElementById("lambdab").value = lambda_beta;
   document.getElementById("v31").value = rotational_vector[0];
   document.getElementById("v32").value = rotational_vector[1];
   document.getElementById("eccentricity").value = eccentricity;
+}
 
+function setDetTr() {
+  document.getElementById("tr").value = tr;
+  document.getElementById("det").value = det;
+}
+
+function setDetTrDiagram() {
   document.getElementById("cir").setAttribute("cx", tr / 8 * 50);
   document.getElementById("cir").setAttribute("cy", -det / 16 * 50);
+}
+
+function setArgumentToPage() {
+  setA();
+  setLambda();
+  setDirection();
+  setDetTr();
+  setDetTrDiagram();
 }
 
 function normalize(x) {
@@ -280,7 +310,6 @@ function makeDraggable(evt) {
   svg.addEventListener('mousedown', startDrag);
   svg.addEventListener('mousemove', drag);
   svg.addEventListener('mouseup', endDrag);
-  svg.addEventListener('mouseleave', endDrag);
   function startDrag(evt) {
     if (evt.target.classList.contains('draggable')) {
       selectedElement = evt.target;
@@ -306,12 +335,19 @@ function makeDraggable(evt) {
       selectedElement.setAttributeNS(null, "cy", coord.y - offset.y);
       det = -(coord.y - offset.y) * 16.0 / 50.0;
       tr = (coord.x - offset.x) * 8.0 / 50.0;
-      //document.getElementById("det_tr").innerHTML = "Det(A) = " + det + ", Tr(A) = " + tr + ".";
+      computeLambdabyTrDet();
+      computeL();
+      computeAfromLP();
+      setA();
+      setDetTr()
+      setLambda();
     }
   }
 
   function endDrag(evt) {
-    selectedElement = null;
-    updateArgumentByDetTr
+    if (selectedElement) {
+      selectedElement = null;
+      updateArgumentByDetTr();
+    }
   }
 }

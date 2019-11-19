@@ -33,13 +33,30 @@ y
 
 ### Bifurcation Diagram
 
-<!--p id="det_tr"></p-->
-
-$a _{11} = $ <input type="text" id="a11" onchange="updateArgument()" value="1" size="4">,
-$a _{12} = $ <input type="text" id="a12" onchange="updateArgument()" value="3" size="4"> 
-
-$a _{21} = $ <input type="text" id="a21" onchange="updateArgument()" value="-3" size="4">,
-$a _{22} = $ <input type="text" id="a22" onchange="updateArgument()" value="1" size="4">
+<div>
+$\begin{pmatrix}
+a _{11} & a _{12} \\
+a _{21} & a _{22}
+\end{pmatrix} = \bigg($
+<table style="border:0px;display:inline-table;vertical-align:middle">
+	<tr>
+		<td style="padding:3px">
+			<input type="text" id="a11" onchange="updateArgument()" value="1" size="4">
+		</td>
+		<td style="padding:3px">
+			<input type="text" id="a12" onchange="updateArgument()" value="3" size="4"> 
+		</td>
+	</tr><tr>
+		<td style="padding:3px">
+			<input type="text" id="a21" onchange="updateArgument()" value="-3" size="4">
+		</td>
+		<td style="padding:3px">
+			<input type="text" id="a22" onchange="updateArgument()" value="1" size="4">
+		</td>		
+	</tr>
+</table>
+$\bigg).$
+</div> 
 
 <p>
     <svg width="136" height="120" onload="makeDraggable(evt)">
@@ -61,33 +78,33 @@ $a _{22} = $ <input type="text" id="a22" onchange="updateArgument()" value="1" s
 $\det (A) = $ <input type="text" id="det" onchange="updateArgumentByDetTr()" value="1" size="8">,
 $\mathrm{tr} (A) = $ <input type="text" id="tr" onchange="updateArgumentByDetTr()" value="3" size="8"> 
 
-<input id="realEigens" type="radio" name="real-imag" value="Real" checked> Real Eigenvalues
-<input id="complexEigens" type="radio" name="real-imag" value="Complex"> Complex Eigenvalues 
+<input id="realEigens" type="radio" name="real-imag" value="Real" checked onclick="updateArgumentByLambda()"> Real Eigenvalues
+<input id="complexEigens" type="radio" name="real-imag" value="Complex" onclick="updateArgumentByLambda()"> Complex Eigenvalues 
 
 $\lambda _1 = $ 
 <input type="text" id="lambda1" onchange="updateArgumentByLambda()" value="1" size="8">,
 
 $\lambda _2 = $
-<input type="text" id="lambda2" onchange="updateArgumentByEigens()" value="1" size="8">
+<input type="text" id="lambda2" onchange="updateArgumentByLambda()" value="1" size="8">
 
 $\lambda = $
-<input type="text" id="lambdaa" onchange="updateArgumentByEigens()" value="1" size="8">
+<input type="text" id="lambdaa" onchange="updateArgumentByLambda()" value="1" size="8">
 $\pm$
-<input type="text" id="lambdab" onchange="updateArgumentByEigens()" value="1" size="8">
+<input type="text" id="lambdab" onchange="updateArgumentByLambda()" value="1" size="8">
 $i$.
 
-$v _1 = ($ <input type="text" id="v11" onchange="updateArgumentByEigens()" value="1" size="8">
-$,$ <input type="text" id="v12" onchange="updateArgumentByEigens()" value="0" size="8">
+$v _1 = ($ <input type="text" id="v11" onchange="updateArgumentByDirection()" value="1" size="8">
+$,$ <input type="text" id="v12" onchange="updateArgumentByDirection()" value="0" size="8">
 $)$, 
-$v _2 = ($ <input type="text" id="v21" onchange="updateArgumentByEigens()" value="0" size="8">
-$,$ <input type="text" id="v22" onchange="updateArgumentByEigens()" value="1" size="8">
+$v _2 = ($ <input type="text" id="v21" onchange="updateArgumentByDirection()" value="0" size="8">
+$,$ <input type="text" id="v22" onchange="updateArgumentByDirection()" value="1" size="8">
 $)$
 
 Eccentricity $ = $
-<input type="text" id="eccentricity" onchange="updateArgumentByEigens()" value="1" size="8">
+<input type="text" id="eccentricity" onchange="updateArgumentByDirection()" value="1" size="8">
 
-$v _3 = ($ <input type="text" id="v31" onchange="updateArgumentByEigens()" value="1" size="8">
-$,$ <input type="text" id="v32" onchange="updateArgumentByEigens()" value="0" size="8">
+$v _3 = ($ <input type="text" id="v31" onchange="updateArgumentByDirection()" value="1" size="8">
+$,$ <input type="text" id="v32" onchange="updateArgumentByDirection()" value="0" size="8">
 $)$
 
 <script type="text/javascript" src="/users/jcyang/assets/js/2d-linear-dynamical-system.js"></script>

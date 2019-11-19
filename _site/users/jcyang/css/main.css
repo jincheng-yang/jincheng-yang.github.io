@@ -75,10 +75,7 @@ blockquote {
 	margin: 0em;
 	padding: auto;
 	height: 20em;
-	/* background-image: url("../assets/images/head.png"); */
-    background-size: 100%;
-    background-repeat: no-repeat;
-    /* background-color: #898989; */
+    cursor: move;
 }
 
 p.name {
@@ -92,6 +89,14 @@ p.name {
     text-align: center;
 	font-size: 4em;
     letter-spacing: 0.16em;
+    cursor: move;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
 }
 
 p.institute {
@@ -102,6 +107,14 @@ p.institute {
     font-size: 1.0em;
     letter-spacing: 0.16em;
     font-family: 'Cinzel', serif;
+    cursor: move;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
 }
 
 .figure {
@@ -357,4 +370,22 @@ blockquote p {
     font-family: 'Dancing Script', cursive;
     color: #749696;
     font-size: 1em;
+}
+
+input {
+    text-align: right;
+}
+
+pre {
+    overflow: auto;
+}
+
+pre > code {
+    display: block;
+    padding: 1em;
+    word-wrap: normal;
+    background-color: #F7F7F7;
+    border: solid #888;
+    border-width: 1px;
+    border-radius: 0.6em;
 }
