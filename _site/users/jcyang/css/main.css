@@ -1,3 +1,5 @@
+@import "highlighter/default.css";
+
 body {
     font-family: 'Roboto', 'Helvetica', 'Arial', 'Sans-Serif';
     margin: 0 auto;
@@ -378,14 +380,16 @@ input {
 
 pre {
     overflow: auto;
+    border: solid #BBB;
+    border-width: 1px;
+    padding: 1em;
 }
 
-pre > code {
-    display: block;
-    padding: 1em;
-    word-wrap: normal;
-    background-color: #F7F7F7;
-    border: solid #888;
-    border-width: 1px;
+.highlight {
     border-radius: 0.6em;
 }
+
+/*pre > code {*/
+/*    display: block;*/
+/*    word-wrap: normal;*/
+/*}*/

@@ -72,7 +72,7 @@
 					<ul class="dropdown">
 						<li><a href="/users/jcyang/blog">Blog</a></li>
 						<li><a href="/users/jcyang/music">Music</a></li>
-						<li><a href="/users/jcyang/shorthand">Shorthand</a></li>
+<!--						<li><a href="/users/jcyang/shorthand">Shorthand</a></li>-->
 						<li><a href="/users/jcyang/academic">Academic</a></li>
 					</ul>
 				</li>
@@ -122,7 +122,7 @@ As it goes, $\mu _k ^{-1}$ should converge to the largest eigenvalue of $T _{K -
 <h3 id="bvp-solver">BVP Solver</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">ceil</span><span class="p">,</span> <span class="n">log</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">ceil</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">arctan</span>
 <span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_bvp</span>
@@ -181,8 +181,8 @@ Then use <code class="highlighter-rouge">solve_bvp</code> function from <code cl
 <span class="n">graph</span><span class="p">(</span><span class="n">test_sol</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CPU times: user 46.7 ms, sys: 6.65 ms, total: 53.3 ms
-Wall time: 51.7 ms
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CPU times: user 26.5 ms, sys: 5.32 ms, total: 31.8 ms
+Wall time: 30.5 ms
 </code></pre></div></div>
 
 <p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_11_1.png" alt="png" /></p>
@@ -240,9 +240,9 @@ Wall time: 51.7 ms
 <span class="k">print</span><span class="p">(</span><span class="n">eigen</span><span class="p">(</span><span class="n">test_K</span><span class="p">,</span> <span class="n">test_mu_0</span><span class="p">,</span> <span class="n">test_f_0</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(4.000000000018323, &lt;scipy.interpolate.interpolate.PPoly object at 0x108f6e728&gt;, 10)
-CPU times: user 218 ms, sys: 4.2 ms, total: 222 ms
-Wall time: 221 ms
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(4.000000000018323, &lt;scipy.interpolate.interpolate.PPoly object at 0x18192fee90&gt;, 10)
+CPU times: user 220 ms, sys: 4.08 ms, total: 224 ms
+Wall time: 223 ms
 </code></pre></div></div>
 
 <h2 id="reighley-kuo-equation">Reighley-Kuo Equation</h2>
@@ -261,7 +261,7 @@ Wall time: 221 ms
 <span class="n">Upp</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">U</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Comparing to the model in our article, the domain is rescaled from $[-1, 1]$ to $[-\pi/2, \pi/2]$, for computational simplicity. Therefore, some results here differ from the artical by a factor of $\pi/2$ or $\pi^2/4$.</p>
+<p>Comparing to the model in our article, the domain is rescaled from $[-1, 1]$ to $[-\pi/2, \pi/2]$, for computational simplicity. Therefore, some results here differ from the article by a factor of $\pi/2$ or $\pi^2/4$.</p>
 
 <p>We first define the coefficient function</p>
 
@@ -280,12 +280,12 @@ Wall time: 221 ms
 <span class="n">graph</span><span class="p">(</span><span class="n">test_sol</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(-0.5288820708571951, &lt;scipy.interpolate.interpolate.PPoly object at 0x1518f87b48&gt;, 14)
-CPU times: user 342 ms, sys: 4.21 ms, total: 346 ms
-Wall time: 345 ms
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(-0.5288820708571951, &lt;scipy.interpolate.interpolate.PPoly object at 0x15188e0410&gt;, 14)
+CPU times: user 344 ms, sys: 3.56 ms, total: 348 ms
+Wall time: 346 ms
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_29_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_30_1.png" alt="png" /></p>
 
 <p>Now we define $\lambda _1 (\beta, c)$ to be the principal eigenvalue of $K _{\beta, c}$. Because the eigenvalues are greater than $-3$, we can use default $\mu _0 = -3$ to find smallest eigenvalue.</p>
 
@@ -306,7 +306,7 @@ Wall time: 345 ms
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lambda1</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">mu_0</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(-0.5385420390101288, &lt;scipy.interpolate.interpolate.PPoly at 0x1819c8ab48&gt;)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(-0.5385420390101288, &lt;scipy.interpolate.interpolate.PPoly at 0x1067e6470&gt;)
 </code></pre></div></div>
 
 <h3 id="eigenvalue-plot">Eigenvalue Plot</h3>
@@ -323,9 +323,18 @@ Wall time: 345 ms
     <span class="k">return</span> <span class="n">a0</span> <span class="o">*</span> <span class="n">y0</span> <span class="o">+</span> <span class="n">a1</span> <span class="o">*</span> <span class="n">y1</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">progressbar</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># This is a library that enable it to show a progress bar for our long calculation. </span>
+<span class="c"># Each of the calculateEigen procedure takes about one hour in my case.</span>
 
-<span class="k">def</span> <span class="nf">calculateEigen</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">,</span> <span class="n">mu_0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">exp</span><span class="p">):</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">progressbar</span>
+<span class="k">except</span><span class="p">:</span>
+  <span class="kn">from</span> <span class="nn">pip._internal</span> <span class="kn">import</span> <span class="n">main</span> <span class="k">as</span> <span class="n">pipmain</span>
+  <span class="n">pipmain</span><span class="p">([</span><span class="s">'install'</span><span class="p">,</span> <span class="s">'progressbar2'</span><span class="p">])</span>
+  <span class="kn">import</span> <span class="nn">progressbar</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">calculateEigen</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">,</span> <span class="n">mu_0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">exp</span><span class="p">):</span>
 
     <span class="n">beta_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">)</span>
     <span class="n">c_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">c_sample</span><span class="p">)</span>
@@ -355,7 +364,7 @@ Wall time: 345 ms
     <span class="n">betaMat</span><span class="p">,</span> <span class="n">cMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">betaMat</span><span class="p">,</span> <span class="n">cMat</span><span class="p">,</span> <span class="n">evMat</span><span class="p">,</span> <span class="n">efMat</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">eigenPlot</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">minEigen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">maxEigen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">level_increment</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figure_size</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">eigenPlot</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">minEigen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">maxEigen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">level_increment</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figure_size</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figure_size</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">minEigen</span><span class="p">):</span>
         <span class="n">minEigen</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="nb">min</span><span class="p">()</span> <span class="o">/</span> <span class="n">level_increment</span><span class="p">)</span> <span class="o">*</span> <span class="n">level_increment</span>
@@ -374,12 +383,11 @@ Wall time: 345 ms
 <span class="n">eigenPlot</span><span class="p">(</span><span class="n">res1</span><span class="p">,</span> <span class="n">minEigen</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">maxEigen</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (601 of 601) |######################| Elapsed Time: 1:20:37 Time:  1:20:37
-/anaconda3/lib/python3.7/site-packages/matplotlib/contour.py:1000: UserWarning: The following kwargs were not used by contour: 'manual'
-  s)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (601 of 601) |######################| Elapsed Time: 1:25:01 Time:  1:25:01
+/Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_40_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_42_1.png" alt="png" /></p>
 
 <p>For the region $-3 &lt; \beta &lt; 3$, $-1 &lt; c &lt; 0$, again because as $c \to 0 ^-$, the system becomes singular, we use exponential samples.</p>
 
@@ -389,10 +397,56 @@ Wall time: 345 ms
 <span class="n">eigenPlot</span><span class="p">(</span><span class="n">res0</span><span class="p">,</span> <span class="n">minEigen</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">maxEigen</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (601 of 601) |######################| Elapsed Time: 1:21:23 Time:  1:21:23
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (601 of 601) |######################| Elapsed Time: 1:25:11 Time:  1:25:11
+/Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_42_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_44_1.png" alt="png" /></p>
+
+<p>We can patch them together by doing a transform $\tilde c = \frac1{c - 1/2}$. In this way we may have a better view of the shape of the eigenvalues.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">601</span><span class="p">)</span>
+<span class="n">c_tilde_sample_negative</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)]</span>
+<span class="n">c_tilde_sample_positive</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)]</span>
+<span class="n">c_sample_negative</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">c_tilde_sample_negative</span><span class="p">]</span>
+<span class="n">c_sample_positive</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">c_tilde_sample_positive</span><span class="p">]</span>
+<span class="n">restilde_negative</span> <span class="o">=</span> <span class="n">calculateEigen</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample_negative</span><span class="p">,</span> <span class="n">mu_0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">restilde_positive</span> <span class="o">=</span> <span class="n">calculateEigen</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample_positive</span><span class="p">,</span> <span class="n">mu_0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">c_tilde_sample_negative</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">c_tilde_sample</span> <span class="o">=</span> <span class="n">c_tilde_sample_negative</span> <span class="o">+</span> <span class="n">c_tilde_sample_positive</span>
+<span class="n">restilde_neg</span> <span class="o">=</span> <span class="n">restilde_negative</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">restilde_neg</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">restilde_pos</span> <span class="o">=</span> <span class="n">restilde_positive</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">res_mat</span> <span class="o">=</span> <span class="n">restilde_neg</span> <span class="o">+</span> <span class="n">restilde_pos</span>
+<span class="n">bMat</span><span class="p">,</span> <span class="n">cMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_tilde_sample</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (601 of 601) |######################| Elapsed Time: 1:25:02 Time:  1:25:02
+100% (601 of 601) |######################| Elapsed Time: 1:22:29 Time:  1:22:29
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">bMat</span><span class="p">,</span> <span class="n">cMat</span><span class="p">,</span> <span class="n">res_mat</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">CS</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s">'k'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a list of 20 text.Text objects&gt;
+</code></pre></div></div>
+
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_47_1.png" alt="png" /></p>
+
+<p>Apparently there is a saddle point at $(-1, 0)$ that python contourplot cannot draw numerically. This corresponds to the system at $\beta = -1$, $c = \infty$. Since in general</p>
+
+<script type="math/tex; mode=display">\frac{\partial \lambda _1}{\partial \tilde c} 
+= \frac{\partial \lambda _1}{\partial c} \frac{\d c}{\d \tilde c}
+= - \int _{-\frac\pi2} ^{\frac\pi2} \frac{\beta - U''}{(U - c) ^2} |\phi| ^2 \d y 
+\cdot \left(-\frac1{(c - 1/2)^2}\right) ^{-1}</script>
+
+<p>Here $\phi$ is the corresponding normalized eigenfunction. See equation (3.18) of the article for derivation. When $c \to \infty$, $\tilde c \to 0$, $\phi \to C \cos (y)$, $\lambda _1 \to 1$. Therefore the above partial derivative vanishes at $\beta$ that</p>
+
+<script type="math/tex; mode=display">\int _{-\frac\pi2} ^{\frac\pi2} (\beta - U'') \cos ^2 (y) \d y = 0.</script>
+
+<p>With $U’’ = 2 - 4 \cos (y) ^2$, one easily concludes the saddle point is $\beta = -1$.</p>
 
 <p>To take a closer look at $c = 0$, we test $\beta \in (0.392, 0.408)$, $\beta \in (0.992, 1.008)$, and $\beta \in (1.592, 1.608)$.</p>
 
@@ -402,10 +456,11 @@ Wall time: 345 ms
 <span class="n">eigenPlot</span><span class="p">(</span><span class="n">res04</span><span class="p">,</span> <span class="n">level_increment</span> <span class="o">=</span> <span class="mf">0.004</span><span class="p">,</span> <span class="n">figure_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (400 of 400) |######################| Elapsed Time: 0:45:34 Time:  0:45:34
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (400 of 400) |######################| Elapsed Time: 0:47:54 Time:  0:47:54
+/Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_44_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_54_1.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.992</span><span class="p">,</span> <span class="mf">1.008</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 <span class="n">c_sample</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.005</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
@@ -413,10 +468,11 @@ Wall time: 345 ms
 <span class="n">eigenPlot</span><span class="p">(</span><span class="n">res10</span><span class="p">,</span> <span class="n">level_increment</span> <span class="o">=</span> <span class="mf">0.004</span><span class="p">,</span> <span class="n">figure_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (400 of 400) |######################| Elapsed Time: 0:41:49 Time:  0:41:49
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (400 of 400) |######################| Elapsed Time: 0:43:03 Time:  0:43:03
+/Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_45_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_55_1.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.592</span><span class="p">,</span> <span class="mf">1.608</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 <span class="n">c_sample</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.005</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
@@ -424,10 +480,11 @@ Wall time: 345 ms
 <span class="n">eigenPlot</span><span class="p">(</span><span class="n">res16</span><span class="p">,</span> <span class="n">level_increment</span> <span class="o">=</span> <span class="mf">0.004</span><span class="p">,</span> <span class="n">figure_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (400 of 400) |######################| Elapsed Time: 0:40:24 Time:  0:40:24
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (400 of 400) |######################| Elapsed Time: 0:42:50 Time:  0:42:50
+/Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_46_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_56_1.png" alt="png" /></p>
 
 <h2 id="instability-boundary">Instability Boundary</h2>
 
@@ -447,10 +504,10 @@ Wall time: 345 ms
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="n">Lambda_beta</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x181969a1d0&gt;]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1821879b10&gt;]
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_51_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_61_1.png" alt="png" /></p>
 
 <p>Plot for $\alpha = \sqrt{\Lambda _\beta}$.</p>
 
@@ -460,12 +517,12 @@ Wall time: 345 ms
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x182481d860&gt;]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1821ad7590&gt;]
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_54_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_64_1.png" alt="png" /></p>
 
-<h2 id="detailed-calculation">Detailed Calculation</h2>
+<h3 id="detailed-calculation">Detailed Calculation</h3>
 
 <p>For each $\beta$, we will calculate $\Lambda _\beta$ with more accuracy now. We will use a simple optimization method. We first consider $\beta \in \pth{-2, 0}$.</p>
 
@@ -522,7 +579,7 @@ Wall time: 345 ms
     <span class="p">(</span><span class="n">c_star</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">Lambda_Min</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c_sample</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (40 of 40) |########################| Elapsed Time: 0:01:22 Time:  0:01:22
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (40 of 40) |########################| Elapsed Time: 0:03:00 Time:  0:03:00
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_sample</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
@@ -544,7 +601,7 @@ Wall time: 345 ms
     <span class="p">(</span><span class="n">c_star</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">Lambda_Min</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c_sample</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (200 of 200) |######################| Elapsed Time: 0:06:43 Time:  0:06:43
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (200 of 200) |######################| Elapsed Time: 0:19:07 Time:  0:19:07
 </code></pre></div></div>
 
 <p>Take a look at the plot of $c^*$.</p>
@@ -552,26 +609,25 @@ Wall time: 345 ms
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">140</span><span class="p">],</span> <span class="n">c_star</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">140</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x181d953898&gt;]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1821e26e90&gt;]
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_62_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_72_1.png" alt="png" /></p>
 
 <p>For $\beta &gt; 0$, $c ^*$ is small but not always zero.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">300</span><span class="p">:],</span> <span class="n">c_star</span><span class="p">[</span><span class="mi">300</span><span class="p">:])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x181a2dee80&gt;]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1819307ad0&gt;]
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_64_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_74_1.png" alt="png" /></p>
 
 <p>Now compare the value of our results and the hypothesis of Kuo.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Lambda_beta</span> <span class="o">=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="n">Lambda_Min</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">))]</span>
 <span class="n">alpha</span> <span class="o">=</span> <span class="p">[</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Lambda_beta</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">))]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
 
 <span class="n">hypothesis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">)</span>
@@ -581,20 +637,20 @@ Wall time: 345 ms
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="n">hypothesis</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x182243c5f8&gt;]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x18191ff310&gt;]
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_66_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_76_1.png" alt="png" /></p>
 
 <p>The difference for $0 &lt; \beta &lt; 2$ is the following.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">300</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">300</span><span class="p">:</span><span class="mi">500</span><span class="p">]</span> <span class="o">-</span> <span class="n">hypothesis</span><span class="p">[</span><span class="mi">300</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1819b55b00&gt;]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x182896c550&gt;]
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_68_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_78_1.png" alt="png" /></p>
 
 <h3 id="calculate-beta-_-">Calculate $\beta _-$</h3>
 
@@ -678,7 +734,7 @@ Wall time: 345 ms
 <span class="n">beta_minus</span> <span class="o">=</span> <span class="n">maxmin</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (14.721750953984929 of 14.721750953984929) || Elapsed Time: 0:00:32 ETA:  00:00:00
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (14.721750953984929 of 14.721750953984929) || Elapsed Time: 0:04:54 ETA:  00:00:00
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_minus</span>
@@ -687,8 +743,8 @@ Wall time: 345 ms
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1.6489545393735134
 </code></pre></div></div>
 
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-
+<hr />
+<p>Download this page as <a href="/users/jcyang/assets/files/jupyter/strum-liouville.ipynb">Jupyter Notebook</a>, or run this notebook in <a href="https://colab.research.google.com/drive/1mrOwGWG0DFItzn2UPzK_0OzrsLvBBgoX">Google Colab</a>.</p>
 
 
   
@@ -723,6 +779,15 @@ Wall time: 345 ms
     <div class="thumb">
       
     
+    <a href="/users/jcyang/blog/2019/11/19/Barotropic-Instability" title="Barotropic Instability">
+    <div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/strum-liouville.png')"></div>
+    </a>
+    <h5>19 Nov 2019</h5>
+    <a href="/users/jcyang/blog/2019/11/19/Barotropic-Instability" title="Barotropic Instability">
+      <h4>Barotropic Instability</h4>
+    </a>
+    </div><div class="thumb" style="margin-left:5%">
+    
     <a href="/users/jcyang/blog/2017/10/24/graph-decomposition" title="Graph Decomposition">
     <div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/graph-decomposition.png')"></div>
     </a>
@@ -738,15 +803,6 @@ Wall time: 345 ms
     <h5>24 Apr 2016</h5>
     <a href="/users/jcyang/blog/2016/04/24/Escher" title="Project Escher">
       <h4>Project Escher</h4>
-    </a>
-    </div><div class="thumb" style="margin-left:5%">
-    
-    <a href="/users/jcyang/blog/2016/03/22/blooming-flower" title="Blooming Flower">
-    <div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/flower.gif')"></div>
-    </a>
-    <h5>22 Mar 2016</h5>
-    <a href="/users/jcyang/blog/2016/03/22/blooming-flower" title="Blooming Flower">
-      <h4>Blooming Flower</h4>
     </a>
     </div>
 
