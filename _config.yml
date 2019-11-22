@@ -1,6 +1,9 @@
 name: Jincheng Yang's Home Page
 markdown: kramdown
 highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 permalink: /users/jcyang/blog/:year/:month/:day/:title
 disqus: 
   shortname: jcyang

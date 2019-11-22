@@ -3,6 +3,7 @@ layout: post
 title: "Hypergeometric Function"
 date: 2019-11-06
 use-math: true
+comments: true
 ---
 
 ### Definition
