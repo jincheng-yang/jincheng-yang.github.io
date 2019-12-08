@@ -183,7 +183,7 @@ function computeL() {
 
 function computeP() {
   if (isReal) {
-    PMatrix = [eigenvector1, eigenvector2];
+    PMatrix = [[eigenvector1[0], eigenvector2[0]], [eigenvector1[1], eigenvector2[1]]];
   } else {
     PMatrix = [[Math.cos(rotational_angle), -eccentricity * Math.sin(rotational_angle)], [Math.sin(rotational_angle), eccentricity * Math.cos(rotational_angle)]];
   }
@@ -225,6 +225,13 @@ function setLambda() {
   document.getElementById("lambdab").value = lambda_beta;
   document.getElementById("realEigens").checked = isReal;
   document.getElementById("complexEigens").checked = !isReal;
+  if (isReal) {
+    document.getElementById("real_eigenvalue").style.display = "block";
+    document.getElementById("imag_eigenvalue").style.display = "none";
+  } else {
+    document.getElementById("imag_eigenvalue").style.display = "block";
+    document.getElementById("real_eigenvalue").style.display = "none";
+  }
 }
 
 function setDirection() {
@@ -235,6 +242,47 @@ function setDirection() {
   document.getElementById("v31").value = rotational_vector[0];
   document.getElementById("v32").value = rotational_vector[1];
   document.getElementById("eccentricity").value = eccentricity;
+  if (isReal) {
+    document.getElementById("real_eigenvector").style.display = "block";
+    document.getElementById("imag_eigenvector").style.display = "none";
+  } else {
+    document.getElementById("imag_eigenvector").style.display = "block";
+    document.getElementById("real_eigenvector").style.display = "none";
+  }
+}
+
+function setDirectionDiagram() {
+    if (isReal) {
+        document.getElementById("ev_handle1").setAttributeNS(null, "cx", eigenvector1[0]);
+        document.getElementById("ev_handle1").setAttributeNS(null, "cy", eigenvector1[1]);
+        document.getElementById("ev_handle3").setAttributeNS(null, "cx", -eigenvector1[0]);
+        document.getElementById("ev_handle3").setAttributeNS(null, "cy", -eigenvector1[1]);
+        document.getElementById("ev_stroke1").setAttributeNS(null, "x1", eigenvector1[0]);
+        document.getElementById("ev_stroke1").setAttributeNS(null, "x2", -eigenvector1[0]);
+        document.getElementById("ev_stroke1").setAttributeNS(null, "y1", eigenvector1[1]);
+        document.getElementById("ev_stroke1").setAttributeNS(null, "y2", -eigenvector1[1]);
+        document.getElementById("ev_handle2").setAttributeNS(null, "cx", eigenvector2[0]);
+        document.getElementById("ev_handle2").setAttributeNS(null, "cy", eigenvector2[1]);
+        document.getElementById("ev_handle4").setAttributeNS(null, "cx", -eigenvector2[0]);
+        document.getElementById("ev_handle4").setAttributeNS(null, "cy", -eigenvector2[1]);
+        document.getElementById("ev_stroke2").setAttributeNS(null, "x1", eigenvector2[0]);
+        document.getElementById("ev_stroke2").setAttributeNS(null, "x2", -eigenvector2[0]);
+        document.getElementById("ev_stroke2").setAttributeNS(null, "y1", eigenvector2[1]);
+        document.getElementById("ev_stroke2").setAttributeNS(null, "y2", -eigenvector2[1]);
+    } else {
+        document.getElementById("ev_handle5").setAttributeNS(null, "cx", rotational_vector[0] / Math.sqrt(eccentricity));
+        document.getElementById("ev_handle5").setAttributeNS(null, "cy", rotational_vector[1] / Math.sqrt(eccentricity));
+        document.getElementById("ev_handle7").setAttributeNS(null, "cx", -rotational_vector[0] / Math.sqrt(eccentricity));
+        document.getElementById("ev_handle7").setAttributeNS(null, "cy", -rotational_vector[1] / Math.sqrt(eccentricity));
+        document.getElementById("ev_handle6").setAttributeNS(null, "cx", -rotational_vector[1] * Math.sqrt(eccentricity));
+        document.getElementById("ev_handle6").setAttributeNS(null, "cy", rotational_vector[0] * Math.sqrt(eccentricity));
+        document.getElementById("ev_handle8").setAttributeNS(null, "cx", rotational_vector[1] * Math.sqrt(eccentricity));
+        document.getElementById("ev_handle8").setAttributeNS(null, "cy", -rotational_vector[0] * Math.sqrt(eccentricity));
+        document.getElementById("ev_ellipse").setAttributeNS(null, "rx", 1 / Math.sqrt(eccentricity));
+        document.getElementById("ev_ellipse").setAttributeNS(null, "ry", Math.sqrt(eccentricity));
+        rotational_angle_str = rotational_angle / Math.PI * 180;
+        document.getElementById("ev_ellipse").setAttributeNS(null, "transform", "rotate(" + rotational_angle_str + " 0 0)")
+    }
 }
 
 function setDetTr() {
@@ -251,13 +299,17 @@ function setArgumentToPage() {
   setA();
   setLambda();
   setDirection();
+  setDirectionDiagram();
   setDetTr();
   setDetTrDiagram();
 }
 
+function norm(x) {
+  return Math.sqrt(x[0] * x[0] + x[1] * x[1]);
+}
+                                              
 function normalize(x) {
-  norm = Math.sqrt(x[0] * x[0] + x[1] * x[1]);
-  return [x[0] / norm, x[1] / norm]
+  return [x[0] / norm(x), x[1] / norm(x)]
 }
 
 function matrixMultiplication(a, b) {
@@ -302,10 +354,14 @@ function line(x1, y1, x2, y2) {
   ctx2.stroke();
 }
 
+                                              
+                                              
+                                              
 var selectedElement = false;
 
 // Deal with drag events
 function makeDraggable(evt) {
+  evt.preventDefault();
   var svg = evt.target;
   svg.addEventListener('mousedown', startDrag);
   svg.addEventListener('mousemove', drag);
@@ -313,6 +369,7 @@ function makeDraggable(evt) {
   function startDrag(evt) {
     if (evt.target.classList.contains('draggable')) {
       selectedElement = evt.target;
+      CTM = selectedElement.getScreenCTM();
       offset = getMousePosition(evt);
       offset.x -= parseFloat(selectedElement.getAttributeNS(null, "cx"));
       offset.y -= parseFloat(selectedElement.getAttributeNS(null, "cy"));
@@ -320,7 +377,6 @@ function makeDraggable(evt) {
   }
 
   function getMousePosition(evt) {
-    var CTM = svg.getScreenCTM();
     return {
       x: (evt.clientX - CTM.e) / CTM.a,
       y: (evt.clientY - CTM.f) / CTM.d
@@ -330,24 +386,70 @@ function makeDraggable(evt) {
   function drag(evt) {
     if (selectedElement) {
       evt.preventDefault();
-      var coord = getMousePosition(evt);
+      coord = getMousePosition(evt);
       selectedElement.setAttributeNS(null, "cx", coord.x - offset.x);
       selectedElement.setAttributeNS(null, "cy", coord.y - offset.y);
-      det = -(coord.y - offset.y) * 16.0 / 50.0;
-      tr = (coord.x - offset.x) * 8.0 / 50.0;
-      computeLambdabyTrDet();
-      computeL();
-      computeAfromLP();
-      setA();
-      setDetTr()
-      setLambda();
+      if (selectedElement === document.getElementById("cir")) {
+          det = -(coord.y - offset.y) * 16.0 / 50.0;
+          tr = (coord.x - offset.x) * 8.0 / 50.0;
+          computeLambdabyTrDet();
+          computeL();
+          computeAfromLP();
+          setA();
+          setDetTr()
+          setLambda();
+          setDirection();
+      }
+      if ([document.getElementById("ev_handle1"), document.getElementById("ev_handle2"), document.getElementById("ev_handle3"), document.getElementById("ev_handle4"), document.getElementById("ev_handle5"), document.getElementById("ev_handle6"), document.getElementById("ev_handle7"), document.getElementById("ev_handle8")].includes(selectedElement)) {
+          if (selectedElement === document.getElementById("ev_handle1") || selectedElement === document.getElementById("ev_handle3")) {
+            eigenvector1 = normalize([coord.x - offset.x, coord.y - offset.y]);
+            if (selectedElement === document.getElementById("ev_handle3")) {
+              eigenvector1 = [-eigenvector1[0], -eigenvector1[1]];
+            }
+          }
+          if (selectedElement === document.getElementById("ev_handle2") || selectedElement === document.getElementById("ev_handle4")) {
+            eigenvector2 = normalize([coord.x - offset.x, coord.y - offset.y]);
+            if (selectedElement === document.getElementById("ev_handle4")) {
+                eigenvector2 = [-eigenvector2[0], -eigenvector2[1]];
+            }
+          }
+          if (selectedElement === document.getElementById("ev_handle5") || selectedElement === document.getElementById("ev_handle7")) {
+            rotational_vector = normalize([coord.x - offset.x, coord.y - offset.y]);
+            eccentricity = 1 / norm([coord.x - offset.x, coord.y - offset.y]);
+            eccentricity *= eccentricity;
+            if (selectedElement === document.getElementById("ev_handle7")) {
+              rotational_vector = [-rotational_vector[0], -rotational_vector[1]];
+            }
+            rotational_angle = Math.atan2(rotational_vector[1], rotational_vector[0]);
+          }
+          if (selectedElement === document.getElementById("ev_handle6") || selectedElement === document.getElementById("ev_handle8")) {
+              rotational_vector = normalize([coord.x - offset.x, coord.y - offset.y]);
+              rotational_vector = [rotational_vector[1], -rotational_vector[0]];
+              eccentricity = norm([coord.x - offset.x, coord.y - offset.y]);
+              eccentricity *= eccentricity;
+              if (selectedElement === document.getElementById("ev_handle8")) {
+                rotational_vector = [-rotational_vector[0], -rotational_vector[1]];
+              }
+              rotational_angle = Math.atan2(rotational_vector[1], rotational_vector[0]);
+            }
+            computeP();
+            computeAfromLP();
+            setA();
+            setDirection();
+            setDirectionDiagram();
+        }
     }
   }
 
   function endDrag(evt) {
     if (selectedElement) {
-      selectedElement = null;
-      updateArgumentByDetTr();
+      if (selectedElement === document.getElementById("cir")) {
+        updateArgumentByDetTr();
+      }
+      if ([document.getElementById("ev_handle1"), document.getElementById("ev_handle2"), document.getElementById("ev_handle3"), document.getElementById("ev_handle4"), document.getElementById("ev_handle5"), document.getElementById("ev_handle6"), document.getElementById("ev_handle7"), document.getElementById("ev_handle8")].includes(selectedElement)) {
+        updateArgumentByDirection();
+      }
     }
+    selectedElement = null;
   }
 }
