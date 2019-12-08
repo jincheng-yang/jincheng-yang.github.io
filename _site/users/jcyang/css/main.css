@@ -389,7 +389,12 @@ pre {
     border-radius: 0.6em;
 }
 
-/*pre > code {*/
-/*    display: block;*/
-/*    word-wrap: normal;*/
-/*}*/
+table {
+    border: 0px;
+    display: inline-table;
+    vertical-align: middle;
+}
+
+td {
+    padding: 0.2em;
+}

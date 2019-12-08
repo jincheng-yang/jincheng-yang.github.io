@@ -14,6 +14,8 @@ Math and music are two most important themes of my life. As Hermann von Helmholt
 
 > Mathematics and music, the most sharply contrasted fields of scientific activity which can be found, and yet related, supporting each other, as if to show forth the secret connection which ties together all the activities of our mind, and which leads us to surmise that the manifestations of the artist's genius are but the unconscious expressions of a mysteriously acting rationality.
 
+I am honored to follow the guidance of my piano instructor, [Prof. Gilmson](https://www.sophia-gilmson.com).
+
 </div>
 </div>
 

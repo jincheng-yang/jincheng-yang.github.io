@@ -457,10 +457,10 @@ mainTitle.addEventListener('mousedown', function(e) {
 
 mainTitle.addEventListener('touchstart', function(e) {
   mouseDown = true;
-  oldMouse.x = e.clientX;
-  oldMouse.y = e.clientY;
-  newMouse.x = e.clientX;
-  newMouse.y = e.clientY;
+  oldMouse.x = e.touches[0].clientX;
+  oldMouse.y = e.touches[0].clientY;
+  newMouse.x = e.touches[0].clientX;
+  newMouse.y = e.touches[0].clientY;
 });
 
 mainTitle.addEventListener('mousemove', function(e) {
@@ -473,8 +473,9 @@ mainTitle.addEventListener('mousemove', function(e) {
 
 mainTitle.addEventListener('touchmove', function(e) {
   if (mouseDown) {
-    newMouse.x = e.clientX;
-    newMouse.y = e.clientY;
+    e.preventDefault();
+    newMouse.x = e.touches[0].clientX;
+    newMouse.y = e.touches[0].clientY;
     refresh();
   }
 });
@@ -490,10 +491,6 @@ mainTitle.addEventListener('touchend', function(e) {
 $(window).resize(function(){
   init();
 });
-
-window.onload = function () {
-  init();
-}
 
 function init() {
   width = mainTitle.offsetWidth;
