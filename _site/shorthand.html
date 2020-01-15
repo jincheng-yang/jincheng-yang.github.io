@@ -8,9 +8,6 @@
 		<link rel="stylesheet" type="text/css" href="/users/jcyang/css/shorthand.css">
 		<!-- link to fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Roboto:300|Roboto+Condensed:300|Dancing+Script:400" rel="stylesheet">
-		<!-- JavaScrips -->
-		<script type="text/javascript" src="/users/jcyang/shorthand/dataset.js"></script>
-		<script type="text/javascript" src="/users/jcyang/shorthand/data.js"></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108717380-1"></script>
 		<script>
@@ -25,28 +22,40 @@
 		<div class="container">
 				<h1 id="gregg-shorthand-dictionary">Gregg Shorthand Dictionary</h1>
 
-				<div class="search">
-					<div class="middle">
-						<div class="inner">
-							<input id="txt1" type="text" value="happiness" onkeydown="if(event.keyCode==13){hideSuggestion();refreshImage()}" /></div><div class="inner"><button id="btn1" onclick="hideSuggestion();refreshImage()"><img src="/users/jcyang/assets/images/search.png"></button>
-						</div>
-					</div>
-				</div>
+				<p>
+					Dear friends, 
+				</p>
 
-				<p id="record"></p>
+				<p>
+					I am sorry to tell you that I have to take down this site due to copyright reasons. 
+					I sincerely thank all of you for using this site and reporting mistakes to me. 
+					Without your generous help, I would not be able to find and correct many mistakes that I have made. 
+					However, because of the possible coryright issue, I could not continue to maintain this site. 
+				</p>
 
-				<div id="suggest" style="display:none">
-					<h2>Suggestions</h2>
-					<input id="bt0" type="button" value="bt0" onclick="document.getElementById('txt1').value = document.getElementById('bt0').value;refreshImage()" />
-					<input id="bt1" type="button" value="bt1" onclick="document.getElementById('txt1').value = document.getElementById('bt1').value;refreshImage()" />
-					<input id="bt2" type="button" value="bt2" onclick="document.getElementById('txt1').value = document.getElementById('bt2').value;refreshImage()" />
-					<input id="bt3" type="button" value="bt3" onclick="document.getElementById('txt1').value = document.getElementById('bt3').value;refreshImage()" />
-					<input id="bt4" type="button" value="bt4" onclick="document.getElementById('txt1').value = document.getElementById('bt4').value;refreshImage()" />
-					<input id="bt5" type="button" value="bt5" onclick="document.getElementById('txt1').value = document.getElementById('bt5').value;refreshImage()" />
-					<input id="bt6" type="button" value="bt6" onclick="document.getElementById('txt1').value = document.getElementById('bt6').value;refreshImage()" />
-					<input id="bt7" type="button" value="bt7" onclick="document.getElementById('txt1').value = document.getElementById('bt7').value;refreshImage()" />
-				</div>
+				<p>
+					I would thank again our forum for hosting and connecting us. 
+					Like many of you, I also learned shorthand with the help of others from our forum. 
+					Please keep on learning and practicing shorthand. 
+					I do not want this beautiful art to be lost in our generation. 
+				</p>
 
+				<p>
+					It is always hard to say goodbye. 
+					I hope we will meet again in the future (possibly in 2025 when the copyright expires). 
+				</p>
+
+				<p>
+					Warm regards,
+				</p>
+
+				<p>
+					Jincheng Yang.
+				</p>
+
+				<p>
+					2020.01.15
+				</p>
 		</div><!-- /.container -->
 		
 		<footer>
@@ -55,29 +64,14 @@
 					<div id="footer" class="vertical-center">
 						<div id="float-right" class="vertical-center">
 							<ul>
-								<li class="copyright">Copyright &#169 2019 Jincheng Yang</li>
-								<li><a onclick="loadAbout()">About</a></li>
 								<li><a href="https://greggshorthand.proboards.com">Forum</a></li>
-								<li id="debug"><a href="mailto:jcyang@math.utexas.edu?subject=Bug in Gregg Shorthand Dictionary&body=Dear Jincheng, there is something wrong with the word 'happiness'.">Report a Mistake</a></li>
 								<li><a href="mailto:jcyang@math.utexas.edu">Contact</a></li>
-								<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=QSMV3AH4KPX2S&currency_code=USD&source=url">Donate</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</footer>
-		
-		
-		<script>
-			var word = "happiness";
-			var args = window.location.href.split('=');
-			if (args.length > 1) {
-				word = args[1];
-				document.getElementById("txt1").setAttribute("value", word);
-				refreshImage();
-			}
-		</script>
 		
 	</body>
 </html>
