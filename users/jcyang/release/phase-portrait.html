@@ -76,11 +76,11 @@
   <div id="menu">
     <p>
       <span id="dot_x" onclick="edit_dot_x()">
-        \(\dot x = 3xy + \cos (y) \) 
+        \(\dot x = 3xy + \sin (y) \) 
       </span>
     </p>
     <p id="dot_x_input" style="display: none;">
-      \(\dot x = \) <input id='input_vx' type='text' value='3xy+cos(y)' onkeydown="if(event.keyCode==13){updateVelocityByString()}">
+      \(\dot x = \) <input id='input_vx' type='text' value='3xy+sin(y)' onkeydown="if(event.keyCode==13){updateVelocityByString()}">
     </p>
     <p>
       <span id="dot_y" onclick="edit_dot_y()">
@@ -96,7 +96,7 @@
     var argument_v = location.search
     var input_vx, input_vy
     var code_vx, code_vy
-    const function_list = ['sin', 'cos', 'exp', 'log', 'tan', 'cot']
+    const function_list = ['sin', 'cos', 'exp', 'log', 'tan', 'cot', 'sec', 'csc']
     
     if (argument_v) {
       var args = argument_v.split("&")

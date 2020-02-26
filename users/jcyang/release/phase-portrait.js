@@ -1,11 +1,11 @@
 var DT = 0.01;
 var agents = [];
-let TIME_SCALE = 0.1;
+let TIME_SCALE = 0.2;
 let AGENT_COUNT = 100;
 let GRID = 3;
 let MAX_AGENT_GRID = 20;
 let TRAIL_LENGTH = 5;
-let TRAIL_DELAY = 7;
+let TRAIL_DELAY = 5;
 let COLOR_SCHEME = new Array(TRAIL_LENGTH)
 let UNIFORM_SPEED = false
 let REVERSE_TIME = true
@@ -197,12 +197,3 @@ function getRandomIndex(n) {
   return arr
 }
 
-// function clear2() {
-//   ctx2.fillStyle = 'rgba(250, 250, 250, 0.02)';
-//   ctx2.fillRect(window_left, -window_top, window_width, window_height);
-// }
-
-// function clear2All() {
-//   ctx2.fillStyle = 'white';
-//   ctx2.fillRect(window_left, -window_top, window_width, window_height);
-// }

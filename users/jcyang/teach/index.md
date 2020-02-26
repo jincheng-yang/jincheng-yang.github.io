@@ -18,6 +18,7 @@ title: Jincheng's Website | Teaching
 - 2018 Fall: M427L [Advanced Calculus for Applications II](2018/m427l)
 - 2019 Spring: M427J [Differential Equations with Linear Algebra](2019/m427j)
 - 2019 Fall: M427J [Differential Equations with Linear Algebra](2019/m427j-2)
+- 2020 Spring: M427J [Differential Equations with Linear Algebra](2020/m427j)
 
 </div>
 
@@ -29,7 +30,8 @@ The [Directed Reading Program](https://web.ma.utexas.edu/users/drp/about.html) i
 
 #### Mentees
 
-- 2018 Spring: Yan Cheng, on the topic of Probability and Martingale
-- 2019 Spring: Trey Minor, on the topic of Differential Equations and Dynamical Systems
+- 2018 Spring: **Yan Cheng**, on the topic of Probability and Martingales
+- 2019 Spring: **Trey Minor**, on the topic of Differential Equations and Dynamical Systems
+- 2020 Spring: **Yongqi Pang**, on the topic of Statistics and Data Analysis
 
 </div>

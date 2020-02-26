@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Nonlinear Dynamical System</title>
+		<title>Phase Portriat</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
@@ -10,6 +10,32 @@
 		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Roboto:300|Roboto+Condensed:300|Dancing+Script:400" rel="stylesheet">
 		<!-- JavaScrips -->
 		<script type="text/javascript" src="/users/jcyang/plugin/drag-and-drop.js"></script>
+		
+			<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      },
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    },
+    jax: ["input/TeX", "output/CommonHTML"]
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS_CHTML">
+</script>
+
 		
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -59,16 +85,23 @@
 
 <div class="post">
 
-<h2>Nonlinear Dynamical System</h2>
+<h2>Phase Portriat</h2>
 
-<p class="meta">2019, April 21</p>
+<p class="meta">2019, October 31</p>
 
-  <h3 id="animation">Animation</h3>
+  <p>This is an active phase-portrait plotter for two dimensional dynamical systems. With the help from <code class="highlighter-rouge">math.js</code>, <code class="highlighter-rouge">MathJax.js</code>, <code class="highlighter-rouge">d3.js</code>, I created a cross-platform web-based phase portrait animator.</p>
 
-<canvas id="myCanvas2" width="600" height="600" style="margin-left:auto;margin-right:auto;display:block;"></canvas>
+<p>I refer to an <a href="https://bl.ocks.org/mbostock/db6b4335bf1662b413e7968910104f0f">example</a> for plotting the axes.</p>
 
-<script type="text/javascript" src="/users/jcyang/assets/js/nonlinear-dynamical-system.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.5/math.js"></script>
+
+<p>&lt;svg width = 600 height = 600&gt;&lt;/svg&gt;
+<script src="/users/jcyang/plugin/coordinate.js"></script>
+<script src="phase-portrait.js"></script></p>
+
+<p>Click <a href="/users/jcyang/release/phase-portrait.html">here</a> for a full screen version.</p>
 
 
   
@@ -80,9 +113,9 @@
       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
       
       var disqus_config = function () {
-        this.page.url = "https://teddyyjc.github.io/" + "/users/jcyang/blog/2019/04/21/nonlinear-dynamical-system";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = "https://teddyyjc.github.io/" + "/users/jcyang/blog/2019/10/31/phase-portrait";  // Replace PAGE_URL with your page's canonical URL variable
         console.log(this.page.url);
-        this.page.identifier = "/users/jcyang/blog/2019/04/21/nonlinear-dynamical-system"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.identifier = "/users/jcyang/blog/2019/10/31/phase-portrait"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
       };
 
       (function() { // DON'T EDIT BELOW THIS LINE

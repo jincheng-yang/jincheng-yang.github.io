@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Nonlinear Dynamical System</title>
+		<title>Vector Calculus</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
@@ -10,6 +10,32 @@
 		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Roboto:300|Roboto+Condensed:300|Dancing+Script:400" rel="stylesheet">
 		<!-- JavaScrips -->
 		<script type="text/javascript" src="/users/jcyang/plugin/drag-and-drop.js"></script>
+		
+			<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      },
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    },
+    jax: ["input/TeX", "output/CommonHTML"]
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS_CHTML">
+</script>
+
 		
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -59,15 +85,40 @@
 
 <div class="post">
 
-<h2>Nonlinear Dynamical System</h2>
+<h2>Vector Calculus</h2>
 
-<p class="meta">2019, April 21</p>
+<p class="meta">2020, February 04</p>
 
-  <h3 id="animation">Animation</h3>
+  <h3 id="notation">Notation</h3>
 
-<canvas id="myCanvas2" width="600" height="600" style="margin-left:auto;margin-right:auto;display:block;"></canvas>
+<p>$\newcommand{\tensor}{\otimes}$
+$\newcommand{\grad}{\nabla}$
+$\newcommand{\u}{\boldsymbol u}$
+$\newcommand{\v}{\boldsymbol v}$
+$\newcommand{\A}{\boldsymbol A}$
+$\newcommand{\a}{\boldsymbol a}$
+$\newcommand{\B}{\boldsymbol B}$
+$\newcommand{\R}{\mathbb R}$
+$\newcommand{\Tr}{\operatorname{Tr}}$
+$\newcommand{\curl}{\operatorname{curl}}$
+$\renewcommand{\div}{\operatorname{div}}$
+We use $\u$, $\v$ to indicate vector fields in $\R ^3$; $f$, $g$ indicate scalar fields in $\R ^3$; $\A$, $\B$ indicate 2-tensor fields (matrices) in $\R ^3$.</p>
 
-<script type="text/javascript" src="/users/jcyang/assets/js/nonlinear-dynamical-system.js"></script>
+<ul>
+  <li><strong>Tensor product</strong>: $\A = \u \tensor \v$ is defined as $\A _{ij} = \u _i \v _j$.</li>
+  <li><strong>Colon product</strong> between two matrices are $\A : \B = \sum _{i, j} \A _{ij} \B _{ji} = \Tr (\A\B)$.</li>
+  <li><strong>Divergence</strong> of a matrix: $\div \A = (\div \a _1 \, \div \a _2 \, \div \a _3)$ where $\a _1, \a _2, \a _3$ are column vectors of $\A$.</li>
+</ul>
+
+<h3 id="formulae">Formulae</h3>
+
+<h4 id="leibniz-rules">Leibniz Rules</h4>
+
+<script type="math/tex; mode=display">\div (\u \tensor \v) = (\div \u) \v + \u \cdot \grad \v</script>
+
+<script type="math/tex; mode=display">\div (f \A) = f \div \A + \A \grad f</script>
+
+<script type="math/tex; mode=display">\curl (f \u) = f \curl \u + \grad f \times \u</script>
 
 
 
@@ -80,9 +131,9 @@
       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
       
       var disqus_config = function () {
-        this.page.url = "https://teddyyjc.github.io/" + "/users/jcyang/blog/2019/04/21/nonlinear-dynamical-system";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = "https://teddyyjc.github.io/" + "/users/jcyang/blog/2020/02/04/vector-calculus";  // Replace PAGE_URL with your page's canonical URL variable
         console.log(this.page.url);
-        this.page.identifier = "/users/jcyang/blog/2019/04/21/nonlinear-dynamical-system"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.identifier = "/users/jcyang/blog/2020/02/04/vector-calculus"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
       };
 
       (function() { // DON'T EDIT BELOW THIS LINE
