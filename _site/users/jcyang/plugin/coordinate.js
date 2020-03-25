@@ -22,22 +22,22 @@ var y_scale = d3.scaleLinear()
     .range([-1, my_svg_height + 1]);
 
 var xAxis = d3.axisBottom(x_scale)
-    .ticks((my_svg_width + 2) / (my_svg_height + 2) * 3)
+    .ticks((my_svg_width + 2) / (my_svg_height + 2) * 5)
     .tickSize(my_svg_height)
     .tickPadding(8 - my_svg_height)
 
 var yAxis = d3.axisRight(y_scale)
-    .ticks(3)
+    .ticks(5)
     .tickSize(my_svg_width)
     .tickPadding(8 - my_svg_width)
 
 var xAxis2 = d3.axisBottom(x_scale)
-    .ticks((my_svg_width + 2) / (my_svg_height + 2) * 15)
+    .ticks((my_svg_width + 2) / (my_svg_height + 2) * 25)
     .tickSize(my_svg_height)
     .tickPadding(8 - my_svg_height)
 
 var yAxis2 = d3.axisRight(y_scale)
-    .ticks(15)
+    .ticks(25)
     .tickSize(my_svg_width)
     .tickPadding(8 - my_svg_width)
 
@@ -74,9 +74,9 @@ function zoomed() {
 }
 
 var window_left = d3.zoomIdentity.translate(my_svg_width / 2, my_svg_height / 2).scale(250).invertX(0)
-var window_right = d3.zoomIdentity.translate(my_svg_width / 2, my_svg_height / 2).scale(250).invertX(my_svg_width)
+var window_right = d3.zoomIdentity.translate(my_svg_width / 2, my_svg_height / 2).scale(250).invertX(width)
 var window_top = -d3.zoomIdentity.translate(my_svg_width / 2, my_svg_height / 2).scale(250).invertY(0)
-var window_bottom = -d3.zoomIdentity.translate(my_svg_width / 2, my_svg_height / 2).scale(250).invertY(my_svg_height)
+var window_bottom = -d3.zoomIdentity.translate(my_svg_width / 2, my_svg_height / 2).scale(250).invertY(height)
 var window_width = window_right - window_left
 var window_height = window_top - window_bottom
 
