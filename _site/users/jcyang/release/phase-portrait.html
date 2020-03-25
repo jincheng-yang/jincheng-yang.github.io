@@ -58,6 +58,10 @@
 <body>
   <svg width = 600 height = 600></svg>
   <script type="text/javascript">
+
+    d3.select("svg")
+      .attr("width", document.body.clientWidth)
+      .attr("height", document.body.clientHeight)
     function menu_toggle() {
       var menu_sec = d3.select("#menu")
       if (menu_sec.style("display") === "none") {
