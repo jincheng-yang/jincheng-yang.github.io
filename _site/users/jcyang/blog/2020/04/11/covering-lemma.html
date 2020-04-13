@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Phase Portriat</title>
+		<title>Covering Lemma</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
@@ -11,6 +11,34 @@
 		<!-- JavaScrips -->
 		<script type="text/javascript" src="/users/jcyang/plugin/drag-and-drop.js"></script>
 		
+			<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      },
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    },
+    jax: ["input/TeX", "output/CommonHTML"]
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS_CHTML">
+</script>
+
+		
+		
+			<script src="https://d3js.org/d3.v4.min.js"></script>
 		
 
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -61,144 +89,57 @@
 
 <div class="post">
 
-<h2>Phase Portriat</h2>
+<h2>Covering Lemma</h2>
 
-<p class="meta">2019, October 31</p>
+<p class="meta">2020, April 11</p>
 
-  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <h3 id="vitali-covering-lemma">Vitali Covering Lemma</h3>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.5/math.js"></script>
+<h4 id="statement">Statement</h4>
+<p>Let $E$ be a measurable set in $\mathbb R ^n$, and 
+let $\{ B _\alpha \} _{\alpha \in \Lambda}$ be a collection of balls that covers $E$ with uniformly bounded radii.
+Then there exists a pairwise disjoint subcollection $\{ B _{\alpha _j} \}$ such that $\bigcup _j 5 B _{\alpha _j}$ covers $E$.</p>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
+<h4 id="algorithm">Algorithm</h4>
+<p>In $j$-th iteration, we</p>
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: {
-      equationNumbers: {
-        autoNumber: "AMS"
-      },
-      extensions: [
-        "AMSmath.js",
-        "AMSsymbols.js",
-        "noErrors.js",
-        "noUndefined.js",
-      ]
-    },
-    tex2jax: {
-      inlineMath: [ ['$','$'] ],
-      displayMath: [ ['$$','$$'] ],
-      processEscapes: true,
-    },
-    jax: ["input/TeX", "output/CommonHTML"]
-  });
-</script>
+<ul>
+  <li>Find the largest ball $B _{\alpha _j}$</li>
+  <li>Remove every $B _\beta$ that intersects with $B _{\alpha _j}$</li>
+</ul>
 
-<p>This is an active phase-portrait plotter for two dimensional dynamical systems. With the help from <code class="highlighter-rouge">math.js</code>, <code class="highlighter-rouge">MathJax.js</code>, <code class="highlighter-rouge">d3.js</code>, I created a cross-platform web-based phase portrait animator.</p>
+<svg id="vitali" width="100%" viewBox="0 0 600 600"></svg>
 
-<p>I refer to an <a href="https://bl.ocks.org/mbostock/db6b4335bf1662b413e7968910104f0f">example</a> for plotting the axes.</p>
+<p><input type="button" value="Generate" onclick="generate()" />
+<input type="button" value="Find Max" onclick="find_max()" disabled="disabled" />
+<input type="button" value="Iterate Step" onclick="find_neighbors()" disabled="disabled" />
+<input type="button" value="Remove" onclick="remove()" disabled="disabled" />
+<input type="button" value="Show Selection" id="show-hide" onclick="if(d3.select('#show-hide').attr('value') == 'Show Selection'){show_selection()}else if(d3.select('#show-hide').attr('value') == 'Show Removed'){show_removed()}else hide()" disabled="disabled" /></p>
 
-<div id="menu" style="text-align:center">
-    <p>
-      <span id="dot_x" onclick="edit_dot_x()">
-        $\dot x = 3xy + \sin (y) $
-      </span>
-    </p>
-    <p id="dot_x_input" style="display: none;">
-      $\dot x = $ <input id="input_vx" type="text" value="3xy+sin(y)" onkeydown="if(event.keyCode==13){updateVelocityByString()}" />
-    </p>
-    <p>
-      <span id="dot_y" onclick="edit_dot_y()">
-        $\dot y = 5 y^2 - 6 x y ^3 + 2 \cos (x + y) $
-      </span>
-    </p>
-    <p id="dot_y_input" style="display: none;">
-      $\dot y = $ <input id="input_vy" type="text" value="5y^2-6xy^3+2cos(x+y)" onkeydown="if(event.keyCode==13){updateVelocityByString()}" />
-    </p>
-    <div id="an_svg"></div>
-</div>
+<h3 id="besicovitch-безико́вич-covering-lemma">Besicovitch (Безико́вич) Covering Lemma</h3>
 
-<script type="text/javascript">
-    document.getElementById("an_svg").innerHTML = "<svg height = 600 width = 600></svg>"
+<h4 id="statement-1">Statement</h4>
+<p>Let $E$ be a measurable set in $\mathbb R ^n$, and Let $\{ Q _\alpha \} _{\alpha \in \Lambda}$ be a collection of cubes with uniformly bounded radii, such that for every $x \in E$ there exists at least one $Q _\alpha$ centering at $x$. 
+Then there exists a finitely overlapping subcover of $E$.</p>
 
-    var input_vx, input_vy
-    var code_vx, code_vy
-    const function_list = ['sin', 'cos', 'exp', 'log', 'tan', 'cot', 'sec', 'csc']
-    
-    input_vx = "3x + 2y"
-    input_vy = "-2x + 3xy"
-    
-    updateVelocity()
-    
-    function updateVelocityByString() {
-      input_vx = document.getElementById("input_vx").value.replace(/\s/g, "")
-      input_vy = document.getElementById("input_vy").value.replace(/\s/g, "")
-      updateVelocity()
-      d3.select("#dot_x")
-        .style("display", "block")
-      d3.select("#dot_x_input")
-        .style("display", "none")
-      d3.select("#dot_y")
-        .style("display", "block")
-      d3.select("#dot_y_input")
-        .style("display", "none")
-    }
-    
-    function updateVelocity() {
-      
-      // update latex formulae
-      var latex_vx = input_vx
-      var latex_vy = input_vy
-      for (var func of function_list) {
-        latex_vx = latex_vx.split(func).join('\\'+func)	
-        latex_vy = latex_vy.split(func).join('\\'+func)	
-      }
-      
-      d3.select("#dot_x")
-        .text("$\\dot x = " + latex_vx + "$")
-        .style("{display: block}")
-      d3.select("#dot_y")
-        .text("$\\dot y = " + latex_vy + "$")
+<h4 id="algorithm-1">Algorithm</h4>
+<p>In $j$-th iteration, we</p>
 
-      MathJax.Hub.Typeset()
-      
-      head = document.head || document.getElementsByTagName('head')[0],
-      style = document.createElement('style');
-      head.appendChild(style);
-      stylesheet = ".axis line{stroke: #BBBBBB;} .axis text{font-size: 1.5em; color: #666666;} .minor line{stroke: #EEEEEE;} .minor text { display: none; } #dot_x { cursor: pointer; } #dot_y { cursor: pointer; }"
-      document.getElementsByTagName("style")[0].innerHTML += stylesheet
+<ul>
+  <li>Find the largest cube $Q _{\alpha _j}$</li>
+  <li>Remove every $Q _\beta$ that centers within $Q _{\alpha _j}$</li>
+</ul>
 
-      // update velocity function
-      var str_vx = input_vx.split("xy").join(" x y ").split("yx").join(" x y ")
-      var str_vy = input_vy.split("xy").join(" x y ").split("yx").join(" y x ")
-      code_vx = math.parse(str_vx).compile()
-      code_vy = math.parse(str_vy).compile()
-    }
+<svg id="besicovitch" width="100%" viewBox="0 0 600 600"></svg>
 
-    function edit_dot_x() {
-      d3.select("#dot_x")
-        .style("display", "none")
-      d3.select("#dot_x_input")
-        .style("display", "block")
-    }
+<p><input type="button" value="Generate" onclick="bgenerate()" />
+<input type="button" value="Find Max" onclick="bfind_max()" disabled="disabled" />
+<input type="button" value="Iterate Step" onclick="bfind_neighbors()" disabled="disabled" />
+<input type="button" value="Remove" onclick="bremove()" disabled="disabled" />
+<input type="button" value="Show Selection" id="bshow-hide" onclick="if(d3.select('#bshow-hide').attr('value') == 'Show Selection'){bshow_selection()}else if(d3.select('#bshow-hide').attr('value') == 'Show Removed'){bshow_removed()}else bhide()" disabled="disabled" /></p>
 
-    function edit_dot_y() {
-      d3.select("#dot_y")
-        .style("display", "none")
-      d3.select("#dot_y_input")
-        .style("display", "block")
-    }
+<script src="/users/jcyang/assets/js/covering-lemma.js"></script>
 
-</script>
-
-<script src="https://d3js.org/d3.v4.min.js"></script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.5/math.js"></script>
-
-<script src="/users/jcyang/plugin/coordinate.js"></script>
-
-<script src="/users/jcyang/release/phase-portrait.js"></script>
-
-<p>Click <a href="/users/jcyang/release/phase-portrait.html">here</a> for a full screen version.</p>
 
 
   
@@ -210,9 +151,9 @@
       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
       
       var disqus_config = function () {
-        this.page.url = "https://teddyyjc.github.io/" + "/users/jcyang/blog/2019/10/31/phase-portrait";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = "https://teddyyjc.github.io/" + "/users/jcyang/blog/2020/04/11/covering-lemma";  // Replace PAGE_URL with your page's canonical URL variable
         console.log(this.page.url);
-        this.page.identifier = "/users/jcyang/blog/2019/10/31/phase-portrait"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.identifier = "/users/jcyang/blog/2020/04/11/covering-lemma"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
       };
 
       (function() { // DON'T EDIT BELOW THIS LINE

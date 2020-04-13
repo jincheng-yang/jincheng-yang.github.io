@@ -10,7 +10,7 @@ title: Jincheng's Website | About
 
 # About Me
 
-Hi, I am a third year graduate student at [The University of Texas at Austin](https://www.utexas.edu). I major in Mathematics, and my research interest include analysis, partial differential equations, especially fluid equations, including incompressible Euler equations, Navier-Stokes equations and surface quasi-geostrophic equations. I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of the Special Class for the Gifted Young before my undergraduate study. 
+Hi, I am a third year Ph.D. candidate at [The University of Texas at Austin](https://www.utexas.edu). I major in mathematics, and my research interest include analysis, partial differential equations, especially fluid equations, including incompressible Euler equations, Navier-Stokes equations and surface quasi-geostrophic equations. I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of the Special Class for the Gifted Young before my undergraduate study. 
 
 Apart from mathematics, I also love programming and music.
 
@@ -60,7 +60,7 @@ Austin, TX 78712-1202, USA
 ### Education
 
 - **Xi'an Jiaotong University**, B.Sc. in Mathematics and Applied Mathematics (Aug. 2013 - June 2017)
-- **The University of Texas at Austin**, Ph.D. student in Mathematics (Aug. 2017 - Present)
+- **The University of Texas at Austin**, Ph.D. in Mathematics (Aug. 2017 - Present)
 
 ### Visiting
 
@@ -80,7 +80,7 @@ Austin, TX 78712-1202, USA
 <div style="display:flex;justify-content:space-between;flex-wrap:wrap">
 {% assign my_posts = site.posts | where:"image",true %}
 {% assign firstPost = true %}
-{% for post in my_posts limit: 6 %}{% if firstPost == true %}
+{% for post in my_posts limit: 9 %}{% if firstPost == true %}
 <div class="thumb">
 	{% assign firstPost = false %}
 {% else %}<div class="thumb">

@@ -4,6 +4,7 @@ title: "Vector Calculus"
 date: 2020-02-04
 comments: true
 use-math: true
+hide: true
 ---
 
 ### Notation
