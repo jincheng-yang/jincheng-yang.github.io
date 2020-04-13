@@ -1,10 +1,12 @@
 ---
 layout: post
-title: "Sup Distance Between Sines"
+title: "Distance Between Sines"
 date: 2020-01-12
 comments: true
 use-math: true
 tag: mini-math
+image: true
+thumb: sine.png
 ---
 
 ### Proposition

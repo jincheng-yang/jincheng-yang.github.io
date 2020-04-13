@@ -22,7 +22,7 @@
             "Abstract": "As the only one taking the probability prelim courses in our cohort, I want to share with everyone interesting things that are happening in the world of randomness. This talk will start with the intuition of stochastic integral, then introduce very informally the idea of martingale, and finally move to the core of SDE (stochastic differential equation): the famous Itô's lemma."
         },
         {
-            "Title": "Regularity for a A Local-Nonlocal Transmission Problem",
+            "Title": "Regularity for a Local-Nonlocal Transmission Problem",
             "Date": "2019-04-12",
             "Location": "The University of Texas at Austin",
             "Series": "Junior Analysis Seminar",
@@ -48,6 +48,20 @@
             "Location": "The University of Texas at Austin",
             "Series": "Harmonic Analysis Reading Seminar",
             "Abstract": "I will present several equivalent definition of Hardy space. Then I will try to prove their equivalence as much as I can. Reference: Grafakos, Section 6.4.1, 6.4.2; Stein, Section 3.1."
+        },
+        {
+            "Title": "Candidacy Talk: A New Covering Lemma and its Application in 3D Incompressible Navier-Stokes Equations",
+            "Date": "2020-03-27",
+            "Location": "The University of Texas at Austin (zoom talk)",
+            "Series": "Ph.D. Candidacy Talk",
+            "Abstract": "We want to give second derivative estimate for the suitable weak solutions to three dimensional Navier-Stokes equations with $L ^2$ initial data. Right now it is known that $\\nabla ^2 u$ is in the space of $L ^{\\frac43, \\infty}$ homogeneous in space-time. The limiting space $L ^{\\frac43}$, however, is unknown. In 2014, Choi and Vasseur gave an alternating proof for $L ^\\frac43$ weak integrability, where they used blow-up techniques along trajectories and De Giorgi methods. To do local analysis, they investigate solutions near a Eulerian cylindrical neighborhood of a given point. In this talk, I present a covering lemma for these Eulerian cylinders, which could bridge the gap between $L ^\\frac43$ weak and $L ^\\frac43$. We are now working on a refinement of the local analysis, which will be able to give the strict $L ^\\frac43$ integrability locally. <a href='/users/jcyang/assets/files/candidacy.pdf'>Slides</a>"
+        },
+        {
+            "Title": "Oscillatory Integral and Decay of Dispersive Equation",
+            "Date": "2020-04-10",
+            "Location": "The University of Texas at Austin (zoom talk)",
+            "Series": "Junior Analysis Seminar",
+            "Abstract": "In this talk, we will introduce the oscillatory integral of the first kind $\\int \\exp(i t \\phi (x)) \\psi (x) dx$. We present the Van de Corput lemma, and the method of stationary phase. As an application in PDE, we will analyze the decay rate for a family of 1-dimensional linear dispersive equations. If time permits, we can look at a stability result for the inviscid Boussinesq system."
         }
     ]
 }
