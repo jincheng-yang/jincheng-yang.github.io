@@ -7,7 +7,7 @@ image: false
 ---
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.5/math.js"></script>
+<script type="text/javascript" src="/users/jcyang/plugin/math.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({

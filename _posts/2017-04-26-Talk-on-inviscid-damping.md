@@ -3,6 +3,7 @@ layout: post
 title: "Seminar on Inviscid Damping of Couette Flow in a Stratified Fluid"
 date: 2017-04-26
 comments: true
+hide: true
 ---
 
 I gave a talk on my paper which was written last year together with Prof. Zhiwu Lin.
