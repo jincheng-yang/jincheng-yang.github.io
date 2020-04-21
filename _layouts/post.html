@@ -2,6 +2,72 @@
 layout: default
 ---
 
+{% if page.use-math %}
+  <div style="display:none">
+
+    %--Paired Delimiters--
+    $
+    \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\ang}[1]{\left\langle #1 \right\rangle}
+    \newcommand{\bkt}[1]{\left\lbrack #1 \right\rbrack}
+    \newcommand{\nor}[1]{\left\lVert #1 \right\rVert}
+    \newcommand{\pth}[1]{\left( #1 \right)}
+    \newcommand{\set}[1]{\left\lbrace #1 \right\rbrace}
+    $
+
+    %--Operators--
+    $
+    \newcommand{\grad}{\nabla}
+    \newcommand{\La}{\Delta}
+    \newcommand{\div}{\operatorname{div}}
+    \newcommand{\curl}{\operatorname{curl}}
+    \newcommand{\tr}{\operatorname{tr}}
+    \newcommand{\Hess}{\operatorname{Hess}}
+    \newcommand{\tensor}{\otimes}
+    \newcommand{\cross}{\times}
+    $
+
+    %--Notations--
+    $
+    \newcommand{\Vol}{\mathrm{Vol}}
+    \newcommand{\loc}{\mathrm{loc}}
+    \renewcommand{\dim}{\mathrm{dim}}
+    \newcommand{\Span}{\mathrm{Span}}
+    \newcommand{\diam}{\mathrm{diam}}
+    \newcommand{\Id}{\mathrm{Id}}
+    \newcommand{\Lip}{\mathrm{Lip}}
+    \newcommand{\dist}{\mathrm{dist}}
+    $
+
+    %--Sets--
+    $
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\Z}{\mathbb{Z}}
+    \newcommand{\C}{\mathbb{C}}
+    \renewcommand{\S}{\mathbb{S}}
+    \newcommand{\ssubset}{\subset \subset}
+    \newcommand{\ind}[1]{\mathbf1 _{#1}}
+    $
+    
+    %--Differential--
+    $
+    \newcommand{\d}{\mathop{\kern0pt\mathrm{d}}\!{}}
+    \newcommand{\dx}{\d x}
+    \newcommand{\pfr}[2]{\frac{\partial #1}{\partial #2}}
+    \newcommand{\dfr}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+    \newcommand{\pthf}[2]{\pth{\frac{#1}{#2}}}
+    $
+    
+    %--Greek--
+    $
+    \newcommand{\e}{\varepsilon}
+    \newcommand{\vp}{\varphi}
+    $
+
+  </div>
+{% endif %}
+
+
 <h1>Research Blog</h1>
 
 <div class="post">
@@ -39,7 +105,7 @@ layout: default
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   {% endif %}
   
-  <h3>Recent <a href="/users/jcyang/blog/" style="color:#749696">Posts</a></h3>
+  <h3>Recent <a href="/users/jcyang/blog/" style="color:#526d6d">Posts</a></h3>
     
     {% assign my_posts = site.posts | where:"image",true %}
     {% assign firstPost = true %}
@@ -49,7 +115,7 @@ layout: default
     {% else %}<div class="thumb" style="margin-left:5%">
     {% endif %}
     <a href="{{ post.url }}" title="{{ post.title }}">
-    <div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/{{ post.thumb }}')"></div>
+    <div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/{{ post.thumb }}')"></div>
     </a>
     <h5>{{ post.date | date_to_string }}</h5>
     <a href="{{ post.url }}" title="{{ post.title }}">

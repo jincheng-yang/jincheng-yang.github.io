@@ -488,11 +488,12 @@ mainTitle.addEventListener('touchend', function(e) {
   mouseDown = false;
 });
 
-$(window).resize(function(){
-  init();
-});
+// $(window).resize(function(){
+//   init();
+// });
 
 function init() {
+  var height = mainTitle.offsetHeight;
   width = mainTitle.offsetWidth;
   
   if (window.devicePixelRatio != 1) {

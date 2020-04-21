@@ -76,7 +76,7 @@ blockquote {
 .main-title {
 	margin: 0em;
 	padding: auto;
-	height: 20em;
+    min-height: 20em;
     cursor: move;
 }
 
@@ -103,7 +103,8 @@ p.name {
 
 p.institute {
     margin: 0px;
-    padding: 0.2em;
+    padding: 1em;
+    padding-bottom: 4em;
     color: aliceblue;
     text-align: center;
     font-size: 1.0em;
@@ -281,6 +282,14 @@ ul.posts {
     margin: 2em 0em 2em 0em;
 }
 
+.post p{
+    overflow: scroll;
+}
+
+.post ul li{
+    overflow: scroll;
+}
+
 .transparent {
     padding-top: 2em;
     padding-bottom: 2em;
@@ -326,12 +335,14 @@ ul.posts {
 }
 
 .thumb a:hover .thumbpic{
+    transition: 0.5s;
     filter: alpha(Opacity=50);
     -moz-opacity: 0.5;
     opacity: 0.5;
 }
 
 .thumbpic {
+    transition: 0.5s;
     width: 100%;
     height: 8em;
     background-size: 100%;
@@ -366,10 +377,11 @@ ul li {
 
 blockquote {
     margin-left: 0;
+    margin-right: 0;
 }
 
 blockquote p {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'PT Serif', 'Dancing Script', cursive;
     color: #749696;
     font-size: 1em;
 }
@@ -397,4 +409,21 @@ table {
 
 td {
     padding: 0.2em;
+}
+
+.center-image
+{
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.rotate90
+{
+    transform: rotate(90deg);
+}
+
+.rotate270
+{
+    transform: rotate(270deg);
 }

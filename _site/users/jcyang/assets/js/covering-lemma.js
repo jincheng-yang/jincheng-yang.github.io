@@ -31,8 +31,8 @@ function generate() {
   }
   update_appearance()
 
-  d3.selectAll('input[onclick = "generate()"]')
-    .attr('disabled','disabled')
+  // d3.selectAll('input[onclick = "generate()"]')
+  //   .attr('disabled','disabled')
   d3.selectAll('input[onclick = "find_max()"]')
     .attr('disabled',null)
   d3.selectAll('input[onclick = "find_neighbors()"]')
@@ -42,6 +42,8 @@ function generate() {
   d3.select('#show-hide')
     .attr('disabled',null)
 }
+
+generate()
 
 function update_appearance() {
   for (var i = 0; i < circle_count; i++) {
@@ -198,8 +200,8 @@ function bgenerate() {
   }
   bupdate_appearance()
   
-  d3.selectAll('input[onclick = "bgenerate()"]')
-    .attr('disabled','disabled')
+  // d3.selectAll('input[onclick = "bgenerate()"]')
+  //   .attr('disabled','disabled')
   d3.selectAll('input[onclick = "bfind_max()"]')
     .attr('disabled',null)
   d3.selectAll('input[onclick = "bfind_neighbors()"]')
@@ -209,6 +211,8 @@ function bgenerate() {
   d3.select('#bshow-hide')
     .attr('disabled',null)
 }
+
+bgenerate()
 
 function bupdate_appearance() {
   for (var i = 0; i < cube_count; i++) {

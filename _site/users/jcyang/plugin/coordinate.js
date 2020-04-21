@@ -74,9 +74,9 @@ function zoomed() {
 }
 
 var window_left = d3.zoomIdentity.translate(my_svg_width / 2, my_svg_height / 2).scale(250).invertX(0)
-var window_right = d3.zoomIdentity.translate(my_svg_width / 2, my_svg_height / 2).scale(250).invertX(width)
+var window_right = d3.zoomIdentity.translate(my_svg_width / 2, my_svg_height / 2).scale(250).invertX(my_svg_width)
 var window_top = -d3.zoomIdentity.translate(my_svg_width / 2, my_svg_height / 2).scale(250).invertY(0)
-var window_bottom = -d3.zoomIdentity.translate(my_svg_width / 2, my_svg_height / 2).scale(250).invertY(height)
+var window_bottom = -d3.zoomIdentity.translate(my_svg_width / 2, my_svg_height / 2).scale(250).invertY(my_svg_height)
 var window_width = window_right - window_left
 var window_height = window_top - window_bottom
 

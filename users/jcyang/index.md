@@ -86,7 +86,7 @@ Austin, TX 78712-1202, USA
 {% else %}<div class="thumb">
 {% endif %}
 <a href="{{ post.url }}" title="{{ post.title }}">
-<div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/{{ post.thumb }}')"></div>
+<div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/{{ post.thumb }}')"></div>
 </a>
 <h5>{{ post.date | date_to_string }}</h5>
 <a href="{{ post.url }}" title="{{ post.title }}">

@@ -7,7 +7,7 @@
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="/users/jcyang/css/main.css">
 		<!-- link to fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Roboto:300|Roboto+Condensed:300|Dancing+Script:400" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Roboto:300|Roboto+Condensed:300|Dancing+Script:400|PT+Serif:400i" rel="stylesheet">
 		<!-- JavaScrips -->
 		<script type="text/javascript" src="/users/jcyang/plugin/drag-and-drop.js"></script>
 		
@@ -26,7 +26,7 @@
     },
     tex2jax: {
       inlineMath: [ ['$','$'] ],
-      displayMath: [ ['$$','$$'] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
       processEscapes: true,
     },
     jax: ["input/TeX", "output/CommonHTML"]
@@ -63,19 +63,26 @@
 
 		<nav>
 			<ul>
-				<li><a class = "pagelist" href="/users/jcyang/publications" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav0">Publications</a></li>
-				<li><a class = "pagelist" href="/users/jcyang/assets/files/cv.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav1">Curriculum Vitae</a></li>
+				<li id="li0"><a class = "pagelist" href="/users/jcyang/publications" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav0">Publications</a></li>
+				<li id="li1"><a class = "pagelist" href="/users/jcyang/assets/files/cv.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav1">Curriculum Vitae</a></li>
 				<li><a class = "icon" href="/users/jcyang" draggable="true" ondragstart="drag(event)" title="Home Page"></a></li>
-				<li><a class = "pagelist" href="/users/jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav2">Teaching</a></li>
-				<!--
-				<li><a class = "pagelist" href="/users/jcyang/blog" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav3">Research Blog</a></li>
-				-->
-				<li><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)">Miscellaneous &#9662;</a>
+				<li id="li2"><a class = "pagelist" href="/users/jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav2">Teaching</a></li>
+				<li id="li4"><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav4">Miscellaneous &#9662;</a>
 					<ul class="dropdown">
+						<li><a href="/users/jcyang/academic">Academic</a></li>
 						<li><a href="/users/jcyang/blog">Blog</a></li>
 						<li><a href="/users/jcyang/music">Music</a></li>
 <!--						<li><a href="/users/jcyang/shorthand">Shorthand</a></li>-->
+					</ul>
+				</li>
+				<li id="li5"><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav5">Menu &#9662;</a>
+					<ul class="dropdown">
 						<li><a href="/users/jcyang/academic">Academic</a></li>
+						<li><a href="/users/jcyang/blog">Blog</a></li>
+						<li><a href="/users/jcyang/assets/files/cv.pdf">CV</a></li>
+						<li><a href="/users/jcyang/music">Music</a></li>
+						<li><a href="/users/jcyang/publications">Publications</a></li>
+						<li><a href="/users/jcyang/teach">Teaching</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -92,7 +99,7 @@
 	<li>Apr. 26, 2017 » <a style="cursor:pointer" onclick="detail = document.getElementById('2017-04-26'); if(detail.style.display === 'none'){detail.style.display = 'block';}else{detail.style.display='none';}">Inviscid Damping of Couette Flow in a Stratified Fluid</a></li>
 	<div id="2017-04-26" style="display:none">
 	<p><b>Georgia Institute of Technology</b>, <i>Fluid Mechanics Seminar</i></p>
-	<p><b>Abstract</b>: We study the inviscid damping of Couette flow with an exponentially stratified density. The optimal decay rates of the velocity field and the density are obtained for general perturbations with minimal regularity. For Boussinesq approximation model, the decay rates we get are consistent with the previous results in the literature. We also study the decay rates for the full Euler equations of stratified fluids, which were not studied before. For both models, the decay rates depend on the Richardson number in a very similar way. Besides, we also study the dispersive decay due to the exponential stratification when there is no shear.</p>
+	<p><b>Abstract</b>: We study the inviscid damping of Couette flow with an exponentially stratified density. The optimal decay rates of the velocity field and the density are obtained for general perturbations with minimal regularity. For Boussinesq approximation model, the decay rates we get are consistent with the previous results in the literature. We also study the decay rates for the full Euler equations of stratified fluids, which were not studied before. For both models, the decay rates depend on the Richardson number in a very similar way. Besides, we also study the dispersive decay due to the exponential stratification when there is no shear. <a href="https://arxiv.org/abs/1610.08924">[Paper]</a> <a href="http://www.rpubs.com/TeddyYJC/linear-damping">[Slides]</a></p>
 	</div>
 
 	<li>Sep. 22, 2017 » <a style="cursor:pointer" onclick="detail = document.getElementById('2017-09-22'); if(detail.style.display === 'none'){detail.style.display = 'block';}else{detail.style.display='none';}">Stability and instability of shear flow in a rotating system</a></li>
@@ -134,13 +141,13 @@
 	<li>Mar. 27, 2020 » <a style="cursor:pointer" onclick="detail = document.getElementById('2020-03-27'); if(detail.style.display === 'none'){detail.style.display = 'block';}else{detail.style.display='none';}">Candidacy Talk: A New Covering Lemma and its Application in 3D Incompressible Navier-Stokes Equations</a></li>
 	<div id="2020-03-27" style="display:none">
 	<p><b>The University of Texas at Austin (zoom talk)</b>, <i>Ph.D. Candidacy Talk</i></p>
-	<p><b>Abstract</b>: We want to give second derivative estimate for the suitable weak solutions to three dimensional Navier-Stokes equations with $L ^2$ initial data. Right now it is known that $\nabla ^2 u$ is in the space of $L ^{\frac43, \infty}$ homogeneous in space-time. The limiting space $L ^{\frac43}$, however, is unknown. In 2014, Choi and Vasseur gave an alternating proof for $L ^\frac43$ weak integrability, where they used blow-up techniques along trajectories and De Giorgi methods. To do local analysis, they investigate solutions near a Eulerian cylindrical neighborhood of a given point. In this talk, I present a covering lemma for these Eulerian cylinders, which could bridge the gap between $L ^\frac43$ weak and $L ^\frac43$. We are now working on a refinement of the local analysis, which will be able to give the strict $L ^\frac43$ integrability locally. <a href="/users/jcyang/assets/files/candidacy.pdf">Slides</a></p>
+	<p><b>Abstract</b>: We want to give second derivative estimate for the suitable weak solutions to three dimensional Navier-Stokes equations with $L ^2$ initial data. Right now it is known that $\nabla ^2 u$ is in the space of $L ^{\frac43, \infty}$ homogeneous in space-time. The limiting space $L ^{\frac43}$, however, is unknown. In 2014, Choi and Vasseur gave an alternating proof for $L ^\frac43$ weak integrability, where they used blow-up techniques along trajectories and De Giorgi methods. To do local analysis, they investigate solutions near a Eulerian cylindrical neighborhood of a given point. In this talk, I present a covering lemma for these Eulerian cylinders, which could bridge the gap between $L ^\frac43$ weak and $L ^\frac43$. We are now working on a refinement of the local analysis, which will be able to give the strict $L ^\frac43$ integrability locally. <a href="/users/jcyang/assets/files/candidacy.pdf">[Slides]</a></p>
 	</div>
 
 	<li>Apr. 10, 2020 » <a style="cursor:pointer" onclick="detail = document.getElementById('2020-04-10'); if(detail.style.display === 'none'){detail.style.display = 'block';}else{detail.style.display='none';}">Oscillatory Integral and Decay of Dispersive Equation</a></li>
 	<div id="2020-04-10" style="display:none">
 	<p><b>The University of Texas at Austin (zoom talk)</b>, <i>Junior Analysis Seminar</i></p>
-	<p><b>Abstract</b>: In this talk, we will introduce the oscillatory integral of the first kind $\int \exp(i t \phi (x)) \psi (x) dx$. We present the Van de Corput lemma, and the method of stationary phase. As an application in PDE, we will analyze the decay rate for a family of 1-dimensional linear dispersive equations. If time permits, we can look at a stability result for the inviscid Boussinesq system.</p>
+	<p><b>Abstract</b>: In this talk, we will introduce the oscillatory integral of the first kind $\int \exp(i t \phi (x)) \psi (x) dx$. We present the Van der Corput lemma, and the method of stationary phase. As an application in PDE, we will analyze the decay rate for a family of 1-dimensional linear dispersive equations. If time permits, we can look at a stability result for the inviscid Boussinesq system.</p>
 	</div>
 
 </ul>
@@ -211,11 +218,10 @@
 		<footer>
 			<div class="footer-container">
 				<div class="container">
-					<div id="footer" class="vertical-center">
+					<div id="footer" class="vertical-center" style="overflow:hidden">
 						<div id="float-left" class="vertical-center">
 							<a href="https://www.utexas.edu"><img id="logo" src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a>
 						</div>
-						<p class="copyright">Copyright &#169 2020 Jincheng Yang</p>
 						<div id="float-right" class="vertical-center">
 							<ul>
 								<li id="utmath"><a href="https://www.ma.utexas.edu/">UT Math</a></li>
@@ -224,11 +230,21 @@
 								<li><a href="mailto:jcyang@math.utexas.edu">Email</a></li>
 							</ul>
 						</div>
+						<p class="copyright">Copyright &#169 2020 Jincheng Yang</p>
 					</div>
 				</div>
 			</div>
 		</footer>
 
 		<script type="text/javascript" src="/users/jcyang/plugin/Escher.js"></script>
+		<script type="text/javascript" src="/users/jcyang/plugin/adjust_nav.js"></script>
+		<script>
+			function resizeWindow() {
+				init()
+				adjustNav()
+			}
+			window.addEventListener("resize", resizeWindow)
+			adjustNav()
+		</script>
 	</body>
 </html>
