@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Chopin Etudes Op 25 No 11</title>
+		<title>Chopin Étude in A minor</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
@@ -37,19 +37,26 @@
 
 		<nav>
 			<ul>
-				<li><a class = "pagelist" href="/users/jcyang/publications" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav0">Publications</a></li>
-				<li><a class = "pagelist" href="/users/jcyang/assets/files/cv.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav1">Curriculum Vitae</a></li>
+				<li id="li0"><a class = "pagelist" href="/users/jcyang/publications" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav0">Publications</a></li>
+				<li id="li1"><a class = "pagelist" href="/users/jcyang/assets/files/cv.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav1">Curriculum Vitae</a></li>
 				<li><a class = "icon" href="/users/jcyang" draggable="true" ondragstart="drag(event)" title="Home Page"></a></li>
-				<li><a class = "pagelist" href="/users/jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav2">Teaching</a></li>
-				<!--
-				<li><a class = "pagelist" href="/users/jcyang/blog" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav3">Research Blog</a></li>
-				-->
-				<li><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)">Miscellaneous &#9662;</a>
+				<li id="li2"><a class = "pagelist" href="/users/jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav2">Teaching</a></li>
+				<li id="li4"><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav4">Miscellaneous &#9662;</a>
 					<ul class="dropdown">
 						<li><a href="/users/jcyang/academic">Academic</a></li>
 						<li><a href="/users/jcyang/blog">Blog</a></li>
 						<li><a href="/users/jcyang/music">Music</a></li>
 <!--						<li><a href="/users/jcyang/shorthand">Shorthand</a></li>-->
+					</ul>
+				</li>
+				<li id="li5"><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav5">Menu &#9662;</a>
+					<ul class="dropdown">
+						<li><a href="/users/jcyang/academic">Academic</a></li>
+						<li><a href="/users/jcyang/blog">Blog</a></li>
+						<li><a href="/users/jcyang/assets/files/cv.pdf">CV</a></li>
+						<li><a href="/users/jcyang/music">Music</a></li>
+						<li><a href="/users/jcyang/publications">Publications</a></li>
+						<li><a href="/users/jcyang/teach">Teaching</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -61,7 +68,9 @@
 
 <div class="post">
 
-<h2>Chopin Etudes Op 25 No 11</h2>
+<h2>Chopin Étude in A minor</h2>
+
+  <h4>Frédéric Chopin, Op. 25 No. 11, "Winter Wind"</h4>
 
 <p class="meta">2020, April 14</p>
 
@@ -82,7 +91,7 @@
       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
       
       var disqus_config = function () {
-        this.page.url = "https://teddyyjc.github.io/" + "/users/jcyang/music/videos/chopin";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = "https://teddyyjc.github.io/" + "/users/jcyang/music/videos/chopin-etude";  // Replace PAGE_URL with your page's canonical URL variable
         console.log(this.page.url);
         this.page.identifier = ""; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
       };
@@ -106,11 +115,10 @@
 		<footer>
 			<div class="footer-container">
 				<div class="container">
-					<div id="footer" class="vertical-center">
+					<div id="footer" class="vertical-center" style="overflow:hidden">
 						<div id="float-left" class="vertical-center">
 							<a href="https://www.utexas.edu"><img id="logo" src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a>
 						</div>
-						<p class="copyright">Copyright &#169 2020 Jincheng Yang</p>
 						<div id="float-right" class="vertical-center">
 							<ul>
 								<li id="utmath"><a href="https://www.ma.utexas.edu/">UT Math</a></li>
@@ -119,11 +127,21 @@
 								<li><a href="mailto:jcyang@math.utexas.edu">Email</a></li>
 							</ul>
 						</div>
+						<p class="copyright">Copyright &#169 2020 Jincheng Yang</p>
 					</div>
 				</div>
 			</div>
 		</footer>
 
 		<script type="text/javascript" src="/users/jcyang/plugin/Escher.js"></script>
+		<script type="text/javascript" src="/users/jcyang/plugin/adjust_nav.js"></script>
+		<script>
+			function resizeWindow() {
+				init()
+				adjustNav()
+			}
+			window.addEventListener("resize", resizeWindow)
+			adjustNav()
+		</script>
 	</body>
 </html>

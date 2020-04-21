@@ -3,11 +3,12 @@ layout: post
 title: "Guessing Letter"
 date: 2017-09-01
 comments: true
+use-math: true
 ---
 
 This is a very simple game called Guessing Letter, similar to the more popular four digit number guessing game. I wrote this as a practice of javaScript.
 
-The secret password is a four-letter string without spaces. Your job is to find out this word. Input your guess and click "Compare", then you will get a comparason in the form of $$m$$A$$n$$B, where $$m$$ is the number of slots in the password that you input correctly, and $$n$$ is the number of slots in the password that you used the letter in that slot, possibly elsewhere.
+The secret password is a four-letter string without spaces. Your job is to find out this word. Input your guess and click "Compare", then you will get a comparason in the form of $m$A$n$B, where $m$ is the number of slots in the password that you input correctly, and $n$ is the number of slots in the password that you used the letter in that slot, possibly elsewhere.
 
 <input id="txt1" type="text" maxlength="4" value="ABCD" autocomplete="off">
 <input type="button" value="Compare" onclick="

@@ -26,7 +26,7 @@
     },
     tex2jax: {
       inlineMath: [ ['$','$'] ],
-      displayMath: [ ['$$','$$'] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
       processEscapes: true,
     },
     jax: ["input/TeX", "output/CommonHTML"]
@@ -63,19 +63,26 @@
 
 		<nav>
 			<ul>
-				<li><a class = "pagelist" href="/users/jcyang/publications" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav0">Publications</a></li>
-				<li><a class = "pagelist" href="/users/jcyang/assets/files/cv.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav1">Curriculum Vitae</a></li>
+				<li id="li0"><a class = "pagelist" href="/users/jcyang/publications" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav0">Publications</a></li>
+				<li id="li1"><a class = "pagelist" href="/users/jcyang/assets/files/cv.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav1">Curriculum Vitae</a></li>
 				<li><a class = "icon" href="/users/jcyang" draggable="true" ondragstart="drag(event)" title="Home Page"></a></li>
-				<li><a class = "pagelist" href="/users/jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav2">Teaching</a></li>
-				<!--
-				<li><a class = "pagelist" href="/users/jcyang/blog" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav3">Research Blog</a></li>
-				-->
-				<li><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)">Miscellaneous &#9662;</a>
+				<li id="li2"><a class = "pagelist" href="/users/jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav2">Teaching</a></li>
+				<li id="li4"><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav4">Miscellaneous &#9662;</a>
 					<ul class="dropdown">
 						<li><a href="/users/jcyang/academic">Academic</a></li>
 						<li><a href="/users/jcyang/blog">Blog</a></li>
 						<li><a href="/users/jcyang/music">Music</a></li>
 <!--						<li><a href="/users/jcyang/shorthand">Shorthand</a></li>-->
+					</ul>
+				</li>
+				<li id="li5"><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav5">Menu &#9662;</a>
+					<ul class="dropdown">
+						<li><a href="/users/jcyang/academic">Academic</a></li>
+						<li><a href="/users/jcyang/blog">Blog</a></li>
+						<li><a href="/users/jcyang/assets/files/cv.pdf">CV</a></li>
+						<li><a href="/users/jcyang/music">Music</a></li>
+						<li><a href="/users/jcyang/publications">Publications</a></li>
+						<li><a href="/users/jcyang/teach">Teaching</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -253,7 +260,7 @@ Then use <code class="highlighter-rouge">solve_bvp</code> function from <code cl
 Wall time: 30.5 ms
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_11_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_11_1.png" alt="png" class="center-image" /></p>
 
 <h3 id="iteration">Iteration</h3>
 
@@ -353,7 +360,7 @@ CPU times: user 344 ms, sys: 3.56 ms, total: 348 ms
 Wall time: 346 ms
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_30_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_30_1.png" alt="png" class="center-image" /></p>
 
 <p>Now we define $\lambda _1 (\beta, c)$ to be the principal eigenvalue of $K _{\beta, c}$. Because the eigenvalues are greater than $-3$, we can use default $\mu _0 = -3$ to find smallest eigenvalue.</p>
 
@@ -455,7 +462,7 @@ Wall time: 346 ms
 /Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_42_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_42_1.png" alt="png" class="center-image" /></p>
 
 <p>For the region $-3 &lt; \beta &lt; 3$, $-1 &lt; c &lt; 0$, again because as $c \to 0 ^-$, the system becomes singular, we use exponential samples.</p>
 
@@ -469,7 +476,7 @@ Wall time: 346 ms
 /Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_44_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_44_1.png" alt="png" class="center-image" /></p>
 
 <p>We can patch them together by doing a transform $\tilde c = \frac1{c - 1/2}$. In this way we may have a better view of the shape of the eigenvalues.</p>
 
@@ -501,7 +508,7 @@ Wall time: 346 ms
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a list of 20 text.Text objects&gt;
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_47_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_47_1.png" alt="png" class="center-image" /></p>
 
 <p>Apparently there is a saddle point at $(-1, 0)$ that python contourplot cannot draw numerically. This corresponds to the system at $\beta = -1$, $c = \infty$. Since in general</p>
 
@@ -528,7 +535,7 @@ Wall time: 346 ms
 /Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_54_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_54_1.png" alt="png" class="center-image" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.992</span><span class="p">,</span> <span class="mf">1.008</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 <span class="n">c_sample</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.005</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
@@ -540,7 +547,7 @@ Wall time: 346 ms
 /Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_55_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_55_1.png" alt="png" class="center-image" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.592</span><span class="p">,</span> <span class="mf">1.608</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 <span class="n">c_sample</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.005</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
@@ -552,7 +559,7 @@ Wall time: 346 ms
 /Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_56_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_56_1.png" alt="png" class="center-image" /></p>
 
 <h2 id="instability-boundary">Instability Boundary</h2>
 
@@ -575,7 +582,7 @@ Wall time: 346 ms
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1821879b10&gt;]
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_61_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_61_1.png" alt="png" class="center-image" /></p>
 
 <p>Plot for $\alpha = \sqrt{\Lambda _\beta}$.</p>
 
@@ -588,7 +595,7 @@ Wall time: 346 ms
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1821ad7590&gt;]
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_64_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_64_1.png" alt="png" class="center-image" /></p>
 
 <h3 id="detailed-calculation">Detailed Calculation</h3>
 
@@ -680,7 +687,7 @@ Wall time: 346 ms
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1821e26e90&gt;]
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_72_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_72_1.png" alt="png" class="center-image" /></p>
 
 <p>For $\beta &gt; 0$, $c ^*$ is small but not always zero.</p>
 
@@ -690,7 +697,7 @@ Wall time: 346 ms
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1819307ad0&gt;]
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_74_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_74_1.png" alt="png" class="center-image" /></p>
 
 <p>Now compare the value of our results and the hypothesis of Kuo.</p>
 
@@ -708,7 +715,7 @@ Wall time: 346 ms
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x18191ff310&gt;]
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_76_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_76_1.png" alt="png" class="center-image" /></p>
 
 <p>The difference for $0 &lt; \beta &lt; 2$ is the following.</p>
 
@@ -718,7 +725,7 @@ Wall time: 346 ms
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x182896c550&gt;]
 </code></pre></div></div>
 
-<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_78_1.png" alt="png" /></p>
+<p><img src="/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_78_1.png" alt="png" class="center-image" /></p>
 
 <h3 id="calculate-beta-_-">Calculate $\beta _-$</h3>
 
@@ -883,11 +890,10 @@ Wall time: 346 ms
 		<footer>
 			<div class="footer-container">
 				<div class="container">
-					<div id="footer" class="vertical-center">
+					<div id="footer" class="vertical-center" style="overflow:hidden">
 						<div id="float-left" class="vertical-center">
 							<a href="https://www.utexas.edu"><img id="logo" src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a>
 						</div>
-						<p class="copyright">Copyright &#169 2020 Jincheng Yang</p>
 						<div id="float-right" class="vertical-center">
 							<ul>
 								<li id="utmath"><a href="https://www.ma.utexas.edu/">UT Math</a></li>
@@ -896,11 +902,21 @@ Wall time: 346 ms
 								<li><a href="mailto:jcyang@math.utexas.edu">Email</a></li>
 							</ul>
 						</div>
+						<p class="copyright">Copyright &#169 2020 Jincheng Yang</p>
 					</div>
 				</div>
 			</div>
 		</footer>
 
 		<script type="text/javascript" src="/users/jcyang/plugin/Escher.js"></script>
+		<script type="text/javascript" src="/users/jcyang/plugin/adjust_nav.js"></script>
+		<script>
+			function resizeWindow() {
+				init()
+				adjustNav()
+			}
+			window.addEventListener("resize", resizeWindow)
+			adjustNav()
+		</script>
 	</body>
 </html>

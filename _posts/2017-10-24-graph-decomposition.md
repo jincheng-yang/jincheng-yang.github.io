@@ -60,12 +60,9 @@ Up to now, we can decompose any complete graph with odd prime number of vertices
 
 *Proof*  Label the points as $\{0, 1, w, w^2, \dots, w^{2n - 1} \}$ where $w = e^{\frac{2\pi i}{2n}}$. Then 
 
-$$
-\begin{align*}
-C^0 := 0 \rightarrow 1 \rightarrow w \rightarrow w^{-1} \rightarrow w ^2 \rightarrow w ^{-2} \rightarrow \dots \rightarrow w ^{n - 1} \rightarrow w ^{-n + 1} \rightarrow -1 \rightarrow 0
-\end{align*}
-
-$$
+\begin{align}
+C^0 := 0 \rightarrow 1 \rightarrow w \rightarrow w^{-1} \rightarrow w ^2 \rightarrow w ^{-2} \rightarrow \dots \rightarrow w ^{n - 1} \rightarrow w ^{-n + 1} \rightarrow -1 \rightarrow 0 \notag
+\end{align}
 
 is a Hamiltonian cycle. $C^k := w^k C ^0$ (element-wise multiplication) is also a Hamiltonian cycle, since it is just a rotation of $C ^0$. The quotient of consecutive endpoints in each cycle are $\{\infty, w, w^{-2}, w^3, w^{-4}, \dots, w^{-(2n-2)}, w^{2n-1}, 0\}$, which are all different. Therefore, if considering dirction of edges, then $\{C ^k, k = 0, 1, \dots, 2n-1 \}$ are $2n$ pairwise disjoint directed Hamiltonian cycles. But $C ^k$ and $C ^{k + n}$ are exactly the same graph with opposite directioning. Therefore, $\{C ^k, k = 0, 1, \dots, n - 1 \}$ are $n$ pairwise disjoint (nondirected) Hamiltonian cycles.
 
@@ -96,6 +93,7 @@ For convenience, we denote the subgraph of $K _n$ consisted by edges of length $
 </div>
 
 <div class="boxr">
+
 <div id="fig6" style="text-align:center">
     <img class="mvlll" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3-1.svg" width="40%"><img class="mvrrr" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3-2.svg" width="40%">
 </div>
@@ -104,7 +102,10 @@ For convenience, we denote the subgraph of $K _n$ consisted by edges of length $
 
 </div>
 
+<p style='overflow:visible'>
 Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _9 ^4$ are Hamiltonian cycles, but $K _9 ^3$ is not. However, since $K _9 ^{1, 3}$ can be decomposed into 2 Hamiltonian cycles, we can still break $K _9$ into four Hamiltonian cycles.
+</p>
+
 
 It is not clear to me what kind of $K _n ^{k, l}$ can be broken into two Hamiltonian cycles. Never the less, there are some simple observations.
 

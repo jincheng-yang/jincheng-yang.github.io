@@ -24,7 +24,7 @@ In $j$-th iteration, we
 
 <svg id='vitali' width='100%' viewBox="0 0 600 600"></svg>
 
-<input type="button" value="Generate" onclick="generate()">
+<!-- <input type="button" value="Generate" onclick="generate()"> -->
 <input type="button" value="Find Max" onclick="find_max()" disabled='disabled'>
 <input type="button" value="Iterate Step" onclick="find_neighbors()" disabled='disabled'>
 <input type="button" value="Remove" onclick="remove()"  disabled='disabled'>
@@ -44,7 +44,7 @@ In $j$-th iteration, we
 
 <svg id='besicovitch' width='100%' viewBox="0 0 600 600"></svg>
 
-<input type="button" value="Generate" onclick="bgenerate()">
+<!-- <input type="button" value="Generate" onclick="bgenerate()"> -->
 <input type="button" value="Find Max" onclick="bfind_max()" disabled='disabled'>
 <input type="button" value="Iterate Step" onclick="bfind_neighbors()" disabled='disabled'>
 <input type="button" value="Remove" onclick="bremove()" disabled='disabled'>

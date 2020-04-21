@@ -42,4 +42,3 @@ $$
     \curl (f \u) = f \curl \u + \grad f \times \u
 $$
 
-

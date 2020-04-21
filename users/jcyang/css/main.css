@@ -76,7 +76,7 @@ blockquote {
 .main-title {
 	margin: 0em;
 	padding: auto;
-	height: 20em;
+    min-height: 20em;
     cursor: move;
 }
 
@@ -103,7 +103,8 @@ p.name {
 
 p.institute {
     margin: 0px;
-    padding: 0.2em;
+    padding: 1em;
+    padding-bottom: 4em;
     color: aliceblue;
     text-align: center;
     font-size: 1.0em;
@@ -279,6 +280,14 @@ ul.posts {
     border-color: #DDD;
     box-shadow: 0em 0em 0.3em 0em #BBB;
     margin: 2em 0em 2em 0em;
+}
+
+.post p{
+    overflow: scroll;
+}
+
+.post ul li{
+    overflow: scroll;
 }
 
 .transparent {

@@ -4,6 +4,7 @@ title: "Poincaré Disk"
 date: 2015-12-03
 comments: true
 image: true
+use-math: true
 thumb: poincare.gif
 ---	
 

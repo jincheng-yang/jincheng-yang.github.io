@@ -37,19 +37,26 @@
 
 		<nav>
 			<ul>
-				<li><a class = "pagelist" href="/users/jcyang/publications" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav0">Publications</a></li>
-				<li><a class = "pagelist" href="/users/jcyang/assets/files/cv.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav1">Curriculum Vitae</a></li>
+				<li id="li0"><a class = "pagelist" href="/users/jcyang/publications" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav0">Publications</a></li>
+				<li id="li1"><a class = "pagelist" href="/users/jcyang/assets/files/cv.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav1">Curriculum Vitae</a></li>
 				<li><a class = "icon" href="/users/jcyang" draggable="true" ondragstart="drag(event)" title="Home Page"></a></li>
-				<li><a class = "pagelist" href="/users/jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav2">Teaching</a></li>
-				<!--
-				<li><a class = "pagelist" href="/users/jcyang/blog" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav3">Research Blog</a></li>
-				-->
-				<li><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)">Miscellaneous &#9662;</a>
+				<li id="li2"><a class = "pagelist" href="/users/jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav2">Teaching</a></li>
+				<li id="li4"><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav4">Miscellaneous &#9662;</a>
 					<ul class="dropdown">
 						<li><a href="/users/jcyang/academic">Academic</a></li>
 						<li><a href="/users/jcyang/blog">Blog</a></li>
 						<li><a href="/users/jcyang/music">Music</a></li>
 <!--						<li><a href="/users/jcyang/shorthand">Shorthand</a></li>-->
+					</ul>
+				</li>
+				<li id="li5"><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav5">Menu &#9662;</a>
+					<ul class="dropdown">
+						<li><a href="/users/jcyang/academic">Academic</a></li>
+						<li><a href="/users/jcyang/blog">Blog</a></li>
+						<li><a href="/users/jcyang/assets/files/cv.pdf">CV</a></li>
+						<li><a href="/users/jcyang/music">Music</a></li>
+						<li><a href="/users/jcyang/publications">Publications</a></li>
+						<li><a href="/users/jcyang/teach">Teaching</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -124,11 +131,10 @@
 		<footer>
 			<div class="footer-container">
 				<div class="container">
-					<div id="footer" class="vertical-center">
+					<div id="footer" class="vertical-center" style="overflow:hidden">
 						<div id="float-left" class="vertical-center">
 							<a href="https://www.utexas.edu"><img id="logo" src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a>
 						</div>
-						<p class="copyright">Copyright &#169 2020 Jincheng Yang</p>
 						<div id="float-right" class="vertical-center">
 							<ul>
 								<li id="utmath"><a href="https://www.ma.utexas.edu/">UT Math</a></li>
@@ -137,11 +143,21 @@
 								<li><a href="mailto:jcyang@math.utexas.edu">Email</a></li>
 							</ul>
 						</div>
+						<p class="copyright">Copyright &#169 2020 Jincheng Yang</p>
 					</div>
 				</div>
 			</div>
 		</footer>
 
 		<script type="text/javascript" src="/users/jcyang/plugin/Escher.js"></script>
+		<script type="text/javascript" src="/users/jcyang/plugin/adjust_nav.js"></script>
+		<script>
+			function resizeWindow() {
+				init()
+				adjustNav()
+			}
+			window.addEventListener("resize", resizeWindow)
+			adjustNav()
+		</script>
 	</body>
 </html>
