@@ -282,13 +282,16 @@ ul.posts {
     margin: 2em 0em 2em 0em;
 }
 
-.post p{
-    overflow: scroll;
+.MJXc-display {
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
-.post ul li{
-    overflow: scroll;
-}
+/* .post ol > li:before {
+    content: ' ';
+    display: block;
+    height: 1px;
+} */
 
 .transparent {
     padding-top: 2em;
