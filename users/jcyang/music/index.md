@@ -8,7 +8,7 @@ title: Jincheng's Website | Music
 
 # Music
 
-<img src="/users/jcyang/assets/images/photo6.png" style="float:right; width:300px; max-width:100%; padding-left: 30px">
+<img src="/users/jcyang/assets/images/photo6.png" style="float:right; width:300px; max-width:100%; padding-left: 80px">
 
 Math and music are two most important themes of my life. As Hermann von Helmholtz once said, 
 
@@ -22,7 +22,7 @@ I am honored to follow the guidance of my piano instructor, [Prof. Gilmson](http
 <div class="eggshell">
 <div class="container" markdown="1">
 
-### Piano Recitals and Accompany
+###### Piano Recitals and Accompany
 
 {% for recital in site.data.piano.Recital %}
 
@@ -53,7 +53,7 @@ I am honored to follow the guidance of my piano instructor, [Prof. Gilmson](http
 <div class="aliceblue">
 <div class="container" markdown="1">
 
-### Rock Lives
+###### Rock Lives
 
 {% for recital in site.data.rock.Rock %}
 

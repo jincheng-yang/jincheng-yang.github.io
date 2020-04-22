@@ -5,7 +5,7 @@ date: 2017-10-24
 comments: true
 image: true
 use-math: true
-thumb: graph-decomposition.png
+thumb: graph-decomposition.svg
 ---
 
 ### Introduction

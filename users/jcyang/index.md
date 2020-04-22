@@ -6,7 +6,7 @@ title: Jincheng's Website | About
 <div class="transparent">
 <div class="container" markdown="1">
 
-<img src="/users/jcyang/assets/images/photo5.jpg" style="float:right; width:200px; max-width:100%; padding-left: 100px">
+<img src="/users/jcyang/assets/images/photo5.jpg" style="float:right; width:200px; max-width:100%; padding-left: 80px">
 
 # About Me
 
@@ -23,7 +23,7 @@ It is my honor to be coadvised by [Prof. Caffarelli](https://web.ma.utexas.edu/u
 <div class="eggshell">
 <div class="container" markdown="1">
 
-### Contact Information
+###### Contact Information
 
 <div style="float:right">
 <div style="display:inline" markdown="1">
@@ -57,12 +57,12 @@ Austin, TX 78712-1202, USA
 <div class="aliceblue">
 <div class="container" markdown="1">
 
-### Education
+###### Education
 
 - **Xi'an Jiaotong University**, B.Sc. in Mathematics and Applied Mathematics (Aug. 2013 - June 2017)
 - **The University of Texas at Austin**, Ph.D. in Mathematics (Aug. 2017 - Present)
 
-### Visiting
+###### Visiting
 
 - **Columbia University in the City of New York**, Visiting Undergraduate Student (Jan. 2015 - May 2015)
 - **Georgia Institute of Technology**, School of Mathematics and Language Institute Visiting Honors Student Program (Jan. 2016 - May 2016)
@@ -73,20 +73,20 @@ Austin, TX 78712-1202, USA
 
 
 <div class="gallery">
-<div class="container">
+<div class="container" markdown="1">
 
-<h3>Gallery</h3>
+<h6 class="whiteh">Gallary</h6>
 
 <div style="display:flex;justify-content:space-between;flex-wrap:wrap">
-{% assign my_posts = site.posts | where:"image",true %}
+{% assign my_posts = site.posts | where:"image", true %}
 {% assign firstPost = true %}
 {% for post in my_posts limit: 9 %}{% if firstPost == true %}
-<div class="thumb">
+<div class="thumb" style="background-color:#DDD">
 	{% assign firstPost = false %}
-{% else %}<div class="thumb">
+{% else %}<div class="thumb" style="background-color:#DDD">
 {% endif %}
 <a href="{{ post.url }}" title="{{ post.title }}">
-<div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/{{ post.thumb }}')"></div>
+<div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/{{ post.thumb }}');background-repeat:no-repeat;"></div>
 </a>
 <h5>{{ post.date | date_to_string }}</h5>
 <a href="{{ post.url }}" title="{{ post.title }}">
