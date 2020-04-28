@@ -3,7 +3,6 @@ layout: base
 title: Jincheng's Website | Teaching
 ---
 
-
 <div class="transparent">
 <div class="container" markdown="1">
 

@@ -323,6 +323,11 @@ ul.posts {
     overflow-y: hidden;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.MJXc-display::-webkit-scrollbar {
+    display: none;
+}
+
 .transparent {
     padding-top: 2em;
     padding-bottom: 2em;
