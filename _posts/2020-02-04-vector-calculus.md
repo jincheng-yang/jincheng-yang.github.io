@@ -22,7 +22,7 @@ $\newcommand{\curl}{\operatorname{curl}}$
 $\renewcommand{\div}{\operatorname{div}}$
 We use $\u$, $\v$ to indicate vector fields in $\R ^3$; $f$, $g$ indicate scalar fields in $\R ^3$; $\A$, $\B$ indicate 2-tensor fields (matrices) in $\R ^3$.
 
-* **Tensor product**: $\A = \u \tensor \v$ is defined as $\A _{ij} = \u _i \v _j$.
+* **Tensor product**: $\A = \u \tensor \v = u v ^T$ is defined as $\A _{ij} = \u _i \v _j$.
 * **Colon product** between two matrices are $\A : \B = \sum _{i, j} \A _{ij} \B _{ji} = \Tr (\A\B)$.
 * **Divergence** of a matrix: $\div \A = (\div \a _1 \, \div \a _2 \, \div \a _3)$ where $\a _1, \a _2, \a _3$ are column vectors of $\A$.
 

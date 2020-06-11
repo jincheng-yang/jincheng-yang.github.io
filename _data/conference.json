@@ -5,28 +5,32 @@
             "Start": "2019-03-01",
             "End": "2019-03-02",
             "Location": "The University of Texas at Austin",
-            "URL": "https://web.ma.utexas.edu/NonlinearPDEs2019/austin/"
+            "URL": "https://web.ma.utexas.edu/NonlinearPDEs2019/austin/",
+            "Type": "conference"
         },
         {
             "Title": "Workshop on Free Boundary Problems",
             "Start": "2019-05-23",
             "End": "2019-05-24",
             "Location": "Columbia University",
-            "URL": "https://people.math.umass.edu/~nguillen/Workshop2019/index.html"
+            "URL": "https://people.math.umass.edu/~nguillen/Workshop2019/index.html",
+            "Type": "conference"
         },
         {
             "Title": "Summer School on Fluid Mechanics at the ICMAT",
             "Start": "2019-06-24",
             "End": "2019-06-28",
             "Location": "Instituto de Ciencias Matemáticas",
-            "URL": "https://www.icmat.es/node/1788"
+            "URL": "https://www.icmat.es/node/1788",
+            "Type": "summer school"
         },
         {
             "Title": "Summer School in Semiclassical Analysis",
             "Start": "2019-07-29",
             "End": "2019-08-16",
             "Location": "Northwestern University",
-            "URL": "https://sites.northwestern.edu/snap2019/"
+            "URL": "https://sites.northwestern.edu/snap2019/",
+            "Type": "summer school"
         }
     ]
 }

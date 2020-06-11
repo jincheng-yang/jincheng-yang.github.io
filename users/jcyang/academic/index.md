@@ -1,31 +1,129 @@
 ---
-layout: default
+layout: base
 title: Jincheng's Website | Academic
 use-math: true
 ---
 
-# Talk
+<div class="transparent">
+<div class="container" markdown="1">
 
-<div class="post">
+# Academic
 
-<ul>
+My general research interest includes the area of analysis, dynamic systems and partial differential equations, especially those arise in the field of fluid mechanics, including 
+
+* incompressible Euler equations
+* incompressible Navier-Stokes equations 
+* surface quasi-geostrophic equations
+* transmission problems
+
+</div>
+</div>
+
+<div class="eggshell" id="publications">
+<div class="container" markdown="1">
+
+###### Publications
+
+### Journal Articles
+
+1. Jincheng Yang, Zhiwu Lin: *Linear Inviscid Damping for Couette Flow in Stratified Fluid*, [Journal of Mathematical Fluid Mechanics](https://doi.org/10.1007/s00021-017-0328-3), **20:** 445-472 (2018). [[arXiv:1610.08924](https://arxiv.org/abs/1610.08924)][[pdf](/users/jcyang/assets/files/Linear Inviscid Damping for Couette Flow in Stratified Fluid.pdf)]
+2. Zhiwu Lin, Jincheng Yang, Hao Zhu: *Barotropic Instability of Shear Flows*, [Studies in Applied Mathematics](https://doi.org/10.1111/sapm.12297), **144:** 289-326 (2020). [[arXiv: 1801.00950](https://arxiv.org/abs/1801.00950)][[pdf](/users/jcyang/assets/files/Barotropic Instability of Shear Flows.pdf)]
+
+### Book
+
+1. Tao Xie, Xiangqian Cheng, Jincheng Yang: *RAPTOR Programme Design Tutorial*, [Tsinghua University Press](http://www.tup.tsinghua.edu.cn/booksCenter/book_05438302.html), Beijing (2014)
+
+### Thesis
+
+1. Undergraduate thesis: *Linear Inviscid Damping of a Shear Flow in a Half Space and in a Finite Channel*, supervised by Prof. Dongsheng Li and Prof. Zhiwu Lin [[slides](/users/jcyang/assets/files/slides.pdf)][[pdf](/users/jcyang/assets/files/bachelor.pdf)]
+
+</div>
+</div>
+
+<div class="aliceblue" id="talks">
+<div class="container" markdown="1">
+
+###### Talks
+
 {% for talk in site.data.talk.Talk %}
-	<li>{{ talk.Date | date: "%b. %-d, %Y" }} » <a style = "cursor:pointer" onclick="detail = document.getElementById('{{ talk.Date }}'); if(detail.style.display === 'none'){detail.style.display = 'block';}else{detail.style.display='none';}">{{ talk.Title }}</a></li>
-	<div id="{{ talk.Date }}" style="display:none">
-	<p><b>{{ talk.Location }}</b>, <i>{{ talk.Series }}</i></p>
+
+<div>
+
+<h3 style="display: flex; justify-content: space-between">
+<span>
+	{{ talk.Title }}
+</span>
+<span>
+	{{ talk.Date }}
+</span>
+</h3>
+
+<div style="display: flex; justify-content: space-between">
+<span>
+	<b>{{ talk.Location }}</b>, <i>{{ talk.Series }}</i>
+</span>
+<span>
+	<a style = "cursor:pointer" onclick="detail = document.getElementById('{{ talk.Date }}'); if(detail.style.display === 'none'){detail.style.display = 'block';}else{detail.style.display='none';}">Abstract</a>
+</span>
+</div>
+
+<div id="{{ talk.Date }}">
 	<p><b>Abstract</b>: {{ talk.Abstract }}</p>
-	</div>
-{% endfor %}
-</ul>
+</div>	
 
 </div>
 
-# Conference and Summer School
+{% endfor %}
+
+</div>
+</div>
+
+<div class="transparent" id="blog">
+<div class="container" markdown="1">
+
+###### Research Blog
 
 <div class="post">
+<ul class="posts">
+{% for post in site.posts %}
+{% if post.hide %}
+{% else %}
+	<li><span>{{ post.date | date: "%b. %-d, %Y" }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+{% endif %}
+{% endfor %}
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="eggshell" id="conferences">
+<div class="container" markdown="1">
+
+###### Conferences
 
 <ul>
-{% for conference in site.data.conference.Conference %}
+{% assign cfs = site.data.conference.Conference | where: "Type", "conference" %}
+{% for conference in cfs %}
+	<li>
+		<a href = "{{ conference.URL }}"> {{ conference.Title }} </a>
+		<p style="display: flex; justify-content: space-between">
+			<span>
+				<b>{{ conference.Location }}</b>
+			</span>
+			<span>
+				{{ conference.Start | date: "%m/%d/%Y" }} - {{ conference.End | date: "%m/%d/%Y" }}
+			</span>
+		</p>
+	</li>
+{% endfor %}
+</ul>
+
+###### Summer Schools
+
+<ul>
+{% assign ssc = site.data.conference.Conference | where: "Type", "summer school" %}
+{% for conference in ssc %}
 	<li>
 		<a href = "{{ conference.URL }}"> {{ conference.Title }} </a>
 		<p style="display: flex; justify-content: space-between">
@@ -41,3 +139,6 @@ use-math: true
 </ul>
 
 </div>
+</div>
+
+
