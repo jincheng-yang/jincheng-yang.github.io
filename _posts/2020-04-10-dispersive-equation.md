@@ -88,13 +88,13 @@ We review the following lemma in oscillatory integrals. $\newcommand{\ilp}{\{i \
     \begin{align\*}
         I (\lambda) &= \int _a ^b \frac1{i \lambda \phi \'(\xi)} (i \lambda \phi \'(\xi)) e ^{i \lambda \phi (\xi)} \d \xi \\\
         &= \frac1\lambda \int _a ^b \bkt{e ^{i \lambda \phi (\xi)}}\' \frac1{i\phi\'} \d \xi \\\
-        &= -\frac1\lambda \int _a ^b e ^\ilp \pthf1{i\phi\'}\' \dx + \frac1\lambda \bkt{e ^\ilp \frac{1}{i\phi'}} _a ^b.
+        &= -\frac1\lambda \int _a ^b e ^\ilp \pthf1{i\phi\'}\' \d \xi + \frac1\lambda \bkt{e ^\ilp \frac{1}{i\phi'}} _a ^b.
     \end{align\*}
 
     The second is bounded by $\frac2\lambda$, and the first integral is
 
     \begin{align\*}
-        -\int _a ^b e ^\ilp \dfr{}{x} \pthf{1}{i\phi'} \dx \le \int _a ^b \abs{\dfr{}{x} \pthf{1}{\phi'}} \d x = \abs{\frac1{\phi'(b)} - \frac1{\phi'(a)}} \le 1.
+        -\int _a ^b e ^\ilp \dfr{}{\xi} \pthf{1}{i\phi'} \d \xi \le \int _a ^b \abs{\dfr{}{\xi} \pthf{1}{\phi'}} \d \xi = \abs{\frac1{\phi'(b)} - \frac1{\phi'(a)}} \le 1.
     \end{align\*}
 
     Therefore $I (\lambda) \le \frac3\lambda$. 
@@ -109,9 +109,9 @@ We review the following lemma in oscillatory integrals. $\newcommand{\ilp}{\{i \
     Integrate $I (\lambda)$ as 
 
     \begin{align\*}
-        I (\lambda) = \int _a ^{c - \delta} e ^\ilp \dx
-            + \int _{c - \delta} ^{c + \delta} e ^\ilp \dx
-            + \int _{c + \delta} ^b e ^\ilp \dx
+        I (\lambda) = \int _a ^{c - \delta} e ^\ilp \d\xi
+            + \int _{c - \delta} ^{c + \delta} e ^\ilp \d\xi
+            + \int _{c + \delta} ^b e ^\ilp \d\xi
     \end{align\*}
 
     with $\delta$ to be chosen.
@@ -119,7 +119,7 @@ We review the following lemma in oscillatory integrals. $\newcommand{\ilp}{\{i \
     Since $\abs{\phi''} > 1$, $\abs{\phi'} > \delta$ in $[a, c - \delta]$. So
 
     \begin{align\*}
-        \int _a ^{c - \delta} e ^\ilp \dx = \int _a ^{c - \delta} e ^{i (\lambda \delta) \frac\phi\delta} \dx \le c _k (\lambda \delta) ^{-1}.
+        \int _a ^{c - \delta} e ^\ilp \d\xi = \int _a ^{c - \delta} e ^{i (\lambda \delta) \frac\phi\delta} \d\xi \le c _k (\lambda \delta) ^{-1}.
     \end{align\*}
 
     Similarly $\int _{c + \delta} ^b \le c _k (\lambda \delta) ^{-1}$. For the middle one, integrant has modulus 1, so integral is bounded by $2\delta$. So

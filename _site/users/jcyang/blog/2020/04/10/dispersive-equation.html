@@ -264,13 +264,13 @@ This explains the word <strong>dispersive</strong>.</p>
     <p>\begin{align*}
      I (\lambda) &amp;= \int _a ^b \frac1{i \lambda \phi '(\xi)} (i \lambda \phi '(\xi)) e ^{i \lambda \phi (\xi)} \d \xi \\
      &amp;= \frac1\lambda \int _a ^b \bkt{e ^{i \lambda \phi (\xi)}}' \frac1{i\phi'} \d \xi \\
-     &amp;= -\frac1\lambda \int _a ^b e ^\ilp \pthf1{i\phi'}' \dx + \frac1\lambda \bkt{e ^\ilp \frac{1}{i\phi’}} _a ^b.
+     &amp;= -\frac1\lambda \int _a ^b e ^\ilp \pthf1{i\phi'}' \d \xi + \frac1\lambda \bkt{e ^\ilp \frac{1}{i\phi’}} _a ^b.
  \end{align*}</p>
 
     <p>The second is bounded by $\frac2\lambda$, and the first integral is</p>
 
     <p>\begin{align*}
-     -\int _a ^b e ^\ilp \dfr{}{x} \pthf{1}{i\phi’} \dx \le \int _a ^b \abs{\dfr{}{x} \pthf{1}{\phi’}} \d x = \abs{\frac1{\phi’(b)} - \frac1{\phi’(a)}} \le 1.
+     -\int _a ^b e ^\ilp \dfr{}{\xi} \pthf{1}{i\phi’} \d \xi \le \int _a ^b \abs{\dfr{}{\xi} \pthf{1}{\phi’}} \d \xi = \abs{\frac1{\phi’(b)} - \frac1{\phi’(a)}} \le 1.
  \end{align*}</p>
 
     <p>Therefore $I (\lambda) \le \frac3\lambda$.</p>
@@ -286,9 +286,9 @@ This explains the word <strong>dispersive</strong>.</p>
     <p>Integrate $I (\lambda)$ as</p>
 
     <p>\begin{align*}
-     I (\lambda) = \int _a ^{c - \delta} e ^\ilp \dx
-         + \int _{c - \delta} ^{c + \delta} e ^\ilp \dx
-         + \int _{c + \delta} ^b e ^\ilp \dx
+     I (\lambda) = \int _a ^{c - \delta} e ^\ilp \d\xi
+         + \int _{c - \delta} ^{c + \delta} e ^\ilp \d\xi
+         + \int _{c + \delta} ^b e ^\ilp \d\xi
  \end{align*}</p>
 
     <p>with $\delta$ to be chosen.</p>
@@ -296,7 +296,7 @@ This explains the word <strong>dispersive</strong>.</p>
     <p>Since $\abs{\phi’’} &gt; 1$, $\abs{\phi’} &gt; \delta$ in $[a, c - \delta]$. So</p>
 
     <p>\begin{align*}
-     \int _a ^{c - \delta} e ^\ilp \dx = \int _a ^{c - \delta} e ^{i (\lambda \delta) \frac\phi\delta} \dx \le c _k (\lambda \delta) ^{-1}.
+     \int _a ^{c - \delta} e ^\ilp \d\xi = \int _a ^{c - \delta} e ^{i (\lambda \delta) \frac\phi\delta} \d\xi \le c _k (\lambda \delta) ^{-1}.
  \end{align*}</p>
 
     <p>Similarly $\int _{c + \delta} ^b \le c _k (\lambda \delta) ^{-1}$. For the middle one, integrant has modulus 1, so integral is bounded by $2\delta$. So</p>
@@ -470,7 +470,7 @@ That is,</em></p>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   
   
-  <h3>Recent <a href="/users/jcyang/blog/" style="color:#526d6d">Posts</a></h3>
+  <h3>Recent <a href="/users/jcyang/academic/#blog" style="color:#526d6d">Posts</a></h3>
     
     
     
