@@ -20,6 +20,14 @@ It is my honor to be coadvised by [Prof. Caffarelli](https://web.ma.utexas.edu/u
 </div>
 </div>
 
+<div class="transparent" style="background:white">
+<div class="container" markdown="1">
+
+<a href='https://cns.utexas.edu/diversity'>![You Belong Here](/users/jcyang/assets/images/YouBelongHere.jpg){:width='35%'}</a><a href='/users/jcyang/assets/files/YouBelongHereFlyer.pdf'><img src='/users/jcyang/assets/images/YouBelongHereFlyer.svg' width='60%' style='float:right'></a>
+
+</div>
+</div>
+
 <div class="eggshell">
 <div class="container" markdown="1">
 
@@ -27,7 +35,7 @@ It is my honor to be coadvised by [Prof. Caffarelli](https://web.ma.utexas.edu/u
 
 <div style="float:right">
 <div style="display:inline" markdown="1">
-- Office: RLM 11.130
+- Office: PMA (<a title='deprecated' href='https://racialgeographytour.org/tour-stop/robert-lee-moore-and-jim-bob-moffett-buildings/'>rlm</a>) 11.130
 - Email: [jcyang@math.utexas.edu](mailto:jcyang@math.utexas.edu)
 - Tel: +1 (512) 317-7231
 </div>
