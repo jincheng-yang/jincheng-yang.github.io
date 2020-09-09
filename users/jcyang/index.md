@@ -10,7 +10,7 @@ title: Jincheng's Website | About
 
 # About Me
 
-Hi, I am a third year Ph.D. candidate at [The University of Texas at Austin](https://www.utexas.edu). I major in mathematics, and my research interest include analysis, partial differential equations, especially fluid equations, including incompressible Euler equations, Navier-Stokes equations and surface quasi-geostrophic equations. I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of the Special Class for the Gifted Young before my undergraduate study. 
+Hi, I am a fourth year Ph.D. candidate at [The University of Texas at Austin](https://www.utexas.edu). I major in mathematics, and my research interest include analysis, partial differential equations, especially fluid equations, including incompressible Euler equations, Navier-Stokes equations and surface quasi-geostrophic equations. I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of the Special Class for the Gifted Young before my undergraduate study. 
 
 Apart from mathematics, I also love programming and music.
 
@@ -35,7 +35,7 @@ It is my honor to be coadvised by [Prof. Caffarelli](https://web.ma.utexas.edu/u
 
 <div style="float:right">
 <div style="display:inline" markdown="1">
-- Office: PMA (<a title='deprecated' href='https://racialgeographytour.org/tour-stop/robert-lee-moore-and-jim-bob-moffett-buildings/'>rlm</a>) 11.130
+- Office: PMA 11.130
 - Email: [jcyang@math.utexas.edu](mailto:jcyang@math.utexas.edu)
 - Tel: +1 (512) 317-7231
 </div>
