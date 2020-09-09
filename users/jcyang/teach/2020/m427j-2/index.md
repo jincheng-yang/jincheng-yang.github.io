@@ -10,7 +10,7 @@ Syllabus: See Canvas.
 - Regular Class: TTh 12:30-2:00 pm @ Zoom
 - Discussion Session: MW 3:00-4:00 pm @ Zoom
 - Dr. Heitmann's Office Hour: MWF 11:05-11:55 @ Zoom
-- My Office Hour: W 10:00-12:00 am @ Zoom
+- My Office Hour: M 2:00-3:00 pm, W 10:00-11:00 am @ Zoom
 
 ### Calendar
 
