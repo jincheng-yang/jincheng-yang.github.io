@@ -194,19 +194,18 @@
 
 <p>We first define $n$-product</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-(q)_n = \begin{cases}
-    1 & n = 0 \\
-    q (q + 1) \cdots (q + n - 1) & n > 0
-\end{cases} %]]></script>
+\[(q)_n = \begin{cases}
+    1 &amp; n = 0 \\
+    q (q + 1) \cdots (q + n - 1) &amp; n &gt; 0
+\end{cases}\]
 
 <p>Hypergeometric functions has three parameter $a$, $b$ and $c$,</p>
 
-<script type="math/tex; mode=display">F(a, b; c; z) = \sum _{n = 0} ^\infty \frac{
+\[F(a, b; c; z) = \sum _{n = 0} ^\infty \frac{
     (a)_n (b)_n
 }{
     (c) _n 
-} \frac{z^n}{n!}.</script>
+} \frac{z^n}{n!}.\]
 
 <h3 id="properties">Properties</h3>
 
@@ -217,31 +216,30 @@
   <li>
     <p>Derivative is</p>
 
-    <script type="math/tex; mode=display">\frac{\partial F}{\partial z} (a, b; c; z) = \frac{ab}c F(a + 1, b + 1; c + 1; z)</script>
+\[\frac{\partial F}{\partial z} (a, b; c; z) = \frac{ab}c F(a + 1, b + 1; c + 1; z)\]
   </li>
   <li>
     <p>Hypergeometric function solves the <strong>hypergeometric equation</strong></p>
 
-    <script type="math/tex; mode=display">z(1-z) \frac{\d ^2 w}{\d z ^2} + [c - (a + b + 1) z] \dfrac wz - ab \, w = 0.</script>
+\[z(1-z) \frac{\d ^2 w}{\d z ^2} + [c - (a + b + 1) z] \dfrac wz - ab \, w = 0.\]
   </li>
   <li>
     <p>Value at $z = 1$ (<strong>Gauss’s theorem</strong>): if $\Re (c) &gt; \Re (a + b)$, then</p>
 
-    <script type="math/tex; mode=display">F (a, b; c; 1) = \frac{\Gamma (c) \Gamma (c - a - b)}{\Gamma(c - a) \Gamma (c - b)}.</script>
+\[F (a, b; c; 1) = \frac{\Gamma (c) \Gamma (c - a - b)}{\Gamma(c - a) \Gamma (c - b)}.\]
   </li>
   <li>
     <p><strong>Euler transform</strong>:</p>
 
-    <script type="math/tex; mode=display">F (a, b; c; z) = (1 - z)^{c - a - b} F (c - a, c - b; c; z).</script>
+\[F (a, b; c; z) = (1 - z)^{c - a - b} F (c - a, c - b; c; z).\]
   </li>
   <li>
     <p>Expansion at $z = 1$: we can express it as a series of $1 - z$ by</p>
 
-    <script type="math/tex; mode=display">% <![CDATA[
-\begin{align*}
-F (a, b; c; z) &= \frac{\Gamma (c) \Gamma (c - a - b)}{\Gamma(c - a) \Gamma (c - b)} F (a, b; a + b + 1 - c; 1 - z) \\
-&\qquad + \frac{\Gamma (c) \Gamma (a + b - c)}{\Gamma(a) \Gamma (b)} (1 - z)^{c - a - b} F (c - a, c - b; 1 + c - a - b; 1 - z).
-\end{align*} %]]></script>
+\[\begin{align*}
+F (a, b; c; z) &amp;= \frac{\Gamma (c) \Gamma (c - a - b)}{\Gamma(c - a) \Gamma (c - b)} F (a, b; a + b + 1 - c; 1 - z) \\
+&amp;\qquad + \frac{\Gamma (c) \Gamma (a + b - c)}{\Gamma(a) \Gamma (b)} (1 - z)^{c - a - b} F (c - a, c - b; 1 + c - a - b; 1 - z).
+\end{align*}\]
 
     <p>this can be proven by a combination of Gauss’s theorem and Euler transform.</p>
   </li>
