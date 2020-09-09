@@ -18,24 +18,36 @@ $
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\dfr}[2]{\frac{\d #1}{\d #2}}
 $
+
+$$
 \begin{align}
 \tag{1}
 -\phi'' (y) + K (y) \phi (y) = \lambda \phi (y), \qquad \phi \pth{-\frac\pi2} = \phi \pth{\frac\pi2} = 0.
 \end{align}
+$$
+
 We want to use power method. First, we introduce the Boundary Value Problem solver operator. Given a function $f$, we solve the following Boundary Value Problem
+
+$$
 \begin{align}
 \tag{2}
 -\phi'' (y) + K (y) \phi (y) = f (y), \qquad \phi \pth{-\frac\pi2} = \phi \pth{\frac\pi2} = 0.
 \end{align}
+$$
+
 Let 
 
 $$T _K = \pth{-\dfr{^2}{y ^2} + K} ^{-1}: f \mapsto \phi$$
 
 be the operator that maps the source function to the solution of (2). With an initial guess on eigenvalue $\mu _0$ and eigenfunction $f _0$, we run the following iteration.
+
+$$
 \begin{align}
 \tag{3}
-\phi _k = T _{K - \mu _0} f _k, \qquad \mu _{k + 1} = \frac{\\|f _k\\| _{L^2}}{\\|\phi _k\\| _{L^2}}, \qquad f _{k + 1} = \frac{\phi _k}{\\|\phi _k\\| _{L^2}}.
+\phi _k = T _{K - \mu _0} f _k, \qquad \mu _{k + 1} = \frac{\|f _k\| _{L^2}}{\|\phi _k\| _{L^2}}, \qquad f _{k + 1} = \frac{\phi _k}{\|\phi _k\| _{L^2}}.
 \end{align}
+$$
+
 As it goes, $\mu _k ^{-1}$ should converge to the largest eigenvalue of $T _{K - \mu _0}$, $\mu _k$ should converge to the smallest eigenvalue of $-\dfr{^2}{y^2} + (K - \mu _0)$, thus $\mu _k + \mu _0$ will converge to the eigenvalue closest to $\mu _0$, and we can return $\mu _k + \mu _0$ to be the eigenvalue, and $\phi _k$ to be the eigenfunction.
 
 ### BVP Solver
@@ -60,22 +72,26 @@ initial_func = np.zeros((2, initial_mesh.size))
 ```
 
 Now we program the BVP solver. Convert the equation into first order system with Dirichlet boundary conditions.
+
+$$
 \begin{align}
     \tag{4}
     \dfr{}{y} \begin{pmatrix}
-        \phi \\\
+        \phi \\
         \phi'
     \end{pmatrix} = \begin{pmatrix}
-        0 & 1 \\\
+        0 & 1 \\
         K & 0
     \end{pmatrix} \begin{pmatrix}
-        \phi \\\
+        \phi \\
         \phi'
     \end{pmatrix} + \begin{pmatrix}
-        0 \\\
+        0 \\
         -f
     \end{pmatrix}.
 \end{align}
+$$
+
 Then use `solve_bvp` function from `scipy` library.
 
 

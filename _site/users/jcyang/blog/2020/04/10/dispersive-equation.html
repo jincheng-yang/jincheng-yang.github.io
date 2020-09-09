@@ -178,35 +178,35 @@
 
 <p>Consider the following evolution equation for $u (t, x)$,</p>
 
-<p>\begin{align}
+\[\begin{align}
     \label{disp-eqn}
     \pt u = M [u], \qquad u \at{t=0} = u _0.
-\end{align}</p>
+\end{align}\]
 
 <p>Here $M$ is a multiplier operator with symbol $i\lambda$, that is</p>
 
-<p>\begin{align*}
+\[\begin{align*}
     \widehat{M [f]} (\xi) = i \lambda (\xi) \hat f (\xi).
-\end{align*}</p>
+\end{align*}\]
 
 <p>We can solve \eqref{disp-eqn} by the means of Fourier transform in the $x$ variable.</p>
 
-<p>\begin{align*}
-    \hat u _t (t, \xi) &amp;= i \lambda (\xi) \hat u (t, \xi), \\
-    \hat u (t, \xi) &amp;= e ^{i \lambda (\xi) t} \hat u _0 (\xi), \\
+\[\begin{align*}
+    \hat u _t (t, \xi) &amp;= i \lambda (\xi) \hat u (t, \xi), \\\
+    \hat u (t, \xi) &amp;= e ^{i \lambda (\xi) t} \hat u _0 (\xi), \\\
     u (t, x) &amp;= \mathcal F ^{-1} \set{e ^{i \lambda t} \hat u _0} (x).
-\end{align*}</p>
+\end{align*}\]
 
 <p>What does this mean? 
 Take a Fourier mode $u _0 (x) = e ^{i \xi _0 x}$, 
 then $\hat u _0 (\xi) = \delta _0 (\xi - \xi _0)$.</p>
 
-<p>\begin{align*}
-    \hat u (t, \xi) &amp;= e ^{i \lambda (\xi _0) t} \delta _0 (\xi - \xi _0), \\
-    u (t, x) &amp;= e ^{i \lambda (\xi _0) t} e ^{i \xi _0 x} \\
-    &amp;= e ^{i \xi _0 (x - c (\xi _0) t)} \\
+\[\begin{align*}
+    \hat u (t, \xi) &amp;= e ^{i \lambda (\xi _0) t} \delta _0 (\xi - \xi _0), \\\
+    u (t, x) &amp;= e ^{i \lambda (\xi _0) t} e ^{i \xi _0 x} \\\
+    &amp;= e ^{i \xi _0 (x - c (\xi _0) t)} \\\
     &amp;= u _0 (x - c (\xi _0) t).
-\end{align*}</p>
+\end{align*}\]
 
 <p>where $c (\xi _0) = \lambda (\xi _0) / \xi _0$ is called the phase velocity for the angular wavenumber $\xi _0$. 
 This means each Fourier mode is a travelling wave solutions with different travelling speed.
@@ -215,21 +215,22 @@ This explains the word <strong>dispersive</strong>.</p>
 <p>We will not expect a decay in $L ^2$, because</p>
 
 <blockquote>
-  <p><strong>Lemma</strong> <em>(Energy Conservation)</em>.
-\begin{align*}
+  <p><strong>Lemma</strong> <em>(Energy Conservation)</em>.</p>
+
+\[\begin{align*}
     \dfr{}{t} \nor{u (t)} _{L ^2} = 0.
-\end{align*}</p>
+\end{align*}\]
 </blockquote>
 
 <h4 id="proof">Proof.</h4>
 
-<p>\begin{align*}
+\[\begin{align*}
     \dfr{}{t}  \nor{u (t)} _{L ^2} ^2 
     &amp;= \dfr{}{t}  \nor{\hat u (t)} _{L ^2} ^2 \\
     &amp;= 2 \ang{\pt \hat u, \hat u} \\
     &amp;= 2 \ang{i \lambda \hat u, \hat u} \\
     &amp;= 2 i \int _{\R} \lambda (\xi) |\hat u (t, \xi)| ^2 \dx
-\end{align*}</p>
+\end{align*}\]
 
 <p>is purely imaginary, hence zero.</p>
 
@@ -242,10 +243,11 @@ This explains the word <strong>dispersive</strong>.</p>
 <blockquote>
   <p><strong>Lemma</strong> <em>(Van der Corput)</em>. <em>Let</em></p>
 
-  <p>\begin{align*}
+\[\begin{align*}
     I (\lambda) = \int _a ^b e ^{i \lambda \phi (\xi)} \d \xi,
-\end{align*}
-<em>then</em></p>
+\end{align*}\]
+
+  <p><em>then</em></p>
 
   <ol>
     <li>$\abs{\phi’} &gt; 1$ and $\phi’$ is monotonic $\Rightarrow I (\lambda) = O(\lambda ^{-1})$.</li>
@@ -261,17 +263,17 @@ This explains the word <strong>dispersive</strong>.</p>
   <li>
     <p><strong>When $k = 1$</strong>,</p>
 
-    <p>\begin{align*}
-     I (\lambda) &amp;= \int _a ^b \frac1{i \lambda \phi '(\xi)} (i \lambda \phi '(\xi)) e ^{i \lambda \phi (\xi)} \d \xi \\
-     &amp;= \frac1\lambda \int _a ^b \bkt{e ^{i \lambda \phi (\xi)}}' \frac1{i\phi'} \d \xi \\
-     &amp;= -\frac1\lambda \int _a ^b e ^\ilp \pthf1{i\phi'}' \d \xi + \frac1\lambda \bkt{e ^\ilp \frac{1}{i\phi’}} _a ^b.
- \end{align*}</p>
+\[\begin{align*}
+     I (\lambda) &amp;= \int _a ^b \frac1{i \lambda \phi '(\xi)} (i \lambda \phi '(\xi)) e ^{i \lambda \phi (\xi)} \d \xi \\\
+     &amp;= \frac1\lambda \int _a ^b \bkt{e ^{i \lambda \phi (\xi)}}' \frac1{i\phi'} \d \xi \\\
+     &amp;= -\frac1\lambda \int _a ^b e ^\ilp \pthf1{i\phi'}' \d \xi + \frac1\lambda \bkt{e ^\ilp \frac{1}{i\phi'}} _a ^b.
+ \end{align*}\]
 
     <p>The second is bounded by $\frac2\lambda$, and the first integral is</p>
 
-    <p>\begin{align*}
-     -\int _a ^b e ^\ilp \dfr{}{\xi} \pthf{1}{i\phi’} \d \xi \le \int _a ^b \abs{\dfr{}{\xi} \pthf{1}{\phi’}} \d \xi = \abs{\frac1{\phi’(b)} - \frac1{\phi’(a)}} \le 1.
- \end{align*}</p>
+\[\begin{align*}
+     -\int _a ^b e ^\ilp \dfr{}{\xi} \pthf{1}{i\phi'} \d \xi \le \int _a ^b \abs{\dfr{}{\xi} \pthf{1}{\phi'}} \d \xi = \abs{\frac1{\phi'(b)} - \frac1{\phi'(a)}} \le 1.
+ \end{align*}\]
 
     <p>Therefore $I (\lambda) \le \frac3\lambda$.</p>
   </li>
@@ -285,25 +287,25 @@ This explains the word <strong>dispersive</strong>.</p>
 
     <p>Integrate $I (\lambda)$ as</p>
 
-    <p>\begin{align*}
+\[\begin{align*}
      I (\lambda) = \int _a ^{c - \delta} e ^\ilp \d\xi
          + \int _{c - \delta} ^{c + \delta} e ^\ilp \d\xi
          + \int _{c + \delta} ^b e ^\ilp \d\xi
- \end{align*}</p>
+ \end{align*}\]
 
     <p>with $\delta$ to be chosen.</p>
 
     <p>Since $\abs{\phi’’} &gt; 1$, $\abs{\phi’} &gt; \delta$ in $[a, c - \delta]$. So</p>
 
-    <p>\begin{align*}
+\[\begin{align*}
      \int _a ^{c - \delta} e ^\ilp \d\xi = \int _a ^{c - \delta} e ^{i (\lambda \delta) \frac\phi\delta} \d\xi \le c _k (\lambda \delta) ^{-1}.
- \end{align*}</p>
+ \end{align*}\]
 
     <p>Similarly $\int _{c + \delta} ^b \le c _k (\lambda \delta) ^{-1}$. For the middle one, integrant has modulus 1, so integral is bounded by $2\delta$. So</p>
 
-    <p>\begin{align*}
+\[\begin{align*}
      I (\lambda) \le c _k 2 (\lambda \delta) ^{-1} + 2 \delta \lesssim \lambda ^{-\frac12}
- \end{align*}</p>
+ \end{align*}\]
 
     <p>by choosing $\delta = \lambda ^{-\frac12}$.</p>
   </li>
@@ -316,13 +318,15 @@ This explains the word <strong>dispersive</strong>.</p>
 
 <h3 id="dispersive-decay-estimate">Dispersive Decay Estimate</h3>
 
-<p>The solution $u (t, x)$ equals to the following oscillatory integral by Fourier inverse transform,
-\begin{align*}
-    u (t, x) &amp;= \mathcal F ^{-1} \set{e ^{i \lambda t} \hat u _0} (x) \\
-    &amp;= \int _\R e ^{i x \xi} e ^{i \lambda (\xi) t} \hat u _0 (\xi) \d \xi \\
+<p>The solution $u (t, x)$ equals to the following oscillatory integral by Fourier inverse transform,</p>
+
+\[\begin{align*}
+    u (t, x) &amp;= \mathcal F ^{-1} \set{e ^{i \lambda t} \hat u _0} (x) \\\
+    &amp;= \int _\R e ^{i x \xi} e ^{i \lambda (\xi) t} \hat u _0 (\xi) \d \xi \\\
     &amp;= \int _\R e ^{i(x\xi + \lambda (\xi) t)} \hat u _0 (\xi) \d \xi.
-\end{align*}
-For each fixed $x$, we can get a decay estimate by oscillatory integral.</p>
+\end{align*}\]
+
+<p>For each fixed $x$, we can get a decay estimate by oscillatory integral.</p>
 
 <p>Very likely a $t ^{-\frac12}$ decay will happen by method of stationary phase, if $\lambda$ has a nondegenerate inflection point. 
 However, we want a decay in $L ^\infty$, that is independent of the choice of $x$.</p>
@@ -334,28 +338,28 @@ However, we want a decay in $L ^\infty$, that is independent of the choice of $x
 And assume second derivative has at most algebraic decay at infinity.
 That is,</em></p>
 
-  <p>\begin{align}
-    \lambda’’ (\xi _1) &amp;= \dots = \lambda’’ (\xi _n) = 0, \qquad \lambda’’’ (\xi _i) \neq 0. \notag \\
+\[\begin{align}
+    \lambda'' (\xi _1) &amp;= \dots = \lambda'' (\xi _n) = 0, \qquad \lambda''' (\xi _i) \neq 0. \notag \\\
     \label{assumption}
-    \lambda’’ (\xi) &amp;\neq 0, \qquad \forall \xi \neq \xi _1, \dots, \xi _n. \\
-    |\lambda’’ (\xi)| &amp;\geq |\xi| ^{-m} \qquad \forall |\xi| &gt; &gt; 1. \notag
-\end{align}</p>
+    \lambda'' (\xi) &amp;\neq 0, \qquad \forall \xi \neq \xi _1, \dots, \xi _n. \\\
+    |\lambda'' (\xi)| &amp;\geq |\xi| ^{-m} \qquad \forall |\xi| &gt; &gt; 1. \notag
+\end{align}\]
 </blockquote>
 
 <p>This assumption ensures that $\lambda$ is not “too linear”, so that the phase velocity are not too close.</p>
 
 <p>Recall the Van der Corput lemma (when $k = 2$), if $\abs{\phi’’} &gt; 1$ then</p>
 
-<p>\begin{align*}
+\[\begin{align*}
     I (t) = \int _a ^b e ^{i t \phi (\xi)} \d \xi \lesssim t ^{-\frac12}.
-\end{align*}</p>
+\end{align*}\]
 
 <p>Therefore for a general $\phi$,</p>
 
-<p>\begin{align*}
-    \int _a ^b e ^{i \phi (\xi)} \d \xi = \int _a ^b e ^{i \min |\phi’’| \frac{\phi(\xi)}{\min |\phi’’|}} \d\xi 
-    \lesssim \pth{\min _{\xi \in [a , b]} |\phi’’ (\xi)|}^{-\frac12}.
-\end{align*}</p>
+\[\begin{align*}
+    \int _a ^b e ^{i \phi (\xi)} \d \xi = \int _a ^b e ^{i \min |\phi''| \frac{\phi(\xi)}{\min |\phi''|}} \d\xi 
+    \lesssim \pth{\min _{\xi \in [a , b]} |\phi'' (\xi)|}^{-\frac12}.
+\end{align*}\]
 
 <p>Here $\phi (\xi) = x \xi + t \lambda (\xi)$. $\phi’’(\xi) = t \lambda’’(\xi)$.</p>
 
@@ -363,10 +367,10 @@ That is,</em></p>
 
 <p>Split</p>
 
-<p>\begin{align*}
-    u (t, x) &amp;= \int _\R e ^{i(x\xi + \lambda (\xi) t)} \hat u _0 (\xi) \d \xi \\
+\[\begin{align*}
+    u (t, x) &amp;= \int _\R e ^{i(x\xi + \lambda (\xi) t)} \hat u _0 (\xi) \d \xi \\\
     &amp;= \int _{\set{|\xi| &gt; M}} + \int _{\set{|\xi - \xi _1| &lt; \delta}} + \int _{\text{elsewhere}}
-\end{align*}</p>
+\end{align*}\]
 
 <p>Then</p>
 
@@ -374,20 +378,20 @@ That is,</em></p>
   <li>
     <p>For high frequencies, assume some regularity on $u _0$,</p>
 
-    <p>\begin{align*}
+\[\begin{align*}
      \abs{\int _{|\xi| &gt; M} e ^{i(x\xi + \lambda (\xi) t)} \hat u _0 (\xi) \d \xi} 
-     &amp;\le \int _{|\xi| &gt; M} |\hat u _0 (\xi)| \d \xi \\
-     &amp;= \int _{|\xi| &gt; M} \abs{\xi} ^{-s} \abs{\xi} ^s |\hat u _0 (\xi)| \d \xi \\
-     &amp;\lesssim \nor{\abs{\xi} ^{-s} \mathbf1 _{\abs{\xi}&gt;M}} _{L ^1} \nor{\abs{\xi} ^s |\hat u _0 (\xi)|} _{L ^\infty} \\
+     &amp;\le \int _{|\xi| &gt; M} |\hat u _0 (\xi)| \d \xi \\\
+     &amp;= \int _{|\xi| &gt; M} \abs{\xi} ^{-s} \abs{\xi} ^s |\hat u _0 (\xi)| \d \xi \\\
+     &amp;\lesssim \nor{\abs{\xi} ^{-s} \mathbf1 _{\abs{\xi}&gt;M}} _{L ^1} \nor{\abs{\xi} ^s |\hat u _0 (\xi)|} _{L ^\infty} \\\
      &amp;\lesssim M ^{-s+1} \nor{u _0} _{W ^{s, 1}}.
- \end{align*}</p>
+ \end{align*}\]
   </li>
   <li>
     <p>For frequencies near the inflection point,</p>
 
-    <p>\begin{align*}
+\[\begin{align*}
      \abs{\int _{|\xi - \xi _1| &lt; \delta} e ^{i(x\xi + \lambda (\xi) t)} \hat u _0 (\xi) \d \xi} \le 2 \delta \nor{ \hat u _0 } _{L ^\infty} \le 2 \delta \nor{u _0} _{L ^1}.
- \end{align*}</p>
+ \end{align*}\]
   </li>
   <li>
     <p>For elsewhere,</p>
@@ -396,41 +400,41 @@ That is,</em></p>
  or $\phi’’(\xi) &gt; \delta$. 
  Since</p>
 
-    <p>\begin{align*}
+\[\begin{align*}
      \abs{\int e ^{ix\xi} \hat f (\xi) \hat g (\xi) \d \xi} 
-     &amp;\le \nor{f * g} _{L ^\infty} \le \nor f _{L ^\infty} \nor g _{L ^1} \\
+     &amp;\le \nor{f * g} _{L ^\infty} \le \nor f _{L ^\infty} \nor g _{L ^1} \\\
      &amp;\le \sup \abs{\int e ^{ix\xi} \hat f (\xi) \d \xi} \nor g _{L ^1},
- \end{align*}</p>
+ \end{align*}\]
 
     <p>use this trick we can pull out $\newcommand{\ew}{\text{elsewhere}}$</p>
 
-    <p>\begin{align*}
+\[\begin{align*}
      \abs{\int _\ew e ^{i x \xi} e^{i \lambda (\xi) t} \hat u _0 (\xi) \d \xi}
      \le \nor{u _0} _{L ^1} \nor{\int _\ew e ^{i x \xi} e ^{i \lambda (\xi) t} \d \xi} _{L ^\infty}.
- \end{align*}</p>
+ \end{align*}\]
 
     <p>By Van der Corput lemma, this is bounded by</p>
 
-    <p>\begin{align*}
-     \int _\ew e ^{i (x \xi + \lambda (\xi) t)} \d \xi \lesssim \pth{\min _{\xi \in \ew} |t \lambda’’ (\xi)|} ^{-\frac12} \le \min \set{M ^{-m}, \delta} ^{-\frac12} t ^{-\frac12}.
- \end{align*}</p>
+\[\begin{align*}
+     \int _\ew e ^{i (x \xi + \lambda (\xi) t)} \d \xi \lesssim \pth{\min _{\xi \in \ew} |t \lambda'' (\xi)|} ^{-\frac12} \le \min \set{M ^{-m}, \delta} ^{-\frac12} t ^{-\frac12}.
+ \end{align*}\]
   </li>
 </ol>
 
 <p>In conclusion,</p>
 
-<p>\begin{align*}
+\[\begin{align*}
     |u (t, x)| \lesssim M ^{-s + 1} \nor{u _0} _{W ^{s, 1}} + 2 \delta \nor{ u _0 } _{L ^1} + \min \set{M ^{-m}, \delta} ^{-\frac12} t ^{-\frac12} \nor{ u _0 } _{L ^1}.
-\end{align*}</p>
+\end{align*}\]
 
 <p>Similar as Van der Corput lemma, choose $t ^{-\frac13} = \delta = M ^{-m} = M ^{-s + \frac12}$, we obtain</p>
 
 <blockquote>
   <p><strong>Theorem</strong> <em>($L ^\infty$ Decay of Dispersive Equation)</em>. <em>If $u$ is a solution to \eqref{disp-eqn}, where $\lambda$ satisfy the above assumption \eqref{assumption}, we have</em></p>
 
-  <p>\begin{align*}
+\[\begin{align*}
     \nor{ u (t) } _{L ^\infty} \lesssim _\lambda t ^{-\frac13} \nor{u _0} _{W ^{s, 1}}
-\end{align*}</p>
+\end{align*}\]
 
   <p><em>where $s = m - 1$.</em></p>
 </blockquote>

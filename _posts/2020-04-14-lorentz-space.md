@@ -123,74 +123,92 @@ So the integral of $f ^p$ can be just thought as the $\d(\alpha ^p) \tensor \d \
 
 That is, we change the measure we put on domain, and put $L ^q$-typed measure on range. If we integrate $\lambda$ first, we end up with
 
+$$
 \begin{align}
 \nor{f} _{L ^{p, q}} ^q &= \int _0 ^\infty \frac pq \bkt{d _f (\alpha)} ^{\frac qp} q \alpha ^{q - 1} \d \alpha \notag \\\
 &= p \int _0 ^\infty \bkt{d _f (\alpha)} ^{\frac qp} \alpha ^{q} \frac{\d \alpha}\alpha \label{split} ,\\\
 \nor f _{L ^{p,q}} &= p ^\frac1q \nor{\alpha [d _f (\alpha)] ^\frac1p} _{L ^q \pth{\R _+, \frac{\d \alpha}\alpha}} .
 \label{def2}
 \end{align}
+$$
 
 If we integrate $\alpha$ first, we end up with
 
+$$
 \begin{align}
-\nor f _{L ^{p, q}} ^q &= \int _0 ^\infty [f ^* (\lambda)] ^q \lambda ^{\frac qp - 1} \d \lambda \notag \\\
-&= \int _0 ^\infty \lambda ^{\frac qp} [f ^* (\lambda)] ^q\frac{\d \lambda}\lambda \notag ,\\\
+\nor f _{L ^{p, q}} ^q &= \int _0 ^\infty [f ^* (\lambda)] ^q \lambda ^{\frac qp - 1} \d \lambda \notag \\
+&= \int _0 ^\infty \lambda ^{\frac qp} [f ^* (\lambda)] ^q\frac{\d \lambda}\lambda \notag ,\\
 \nor f _{L ^{p, q}} &= \nor{\lambda ^{\frac1p} f ^* (\lambda)} _{L ^q \pth{\R _+, \frac{\d \lambda}\lambda}}. 
 \label{def3}
 \end{align}
+$$
 
 ### Dyadic Decomposition in Range
 
 We decompose $f \ge 0$ by range as the following. Let $E _k = \set{f > 2 ^k}$ denote a sequence of nested dyadic level sets, and define
 
-\begin{align}
+$$
+\begin{align*}
 f _k &= 2 ^{k-1} \ind{E _{k + 1}} + (f - 2^{k - 1})(\ind{E _k} - \ind{E _{k + 1}}) \\\
 &= f(\ind{E _k} - \ind{E _{k + 1}}) + 2 ^k \ind{E _{k + 1}} - 2^{k - 1} \ind{E _k} .
-\end{align}
+\end{align*}
+$$
 
 Then $f = \sum _{k \in \mathbb Z} f _k$, $f _k$ is supported in $E _k$, and $f _k$ is comparible to $2 ^k \ind{E _k}$: 
 
-\begin{align}
+$$
+\begin{align*}
     \frac12 2 ^k \ind{E _k} \le f _k \le \frac32 2 ^k \ind{E _k}.
-\end{align}
+\end{align*}
+$$
 
 ![Decomposition](/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/decomp.svg){: .center-image}
 
 Now we also split the integral \eqref{split} dyadically,
 
-\begin{align}
+$$
+\begin{align*}
      \frac1p \nor{f} _{L ^{p, q}} ^q 
      &= \int _0 ^\infty \bkt{d _f (\alpha)} ^{\frac qp} \alpha ^{q} \frac{\d \alpha}\alpha \notag \\\
      &= \sum _{k \in \Z} \int _{2 ^k} ^{2 ^{k + 1}} \bkt{d _f (\alpha)} ^{\frac qp} \alpha ^{q} \frac{\d \alpha}\alpha .\notag \\\
-\end{align}
+\end{align*}
+$$
 
 Since $d _f$ is decreasing,
 
-\begin{align}
+$$
+\begin{align*}
 2 ^{kq} \bkt{d _f \pth{2 ^{k + 1}}} ^{\frac qp} \lesssim 
 \int _{2 ^k} ^{2 ^{k + 1}} \bkt{d _f (\alpha)} ^{\frac qp} \alpha ^{q} \frac{\d \alpha}\alpha \lesssim
 2 ^{kq} \bkt{d _f \pth{2 ^{k}}} ^{\frac qp}. \notag
-\end{align}
+\end{align*}
+$$
 
 By definition of $E _k$,
 
-\begin{align}
+$$
+\begin{align*}
 2 ^{kq} \mu\pth{E _{k + 1}} ^{\frac qp} \lesssim 
 \int _{2 ^k} ^{2 ^{k + 1}} \bkt{d _f (\alpha)} ^{\frac qp} \alpha ^{q} \frac{\d \alpha}\alpha \lesssim
 2 ^{kq} \mu\pth{E _{k}}  ^{\frac qp}. \notag
-\end{align}
+\end{align*}
+$$
 
 Since $\nor{f _k} _{L ^p} \sim \nor{2 ^k \ind {E _k}} _{L ^p} = 2 ^k \mu \pth{E _k} ^{\frac 1p}$,
 
-\begin{align}
+$$
+\begin{align*}
 \nor{f _{k + 1}} _{L ^p} ^q \lesssim 
 \int _{2 ^k} ^{2 ^{k + 1}} \bkt{d _f (\alpha)} ^{\frac qp} \alpha ^{q} \frac{\d \alpha}\alpha \lesssim
 \nor{f _k} _{L ^p} ^q. \notag
-\end{align}
+\end{align*}
+$$
 
 By taking the summation over $k$, we obtain an equivalent way of defining $L ^{p, q}$ norm,
 
+$$
 \begin{align}
 \label{def4}
 \nor f _{L ^{p, q}} \sim _{p,q} \nor{ \set{\nor{f _k} _{L ^p}} _{k \in \Z}} _{\ell ^q}.
 \end{align}
+$$
