@@ -83,6 +83,7 @@ This comes from thinking integration over the hypograph,
 
 Therefore
 
+$$
 \begin{align}
 \int _X f \d \mu &= \int _X \int _0 ^{f(x)} \d \alpha \d \mu \notag\\\
 &= \int _{\Omega _f} \d \alpha \d \mu \notag\\\
@@ -90,6 +91,7 @@ Therefore
 &= \int _0 ^\infty \mu (f > \alpha) \d \alpha \notag \\\
 &= \int _0 ^\infty d _f (\alpha) \d \alpha. \notag
 \end{align}
+$$
 
 Using decreasing rearrangement, we can also think
 
