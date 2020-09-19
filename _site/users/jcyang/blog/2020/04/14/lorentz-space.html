@@ -464,5 +464,14 @@ f _k &amp;= 2 ^{k-1} \ind{E _{k + 1}} + (f - 2^{k - 1})(\ind{E _k} - \ind{E _{k 
 			window.addEventListener("resize", resizeWindow)
 			adjustNav()
 		</script>
+		<script>
+			(function() {
+				var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+				link.type = 'image/x-icon';
+				link.rel = 'shortcut icon';
+				link.href = '/users/jcyang/assets/images/favicon.ico';
+				document.getElementsByTagName('head')[0].appendChild(link);
+			})();
+		</script>
 	</body>
 </html>
