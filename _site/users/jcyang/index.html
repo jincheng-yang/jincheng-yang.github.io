@@ -280,5 +280,14 @@ Austin, TX 78712-1202, USA
 			window.addEventListener("resize", resizeWindow)
 			adjustNav()
 		</script>
+		<script>
+			(function() {
+				var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+				link.type = 'image/x-icon';
+				link.rel = 'shortcut icon';
+				link.href = '/users/jcyang/assets/images/favicon.ico';
+				document.getElementsByTagName('head')[0].appendChild(link);
+			})();
+		</script>
 	</body>
 </html>
