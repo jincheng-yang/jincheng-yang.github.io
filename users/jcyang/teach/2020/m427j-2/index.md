@@ -37,7 +37,7 @@ Syllabus: See Canvas.
 | `8/31`  	| `9/1` First Order Separable Equation (&sect;1.4) 	| `9/2`   	| `9/3`  Second Order Linear Equation: Real Roots (&sect;2.1,&sect;2.2)	|
 | `9/7` Labor Day    	| `9/8`  Second Order Linear Equation: Complex Roots, Doubld Roots (&sect;2.2.1,&sect;2.2.2) 	| `9/9` **Quiz 1**  	| `9/10` Nonhomogeneous, Judicious Guessing (canvas notes) (&sect;2.3,&sect;2.5)	|
 | `9/14`  	| `9/15` Undamped/Damped Free Vibrations (&sect;2.6) 	| `9/16`  	| `9/17` Forced Vibrations, Series Solutions (&sect;2.6,&sect;2.8) 	|
-| `9/21` **Quiz 2**  	| `9/22` Series Solutions (&sect;2.8) 	| `9/23`  	| `9/24`  	|
+| `9/21` **Quiz 2**  	| `9/22` Series Solutions, Euler's Equations (Distinct Real Roots) (&sect;2.8) 	| `9/23`  	| `9/24`  	|
 | `9/28` **Quiz 3**    	| `9/29`  	| `9/30`  	| `10/1` **Test 1** 	|
 | `10/5`  	| `10/6`  	| `10/7`  	| `10/8`  	|
 | `10/12` **Quiz 4**   	| `10/13` 	| `10/14` 	| `10/15` 	|
