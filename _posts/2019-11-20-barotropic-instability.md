@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Barotropic Instability"
-date: 2019-11-19
+date: 2019-11-20
 comments: true
 image: true
 use-math: true
