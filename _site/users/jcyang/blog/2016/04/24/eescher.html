@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Poincaré Disk</title>
+		<title>Project Escher</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
@@ -170,28 +170,37 @@
 
 <div class="post">
 
-<h2>Poincaré Disk</h2>
+<h2>Project Escher</h2>
 
-<p class="meta">2015, December 03</p>
+  <h4>Tiling regular polygons on hyperbolic half space (Joint work with Tianhao Xian)</h4>
 
-  <p>This is a demonstration of a Poincare Disk for a 2-D ODE dynamic system. Through Poincare mapping, we can see the movements, traces, and ending of all the points.</p>
+<p class="meta">2016, April 24</p>
 
-<p>The animation below is the Poincare Disk of the following system (you can press 1 or 2 to adjust speed),</p>
+  <p>In Riemannian Geometry class, we wanted to have a more intuitive understanding about hyperbolic halfspace (admitting negative constant Gauss curvature). At first we created a tool that enabled us to draw lines, circles, and polygons in a hyperbolic half space. You can also move, rotate and reflect shapes along geodesics.</p>
 
-\[x'(t) = x(x + y - 1)\]
+<p><img width="100%" src="/users/jcyang/assets/images/blog/2016-04-24-project-escher/drawing.gif" /></p>
 
-\[y'(t) = y(2x + 3y/2 - 3)\]
+<p>Now we can draw regular polygons on hyperbolic half plane with negative constant curvature, and map it onto an open ball isometrically. Moreover, we can tile polygons over the whole place.</p>
 
-<div class="pde" style="max-width:600px">
-<script type="text/javascript" src="/users/jcyang/plugin/processing.min.js"></script>
-<canvas data-processing-sources="/users/jcyang/assets/files/pde/Poincare/Poincare.pde"></canvas>
-</div>
+<p>The following is an example of tiling pentagons on the half space. There are four pentagons around each point, and all the inner angles are right angles.</p>
 
-<p>The program is based on a demonstration from the book Generative Design: Visualize, Program, and Create with Processing written by Hartmut Bohnacker. I should thank him for his inspiration.</p>
+<p><img width="100%" src="/users/jcyang/assets/images/blog/2016-04-24-project-escher/pentagon.png" /></p>
+
+<p>The header of my homepage is a skeleton of this. You can actually try to hold and drag to see the deck transformation.</p>
+
+<p>The following is a picture of tiling octagons on the half space. Likewise all the angles are right angles.</p>
+
+<p><img width="100%" src="/users/jcyang/assets/images/blog/2016-04-24-project-escher/octagon.gif" /></p>
+
+<p>Notice that by quotient map of the half plane dividing its deck transformation group, we obtain a torus with genus 2. Thus we obtained a Riemannian metric on genus two torus which admits constant curvature. The following gif is to show the deck transform.</p>
+
+<p><img width="100%" src="/users/jcyang/assets/images/blog/2016-04-24-project-escher/octagon-deck.gif" /></p>
+
+<p>We found that for any integer $n &gt; 4$, one can always tile 4 regular $n$-gons with right angles around a point, and cover the entire plane accordingly. Moreover, if $n &gt; 2$, $m &gt; 2$, one can always tile $m$ regular $n$-gons with inner angle $\frac{2\pi}{m}$ around each vertex, if $n-2 &gt; \frac{2n}{m}$.</p>
 
 <hr />
 
-<p>Environment: Processing 2.0</p>
+<p>Environment: Processing 3.0</p>
 
 
   
@@ -203,9 +212,9 @@
       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
       
       var disqus_config = function () {
-        this.page.url = "https://teddyyjc.github.io/" + "/users/jcyang/blog/2015/12/03/poincare-disk";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = "https://teddyyjc.github.io/" + "/users/jcyang/blog/2016/04/24/eescher";  // Replace PAGE_URL with your page's canonical URL variable
         console.log(this.page.url);
-        this.page.identifier = "/users/jcyang/blog/2015/12/03/poincare-disk"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.identifier = "/users/jcyang/blog/2016/04/24/eescher"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
       };
 
       (function() { // DON'T EDIT BELOW THIS LINE
