@@ -64,6 +64,13 @@
             "Location": "The University of Texas at Austin (zoom talk)",
             "Series": "Junior Analysis Seminar",
             "Abstract": "In this talk, we will introduce the oscillatory integral of the first kind $\\int \\exp(i t \\phi (x)) \\psi (x) dx$. We present the Van der Corput lemma, and the method of stationary phase. As an application in PDE, we will analyze the decay rate for a family of 1-dimensional linear dispersive equations. If time permits, we can look at a stability result for the inviscid Boussinesq system."
+        },
+        {
+            "Title": "Distributionally Robust Optimization",
+            "Date": "2020-10-09",
+            "Location": "The University of Texas at Austin (zoom talk)",
+            "Series": "Junior Analysis Seminar",
+            "Abstract": "We want to estimate the expectation of a random variable when the underlying probability measure is unknown. The true probability can differ from some nominal distribution by a distance R, where the distance between distributions can be characterized by the optimal mass transport, for instance Wasserstein distance. In this talk, we will explore the duality principle for this estimate, and we can discuss the worst case distribution for the discrete case if time permits."
         }
     ]
 }

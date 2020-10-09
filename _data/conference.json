@@ -31,6 +31,14 @@
             "Location": "Northwestern University",
             "URL": "https://sites.northwestern.edu/snap2019/",
             "Type": "summer school"
+        },
+        {
+            "Title": "Virtual Summer Graduate School: Introduction to water waves",
+            "Start": "2020-07-27",
+            "End": "2020-08-07",
+            "Location": "Mathematical Sciences Research Institute",
+            "URL": "https://www.msri.org/summer_schools/910",
+            "Type": "summer school"
         }
     ]
 }
