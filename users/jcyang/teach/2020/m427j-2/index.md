@@ -39,8 +39,8 @@ Syllabus: See Canvas.
 | `9/14`  	| `9/15` Undamped/Damped Free Vibrations (&sect;2.6) 	| `9/16`  	| `9/17` Forced Vibrations, Series Solutions (&sect;2.6,&sect;2.8) 	|
 | `9/21` **Quiz 2**  	| `9/22` Series Solutions, Euler's Equations (Distinct Real Roots) (&sect;2.8) 	| `9/23`  	| `9/24` Differential System, Vectors, Matrices (&sect;3.1) |
 | `9/28` **Quiz 3**    	| `9/29` Solve Linear System (canvas notes) | `9/30`  	| `10/1` **Test 1** 	|
-| `10/5`  	| `10/6`  	| `10/7`  	| `10/8`  	|
-| `10/12` **Quiz 4**   	| `10/13` 	| `10/14` 	| `10/15` 	|
+| `10/5`  	| `10/6` Vector Space, Subspace (&sect;3.2) 	| `10/7`  	| `10/8` Span, Linear Dependency, Basis, Dimension (&sect;3.3) 	|
+| `10/12` **Quiz 4**   	| `10/13` Differential Systems (&sect;3.4)	| `10/14` 	| `10/15` 	|
 | `10/19` 	| `10/20` 	| `10/21` 	| `10/22` 	|
 | `10/26` **Quiz 5**   	| `10/27` 	| `10/28` 	| `10/29` **Test 2**	|
 | `11/2`  	| `11/3`  	| `11/4`  	| `11/5`  	|
