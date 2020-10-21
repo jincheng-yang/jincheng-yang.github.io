@@ -41,7 +41,7 @@ Syllabus: See Canvas.
 | `9/28` **Quiz 3**    	| `9/29` Solve Linear System (canvas notes) | `9/30`  	| `10/1` **Test 1** 	|
 | `10/5`  	| `10/6` Vector Space, Subspace (&sect;3.2) 	| `10/7`  	| `10/8` Span, Linear Dependency, Basis, Dimension (&sect;3.3) 	|
 | `10/12` **Quiz 4**   	| `10/13` Differential Systems (&sect;3.4)	| `10/14` 	| `10/15` Linear Transformation (canvas notes) (&sect;3.7) |
-| `10/19` 	| `10/20` Determinent (canvas notes) (&sect;3.5)	| `10/21` 	| `10/22` 	|
+| `10/19` 	| `10/20` Determinent, Inverse Matrix (canvas notes) (&sect;3.5)	| `10/21` 	| `10/22` 	|
 | `10/26` **Quiz 5**   	| `10/27` 	| `10/28` 	| `10/29` **Test 2**	|
 | `11/2`  	| `11/3`  	| `11/4`  	| `11/5`  	|
 | `11/9` **Quiz 6**    	| `11/10` 	| `11/11` 	| `11/12` 	|
