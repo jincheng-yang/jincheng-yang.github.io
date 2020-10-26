@@ -454,7 +454,7 @@
 
 <p>Python has a set of build-in set-theory functions. We can do this completely without the knowledge of number theory.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">D</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">D</span> <span class="o">=</span> <span class="p">{(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)}</span>
 </code></pre></div></div>
 
 <p>Define the summation and multiplication maps.</p>
@@ -463,20 +463,21 @@
 <span class="n">p</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tup</span><span class="p">:</span> <span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div></div>
 
-<p>Define the image and preimage operators.</p>
+<p>Define the image operator. We also need to keep track of the preimage.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">image</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">dom</span><span class="p">):</span>
-    <span class="n">ima</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># image(fun, dom) will generate the image of a function as a dictionary 
+# and record the information of preimage at the same time: a key is an
+# element in the image, and its value is the preimage set of this key
+</span>
+<span class="k">def</span> <span class="nf">image</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">dom</span><span class="p">):</span>
+    <span class="n">ima</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([])</span>
     <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dom</span><span class="p">:</span>
-        <span class="n">ima</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">fun</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">ima</span><span class="p">:</span>
+            <span class="n">ima</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">ima</span><span class="p">[</span><span class="n">f</span><span class="p">].</span><span class="n">union</span><span class="p">({</span><span class="n">d</span><span class="p">})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ima</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span><span class="p">}</span>
     <span class="k">return</span> <span class="n">ima</span>
-
-<span class="k">def</span> <span class="nf">preimage</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">dom</span><span class="p">,</span> <span class="n">ran</span><span class="p">):</span>
-    <span class="n">pre</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([])</span>
-    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dom</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">fun</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="ow">in</span> <span class="n">ran</span><span class="p">:</span>
-            <span class="n">pre</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">pre</span>
 </code></pre></div></div>
 
 <p>Then we start. Initial public information:</p>
@@ -487,38 +488,38 @@
 
 <p><code class="language-plaintext highlighter-rouge">P1</code> and <code class="language-plaintext highlighter-rouge">P2</code>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X1</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">preimage</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="p">[</span><span class="n">m</span><span class="p">]))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">Y1</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">preimage</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="p">[</span><span class="n">n</span><span class="p">]))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">D1</span> <span class="o">=</span> <span class="n">preimage</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">Y1</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X1</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span> <span class="p">:</span> <span class="n">X</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">m</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">Y1</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span> <span class="p">:</span> <span class="n">Y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">D1</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y1</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">Y1</span><span class="p">[</span><span class="n">n</span><span class="p">]}</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X1</span> <span class="k">if</span> <span class="n">preimage</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="p">[</span><span class="n">m</span><span class="p">]).</span><span class="n">issubset</span><span class="p">(</span><span class="n">D1</span><span class="p">)])</span>
-<span class="n">D2</span> <span class="o">=</span> <span class="n">preimage</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">X2</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X2</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span> <span class="p">:</span> <span class="n">X1</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X1</span> <span class="k">if</span> <span class="n">X1</span><span class="p">[</span><span class="n">m</span><span class="p">].</span><span class="n">issubset</span><span class="p">(</span><span class="n">D1</span><span class="p">)}</span>
+<span class="n">D2</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X2</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">X2</span><span class="p">[</span><span class="n">m</span><span class="p">]}</span>
 <span class="n">Y2</span> <span class="o">=</span> <span class="n">image</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D2</span><span class="p">)</span>
-<span class="n">X2</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">X2</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{11, 17, 23, 27, 29, 35, 37, 41, 47, 53}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[11, 17, 23, 27, 29, 35, 37, 41, 47, 53]
 </code></pre></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">P3</code>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Y3</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y2</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">preimage</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D2</span><span class="p">,</span> <span class="p">[</span><span class="n">n</span><span class="p">]))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">D3</span> <span class="o">=</span> <span class="n">preimage</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D2</span><span class="p">,</span> <span class="n">Y3</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Y3</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span> <span class="p">:</span> <span class="n">Y2</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y2</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">Y2</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">D3</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y3</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">Y3</span><span class="p">[</span><span class="n">n</span><span class="p">]}</span>
 <span class="n">X3</span> <span class="o">=</span> <span class="n">image</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">D3</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">P4</code>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X4</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X3</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">preimage</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">D3</span><span class="p">,</span> <span class="p">[</span><span class="n">m</span><span class="p">]))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">D4</span> <span class="o">=</span> <span class="n">preimage</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">D3</span><span class="p">,</span> <span class="n">X4</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X4</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span> <span class="p">:</span> <span class="n">X3</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X3</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">X3</span><span class="p">[</span><span class="n">m</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">D4</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X4</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">X4</span><span class="p">[</span><span class="n">m</span><span class="p">]}</span>
 <span class="n">Y4</span> <span class="o">=</span> <span class="n">image</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D4</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">X4</span><span class="p">,</span> <span class="n">Y4</span><span class="p">,</span> <span class="n">D4</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">X4</span><span class="p">,</span> <span class="n">Y4</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>({17}, {52}, {(4, 13)})
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>({17: {(4, 13)}}, {52: {(4, 13)}})
 </code></pre></div></div>
 
 <hr />
@@ -534,9 +535,9 @@
       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
       
       var disqus_config = function () {
-        this.page.url = "https://teddyyjc.github.io/" + "/users/jcyang/blog/2020/10/15/guiguzi";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = "https://teddyyjc.github.io/" + "/users/jcyang/blog/2020/10/15/guiguzi-problem";  // Replace PAGE_URL with your page's canonical URL variable
         console.log(this.page.url);
-        this.page.identifier = "/users/jcyang/blog/2020/10/15/guiguzi"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.identifier = "/users/jcyang/blog/2020/10/15/guiguzi-problem"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
       };
 
       (function() { // DON'T EDIT BELOW THIS LINE

@@ -330,8 +330,9 @@ So $x = 17$. The numbers are $4$ and $13$. The product $y = 52$.
 
 Python has a set of build-in set-theory functions. We can do this completely without the knowledge of number theory.
 
+
 ```python
-D = set([(a, b) for a in range(2, 100) for b in range(a + 1, 100)])
+D = {(a, b) for a in range(2, 100) for b in range(a + 1, 100)}
 ```
 
 Define the summation and multiplication maps.
@@ -341,21 +342,22 @@ s = lambda tup: tup[0] + tup[1]
 p = lambda tup: tup[0] * tup[1]
 ```
 
-Define the image and preimage operators.
+Define the image operator. We also need to keep track of the preimage.
 
 ```python
-def image(fun, dom):
-    ima = set([])
-    for d in dom:
-        ima.add(fun(d))
-    return ima
+# image(fun, dom) will generate the image of a function as a dictionary 
+# and record the information of preimage at the same time: a key is an
+# element in the image, and its value is the preimage set of this key
 
-def preimage(fun, dom, ran):
-    pre = set([])
+def image(fun, dom):
+    ima = dict([])
     for d in dom:
-        if fun(d) in ran:
-            pre.add(d)
-    return pre
+        f = fun(d)
+        if f in ima:
+            ima[f] = ima[f].union({d})
+        else:
+            ima[f] = {d}
+    return ima
 ```
 
 Then we start. Initial public information:
@@ -368,50 +370,50 @@ Y = image(p, D)
 `P1` and `P2`:
 
 ```python
-X1 = [m for m in X if len(preimage(s, D, [m])) > 1]
-Y1 = [n for n in Y if len(preimage(p, D, [n])) > 1]
-D1 = preimage(p, D, Y1)
+X1 = {m : X[m] for m in X if len(X[m]) > 1}
+Y1 = {n : Y[n] for n in Y if len(Y[n]) > 1}
+D1 = {d for n in Y1 for d in Y1[n]}
 ```
 
 
 ```python
-X2 = set([m for m in X1 if preimage(s, D, [m]).issubset(D1)])
-D2 = preimage(s, D, X2)
+X2 = {m : X1[m] for m in X1 if X1[m].issubset(D1)}
+D2 = {d for m in X2 for d in X2[m]}
 Y2 = image(p, D2)
-X2
+print(sorted(X2))
 ```
 
-
-
-
-    {11, 17, 23, 27, 29, 35, 37, 41, 47, 53}
-
+    [11, 17, 23, 27, 29, 35, 37, 41, 47, 53]
 
 `P3`:
 
+
 ```python
-Y3 = set([n for n in Y2 if len(preimage(p, D2, [n])) == 1])
-D3 = preimage(p, D2, Y3)
+Y3 = {n : Y2[n] for n in Y2 if len(Y2[n]) == 1}
+D3 = {d for n in Y3 for d in Y3[n]}
 X3 = image(s, D3)
 ```
 
 `P4`:
 
 ```python
-X4 = set([m for m in X3 if len(preimage(s, D3, [m])) == 1])
-D4 = preimage(s, D3, X4)
+X4 = {m : X3[m] for m in X3 if len(X3[m]) == 1}
+D4 = {d for m in X4 for d in X4[m]}
 Y4 = image(p, D4)
 ```
 
 
 ```python
-(X4, Y4, D4)
+(X4, Y4)
 ```
 
 
 
 
-    ({17}, {52}, {(4, 13)})
+    ({17: {(4, 13)}}, {52: {(4, 13)}})
+
+
+
 
 
 ---
