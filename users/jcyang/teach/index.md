@@ -11,7 +11,7 @@ title: Jincheng's Website | Teaching
 I am interested in teaching mathematics, especially topics related to analysis and differential equations. I have taught the following subjects:
 
 * calculus
-* sequence and series
+* sequences and series
 * linear algebra
 * differential equations
 * vector calculus
