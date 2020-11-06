@@ -525,6 +525,56 @@
 <hr />
 <p>Download this page as <a href="/users/jcyang/assets/files/jupyter/guiguzi.ipynb">Jupyter Notebook</a>.</p>
 
+<h3 id="swift-code">Swift Code</h3>
+
+<p>As a practice of swift’s basic language, let’s realize this algorithm via swift.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">N</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">var</span> <span class="nv">D</span> <span class="o">=</span> <span class="kt">Set</span><span class="p">(</span><span class="kt">Array</span><span class="p">(</span><span class="mi">2</span><span class="o">..&lt;</span><span class="kt">N</span><span class="p">)</span><span class="o">.</span><span class="n">flatMap</span> <span class="p">{</span> <span class="n">a</span> <span class="k">in</span>
+                <span class="kt">Array</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="o">...</span><span class="kt">N</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{[</span><span class="n">a</span><span class="p">,</span> <span class="nv">$0</span><span class="p">]}</span>
+            <span class="p">})</span>
+
+<span class="k">let</span> <span class="nv">s</span> <span class="o">=</span> <span class="p">{(</span><span class="nv">tuple</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="k">in</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+<span class="k">let</span> <span class="nv">p</span> <span class="o">=</span> <span class="p">{(</span><span class="nv">tuple</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="k">in</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+
+<span class="kd">func</span> <span class="nf">imageWithPreimage</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">domain</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;&gt;</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">data</span> <span class="k">in</span> <span class="n">domain</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">f</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">image</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="p">??</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;</span><span class="p">())</span><span class="o">.</span><span class="nf">union</span><span class="p">([</span><span class="n">data</span><span class="p">])</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">image</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">X</span> <span class="o">=</span> <span class="nf">imageWithPreimage</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="nv">domain</span><span class="p">:</span> <span class="kt">D</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">Y</span> <span class="o">=</span> <span class="nf">imageWithPreimage</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span> <span class="nv">domain</span><span class="p">:</span> <span class="kt">D</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">X1</span> <span class="o">=</span> <span class="kt">X</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="k">var</span> <span class="nv">Y1</span> <span class="o">=</span> <span class="kt">Y</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">D1</span> <span class="o">=</span> <span class="kt">D</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">X1</span><span class="p">[</span><span class="nf">s</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="kt">Y1</span><span class="p">[</span><span class="nf">p</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">X2</span> <span class="o">=</span> <span class="kt">X1</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="nf">isSubset</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="kt">D1</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">D2</span> <span class="o">=</span> <span class="kt">D1</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">X2</span><span class="p">[</span><span class="nf">s</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">in</span> <span class="kt">Y1</span> <span class="p">{</span>
+    <span class="kt">Y1</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">D2</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">Y3</span> <span class="o">=</span> <span class="kt">Y1</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">D3</span> <span class="o">=</span> <span class="kt">D2</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">Y3</span><span class="p">[</span><span class="nf">p</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">in</span> <span class="kt">X2</span> <span class="p">{</span>
+    <span class="kt">X2</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">D3</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">X4</span> <span class="o">=</span> <span class="kt">X2</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">D4</span> <span class="o">=</span> <span class="kt">D3</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">X4</span><span class="p">[</span><span class="nf">s</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="kt">D4</span><span class="p">)</span>
+</code></pre></div></div>
+
 
   
     <div id="disqus_thread"></div>

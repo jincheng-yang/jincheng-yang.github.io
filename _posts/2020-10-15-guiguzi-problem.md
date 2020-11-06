@@ -418,3 +418,55 @@ Y4 = image(p, D4)
 
 ---
 Download this page as [Jupyter Notebook](/users/jcyang/assets/files/jupyter/guiguzi.ipynb).
+
+
+### Swift Code
+
+As a practice of swift's basic language, let's realize this algorithm via swift.
+
+``` swift
+let N = 100
+
+var D = Set(Array(2..<N).flatMap { a in
+                Array(a+1...N).map{[a, $0]}
+            })
+
+let s = {(tuple: [Int]) in tuple[0] + tuple[1]}
+let p = {(tuple: [Int]) in tuple[0] * tuple[1]}
+
+func imageWithPreimage(function: (_: [Int]) -> Int, domain: Set<[Int]>) -> Dictionary<Int, Set<[Int]>> {
+    var image = Dictionary<Int, Set<[Int]>>()
+    for data in domain {
+        let f = function(data)
+        image[f] = (image[f] ?? Set<[Int]>()).union([data])
+    }
+    return image
+}
+
+var X = imageWithPreimage(function: s, domain: D)
+var Y = imageWithPreimage(function: p, domain: D)
+
+let X1 = X.filter { $1.count > 1 }
+var Y1 = Y.filter { $1.count > 1 }
+
+let D1 = D.filter { X1[s($0)] != nil && Y1[p($0)] != nil }
+
+var X2 = X1.filter { $1.isSubset(of: D1) }
+let D2 = D1.filter { X2[s($0)] != nil }
+
+for (n, y) in Y1 {
+    Y1[n] = y.filter { D2.contains($0) }
+}
+
+let Y3 = Y1.filter { $1.count == 1 }
+let D3 = D2.filter { Y3[p($0)] != nil }
+
+for (m, x) in X2 {
+    X2[m] = x.filter { D3.contains($0) }
+}
+
+let X4 = X2.filter { $1.count == 1 }
+let D4 = D3.filter { X4[s($0)] != nil }
+
+print(D4)
+```
