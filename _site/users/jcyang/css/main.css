@@ -418,12 +418,18 @@ ul li {
 blockquote {
     margin-left: 0;
     margin-right: 0;
+    color: #749696;
 }
 
 blockquote p {
-    font-family: 'PT Serif', 'Dancing Script', cursive;
+    font-family: 'PT Serif', 'sans-serif';
     color: #749696;
     font-size: 1em;
+}
+
+[theorem] ol li {
+    font-family: 'PT Serif', 'Noto Serif';
+    color: #749696;
 }
 
 input {

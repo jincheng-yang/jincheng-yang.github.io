@@ -43,8 +43,8 @@ Syllabus: See Canvas.
 | `10/12` **Quiz 4**   	| `10/13` Differential Systems (&sect;3.4)	| `10/14` 	| `10/15` Linear Transformation (canvas notes) (&sect;3.7) |
 | `10/19` 	| `10/20` Determinent, Inverse Matrix (canvas notes) (&sect;3.5)	| `10/21` 	| `10/22` Eigenvalue, Eigenvector (canvas notes) (&sect;3.8,&sect;3.9)	|
 | `10/26` **Quiz 5** 	| `10/27` Complex Eigenvalue, Equal Roots (&sect;3.9,&sect;3.10)  	| `10/28` 	| `10/29` **Test 2**	|
-| `11/2`    | `11/3`  Equal Roots (&sect;3.10)		| `11/4`  	| `11/5` Qualitative Theory, Stability (&sect;4.1,&sect;4.2) 	|
-| `11/9` **Quiz 6**    	| `11/10` 	| `11/11` 	| `11/12` 	|
+| `11/2`    | `11/3`  Equal Roots (&sect;3.10)		| `11/4`  	| `11/5` Qualitative Theory, Equalibrium, Stability (&sect;4.1,&sect;4.2) 	|
+| `11/9` **Quiz 6**    	| `11/10` Phase Plane, Orbit (&sect;4.4)	| `11/11` 	| `11/12` 	|
 | `11/16` 	| `11/17` 	| `11/18` 	| `11/19` 	|
 | `11/23` **Quiz 7**   	| `11/24` 	| `11/25` 	| `11/26` 	|
 | `11/30` 	| `12/1` **Test 3**  	| `12/2`  	| `12/3`  	|
