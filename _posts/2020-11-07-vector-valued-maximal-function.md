@@ -59,7 +59,7 @@ We will prove this theorem first for $p = 2$, then for $p = 1$, then for $p \in 
 
 #### Proof for $p = 2$
 
-Case $p = 2$ is natural, because $M$ is bounded on $L^2$, and $L ^2 _x \ell ^2 _j = L ^2_{x, j}$. 
+Case $p = 2$ is natural, because $\mm$ is bounded on $L^2$, and $L ^2 \_x \ell ^2 \_j = L ^2\_{x, j}$. 
 
 #### Proof for $p = 1$
 
