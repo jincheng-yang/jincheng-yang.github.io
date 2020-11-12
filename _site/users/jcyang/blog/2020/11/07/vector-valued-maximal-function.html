@@ -174,6 +174,8 @@
     \newcommand{\SUM}[3]{\sum \cnt{#1}{#2}{#3}}
     \newcommand{\PROD}[3]{\prod \cnt{#1}{#2}{#3}}
     \newcommand{\cnt}[3]{ _{#1 = #2} ^{#3} }
+    \newcommand{\seq}[2]{\set{#1 _{#2}} _{#2}}
+    \newcommand{\seqi}[2]{\set{#1 _{#2}} \cnt{#2}1i}
     $
 
     %--Superscript and Subscript
@@ -231,6 +233,7 @@
     \newcommand{\intRn}{\int _{\Rn}}
     \newcommand{\intRd}{\int _{\Rd}}
     \newcommand{\fint}{-\!\!\!\!\!\!\int}
+    \newcommand{\intset}[1]{\int _{\set{#1}}}
     $
 
     %--Greek--
@@ -310,7 +313,7 @@ The case $p = \infty$ is wrong. Think $f _j = \ind{(2 ^{j}, 2 ^{j + 1})}$.
 
 <h4 id="proof-for-p--2">Proof for $p = 2$</h4>
 
-<p>Case $p = 2$ is natural, because $M$ is bounded on $L^2$, and $L ^2 <em>x \ell ^2 _j = L ^2</em>{x, j}$.</p>
+<p>Case $p = 2$ is natural, because $\mm$ is bounded on $L^2$, and $L ^2 _x \ell ^2 _j = L ^2_{x, j}$.</p>
 
 <h4 id="proof-for-p--1">Proof for $p = 1$</h4>
 
