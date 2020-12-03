@@ -491,6 +491,7 @@ mainTitle.addEventListener('touchend', function(e) {
 // $(window).resize(function(){
 //   init();
 // });
+window.addEventListener("resize", init)
 
 function init() {
   var height = mainTitle.offsetHeight;
@@ -499,11 +500,12 @@ function init() {
   if (window.devicePixelRatio != 1) {
     canvas.width = width * window.devicePixelRatio;
     canvas.height = height * window.devicePixelRatio;
-    canvas.style.width = width + "px";
-    canvas.style.height = height + "px";
   } else {
     canvas.width = width;
+    canvas.height = height;
   }
+  canvas.style.width = width + "px";
+  canvas.style.height = height + "px";
 
   ctx = canvas.getContext("2d");
 
