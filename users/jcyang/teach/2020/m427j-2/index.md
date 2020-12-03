@@ -47,5 +47,5 @@ Syllabus: See Canvas.
 | `11/9` **Quiz 6**    	| `11/10` Phase Plane, Orbit (&sect;4.4)	| `11/11` 	| `11/12` Boundary Value Problems, Heat Equations (&sect;5.1,&sect;5.3)	|
 | `11/16` 	| `11/17` Fourier Series (&sect;5.4)	| `11/18` 	| `11/19` Heat Equations (Zero Boundary) (&sect;5.6)	|
 | `11/23` **Quiz 7**   	| `11/24` Heat Equations (Insulated) (&sect;5.6)	| `11/25` Thanksgiving 	| `11/26` Holiday	|
-| `11/30` 	| `12/1` **Test 3**  	| `12/2`  	| `12/3`  	|
+| `11/30` 	| `12/1` **Test 3**  	| `12/2`  	| `12/3` Last Class of Dr. Heitmann 	|
 | `12/7` Last class  	| `12/8`  	| `12/9`  	| `12/10` **Final**	|
