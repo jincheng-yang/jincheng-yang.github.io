@@ -1,11 +1,11 @@
 ---
-layout: base
+layout: grid
 title: Jincheng's Website | Academic
 use-math: true
 ---
 
-<div class="transparent">
-<div class="container" markdown="1">
+<div>
+<div class="content" markdown="1">
 
 # Academic
 
@@ -19,8 +19,8 @@ My general research interest includes the area of analysis, dynamic systems and 
 </div>
 </div>
 
-<div class="eggshell" id="publications">
-<div class="container" markdown="1">
+<div style="background-color:antiquewhite" id="publications">
+<div class="content" markdown="1">
 
 ###### Publications
 
@@ -44,8 +44,8 @@ My general research interest includes the area of analysis, dynamic systems and 
 </div>
 </div>
 
-<div class="aliceblue" id="talks">
-<div class="container" markdown="1">
+<div style="background-color:aliceblue" id="talks">
+<div class="content" markdown="1">
 
 ###### Talks
 
@@ -82,8 +82,8 @@ My general research interest includes the area of analysis, dynamic systems and 
 </div>
 </div>
 
-<div class="transparent" id="blog">
-<div class="container" markdown="1">
+<div id="blog">
+<div class="content" markdown="1">
 
 ###### Research Blog
 
@@ -101,8 +101,8 @@ My general research interest includes the area of analysis, dynamic systems and 
 </div>
 </div>
 
-<div class="eggshell" id="conferences">
-<div class="container" markdown="1">
+<div style="background-color:antiquewhite" id="conferences">
+<div class="content" markdown="1">
 
 ###### Conferences
 

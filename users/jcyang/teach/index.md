@@ -1,10 +1,9 @@
 ---
-layout: base
+layout: grid
 title: Jincheng's Website | Teaching
 ---
 
-<div class="transparent">
-<div class="container" markdown="1">
+<div class="content" markdown="1">
 
 # Teaching
 
@@ -17,10 +16,9 @@ I am interested in teaching mathematics, especially topics related to analysis a
 * vector calculus
 
 </div>
-</div>
 
-<div class="eggshell">
-<div class="container" markdown="1">
+<div style="background-color:antiquewhite">
+<div class="content" markdown="1">
 
 ###### Teaching Assistant
 
@@ -41,8 +39,8 @@ I am interested in teaching mathematics, especially topics related to analysis a
 </div>
 </div>
 
-<div class="aliceblue">
-<div class="container" markdown="1">
+<div style="background-color:aliceblue">
+<div class="content" markdown="1">
 
 ###### Directed Reading Program
 

@@ -1,14 +1,14 @@
 ---
-layout: base
+layout: grid
 title: Jincheng's Website | Music
 ---
 
-<div class="transparent">
-<div class="container" markdown="1">
+<div class="content" markdown="1">
 
 # Music
 
-<img src="/users/jcyang/assets/images/photo6.png" style="float:right; width:300px; max-width:100%; padding-left: 80px">
+![Photo](/users/jcyang/assets/images/photo6.png){: style="width:300px; float:right; padding-left:80px; max-width:100%"}
+
 
 Math and music are two most important themes of my life. As Hermann von Helmholtz once said, 
 
@@ -17,14 +17,13 @@ Math and music are two most important themes of my life. As Hermann von Helmholt
 I am honored to follow the guidance of my piano instructor, [Prof. Gilmson](https://www.sophia-gilmson.com).
 
 </div>
-</div>
 
-<div class="eggshell">
-<div class="container" markdown="1">
+<div style="background-color:antiquewhite">
+<div class="content" markdown="1">
 
 ###### Piano Recitals and Accompany
 
-{% for recital in site.data.piano.Recital %}
+{% for recital in site.data.piano.Recital reversed %}
 
 <div style="margin-left: 3em; margin-right: 3em">
 
@@ -50,12 +49,12 @@ I am honored to follow the guidance of my piano instructor, [Prof. Gilmson](http
 </div>
 </div>
 
-<div class="aliceblue">
-<div class="container" markdown="1">
+<div style="background-color:aliceblue">
+<div class="content" markdown="1">
 
 ###### Rock Lives
 
-{% for recital in site.data.rock.Rock %}
+{% for recital in site.data.rock.Rock reversed %}
 
 <div style="margin-left: 3em; margin-right: 3em">
 

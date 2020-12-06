@@ -206,7 +206,7 @@ layout: default
   
   <h3>Recent <a href="/users/jcyang/academic/#blog" style="color:#526d6d">Posts</a></h3>
     
-    {% assign my_posts = site.posts | where:"image",true %}
+    <!-- {% assign my_posts = site.posts | where:"image",true %}
     {% assign firstPost = true %}
     {% for post in my_posts limit: 3 %}{% if firstPost == true %}
     <div class="thumb">
@@ -220,6 +220,25 @@ layout: default
     <a href="{{ post.url }}" title="{{ post.title }}">
       <h4>{{ post.title }}</h4>
     </a>
-    </div>{% endfor %}
+    </div>{% endfor %} -->
+
+  <div style="display:grid;grid-template-columns:30% 30% 30%;align-items:center;justify-content:space-between;grid-row-gap:2.5em">
+
+    {% assign my_posts = site.posts | where:"image", true %}
+    {% for post in my_posts limit: 3 %}
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="{{ post.url }}" title="{{ post.title }}">
+        <div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/{{ post.thumb }}')"></div>
+      </a>
+      <h5>{{ post.date | date_to_string }}</h5>
+      <a href="{{ post.url }}" title="{{ post.title }}">
+        <h4>{{ post.title }}</h4>
+      </a>
+      </div>
+    
+    {% endfor %}
+    
+  </div>
 
 </div>
