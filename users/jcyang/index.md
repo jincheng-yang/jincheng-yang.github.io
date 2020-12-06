@@ -1,12 +1,11 @@
 ---
-layout: base
+layout: grid
 title: Jincheng's Website | About
 ---
 
-<div class="transparent">
-<div class="container" markdown="1">
+<div class="content" markdown="1">
 
-<img src="/users/jcyang/assets/images/photo5.jpg" style="float:right; width:200px; max-width:100%; padding-left: 80px">
+![Photo](/users/jcyang/assets/images/photo5.jpg){: style="width:200px; float:right; padding-left:80px; max-width:100%"}
 
 # About Me
 
@@ -16,28 +15,29 @@ Apart from mathematics, I also love programming and music.
 
 It is my honor to be coadvised by [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/).
 
+</div>
+
+<div style="background:white">
+<div class="content" markdown="1">
+
+[![You Belong Here](/users/jcyang/assets/images/YouBelongHere.jpg){: width='35%'}](https://cns.utexas.edu/diversity)
+[![You Belong Here Flyer](/users/jcyang/assets/images/YouBelongHereFlyer.svg){: width='60%' style='float:right'}](/users/jcyang/assets/files/YouBelongHereFlyer.pdf)
 
 </div>
 </div>
 
-<div class="transparent" style="background:white">
-<div class="container" markdown="1">
-
-<a href='https://cns.utexas.edu/diversity'>![You Belong Here](/users/jcyang/assets/images/YouBelongHere.jpg){:width='35%'}</a><a href='/users/jcyang/assets/files/YouBelongHereFlyer.pdf'><img src='/users/jcyang/assets/images/YouBelongHereFlyer.svg' width='60%' style='float:right'></a>
-
-</div>
-</div>
-
-<div class="eggshell">
-<div class="container" markdown="1">
+<div style="background:antiquewhite">
+<div class="content" markdown="1">
 
 ###### Contact Information
 
 <div style="float:right">
 <div style="display:inline" markdown="1">
+
 - Office: PMA 11.130
 - Email: [jcyang@math.utexas.edu](mailto:jcyang@math.utexas.edu)
 - Tel: +1 (512) 317-7231
+
 </div>
 </div>
 
@@ -62,8 +62,8 @@ Austin, TX 78712-1202, USA
 </div>
 </div>
 
-<div class="aliceblue">
-<div class="container" markdown="1">
+<div style="background: aliceblue">
+<div class="content" markdown="1">
 
 ###### Education
 
@@ -80,27 +80,28 @@ Austin, TX 78712-1202, USA
 </div>
 
 
-<div class="gallery">
-<div class="container" markdown="1">
+<div style="background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/users/jcyang/assets/images/gallary.jpg');background-size:cover;background-position:center">
+<div class="content">
 
-<h6 class="whiteh">Gallary</h6>
+<h6 style="color: #EEE">Gallary</h6>
 
-<div style="display:flex;justify-content:space-between;flex-wrap:wrap">
+<div style="display:grid;grid-template-columns:30% 30% 30%;align-items:center;justify-content:space-between;grid-row-gap:2.5em">
+
 {% assign my_posts = site.posts | where:"image", true %}
-{% assign firstPost = true %}
-{% for post in my_posts limit: 9 %}{% if firstPost == true %}
-<div class="thumb" style="background-color:#DDD">
-	{% assign firstPost = false %}
-{% else %}<div class="thumb" style="background-color:#DDD">
-{% endif %}
-<a href="{{ post.url }}" title="{{ post.title }}">
-<div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/{{ post.thumb }}');background-repeat:no-repeat;"></div>
-</a>
-<h5>{{ post.date | date_to_string }}</h5>
-<a href="{{ post.url }}" title="{{ post.title }}">
-	<h4>{{ post.title }}</h4>
-</a>
-</div>{% endfor %}
+{% for post in my_posts limit: 9 %}
+
+	<div class="thumb">
+	<a href="{{ post.url }}" title="{{ post.title }}">
+		<div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/{{ post.thumb }}')"></div>
+	</a>
+	<h5>{{ post.date | date_to_string }}</h5>
+	<a href="{{ post.url }}" title="{{ post.title }}">
+		<h4>{{ post.title }}</h4>
+	</a>
+	</div>
+
+{% endfor %}
+
 </div>
 
 </div>

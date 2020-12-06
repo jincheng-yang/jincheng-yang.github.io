@@ -86,15 +86,7 @@ h6:after {
     margin: 0 auto 0 0; /* This will center the border. */
     width: 2em; /* Change this to whatever width you want. */
     padding-top: 0.1em; /* This creates some space between the element and the border. */
-    border-bottom: 3px solid #555; /* This creates the border. Replace black with whatever color you want. */
-}
-
-h6.whiteh {
-    color: #EEE;
-}
-
-h6.whiteh:after {
-    border-bottom: 3px solid #EEE; /* This creates the border. Replace black with whatever color you want. */
+    border-bottom: 3px solid; /* This creates the border. Replace black with whatever color you want. */
 }
 
 p {

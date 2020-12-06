@@ -5,9 +5,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/users/jcyang/css/main.css">
+		<link rel="stylesheet" type="text/css" href="/users/jcyang/css/grid.css">
 		<!-- link to fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Exo:600|Roboto:300|Roboto+Condensed:300|Dancing+Script:400|PT+Serif:400,400i|Palanquin+Dark:400|Noto+Serif:400,400i" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Exo:300,600|Roboto:300|Roboto+Condensed:300|Dancing+Script:400|PT+Serif:400,400i|Palanquin+Dark:400|Noto+Serif:400,400i" rel="stylesheet">
 		<!-- JavaScrips -->
 		<script type="text/javascript" src="/users/jcyang/plugin/drag-and-drop.js"></script>
 		
@@ -25,86 +25,88 @@
 	</head>
 
 	<body>
-		
-		<canvas id="myCanvas" width="1000" height="360" style="position: absolute; top: 0; left: 0; z-index: -1">
+		<canvas id="myCanvas" width="1000" height="360" >
 			Your browser does not support the canvas element.
 		</canvas>
 
-		<div id="mt" class="main-title">
-			<p class="name">Jincheng Yang</p>
-			<p class="institute">The University of Texas at Austin</p>
+		<div id="mt">
+			<p id="name">Jincheng Yang</p>
+			<p id="institute">The University of Texas at Austin</p>
 		</div>
 
 		<nav>
-			<ul>
-				<li id="li3"><a class = "pagelist" href="/users/jcyang/academic" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav3">Academic &#9662;</a>
-					<ul class="dropdown">
-						<li><a href="/users/jcyang/academic#publications">Publications</a></li>
-						<li><a href="/users/jcyang/academic#talks">Talks</a></li>
-						<li><a href="/users/jcyang/academic#blog">Blog</a></li>
-						<li><a href="/users/jcyang/academic#conferences">Conferences</a></li>
-					</ul>
-				</li>
-				<!-- <li id="li0"><a class = "pagelist" href="/users/jcyang/publications" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav0">Publications</a></li> -->
-				<li id="li1"><a class = "pagelist" href="https://github.com/teddyyjc/curriculum-vitae/raw/master/main.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav1">Curriculum Vitae</a></li>
-				<li><a class = "icon" href="/users/jcyang" draggable="true" ondragstart="drag(event)" title="Home Page"></a></li>
-				<li id="li2"><a class = "pagelist" href="/users/jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav2">Teaching</a></li>
-				<li id="li6"><a class = "pagelist" href="/users/jcyang/music" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav6">Music</a></li>
-				<!-- <li id="li4"><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav4">Miscellaneous &#9662;</a>
-					<ul class="dropdown">
-						<li><a href="/users/jcyang/blog">Blog</a></li>
-						<li><a href="/users/jcyang/music">Music</a></li>
-					</ul>
-				</li> -->
-				<li id="li5"><a class = "pagelist" href="#" ondrop="drop(event)" ondragover="allowDrop(event)" id="nav5">Menu &#9662;</a>
-					<ul class="dropdown">
-						<li><a href="/users/jcyang/academic">Academic</a></li>
-						<!-- <li><a href="/users/jcyang/blog">Blog</a></li> -->
-						<li><a href="https://github.com/teddyyjc/curriculum-vitae/raw/master/main.pdf">CV</a></li>
-						<li><a href="/users/jcyang/music">Music</a></li>
-						<!-- <li><a href="/users/jcyang/publications">Publications</a></li> -->
-						<li><a href="/users/jcyang/teach">Teaching</a></li>
-					</ul>
-				</li>
-			</ul>
+			<div id="nav-container">
+
+				<div class = "dropdown-block" id = "academic-dropdown-block">
+					<a href="/users/jcyang/academic" ondrop="drop(event)" ondragover="allowDrop(event)" id="academic">Academic &#9662;</a>
+	
+					<div class= "dropdown" id="academic-dropdown">
+						<a class = "dropdown-first" href="/users/jcyang/academic#publications">Publications</a>
+						<a href="/users/jcyang/academic#talks">Talks</a>
+						<a href="/users/jcyang/academic#blog">Blog</a>
+						<a class = "dropdown-last" href="/users/jcyang/academic#conferences">Conferences</a>
+					</div>
+				</div>
+
+				<a href="https://github.com/teddyyjc/curriculum-vitae/raw/master/main.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="cv">Curriculum Vitae</a>
+				
+				<a id = "icon" href="/users/jcyang" draggable="true" ondragstart="drag(event)" title="Home Page"></a>
+
+				<a href="/users/jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="teaching">Teaching</a>
+
+				<a href="/users/jcyang/music" ondrop="drop(event)" ondragover="allowDrop(event)" id="music">Music</a>
+
+				<div class = "dropdown-block" id = "menu-dropdown-block">
+					<a href="#" id="menu">Menu &#9662;</a>
+	
+					<div class= "dropdown" id="menu-dropdown">
+						<a class = "dropdown-first" href="/users/jcyang/academic">Academic</a>
+						<a href="https://github.com/teddyyjc/curriculum-vitae/raw/master/main.pdf">Curriculum Vitae</a>
+						<a href="/users/jcyang/academic#publications">Publications</a>
+						<a href="/users/jcyang/teach">Teaching</a>
+						<a href="/users/jcyang/music">Music</a>
+					</div>
+				</div>
+			</div>
 		</nav>
-		
-		<div class="transparent">
-<div class="container">
 
-    <p><img src="/users/jcyang/assets/images/photo5.jpg" style="float:right; width:200px; max-width:100%; padding-left: 80px" /></p>
+		<div class="content">
 
-    <h1 id="about-me">About Me</h1>
+  <p><img src="/users/jcyang/assets/images/photo5.jpg" alt="Photo" style="width:200px; float:right; padding-left:80px; max-width:100%" /></p>
 
-    <p>Hi, I am a fourth year Ph.D. candidate at <a href="https://www.utexas.edu">The University of Texas at Austin</a>. I major in mathematics, and my research interest include analysis, partial differential equations, especially fluid equations, including incompressible Euler equations, Navier-Stokes equations and surface quasi-geostrophic equations. I received my bachelor’s degree at <a href="http://www.xjtu.edu.cn">Xi’an Jiaotong University</a>, where I was also a student of the Special Class for the Gifted Young before my undergraduate study.</p>
+  <h1 id="about-me">About Me</h1>
 
-    <p>Apart from mathematics, I also love programming and music.</p>
+  <p>Hi, I am a fourth year Ph.D. candidate at <a href="https://www.utexas.edu">The University of Texas at Austin</a>. I major in mathematics, and my research interest include analysis, partial differential equations, especially fluid equations, including incompressible Euler equations, Navier-Stokes equations and surface quasi-geostrophic equations. I received my bachelor’s degree at <a href="http://www.xjtu.edu.cn">Xi’an Jiaotong University</a>, where I was also a student of the Special Class for the Gifted Young before my undergraduate study.</p>
 
-    <p>It is my honor to be coadvised by <a href="https://web.ma.utexas.edu/users/caffarel/">Prof. Caffarelli</a> and <a href="https://web.ma.utexas.edu/users/vasseur/">Prof. Vasseur</a>.</p>
+  <p>Apart from mathematics, I also love programming and music.</p>
+
+  <p>It is my honor to be coadvised by <a href="https://web.ma.utexas.edu/users/caffarel/">Prof. Caffarelli</a> and <a href="https://web.ma.utexas.edu/users/vasseur/">Prof. Vasseur</a>.</p>
+
+</div>
+
+<div style="background:white">
+<div class="content">
+
+    <p><a href="https://cns.utexas.edu/diversity"><img src="/users/jcyang/assets/images/YouBelongHere.jpg" alt="You Belong Here" width="35%" /></a>
+<a href="/users/jcyang/assets/files/YouBelongHereFlyer.pdf"><img src="/users/jcyang/assets/images/YouBelongHereFlyer.svg" alt="You Belong Here Flyer" width="60%" style="float:right" /></a></p>
 
   </div>
 </div>
 
-<div class="transparent" style="background:white">
-<div class="container">
-
-    <p><a href="https://cns.utexas.edu/diversity"><img src="/users/jcyang/assets/images/YouBelongHere.jpg" alt="You Belong Here" width="35%" /></a><a href="/users/jcyang/assets/files/YouBelongHereFlyer.pdf"><img src="/users/jcyang/assets/images/YouBelongHereFlyer.svg" width="60%" style="float:right" /></a></p>
-
-  </div>
-</div>
-
-<div class="eggshell">
-<div class="container">
+<div style="background:antiquewhite">
+<div class="content">
 
     <h6 id="contact-information">Contact Information</h6>
 
     <div style="float:right">
 <div style="display:inline">
+
         <ul>
           <li>Office: PMA 11.130</li>
           <li>Email: <a href="mailto:jcyang@math.utexas.edu">jcyang@math.utexas.edu</a></li>
           <li>Tel: +1 (512) 317-7231</li>
         </ul>
+
       </div>
 </div>
 
@@ -129,8 +131,8 @@ Austin, TX 78712-1202, USA
   </div>
 </div>
 
-<div class="aliceblue">
-<div class="container">
+<div style="background: aliceblue">
+<div class="content">
 
     <h6 id="education">Education</h6>
 
@@ -150,144 +152,149 @@ Austin, TX 78712-1202, USA
   </div>
 </div>
 
-<div class="gallery">
-<div class="container">
+<div style="background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/users/jcyang/assets/images/gallary.jpg');background-size:cover;background-position:center">
+<div class="content">
 
-    <h6 class="whiteh">Gallary</h6>
+<h6 style="color: #EEE">Gallary</h6>
 
-    <div style="display:flex;justify-content:space-between;flex-wrap:wrap">
+<div style="display:grid;grid-template-columns:30% 30% 30%;align-items:center;justify-content:space-between;grid-row-gap:2.5em">
 
 
 
-<div class="thumb" style="background-color:#DDD">
+
+	<div class="thumb">
+	<a href="/users/jcyang/blog/2020/04/14/lorentz-space" title="Lorentz Space">
+		<div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/lorentz.svg')"></div>
+	</a>
+	<h5>14 Apr 2020</h5>
+	<a href="/users/jcyang/blog/2020/04/14/lorentz-space" title="Lorentz Space">
+		<h4>Lorentz Space</h4>
+	</a>
+	</div>
+
+
+
+	<div class="thumb">
+	<a href="/users/jcyang/blog/2020/04/11/covering-lemma" title="Covering Lemma">
+		<div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/covering.png')"></div>
+	</a>
+	<h5>11 Apr 2020</h5>
+	<a href="/users/jcyang/blog/2020/04/11/covering-lemma" title="Covering Lemma">
+		<h4>Covering Lemma</h4>
+	</a>
+	</div>
+
+
+
+	<div class="thumb">
+	<a href="/users/jcyang/blog/2020/01/12/distance-between-sines" title="Distance Between Sines">
+		<div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/sine.png')"></div>
+	</a>
+	<h5>12 Jan 2020</h5>
+	<a href="/users/jcyang/blog/2020/01/12/distance-between-sines" title="Distance Between Sines">
+		<h4>Distance Between Sines</h4>
+	</a>
+	</div>
+
+
+
+	<div class="thumb">
+	<a href="/users/jcyang/blog/2019/11/20/barotropic-instability" title="Barotropic Instability">
+		<div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/strum-liouville.png')"></div>
+	</a>
+	<h5>20 Nov 2019</h5>
+	<a href="/users/jcyang/blog/2019/11/20/barotropic-instability" title="Barotropic Instability">
+		<h4>Barotropic Instability</h4>
+	</a>
+	</div>
+
+
+
+	<div class="thumb">
+	<a href="/users/jcyang/blog/2017/10/24/graph-decomposition" title="Graph Decomposition">
+		<div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/graph-decomposition.svg')"></div>
+	</a>
+	<h5>24 Oct 2017</h5>
+	<a href="/users/jcyang/blog/2017/10/24/graph-decomposition" title="Graph Decomposition">
+		<h4>Graph Decomposition</h4>
+	</a>
+	</div>
+
+
+
+	<div class="thumb">
+	<a href="/users/jcyang/blog/2016/04/24/escher" title="Project Escher">
+		<div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/escher.png')"></div>
+	</a>
+	<h5>24 Apr 2016</h5>
+	<a href="/users/jcyang/blog/2016/04/24/escher" title="Project Escher">
+		<h4>Project Escher</h4>
+	</a>
+	</div>
+
+
+
+	<div class="thumb">
+	<a href="/users/jcyang/blog/2016/03/22/blooming-flower" title="Blooming Flower">
+		<div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/flower.gif')"></div>
+	</a>
+	<h5>22 Mar 2016</h5>
+	<a href="/users/jcyang/blog/2016/03/22/blooming-flower" title="Blooming Flower">
+		<h4>Blooming Flower</h4>
+	</a>
+	</div>
+
+
+
+	<div class="thumb">
+	<a href="/users/jcyang/blog/2015/12/03/poincare-disk" title="Poincaré Disk">
+		<div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/poincare.gif')"></div>
+	</a>
+	<h5>03 Dec 2015</h5>
+	<a href="/users/jcyang/blog/2015/12/03/poincare-disk" title="Poincaré Disk">
+		<h4>Poincaré Disk</h4>
+	</a>
+	</div>
+
+
+
+	<div class="thumb">
+	<a href="/users/jcyang/blog/2015/05/25/lindenmayer-language" title="Lindenmayer Language">
+		<div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/lindenmayer.gif')"></div>
+	</a>
+	<h5>25 May 2015</h5>
+	<a href="/users/jcyang/blog/2015/05/25/lindenmayer-language" title="Lindenmayer Language">
+		<h4>Lindenmayer Language</h4>
+	</a>
+	</div>
+
+
+
+</div>
+
+</div>
+</div>
+
 	
 
-<a href="/users/jcyang/blog/2020/04/14/lorentz-space" title="Lorentz Space">
-<div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/lorentz.svg');background-repeat:no-repeat;"></div>
-</a>
-<h5>14 Apr 2020</h5>
-<a href="/users/jcyang/blog/2020/04/14/lorentz-space" title="Lorentz Space">
-	<h4>Lorentz Space</h4>
-</a>
-</div><div class="thumb" style="background-color:#DDD">
-
-<a href="/users/jcyang/blog/2020/04/11/covering-lemma" title="Covering Lemma">
-<div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/covering.png');background-repeat:no-repeat;"></div>
-</a>
-<h5>11 Apr 2020</h5>
-<a href="/users/jcyang/blog/2020/04/11/covering-lemma" title="Covering Lemma">
-	<h4>Covering Lemma</h4>
-</a>
-</div><div class="thumb" style="background-color:#DDD">
-
-<a href="/users/jcyang/blog/2020/01/12/distance-between-sines" title="Distance Between Sines">
-<div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/sine.png');background-repeat:no-repeat;"></div>
-</a>
-<h5>12 Jan 2020</h5>
-<a href="/users/jcyang/blog/2020/01/12/distance-between-sines" title="Distance Between Sines">
-	<h4>Distance Between Sines</h4>
-</a>
-</div><div class="thumb" style="background-color:#DDD">
-
-<a href="/users/jcyang/blog/2019/11/20/barotropic-instability" title="Barotropic Instability">
-<div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/strum-liouville.png');background-repeat:no-repeat;"></div>
-</a>
-<h5>20 Nov 2019</h5>
-<a href="/users/jcyang/blog/2019/11/20/barotropic-instability" title="Barotropic Instability">
-	<h4>Barotropic Instability</h4>
-</a>
-</div><div class="thumb" style="background-color:#DDD">
-
-<a href="/users/jcyang/blog/2017/10/24/graph-decomposition" title="Graph Decomposition">
-<div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/graph-decomposition.svg');background-repeat:no-repeat;"></div>
-</a>
-<h5>24 Oct 2017</h5>
-<a href="/users/jcyang/blog/2017/10/24/graph-decomposition" title="Graph Decomposition">
-	<h4>Graph Decomposition</h4>
-</a>
-</div><div class="thumb" style="background-color:#DDD">
-
-<a href="/users/jcyang/blog/2016/04/24/escher" title="Project Escher">
-<div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/escher.png');background-repeat:no-repeat;"></div>
-</a>
-<h5>24 Apr 2016</h5>
-<a href="/users/jcyang/blog/2016/04/24/escher" title="Project Escher">
-	<h4>Project Escher</h4>
-</a>
-</div><div class="thumb" style="background-color:#DDD">
-
-<a href="/users/jcyang/blog/2016/03/22/blooming-flower" title="Blooming Flower">
-<div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/flower.gif');background-repeat:no-repeat;"></div>
-</a>
-<h5>22 Mar 2016</h5>
-<a href="/users/jcyang/blog/2016/03/22/blooming-flower" title="Blooming Flower">
-	<h4>Blooming Flower</h4>
-</a>
-</div><div class="thumb" style="background-color:#DDD">
-
-<a href="/users/jcyang/blog/2015/12/03/poincare-disk" title="Poincaré Disk">
-<div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/poincare.gif');background-repeat:no-repeat;"></div>
-</a>
-<h5>03 Dec 2015</h5>
-<a href="/users/jcyang/blog/2015/12/03/poincare-disk" title="Poincaré Disk">
-	<h4>Poincaré Disk</h4>
-</a>
-</div><div class="thumb" style="background-color:#DDD">
-
-<a href="/users/jcyang/blog/2015/05/25/lindenmayer-language" title="Lindenmayer Language">
-<div class="thumbpic" style="background-color:white;background-image:url('/users/jcyang/assets/images/thumbnails/lindenmayer.gif');background-repeat:no-repeat;"></div>
-</a>
-<h5>25 May 2015</h5>
-<a href="/users/jcyang/blog/2015/05/25/lindenmayer-language" title="Lindenmayer Language">
-	<h4>Lindenmayer Language</h4>
-</a>
-</div>
-</div>
-
-  </div>
-</div>
-
-	
-		
 		<footer>
-			<div class="footer-container">
-				<div class="container">
-					<div id="footer" class="vertical-center" style="overflow:hidden">
-						<div id="float-left" class="vertical-center">
-							<a href="https://www.utexas.edu"><img id="logo" src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a>
-						</div>
-						<div id="float-right" class="vertical-center">
-							<ul>
-								<li id="utmath"><a href="https://www.ma.utexas.edu/">UT Math</a></li>
-								<li><a href="https://www.linkedin.com/in/jincheng-yang/">LinkedIn</a></li>
-								<li><a href="https://github.com/teddyyjc">GitHub</a></li>
-								<li><a href="mailto:jcyang@math.utexas.edu">Email</a></li>
-							</ul>
-						</div>
-						<p class="copyright">Copyright &#169 2020 Jincheng Yang</p>
-					</div>
-				</div>
+			<div id="footer-container">
+				<a href="https://www.utexas.edu"><img id="logo" src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a>
+				
+				<p id="copyright">Copyright &#169 2020 Jincheng Yang</p>
+
+				<ul>
+					<li id="utmath"><a href="https://www.ma.utexas.edu/">UT Math</a></li>
+					<li><a href="https://www.linkedin.com/in/jincheng-yang/">LinkedIn</a></li>
+					<li><a href="https://github.com/teddyyjc">GitHub</a></li>
+					<li><a href="mailto:jcyang@math.utexas.edu">Email</a></li>
+				</ul>
 			</div>
 		</footer>
 
+
+		
 		<script type="text/javascript" src="/users/jcyang/plugin/Escher.js"></script>
-		<script type="text/javascript" src="/users/jcyang/plugin/adjust_nav.js"></script>
-		<script>
-			function resizeWindow() {
-				init()
-				adjustNav()
-			}
-			window.addEventListener("resize", resizeWindow)
-			adjustNav()
-		</script>
-		<script>
-			(function() {
-				var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-				link.type = 'image/x-icon';
-				link.rel = 'shortcut icon';
-				link.href = '/users/jcyang/assets/images/favicon.ico';
-				document.getElementsByTagName('head')[0].appendChild(link);
-			})();
-		</script>
+		<script type="text/javascript" src="/users/jcyang/plugin/set_icon.js"></script>
 	</body>
 </html>
