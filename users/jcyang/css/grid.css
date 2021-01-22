@@ -322,6 +322,21 @@ nav .dropdown a.dropdown-last {
     margin: 2em 0em 2em 0em;
 }
 
+.columns {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "left right";
+}
+
+.leftcolumn {
+    grid-area: left;
+    border-right: #DDD 2px solid;
+}
+
+.rightcolumn {
+    grid-area: right;
+}
+
 /* Thumbnails */
 
 .thumb {

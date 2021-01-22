@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Vector-Valued Maximal Function</title>
+		<title>De Giorgi</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
@@ -260,237 +260,359 @@
 
 <div class="post">
 
-<h2>Vector-Valued Maximal Function</h2>
+<h2>De Giorgi</h2>
 
-<p class="meta">2020, November 07</p>
+<p class="meta">2021, January 22</p>
 
-  <p>For $f \in L ^1 _\loc (\Rn)$, we can define</p>
+  <h3 id="introduction">Introduction</h3>
 
-<p>\begin{align*}
-    \mm f (x) := \sup _{r &gt; 0} \fint _{B _x (r)} |f (y)| \d y.
+<p>Let $\Omega \subset \Rd$ be a smooth bounded domain. Let $A: \Omega \to \mathcal M ^{d \times d} (\R)$ be a measurable matrix-valued function such that it is uniformly elliptic: there exists $0 &lt; \lambda \le \Lambda$ such that
+\begin{align*}
+    \lambda \ \Id \le A (x) \le \Lambda \ \Id, \qquad \forall x \in \Omega.
 \end{align*}</p>
 
-<p>$
-\newcommand{\vf}{\boldsymbol f}
-\newcommand{\vg}{\boldsymbol g}
-\newcommand{\vb}{\boldsymbol b}
-\newcommand{\vM}{\boldsymbol{\mathcal M}}
-$</p>
-
-<p>Consider the space of function sequence $\vf = \set{f _j} \cnt j1\infty \in \pth{L^p (\Rn)} _\tensor$, define</p>
-
-<p>\begin{align*}
-    | \vf (x) | = \pth{
-        \SUM j1i |f _j (x)| ^2
-    } ^\half = \nor{\set{f _j (x)} \cnt j1\infty} _{\ell^2}
+<p>We say $u \in H ^1 (\Omega)$ is a subsolution in $\Omega$ of 
+\begin{align*}
+    - \div (A \grad u) = 0
+\end{align*}
+if for every $\vp \in H _0 ^1 (\Omega)$ such that $\vp \ge 0$, we have 
+\begin{align*}
+    \ang{\grad u, \grad \vp} _A := \int _{\Omega} (\grad u) ^\top (A \grad \vp) \dx \le 0.
 \end{align*}</p>
 
-<p>We say $\vf \in L ^p$ if $\abs{\vf} \in L ^p (\Rn)$, or $\nor{\vf} _{L ^p} = \nor{f _j (x)} _{L ^p _x \ell ^2 _j}$.</p>
+<h3 id="de-giorgis-first-lemma-small-energy-to-boundedness">De Giorgi’s First Lemma: Small Energy to Boundedness</h3>
 
-<p>Vector-valued maximal operator $\vM$ is defined by</p>
+<div theorem="Lemma">
+    Let $u$ br a subsolution in $B _2$. There exists a universal small $\delta &gt; 0$, such that if 
+    $$\nor{u} _{L ^2(B _2)} \le \delta,$$
+    then 
+    $$u \le 1 \inn B _1.$$
+</div>
 
-<p>\begin{align*}
-    \vM \vf (x) = \pth{
-        \SUM j1\infty |\mm f _j (x)| ^2
-    } ^\half = \nor{\set{\mm f _j (x)} \cnt j1\infty} _{\ell^2} .
+<h4 id="proof">Proof.</h4>
+
+<p>Define 
+\begin{align*}
+    r _k &amp;= 1 + 2 ^{-k}, &amp;
+    B \bp k &amp;= B _{r _k} (0), &amp;
+    \ind{B \bp {k + 1}} &amp;\le \vp _k \le \ind{B \bp k}.
+\end{align*}
+Denote 
+\begin{align*}
+    c _k &amp;= 1 - 2 ^{-k}, &amp; 
+    u _k &amp;= (u - c _k) _+, &amp;
+    \Omega _k &amp;= \set{\vp _k u _k &gt; 0}, &amp;
+    \ind k &amp;= \ind{\Omega _k}.
 \end{align*}</p>
 
-<p>Then:</p>
+<p>Denote energy 
+\begin{align*}
+    U _k = \nmL2{\vp _k u _k} ^2 = \int (\vp _k u _k) ^2 \dx.
+\end{align*}</p>
 
-<div theorem="Theorem">
-Let $1 \le p &lt; \infty$, assume $\vf \in L ^p$. Then
+<ul>
+  <li>Hölder’s inequality. For $p = (1/2 - 1/d) \inv$,
+\begin{align*}
+  \nmL2{\vp _k u _k} \le \nmL p{\vp _k u _k} \nmL d{\ind k}.
+\end{align*}</li>
+</ul>
 
-<div>
-    <ol>
-      <li>$\vM \vf$ is finite a.e.</li>
-      <li>$\vM$ is weak-type $(1, 1)$.</li>
-      <li>$\vM$ is strong-type $(p, p)$, $1 &lt; p &lt; \infty$.</li>
-    </ol>
+<div class="columns">
+<div class="leftcolumn">
+
+    <ul>
+      <li>
+        <p>Sobolev inequality. 
+\begin{align*}
+  \nmL p{\vp _k u _k} \lesssim \nmL2{\grad (\vp _k u _k)}.
+\end{align*}</p>
+      </li>
+      <li>
+        <p>Caccioppoli inequality. 
+\begin{align*}
+  \nmL2{\grad (\vp _k u _k)} \lesssim _{\lambda, \Lambda} \nmL2{u _k \grad \vp _k}.
+\end{align*}</p>
+      </li>
+      <li>
+        <p>$|\grad \vp _k| \le C ^k \vp \bms k$, $u _k \le u \bms k$, so
+\begin{align*}
+  \nmL2{u _k \grad \vp _k} \le C ^k \nmL2{u \bms k \vp \bms k}.
+\end{align*}</p>
+      </li>
+    </ul>
+
   </div>
+<div class="rightcolumn">
 
-</div>
-
-<div theorem="Remark">
-The case $p = \infty$ is wrong. Think $f _j = \ind{(2 ^{j}, 2 ^{j + 1})}$.
-</div>
-
-<p>We will prove this theorem first for $p = 2$, then for $p = 1$, then for $p \in (1, 2)$, then for $p \in (2, \infty)$.</p>
-
-<h4 id="proof-for-p--2">Proof for $p = 2$</h4>
-
-<p>Case $p = 2$ is natural, because $\mm$ is bounded on $L^2$, and $L ^2 _x \ell ^2 _j = L ^2_{x, j}$.</p>
-
-<h4 id="proof-for-p--1">Proof for $p = 1$</h4>
-
-<p>When $p = 1$, we want to prove for all $\alpha &gt; 0$,</p>
-
-<p>\begin{align*}
-    \abset{
-        \vM \vf &gt; \alpha
-    } \le \frac A\alpha \nmL1\vf.
-\end{align*}</p>
-
-<p>Assume $\vf \ge 0$. We have Calder'on-Zygmund decomposition, that is, we have a collection $\set{Q _k}$ disjoint cubes, $\vf = \vg + \vb = \vg + \sum _k \vb _k$, such that</p>
-
-<ol>
-  <li>$\abs{\vg} = \abs{\vf} \le \alpha$ in $\Rn \setminus \bigcup _k Q _k$, and $\vg = 0$ in $Q _k$.</li>
-  <li>$\vb _k$ is supported in $Q _k$, and $\fint _{Q _k} \abs{\vb _k} \le A \alpha$.</li>
-  <li>$\sum _k \abs{Q _k} \le \frac A\alpha \nor\vf _{L ^1}$.</li>
-</ol>
-
-<p>Because $\abs{\vg} \le \min \set{\alpha, \abs{\vf}}$,</p>
-
-<p>\begin{align*}
-    \abset{
-        \vM \vg &gt; \frac\alpha2
-    } \le \frac4{\alpha ^2} \nmL2{\vM \vg} ^2 \le \frac A{\alpha ^2} \nmL2\vg ^2 \le \frac A\alpha \nmL1\vf.
-\end{align*}</p>
-
-<p>it suffices to show</p>
-
-<p>\begin{align*}
-    \abset{
-        \vM \vb &gt; \frac\alpha2
-    } \le \frac A\alpha \nmL1\vf.
-\end{align*}</p>
-
-<p>Denote $\bar \vb _k = \fint _{Q _k} \vb _k \le A\alpha$, and $\bar \vb = \sum _k \bar \vb _k \ind{Q _k}$. Then</p>
-
-<p>\begin{align*}
-    \abset{
-        \vM \bar \vb &gt; \frac\alpha2
-    } \le \frac4{\alpha ^2} \nmL2{\vM \bar \vb} ^2 \le \frac A{\alpha ^2} \nmL2{\bar \vb} ^2 \le A ^3 \sum _k |Q _k| \le \frac A\alpha \nmL1\vf.
-\end{align*}</p>
-
-<p>Similarly</p>
-
-<p>\begin{align*}
-    \abset{
-        c \vM \bar \vb &gt; \frac\alpha2
-    } \le \frac A\alpha \nmL1\vf.
-\end{align*}</p>
-
-<p>We want to show that</p>
-
-<p>\begin{align*}
-    \vM \vb (x) \le c \vM \bar \vb (x) \qquad x \notin \bigcup _k Q _k ^*
-\end{align*}</p>
-
-<p>where $Q _k ^* = 2 Q _k$. This would end the proof because</p>
-
-<p>\begin{align*}
-    \abset{
-        \vM \vb (x) &gt; \frac\alpha2 
-    } 
-    &amp;\le \abset{
-        c \vM \bar \vb &gt; \frac\alpha2
-    } + \abset{
-        \vM \vb (x) &gt; c \vM \bar \vb
-    } 
-    \\&amp;\le \frac A\alpha \nmL1\vf + \sum _k |Q _k ^*|
-    \\&amp;\le \frac A\alpha \nmL1\vf.
-\end{align*}</p>
-
-<p>To see why $c \vM \bar \vb$ bound $\vM \vb$ away from $Q _k ^*$, it suffices to prove for each coordinate,</p>
-
-<p>\begin{align*}
-    \mm b _j (x) \le c \mm \bar b _j (x) \qquad x \notin \bigcup _k Q _k ^*
-\end{align*}</p>
-
-<p>then the $\ell ^2$ norm are controlled. Let $B = B (x, r)$, and consider</p>
-
-<p>\begin{align*}
-    \fint _B b _j (x) \d x = \frac1{|B|} \sum _k \int _{B \cap Q _k} b _j (x) \d x.
-\end{align*}</p>
-
-<p>If $x \notin Q _k ^*, B \cap Q _k \neq \varnothing$, then $Q _k \subset 3 B$, so</p>
-
-<p>\begin{align*}
-    \fint _B b _j \d x \le \frac1{|B|} \int _{3B} b _j \d x = \frac1{|B|} \int _{3B} \bar b _j \d x \le 3 ^n M \bar b _j (x).
-\end{align*}</p>
-
-<h4 id="proof-for-1--p--2">Proof for $1 &lt; p &lt; 2$</h4>
-
-<p>By Marcinkiewicz interpolation, we have all the strong type bound for $1 &lt; p \le 2$.</p>
-
-<h4 id="proof-for-2--p--infty">Proof for $2 &lt; p &lt; \infty$</h4>
-
-<p>First we introduce the weighted maximal inequality.</p>
-
-<div theorem="Proposition">
-Let $\mu &lt; &lt; \mathcal L ^n$ be absolute continuous with respect to the Lebesgue measure, that is $\d \mu = \omega (x) \d x$ for some $\omega \in L^1_{\loc}$. Then 
-
+    <ul>
+      <li>
+        <p>$L ^d$ of indicator,
 \begin{align*}
-    \mu \ptset{
-        \mm f (x) &gt; \alpha
-    } \le \frac A\alpha \nor{f} _{L^1(\mm \omega \d x)}
+  \nmL d{\ind k} = | \Omega _k | ^\frac1d.
+\end{align*}</p>
+      </li>
+      <li>
+        <p>$\vp _k u _k &gt; 0$ implies $\vp \bms k = 1$, $u \bms k &gt; 2 ^{-k}$.
+\begin{align*}
+  | \Omega _k | \le \abset{ \vp \bms k u \bms k &gt; 2 ^{-k} }.
+\end{align*}</p>
+      </li>
+      <li>
+        <p>Tchebyshev inequality. 
+\begin{align*}
+  \abset{ \vp \bms k u \bms k &gt; 2 ^{-k} } \le 2 ^{2k} \nmL2{\vp \bms k u \bms k} ^2 .
+\end{align*}</p>
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+<p>Conclusion: 
+\begin{align*}
+    U _k \lesssim C ^k U \bms k ^{1 + 2/d}.
 \end{align*}
+If $U _0 &lt; \delta$ sufficiently small, then $U _k \to 0$. That is, $\nor{(u - 1) _+} _{L ^2 (B _1)} = 0$, $u \le 1$ in $B _1$.</p>
 
-and 
+<h3 id="de-giorgis-second-lemma-boundedness-to-oscillation-decay">De Giorgi’s Second Lemma: Boundedness to Oscillation Decay</h3>
 
+<div theorem="Lemma">
+  <p>Let $u$ be a subsolution in $B _2$, satisfying</p>
+
+  <ul>
+    <li>$u \le 1$ in $B _2$.</li>
+    <li>$\abs{\set{u &lt; 0} \cap B _1} &gt; \mu$.</li>
+  </ul>
+
+  <p>Then $u \le 1 - \eta$ in $B _{1/2}$ for some universal $\eta &gt; 0$.</p>
+</div>
+
+<h4 id="proof-1">Proof.</h4>
+
+<p>Recall
 \begin{align*}
-    \nor{\mm f} _{L ^q(\omega \d x)} \le A _q \nor f_{L ^q (\mm \omega \d x)}.
+    c _k &amp;= 1 - 2 ^{-k}, &amp; 
+    u _k &amp;= (u - c _k) _+, 
 \end{align*}
-
-Here $A$ and $A _q$ are independent from $\omega$.
-</div>
-
-<h5 id="proof">Proof.</h5>
-
-<p>The case $q = \infty$ is trivial, and the case $1 &lt; q &lt; \infty$ is by Marcinkiewicz interpolation.</p>
-
-<p>For $x \in \set{\mm f (x) &gt; \alpha}$, there exists $B _x$ such that</p>
-
-<p>\begin{align*}
-    |B _x| &lt; \frac1\alpha \int _{B _x} |f (y)| \d y.
-\end{align*}</p>
-
-<p>Then 
+we define 
 \begin{align*}
-    \mu (5 B _x) = \int _{5 B _x} \omega \d x &amp;\le A |B _x| \mm \omega (y), \qquad \forall y \in B _x
-    \\&amp;
-    \le \frac A\alpha \int _{B _x} |f (y)| \mm \omega (y) \d y.
+    w _k &amp;= 2 \cdot 2 ^k u _k = 2 (w \bms k - 1) _+ \le 2.
 \end{align*}</p>
 
-<p>Fincally, we choose a disjoint subselection of $B _{x _k}$ such that $5 B _{x _k}$ is a covering of $\set{\mm f (x) &gt; \alpha}$.</p>
+<p>Claim that there exists a universal $K$ such that $w _{K + 2} \equiv 0$ in $B _{1/2}$.</p>
 
-<hr />
-
-<p>Back to the case $\vf = \set{f _j} \cnt j1i$, by proposition case $q = 2$ we have</p>
-
-<p>\begin{align*}
-    \nor{\mm f _j} _{L ^2(\omega \d x)} \le A _2 \nor{f _j} _{L ^2 (\mm \omega \d x)}.
+<p>Otherwise, for any $k \le K$, $w \bps[2] k \not\equiv 0$ in $B _{1/2}$, then 
+\begin{align*}
+    w \bps[2] k \not\equiv 0 \inn B _{1/2}
+    &amp;
+    \Rightarrow 
+    \abs{\set{w \bps[2] k &gt; 0} \cap B _{1/2}} &gt; 0 
+    \newline
+    &amp;
+    \Rightarrow 
+    \abs{\set{w \bps k &gt; 1} \cap B _{1/2}} &gt; 0 
+    \newline
+    \text{(by the first lemma)}
+    &amp;
+    \Rightarrow 
+    \nor{w \bps k} _{L ^2 (B _1)} &gt; \delta
+    \newline
+    &amp;
+    \Rightarrow 
+    \nor{w \bps k} _{L ^\infty (B _1)} \abs{\set{w \bps k &gt; 0} \cap B _1} ^\frac12 &gt; \delta
+    \newline
+    &amp;
+    \Rightarrow 
+    \abs{\set{w \bps k &gt; 0} \cap B _1} &gt; \pthf{\delta}{2} ^2
+    \newline
+    &amp;
+    \Rightarrow 
+    \abs{\set{w _k &gt; 1} \cap B _1} &gt; \pthf{\delta}{2} ^2.
 \end{align*}</p>
 
-<p>Take $\ell ^2$ norm,</p>
+<!-- By Step 1, we want to show that $w _k \le 1$ for some $k$, it suffices to show that $\nor{w _k} _{L ^2 (B _1)} \le \delta$ for some $k$.
 
-<p>\begin{align*}
-    \nor{\vM \vf} _{L ^2(\omega \dx)} \le A _2 \nor{\vf}  _{L ^2 (\mm \omega \d x)},
+Suppose there exists $K \ge 0$, such that for all $k = 0, \dots, K$, 
+\begin{align\*}
+    \nor{w _k} _{L ^2 (B _1)} > \delta.
+\end{align\*}
+Since $w _k \le 2$, 
+\begin{align\*}
+    \delta < \nor{w _k} _{L ^2 (B _1)} \le 2 \abs{\set{w _k > 0} \cap B _1} ^\half.
+\end{align\*}
+
+Then for all $k = 0, \dots, K - 1$,  -->
+
+<p>Then</p>
+
+<ul>
+  <li>
+    <p>$w _k$ has large top.
+\begin{align*}
+  \abs{\set{w _k &gt; 1} \cap B _1} &gt; \pthf{\delta}{2} ^2.
 \end{align*}</p>
-
-<p>that is</p>
-
-<p>\begin{align*}
-    \int (\vM \vf) ^2 \omega \d x \le A \int |\vf| ^2 (\mm \omega) \d x.
+  </li>
+  <li>
+    <p>$w _k$ has large base. 
+\begin{align*}
+  \abs{\set{w _k &lt; 0} \cap B _1} 
+  \ge \abs{\set{u &lt; 0} \cap B _1} &gt; \mu.
 \end{align*}</p>
-
-<p>Then by duality, set $q = \pthf p2 ^*$,</p>
-
-<p>\begin{align*}
-    \nmL p{\vM \vf} &amp;= \nmL{\frac p2}{(\vM \vf) ^2} 
-    \\&amp;= \sup _{\nmL q{\omega} = 1} 
-    \int (\vM \vf) ^2 \omega \d x 
-    \\&amp; \le \sup _{\nmL q{\omega} = 1} A \int |\vf| ^2 (\mm \omega) \d x \\&amp; \le A \nmL{\frac p2}{\vf ^2} \sup _{\nmL q{\omega} = 1}  \nmL{q}{\mm \omega} 
-    \\&amp; \le A \nmL p \vf.
+  </li>
+  <li>
+    <p>$w _k$ has bounded energy. This is because $w _k$ is a subsolution in $B _2$, by energy inequality 
+\begin{align*}
+  \nor{\grad w _k} _{L ^2 (B _1)} \le C \nor{w _k} _{L ^2 (B _2)} \le C _0.
 \end{align*}</p>
+  </li>
+</ul>
 
-<div theorem="Remark">
-We can replace $\ell ^2$ by $\ell ^q$ for $1 &lt; q \le \infty$, by setting $\vM _q \vf (x) = \nor{M f _j (x)}_{\ell ^q}$. For $q &lt; \infty$, one start the proof for $p = q$, then interpolate $(1, q)$, then bootstrap to $(q, \infty)$. For $q = \infty$, $\vM _\infty \vf \le M (|\vf| _\infty)$. However $q = 1$ doesn't work.
+<p>By isoperimetric inequality, $w _k$ has large sides, that is, 
+\begin{align*}
+    \abs{\set{0 &lt; w _k &lt; 1} \cap B _1} &gt; \alpha.
+\end{align*}
+Since $\set{0 &lt; w _k &lt; 1} = \set{c _k &lt; u &lt; c _{k + 1}}$ are pairwise disjoint, if we let $K$ be so large such that $\mu + K \alpha &gt; |B _1|$, then we must have $w _{K + 2} \equiv 0$ in $B _\frac12$, so $u _{K + 2} = 0$, $u \le c _{K + 2}$. This finishes the proof by setting $\eta = 2 ^{-K - 2}$.</p>
+
+<h3 id="tools-six-inequalities-ethics">Tools (six inequalities, ethics).</h3>
+
+<div theorem="Caccioppoli inequality">
+If $u$ is a nonnegative subsolution, then 
+\begin{align*}
+    \nmL2{\grad (\vp u)} \lesssim _{\lambda, \Lambda} \nmL2{u \grad \vp}.
+\end{align*}
 </div>
 
-<div theorem="Remark">
-If $\mm \omega$ is comparible to $\omega$, then the two weights in the proposition are the same. This is called $A _1$ condition.
+<h4 id="proof-2">Proof.</h4>
+<p>Since $\vp ^2 u \in H ^1 _0 (\Rn)$ is nonnegative,
+\begin{align*}
+    0 \ge \ang{\grad (\vp ^2 u), \grad u} _A &amp;= \ang{\vp \grad u, \vp \grad u} _A + 2\ang{u \grad \vp, \vp \grad u} _A \newline
+    &amp;= \ang{\vp \grad u + u \grad \vp, \vp \grad u + u \grad \vp} _A - \ang{u \grad \vp, u \grad \vp} _A \newline
+    &amp;= \ang{\grad (\vp u), \grad (\vp u)} _A - \ang{u \grad \vp, u \grad \vp} _A.
+\end{align*}
+By ellipticity of $A$,
+\begin{align*}
+    \lambda \nmL2{\grad (\vp u)} ^2 \le \Lambda \nmL2{u \grad \vp} ^2.
+\end{align*}</p>
+
+<div theorem="Energy inequality">
+If $u$ is a nonnegative subsolution, then
+\begin{align*}
+    \nor{\grad u} _{L ^2 (B _1)} \lesssim _{\lambda, \Lambda} \nor{u} _{L ^2 (B _2)}.
+\end{align*}
 </div>
+
+<h4 id="proof-3">Proof.</h4>
+<p>Choose $\vp$ to be a cutoff such that $\ind{B _1} \le \vp \le \ind{B _2}$, and use the Caccioppoli inequality.</p>
+
+<div theorem="Hölder's inequality">
+For $p = (1/r - 1/q) \inv$,
+\begin{align*}
+    \nmL r{fg} \le \nmL pf \nmL qg.
+\end{align*}
+</div>
+
+<div theorem="Isoperimetric inequality">
+If $u \in H ^1 (B _1)$, $\nmL2{\grad u}^2 \le C _0$, denote
+<ul>
+    <li> $\set{u \ge 1} = C$ </li>
+    <li> $\set{u \le 0} = A$ </li>
+    <li> $\set{0 &lt; u &lt; 1} = D$ </li>
+</ul>
+then 
+\begin{align*}
+    C _0 |D| \ge C _1 (|A| |C| ^{1 - \frac1n}) ^2.
+\end{align*}
+</div>
+
+<h4 id="proof-4">Proof.</h4>
+<p>Without loss of generality assume $0 \le u \le 1$, so $A = \set{u = 0}$, $C = \set{u = 1}$. Fix $x \in C$.</p>
+
+<div class="figure">
+<style>
+  svg text {
+    font: italic 3px 'PT Serif'
+  }
+</style>
+<svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg" width="30em" height="30em" style="margin:auto">
+
+    <circle cx="20" cy="20" r="0.3" fill="#f5630d" />
+
+    <path stroke="#f5630d" fill="#f5630d" fill-opacity="0.2" d="M42.9,-52.4C57.6,-38.9,72.8,-27.2,77.3,-12.1C81.8,3,75.5,21.5,66.2,38.9C57,56.4,44.7,72.8,28.5,79.1C12.2,85.5,-8.1,81.7,-27.9,75.1C-47.6,68.5,-66.9,59.1,-67.3,45.2C-67.8,31.3,-49.4,12.9,-43.8,-5.8C-38.2,-24.5,-45.4,-43.5,-40.2,-58.7C-35,-73.9,-17.5,-85.2,-1.7,-83.2C14.1,-81.2,28.3,-65.9,42.9,-52.4Z" transform="translate(20 20) scale(0.1 0.1)" />
+    <path stroke="#aa018b" fill="#aa018b" fill-opacity="0.2" d="M24.4,-31.5C30.3,-29.3,32.8,-20.4,35.6,-11.6C38.4,-2.8,41.5,5.8,40.5,14.5C39.6,23.2,34.5,31.9,27.1,31.8C19.6,31.7,9.8,22.8,0.1,22.6C-9.6,22.4,-19.2,31,-32.7,33.1C-46.2,35.2,-63.8,30.8,-72.8,19.7C-81.9,8.6,-82.5,-9.2,-77.6,-25.5C-72.7,-41.7,-62.2,-56.5,-48.3,-56.1C-34.5,-55.8,-17.2,-40.4,-4,-34.9C9.3,-29.4,18.5,-33.8,24.4,-31.5Z" transform="translate(40 30) scale(0.1 0.1)" />
+    <circle cx="28" cy="25" r="20" fill="transparent" stroke="#00508a" stroke-width="0.1" />
+
+    <path d="M 20 20 L 45 44 A 35 35, 0, 0, 0, 53 29 L 20 20" stroke="#66cb00" stroke-width="0.1" fill="#66cb00" fill-opacity="0.2" />
+
+    <circle cx="20" cy="20" r="0.3" fill="#f5630d" />
+
+    <text x="17" y="16" fill="#f5630d">C</text>
+    <text x="18" y="22" fill="#f5630d">x</text>
+    <text x="37" y="30" fill="#aa018b">A</text>
+    <text x="10" y="40" fill="#00508a">B</text>
+    <text x="50" y="40" fill="#66cb00">∑</text>
+</svg>
+</div>
+
+<p>If $\sigma$ is a direction such that the ray $\set{x + t \sigma} _{t \ge 0}$ pierces through $A$, then the variation on this ray is greater than 1,
+\begin{align*}
+    1 \le \int _0 ^{D _\sigma} \abs{\ddt u(x + r \sigma)} \d r \le \int _0 ^{D _\sigma} |\grad u (x + r \sigma)| \d r,
+\end{align*}
+where $D _\sigma$ is the distance at which $x + D _\sigma \sigma \in \partial B _1$. If $\Sigma$ is the set of all such $\sigma$, then 
+\begin{align*}
+    \abs{\Sigma} \le \int _\Sigma \int _0 ^{D _\sigma} |\grad u (x + r \sigma)| \d r \d \sigma 
+    &amp;= \int _\Sigma \int _0 ^{D _\sigma} \frac{|\grad u (x + r \sigma)|}{r ^{n - 1}} r ^{n - 1} \d r \d \sigma \newline
+    &amp;= \int _{B _1} \frac{|\grad u (y)|}{|y - x| ^{n - 1}} \dy.
+\end{align*}
+Since a circular sector with center $x$, radius $2$ and angle $\Sigma$ will cover $A$, we have $|A| \lesssim |\Sigma|$.
+Now integrate $x$ over $C$, 
+\begin{align*}
+    \abs{A} \abs{C} 
+    &amp;\lesssim
+    \int _{C} \int _{B _1} \frac{|\grad u (y)|}{|y - x| ^{n - 1}} \dy \dx = \int _{B _1} |\grad u (y)| \int _{C} \frac{1}{|y - x| ^{n - 1}} \dx \dy.
+\end{align*}
+For all set with the same measure as $C$, The integral $\int _{C} \frac{1}{|y - x| ^{n - 1}} \dx$ is minimized when $C$ is a ball centered at $y$, so 
+\begin{align*}
+    \int _{C} \frac{1}{|y - x| ^{n - 1}} \dx \lesssim |C| ^{\frac1n}.
+\end{align*}
+Therefore, 
+\begin{align*}
+    \abs{A} \abs{C} 
+    &amp;\lesssim |C ^\frac1n|
+    \int _{B _1} |\grad u (y)| \dy.
+\end{align*}
+Finally, using $\supp (\grad u) \subset D$, 
+\begin{align*}
+    \int _{B _1} |\grad u (y)| \dy \le \nor{\grad u} _{L ^2(B _1)} \nor{\ind D} _{L ^2 (B _1)} \le (C _0 |D|) ^\frac12.
+\end{align*}</p>
+
+<div theorem="Sobolev inequality">
+For $u \in H ^1 (\Rd)$, for $p = (1/2 - 1/d) \inv$,
+\begin{align*}
+    \nmL2{\grad u} \lesssim \nmL pu.
+\end{align*}
+</div>
+
+<h4 id="proof-5">Proof.</h4>
+<p>We show a $p &lt; (1/2 - 1/d) \inv$ version. If $\grad u = f$ and $u$ is compactly supported, then 
+\begin{align*}
+    u = \La \inv \div \grad u = \div \La \inv f = f * \grad \Gamma
+\end{align*}
+where $\Gamma$ is the fundamental solution to the Laplace equation, and 
+\begin{align*}
+    \grad \Gamma (x) = \frac{c _d}{|x| ^d}x \in L ^q _\loc
+\end{align*}
+for any $q &lt; \frac{d}{d - 1}$. By Young’s convolution inequality, 
+\begin{align*}
+    \nmL p u \le \nmL 2 f \nmL q{\grad \Gamma}
+\end{align*}
+with $1 + p \inv = 2 \inv + q \inv$.</p>
+
+<div theorem="Tchebyshev inequality">
+\begin{align*}
+    \abset{u &gt; \alpha} \le \frac{\nmL1u}\alpha \qquad \Rightarrow \qquad \abset{u &gt; \alpha} \le \frac{\nmL2u ^2}{\alpha ^2}.
+\end{align*}
+</div>
+
 
 
 
