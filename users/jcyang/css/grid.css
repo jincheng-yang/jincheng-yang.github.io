@@ -110,6 +110,9 @@ a:hover {
 ul li, ol li {
     font-size: 1.0em;
     line-height: 1.8em;
+}
+
+ul li {
     list-style: square;
 }
 
