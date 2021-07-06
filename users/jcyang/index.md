@@ -9,11 +9,11 @@ title: Jincheng's Website | About
 
 # About Me
 
-Hi, I am a fourth year Ph.D. candidate at [The University of Texas at Austin](https://www.utexas.edu). I major in mathematics, and my research interest include analysis, partial differential equations, especially fluid equations, including incompressible Euler equations, Navier-Stokes equations and surface quasi-geostrophic equations. I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of the Special Class for the Gifted Young before my undergraduate study. 
+Hi, I am a fifth-year Ph.D. candidate at [The University of Texas at Austin](https://www.utexas.edu). I major in mathematics, and my research interest includes analysis, partial differential equations, fluid dynamics, including incompressible Euler equations, Navier-Stokes equations, and surface quasi-geostrophic equations. I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of the Special Class for the Gifted Young before my undergraduate study. 
 
 Apart from mathematics, I also love programming and music.
 
-It is my honor to be coadvised by [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/).
+It is my honor to be co-advised by [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/).
 
 </div>
 
@@ -88,7 +88,7 @@ Austin, TX 78712-1202, USA
 <div style="display:grid;grid-template-columns:30% 30% 30%;align-items:center;justify-content:space-between;grid-row-gap:2.5em">
 
 {% assign my_posts = site.posts | where:"image", true %}
-{% for post in my_posts limit: 9 %}
+{% for post in my_posts limit: 12 %}
 
 	<div class="thumb">
 	<a href="{{ post.url }}" title="{{ post.title }}">
