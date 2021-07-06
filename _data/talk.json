@@ -71,6 +71,13 @@
             "Location": "The University of Texas at Austin (zoom talk)",
             "Series": "Junior Analysis Seminar",
             "Abstract": "We want to estimate the expectation of a random variable when the underlying probability measure is unknown. The true probability can differ from some nominal distribution by a distance R, where the distance between distributions can be characterized by the optimal mass transport, for instance Wasserstein distance. In this talk, we will explore the duality principle for this estimate, and we can discuss the worst case distribution for the discrete case if time permits."
+        },
+        {
+            "Title": "Shapley Extension and Application",
+            "Date": "2021-04-09",
+            "Location": "The University of Texas at Austin (zoom talk)",
+            "Series": "Junior Analysis Seminar",
+            "Abstract": "In this talk, I will introduce a recently constructed extension operator, called the \"Shapley extension\". This operator gives a Lipschitz extension for a function defined on a discrete subset of metric space to the whole space. The extension is based on the Shapley theorem, which comes from the Nash equilibrium in the game theory. We will give an application of the Shapley extension in 1-Wasserstein robust optimization problem. This is a joint work with Gao and Zhang."
         }
     ]
 }
