@@ -10,7 +10,7 @@ title: Jincheng's Website | Blog
 {% for post in site.posts %}
 {% if post.hide %}
 {% else %}
-	<li><span>{{ post.date | date: "%b. %-d, %Y" }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	<li><span>{{ post.date | date: "%b. %-d, %Y" }}</span> » <a href="{{ post.url }}.html" title="{{ post.title }}">{{ post.title }}</a></li>
 {% endif %}
 {% endfor %}
 </ul>
