@@ -73,11 +73,25 @@
             "Abstract": "We want to estimate the expectation of a random variable when the underlying probability measure is unknown. The true probability can differ from some nominal distribution by a distance R, where the distance between distributions can be characterized by the optimal mass transport, for instance Wasserstein distance. In this talk, we will explore the duality principle for this estimate, and we can discuss the worst case distribution for the discrete case if time permits."
         },
         {
+            "Title": "New Estimates on the Second Derivatives of the 3D Navier-Stokes Equation",
+            "Date": "2021-03-20",
+            "Location": "Brown University (zoom talk)",
+            "Series": "AMS Spring Eastern Sectional Meeting",
+            "Abstract": "In this talk we present $L ^{4/3,q}$ local integrability of the second spatial derivatives of suitable solutions to the Navier-Stokes equation for any $q > \\frac43$. This joint work with A. Vasseur improves the current result $L ^{4/3, \\infty}$ (Lions, 1996), and it is based on a blow-up technique using the universal scaling along approximated Lagrangian trajectories. Locally, we can obtain any regularity of the vorticity without any a priori knowledge of the pressure. The local-to-global step uses a recently constructed maximal function for transport equations. "
+        },
+        {
             "Title": "Shapley Extension and Application",
             "Date": "2021-04-09",
             "Location": "The University of Texas at Austin (zoom talk)",
             "Series": "Junior Analysis Seminar",
             "Abstract": "In this talk, I will introduce a recently constructed extension operator, called the \"Shapley extension\". This operator gives a Lipschitz extension for a function defined on a discrete subset of metric space to the whole space. The extension is based on the Shapley theorem, which comes from the Nash equilibrium in the game theory. We will give an application of the Shapley extension in 1-Wasserstein robust optimization problem. This is a joint work with Gao and Zhang."
+        },
+        {
+            "Title": "New Estimates on the Second Derivatives of the 3D Navier-Stokes Equation",
+            "Date": "2021-05-02",
+            "Location": "San Francisco State University (zoom talk)",
+            "Series": "AMS Spring Western Sectional Meeting",
+            "Abstract": "In this talk we present $L ^{4/3,q}$ local integrability of the second spatial derivatives of suitable solutions to the Navier-Stokes equation for any $q > \\frac43$. This joint work with A. Vasseur improves the current result $L ^{4/3, \\infty}$ (Lions, 1996), and it is based on a blow-up technique using the universal scaling along approximated Lagrangian trajectories. Locally, we can obtain any regularity of the vorticity without any a priori knowledge of the pressure. The local-to-global step uses a recently constructed maximal function for transport equations."
         }
     ]
 }
