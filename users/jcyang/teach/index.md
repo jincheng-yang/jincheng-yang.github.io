@@ -49,9 +49,11 @@ The [Directed Reading Program](https://web.ma.utexas.edu/users/drp/about.html) i
 
 ### Mentees
 
-- 2018 Spring: **Yan Cheng**, on the topic of Probability and Martingales
-- 2019 Spring: **Trey Minor**, on the topic of Differential Equations and Dynamical Systems
-- 2020 Spring: **Yongqi Pang**, on the topic of Statistics and Data Analysis
+<ul>
+{% for drp in site.data.teach.DRP %}
+<li> {{ drp.Year }} {{ drp.Season }}: <b>{{ drp.Name }}</b>, {{ drp.Topic }}</li>
+{% endfor %}
+</ul>
 
 </div>
 </div>

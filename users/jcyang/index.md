@@ -11,7 +11,7 @@ title: Jincheng's Website | About
 
 Hi, I am a fifth-year Ph.D. candidate at [The University of Texas at Austin](https://www.utexas.edu). I major in mathematics, and my research interest includes analysis, partial differential equations, fluid dynamics, including incompressible Euler equations, Navier-Stokes equations, and surface quasi-geostrophic equations. I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of the Special Class for the Gifted Young before my undergraduate study. 
 
-Apart from mathematics, I also love programming and music.
+Apart from mathematics, I also love coding and music.
 
 It is my honor to be co-advised by [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/).
 
