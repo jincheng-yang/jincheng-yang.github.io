@@ -1,0 +1,51 @@
+{
+    "Education": [
+        {
+            "Program": "Ph.D. in Mathematics (Pure)",
+            "School": "The University of Texas at Austin",
+            "Start": "2017-08-15",
+            "End": "2022-05-30",
+            "Period": "2017-2022",
+            "Location": "Austin, TX",
+            "Note": "Advisor: Prof. Luis A. Caffarelli and Prof. Alexis F. Vasseur",
+            "Degree": "doctor"
+        },
+        {
+            "Program": "Visiting Honors Student Program",
+            "School": "Georgia Institute of Technology",
+            "Start": "2016-01-09",
+            "End": "2016-05-12",
+            "Period": "2016",
+            "Location": "Atlanta, GA",
+            "Degree": "non-degree"
+        },
+        {
+            "Program": "Visiting Undergraduate Student",
+            "School": "Columbia University",
+            "Start": "2015-01-20",
+            "End": "2015-05-20",
+            "Period": "2015",
+            "Location": "New York City, NY",
+            "Degree": "non-degree"
+        },
+        {
+            "Program": "B.Sc. in Mathematics and Applied Mathematics",
+            "School": "Xi'an Jiaotong University",
+            "Start": "2013-08-18",
+            "End": "2017-06-24",
+            "Period": "2013-2017",
+            "Location": "China",
+            "Degree": "bachelor"
+        },
+        {
+            "Program": "Special Class for the Gifted Young",
+            "School": "Xi'an Jiaotong University",
+            "Start": "2011-08-30",
+            "End": "2013-07-10",
+            "Period": "2011-2013",
+            "Location": "China",
+            "Degree": "non-degree"
+        }
+    ]
+}
+

@@ -1,0 +1,78 @@
+{
+    "Teach": [
+        {
+            "Code": "M383D", 
+            "Course": "Methods of Applied Mathematics II",
+            "Season": "Spring",
+            "Year": "2021"
+        },
+        {
+            "Code": "M427J", 
+            "Course": "Differential Equations with Linear Algebra",
+            "Season": "Fall",
+            "Year": "2020"
+        },
+        {
+            "Code": "M427J", 
+            "Course": "Differential Equations with Linear Algebra",
+            "Season": "Spring",
+            "Year": "2020"
+        },
+        {
+            "Code": "M427J", 
+            "Course": "Differential Equations with Linear Algebra",
+            "Season": "Fall",
+            "Year": "2019"
+        },
+        {
+            "Code": "M427J", 
+            "Course": "Differential Equations with Linear Algebra",
+            "Season": "Spring",
+            "Year": "2019"
+        },
+        {
+            "Code": "M427L",
+            "Course": "Advanced Calculus for Applications II",
+            "Season": "Fall",
+            "Year": "2018"
+        },
+        {
+            "Code": "M408D", 
+            "Course": "Sequences, Series, and Multivariable Calculus",
+            "Season": "Spring",
+            "Year": "2018"
+        },
+        {
+            "Code": "M408K",
+            "Course": "Differential Calculus",
+            "Season": "Fall",
+            "Year": "2017"
+        }
+    ], 
+    "DRP": [
+        {
+            "Name": "Kyle Alkire",
+            "Topic": "on the topic of Schauder Theory in Elliptic Equations",
+            "Season": "Fall",
+            "Year": "2021"
+        },
+        {
+            "Name": "Yongqi Pang",
+            "Topic": "on the topic of Statistics and Data Analysis",
+            "Season": "Spring", 
+            "Year": "2020"
+        }, 
+        {
+            "Name": "Trey Minor",
+            "Topic": "on the topic of Differential Equations and Dynamical Systems",
+            "Season": "Spring", 
+            "Year": "2019"
+        },
+        {
+            "Name": "Yan Cheng",
+            "Topic": "on the topic of Probability and Martingales",
+            "Season": "Spring", 
+            "Year": "2018"
+        }
+    ]
+}

@@ -1,27 +1,19 @@
 {
     "Conference": [
         {
-            "Title": "On Nonlinear PDEs and their Applications",
-            "Start": "2019-03-01",
-            "End": "2019-03-02",
-            "Location": "The University of Texas at Austin",
-            "URL": "https://web.ma.utexas.edu/NonlinearPDEs2019/austin/",
+            "Title": "New Mechanisms for Regularity, Singularity, and Long Time Dynamics in Fluid Equations",
+            "Start": "2021-07-26",
+            "End": "2021-07-30",
+            "Location": "Banff International Research Station",
+            "URL": "https://www.birs.ca/events/2021/5-day-workshops/21w5110/",
             "Type": "conference"
         },
         {
-            "Title": "Workshop on Free Boundary Problems",
-            "Start": "2019-05-23",
-            "End": "2019-05-24",
-            "Location": "Columbia University",
-            "URL": "https://people.math.umass.edu/~nguillen/Workshop2019/index.html",
-            "Type": "conference"
-        },
-        {
-            "Title": "Summer School on Fluid Mechanics at the ICMAT",
-            "Start": "2019-06-24",
-            "End": "2019-06-28",
-            "Location": "Instituto de Ciencias Matemáticas",
-            "URL": "https://www.icmat.es/node/1788",
+            "Title": "Virtual Summer Graduate School: Introduction to Water Waves",
+            "Start": "2020-07-27",
+            "End": "2020-08-07",
+            "Location": "Mathematical Sciences Research Institute",
+            "URL": "https://www.msri.org/summer_schools/910",
             "Type": "summer school"
         },
         {
@@ -33,12 +25,28 @@
             "Type": "summer school"
         },
         {
-            "Title": "Virtual Summer Graduate School: Introduction to water waves",
-            "Start": "2020-07-27",
-            "End": "2020-08-07",
-            "Location": "Mathematical Sciences Research Institute",
-            "URL": "https://www.msri.org/summer_schools/910",
+            "Title": "Summer School on Fluid Mechanics at the ICMAT",
+            "Start": "2019-06-24",
+            "End": "2019-06-28",
+            "Location": "Instituto de Ciencias Matemáticas",
+            "URL": "https://www.icmat.es/node/1788",
             "Type": "summer school"
+        },
+        {
+            "Title": "Workshop on Free Boundary Problems",
+            "Start": "2019-05-23",
+            "End": "2019-05-24",
+            "Location": "Columbia University",
+            "URL": "https://people.math.umass.edu/~nguillen/Workshop2019/index.html",
+            "Type": "conference"
+        },
+        {
+            "Title": "On Nonlinear PDEs and their Applications",
+            "Start": "2019-03-01",
+            "End": "2019-03-02",
+            "Location": "The University of Texas at Austin",
+            "URL": "https://web.ma.utexas.edu/NonlinearPDEs2019/austin/",
+            "Type": "conference"
         }
     ]
 }
