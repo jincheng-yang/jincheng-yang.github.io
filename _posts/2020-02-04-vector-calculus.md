@@ -35,11 +35,19 @@ We use $\u$, $\v$ to indicate vector fields in $\R ^3$; $f$, $g$ indicate scalar
 #### Algebra 
 
 $$
-    (\u \tensor \v) \A = \u _i \v _j \A _{jk} = \u \v ^\top \A.
+    (\u \tensor \v) \A = \u _i \v _j \A _{jk} = \u \v ^\top \A
 $$
 
 $$
-    (\u \tensor \v) : \A = \u _j \v _i \A _{ij} = \v ^\top \A \u.
+    (\u \tensor \v) : \A = \u _j \v _i \A _{ij} = \v ^\top \A \u
+$$
+
+$$
+    (\u _1 \tensor \v _1) (\u _2 \tensor \v _2) = \u _1 \v _1 ^\top \u _2 \v _2 ^\top = (\v _1 \cdot \u _2) \u _1 \tensor \v _2
+$$
+
+$$
+    (\u _1 \tensor \v _1) : (\u _2 \tensor \v _2) = (\v _1 \cdot \u _2) (\u _1 \cdot \v _2)
 $$
 
 #### Leibniz Rules
