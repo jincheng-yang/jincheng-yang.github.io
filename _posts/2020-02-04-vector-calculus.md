@@ -15,6 +15,7 @@ $\newcommand{\u}{\boldsymbol u}$
 $\newcommand{\v}{\boldsymbol v}$
 $\newcommand{\A}{\boldsymbol A}$
 $\newcommand{\a}{\boldsymbol a}$
+$\newcommand{\c}{\boldsymbol c}$
 $\newcommand{\B}{\boldsymbol B}$
 $\newcommand{\R}{\mathbb R}$
 $\newcommand{\Tr}{\operatorname{Tr}}$
@@ -27,53 +28,39 @@ We use $\u$, $\v$ to indicate vector fields in $\R ^3$; $f$, $g$ indicate scalar
 * **Jacobian**: $\grad \u = (\ptil1 \u, \ptil2 \u, \ptil3 \u) = (\grad u _1, \grad u _2, \grad u _3) ^\top$.
 * **Directional Derivative**: $\v \cdot \grad \u = v _1 \ptil1 \u + v _2 \ptil2 \u + v _3 \ptil3 \u = (\grad \u) \v$.
 * **Tensor product**: $\A = \u \tensor \v = \u \v ^\top = (v _1 \u, v _2 \u, v _3 \u)$ is defined as $\A _{ij} = \u _i \v _j$.
-* **Colon product** between two matrices are $\A : \B = \sum _{i, j} \A _{ij} \B _{ji} = \Tr (\A\B)$.
-* **Divergence** of a matrix: $\div \A = (\div \a _1, \div \a _2, \div \a _3) ^\top$ where $\a _1, \a _2, \a _3$ are column vectors of $\A$.
+* **Colon product** between two matrices are $\A : \B = \sum _{i, j} \A _{ij} \B _{ij} = \Tr (\A ^\top \B)$.
+* **Divergence** of a matrix: $\div \A = (\div \a _1, \div \a _2, \div \a _3) ^\top = \ptil1 \c _1 + \ptil2 c _2 + \ptil3 c _3$ where $\a _1, \a _2, \a _3$ are row vectors of $\A$, $\c _1, \c _2, \c _3$ are column vectors of $\A$.
 
 ### Formulae
 
 #### Algebra 
 
 $$
-    (\u \tensor \v) \A = \u _i \v _j \A _{jk} = \u \v ^\top \A
-$$
-
-$$
-    (\u \tensor \v) : \A = \u _j \v _i \A _{ij} = \v ^\top \A \u
-$$
-
-$$
-    (\u _1 \tensor \v _1) (\u _2 \tensor \v _2) = \u _1 \v _1 ^\top \u _2 \v _2 ^\top = (\v _1 \cdot \u _2) \u _1 \tensor \v _2
-$$
-
-$$
-    (\u _1 \tensor \v _1) : (\u _2 \tensor \v _2) = (\v _1 \cdot \u _2) (\u _1 \cdot \v _2)
+\begin{align*}
+    (\u \tensor \v) \A &= \u _i \v _j \A _{jk} = \u \v ^\top \A
+    \newline
+    (\u \tensor \v) : \A &= \u _i \v _j \A _{ij} = \u ^\top \A \v
+    \newline
+    (\u _1 \tensor \v _1) (\u _2 \tensor \v _2) &= \u _1 \v _1 ^\top \u _2 \v _2 ^\top = (\v _1 \cdot \u _2) \u _1 \tensor \v _2
+    \newline
+    (\u _1 \tensor \v _1) : (\u _2 \tensor \v _2) &= \u _1 ^\top \u _2 \v _2 ^\top \v _1 = (\u _1 \cdot \u _2) (\v _1 \cdot \v _2)
+\end{align*}
 $$
 
 #### Leibniz Rules
 
 $$
-    \grad (f \u) = f \grad \u + \u \tensor \grad f
+\begin{align*}
+    \grad (f \u) &= f \grad \u + \u \tensor \grad f
+    \newline
+    \div (f \u) &= f \div \u + \u \cdot \grad f
+    \newline
+    \curl (f \u) &= f \curl \u + \grad f \times \u
+    \newline
+    \div (\u \tensor \v) &= (\div \v) \u + \v \cdot \grad \u
+    \newline
+    \div (f \A) &= f \div \A + \A \grad f
+    \newline
+    \div (\u ^\top \A) &= \u \cdot \div \A + \A : \grad \u
+\end{align*}
 $$
-
-$$
-    \div (f \u) = f \div \u + \u \cdot \grad f
-$$
-
-$$
-    \curl (f \u) = f \curl \u + \grad f \times \u
-$$
-
-$$
-    \div (\u \tensor \v) = (\div \u) \v + \u \cdot \grad \v
-$$
-
-$$
-    \div (f \A) = f \div \A + \A \grad f
-$$
-
-$$
-    \div (\A \u) = \u \cdot \div \A + (\A \cdot \grad) \cdot \u
-$$
-
-(here $\A \cdot \grad = (\a _1 \cdot \grad, \a _2 \cdot \grad, \a _3 \cdot \grad)$)
