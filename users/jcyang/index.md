@@ -5,7 +5,7 @@ title: Jincheng's Website | About
 
 <div class="content" markdown="1">
 
-![Photo](/users/jcyang/assets/images/photo5.jpg){: style="width:200px; float:right; padding-left:80px; max-width:100%"}
+![Photo](/users/jcyang/assets/images/photo7.jpg){: style="width:200px; float:right; padding-left:80px; max-width:100%"}
 
 # About Me
 
