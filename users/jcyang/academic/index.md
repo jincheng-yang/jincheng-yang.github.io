@@ -39,9 +39,10 @@ My general research interest includes the area of analysis, dynamic systems, and
 
 1. Tao Xie, Xiangqian Cheng, Jincheng Yang: *RAPTOR Programme Design Tutorial*, [Tsinghua University Press](http://www.tup.tsinghua.edu.cn/booksCenter/book_05438303.html), Beijing (2014)
 
-### Thesis
+### Theses
 
-1. Undergraduate thesis: *Linear Inviscid Damping of a Shear Flow in a Half-Space and a Finite Channel*, supervised by Prof. Dongsheng Li and Prof. Zhiwu Lin [[slides](/users/jcyang/assets/files/slides.pdf)][[pdf](/users/jcyang/assets/files/bachelor.pdf)]
+1. Undergraduate thesis: *Linear Inviscid Damping of a Shear Flow in a Half-Space and a Finite Channel*, supervised by Prof. Dongsheng Li and Prof. Zhiwu Lin [[slides](/users/jcyang/assets/files/bachelor-slides.pdf)][[pdf](/users/jcyang/assets/files/bachelor.pdf)]
+2. Doctoral thesis: *Partial regularity results for the three-dimensional incompressible Navier-Stokes equation*, supervised by Prof. Luis Caffarelli and Prof. Alexis Vasseur [[slides](/users/jcyang/assets/files/doctoral-slides.pdf)][[pdf](/users/jcyang/assets/files/doctoral.pdf)]
 
 </div>
 </div>

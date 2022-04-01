@@ -1,6 +1,20 @@
 {
     "Talk": [
         {
+            "Title": "Partial regularity results for the three-dimensional incompressible Navier-Stokes equation",
+            "Date": "2022-03-25",
+            "Location": "The University of Texas at Austin (hybrid talk)",
+            "Series": "Ph.D. Defense Talk",
+            "Abstract": "We show a series of works of some regularity results on the incompressible Navier--Stokes equation in dimension three. Using the blow-up method, we estimate the higher regularity in the Lorentz norm for smooth solutions to the Navier--Stokes equation. In particular, we show a second derivative estimate for suitable weak solutions, which improves the currently known regularity. We construct a maximal function associated with geometric objects that we call skewed cylinders, appearing in inviscid flows like the Eulerian cylinders around the Lagrangian trajectories. We also apply the blow-up method to estimate the boundary vorticity, which enables us to achieve an unconditional control of the layer separation of Leray--Hopf solutions from a steady shear flow in a finite periodic channel. <a href='/users/jcyang/assets/files/doctoral-slides.pdf'>[Slides]</a>"
+        },
+        {
+            "Title": "Inviscid Limit and Boundary Layer Separation",
+            "Date": "2021-10-15",
+            "Location": "The University of Texas at Austin (zoom talk)",
+            "Series": "Junior Analysis Seminar",
+            "Abstract": "We discuss the limiting behavior of a Leray-Hopf solution to the Navier-Stokes equation in dimension 2 and 3 as viscosity vanishes and initial velocity profile converges to a constant shear flow. Without further assumption, it is a major open question whether a solution to the Navier-Stokes equation converges to a solution to the Euler equation. In this talk, we will present a new estimate on the discrepency between a Navier-Stokes solution and a static Euler solution albeit the inviscid limit may fail. This is the first unconditional result from the positive side, and the bound is near sharp as suggested by convex integration."
+        },
+        {
             "Title": "New Estimates on the Second Derivatives of the 3D Navier-Stokes Equation",
             "Date": "2021-05-02",
             "Location": "San Francisco State University (zoom talk)",

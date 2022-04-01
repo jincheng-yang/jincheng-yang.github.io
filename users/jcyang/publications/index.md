@@ -18,6 +18,6 @@ title: Jincheng's Website | Publications
 
 ### Thesis
 
-- Undergraduate thesis: *Linear Inviscid Damping of a Shear Flow in a Half Space and in a Finite Channel*, supervised by Prof. Dongsheng Li and Prof. Zhiwu Lin [[slides](/users/jcyang/assets/files/slides.pdf)][[pdf](/users/jcyang/assets/files/bachelor.pdf)]
+- Undergraduate thesis: *Linear Inviscid Damping of a Shear Flow in a Half Space and in a Finite Channel*, supervised by Prof. Dongsheng Li and Prof. Zhiwu Lin [[slides](/users/jcyang/assets/files/bachelor-slides.pdf)][[pdf](/users/jcyang/assets/files/bachelor.pdf)]
 
 </div>

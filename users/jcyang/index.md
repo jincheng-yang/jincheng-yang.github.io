@@ -9,11 +9,7 @@ title: Jincheng's Website | About
 
 # About Me
 
-Hi, I am a fifth-year Ph.D. candidate at [The University of Texas at Austin](https://www.utexas.edu). I major in mathematics, and my research interest includes analysis, partial differential equations, fluid dynamics, including incompressible Euler equations, Navier-Stokes equations, and surface quasi-geostrophic equations. I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student of the Special Class for the Gifted Young before my undergraduate study. 
-
-Apart from mathematics, I also love coding and music.
-
-It is my honor to be co-advised by [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/).
+Hi, I am Jincheng! I will join the [Department of Mathematics](https://mathematics.uchicago.edu) at [The University of Chicago](https://www.uchicago.edu) as a Dickson instructor in Fall 2022. I completed my Ph.D. in Mathematics at [The University of Texas at Austin](https://www.utexas.edu) in March 2022, under the supervision of [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/). My research interests include analysis, partial differential equations, fluid dynamics, including incompressible Euler equations, Navier-Stokes equations, and surface quasi-geostrophic equations. I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student in the Special Class for the Gifted Young before my undergraduate study. 
 
 </div>
 

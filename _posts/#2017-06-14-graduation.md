@@ -7,4 +7,4 @@ comments: true
 
 这里是[论文](/users/jcyang/assets/files/bachelor.pdf)。
 
-这里是[PPT](/users/jcyang/assets/files/slides.pdf)。
+这里是[PPT](/users/jcyang/assets/files/bachelor-slides.pdf)。
