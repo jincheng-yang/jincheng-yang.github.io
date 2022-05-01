@@ -2,11 +2,17 @@
 title: Graduation Recital
 ---
 
-<meta name="viewport" content="width=device-width, initial-scale=0.8">
-<link rel="stylesheet" type="text/css" href="/users/jcyang/css/recital.css">
+<html>
+	<head>
+		<title>{{page.title}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+        <link rel="stylesheet" type="text/css" href="/users/jcyang/css/recital.css">
+    </head>
+
+    <body>
 
 
-# Graduation Piano Recital・畢業鋼琴独奏会
+<h1>Graduation Piano Recital・畢業鋼琴独奏会</h1>
 
 <div style="background-color:#fdf4f9" id="info">
 <div class="content" markdown="1">
@@ -66,3 +72,6 @@ title: Graduation Recital
 </ul>
 </div>
 </footer>
+
+</body>
+</html>
