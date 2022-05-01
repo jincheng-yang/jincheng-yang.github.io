@@ -3,13 +3,13 @@ title: Graduation Recital
 ---
 
 <html>
-	<head>
-		<title>{{page.title}}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=0.8">
-        <link rel="stylesheet" type="text/css" href="/users/jcyang/css/recital.css">
-    </head>
+<head>
+<title>{{page.title}}</title>
+<meta name="viewport" content="width=device-width, initial-scale=0.8">
+<link rel="stylesheet" type="text/css" href="/users/jcyang/css/recital.css">
+</head>
 
-    <body>
+<body>
 
 
 <h1>Graduation Piano Recital・畢業鋼琴独奏会</h1>
