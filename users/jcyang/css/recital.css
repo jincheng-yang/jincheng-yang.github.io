@@ -29,13 +29,17 @@ h1 {
 	font-weight: lighter;
     color: #444;
     text-align: center;
-    padding-top: 4em;
+    padding-top: 20em;
     padding-bottom: 4em;
     padding-left: auto;
     padding-right: auto;
     margin: 0;
     letter-spacing: 0.2em;
     background-color: aliceblue;
+    background-image: url('/users/jcyang/assets/images/recital-wide.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 h2 {
