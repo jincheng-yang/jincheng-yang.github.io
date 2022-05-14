@@ -27,6 +27,7 @@ My general research interest includes the area of analysis, dynamic systems, and
 ### Preprints
 1. Alexis Vasseur, Jincheng Yang: *Boundary Vorticity Estimates for Navier-Stokes and Application to the Inviscid Limit*, preprint (2021). [[arXiv:2110.02426](https://arxiv.org/abs/2110.02426)][[pdf](https://arxiv.org/pdf/2110.02426.pdf)]
 2. Rui Gao, Jincheng Yang, Luhao Zhang: *Optimal Robust Policy for Feature-Based Newsvendor*, submitted (2021) [[Opt-Online](http://www.optimization-online.org/DB_HTML/2021/12/8749.html)][[pdf](http://www.optimization-online.org/DB_FILE/2021/12/8749.pdf)]
+3. Luhao Zhang, Jincheng Yang, Rui Gao: *A Simple Duality Proof for Wasserstein Distributionally Robust Optimization*, submitted (2022) [[arXiv:2205.00362](https://arxiv.org/abs/2205.00362)][[pdf](https://arxiv.org/pdf/2205.00362.pdf)]
 
 ### Journal Articles
 

@@ -12,7 +12,7 @@ title: Graduation Recital
 
 <body>
 
-
+<div id="background"></div>
 <h1>Graduation Piano Recital・畢業鋼琴独奏会</h1>
 
 <div style="background-color:#fdf4f9" id="info">
@@ -26,8 +26,10 @@ title: Graduation Recital
 </div>
 </div>
 
-<div style="background-color:#fcfcfc" id="program">
-<div class="content">
+<div id="program">
+<div class="content" id="program2">
+
+<h3>by Jincheng Yang</h3>
 
 <h2>Program・曲目</h2>
 
