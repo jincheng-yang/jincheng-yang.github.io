@@ -1,5 +1,5 @@
-@import "highlighter/default.css";
-@import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Shippori+Mincho+B1:wght@400;500;600&display=swap');
+/* @import "highlighter/default.css"; */
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Hina+Mincho&family=Shippori+Mincho+B1:wght@400;500;600&display=swap');
 
 body {
     font-family: 'Shippori Mincho B1', serif;
@@ -61,6 +61,10 @@ h2:after {
     border-bottom: 2px solid #BBB; /* This creates the border. Replace black with whatever color you want. */
 }
 
+h3 {
+    display: none;
+}
+
 p {
     font-size: 1.0em;
     line-height: 1.5em;
@@ -119,6 +123,10 @@ p.composer_cn {
 
 #info {
     letter-spacing: 0.1em;
+}
+
+#program {
+    background-color: #fcfcfc;
 }
 
 #address div div ul {
@@ -277,4 +285,91 @@ footer {
     grid-template-rows: 6em;
     grid-template-areas: 
         "logo copyright links";
+}
+
+@media print {
+    p {
+        color: black;
+    }
+
+    h1 {
+        background-image: none;
+        padding: 2em;
+        padding-top: 2em;
+        font-size: 1.5em;
+        margin: 0;
+        padding-bottom: 0em;
+        background-color: white;
+        color: black;
+    }
+
+    #info {
+        display: none;
+    }
+
+    h2 {
+        margin: 0em;
+        padding-top: 0em;
+        padding-bottom: 0em;
+        font-size: 1.2em;
+        color: black;
+    }
+
+    #program {
+        background-color: white;
+    }
+
+    #program2 {
+        margin-top: 0em;
+        margin-bottom: 0em;
+        padding: 1em 10% 2em 10%;
+    }
+
+    #address {
+        display: none;
+    }
+
+    footer {
+        display: none;
+    }
+
+    p.title {
+        font-size: 0.8em;
+        margin-top: 0em;
+    }
+
+    p.translate {
+        font-size: 0.7em;
+        margin-top: 0.2em;
+        margin-bottom: 0em;
+    }
+
+    .composer {
+        font-size: 0.7em;
+        margin-top: 0em;
+    }
+
+    .composer_cn {
+        font-size: 0.7em;
+    }
+    
+    h3 {
+        display: block;
+        font-family: 'Babylonica', cursive;
+        text-align: center;
+        font-size: 1.3em;
+        font-weight: lighter;
+        margin-top: 0.5em;
+        color: black;
+    }
+
+    #background {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-image: url('/users/jcyang/assets/images/recital.jpeg');
+        background-size: cover;
+        opacity: 25%;
+    }
+
 }
