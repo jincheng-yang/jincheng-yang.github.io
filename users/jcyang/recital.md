@@ -21,7 +21,10 @@ title: Graduation Recital
 
 * 📅 &nbsp; May 15, 2022 (Sunday) at 19:30 CDT / 北京時間5月16日周一早上8:30 [[Add]](/users/jcyang/assets/files/recital.ics)
 * 📍 &nbsp; Recital Studio, MRH 2.608, 2406 Robert Dedman Dr.
-* 🔗 &nbsp; Live streaming link will be announced here 24 hours before the recital
+* 🔗 &nbsp; [Click here to join Zoom webinar・加入Zoom网路直播](https://umich.zoom.us/j/99930179689)
+* 🔗 &nbsp; [Join Zoom from browser・使用瀏覽器打开](https://umich.zoom.us/wc/join/99930179689)
+* 🔗 &nbsp; [YouTube](https://youtu.be/kJuV7lO4wJ8)
+
 
 </div>
 </div>
