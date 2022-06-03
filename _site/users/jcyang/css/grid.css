@@ -150,7 +150,6 @@ input {
     width: 1000;
     height: 360;
     position: absolute;
-    top: 1.5em;
     left: 0;
     z-index: -1;
 }

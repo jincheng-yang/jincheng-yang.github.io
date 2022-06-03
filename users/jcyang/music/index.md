@@ -7,14 +7,14 @@ title: Jincheng's Website | Music
 
 # Music
 
-![Photo](/users/jcyang/assets/images/photo6.png){: style="width:300px; float:right; padding-left:80px; max-width:100%"}
+![Photo](/users/jcyang/assets/images/photo8.jpeg){: style="width:300px; float:right; padding-left:80px; max-width:100%"}
 
 
 Math and music are two most important themes of my life. As Hermann von Helmholtz once said, 
 
 > *Mathematics and music, the most sharply contrasted fields of scientific activity which can be found, and yet related, supporting each other, as if to show forth the secret connection which ties together all the activities of our mind, and which leads us to surmise that the manifestations of the artist's genius are but the unconscious expressions of a mysteriously acting rationality.*
 
-I am honored to follow the guidance of my piano instructor, [Prof. Gilmson](https://www.sophia-gilmson.com).
+I am honored to follow the guidance of my piano instructors, [Prof. Gilmson](https://www.sophia-gilmson.com) and [Xinyi Li](https://music.utexas.edu/about/people/xinyi-li).
 
 </div>
 
