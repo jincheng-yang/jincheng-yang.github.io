@@ -30,8 +30,8 @@ Hi, I am Jincheng! I am a Dickson instructor in the [Department of Mathematics](
 <div style="float:right">
 <div style="display:inline" markdown="1">
 
-- Office: PMA 11.130
-- Email: [jcyang@math.utexas.edu](mailto:jcyang@math.utexas.edu)
+<!-- - Office: PMA 11.130 -->
+- Email: [jincheng@uchicago.edu](mailto:jincheng@uchicago.edu)
 - Tel: +1 (512) 317-7231
 
 </div>
@@ -45,13 +45,13 @@ Jincheng Yang (杨 金成)
 Department of Mathematics
 </p>
 <p style="margin:0px; padding:0px">
-The University of Texas at Austin
+The University of Chicago
 </p>
 <p style="margin:0px; padding:0px">
-2515 Speedway Stop C1200
+5734 S University Ave
 </p>
 <p style="margin-top:0px; padding:0px">
-Austin, TX 78712-1202, USA
+Chicago, IL 60637, USA
 </p>
 </div>
 
