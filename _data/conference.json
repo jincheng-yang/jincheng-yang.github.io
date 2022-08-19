@@ -1,12 +1,36 @@
 {
     "Conference": [
         {
+            "Title": "Criticality and Stochasticity in Quasilinear Fluid Systems",
+            "Start": "2022-05-02",
+            "End": "2022-05-06",
+            "Location": "American Institute of Mathematics",
+            "URL": "https://aimath.org/workshops/upcoming/stochasticfluid/",
+            "Type": "conference"
+        },
+        {
+            "Title": "Rigorous analysis of incompressible fluid models and turbulence",
+            "Start": "2022-02-14",
+            "End": "2022-02-18",
+            "Location": "Isaac Newton Institute for Mathematical Science",
+            "URL": "https://www.newton.ac.uk/event/turw02/",
+            "Type": "conference"
+        },
+        {
             "Title": "New Mechanisms for Regularity, Singularity, and Long Time Dynamics in Fluid Equations",
             "Start": "2021-07-26",
             "End": "2021-07-30",
             "Location": "Banff International Research Station",
             "URL": "https://www.birs.ca/events/2021/5-day-workshops/21w5110/",
             "Type": "conference"
+        },
+        {
+            "Title": "Summer Program in Partial Differential Equations 2021",
+            "Start": "2021-05-17",
+            "End": "2021-05-28",
+            "Location": "The University of Texas at Austin",
+            "URL": "https://analysispde.ma.utexas.edu/summer-program-in-partial-differential-equations-2021/",
+            "Type": "summer school"
         },
         {
             "Title": "Virtual Summer Graduate School: Introduction to Water Waves",
