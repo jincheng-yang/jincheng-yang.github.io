@@ -7,7 +7,7 @@ image: false
 ---
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script type="text/javascript" src="/users/jcyang/plugin/math.js"></script>
+<script type="text/javascript" src="{{ site.roooot }}/plugin/math.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -131,7 +131,7 @@ I refer to an [example](https://bl.ocks.org/mbostock/db6b4335bf1662b413e79689101
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.5/math.js"></script>
-<script src='/users/jcyang/plugin/coordinate.js'></script>
-<script src='/users/jcyang/release/phase-portrait.js'></script>
+<script src='{{ site.roooot }}/plugin/coordinate.js'></script>
+<script src='{{ site.roooot }}/release/phase-portrait.js'></script>
 
-Click [here](/users/jcyang/release/phase-portrait.html) for a full screen version.
+Click [here]({{ site.roooot }}/release/phase-portrait.html) for a full screen version.

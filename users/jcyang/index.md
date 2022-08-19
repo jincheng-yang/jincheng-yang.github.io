@@ -5,7 +5,7 @@ title: Jincheng's Website | About
 
 <div class="content" markdown="1">
 
-![Photo](/users/jcyang/assets/images/photo7.jpg){: style="width:200px; float:right; padding-left:80px; max-width:100%"}
+![Photo]({{ site.roooot }}/assets/images/photo7.jpg){: style="width:200px; float:right; padding-left:80px; max-width:100%"}
 
 # About Me
 
@@ -16,8 +16,8 @@ Hi, I am Jincheng! I am a Dickson instructor in the [Department of Mathematics](
 <div style="background:white;display:none">
 <div class="content" markdown="1">
 
-[![You Belong Here](/users/jcyang/assets/images/YouBelongHere.jpg){: width='35%'}](https://cns.utexas.edu/diversity)
-[![You Belong Here Flyer](/users/jcyang/assets/images/YouBelongHereFlyer.svg){: width='60%' style='float:right'}](/users/jcyang/assets/files/YouBelongHereFlyer.pdf)
+[![You Belong Here]({{ site.roooot }}/assets/images/YouBelongHere.jpg){: width='35%'}](https://cns.utexas.edu/diversity)
+[![You Belong Here Flyer]({{ site.roooot }}/assets/images/YouBelongHereFlyer.svg){: width='60%' style='float:right'}]({{ site.roooot }}/assets/files/YouBelongHereFlyer.pdf)
 
 </div>
 </div>
@@ -75,7 +75,7 @@ Austin, TX 78712-1202, USA
 </div>
 </div>
 
-<div style="background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/users/jcyang/assets/images/gallary.jpg');background-size:cover;background-position:center">
+<div style="background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('{{ site.roooot }}/assets/images/gallary.jpg');background-size:cover;background-position:center">
 <div class="content">
 
 <h6 style="color: #EEE">Gallary</h6>
@@ -87,7 +87,7 @@ Austin, TX 78712-1202, USA
 
 	<div class="thumb">
 	<a href="{{ post.url }}.html" title="{{ post.title }}">
-		<div class="thumbpic" style="background-image:url('/users/jcyang/assets/images/thumbnails/{{ post.thumb }}')"></div>
+		<div class="thumbpic" style="background-image:url('{{ site.roooot }}/assets/images/thumbnails/{{ post.thumb }}')"></div>
 	</a>
 	<h5>{{ post.date | date_to_string }}</h5>
 	<a href="{{ post.url }}.html" title="{{ post.title }}">

@@ -7,7 +7,7 @@ title: Jincheng's Website | Music
 
 # Music
 
-[![Photo](/users/jcyang/assets/images/photo8.jpeg){: style="width:300px; float:right; padding-left:80px; max-width:100%"}](https://youtu.be/RlmiLB_sjlI)
+[![Photo]({{ site.roooot }}/assets/images/photo8.jpeg){: style="width:300px; float:right; padding-left:80px; max-width:100%"}](https://youtu.be/RlmiLB_sjlI)
 
 
 Math and music are two most important themes of my life. As Hermann von Helmholtz once said, 

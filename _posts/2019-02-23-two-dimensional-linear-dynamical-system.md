@@ -173,4 +173,4 @@ $.$
 
 </div>
 
-<script type="text/javascript" src="/users/jcyang/assets/js/2d-linear-dynamical-system.js"></script>
+<script type="text/javascript" src="{{ site.roooot }}/assets/js/2d-linear-dynamical-system.js"></script>

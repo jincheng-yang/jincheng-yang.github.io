@@ -7,7 +7,7 @@ title: Graduation Recital
 <title>{{page.title}}</title>
 <meta name="viewport" content="width=device-width, initial-scale=0.8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="/users/jcyang/css/recital.css">
+<link rel="stylesheet" type="text/css" href="{{ site.roooot }}/css/recital.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@ title: Graduation Recital
 <div class="content" markdown="1">
 <blockquote>You are invited to a piano recital of Jincheng Yang.</blockquote>
 
-* 📅 &nbsp; May 15, 2022 (Sunday) at 19:30 CDT / 北京時間5月16日周一早上8:30 [[Add]](/users/jcyang/assets/files/recital.ics)
+* 📅 &nbsp; May 15, 2022 (Sunday) at 19:30 CDT / 北京時間5月16日周一早上8:30 [[Add]]({{ site.roooot }}/assets/files/recital.ics)
 * 📍 &nbsp; Recital Studio, MRH 2.608, 2406 Robert Dedman Dr.
 * 🎥 &nbsp; Recording: [bilibili](https://www.bilibili.com/video/BV17g411o7CD) &nbsp; [YouTube](https://youtu.be/RlmiLB_sjlI)
 

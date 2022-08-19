@@ -33,37 +33,37 @@ This is almost like the "inverse function" of the distribution function. It is a
 One can take the following example to understand the construction of the distribution function and decreasing rearrangement. Assume the following is the graph of $f = \ind{S _1} + 4 \ind{S _2} + 2 \ind{S _3}$ where $\mu (S _1) = \mu (S _2) = \mu (S _3) = 1$.
 
 <svg class='center-image' height='300' viewBox='0 0 250 200'>
-    <image x='0' y='0' width='238' height='189' href='/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/f(x).svg'/>
+    <image x='0' y='0' width='238' height='189' href='{{ site.roooot }}/assets/images/blog/2020-04-14-lorentz-space/f(x).svg'/>
 </svg>
 
-<!-- ![f(x)](/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/f(x).svg){:width="40%" .center-image} -->
+<!-- ![f(x)]({{ site.roooot }}/assets/images/blog/2020-04-14-lorentz-space/f(x).svg){:width="40%" .center-image} -->
 
 To find its distribution function, rotate by 90 degrees and then find the measure of superlevel set at each level $\alpha$.
 
 <svg class='center-image' height='630' viewBox='0 0 200 420'>
     <g transform="rotate(90, 300, 300)">
-        <image x='0' y='410' width="238" height="189" href='/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/f(x).svg'/>
+        <image x='0' y='410' width="238" height="189" href='{{ site.roooot }}/assets/images/blog/2020-04-14-lorentz-space/f(x).svg'/>
     </g>
-    <image x='22' y='230' width="179" height="178" href='/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/df(a).svg'/>
+    <image x='22' y='230' width="179" height="178" href='{{ site.roooot }}/assets/images/blog/2020-04-14-lorentz-space/df(a).svg'/>
 </svg>
 
-<!-- ![f(x)](/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/f(x).svg){:width="40%" .center-image .rotate90}
+<!-- ![f(x)]({{ site.roooot }}/assets/images/blog/2020-04-14-lorentz-space/f(x).svg){:width="40%" .center-image .rotate90}
 
-![df(a)](/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/df(a).svg){:width="30%" .center-image} -->
+![df(a)]({{ site.roooot }}/assets/images/blog/2020-04-14-lorentz-space/df(a).svg){:width="30%" .center-image} -->
 
 Finally, rotate back and flip the distribution function to obtain decreasing rearrangement.
 
 <svg class='center-image' width='100%' viewBox='0 0 570 200'>
-    <image x='0' y='0' width="238" height="189" href='/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/f(x).svg'/>
+    <image x='0' y='0' width="238" height="189" href='{{ site.roooot }}/assets/images/blog/2020-04-14-lorentz-space/f(x).svg'/>
     <g transform="rotate(-90, 0, 0)">
-        <image x='-168' y='230' width="179" height="178" href='/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/df(a).svg'/>
+        <image x='-168' y='230' width="179" height="178" href='{{ site.roooot }}/assets/images/blog/2020-04-14-lorentz-space/df(a).svg'/>
     </g>
-    <image x='420' y='-2' width="147" height="177" href='/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/fs(l).svg'/>
+    <image x='420' y='-2' width="147" height="177" href='{{ site.roooot }}/assets/images/blog/2020-04-14-lorentz-space/fs(l).svg'/>
 </svg>
 
-<!-- ![f(x)](/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/f(x).svg){:width="40%"}
-![df(a)](/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/df(a).svg){:width="30%" .rotate270}
-![f*(l)](/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/fs(l).svg){:width="25%"} -->
+<!-- ![f(x)]({{ site.roooot }}/assets/images/blog/2020-04-14-lorentz-space/f(x).svg){:width="40%"}
+![df(a)]({{ site.roooot }}/assets/images/blog/2020-04-14-lorentz-space/df(a).svg){:width="30%" .rotate270}
+![f*(l)]({{ site.roooot }}/assets/images/blog/2020-04-14-lorentz-space/fs(l).svg){:width="25%"} -->
 
 Compare $f$ and $f ^*$, it looks like just push all the level sets to the left onto the $\alpha$ axis, and end up with something decreasing. 
 
@@ -164,7 +164,7 @@ $$
 \end{align*}
 $$
 
-![Decomposition](/users/jcyang/assets/images/blog/2020-04-14-lorentz-space/decomp.svg){: .center-image}
+![Decomposition]({{ site.roooot }}/assets/images/blog/2020-04-14-lorentz-space/decomp.svg){: .center-image}
 
 Now we also split the integral \eqref{split} dyadically,
 
