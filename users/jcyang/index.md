@@ -75,7 +75,6 @@ Austin, TX 78712-1202, USA
 </div>
 </div>
 
-
 <div style="background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/users/jcyang/assets/images/gallary.jpg');background-size:cover;background-position:center">
 <div class="content">
 
