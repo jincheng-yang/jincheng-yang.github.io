@@ -35,7 +35,7 @@ The secret password is a four-letter string without spaces. Your job is to find 
 
 <p id="record"></p>
 
-I wrote a [Matlab program]({{ site.roooot }}/assets/files/guessLetter.zip) to solve this question in as few steps as possible, based on the principle that one should maximize the negentropy of each guess. 
+I wrote a [Matlab program]({{ site.baseurl }}/assets/files/guessLetter.zip) to solve this question in as few steps as possible, based on the principle that one should maximize the negentropy of each guess. 
 
 <script>
 	var count = 1;

@@ -150,7 +150,7 @@ $$\begin{align*}
     \sup _{x} |\sin(5 x) - \sin (x)| \approx 1.8157.
 \end{align*}$$
 
-<img src='{{ site.roooot }}/assets/images/blog/2020-01-12-Sup-Distance-Between-Sines/sin2x_sin5x.png' width='100%'>
+<img src='{{ site.baseurl }}/assets/images/blog/2020-01-12-Sup-Distance-Between-Sines/sin2x_sin5x.png' width='100%'>
 
 For any other $\alpha$, $\lbrace\gamma k\rbrace \operatorname{mod} 1 = \lbrace 0, \frac1q, \frac2q, \dots, \frac{q-1}q \rbrace$ for some $q \neq 3$, which must contain an element in $[\frac25, \frac35]$, so $\lvert\sin (\gamma k \pi)\rvert \ge \sin\left(\dfrac{5\pi}2\right) = \sqrt{\dfrac58+\dfrac{\sqrt5}8} \approx 0.9511$ for some $k$. To sum up, for $\alpha > \beta > 0$,
 

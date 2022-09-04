@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Guiguzi Problem</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/~yang/css/grid.css">
+		<!-- link to fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Exo:300,600|Roboto:400|Roboto+Condensed:300|Dancing+Script:400|PT+Serif:400,400i|Palanquin+Dark:400|Noto+Serif:400,400i" rel="stylesheet">
+		<!-- JavaScrips -->
+		<script type="text/javascript" src="/~yang/plugin/drag-and-drop.js"></script>
+		
+			<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      },
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+    },
+    jax: ["input/TeX", "output/CommonHTML"]
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS_CHTML">
+</script>
+
+		
+		
+
+		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108717380-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-108717380-1');
+		</script>
+	</head>
+
+	<body>
+
+		<canvas id="myCanvas" width="1000" height="360" >
+			Your browser does not support the canvas element.
+		</canvas>
+
+		<div id="mt">
+			<p id="name">Jincheng Yang</p>
+			<p id="institute">The University of Chicago</p>
+		</div>
+
+		<nav>
+			<div id="nav-container">
+
+				<div class = "dropdown-block" id = "academic-dropdown-block">
+					<a href="/~yang/academic" ondrop="drop(event)" ondragover="allowDrop(event)" id="academic">Academic &#9662;</a>
+	
+					<div class= "dropdown" id="academic-dropdown">
+						<a class = "dropdown-first" href="/~yang/academic#publications">Publications</a>
+						<a href="/~yang/academic#talks">Talks</a>
+						<a href="/~yang/academic#blog">Blog</a>
+						<a class = "dropdown-last" href="/~yang/academic#conferences">Conferences</a>
+					</div>
+				</div>
+
+				<a href="https://github.com/teddyyjc/curriculum-vitae/raw/master/main.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="cv">Curriculum Vitae</a>
+				
+				<a id = "icon" href="/~yang/" draggable="true" ondragstart="drag(event)" title="Home Page"></a>
+
+				<a href="/~yang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="teaching">Teaching</a>
+
+				<a href="/~yang/music" ondrop="drop(event)" ondragover="allowDrop(event)" id="music">Music</a>
+
+				<div class = "dropdown-block" id = "menu-dropdown-block">
+					<a href="#" id="menu">Menu &#9662;</a>
+	
+					<div class= "dropdown" id="menu-dropdown">
+						<a class="dropdown-first" href="/~yang/academic">Academic</a>
+						<a href="https://github.com/teddyyjc/curriculum-vitae/raw/master/main.pdf">Curriculum Vitae</a>
+						<a href="/~yang/academic#publications">Publications</a>
+						<a href="/~yang/teach">Teaching</a>
+						<a class="dropdown-last" href="/~yang/music">Music</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div>
+	<div class="content">
+		
+  <div style="display:none">
+    
+    %--Paired Delimiters--
+    $
+    \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\ang}[1]{\left\langle #1 \right\rangle}
+    \newcommand{\bkt}[1]{\left\lbrack #1 \right\rbrack}
+    \newcommand{\nor}[1]{\left\lVert #1 \right\rVert}
+    \newcommand{\pth}[1]{\left( #1 \right)}
+    \newcommand{\set}[1]{\left\lbrace #1 \right\rbrace}
+    \newcommand{\abset}[1]{\abs{\set{#1}}}
+    \newcommand{\ptset}[1]{\pth{\set{#1}}}
+    $
+
+    %--Operators--
+    $
+    \newcommand{\grad}{\nabla}
+    \newcommand{\La}{\Delta}
+    \renewcommand{\div}{\operatorname{div}}
+    \newcommand{\curl}{\operatorname{curl}}
+    \newcommand{\tr}{\operatorname{tr}}
+    \newcommand{\Hess}{\operatorname{Hess}}
+    \newcommand{\mm}{\mathcal{M}}
+    \newcommand{\inv}{^{-1}}
+    \newcommand{\tensor}{\otimes}
+    \newcommand{\cross}{\times}
+    \newcommand{\weak}[1]{\xrightharpoonup{#1}}
+    $
+
+    %--Notations--
+    $
+    \newcommand{\Vol}{\mathrm{Vol}}
+    \newcommand{\loc}{\mathrm{loc}}
+    \renewcommand{\dim}{\mathrm{dim}}
+    \newcommand{\Span}{\mathrm{Span}}
+    \newcommand{\diam}{\mathrm{diam}}
+    \newcommand{\Id}{\mathrm{Id}}
+    \newcommand{\Lip}{\mathrm{Lip}}
+    \newcommand{\dist}{\mathrm{dist}}
+    \newcommand{\inv}{^{-1}}
+    $
+
+    %--Algebra--
+    $
+    \newcommand{\hfsq}[1]{\frac{\abs{#1} ^2}{2}}
+    $
+
+    %--Sets--
+    $
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\RR}[1]{\R ^{#1}}
+    \newcommand{\Rd}{\RR d}
+    \newcommand{\Rn}{\RR n}
+    \renewcommand{\S}{\mathbb{S}}
+    \renewcommand{\Z}{\mathbb{Z}}
+    \newcommand{\T}{\mathbb{T}}
+    \newcommand{\ssubset}{\subset \subset}
+    \newcommand{\spt}{\operatorname{spt}}
+    \newcommand{\supp}{\operatorname{supp}}
+    \newcommand{\diam}{\mathrm{diam}}
+    \newcommand{\diag}{\operatorname{diag}}
+    \renewcommand{\dim}{\mathrm{dim}}
+    \newcommand{\dimH}{\mathrm{dim} _\mathcal{H}}
+    \newcommand{\Sing}{\mathrm{Sing}}
+    \newcommand{\Vol}{\mathrm{Vol}}
+    \newcommand{\inds}[1]{\mathbf1_{\set{#1}}}
+    \newcommand{\ind}[1]{\mathbf1_{#1}}
+    $
+    
+    %--Summations--
+    $
+    \newcommand{\SUM}[3]{\sum \cnt{#1}{#2}{#3}}
+    \newcommand{\PROD}[3]{\prod \cnt{#1}{#2}{#3}}
+    \newcommand{\cnt}[3]{ _{#1 = #2} ^{#3} }
+    \newcommand{\seq}[2]{\set{#1 _{#2}} _{#2}}
+    \newcommand{\seqi}[2]{\set{#1 _{#2}} \cnt{#2}1i}
+    $
+
+    %--Superscript and Subscript
+    $
+    \newcommand{\pp}[1]{^{(#1)}}
+    \newcommand{\bp}[1]{^{(#1)}}
+    \newcommand{\pps}[2][1]{^{#2 + #1}}
+    \newcommand{\bps}[2][1]{_{#2 + #1}}
+    \newcommand{\pms}[2][1]{^{#2 - #1}}
+    \newcommand{\bms}[2][1]{_{#2 - #1}}
+    $
+
+
+    %--Notations--
+    $
+    \newcommand{\loc}{\mathrm{loc}}
+    \newcommand{\Span}{\operatorname{Span}}
+    \newcommand{\argmin}{\operatorname{argmin}}
+    \newcommand{\argmax}{\operatorname{argmax}}
+    \newcommand{\osc}{\operatorname{osc}}
+    \newcommand{\Id}{\mathrm{Id}}
+    \newcommand{\Lip}{\operatorname{Lip}}
+    \newcommand{\Leb}{\operatorname{Leb}}
+    \newcommand{\PV}{\mathrm{P.V.}}
+    \newcommand{\dist}{\operatorname{dist}}
+    \newcommand{\at}[1]{\bigr\rvert _{#1}}
+    \newcommand{\At}[1]{\biggr\rvert _{#1}}
+    \newcommand{\half}{\frac12}
+    $
+
+
+    %--Text--
+    $
+    \newcommand{\inn}{\text{ in }}
+    \newcommand{\onn}{\text{ on }}
+    \renewcommand{\ae}{\text{ a.e. }}
+    \newcommand{\st}{\text{ s.t. }}
+    \newcommand{\forr}{\text{ for }}
+    \newcommand{\as}{\text{ as }}
+    $
+
+    %--Differential--
+    $
+    \newcommand{\d}{\mathop{\kern0pt\mathrm{d}}\!{}}
+    \newcommand{\dt}{\d t}
+    \newcommand{\dx}{\d x}
+    \newcommand{\dy}{\d y}
+    \newcommand{\ptil}{\partial}
+    \newcommand{\pt}{\ptil _t}
+    \newcommand{\pfr}[2]{\frac{\partial #1}{\partial #2}}
+    \newcommand{\dfr}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+    \newcommand{\ddt}{\dfr{}t}
+    \newcommand{\pthf}[2]{\pth{\frac{#1}{#2}}}
+    $
+    
+    %--Integral--
+    $
+    \newcommand{\intR}{\int _0 ^\infty}
+    \newcommand{\intRn}{\int _{\Rn}}
+    \newcommand{\intRd}{\int _{\Rd}}
+    \newcommand{\fint}{-\!\!\!\!\!\!\int}
+    \newcommand{\intset}[1]{\int _{\set{#1}}}
+    $
+
+    %--Greek--
+    $
+    \newcommand{\e}{\varepsilon}
+    \newcommand{\vp}{\varphi}
+    $
+
+    %--Norm--
+    $
+    \newcommand{\nmL}[2]{\nor{#2} _{L ^#1}}
+    $
+  </div>
+
+
+
+
+<h1>Research Blog</h1>
+
+<div class="post">
+
+<h2>Guiguzi Problem</h2>
+
+<p class="meta">2020, October 15</p>
+
+  <h3 id="statement-of-the-problem">Statement of the Problem</h3>
+
+<p>Cindy chose two different natural numbers between $2$ and $99$. She told Alice the sum and then she told Bob the product, then she left. And the following is a dialogue between Alice and Bob.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P1)</code> Alice: I don’t know the two numbers, but <code class="language-plaintext highlighter-rouge">(P2)</code> I know you don’t know either.</p>
+</blockquote>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P3)</code> Bob: I didn’t know, but now I know.</p>
+</blockquote>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P4)</code> Alice: Now I know, too.</p>
+</blockquote>
+
+<p>What are the numbers?</p>
+
+<h3 id="set-theory">Set Theory</h3>
+
+<p>First we reformulate this question using the language of set theory.</p>
+
+<p>Let $D = \{(a, b) \in \mathbb N ^2: 1 &lt; a &lt; b &lt; 100\},$ and</p>
+
+\[\begin{aligned}
+    s : D &amp;\to \mathbb N &amp; p: D &amp;\to \mathbb N \\
+    (a, b) &amp;\to a + b &amp; (a, b) &amp;\to a \cdot b.
+\end{aligned}\]
+
+<p>Suppose Alice was told the sum is $x$ and Bob was told the product is $y$.</p>
+
+<p>Denote $D _A = s ^{-1} (x)$ and $D _B = p ^{-1} (y)$. These are private informations for Alice and Bob. Before the dialogue starts, the public information is just $(a, b)$ belongs to the set $D$, $a + b$ belongs to $X = s (D)$, and $a \cdot b$ belongs to $Y = p (D)$.</p>
+
+<p>Let’s rewind the dialogue.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P1)</code> Alice: I don’t know the two numbers.</p>
+</blockquote>
+
+<p>This is the first piece of public information: $D _A$ has more than one element, so $x$ must belong to</p>
+
+\[\begin{aligned}
+    X _1 := \{ m \in X: |s ^{-1} (m)| &gt; 1 \}.
+\end{aligned}\]
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P2)</code> Alice: but I know you don’t know either.</p>
+</blockquote>
+
+<p>This means she is sure that for any $(a, b) \in D _A$, $p (a, b)$ is in the following set,</p>
+
+\[\begin{aligned}
+    Y _1 := \{ n \in Y: |p ^{-1} (n)| &gt; 1 \}.
+\end{aligned}\]
+
+<p>So <code class="language-plaintext highlighter-rouge">(P2)</code> means</p>
+
+\[\begin{aligned}
+    D _A = s ^{-1} (x) \subset p ^{-1} (Y _1).
+\end{aligned}\]
+
+<p>This provides the second piece of information, $x$ must be inside</p>
+
+\[\begin{aligned}
+    X _2 = \{ m \in X _1: s ^{-1} (m) \subset p ^{-1} (Y _1) \},
+\end{aligned}\]
+
+<p>so after this step, the public informations are $(a, b)$ and $y$ belong to</p>
+
+\[\begin{aligned}
+    D _2 = s ^{-1}(X _2), \qquad Y _2 = p(D _2).
+\end{aligned}\]
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P3)</code> Bob: Now I know.</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">(P3)</code> means</p>
+
+\[\begin{aligned}
+    |D _2 \cap D _B| = 1.
+\end{aligned}\]
+
+<p>This provides a third information, $y$ must be inside</p>
+
+\[\begin{aligned}
+    Y _3 = \{n \in Y _2: |D _2 \cap p ^{-1} (n)| = 1 \}.
+\end{aligned}\]
+
+<p>So $(a, b)$ and $x$ must be inside</p>
+
+\[\begin{aligned}
+    D _3 = D _2 \cap p ^{-1} (Y _3), \qquad X _3 = s (D _3).
+\end{aligned}\]
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P4)</code> Alice: Now I know, too.</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">(P4)</code> means</p>
+
+\[\begin{aligned}
+    |D _3 \cap D _A| = 1.
+\end{aligned}\]
+
+<p>This provides the last information, $x$ must be inside</p>
+
+\[\begin{aligned}
+    X _4 = \{ m \in X _3: |D _3 \cap s ^{-1} (m)| = 1\}.
+\end{aligned}\]
+
+<p>and $(a, b)$ and $y$ are inside</p>
+
+\[\begin{aligned}
+    D _4 = D _3 \cap s ^{-1} (X _4), \qquad Y _4 = s (D _4).
+\end{aligned}\]
+
+<p>After this formulation, we provide two ways to solve it: either by math, or by coding.</p>
+
+<h3 id="number-theory">Number Theory</h3>
+
+<p>Now we use the number theory to determine each set.</p>
+
+<p>Start from $X$ and $Y$, clearly</p>
+
+\[\begin{aligned}
+    X = \{ m \in \mathbb N: 5 \le m \le 197 \}.
+\end{aligned}\]
+
+<p>$Y$ is hard to characterise, so we just let it be. From the first public information,</p>
+
+\[\begin{aligned}
+    X _1 := \{ m \in \mathbb N: 5 \le m \le 197, |s ^{-1} (m)| &gt; 1 \},
+\end{aligned}\]
+
+<p>$x$ can be separated as the sums in at least two ways, so $x$ cannot be $5 = 2 + 3, 6 = 2 + 4, 196 = 97 + 99, 197 = 98 + 99$, which can only be uniquely decomposed as sums. Therefore</p>
+
+\[\begin{aligned}
+    X _1 := \{ m \in \mathbb N: 7 \le m \le 195 \}.
+\end{aligned}\]
+
+<p>Now for $Y _1$, one possible type of $n \notin Y _1$ that can only be uniquely decomposed are the product of prime numbers, so if we call</p>
+
+\[\begin{aligned}
+    Y _1 ^* := \{ p _1 \cdot p _2: p _1, p _2 \le 99 \text{ are prime} \}
+\end{aligned}\]
+
+<p>we have $Y _1 ^* \cap Y _1 = \varnothing$. So in $X _1$ we can exclude most even numbers (they can be expressed as a sum of primes by the famous Goldbach’s Conjecture) and also the sum of 2 and odd prime number. This leaves us with</p>
+
+\[\begin{aligned}
+    X _2 \subset \{
+        11, 17, 23, 27, 29, 35, 37, 41, 47, 51, 53, 57, 59, 65, 67, 71, 77, 79, 83, 87, 89, 93, 95, 97, \dots
+    \}
+\end{aligned}\]
+
+<p>We can also eliminate the ones that are too large to have alternative choices. The product of anything with large prime numbers can only have one possibility, if we call</p>
+
+\[\begin{aligned}
+    Y _2 ^* := \{ p \cdot m: 50 \le p \le 99 \text{ is prime}, 2 \le m \le 99 \}
+\end{aligned}\]
+
+<p>we have $Y _2 ^* \cap Y _1 = \varnothing$.</p>
+
+<p>Every number greater than $55$ can be written as the sum of a prime number between $50$ and $99$ and something else:</p>
+
+\[\begin{aligned}
+    n &amp;= 53 + (n - 53), \qquad 55 \le n \le 152, \\
+    n &amp;= 97 + (n - 97), \qquad 152 \le n \le 195.
+\end{aligned}\]
+
+<p>Therefore every element in $X _1$ is smaller than $55$, thus</p>
+
+\[\begin{aligned}
+    X _2 \subset \{
+        11, 17, 23, 27, 29, 35, 37, 41, 47, 51, 53
+    \}.
+\end{aligned}\]
+
+<p>We almost have equality here because every summation decomposition of numbers here must be 2 plus a composite number, or even number plus odd number. Their product always have alternative expression. The only exception is $51 = 17 + 34$, $17 \times 34$ have no other decomposition because $17$ is prime and half of $34$, and we only have this one case. So</p>
+
+\[\begin{aligned}
+    X _2 = \{
+        11, 17, 23, 27, 29, 35, 37, 41, 47, 53
+    \}.
+\end{aligned}\]
+
+<p>Now we think about elements in $Y _3$. For $n$ in $Y _3$, it has more than one way of product decomposition, but only one decomposition has sum in $X _2$. One possibility is</p>
+
+\[\begin{aligned}
+    Y _3 ^* = \{
+        2 ^k \cdot p: 2 \le k \le 5, p \text{ is prime}, 2 ^k + p \in X _2
+    \}.
+\end{aligned}\]
+
+<p>Then if $n = 2 ^k \cdot p$, $2 ^k + p \in X _2$, so $n \in Y _2$. Moreover, any other product decomposition of $2 ^k \cdot p$ will be the product of even numbers, so their sum is even and cannot be inside $X _2$. Therefore $Y _3 ^* \subset Y _3$. Let’s write out the elements in $Y _3 ^*$:</p>
+
+\[\begin{aligned}
+    Y _3 ^* = \{
+        &amp;2 ^3 \cdot 3, \\
+        &amp;2 ^2 \cdot 13, \\
+        &amp;2 ^2 \cdot 19, 2 ^4 \cdot 7, \\
+        &amp;2 ^2 \cdot 23, 2 ^3 \cdot 19, 2 ^4 \cdot 11, \\
+        &amp;2 ^4 \cdot 13, \\
+        &amp;2 ^2 \cdot 31, 2 ^4 \cdot 19, 2 ^5 \cdot 3, \\
+        &amp;2 ^3 \cdot 29, 2 ^5 \cdot 5, \\
+        &amp;2 ^2 \cdot 37, \\
+        &amp;2 ^2 \cdot 43, 2 ^4 \cdot 31, \\
+        &amp;2 ^4 \cdot 37
+    \}.
+\end{aligned}\]
+
+<p>Another possibility is</p>
+
+\[\begin{aligned}
+    Y _3 ^{**} = \{
+        2 ^k \cdot p ^l: p = 3 \text{ or } 5, l \ge 2, 2 ^k + 3 ^l \in X _2 
+    \} \setminus \{ 2 ^3 \cdot 3 ^2, 2 \cdot 5 ^3 \}.
+\end{aligned}\]
+
+<p>Then if $n = 2 ^k \cdot p ^l$, $2 ^k + p ^l \in X _2$, so $n \in Y _2$. Moreover, any other product decomposition of $2 ^k \cdot p ^l$ will either be the product of even numbers, or a product of multiple of $p$, so their sum is either even or multiple of $p$ and cannot be inside $X _2$ (the only exceptions are $27 = (2 ^3 \cdot 3) + 3$ and $35 = (2 \cdot 5) + 5 ^2$). Therefore $Y _3 ^{**} \subset Y _3$. It is</p>
+
+\[\begin{aligned}
+    Y _3 ^{**} = \{
+        &amp;2 ^1 \cdot 3 ^2, \\
+        &amp;2 ^1 \cdot 5 ^2, \\
+        &amp;2 ^1 \cdot 3 ^3, 2 ^2 \cdot 5 ^2, \\
+        &amp;2 ^3 \cdot 3 ^3, \\
+        &amp;2 ^5 \cdot 3 ^2, 2 ^4 \cdot 5 ^2
+    \}.
+\end{aligned}\]
+
+<p>A third possibility is</p>
+
+\[\begin{aligned}
+    Y _3 ^{***} = \{
+        p \cdot k: p \ge 27, p + k \in X _2 
+    \}.
+\end{aligned}\]
+
+<p>Similar as before, $Y _3 ^{\ast\ast\ast} \subset Y _3$, because all other product decomposition of $p \cdot k$ will involve a number no less than $2 p \ge 54$, and the sum will be greater than 53. In particular, $Y _3 ^{\ast\ast\ast}$ include</p>
+
+\[\begin{aligned}
+    Y _3 ^{***} \supset \{
+        &amp;29 \cdot 6, 31 \cdot 4, \\
+        &amp;29 \cdot 8, 31 \cdot 6, \\
+        &amp;29 \cdot 12, 31 \cdot 10, \\
+        &amp;29 \cdot 18, 31 \cdot 16, \\
+        &amp;29 \cdot 24, 31 \cdot 22
+    \}.
+\end{aligned}\]
+
+<p>Therefore,</p>
+
+\[\begin{aligned}
+    Y _3 \supset Y _3 ^* \cup Y _3 ^{**} \cup Y _3 ^{***} \supset \{
+        &amp;2 ^1 \cdot 3 ^2, 2 ^3 \cdot 3, \\
+        &amp;2 ^2 \cdot 13, \\
+        &amp;2 ^2 \cdot 19, 2 ^4 \cdot 7, \\
+        &amp;2 ^2 \cdot 23, 2 ^3 \cdot 19, 2 ^4 \cdot 11, 2 ^1 \cdot 5 ^2\\
+        &amp;2 ^4 \cdot 13, 2 ^1 \cdot 3 ^3, 2 ^2 \cdot 5 ^2\\
+        &amp;2 ^2 \cdot 31, 2 ^4 \cdot 19, 2 ^5 \cdot 3, 2 ^3 \cdot 3 ^3, 29 \cdot 4\\
+        &amp;2 ^3 \cdot 29, 2 ^5 \cdot 5, 31 \cdot 6\\
+        &amp;2 ^2 \cdot 37, 2 ^5 \cdot 3 ^2, 2 ^4 \cdot 5 ^2, 29 \cdot 12, 31 \cdot 10\\
+        &amp;2 ^2 \cdot 43, 2 ^4 \cdot 31, 29 \cdot 18\\
+        &amp;2 ^4 \cdot 37, 29 \cdot 24, 31 \cdot 22
+    \}.
+\end{aligned}\]
+
+<p>Finally we discuss $X _4$. From the above we can see that other than $m = 17$, we always have</p>
+
+\[\begin{aligned}
+    |s ^{-1} (m) \cap D _3| \ge 2.
+\end{aligned}\]
+
+<p>So $x = 17$. The numbers are $4$ and $13$. The product $y = 52$.</p>
+
+<h3 id="algorithm">Algorithm</h3>
+
+<p>Python has a set of build-in set-theory functions. We can do this completely without the knowledge of number theory.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">D</span> <span class="o">=</span> <span class="p">{(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)}</span>
+</code></pre></div></div>
+
+<p>Define the summation and multiplication maps.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tup</span><span class="p">:</span> <span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">p</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tup</span><span class="p">:</span> <span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Define the image operator. We also need to keep track of the preimage.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># image(fun, dom) will generate the image of a function as a dictionary 
+# and record the information of preimage at the same time: a key is an
+# element in the image, and its value is the preimage set of this key
+</span>
+<span class="k">def</span> <span class="nf">image</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">dom</span><span class="p">):</span>
+    <span class="n">ima</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([])</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dom</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">ima</span><span class="p">:</span>
+            <span class="n">ima</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">ima</span><span class="p">[</span><span class="n">f</span><span class="p">].</span><span class="n">union</span><span class="p">({</span><span class="n">d</span><span class="p">})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ima</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">ima</span>
+</code></pre></div></div>
+
+<p>Then we start. Initial public information:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">image</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">image</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">P1</code> and <code class="language-plaintext highlighter-rouge">P2</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X1</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span> <span class="p">:</span> <span class="n">X</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">m</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">Y1</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span> <span class="p">:</span> <span class="n">Y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">D1</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y1</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">Y1</span><span class="p">[</span><span class="n">n</span><span class="p">]}</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X2</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span> <span class="p">:</span> <span class="n">X1</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X1</span> <span class="k">if</span> <span class="n">X1</span><span class="p">[</span><span class="n">m</span><span class="p">].</span><span class="n">issubset</span><span class="p">(</span><span class="n">D1</span><span class="p">)}</span>
+<span class="n">D2</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X2</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">X2</span><span class="p">[</span><span class="n">m</span><span class="p">]}</span>
+<span class="n">Y2</span> <span class="o">=</span> <span class="n">image</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">X2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[11, 17, 23, 27, 29, 35, 37, 41, 47, 53]
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">P3</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Y3</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span> <span class="p">:</span> <span class="n">Y2</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y2</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">Y2</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">D3</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y3</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">Y3</span><span class="p">[</span><span class="n">n</span><span class="p">]}</span>
+<span class="n">X3</span> <span class="o">=</span> <span class="n">image</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">D3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">P4</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X4</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span> <span class="p">:</span> <span class="n">X3</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X3</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">X3</span><span class="p">[</span><span class="n">m</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">D4</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X4</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">X4</span><span class="p">[</span><span class="n">m</span><span class="p">]}</span>
+<span class="n">Y4</span> <span class="o">=</span> <span class="n">image</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">X4</span><span class="p">,</span> <span class="n">Y4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>({17: {(4, 13)}}, {52: {(4, 13)}})
+</code></pre></div></div>
+
+<hr />
+<p>Download this page as <a href="/~yang/assets/files/jupyter/guiguzi.ipynb">Jupyter Notebook</a>.</p>
+
+<h3 id="swift-code">Swift Code</h3>
+
+<p>As a practice of swift’s basic language, let’s realize this algorithm via swift.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">N</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">var</span> <span class="nv">D</span> <span class="o">=</span> <span class="kt">Set</span><span class="p">(</span><span class="kt">Array</span><span class="p">(</span><span class="mi">2</span><span class="o">..&lt;</span><span class="kt">N</span><span class="p">)</span><span class="o">.</span><span class="n">flatMap</span> <span class="p">{</span> <span class="n">a</span> <span class="k">in</span>
+                <span class="kt">Array</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="o">...</span><span class="kt">N</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{[</span><span class="n">a</span><span class="p">,</span> <span class="nv">$0</span><span class="p">]}</span>
+            <span class="p">})</span>
+
+<span class="k">let</span> <span class="nv">s</span> <span class="o">=</span> <span class="p">{(</span><span class="nv">tuple</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="k">in</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+<span class="k">let</span> <span class="nv">p</span> <span class="o">=</span> <span class="p">{(</span><span class="nv">tuple</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="k">in</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+
+<span class="kd">func</span> <span class="nf">imageWithPreimage</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">domain</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;&gt;</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">data</span> <span class="k">in</span> <span class="n">domain</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">f</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">image</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="p">??</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;</span><span class="p">())</span><span class="o">.</span><span class="nf">union</span><span class="p">([</span><span class="n">data</span><span class="p">])</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">image</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">X</span> <span class="o">=</span> <span class="nf">imageWithPreimage</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="nv">domain</span><span class="p">:</span> <span class="kt">D</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">Y</span> <span class="o">=</span> <span class="nf">imageWithPreimage</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span> <span class="nv">domain</span><span class="p">:</span> <span class="kt">D</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">X1</span> <span class="o">=</span> <span class="kt">X</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="k">var</span> <span class="nv">Y1</span> <span class="o">=</span> <span class="kt">Y</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">D1</span> <span class="o">=</span> <span class="kt">D</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">X1</span><span class="p">[</span><span class="nf">s</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="kt">Y1</span><span class="p">[</span><span class="nf">p</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">X2</span> <span class="o">=</span> <span class="kt">X1</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="nf">isSubset</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="kt">D1</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">D2</span> <span class="o">=</span> <span class="kt">D1</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">X2</span><span class="p">[</span><span class="nf">s</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">in</span> <span class="kt">Y1</span> <span class="p">{</span>
+    <span class="kt">Y1</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">D2</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">Y3</span> <span class="o">=</span> <span class="kt">Y1</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">D3</span> <span class="o">=</span> <span class="kt">D2</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">Y3</span><span class="p">[</span><span class="nf">p</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">in</span> <span class="kt">X2</span> <span class="p">{</span>
+    <span class="kt">X2</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">D3</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">X4</span> <span class="o">=</span> <span class="kt">X2</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">D4</span> <span class="o">=</span> <span class="kt">D3</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">X4</span><span class="p">[</span><span class="nf">s</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="kt">D4</span><span class="p">)</span>
+</code></pre></div></div>
+
+
+
+  
+
+  
+    <div id="disqus_thread"></div>
+    <script>
+
+      /**
+      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      
+      var disqus_config = function () {
+        this.page.url = "https://teddyyjc.github.io/" + "/blog/2020/10/15/guiguzi-problem";  // Replace PAGE_URL with your page's canonical URL variable
+        console.log(this.page.url);
+        this.page.identifier = "/blog/2020/10/15/guiguzi-problem"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+
+      (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://jcyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+  
+  <h3>Recent <a href="/~yang/academic/#blog" style="color:#526d6d">Posts</a></h3>
+    
+    <!-- 
+    
+    
+    <div class="thumb">
+      
+    
+    <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/jensen.svg')"></div>
+    </a>
+    <h5>05 Feb 2021</h5>
+    <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
+      <h4>Jensen's Approximation</h4>
+    </a>
+    </div><div class="thumb" style="margin-left:5%">
+    
+    <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/isoperimetric.png')"></div>
+    </a>
+    <h5>22 Jan 2021</h5>
+    <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
+      <h4>De Giorgi</h4>
+    </a>
+    </div><div class="thumb" style="margin-left:5%">
+    
+    <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/lorentz.svg')"></div>
+    </a>
+    <h5>14 Apr 2020</h5>
+    <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
+      <h4>Lorentz Space</h4>
+    </a>
+    </div> -->
+
+  <div style="display:grid;grid-template-columns:30% 30% 30%;align-items:center;justify-content:space-between;grid-row-gap:2.5em">
+
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/jensen.svg')"></div>
+      </a>
+      <h5>05 Feb 2021</h5>
+      <a href="/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+        <h4>Jensen's Approximation</h4>
+      </a>
+      </div>
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/isoperimetric.png')"></div>
+      </a>
+      <h5>22 Jan 2021</h5>
+      <a href="/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+        <h4>De Giorgi</h4>
+      </a>
+      </div>
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/lorentz.svg')"></div>
+      </a>
+      <h5>14 Apr 2020</h5>
+      <a href="/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+        <h4>Lorentz Space</h4>
+      </a>
+      </div>
+    
+    
+    
+  </div>
+
+</div>
+
+	</div><!-- /.container -->
+</div>	
+
+		<footer>
+			<div id="footer-container">
+				<a href="https://www.utexas.edu"><img id="logo" src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a>
+				
+				<p id="copyright">Copyright &#169 2022 Jincheng Yang</p>
+
+				<ul>
+					<li id="utmath"><a href="https://www.ma.utexas.edu/">UT Math</a></li>
+					<li><a href="https://www.linkedin.com/in/jincheng-yang/">LinkedIn</a></li>
+					<li><a href="https://github.com/jincheng-yang">GitHub</a></li>
+					<li><a href="mailto:jcyang@math.utexas.edu">Email</a></li>
+				</ul>
+			</div>
+		</footer>
+
+
+		
+		<script type="text/javascript" src="/~yang/plugin/Escher.js"></script>
+		<script type="text/javascript" src="/~yang/plugin/set_icon.js"></script>
+	</body>
+</html>

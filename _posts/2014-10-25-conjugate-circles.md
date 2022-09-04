@@ -13,8 +13,8 @@ It looks like the magnetic field on Earth. You can move the cursor to change the
 
 
 <div class="pde" style="max-width:600px">
-<script type="text/javascript" src="{{ site.roooot }}/plugin/processing.min.js"></script>
-<canvas data-processing-sources="{{ site.roooot }}/assets/files/pde/electromagniticField.pde"></canvas>
+<script type="text/javascript" src="{{ site.baseurl }}/plugin/processing.min.js"></script>
+<canvas data-processing-sources="{{ site.baseurl }}/assets/files/pde/electromagniticField.pde"></canvas>
 </div>
 
 Hover you mouse on the graph to adjust direction and density.

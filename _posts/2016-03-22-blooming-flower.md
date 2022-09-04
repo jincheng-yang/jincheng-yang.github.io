@@ -13,8 +13,8 @@ The angle between two pedals of a flower is not random. It is a golden section o
 These petals form a spiral shape. The number of spirals is always a Fibonacci number (1, 1, 2, 3, 5, 8, 13, 21, 34, ...). In the following coloring, you can identify 21 spirals.
 
 <div class="pde" style="max-width:600px">
-<script type="text/javascript" src="{{ site.roooot }}/plugin/processing.min.js"></script>
-<canvas data-processing-sources="{{ site.roooot }}/assets/files/pde/Flower.pde"></canvas>
+<script type="text/javascript" src="{{ site.baseurl }}/plugin/processing.min.js"></script>
+<canvas data-processing-sources="{{ site.baseurl }}/assets/files/pde/Flower.pde"></canvas>
 </div>
 
 This artwork is inspired by Vi Hart. Click this [link](https://www.youtube.com/watch?v=ahXIMUkSXX0) to watch her video.

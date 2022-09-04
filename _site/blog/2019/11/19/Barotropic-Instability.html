@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Barotropic Instability</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/~yang/css/grid.css">
+		<!-- link to fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Exo:300,600|Roboto:400|Roboto+Condensed:300|Dancing+Script:400|PT+Serif:400,400i|Palanquin+Dark:400|Noto+Serif:400,400i" rel="stylesheet">
+		<!-- JavaScrips -->
+		<script type="text/javascript" src="/~yang/plugin/drag-and-drop.js"></script>
+		
+			<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      },
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+    },
+    jax: ["input/TeX", "output/CommonHTML"]
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS_CHTML">
+</script>
+
+		
+		
+
+		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108717380-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-108717380-1');
+		</script>
+	</head>
+
+	<body>
+
+		<canvas id="myCanvas" width="1000" height="360" >
+			Your browser does not support the canvas element.
+		</canvas>
+
+		<div id="mt">
+			<p id="name">Jincheng Yang</p>
+			<p id="institute">The University of Chicago</p>
+		</div>
+
+		<nav>
+			<div id="nav-container">
+
+				<div class = "dropdown-block" id = "academic-dropdown-block">
+					<a href="/~yang/academic" ondrop="drop(event)" ondragover="allowDrop(event)" id="academic">Academic &#9662;</a>
+	
+					<div class= "dropdown" id="academic-dropdown">
+						<a class = "dropdown-first" href="/~yang/academic#publications">Publications</a>
+						<a href="/~yang/academic#talks">Talks</a>
+						<a href="/~yang/academic#blog">Blog</a>
+						<a class = "dropdown-last" href="/~yang/academic#conferences">Conferences</a>
+					</div>
+				</div>
+
+				<a href="https://github.com/teddyyjc/curriculum-vitae/raw/master/main.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="cv">Curriculum Vitae</a>
+				
+				<a id = "icon" href="/~yang/" draggable="true" ondragstart="drag(event)" title="Home Page"></a>
+
+				<a href="/~yang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="teaching">Teaching</a>
+
+				<a href="/~yang/music" ondrop="drop(event)" ondragover="allowDrop(event)" id="music">Music</a>
+
+				<div class = "dropdown-block" id = "menu-dropdown-block">
+					<a href="#" id="menu">Menu &#9662;</a>
+	
+					<div class= "dropdown" id="menu-dropdown">
+						<a class="dropdown-first" href="/~yang/academic">Academic</a>
+						<a href="https://github.com/teddyyjc/curriculum-vitae/raw/master/main.pdf">Curriculum Vitae</a>
+						<a href="/~yang/academic#publications">Publications</a>
+						<a href="/~yang/teach">Teaching</a>
+						<a class="dropdown-last" href="/~yang/music">Music</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div>
+	<div class="content">
+		
+  <div style="display:none">
+    
+    %--Paired Delimiters--
+    $
+    \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\ang}[1]{\left\langle #1 \right\rangle}
+    \newcommand{\bkt}[1]{\left\lbrack #1 \right\rbrack}
+    \newcommand{\nor}[1]{\left\lVert #1 \right\rVert}
+    \newcommand{\pth}[1]{\left( #1 \right)}
+    \newcommand{\set}[1]{\left\lbrace #1 \right\rbrace}
+    \newcommand{\abset}[1]{\abs{\set{#1}}}
+    \newcommand{\ptset}[1]{\pth{\set{#1}}}
+    $
+
+    %--Operators--
+    $
+    \newcommand{\grad}{\nabla}
+    \newcommand{\La}{\Delta}
+    \renewcommand{\div}{\operatorname{div}}
+    \newcommand{\curl}{\operatorname{curl}}
+    \newcommand{\tr}{\operatorname{tr}}
+    \newcommand{\Hess}{\operatorname{Hess}}
+    \newcommand{\mm}{\mathcal{M}}
+    \newcommand{\inv}{^{-1}}
+    \newcommand{\tensor}{\otimes}
+    \newcommand{\cross}{\times}
+    \newcommand{\weak}[1]{\xrightharpoonup{#1}}
+    $
+
+    %--Notations--
+    $
+    \newcommand{\Vol}{\mathrm{Vol}}
+    \newcommand{\loc}{\mathrm{loc}}
+    \renewcommand{\dim}{\mathrm{dim}}
+    \newcommand{\Span}{\mathrm{Span}}
+    \newcommand{\diam}{\mathrm{diam}}
+    \newcommand{\Id}{\mathrm{Id}}
+    \newcommand{\Lip}{\mathrm{Lip}}
+    \newcommand{\dist}{\mathrm{dist}}
+    \newcommand{\inv}{^{-1}}
+    $
+
+    %--Algebra--
+    $
+    \newcommand{\hfsq}[1]{\frac{\abs{#1} ^2}{2}}
+    $
+
+    %--Sets--
+    $
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\RR}[1]{\R ^{#1}}
+    \newcommand{\Rd}{\RR d}
+    \newcommand{\Rn}{\RR n}
+    \renewcommand{\S}{\mathbb{S}}
+    \renewcommand{\Z}{\mathbb{Z}}
+    \newcommand{\T}{\mathbb{T}}
+    \newcommand{\ssubset}{\subset \subset}
+    \newcommand{\spt}{\operatorname{spt}}
+    \newcommand{\supp}{\operatorname{supp}}
+    \newcommand{\diam}{\mathrm{diam}}
+    \newcommand{\diag}{\operatorname{diag}}
+    \renewcommand{\dim}{\mathrm{dim}}
+    \newcommand{\dimH}{\mathrm{dim} _\mathcal{H}}
+    \newcommand{\Sing}{\mathrm{Sing}}
+    \newcommand{\Vol}{\mathrm{Vol}}
+    \newcommand{\inds}[1]{\mathbf1_{\set{#1}}}
+    \newcommand{\ind}[1]{\mathbf1_{#1}}
+    $
+    
+    %--Summations--
+    $
+    \newcommand{\SUM}[3]{\sum \cnt{#1}{#2}{#3}}
+    \newcommand{\PROD}[3]{\prod \cnt{#1}{#2}{#3}}
+    \newcommand{\cnt}[3]{ _{#1 = #2} ^{#3} }
+    \newcommand{\seq}[2]{\set{#1 _{#2}} _{#2}}
+    \newcommand{\seqi}[2]{\set{#1 _{#2}} \cnt{#2}1i}
+    $
+
+    %--Superscript and Subscript
+    $
+    \newcommand{\pp}[1]{^{(#1)}}
+    \newcommand{\bp}[1]{^{(#1)}}
+    \newcommand{\pps}[2][1]{^{#2 + #1}}
+    \newcommand{\bps}[2][1]{_{#2 + #1}}
+    \newcommand{\pms}[2][1]{^{#2 - #1}}
+    \newcommand{\bms}[2][1]{_{#2 - #1}}
+    $
+
+
+    %--Notations--
+    $
+    \newcommand{\loc}{\mathrm{loc}}
+    \newcommand{\Span}{\operatorname{Span}}
+    \newcommand{\argmin}{\operatorname{argmin}}
+    \newcommand{\argmax}{\operatorname{argmax}}
+    \newcommand{\osc}{\operatorname{osc}}
+    \newcommand{\Id}{\mathrm{Id}}
+    \newcommand{\Lip}{\operatorname{Lip}}
+    \newcommand{\Leb}{\operatorname{Leb}}
+    \newcommand{\PV}{\mathrm{P.V.}}
+    \newcommand{\dist}{\operatorname{dist}}
+    \newcommand{\at}[1]{\bigr\rvert _{#1}}
+    \newcommand{\At}[1]{\biggr\rvert _{#1}}
+    \newcommand{\half}{\frac12}
+    $
+
+
+    %--Text--
+    $
+    \newcommand{\inn}{\text{ in }}
+    \newcommand{\onn}{\text{ on }}
+    \renewcommand{\ae}{\text{ a.e. }}
+    \newcommand{\st}{\text{ s.t. }}
+    \newcommand{\forr}{\text{ for }}
+    \newcommand{\as}{\text{ as }}
+    $
+
+    %--Differential--
+    $
+    \newcommand{\d}{\mathop{\kern0pt\mathrm{d}}\!{}}
+    \newcommand{\dt}{\d t}
+    \newcommand{\dx}{\d x}
+    \newcommand{\dy}{\d y}
+    \newcommand{\ptil}{\partial}
+    \newcommand{\pt}{\ptil _t}
+    \newcommand{\pfr}[2]{\frac{\partial #1}{\partial #2}}
+    \newcommand{\dfr}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+    \newcommand{\ddt}{\dfr{}t}
+    \newcommand{\pthf}[2]{\pth{\frac{#1}{#2}}}
+    $
+    
+    %--Integral--
+    $
+    \newcommand{\intR}{\int _0 ^\infty}
+    \newcommand{\intRn}{\int _{\Rn}}
+    \newcommand{\intRd}{\int _{\Rd}}
+    \newcommand{\fint}{-\!\!\!\!\!\!\int}
+    \newcommand{\intset}[1]{\int _{\set{#1}}}
+    $
+
+    %--Greek--
+    $
+    \newcommand{\e}{\varepsilon}
+    \newcommand{\vp}{\varphi}
+    $
+
+    %--Norm--
+    $
+    \newcommand{\nmL}[2]{\nor{#2} _{L ^#1}}
+    $
+  </div>
+
+
+
+
+<h1>Research Blog</h1>
+
+<div class="post">
+
+<h2>Barotropic Instability</h2>
+
+<p class="meta">2019, November 19</p>
+
+  <h2 id="strum-liouville-system">Strum-Liouville System</h2>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>Let $K$ be a bounded function on $y \in [-\frac\pi2, \frac\pi2]$. We want to find the eigenvalue and eigenfunction to the following Strum-Liouville System with Dirichlet Boundary condition:
+$
+\newcommand{\pth}[1]{\left(#1\right)}
+\newcommand{\d}{\mathrm{d}}
+\newcommand{\dfr}[2]{\frac{\d #1}{\d #2}}
+$</p>
+
+\[\begin{align}
+\tag{1}
+-\phi'' (y) + K (y) \phi (y) = \lambda \phi (y), \qquad \phi \pth{-\frac\pi2} = \phi \pth{\frac\pi2} = 0.
+\end{align}\]
+
+<p>We want to use power method. First, we introduce the Boundary Value Problem solver operator. Given a function $f$, we solve the following Boundary Value Problem</p>
+
+\[\begin{align}
+\tag{2}
+-\phi'' (y) + K (y) \phi (y) = f (y), \qquad \phi \pth{-\frac\pi2} = \phi \pth{\frac\pi2} = 0.
+\end{align}\]
+
+<p>Let</p>
+
+\[T _K = \pth{-\dfr{^2}{y ^2} + K} ^{-1}: f \mapsto \phi\]
+
+<p>be the operator that maps the source function to the solution of (2). With an initial guess on eigenvalue $\mu _0$ and eigenfunction $f _0$, we run the following iteration.</p>
+
+\[\begin{align}
+\tag{3}
+\phi _k = T _{K - \mu _0} f _k, \qquad \mu _{k + 1} = \frac{\|f _k\| _{L^2}}{\|\phi _k\| _{L^2}}, \qquad f _{k + 1} = \frac{\phi _k}{\|\phi _k\| _{L^2}}.
+\end{align}\]
+
+<p>As it goes, $\mu _k ^{-1}$ should converge to the largest eigenvalue of $T _{K - \mu _0}$, $\mu _k$ should converge to the smallest eigenvalue of $-\dfr{^2}{y^2} + (K - \mu _0)$, thus $\mu _k + \mu _0$ will converge to the eigenvalue closest to $\mu _0$, and we can return $\mu _k + \mu _0$ to be the eigenvalue, and $\phi _k$ to be the eigenfunction.</p>
+
+<h3 id="bvp-solver">BVP Solver</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">ceil</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">arctan</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_bvp</span>
+</code></pre></div></div>
+
+<p>Now we realize the operator $T _K$. We write a function <code class="language-plaintext highlighter-rouge">BVP_solver</code>. It should take two arguments $K$ and $f$, both functions, and return a function $\phi$.</p>
+
+<p>Define the initial mesh with 5 nodes. Use 0 as initial guess.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">initial_mesh</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">initial_func</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="n">initial_mesh</span><span class="p">.</span><span class="n">size</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Now we program the BVP solver. Convert the equation into first order system with Dirichlet boundary conditions.</p>
+
+\[\begin{align}
+    \tag{4}
+    \dfr{}{y} \begin{pmatrix}
+        \phi \\
+        \phi'
+    \end{pmatrix} = \begin{pmatrix}
+        0 &amp; 1 \\
+        K &amp; 0
+    \end{pmatrix} \begin{pmatrix}
+        \phi \\
+        \phi'
+    \end{pmatrix} + \begin{pmatrix}
+        0 \\
+        -f
+    \end{pmatrix}.
+\end{align}\]
+
+<p>Then use <code class="language-plaintext highlighter-rouge">solve_bvp</code> function from <code class="language-plaintext highlighter-rouge">scipy</code> library.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">EPSILON</span> <span class="o">=</span> <span class="mf">1e-10</span>
+
+<span class="k">def</span> <span class="nf">BVP_solver</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+    <span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">,</span> <span class="n">phi</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">phi</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">K</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">phi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+    <span class="n">bc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">ya</span><span class="p">,</span> <span class="n">yb</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">ya</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">yb</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">sol</span> <span class="o">=</span> <span class="n">solve_bvp</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">initial_mesh</span><span class="p">,</span> <span class="n">initial_func</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="n">EPSILON</span><span class="p">).</span><span class="n">sol</span>
+    <span class="n">sol</span><span class="p">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">sol</span><span class="p">.</span><span class="n">c</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># sol = (phi, phi') is an interpolation polynomial, and sol.c is a tensor of coefficients. This takes the first argument phi.
+</span>    
+    <span class="k">return</span> <span class="n">sol</span>
+</code></pre></div></div>
+
+<p>Let’s try a test run.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">time</span>
+
+<span class="k">def</span> <span class="nf">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">):</span>
+    <span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">phi_plot</span> <span class="o">=</span> <span class="p">[</span><span class="n">fun</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">y_plot</span><span class="p">]</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_plot</span><span class="p">,</span> <span class="n">phi_plot</span><span class="p">)</span>
+    
+<span class="n">test_f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">test_K</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">test_sol</span> <span class="o">=</span> <span class="n">BVP_solver</span><span class="p">(</span><span class="n">test_K</span><span class="p">,</span> <span class="n">test_f</span><span class="p">)</span>
+<span class="n">graph</span><span class="p">(</span><span class="n">test_sol</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CPU times: user 26.5 ms, sys: 5.32 ms, total: 31.8 ms
+Wall time: 30.5 ms
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_11_1.png" alt="png" class="center-image" /></p>
+
+<h3 id="iteration">Iteration</h3>
+
+<p>Now we build the iteration. We need to realize several functions. First, the $L^2$ norm of a function can be approximated by</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">L2_norm</span><span class="p">(</span><span class="n">phi</span><span class="p">):</span>
+    <span class="n">y_sample</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">phi_sample</span> <span class="o">=</span> <span class="p">[</span><span class="n">phi</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">y_sample</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">phi_sample</span><span class="p">[</span><span class="mi">31</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sign</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">norm</span><span class="p">(</span><span class="n">phi_sample</span><span class="p">)</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="n">sign</span>
+</code></pre></div></div>
+
+<p>Let’s try a test run.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">L2_norm</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="nb">pow</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">math</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">math</span><span class="p">.</span><span class="nb">pow</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="mi">80</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.9952021753076212
+1.9558236269704938
+</code></pre></div></div>
+
+<p>We now realize algorithm (3). Function <code class="language-plaintext highlighter-rouge">eigen</code> takes three arguments, which are multiplier $K$, initial guess $\mu _0$ and $f _0$. It returns a tuple, (eigenvalue, eigenfunction, number of iteration).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAX_ITERATION</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">def</span> <span class="nf">eigen</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">mu_0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">exp</span><span class="p">):</span>
+    <span class="n">K_mu_0</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">K</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="n">mu_0</span>
+    <span class="n">old_mu</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">inf</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_ITERATION</span><span class="p">):</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">BVP_solver</span><span class="p">(</span><span class="n">K_mu_0</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+        <span class="n">mu_k</span> <span class="o">=</span> <span class="n">L2_norm</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="n">L2_norm</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">phi</span>
+        <span class="n">f</span><span class="p">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">c</span> <span class="o">/</span> <span class="n">L2_norm</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="c1"># phi is an interpolation polynomial, so we scale the coefficient matrix c.
+</span>        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">mu_k</span> <span class="o">-</span> <span class="n">old_mu</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">old_mu</span> <span class="o">=</span> <span class="n">mu_k</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">mu_k</span> <span class="o">+</span> <span class="n">mu_0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Let’s do a test run to confirm the accuracy is satisfactory.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">time</span>
+
+<span class="n">test_K</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">test_mu_0</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">test_f_0</span> <span class="o">=</span> <span class="n">exp</span>
+<span class="k">print</span><span class="p">(</span><span class="n">eigen</span><span class="p">(</span><span class="n">test_K</span><span class="p">,</span> <span class="n">test_mu_0</span><span class="p">,</span> <span class="n">test_f_0</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(4.000000000018323, &lt;scipy.interpolate.interpolate.PPoly object at 0x18192fee90&gt;, 10)
+CPU times: user 220 ms, sys: 4.08 ms, total: 224 ms
+Wall time: 223 ms
+</code></pre></div></div>
+
+<h2 id="reighley-kuo-equation">Reighley-Kuo Equation</h2>
+
+<h3 id="setup-of-the-equation">Setup of the Equation</h3>
+
+<p>We want to find the smallest eigenvalue to the Strum-Liouville System with Dirichlet Boundary condition</p>
+
+\[-\phi''-\frac{\beta - U''}{U - c}\phi = \lambda \phi, \qquad \phi \pth{\pm\frac\pi2} = 0.\]
+
+<p>In our case,</p>
+
+\[U(y) = \cos ^2 (y), \qquad U''(y) = 2 - 4 \cos ^2 (y).\]
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">U</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">Upp</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">U</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Comparing to the model in our article, the domain is rescaled from $[-1, 1]$ to $[-\pi/2, \pi/2]$, for computational simplicity. Therefore, some results here differ from the article by a factor of $\pi/2$ or $\pi^2/4$.</p>
+
+<p>We first define the coefficient function</p>
+
+\[K_{\beta,c}(y) = -\frac{\beta - U''(y)}{U(y) - c}.\]
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">K</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="o">-</span><span class="p">(</span><span class="n">beta</span> <span class="o">-</span> <span class="n">Upp</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">U</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Let’s find the eigenvalue of the case $\beta = -1.8$, $c = 1.1$ for exammple.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">time</span>
+
+<span class="n">test_sol</span> <span class="o">=</span> <span class="n">eigen</span><span class="p">(</span><span class="n">K</span><span class="p">(</span><span class="o">-</span><span class="mf">1.8</span><span class="p">,</span><span class="mf">1.1</span><span class="p">),</span> <span class="n">mu_0</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">test_sol</span><span class="p">)</span>
+<span class="n">graph</span><span class="p">(</span><span class="n">test_sol</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(-0.5288820708571951, &lt;scipy.interpolate.interpolate.PPoly object at 0x15188e0410&gt;, 14)
+CPU times: user 344 ms, sys: 3.56 ms, total: 348 ms
+Wall time: 346 ms
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_30_1.png" alt="png" class="center-image" /></p>
+
+<p>Now we define $\lambda _1 (\beta, c)$ to be the principal eigenvalue of $K _{\beta, c}$. Because the eigenvalues are greater than $-3$, we can use default $\mu _0 = -3$ to find smallest eigenvalue.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">lambda1</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">mu_0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">exp</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">eigen</span><span class="p">(</span><span class="n">K</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="n">mu_0</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">MAX_ITERATION</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">eigen</span><span class="p">(</span><span class="n">K</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="n">mu_0</span> <span class="o">*</span> <span class="mf">1.01</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">MAX_ITERATION</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">exp</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>A test run.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lambda1</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">mu_0</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(-0.5385420390101288, &lt;scipy.interpolate.interpolate.PPoly at 0x1067e6470&gt;)
+</code></pre></div></div>
+
+<h3 id="eigenvalue-plot">Eigenvalue Plot</h3>
+
+<p>We want to compute the eigenvalue and eigenvector for $\beta \in (\beta _1, \beta _2)$ and $c \in (c _1, c _2)$. The following function will take arguments <code class="language-plaintext highlighter-rouge">beta_sample</code> and <code class="language-plaintext highlighter-rouge">c_sample</code>, then return the eigenvalue and eigenfunction matrix, and does a contourplot of eigenvalues. The idea is the following. Because when the system is regular, the eigenvalues are analytic in $\beta$ and $c$, so once we found the eigenvalue and eigenfunction at one grid, we can use them as initial guess for the eigenvalues nearby, which can speed up the computation. In the following, we use a linear combinition of the previous two eigenvalues.</p>
+
+<p>Linear extrapolation: $y _0 = f (x _0)$, $y _1 = f(x _1)$, so</p>
+
+\[y _2 = \frac{y _1 - y _0}{x _1 - x _0} (x _2 - x _1) + y _1 = \frac{x _2 - x _1}{x _0 - x _1} y _0 + \frac{x _2 - x _0}{x _1 - x _0} y _1 := a _0 y _0 + a _1 y _1.\]
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">linearExtrapolate</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span><span class="p">):</span>
+    <span class="n">a0</span> <span class="o">=</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x0</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span>
+    <span class="n">a1</span> <span class="o">=</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a0</span> <span class="o">*</span> <span class="n">y0</span> <span class="o">+</span> <span class="n">a1</span> <span class="o">*</span> <span class="n">y1</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is a library that enable it to show a progress bar for our long calculation. 
+# Each of the calculateEigen procedure takes about one hour in my case.
+</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">progressbar</span>
+<span class="k">except</span><span class="p">:</span>
+  <span class="kn">from</span> <span class="nn">pip._internal</span> <span class="kn">import</span> <span class="n">main</span> <span class="k">as</span> <span class="n">pipmain</span>
+  <span class="n">pipmain</span><span class="p">([</span><span class="s">'install'</span><span class="p">,</span> <span class="s">'progressbar2'</span><span class="p">])</span>
+  <span class="kn">import</span> <span class="nn">progressbar</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">calculateEigen</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">,</span> <span class="n">mu_0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">exp</span><span class="p">):</span>
+
+    <span class="n">beta_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">)</span>
+    <span class="n">c_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">c_sample</span><span class="p">)</span>
+    <span class="n">evMat</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">full</span><span class="p">((</span><span class="n">beta_size</span><span class="p">,</span> <span class="n">c_size</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">efMat</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">full</span><span class="p">((</span><span class="n">beta_size</span><span class="p">,</span> <span class="n">c_size</span><span class="p">),</span> <span class="n">exp</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">progressbar</span><span class="p">.</span><span class="n">progressbar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">beta_size</span><span class="p">)):</span>
+        <span class="n">beta</span> <span class="o">=</span> <span class="n">beta_sample</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c_size</span><span class="p">):</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">c_sample</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="p">(</span><span class="n">evMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">efMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span> <span class="o">=</span> <span class="n">lambda1</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">mu_0</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="p">(</span><span class="n">evMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">efMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span> <span class="o">=</span> <span class="n">lambda1</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">evMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">efMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">evTest</span> <span class="o">=</span> <span class="n">linearExtrapolate</span><span class="p">(</span><span class="n">c_sample</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">2</span><span class="p">],</span> <span class="n">c_sample</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c_sample</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">evMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">2</span><span class="p">],</span> <span class="n">evMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+                    <span class="p">(</span><span class="n">evMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">efMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span> <span class="o">=</span> <span class="n">lambda1</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">evTest</span><span class="p">,</span> <span class="n">efMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="p">(</span><span class="n">evMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">efMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span> <span class="o">=</span> <span class="n">lambda1</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">evMat</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">efMat</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">evTest</span> <span class="o">=</span> <span class="n">linearExtrapolate</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">],</span> <span class="n">beta_sample</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">beta_sample</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">evMat</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">evMat</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+                <span class="p">(</span><span class="n">evMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">efMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span> <span class="o">=</span> <span class="n">lambda1</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">evTest</span><span class="p">,</span> <span class="n">efMat</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">evMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]):</span>
+                    <span class="p">(</span><span class="n">evMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">efMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span> <span class="o">=</span> <span class="n">lambda1</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">evTest</span> <span class="o">*</span> <span class="mf">1.01</span><span class="p">,</span> <span class="n">efMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+    
+    <span class="n">betaMat</span><span class="p">,</span> <span class="n">cMat</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">betaMat</span><span class="p">,</span> <span class="n">cMat</span><span class="p">,</span> <span class="n">evMat</span><span class="p">,</span> <span class="n">efMat</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">eigenPlot</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">minEigen</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">maxEigen</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">level_increment</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figure_size</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figure_size</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">minEigen</span><span class="p">):</span>
+        <span class="n">minEigen</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">]).</span><span class="nb">min</span><span class="p">()</span> <span class="o">/</span> <span class="n">level_increment</span><span class="p">)</span> <span class="o">*</span> <span class="n">level_increment</span>
+    <span class="k">if</span> <span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">maxEigen</span><span class="p">):</span>
+        <span class="n">maxEigen</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">]).</span><span class="nb">max</span><span class="p">()</span> <span class="o">/</span> <span class="n">level_increment</span><span class="p">)</span> <span class="o">*</span> <span class="n">level_increment</span>
+    <span class="n">number_of_levels</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">((</span><span class="n">maxEigen</span> <span class="o">-</span> <span class="n">minEigen</span><span class="p">)</span> <span class="o">/</span> <span class="n">level_increment</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">CS</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">contour</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">T</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">minEigen</span><span class="p">,</span> <span class="n">maxEigen</span><span class="p">,</span> <span class="n">number_of_levels</span><span class="p">),</span> <span class="n">manual</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">CS</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s">'k'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now draw the eigenvalue in the region $-3 &lt; \beta &lt; 3$, $1 &lt; c &lt; 2$. Since as $c \to 1 ^+$, the system becomes singular, we need to add more sample grids near $c = 1$. Here we use exponential.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_sample</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">601</span><span class="p">)</span>
+<span class="n">c_sample</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">res1</span> <span class="o">=</span> <span class="n">calculateEigen</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">)</span>
+<span class="n">eigenPlot</span><span class="p">(</span><span class="n">res1</span><span class="p">,</span> <span class="n">minEigen</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">maxEigen</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (601 of 601) |######################| Elapsed Time: 1:25:01 Time:  1:25:01
+/Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_42_1.png" alt="png" class="center-image" /></p>
+
+<p>For the region $-3 &lt; \beta &lt; 3$, $-1 &lt; c &lt; 0$, again because as $c \to 0 ^-$, the system becomes singular, we use exponential samples.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_sample</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">601</span><span class="p">)</span>
+<span class="n">c_sample</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">res0</span> <span class="o">=</span> <span class="n">calculateEigen</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">)</span>
+<span class="n">eigenPlot</span><span class="p">(</span><span class="n">res0</span><span class="p">,</span> <span class="n">minEigen</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">maxEigen</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (601 of 601) |######################| Elapsed Time: 1:25:11 Time:  1:25:11
+/Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_44_1.png" alt="png" class="center-image" /></p>
+
+<p>We can patch them together by doing a transform $\tilde c = \frac1{c - 1/2}$. In this way we may have a better view of the shape of the eigenvalues.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_sample</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">601</span><span class="p">)</span>
+<span class="n">c_tilde_sample_negative</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)]</span>
+<span class="n">c_tilde_sample_positive</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)]</span>
+<span class="n">c_sample_negative</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">c_tilde_sample_negative</span><span class="p">]</span>
+<span class="n">c_sample_positive</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">c_tilde_sample_positive</span><span class="p">]</span>
+<span class="n">restilde_negative</span> <span class="o">=</span> <span class="n">calculateEigen</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample_negative</span><span class="p">,</span> <span class="n">mu_0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">restilde_positive</span> <span class="o">=</span> <span class="n">calculateEigen</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample_positive</span><span class="p">,</span> <span class="n">mu_0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">c_tilde_sample_negative</span><span class="p">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">c_tilde_sample</span> <span class="o">=</span> <span class="n">c_tilde_sample_negative</span> <span class="o">+</span> <span class="n">c_tilde_sample_positive</span>
+<span class="n">restilde_neg</span> <span class="o">=</span> <span class="n">restilde_negative</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">T</span><span class="p">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">restilde_neg</span><span class="p">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">restilde_pos</span> <span class="o">=</span> <span class="n">restilde_positive</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">T</span><span class="p">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">res_mat</span> <span class="o">=</span> <span class="n">restilde_neg</span> <span class="o">+</span> <span class="n">restilde_pos</span>
+<span class="n">bMat</span><span class="p">,</span> <span class="n">cMat</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_tilde_sample</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (601 of 601) |######################| Elapsed Time: 1:25:02 Time:  1:25:02
+100% (601 of 601) |######################| Elapsed Time: 1:22:29 Time:  1:22:29
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">contour</span><span class="p">(</span><span class="n">bMat</span><span class="p">,</span> <span class="n">cMat</span><span class="p">,</span> <span class="n">res_mat</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">CS</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s">'k'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a list of 20 text.Text objects&gt;
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_47_1.png" alt="png" class="center-image" /></p>
+
+<p>Apparently there is a saddle point at $(-1, 0)$ that python contourplot cannot draw numerically. This corresponds to the system at $\beta = -1$, $c = \infty$. Since in general</p>
+
+\[\frac{\partial \lambda _1}{\partial \tilde c} 
+= \frac{\partial \lambda _1}{\partial c} \frac{\d c}{\d \tilde c}
+= - \int _{-\frac\pi2} ^{\frac\pi2} \frac{\beta - U''}{(U - c) ^2} |\phi| ^2 \d y 
+\cdot \left(-\frac1{(c - 1/2)^2}\right) ^{-1}\]
+
+<p>Here $\phi$ is the corresponding normalized eigenfunction. See equation (3.18) of the article for derivation. When $c \to \infty$, $\tilde c \to 0$, $\phi \to C \cos (y)$, $\lambda _1 \to 1$. Therefore the above partial derivative vanishes at $\beta$ that</p>
+
+\[\int _{-\frac\pi2} ^{\frac\pi2} (\beta - U'') \cos ^2 (y) \d y = 0.\]
+
+<p>With $U’’ = 2 - 4 \cos (y) ^2$, one easily concludes the saddle point is $\beta = -1$.</p>
+
+<p>To take a closer look at $c = 0$, we test $\beta \in (0.392, 0.408)$, $\beta \in (0.992, 1.008)$, and $\beta \in (1.592, 1.608)$.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_sample</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.392</span><span class="p">,</span> <span class="mf">0.408</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">c_sample</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.005</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">res04</span> <span class="o">=</span> <span class="n">calculateEigen</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">,</span> <span class="n">mu_0</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">eigenPlot</span><span class="p">(</span><span class="n">res04</span><span class="p">,</span> <span class="n">level_increment</span> <span class="o">=</span> <span class="mf">0.004</span><span class="p">,</span> <span class="n">figure_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (400 of 400) |######################| Elapsed Time: 0:47:54 Time:  0:47:54
+/Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_54_1.png" alt="png" class="center-image" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_sample</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.992</span><span class="p">,</span> <span class="mf">1.008</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">c_sample</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.005</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">res10</span> <span class="o">=</span> <span class="n">calculateEigen</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">,</span> <span class="n">mu_0</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="n">eigenPlot</span><span class="p">(</span><span class="n">res10</span><span class="p">,</span> <span class="n">level_increment</span> <span class="o">=</span> <span class="mf">0.004</span><span class="p">,</span> <span class="n">figure_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (400 of 400) |######################| Elapsed Time: 0:43:03 Time:  0:43:03
+/Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_55_1.png" alt="png" class="center-image" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_sample</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.592</span><span class="p">,</span> <span class="mf">1.608</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">c_sample</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.005</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">res16</span> <span class="o">=</span> <span class="n">calculateEigen</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">,</span> <span class="n">mu_0</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">eigenPlot</span><span class="p">(</span><span class="n">res16</span><span class="p">,</span> <span class="n">level_increment</span> <span class="o">=</span> <span class="mf">0.004</span><span class="p">,</span> <span class="n">figure_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (400 of 400) |######################| Elapsed Time: 0:42:50 Time:  0:42:50
+/Users/jincheng/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:38: UserWarning: The following kwargs were not used by contour: 'manual'
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_56_1.png" alt="png" class="center-image" /></p>
+
+<h2 id="instability-boundary">Instability Boundary</h2>
+
+<h3 id="rough-graph">Rough Graph</h3>
+
+<p>For each $\beta \in (-2, 2)$, we need to find $c$ that minimize $\lambda _1 (\beta, c)$. The negative part of the minimum will be denoted by $\Lambda _\beta$.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_sample</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">601</span><span class="p">)</span>
+<span class="n">Lambda0</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">res0</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="p">:])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">))]</span>
+<span class="n">Lambda1</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">res1</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="p">:])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">))]</span>
+<span class="n">Lambda_Min</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">Lambda0</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">Lambda1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">))]</span>
+<span class="n">Lambda_beta</span> <span class="o">=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="n">Lambda_Min</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">))]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="n">Lambda0</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="n">Lambda1</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="n">Lambda_beta</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1821879b10&gt;]
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_61_1.png" alt="png" class="center-image" /></p>
+
+<p>Plot for $\alpha = \sqrt{\Lambda _\beta}$.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alpha</span> <span class="o">=</span> <span class="p">[</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Lambda_beta</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">))]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1821ad7590&gt;]
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_64_1.png" alt="png" class="center-image" /></p>
+
+<h3 id="detailed-calculation">Detailed Calculation</h3>
+
+<p>For each $\beta$, we will calculate $\Lambda _\beta$ with more accuracy now. We will use a simple optimization method. We first consider $\beta \in \pth{-2, 0}$.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">minimize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">ev_left</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">ev_right</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">):</span>
+    
+    <span class="n">gamma</span> <span class="o">=</span> <span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">ev_left</span><span class="p">):</span>
+        <span class="n">ev_left</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">left</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">ev_right</span><span class="p">):</span>
+        <span class="n">ev_right</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
+    <span class="n">center_left</span> <span class="o">=</span> <span class="n">right</span> <span class="o">-</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">*</span> <span class="n">gamma</span>
+    <span class="n">ev_center_left</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">center_left</span><span class="p">)</span>
+    <span class="n">center_right</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">*</span> <span class="n">gamma</span>
+    <span class="n">ev_center_right</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">center_right</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">EPSILON</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ev_center_left</span> <span class="o">&lt;</span> <span class="n">ev_center_right</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">ev_right</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">center_right</span><span class="p">,</span> <span class="n">ev_center_right</span><span class="p">)</span>
+            <span class="p">(</span><span class="n">center_right</span><span class="p">,</span> <span class="n">ev_center_right</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">center_left</span><span class="p">,</span> <span class="n">ev_center_left</span><span class="p">)</span>
+            <span class="n">center_left</span> <span class="o">=</span> <span class="n">right</span> <span class="o">-</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">*</span> <span class="n">gamma</span>
+            <span class="n">ev_center_left</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">center_left</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">ev_left</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">center_left</span><span class="p">,</span> <span class="n">ev_center_left</span><span class="p">)</span>
+            <span class="p">(</span><span class="n">center_left</span><span class="p">,</span> <span class="n">ev_center_left</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">center_right</span><span class="p">,</span> <span class="n">ev_center_right</span><span class="p">)</span>
+            <span class="n">center_right</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">*</span> <span class="n">gamma</span>
+            <span class="n">ev_center_right</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">center_right</span><span class="p">)</span>
+    
+    <span class="n">final_point</span> <span class="o">=</span> <span class="p">[</span><span class="n">left</span><span class="p">,</span> <span class="n">center_left</span><span class="p">,</span> <span class="n">center_right</span><span class="p">,</span> <span class="n">right</span><span class="p">]</span>
+    <span class="n">final_value</span> <span class="o">=</span> <span class="p">[</span><span class="n">ev_left</span><span class="p">,</span> <span class="n">ev_center_left</span><span class="p">,</span> <span class="n">ev_center_right</span><span class="p">,</span> <span class="n">ev_right</span><span class="p">]</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">final_value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">final_point</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">final_value</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Now use minimize function to refine <code class="language-plaintext highlighter-rouge">Lambda_Min</code> in $\beta \in (-2, 0)$ and $(0, 2)$ respectively.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_star</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">)</span>
+<span class="n">c_sample</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">progressbar</span><span class="p">.</span><span class="n">progressbar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">140</span><span class="p">)):</span>
+
+    <span class="c1"># find min element
+</span>    <span class="n">beta</span> <span class="o">=</span> <span class="n">beta_sample</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">res1</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="p">:])</span>
+    <span class="n">mu_0</span> <span class="o">=</span> <span class="n">res1</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">res1</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">c_sample</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+    
+    <span class="c1"># use minimize function
+</span>    <span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">lambda1</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">mu_0</span><span class="p">,</span> <span class="n">phi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">(</span><span class="n">c_star</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">Lambda_Min</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c_sample</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (40 of 40) |########################| Elapsed Time: 0:03:00 Time:  0:03:00
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_sample</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.08</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">c_sample</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">progressbar</span><span class="p">.</span><span class="n">progressbar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">500</span><span class="p">)):</span>
+
+    <span class="c1"># find min element
+</span>    <span class="n">beta</span> <span class="o">=</span> <span class="n">beta_sample</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">res0</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="p">:])</span>
+    <span class="n">mu_0</span> <span class="o">=</span> <span class="n">res0</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">res0</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="c1"># use minimize function
+</span>    <span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">lambda1</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">mu_0</span><span class="p">,</span> <span class="n">phi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">(</span><span class="n">c_star</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">Lambda_Min</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">c_sample</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c_sample</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (200 of 200) |######################| Elapsed Time: 0:19:07 Time:  0:19:07
+</code></pre></div></div>
+
+<p>Take a look at the plot of $c^*$.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">140</span><span class="p">],</span> <span class="n">c_star</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">140</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1821e26e90&gt;]
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_72_1.png" alt="png" class="center-image" /></p>
+
+<p>For $\beta &gt; 0$, $c ^*$ is small but not always zero.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">300</span><span class="p">:],</span> <span class="n">c_star</span><span class="p">[</span><span class="mi">300</span><span class="p">:])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1819307ad0&gt;]
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_74_1.png" alt="png" class="center-image" /></p>
+
+<p>Now compare the value of our results and the hypothesis of Kuo.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Lambda_beta</span> <span class="o">=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="n">Lambda_Min</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">))]</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="p">[</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Lambda_beta</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">))]</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
+
+<span class="n">hypothesis</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">500</span><span class="p">):</span>
+    <span class="n">hypothesis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="nb">pow</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">beta_sample</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">16</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="n">hypothesis</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x18191ff310&gt;]
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_76_1.png" alt="png" class="center-image" /></p>
+
+<p>The difference for $0 &lt; \beta &lt; 2$ is the following.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_sample</span><span class="p">[</span><span class="mi">300</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">300</span><span class="p">:</span><span class="mi">500</span><span class="p">]</span> <span class="o">-</span> <span class="n">hypothesis</span><span class="p">[</span><span class="mi">300</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x182896c550&gt;]
+</code></pre></div></div>
+
+<p><img src="/~yang/assets/images/blog/2019-11-19-barotropic-instability/output_78_1.png" alt="png" class="center-image" /></p>
+
+<h3 id="calculate-beta-_-">Calculate $\beta _-$</h3>
+
+<p>The question to find $\beta$ can be thought as the following general problem. For a continuous function $f = f(x, y)$, which is continuous in $(x, y)$, monotonously increasing in $x$, single-humped in $y$ (which means for a fixed $x$, $f (x, \cdot)$ is monotone on both sides of the criticle point), we want to find</p>
+
+\[x _- = \max\left\{x \in [x _1, x _2]: \min _{y \in [y _1, y _2]} f(x, y) \le 0\right\}.\]
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">EPSILON</span> <span class="o">=</span> <span class="mf">1e-7</span>
+
+<span class="k">def</span> <span class="nf">maxmin</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    
+    <span class="c1"># Initial x_step_size and y_step_size is a quarter the length
+</span>    <span class="n">x_step_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span>
+    <span class="n">y_step_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span>
+    
+    <span class="n">bar_max_value</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">x_step_size</span> <span class="o">/</span> <span class="n">EPSILON</span> <span class="o">*</span> <span class="n">EPSILON</span><span class="p">),</span> <span class="n">log</span><span class="p">(</span><span class="n">y_step_size</span> <span class="o">/</span> <span class="n">EPSILON</span><span class="p">))</span>
+    <span class="n">bar</span> <span class="o">=</span> <span class="n">progressbar</span><span class="p">.</span><span class="n">ProgressBar</span><span class="p">(</span><span class="n">max_value</span> <span class="o">=</span> <span class="n">bar_max_value</span><span class="p">)</span>
+    
+    <span class="k">while</span> <span class="n">y_step_size</span> <span class="o">&gt;</span> <span class="n">EPSILON</span> <span class="ow">or</span> <span class="n">x_step_size</span> <span class="o">&gt;</span> <span class="n">EPSILON</span> <span class="o">*</span> <span class="n">EPSILON</span><span class="p">:</span>
+        
+        <span class="c1"># First, we take 5 sample on the left edge. Find the minimal one.
+</span>        <span class="n">y_list</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="n">f_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">f_list</span><span class="p">)</span>
+        <span class="n">yc</span> <span class="o">=</span> <span class="n">y_list</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        
+        <span class="c1"># Second, we go from (x1, yc) to right, until we cross the contour.
+</span>        <span class="c1"># We quarter the x_step_size every iteration
+</span>        <span class="k">if</span> <span class="n">x_step_size</span> <span class="o">&gt;</span> <span class="n">EPSILON</span> <span class="o">*</span> <span class="n">EPSILON</span><span class="p">:</span>
+            <span class="n">x_step_size</span> <span class="o">/=</span> <span class="mi">4</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">yc</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">x1</span> <span class="o">+=</span> <span class="n">x_step_size</span>
+        
+        <span class="n">x1</span> <span class="o">-=</span> <span class="n">x_step_size</span>
+        
+        <span class="c1"># Finally, we shrink the y-window. Go from (x1, yc) up or down until we cross the contour.
+</span>        <span class="n">y_step_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">8</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">yc</span>
+        <span class="n">y2</span> <span class="o">=</span> <span class="n">yc</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">y1</span> <span class="o">-=</span> <span class="n">y_step_size</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">y2</span> <span class="o">+=</span> <span class="n">y_step_size</span>
+        <span class="n">bar</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">bar_max_value</span> <span class="o">-</span> <span class="nb">max</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">x_step_size</span> <span class="o">/</span> <span class="n">EPSILON</span> <span class="o">*</span> <span class="n">EPSILON</span><span class="p">),</span> <span class="n">log</span><span class="p">(</span><span class="n">y_step_size</span> <span class="o">/</span> <span class="n">EPSILON</span><span class="p">),</span> <span class="mi">0</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">x1</span>
+</code></pre></div></div>
+
+<p>Let’s run a test. For $f(x, y) = \sin x - 0.5 + y ^2 + e^{x+y}$, the maximum for a fixed $x$ is obtained when</p>
+
+\[0 = \frac{\partial f}{\partial y} = 2y + e^{x + y}\]
+
+<p>Therefore this point should be</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+
+<span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">exp</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">fsolve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([-0.19864597, -0.30282083])
+</code></pre></div></div>
+
+<p>Our maxmin function gives</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">maxmin</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>N/A% (0 of 15.424948470398375) |         | Elapsed Time: 0:00:00 ETA:  --:--:--
+
+
+
+
+-0.19864596889513564
+</code></pre></div></div>
+
+<p>Let’s apply this function on our lambda1 function.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="n">lambda1</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">mu_0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">beta_minus</span> <span class="o">=</span> <span class="n">maxmin</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100% (14.721750953984929 of 14.721750953984929) || Elapsed Time: 0:04:54 ETA:  00:00:00
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beta_minus</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1.6489545393735134
+</code></pre></div></div>
+
+<hr />
+<p>Download this page as <a href="/~yang/assets/files/jupyter/strum-liouville.ipynb">Jupyter Notebook</a>, or run this notebook in <a href="https://colab.research.google.com/drive/1mrOwGWG0DFItzn2UPzK_0OzrsLvBBgoX">Google Colab</a>.</p>
+
+
+
+  
+
+  
+    <div id="disqus_thread"></div>
+    <script>
+
+      /**
+      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      
+      var disqus_config = function () {
+        this.page.url = "https://teddyyjc.github.io/" + "/blog/2019/11/19/Barotropic-Instability";  // Replace PAGE_URL with your page's canonical URL variable
+        console.log(this.page.url);
+        this.page.identifier = "/blog/2019/11/19/Barotropic-Instability"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+
+      (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://jcyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+  
+  <h3>Recent <a href="/~yang/academic/#blog" style="color:#526d6d">Posts</a></h3>
+    
+    <!-- 
+    
+    
+    <div class="thumb">
+      
+    
+    <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/jensen.svg')"></div>
+    </a>
+    <h5>05 Feb 2021</h5>
+    <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
+      <h4>Jensen's Approximation</h4>
+    </a>
+    </div><div class="thumb" style="margin-left:5%">
+    
+    <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/isoperimetric.png')"></div>
+    </a>
+    <h5>22 Jan 2021</h5>
+    <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
+      <h4>De Giorgi</h4>
+    </a>
+    </div><div class="thumb" style="margin-left:5%">
+    
+    <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/lorentz.svg')"></div>
+    </a>
+    <h5>14 Apr 2020</h5>
+    <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
+      <h4>Lorentz Space</h4>
+    </a>
+    </div> -->
+
+  <div style="display:grid;grid-template-columns:30% 30% 30%;align-items:center;justify-content:space-between;grid-row-gap:2.5em">
+
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/jensen.svg')"></div>
+      </a>
+      <h5>05 Feb 2021</h5>
+      <a href="/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+        <h4>Jensen's Approximation</h4>
+      </a>
+      </div>
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/isoperimetric.png')"></div>
+      </a>
+      <h5>22 Jan 2021</h5>
+      <a href="/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+        <h4>De Giorgi</h4>
+      </a>
+      </div>
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/lorentz.svg')"></div>
+      </a>
+      <h5>14 Apr 2020</h5>
+      <a href="/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+        <h4>Lorentz Space</h4>
+      </a>
+      </div>
+    
+    
+    
+  </div>
+
+</div>
+
+	</div><!-- /.container -->
+</div>	
+
+		<footer>
+			<div id="footer-container">
+				<a href="https://www.utexas.edu"><img id="logo" src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a>
+				
+				<p id="copyright">Copyright &#169 2022 Jincheng Yang</p>
+
+				<ul>
+					<li id="utmath"><a href="https://www.ma.utexas.edu/">UT Math</a></li>
+					<li><a href="https://www.linkedin.com/in/jincheng-yang/">LinkedIn</a></li>
+					<li><a href="https://github.com/jincheng-yang">GitHub</a></li>
+					<li><a href="mailto:jcyang@math.utexas.edu">Email</a></li>
+				</ul>
+			</div>
+		</footer>
+
+
+		
+		<script type="text/javascript" src="/~yang/plugin/Escher.js"></script>
+		<script type="text/javascript" src="/~yang/plugin/set_icon.js"></script>
+	</body>
+</html>

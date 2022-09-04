@@ -208,7 +208,7 @@ layout: default
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   {% endif %}
   
-  <h3>Recent <a href="{{ site.roooot }}/academic/#blog" style="color:#526d6d">Posts</a></h3>
+  <h3>Recent <a href="{{ site.baseurl }}/academic/#blog" style="color:#526d6d">Posts</a></h3>
     
     <!-- {% assign my_posts = site.posts | where:"image",true %}
     {% assign firstPost = true %}
@@ -218,7 +218,7 @@ layout: default
     {% else %}<div class="thumb" style="margin-left:5%">
     {% endif %}
     <a href="{{ post.url }}" title="{{ post.title }}">
-    <div class="thumbpic" style="background-color:white;background-image:url('{{ site.roooot }}/assets/images/thumbnails/{{ post.thumb }}')"></div>
+    <div class="thumbpic" style="background-color:white;background-image:url('{{ site.baseurl }}/assets/images/thumbnails/{{ post.thumb }}')"></div>
     </a>
     <h5>{{ post.date | date_to_string }}</h5>
     <a href="{{ post.url }}" title="{{ post.title }}">
@@ -233,7 +233,7 @@ layout: default
     
       <div class="thumb" style="background-color: #EEE;">
       <a href="{{ post.url }}.html" title="{{ post.title }}">
-        <div class="thumbpic" style="background-image:url('{{ site.roooot }}/assets/images/thumbnails/{{ post.thumb }}')"></div>
+        <div class="thumbpic" style="background-image:url('{{ site.baseurl }}/assets/images/thumbnails/{{ post.thumb }}')"></div>
       </a>
       <h5>{{ post.date | date_to_string }}</h5>
       <a href="{{ post.url }}.html" title="{{ post.title }}">

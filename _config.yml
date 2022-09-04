@@ -4,12 +4,13 @@ highlighter: rouge
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-permalink: /users/jcyang/blog/:year/:month/:day/:title
+permalink: /blog/:year/:month/:day/:title
 disqus: 
   shortname: jcyang
 defaults:
   - scope:
-      path: "users/jcyang/assets/files/shorthand-scans"
+      path: ~yang/assets/files/shorthand-scans
     values:
       shorthand-scan: true
-roooot: /users/jcyang
+roooot: /~yang
+baseurl: /~yang

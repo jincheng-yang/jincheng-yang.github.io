@@ -30,7 +30,7 @@ Think each of the function inside $\set{}$ as a function of $\xo$, there are two
 1. $\ue$ is a sup of a family of paraboloids (concave of opening $\frac2\e$). (Left)
 2. $\ue$ is a sup of a family of translations of $u$ ($h$ horizontally, $\frac1\e\abs h ^2$ downwards). (Right)
 
-![Jensen's Approximation Solution]({{ site.roooot }}/assets/images/thumbnails/jensen.svg){: .center-image}
+![Jensen's Approximation Solution]({{ site.baseurl }}/assets/images/thumbnails/jensen.svg){: .center-image}
 
 It has the following properties.
 
