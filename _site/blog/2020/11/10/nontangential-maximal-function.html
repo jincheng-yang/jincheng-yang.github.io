@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Nontangential Maximal Function</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/~yang/css/grid.css">
+		<!-- link to fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Exo:300,600|Roboto:400|Roboto+Condensed:300|Dancing+Script:400|PT+Serif:400,400i|Palanquin+Dark:400|Noto+Serif:400,400i" rel="stylesheet">
+		<!-- JavaScrips -->
+		<script type="text/javascript" src="/~yang/plugin/drag-and-drop.js"></script>
+		
+			<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      },
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+    },
+    jax: ["input/TeX", "output/CommonHTML"]
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS_CHTML">
+</script>
+
+		
+		
+			<script src="https://d3js.org/d3.v4.min.js"></script>
+		
+
+		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108717380-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-108717380-1');
+		</script>
+	</head>
+
+	<body>
+
+		<canvas id="myCanvas" width="1000" height="360" >
+			Your browser does not support the canvas element.
+		</canvas>
+
+		<div id="mt">
+			<p id="name">Jincheng Yang</p>
+			<p id="institute">The University of Chicago</p>
+		</div>
+
+		<nav>
+			<div id="nav-container">
+
+				<div class = "dropdown-block" id = "academic-dropdown-block">
+					<a href="/~yang/academic" ondrop="drop(event)" ondragover="allowDrop(event)" id="academic">Academic &#9662;</a>
+	
+					<div class= "dropdown" id="academic-dropdown">
+						<a class = "dropdown-first" href="/~yang/academic#publications">Publications</a>
+						<a href="/~yang/academic#talks">Talks</a>
+						<a href="/~yang/academic#blog">Blog</a>
+						<a class = "dropdown-last" href="/~yang/academic#conferences">Conferences</a>
+					</div>
+				</div>
+
+				<a href="https://github.com/teddyyjc/curriculum-vitae/raw/master/main.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="cv">Curriculum Vitae</a>
+				
+				<a id = "icon" href="/~yang/" draggable="true" ondragstart="drag(event)" title="Home Page"></a>
+
+				<a href="/~yang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="teaching">Teaching</a>
+
+				<a href="/~yang/music" ondrop="drop(event)" ondragover="allowDrop(event)" id="music">Music</a>
+
+				<div class = "dropdown-block" id = "menu-dropdown-block">
+					<a href="#" id="menu">Menu &#9662;</a>
+	
+					<div class= "dropdown" id="menu-dropdown">
+						<a class="dropdown-first" href="/~yang/academic">Academic</a>
+						<a href="https://github.com/teddyyjc/curriculum-vitae/raw/master/main.pdf">Curriculum Vitae</a>
+						<a href="/~yang/academic#publications">Publications</a>
+						<a href="/~yang/teach">Teaching</a>
+						<a class="dropdown-last" href="/~yang/music">Music</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div>
+	<div class="content">
+		
+  <div style="display:none">
+    
+    %--Paired Delimiters--
+    $
+    \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\ang}[1]{\left\langle #1 \right\rangle}
+    \newcommand{\bkt}[1]{\left\lbrack #1 \right\rbrack}
+    \newcommand{\nor}[1]{\left\lVert #1 \right\rVert}
+    \newcommand{\pth}[1]{\left( #1 \right)}
+    \newcommand{\set}[1]{\left\lbrace #1 \right\rbrace}
+    \newcommand{\abset}[1]{\abs{\set{#1}}}
+    \newcommand{\ptset}[1]{\pth{\set{#1}}}
+    $
+
+    %--Operators--
+    $
+    \newcommand{\grad}{\nabla}
+    \newcommand{\La}{\Delta}
+    \renewcommand{\div}{\operatorname{div}}
+    \newcommand{\curl}{\operatorname{curl}}
+    \newcommand{\tr}{\operatorname{tr}}
+    \newcommand{\Hess}{\operatorname{Hess}}
+    \newcommand{\mm}{\mathcal{M}}
+    \newcommand{\inv}{^{-1}}
+    \newcommand{\tensor}{\otimes}
+    \newcommand{\cross}{\times}
+    \newcommand{\weak}[1]{\xrightharpoonup{#1}}
+    $
+
+    %--Notations--
+    $
+    \newcommand{\Vol}{\mathrm{Vol}}
+    \newcommand{\loc}{\mathrm{loc}}
+    \renewcommand{\dim}{\mathrm{dim}}
+    \newcommand{\Span}{\mathrm{Span}}
+    \newcommand{\diam}{\mathrm{diam}}
+    \newcommand{\Id}{\mathrm{Id}}
+    \newcommand{\Lip}{\mathrm{Lip}}
+    \newcommand{\dist}{\mathrm{dist}}
+    \newcommand{\inv}{^{-1}}
+    $
+
+    %--Algebra--
+    $
+    \newcommand{\hfsq}[1]{\frac{\abs{#1} ^2}{2}}
+    $
+
+    %--Sets--
+    $
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\RR}[1]{\R ^{#1}}
+    \newcommand{\Rd}{\RR d}
+    \newcommand{\Rn}{\RR n}
+    \renewcommand{\S}{\mathbb{S}}
+    \renewcommand{\Z}{\mathbb{Z}}
+    \newcommand{\T}{\mathbb{T}}
+    \newcommand{\ssubset}{\subset \subset}
+    \newcommand{\spt}{\operatorname{spt}}
+    \newcommand{\supp}{\operatorname{supp}}
+    \newcommand{\diam}{\mathrm{diam}}
+    \newcommand{\diag}{\operatorname{diag}}
+    \renewcommand{\dim}{\mathrm{dim}}
+    \newcommand{\dimH}{\mathrm{dim} _\mathcal{H}}
+    \newcommand{\Sing}{\mathrm{Sing}}
+    \newcommand{\Vol}{\mathrm{Vol}}
+    \newcommand{\inds}[1]{\mathbf1_{\set{#1}}}
+    \newcommand{\ind}[1]{\mathbf1_{#1}}
+    $
+    
+    %--Summations--
+    $
+    \newcommand{\SUM}[3]{\sum \cnt{#1}{#2}{#3}}
+    \newcommand{\PROD}[3]{\prod \cnt{#1}{#2}{#3}}
+    \newcommand{\cnt}[3]{ _{#1 = #2} ^{#3} }
+    \newcommand{\seq}[2]{\set{#1 _{#2}} _{#2}}
+    \newcommand{\seqi}[2]{\set{#1 _{#2}} \cnt{#2}1i}
+    $
+
+    %--Superscript and Subscript
+    $
+    \newcommand{\pp}[1]{^{(#1)}}
+    \newcommand{\bp}[1]{^{(#1)}}
+    \newcommand{\pps}[2][1]{^{#2 + #1}}
+    \newcommand{\bps}[2][1]{_{#2 + #1}}
+    \newcommand{\pms}[2][1]{^{#2 - #1}}
+    \newcommand{\bms}[2][1]{_{#2 - #1}}
+    $
+
+
+    %--Notations--
+    $
+    \newcommand{\loc}{\mathrm{loc}}
+    \newcommand{\Span}{\operatorname{Span}}
+    \newcommand{\argmin}{\operatorname{argmin}}
+    \newcommand{\argmax}{\operatorname{argmax}}
+    \newcommand{\osc}{\operatorname{osc}}
+    \newcommand{\Id}{\mathrm{Id}}
+    \newcommand{\Lip}{\operatorname{Lip}}
+    \newcommand{\Leb}{\operatorname{Leb}}
+    \newcommand{\PV}{\mathrm{P.V.}}
+    \newcommand{\dist}{\operatorname{dist}}
+    \newcommand{\at}[1]{\bigr\rvert _{#1}}
+    \newcommand{\At}[1]{\biggr\rvert _{#1}}
+    \newcommand{\half}{\frac12}
+    $
+
+
+    %--Text--
+    $
+    \newcommand{\inn}{\text{ in }}
+    \newcommand{\onn}{\text{ on }}
+    \renewcommand{\ae}{\text{ a.e. }}
+    \newcommand{\st}{\text{ s.t. }}
+    \newcommand{\forr}{\text{ for }}
+    \newcommand{\as}{\text{ as }}
+    $
+
+    %--Differential--
+    $
+    \newcommand{\d}{\mathop{\kern0pt\mathrm{d}}\!{}}
+    \newcommand{\dt}{\d t}
+    \newcommand{\dx}{\d x}
+    \newcommand{\dy}{\d y}
+    \newcommand{\ptil}{\partial}
+    \newcommand{\pt}{\ptil _t}
+    \newcommand{\pfr}[2]{\frac{\partial #1}{\partial #2}}
+    \newcommand{\dfr}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+    \newcommand{\ddt}{\dfr{}t}
+    \newcommand{\pthf}[2]{\pth{\frac{#1}{#2}}}
+    $
+    
+    %--Integral--
+    $
+    \newcommand{\intR}{\int _0 ^\infty}
+    \newcommand{\intRn}{\int _{\Rn}}
+    \newcommand{\intRd}{\int _{\Rd}}
+    \newcommand{\fint}{-\!\!\!\!\!\!\int}
+    \newcommand{\intset}[1]{\int _{\set{#1}}}
+    $
+
+    %--Greek--
+    $
+    \newcommand{\e}{\varepsilon}
+    \newcommand{\vp}{\varphi}
+    $
+
+    %--Norm--
+    $
+    \newcommand{\nmL}[2]{\nor{#2} _{L ^#1}}
+    $
+  </div>
+
+
+
+
+<h1>Research Blog</h1>
+
+<div class="post">
+
+<h2>Nontangential Maximal Function</h2>
+
+<p class="meta">2020, November 10</p>
+
+  <h3 id="introduction">Introduction</h3>
+
+<p>We are interested in the relations between a function $f$ defined on $\Rn$ and a corresponding function $F$ defined on $\RR{n+1}_+$. For instance, $F (\cdot, t) = f * \Phi _t$ for some convolution kernel $\Phi$. We define the nontangential maximal function</p>
+
+<p>\begin{align*}
+    F ^* (x) := \sup _{|x - y| &lt; t} |F (y, t)| = \sup _{\Gamma (x)} |F|.
+\end{align*}</p>
+
+<p>Here $\Gamma (x) = \set{(y, t): \abs{y - x} &lt; t}$ is a cone centered at $x$ with aperture $1$. We may also define cone with aperture $a$ by $\Gamma _a (x) = \set{(y, t): \abs{y - x} &lt; at}$, and corresponding $F ^* _a (x)$.</p>
+
+<div theorem="Proposition">
+Let $\Phi$ has a non-increasing, bounded, integrable radial majorant. Then if $F (x, t) = f * \Phi _t (x)$, then $F ^* (x) \le c \mm f (x)$.
+</div>
+
+<h3 id="carleson-measure">Carleson Measure</h3>
+
+<p>$
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cC}{\mathcal C}
+$
+For a ball $B = B _r (x _0) \subset \Rn$, let $T (B) \subset \RR{n+1}_+$ be the cone with base $B$:</p>
+
+<p>\begin{align*}
+    T (B) = \set{
+        (x, t): \abs{x - x _0} \le r - t
+    } = \RR{n+1} _+ \setminus \bigcup _{x \notin B} \Gamma (x).
+\end{align*}</p>
+
+<p>In general for an open set $O \subset \Rn$, we define</p>
+
+<p>\begin{align*}
+    T (O) = \RR{n+1} _+ \setminus \bigcup _{x \notin O} \Gamma (x).
+\end{align*}</p>
+
+<p>It is easy to see</p>
+
+<p>\begin{align*}
+    A \subset B \Rightarrow B ^c \subset A ^c \Rightarrow \bigcup _{x \notin B} \Gamma (x) \subset \bigcup _{x \notin A} \Gamma (x) \Rightarrow T (A) \subset T (B)
+\end{align*}</p>
+
+<p>and</p>
+
+<p>\begin{align*}
+    (x, t) \in T (A) \cap T (B) &amp;\Leftrightarrow (x, t) \notin \bigcup _{x \notin B} \Gamma (x) \cup \bigcup _{x \notin A} \Gamma (x)<br />
+    \newline 
+    &amp;\Leftrightarrow (x, t) \notin \bigcup _{x \notin A \cap B} \Gamma (x) 
+    \newline 
+    &amp;\Leftrightarrow (x, t) \in T (A \cap B)
+\end{align*}</p>
+
+<p>so $T (A) \cap T (B) = T (A \cap B)$. As for the union,</p>
+
+<p>\begin{align*}
+    (x, t) \in T (A) \cup T (B) 
+    &amp;\Leftrightarrow (x, t) \notin \bigcup _{x \notin A} \Gamma (x) \cap \bigcup _{x \notin B} \Gamma (x) 
+    \newline 
+    &amp;\Rightarrow (x, t) \notin \bigcup _{x \notin A \cup B} \Gamma (x) 
+    \newline
+    &amp;\Leftrightarrow 
+    (x, t) \in T (A \cup B).
+\end{align*}</p>
+
+<p>so $T (A) \cap T (B) \subset T (A \cap B)$.</p>
+
+<p>Consider the following two spaces:</p>
+
+<p>\begin{align*}
+    \cN &amp;= \set{F: \RR{n+1} _+ \to \R \text{ measurable function with } F ^* \in L^1(\Rn)}, 
+    \newline
+    \cC &amp;= \set{\mu \text{ Borel measure on $\RR{n+1} _+$}: \mu (T (B)) \le C |B| \text{ for all $B$ for some $C &lt; \infty$}}.
+\end{align*}</p>
+
+<p>These two spaces equipped with norm</p>
+
+<p>\begin{align*}
+    \nor{F} _{\cN} &amp;= \nor{F ^*} _{L ^1 (\Rn)}, 
+    \newline
+    \nor{\mu} _{\cC} &amp;= \sup _B \frac{\mu (T (B))}{|B|} 
+    \newline
+    &amp;= \sup _{x \in \Rn} \underbrace{\sup _{B \ni x} \frac{\mu (T (B))}{|B|}} _{:=C (\d\mu) (x)}.
+\end{align*}</p>
+
+<p>are Banach spaces. $\cC$ is called the Carleson measure. The main theorem is the following.</p>
+
+<div theorem="Theorem">
+If $F \in \cN$ and $\mu \in \cC$, then 
+\begin{align}
+    \int _{\RR{n+1}_+} F (x, t) \d \mu (x, t) 
+    &amp;\le c \intRn F ^* (x) C (\d \mu) (x) \d x \\
+    &amp;\le c \nor{F} _\cN \nor{\d\mu} _\cC.
+\end{align}
+</div>
+
+<h4 id="proof">Proof.</h4>
+
+<p>The proof is based on the following two observations:</p>
+
+<ol>
+  <li>$\set{\abs F &gt; \alpha} \subset T \pth{ \set{ F ^* &gt; \alpha}}$.</li>
+  <li>$\mu (T(B)) \le \abs B$ for all $B$ implies $\mu (T(O)) \le c \abs O$ for all $O \subset \Rn$.</li>
+</ol>
+
+<p>Let’s see why they are true. Assume $F &gt; 0$ for simplicity. For the first one,</p>
+
+<p>\begin{align*}
+    (x, t) \in \set{F &gt; \alpha} &amp;\Rightarrow \forall y \in B _t (x), F ^* (y) &gt; \alpha
+    \newline
+    &amp;\Rightarrow (x, t) \in T (B _t (x)) \subset T \pth{
+        \set{
+            F ^* &gt; \alpha
+        }
+    }.
+\end{align*}</p>
+
+<p>For the second one, pick $(x, t) \in T (O)$, then $B _t (x) \subset O$. Let $\seq Q k$ be a Whitney decomposition of $O$, such that $\diam (Q _k) \sim \dist (Q _k, O ^c)$. Let $Q _k$ be the cube that contains $x$, and let $B _k$ be a ball centered at $Q _k$ with radius $c \diam (Q _k)$. Then by choosing $c$ large enough, $B _t (x) \subset B _k$, and $(t, x) \in T (B _k)$. Therefore, $T (O) \subset \bigcup _k T (B _k)$, and</p>
+
+<p>\begin{align*}
+    \mu (T(O)) \le \sum _k \mu (T(B _k))
+\end{align*}</p>
+
+<p>Now for any $x \in Q _k \subset B _k$,</p>
+
+<p>\begin{align*}
+    \mu (T(B _k)) \le C (\d \mu) (x) |B _k|,
+\end{align*}</p>
+
+<p>therefore</p>
+
+<p>\begin{align*}
+    \mu (T(B _k)) \le \frac1{|Q _k|} \int _{Q _k} C (\d \mu) (x) \d x |B _k| = c \int _{Q _k} C (\d \mu) (x) \d x,
+\end{align*}</p>
+
+<p>thus</p>
+
+<p>\begin{align*}
+    \mu (T (O)) \le c \sum _k \int _{Q _k} C (\d \mu) (x) \dx = c \int _O C (\d \mu) (x) \d x.
+\end{align*}</p>
+
+<p>After these two observations, we have</p>
+
+<p>\begin{align*}
+    \mu \ptset{F &gt; \alpha} \le \mu( T( \set{F ^* &gt; \alpha})) \le c \intset{F ^* &gt; \alpha} C (\d\mu) (x) \d x.
+\end{align*}</p>
+
+<p>Integrate with respect to $\alpha$,</p>
+
+<p>\begin{align*}
+    \int _{\RR{n+1}_+} F \d \mu \le c \intRn F ^* (x) C (\d\mu) (x) \d x.
+\end{align*}</p>
+
+<h3 id="the-effect-of-aperture">The Effect of Aperture</h3>
+
+<p>We now show that the choice of aperture is not important.</p>
+
+<div theorem="Proposition">
+Recall that for $a &gt; 0$, 
+\begin{align*}
+    F ^* _a (x) = \sup _{(y, t) \in \Gamma _a (x)} |F (y, t)| = \sup _{|y - x| \le at} |F (y, t)|.
+\end{align*}
+Then for any $a \ge b &gt; 0$, 
+\begin{align*}
+    \abset{F ^* _a &gt; \alpha} \le c _{a, b} \abset{F ^* _b &gt; \alpha}, \qquad \forall \alpha &gt; 0.
+\end{align*}
+Integrating with respect to $\alpha$ gives $\nmL1{F _a ^*} \le c _{a,b} \nmL1{F _b ^*}$. 
+</div>
+
+<p>Note that $F ^* _a \ge F ^* _b$ pointwisely, so the above inequalities are comparible.</p>
+
+<h4 id="proof-1">Proof.</h4>
+
+<p>Denote $O = \set{F ^* _b &gt; \alpha}$. For $x \in \set{F ^* _a &gt; \alpha}$, there exists $(\bar x, t)$ with $F (\bar x, t) &gt; \alpha$ and $x \in B _{at} (\bar x)$. For every $x \in B _{bt} (\bar x)$ we have $F ^* _b (x) &gt; \alpha$, so $B _{bt} (\bar x) \subset O$. If we set $B = B _{(a + b) t} (x) \supset B _{bt} (\bar x)$, then</p>
+
+<p>\begin{align*}
+    \frac{|O \cap B|}{|B|} \ge \frac{B _{bt} (\bar x)}{|B|} \ge \pthf b{a+b} ^n.
+\end{align*}</p>
+
+<p>This shows that</p>
+
+<p>\begin{align*}
+    \mm \ind O (x) \ge \pthf b{a+b} ^n.
+\end{align*}</p>
+
+<p>Therefore,</p>
+
+<p>\begin{align*}
+    \abset{F ^* _a &gt; \alpha} \le \abset{\mm \ind O \ge \pthf b{a+b} ^n} \le c_n \pthf{a+b}b ^n \nmL1{\ind O} = c _n \pthf{a+b}b ^n \abset{F ^* _b &gt; \alpha}.
+\end{align*}</p>
+
+<h3 id="atomic-decomposition">Atomic Decomposition</h3>
+
+<div theorem="Theorem">
+Any $F \in \cN$ can be written as 
+\begin{align*}
+    F = \sum _k \lambda _k a _k
+\end{align*}
+where $a _k$ are atoms, $\lambda _k \ge 0$, and 
+\begin{align*}
+    \sum _k \lambda _k \le c \nor{F}_{\cN}.
+\end{align*}
+Here $a \in \cN$ is an atom if $a$ is supported in the tent $T (B)$ of some ball $B$ with $\nor{a}_{L ^\infty} \le |B| ^{-1}$, so that $a ^* (x) \le |B| \inv$ when $x \in B$ and $a ^* (x) = 0$ when $x \notin B$, and $\nor{a} _{\cN} \le 1$.
+</div>
+
+<h4 id="proof-2">Proof.</h4>
+
+<p>We denote the dyadic level sets of $F ^*$ by $O ^j = \set{F ^* &gt; 2 ^j}$, then $\supp F \subset \bigcup _{j \in \Z} T (O ^j)$. Moreover, we Whitney decompose $O ^j$ into $Q ^j _k$, so that</p>
+
+<p>\begin{align*}
+    T (O ^j) = \bigcup _k T (B ^j _k) \cap (Q ^j _k \times (0, \infty)).
+\end{align*}</p>
+
+<p>Denote</p>
+
+<p>\begin{align*}
+    \Delta ^j _k = T (B ^j _k) \cap (Q ^j _k \times (0, \infty)) \cap (T (O ^j) \setminus T(O ^{j + 1})).
+\end{align*}</p>
+
+<p>Then $\supp F$ is the disjoint union of $\Delta _k ^j$. Now set $\lambda ^j _k a ^j _k = F \ind{\Delta _k ^j}$, where $\lambda ^j _k = 2 ^{j + 1} \abs{B _k ^j}$. Then $a ^j _k$ is an atom and</p>
+
+<p>\begin{align*}
+    \sum _{j, k} \lambda _k ^j = \sum _{j, k} 2 ^{j + 1} |B _k ^j| = c \sum _{j, k} 2 ^{j + 1} |Q _k ^j| = c \sum _j 2 ^{j + 1} |O ^j| \le c \nmL1{F ^*} = c \nor F _{\cN}.
+\end{align*}</p>
+
+
+
+  
+  <script>
+    var thms = d3.selectAll("[theorem]")._groups[0];
+    for (var thm of thms) {
+      var oldHTML = thm.innerHTML;
+      var theoremTitle = "<b>" + thm.getAttribute("theorem") + ".</b>";
+      var newHTML = "<blockquote><p>" + theoremTitle + oldHTML + "</blockquote></p>";
+      thm.innerHTML = newHTML;
+    }
+  </script>
+  
+
+  
+  
+  <h3>Recent <a href="/~yang/academic/#blog" style="color:#526d6d">Posts</a></h3>
+    
+    <!-- 
+    
+    
+    <div class="thumb">
+      
+    
+    <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/jensen.svg')"></div>
+    </a>
+    <h5>05 Feb 2021</h5>
+    <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
+      <h4>Jensen's Approximation</h4>
+    </a>
+    </div><div class="thumb" style="margin-left:5%">
+    
+    <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/isoperimetric.png')"></div>
+    </a>
+    <h5>22 Jan 2021</h5>
+    <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
+      <h4>De Giorgi</h4>
+    </a>
+    </div><div class="thumb" style="margin-left:5%">
+    
+    <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/lorentz.svg')"></div>
+    </a>
+    <h5>14 Apr 2020</h5>
+    <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
+      <h4>Lorentz Space</h4>
+    </a>
+    </div> -->
+
+  <div style="display:grid;grid-template-columns:30% 30% 30%;align-items:center;justify-content:space-between;grid-row-gap:2.5em">
+
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/jensen.svg')"></div>
+      </a>
+      <h5>05 Feb 2021</h5>
+      <a href="/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+        <h4>Jensen's Approximation</h4>
+      </a>
+      </div>
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/isoperimetric.png')"></div>
+      </a>
+      <h5>22 Jan 2021</h5>
+      <a href="/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+        <h4>De Giorgi</h4>
+      </a>
+      </div>
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/lorentz.svg')"></div>
+      </a>
+      <h5>14 Apr 2020</h5>
+      <a href="/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+        <h4>Lorentz Space</h4>
+      </a>
+      </div>
+    
+    
+    
+  </div>
+
+</div>
+
+	</div><!-- /.container -->
+</div>	
+
+		<footer>
+			<div id="footer-container">
+				<a href="https://www.uchicago.edu"><img id="logo" src="/~yang/assets/images/uc_logo.jpeg"></a>
+				
+				<p id="copyright">Copyright &#169 2022 Jincheng Yang</p>
+
+				<ul>
+					<li id="uchimath"><a href="https://mathematics.uchicago.edu/">UChi Math</a></li>
+					<li><a href="https://www.linkedin.com/in/jincheng-yang/">LinkedIn</a></li>
+					<li><a href="https://www.researchgate.net/profile/Jincheng-Yang">ResearchGate</a></li>
+					<li><a href="mailto:jincheng@uchicago.edu">Email</a></li>
+				</ul>
+			</div>
+		</footer>
+
+
+		
+		<script type="text/javascript" src="/~yang/plugin/Escher.js"></script>
+		<script type="text/javascript" src="/~yang/plugin/set_icon.js"></script>
+	</body>
+</html>

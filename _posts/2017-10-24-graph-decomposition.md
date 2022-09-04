@@ -13,9 +13,9 @@ thumb: graph-decomposition.svg
 A graph $V, E$ contains a vertex set $V$ connected by a set of edges $E \subset V \times V$. The **complete graph** $K _n$ has $n$ vertices, and each pair is connected by an edge. The followings are examples of complete graphs. 
 
 <div style="text-align:center">
-    <img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k5.svg" width="30%">
-    <img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k6.svg" width="25%">
-    <img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" width="30%">
+    <img src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/fig-k5.svg" width="30%">
+    <img src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/fig-k6.svg" width="25%">
+    <img src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" width="30%">
 </div>
 
 <p class="figure">Complete graphs $K _5$, $K _6$ and $K _7$</p>
@@ -23,7 +23,7 @@ A graph $V, E$ contains a vertex set $V$ connected by a set of edges $E \subset 
 A **Hamiltonian cycle** of a graph is a cycle that pass all vertices exactly once without walking repeated edges. For example, the orange cycle $C _7$, a cycle with 7 vertices, is a Hamiltonian cycle in $K _7$.
 
 <div id="fig2" style="text-align:center">
-    <img class="emerge" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-c7.svg" width="40%"><img class="disappear" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" width="40%">
+    <img class="emerge" src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/fig-c7.svg" width="40%"><img class="disappear" src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" width="40%">
 </div>
 
 <p class="figure">A Hamiltonian Cycle $C _7$ in $K _7$</p>
@@ -35,7 +35,7 @@ Can we decompose a complete graph into Hamiltonian cycles? This is a classical p
 For what $n$ can we decompose $K_n$ into $mC_n$? First, let's check number of edges. If $K _n$ can be decomposed, then the number of edges of $K _n$ must be a multiple of number of edges in $C _n$, which has $n$ edges. A complete graph $K _n$ has $\mathcal{C} ^2 _n = \dfrac{n(n-1)}{2}$ edges. It is a multiple of $n$ if and only if $\dfrac{n-1}{2}$ is an integer, i.e. $n$ must be odd.
 
 <div id="fig3" style="text-align:center">
-    <img class="mvleft" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig1.svg" width="30%"><img class="mvmiddle" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig2.svg" width="30%"><img class="mvright" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig3.svg" width="30%">
+    <img class="mvleft" src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/fig1.svg" width="30%"><img class="mvmiddle" src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/fig2.svg" width="30%"><img class="mvright" src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/fig3.svg" width="30%">
 </div>
 
 <p class="figure">Decompose $K _7$ into $3C _7$</p>
@@ -69,7 +69,7 @@ is a Hamiltonian cycle. $C^k := w^k C ^0$ (element-wise multiplication) is also 
 Graphically, it can be seen as the following.
 
 <div id="fig4" style="text-align:center">
-    <img class="mvll" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/w9-0.svg" width="25%"><img class="mvl" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/w9-2.svg" width="25%"><img class="mvr" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/w9-1.svg" width="25%"><img class="mvrr" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/w9-3.svg" width="25%">
+    <img class="mvll" src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/w9-0.svg" width="25%"><img class="mvl" src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/w9-2.svg" width="25%"><img class="mvr" src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/w9-1.svg" width="25%"><img class="mvrr" src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/w9-3.svg" width="25%">
 </div>
 
 <p class="figure">Walecki Decomposition of $K _9$ into $4C _3$</p>
@@ -85,7 +85,7 @@ For convenience, we denote the subgraph of $K _n$ consisted by edges of length $
 <div class="boxl">
 
 <div id="fig5" style="text-align:center">
-    <img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3.svg" width="40%">
+    <img src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3.svg" width="40%">
 </div>
 
 <p class="figure">Graph $K _9 ^{1, 3}$</p>
@@ -95,7 +95,7 @@ For convenience, we denote the subgraph of $K _n$ consisted by edges of length $
 <div class="boxr">
 
 <div id="fig6" style="text-align:center">
-    <img class="mvlll" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3-1.svg" width="40%"><img class="mvrrr" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3-2.svg" width="40%">
+    <img class="mvlll" src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3-1.svg" width="40%"><img class="mvrrr" src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3-2.svg" width="40%">
 </div>
 
 <p class="figure">$K _9 ^{1, 3} = 2C _9 $</p>
@@ -128,7 +128,7 @@ It should be noted that even though most cases I constructed are symmetric, ther
 <div class="boxl">
 
 <div id="fig5" style="text-align:center">
-    <img src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4.svg" width="40%">
+    <img src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4.svg" width="40%">
 </div>
 
 <p class="figure">Graph $K _{12} ^{1, 4}$</p>
@@ -137,7 +137,7 @@ It should be noted that even though most cases I constructed are symmetric, ther
 
 <div class="boxr">
 <div id="fig7" style="text-align:center">
-    <img class="mvllll" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4-1.svg" width="40%"><img class="mvrrrr" src="/users/jcyang/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4-2.svg" width="40%">
+    <img class="mvllll" src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4-1.svg" width="40%"><img class="mvrrrr" src="{{ site.baseurl }}/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4-2.svg" width="40%">
 </div>
 
 <p class="figure">$K _{12} ^{1, 4} = 2C _{12} $</p>

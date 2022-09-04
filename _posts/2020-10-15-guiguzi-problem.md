@@ -417,7 +417,7 @@ Y4 = image(p, D4)
 
 
 ---
-Download this page as [Jupyter Notebook](/users/jcyang/assets/files/jupyter/guiguzi.ipynb).
+Download this page as [Jupyter Notebook]({{ site.baseurl }}/assets/files/jupyter/guiguzi.ipynb).
 
 
 ### Swift Code

@@ -129,7 +129,7 @@ graph(test_sol)
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_11_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_11_1.png){: .center-image}
 
 
 ### Iteration
@@ -250,7 +250,7 @@ graph(test_sol[1])
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_30_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_30_1.png){: .center-image}
 
 
 Now we define $\lambda _1 (\beta, c)$ to be the principal eigenvalue of $K _{\beta, c}$. Because the eigenvalues are greater than $-3$, we can use default $\mu _0 = -3$ to find smallest eigenvalue.
@@ -373,7 +373,7 @@ eigenPlot(res1, minEigen = -3, maxEigen = 10)
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_42_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_42_1.png){: .center-image}
 
 
 For the region $-3 < \beta < 3$, $-1 < c < 0$, again because as $c \to 0 ^-$, the system becomes singular, we use exponential samples.
@@ -391,7 +391,7 @@ eigenPlot(res0, minEigen = -3, maxEigen = 10)
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_44_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_44_1.png){: .center-image}
 
 
 We can patch them together by doing a transform $\tilde c = \frac1{c - 1/2}$. In this way we may have a better view of the shape of the eigenvalues.
@@ -433,7 +433,7 @@ plt.clabel(CS, inline=1, fontsize=10, colors='k')
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_47_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_47_1.png){: .center-image}
 
 
 Apparently there is a saddle point at $(-1, 0)$ that python contourplot cannot draw numerically. This corresponds to the system at $\beta = -1$, $c = \infty$. Since in general
@@ -468,7 +468,7 @@ eigenPlot(res04, level_increment = 0.004, figure_size = (10, 3))
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_54_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_54_1.png){: .center-image}
 
 
 
@@ -484,7 +484,7 @@ eigenPlot(res10, level_increment = 0.004, figure_size = (10, 3))
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_55_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_55_1.png){: .center-image}
 
 
 
@@ -500,7 +500,7 @@ eigenPlot(res16, level_increment = 0.004, figure_size = (10, 3))
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_56_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_56_1.png){: .center-image}
 
 
 ## Instability Boundary
@@ -533,7 +533,7 @@ plt.plot(beta_sample[100:500], Lambda_beta[100:500])
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_61_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_61_1.png){: .center-image}
 
 
 Plot for $\alpha = \sqrt{\Lambda _\beta}$.
@@ -556,7 +556,7 @@ plt.plot(beta_sample[100:500], alpha[100:500])
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_64_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_64_1.png){: .center-image}
 
 
 ### Detailed Calculation
@@ -662,7 +662,7 @@ plt.plot(beta_sample[100:140], c_star[100:140])
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_72_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_72_1.png){: .center-image}
 
 
 For $\beta > 0$, $c ^*$ is small but not always zero.
@@ -680,7 +680,7 @@ plt.plot(beta_sample[300:], c_star[300:])
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_74_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_74_1.png){: .center-image}
 
 
 Now compare the value of our results and the hypothesis of Kuo.
@@ -706,7 +706,7 @@ plt.plot(beta_sample[100:500], hypothesis[100:500])
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_76_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_76_1.png){: .center-image}
 
 
 The difference for $0 < \beta < 2$ is the following.
@@ -724,7 +724,7 @@ plt.plot(beta_sample[300:500], alpha[300:500] - hypothesis[300:500])
 
 
 
-![png](/users/jcyang/assets/images/blog/2019-11-19-barotropic-instability/output_78_1.png){: .center-image}
+![png]({{ site.baseurl }}/assets/images/blog/2019-11-19-barotropic-instability/output_78_1.png){: .center-image}
 
 
 ### Calculate $\beta _-$
@@ -840,4 +840,4 @@ beta_minus
 
 
 ---
-Download this page as [Jupyter Notebook](/users/jcyang/assets/files/jupyter/strum-liouville.ipynb), or run this notebook in [Google Colab](https://colab.research.google.com/drive/1mrOwGWG0DFItzn2UPzK_0OzrsLvBBgoX).
+Download this page as [Jupyter Notebook]({{ site.baseurl }}/assets/files/jupyter/strum-liouville.ipynb), or run this notebook in [Google Colab](https://colab.research.google.com/drive/1mrOwGWG0DFItzn2UPzK_0OzrsLvBBgoX).

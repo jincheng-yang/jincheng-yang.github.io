@@ -50,4 +50,4 @@ In $j$-th iteration, we
 <input type="button" value="Remove" onclick="bremove()" disabled='disabled'>
 <input type="button" value="Show Selection" id='bshow-hide' onclick="if(d3.select('#bshow-hide').attr('value') == 'Show Selection'){bshow_selection()}else if(d3.select('#bshow-hide').attr('value') == 'Show Removed'){bshow_removed()}else bhide()" disabled='disabled'>
 
-<script src='/users/jcyang/assets/js/covering-lemma.js'></script>
+<script src='{{ site.baseurl }}/assets/js/covering-lemma.js'></script>

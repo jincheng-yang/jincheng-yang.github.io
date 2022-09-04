@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>500 Days</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/~yang/css/grid.css">
+		<!-- link to fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Exo:300,600|Roboto:400|Roboto+Condensed:300|Dancing+Script:400|PT+Serif:400,400i|Palanquin+Dark:400|Noto+Serif:400,400i" rel="stylesheet">
+		<!-- JavaScrips -->
+		<script type="text/javascript" src="/~yang/plugin/drag-and-drop.js"></script>
+		
+		
+
+		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108717380-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-108717380-1');
+		</script>
+	</head>
+
+	<body>
+
+		<canvas id="myCanvas" width="1000" height="360" >
+			Your browser does not support the canvas element.
+		</canvas>
+
+		<div id="mt">
+			<p id="name">Jincheng Yang</p>
+			<p id="institute">The University of Chicago</p>
+		</div>
+
+		<nav>
+			<div id="nav-container">
+
+				<div class = "dropdown-block" id = "academic-dropdown-block">
+					<a href="/~yang/academic" ondrop="drop(event)" ondragover="allowDrop(event)" id="academic">Academic &#9662;</a>
+	
+					<div class= "dropdown" id="academic-dropdown">
+						<a class = "dropdown-first" href="/~yang/academic#publications">Publications</a>
+						<a href="/~yang/academic#talks">Talks</a>
+						<a href="/~yang/academic#blog">Blog</a>
+						<a class = "dropdown-last" href="/~yang/academic#conferences">Conferences</a>
+					</div>
+				</div>
+
+				<a href="https://github.com/teddyyjc/curriculum-vitae/raw/master/main.pdf" ondrop="drop(event)" ondragover="allowDrop(event)" id="cv">Curriculum Vitae</a>
+				
+				<a id = "icon" href="/~yang/" draggable="true" ondragstart="drag(event)" title="Home Page"></a>
+
+				<a href="/~yang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="teaching">Teaching</a>
+
+				<a href="/~yang/music" ondrop="drop(event)" ondragover="allowDrop(event)" id="music">Music</a>
+
+				<div class = "dropdown-block" id = "menu-dropdown-block">
+					<a href="#" id="menu">Menu &#9662;</a>
+	
+					<div class= "dropdown" id="menu-dropdown">
+						<a class="dropdown-first" href="/~yang/academic">Academic</a>
+						<a href="https://github.com/teddyyjc/curriculum-vitae/raw/master/main.pdf">Curriculum Vitae</a>
+						<a href="/~yang/academic#publications">Publications</a>
+						<a href="/~yang/teach">Teaching</a>
+						<a class="dropdown-last" href="/~yang/music">Music</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="pde">
+<script type="text/javascript" src="/~yang/plugin/processing.min.js"></script>
+<canvas data-processing-sources="/~yang/assets/files/pde/FiveHundredDays/FiveHundredDays.pde"></canvas>
+</div>
+	
+
+		<footer>
+			<div id="footer-container">
+				<a href="https://www.uchicago.edu"><img id="logo" src="/~yang/assets/images/uc_logo.jpeg"></a>
+				
+				<p id="copyright">Copyright &#169 2022 Jincheng Yang</p>
+
+				<ul>
+					<li id="uchimath"><a href="https://mathematics.uchicago.edu/">UChi Math</a></li>
+					<li><a href="https://www.linkedin.com/in/jincheng-yang/">LinkedIn</a></li>
+					<li><a href="https://www.researchgate.net/profile/Jincheng-Yang">ResearchGate</a></li>
+					<li><a href="mailto:jincheng@uchicago.edu">Email</a></li>
+				</ul>
+			</div>
+		</footer>
+
+
+		
+		<script type="text/javascript" src="/~yang/plugin/Escher.js"></script>
+		<script type="text/javascript" src="/~yang/plugin/set_icon.js"></script>
+	</body>
+</html>

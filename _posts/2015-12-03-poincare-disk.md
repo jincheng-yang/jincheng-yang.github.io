@@ -21,8 +21,8 @@ y'(t) = y(2x + 3y/2 - 3)
 $$
 
 <div class="pde" style="max-width:600px">
-<script type="text/javascript" src="/users/jcyang/plugin/processing.min.js"></script>
-<canvas data-processing-sources="/users/jcyang/assets/files/pde/Poincare/Poincare.pde"></canvas>
+<script type="text/javascript" src="{{ site.baseurl }}/plugin/processing.min.js"></script>
+<canvas data-processing-sources="{{ site.baseurl }}/assets/files/pde/Poincare/Poincare.pde"></canvas>
 </div>
 
 The program is based on a demonstration from the book Generative Design: Visualize, Program, and Create with Processing written by Hartmut Bohnacker. I should thank him for his inspiration.

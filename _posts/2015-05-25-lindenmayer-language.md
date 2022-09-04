@@ -12,7 +12,7 @@ Lindenmayer language, or L-language, is a system which can be used to produces n
 
 The one on the thumbnail is a brilliant example from nature. Using only two letters and four signs, following two rules, we can draw a very sophisticated pine tree.
 
-<img width="100%" src="/users/jcyang/assets/images/blog/2015-05-25-lindenmayer/tree.png">
+<img width="100%" src="{{ site.baseurl }}/assets/images/blog/2015-05-25-lindenmayer/tree.png">
 
 This tool is programmed in Matlab language, with its GUI design tool. You can create your own words, use different rules to create thousands of fractals by yourself!
 
@@ -20,17 +20,17 @@ Here are some classic examples.
 
 #### Koch Snowflake
 
-<img width="100%" src="/users/jcyang/assets/images/blog/2015-05-25-lindenmayer/koch.png">
+<img width="100%" src="{{ site.baseurl }}/assets/images/blog/2015-05-25-lindenmayer/koch.png">
 
 
 #### Sierpinski Carpet
 
-<img width="100%" src="/users/jcyang/assets/images/blog/2015-05-25-lindenmayer/sierpinski.png">
+<img width="100%" src="{{ site.baseurl }}/assets/images/blog/2015-05-25-lindenmayer/sierpinski.png">
 
 
 #### Dragon Curve
 
-<img width="100%" src="/users/jcyang/assets/images/blog/2015-05-25-lindenmayer/dragon.png">
+<img width="100%" src="{{ site.baseurl }}/assets/images/blog/2015-05-25-lindenmayer/dragon.png">
 
 ---
 
