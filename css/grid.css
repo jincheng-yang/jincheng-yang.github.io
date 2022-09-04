@@ -368,7 +368,7 @@ footer {
 
 #logo {
     grid-area: logo;
-    max-width: 8em;
+    max-width: 12em;
 }
 
 #copyright {
@@ -391,8 +391,12 @@ footer {
     font-size: 0.6em;
 }
 
-#footer-container ul #utmath {
+#footer-container ul #uchimath {
     margin-left: 0;
+}
+
+#uchimath a {
+    color: #880000; 
 }
 
 #utmath a {
