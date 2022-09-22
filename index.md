@@ -86,11 +86,11 @@ Chicago, IL 60637, USA
 {% for post in my_posts limit: 12 %}
 
 	<div class="thumb">
-	<a href="{{ post.url }}.html" title="{{ post.title }}">
+	<a href="{{ site.baseurl }}/{{ post.url }}.html" title="{{ post.title }}">
 		<div class="thumbpic" style="background-image:url('{{ site.baseurl }}/assets/images/thumbnails/{{ post.thumb }}')"></div>
 	</a>
 	<h5>{{ post.date | date_to_string }}</h5>
-	<a href="{{ post.url }}.html" title="{{ post.title }}">
+	<a href="{{ site.baseurl }}/{{ post.url }}.html" title="{{ post.title }}">
 		<h4>{{ post.title }}</h4>
 	</a>
 	</div>
