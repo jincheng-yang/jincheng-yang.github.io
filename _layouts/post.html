@@ -232,11 +232,11 @@ layout: default
     {% for post in my_posts limit: 3 %}
     
       <div class="thumb" style="background-color: #EEE;">
-      <a href="{{ site.baseurl }}/{{ post.url }}.html" title="{{ post.title }}">
+      <a href="{{ site.baseurl }}{{ post.url }}.html" title="{{ post.title }}">
         <div class="thumbpic" style="background-image:url('{{ site.baseurl }}/assets/images/thumbnails/{{ post.thumb }}')"></div>
       </a>
       <h5>{{ post.date | date_to_string }}</h5>
-      <a href="{{ site.baseurl }}/{{ post.url }}.html" title="{{ post.title }}">
+      <a href="{{ site.baseurl }}{{ post.url }}.html" title="{{ post.title }}">
         <h4>{{ post.title }}</h4>
       </a>
       </div>
