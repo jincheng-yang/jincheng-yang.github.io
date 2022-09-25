@@ -17,6 +17,19 @@ I am interested in teaching mathematics, especially topics related to analysis a
 
 </div>
 
+
+<div style="background-color:aliceblue">
+<div class="content" markdown="1">
+
+###### Instructor 
+
+### The University of Chicago
+
+- 2022 Autumn: Math 18500 [Mathematical Methods in the Physical Sciences III](2022/m18500)
+
+</div>
+</div>
+
 <div style="background-color:antiquewhite">
 <div class="content" markdown="1">
 
