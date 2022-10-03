@@ -8,7 +8,7 @@ use-math: true
 Syllabus: See Canvas.
 
 - Regular Class: MWF 12:30-1:20 pm @ Hinds Lab Geo Sci 184
-- My Office Hour: MTh 3:30-5:00 pm @ Eckhart 318
+- My Office Hour: T 9:30-11:00 am, Th 3:30-5:00 pm @ Eckhart 318
 
 ### Calendar
 
