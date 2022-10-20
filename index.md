@@ -32,7 +32,7 @@ Hi, I am Jincheng! I am a Dickson instructor in the [Department of Mathematics](
 
 <!-- - Office: PMA 11.130 -->
 - Email: [jincheng@uchicago.edu](mailto:jincheng@uchicago.edu)
-- Tel: +1 (512) 317-7231
+- Tel: +1 (773) 702-3023
 
 </div>
 </div>
@@ -64,7 +64,7 @@ Chicago, IL 60637, USA
 ###### Education
 
 - **Xi'an Jiaotong University**, B.Sc. in Mathematics and Applied Mathematics (Aug. 2013 - June 2017)
-- **The University of Texas at Austin**, Ph.D. in Mathematics (Aug. 2017 - Present)
+- **The University of Texas at Austin**, Ph.D. in Mathematics (Aug. 2017 - May 2022)
 
 ###### Visiting
 
