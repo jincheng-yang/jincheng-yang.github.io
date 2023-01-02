@@ -1,7 +1,4 @@
----
-layout: post
----
-
+# Math 20400/[ 20 | 40 ] Analysis in Rn II
 
 ## Contact
 
@@ -15,31 +12,29 @@ Canvas message is preferred.
 
 ## Schedule
 
-Regular in-person class: MWF 12:30---1:20 pm @ Hinds Lab Geo Sci 184
+Regular in-person class: TTh [ 9:30-10:50 am \| 11:00 am-12:20 pm ] @ Ryerson Phys Lab 358
 
-Office hours: MTh 3:30---5:00 pm @ Eckhart 318, and by appointment
-
-Problem sessions: to be announced
+Office hours: W [ 12:30-2:00 pm \| 2:00-3:30 pm ], F [ 9:30-11:00 am \| 11:00 am-12:30 pm ] @ Eckhart 318
 
 Tests: 
 
-- Exam 1: 10/21/2022 (Friday), 12:30---1:20, Week 4
-- Exam 2: 11/16/2022 (Wednesday), 12:30---1:20, Week 8
+- Exam 1: 1/24/2023 (Tuesday), [ 9:30-10:50 am \| 11:00 am-12:20 pm ], Week 4
+- Exam 2: 2/16/2023 (Thursday), [ 9:30-10:50 am \| 11:00 am-12:20 pm ], Week 7
 - Final exam: to be announced
 
 A calendar can be found on canvas.
 
 ## Course description
 
-Math 18500 is the third in a sequence of mathematics courses for physical sciences majors. It covers differential equations: first and second-order ODE, systems of ODE, damped oscillators and resonance, Fourier series and Fourier transforms, Laplace transforms, and solutions of the heat and wave equations. These equations help understand many evolutionary physics models.
+Math 20400 is the second in a sequence of real analysis courses. It covers the basics of one-dimensional differentiation theory, multi-dimensional differentiation theory, and one-dimensional integration theory. We will also use the differentiation theory to study simple optimization problems and construct implicit/inverse functions. 
 
 ### Course objectives
 
-You will learn how to solve some first-order ODEs, second-order linear ODEs, higher-order linear systems, and simple PDEs such as heat and wave equations. In addition, you will learn how to utilize some of the essential mathematical toolboxes including linear operators, Fourier series, and Laplace transforms. This course is not proof-based. Gaining intuition is more important than writing rigorous proofs.
+You will understand the fundamental tools in the differentiation theory including mean value theorem (MVT), intermediate value theorem (IVT), Taylor's theorem, and implicit/inverse function theorem (IFT), in both 1-dimensional and multi-dimensional settings. You will be able to solve unconstrained/constrained optimization problems. The last third of this quarter will touch on the integration theory, which relates to the differential theory via the fundamental theorem of calculus (FTC). This course is proof-based. 
 
 ### Textbook
 
-The textbook for the course is *Mathematical Methods in the Physical Sciences*, by Mary Boas (3rd edition). This book will be helpful to you as a reference and also as a source of additional practice problems. 
+The textbook for the course is *A Textbook for Advanced Calculus*, by John Boller and Paul J. Sally, Jr. (preprint). This book will be helpful to you as a reference and also as a source of additional practice problems. We will be using exercises from this textbook.
 
 ## Policies
 
@@ -53,7 +48,8 @@ The total grade for this course is 100 points. Your grade will be based on:
 
 The course grade lines will be adjusted based on the distribution of scores in the course, but will be no more strict than the following:
 
-> A: 90--100 | B: 80--89.9 | C: 70--79.9 | D: 60--69.9 | F: 0--59.9
+> | A: 91--100 | A-: 87--90.99 | B+: 83--87.99 | B: 79--83.99 | B-: 75--78.99 | C+: 70--74.99 
+> | C: 65--69.99 | C-: 60--64.99 | D+: 55--59.99 | D: 50--54.99 | F: 0--49.99
 
 ### Homework
 

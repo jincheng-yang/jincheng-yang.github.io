@@ -3,3 +3,4 @@ _site/feed.xml
 .jekyll-metadata
 .jekyll-cache/
 .DS_Store
+.vscode/settings.json
