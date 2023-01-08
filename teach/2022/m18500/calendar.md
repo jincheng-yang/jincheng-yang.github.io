@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: grid
 ---
 
 |Week|Monday                                     |Tuesday         |Wednesday                           |Thursday        |Friday                             |
