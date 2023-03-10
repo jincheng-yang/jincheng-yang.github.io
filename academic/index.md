@@ -25,10 +25,11 @@ My general research interest includes the area of analysis, dynamic systems, and
 ###### Publications
 
 ### Preprints
-1. Alexis Vasseur, Jincheng Yang: *Boundary Vorticity Estimates for Navier-Stokes and Application to the Inviscid Limit*, submitted (2021). [[arXiv:2110.02426](https://arxiv.org/abs/2110.02426)][[pdf](https://arxiv.org/pdf/2110.02426.pdf)]
-2. Luhao Zhang, Jincheng Yang, Rui Gao: *Optimal Robust Policy for Feature-Based Newsvendor*, to appear in [Management Science](https://pubsonline.informs.org/journal/mnsc/) (2022) [[Opt-Online](http://www.optimization-online.org/DB_HTML/2021/12/8749.html)][[pdf](https://optimization-online.org/wp-content/uploads/2021/12/Big_Data_Newsvendor-2.pdf)]
-3. Luhao Zhang, Jincheng Yang, Rui Gao: *A Simple and General Duality Proof for Wasserstein Distributionally Robust Optimization*, submitted (2022) [[arXiv:2205.00362](https://arxiv.org/abs/2205.00362)][[pdf](https://arxiv.org/pdf/2205.00362)]
-4. Jincheng Yang, Luhao Zhang, Ningyuan Chen, Rui Gao, Ming Hu: *Decision-making with Side Information: A Causal Transport Robust Approach*, preprint (2022) [[Opt-Online](https://optimization-online.org/2022/10/decision-making-with-side-information-a-causal-transport-robust-approach/)][[pdf](https://optimization-online.org/wp-content/uploads/2022/10/DRO_with_side_info__1st_part_-2-1.pdf)]
+1. Alexis Vasseur, Jincheng Yang: *Layer Separation of the 3D Incompressible Navier-Stokes Equation in a Bounded Domain*, submitted (2023) [[arXiv:2303.05236](https://arxiv.org/abs/2303.05236)][[pdf](https://arxiv.org/pdf/2303.05236.pdf)]
+2. Alexis Vasseur, Jincheng Yang: *Boundary Vorticity Estimates for Navier-Stokes and Application to the Inviscid Limit*, to appear in [SIAM Journal on Mathematical Analysis](https://www.siam.org/publications/journals/siam-journal-on-mathematical-analysis-sima) (2023) [[arXiv:2110.02426](https://arxiv.org/abs/2110.02426)][[pdf](https://arxiv.org/pdf/2110.02426.pdf)]
+3. Luhao Zhang, Jincheng Yang, Rui Gao: *Optimal Robust Policy for Feature-Based Newsvendor*, to appear in [Management Science](https://pubsonline.informs.org/journal/mnsc/) (2022) [[Opt-Online](http://www.optimization-online.org/DB_HTML/2021/12/8749.html)][[pdf](https://optimization-online.org/wp-content/uploads/2021/12/Big_Data_Newsvendor-2.pdf)]
+4. Luhao Zhang, Jincheng Yang, Rui Gao: *A Simple and General Duality Proof for Wasserstein Distributionally Robust Optimization*, submitted (2022) [[arXiv:2205.00362](https://arxiv.org/abs/2205.00362)][[pdf](https://arxiv.org/pdf/2205.00362)]
+5. Jincheng Yang, Luhao Zhang, Ningyuan Chen, Rui Gao, Ming Hu: *Decision-making with Side Information: A Causal Transport Robust Approach*, preprint (2022) [[Opt-Online](https://optimization-online.org/2022/10/decision-making-with-side-information-a-causal-transport-robust-approach/)][[pdf](https://optimization-online.org/wp-content/uploads/2022/10/DRO_with_side_info__1st_part_-2-1.pdf)]
 
 ### Journal Articles
 

@@ -9,7 +9,7 @@ title: Jincheng's Website | About
 
 # About Me
 
-Hi, I am Jincheng! I am a Dickson instructor in the [Department of Mathematics](https://mathematics.uchicago.edu) at [The University of Chicago](https://www.uchicago.edu). I completed my Ph.D. in Mathematics at [The University of Texas at Austin](https://www.utexas.edu) in March 2022, under the supervision of [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/). My research interests include analysis, partial differential equations, fluid dynamics, including incompressible Euler equations, Navier-Stokes equations, and surface quasi-geostrophic equations. I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student in the Special Class for the Gifted Young before my undergraduate study. 
+Hi, I am Jincheng! I am a Dickson instructor in the [Department of Mathematics](https://mathematics.uchicago.edu) at [The University of Chicago](https://www.uchicago.edu). I completed my Ph.D. in Mathematics at [The University of Texas at Austin](https://www.utexas.edu) in March 2022, under the supervision of [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/). My research interests include analysis, partial differential equations, fluid dynamics, including the incompressible Euler equation and the Navier-Stokes equation. I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student in the Special Class for the Gifted Young before my undergraduate study. 
 
 </div>
 
@@ -30,7 +30,7 @@ Hi, I am Jincheng! I am a Dickson instructor in the [Department of Mathematics](
 <div style="float:right">
 <div style="display:inline" markdown="1">
 
-<!-- - Office: PMA 11.130 -->
+- Office: Eckhart 318
 - Email: [jincheng@uchicago.edu](mailto:jincheng@uchicago.edu)
 - Tel: +1 (773) 702-3023
 
