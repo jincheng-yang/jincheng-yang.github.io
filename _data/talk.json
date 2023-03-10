@@ -2,6 +2,13 @@
     "Talk": [
         {
             "Title": "Layer separation for the 3D Navier-Stokes equation in a bounded domain",
+            "Date": "2023-01-09",
+            "Location": "University of Chicago",
+            "Series": "Calderón-Zygmund Analysis Seminar",
+            "Abstract": "We provide an unconditional $L^2$ upper bound for the boundary layer separation of 3D Leray-Hopf solutions in a smooth bounded domain. By layer separation, we mean the discrepency between a (turbulent) low-viscosity Leray-Hopf solution $u^\\nu$ and a fixed (laminar) regular Euler solution $\\bar u$ with initial conditions close in $L^2$. Layer separation appears in physical and numerical experiments near the boundary, and we bound it asymptotically by $C \\lVert\\bar u\\rVert_{L^\\infty}^3 t$. This extends the previous result when the Euler solution is a regular shear in a finite channel. The key estimate is to control the boundary vorticity in a way that does not degenerate in the vanishing viscosity limit. This is joint work with Alexis Vasseur."
+        },
+        {
+            "Title": "Layer separation for the 3D Navier-Stokes equation in a bounded domain",
             "Date": "2022-11-03",
             "Location": "Princeton University",
             "Series": "Analysis of Fluids and Related Topics",

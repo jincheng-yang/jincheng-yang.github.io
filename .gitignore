@@ -1,6 +1,8 @@
-_site/feed.xml
-.sass-cache/
+_site
+.sass-cache
+.jekyll-cache
 .jekyll-metadata
-.jekyll-cache/
-.DS_Store
-.vscode/settings.json
+vendor
+Gemfile
+Gemfile.lock
+.gitignore
