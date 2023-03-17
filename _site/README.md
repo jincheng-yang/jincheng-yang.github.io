@@ -1,4 +1,4 @@
 # jincheng-yang.github.io
-This is my personal webpage.
+This is my webpage.
 
-Website: [http://math.uchicago.edu/~yang/](http://math.uchicago.edu/~yang/).
+Website: [https://math.uchicago.edu/~yang/](https://math.uchicago.edu/~yang/).
