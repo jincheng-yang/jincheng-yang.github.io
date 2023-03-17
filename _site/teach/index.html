@@ -11,6 +11,32 @@
 		<!-- JavaScrips -->
 		<script type="text/javascript" src="/~yang/plugin/drag-and-drop.js"></script>
 		
+			<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      },
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+    },
+    jax: ["input/TeX", "output/CommonHTML"]
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS_CHTML">
+</script>
+
+		
 		
 
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -96,7 +122,8 @@
 
     <ul>
       <li>2022 Autumn: Math 18500 <a href="2022/m18500">Mathematical Methods in the Physical Sciences III</a></li>
-      <li>2023 Winter: Math 20400 <a href="2023/m20400">Analysis in Rn II</a></li>
+      <li>2023 Winter: Math 20400 <a href="2023/m20400">Analysis in $\mathbb R ^n$ II</a></li>
+      <li>2023 Spring: Math 18500 <a href="2023/m18500">Mathematical Methods in the Physical Sciences III</a></li>
     </ul>
 
   </div>
