@@ -1,0 +1,2037 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/~yang/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/~yang/" rel="alternate" type="text/html" /><updated>2023-03-17T12:34:54-07:00</updated><id>http://localhost:4000/~yang/feed.xml</id><title type="html">Jincheng Yang’s Home Page</title><entry><title type="html">Couette flow</title><link href="http://localhost:4000/~yang/blog/2022/08/16/couette-flow" rel="alternate" type="text/html" title="Couette flow" /><published>2022-08-16T00:00:00-07:00</published><updated>2022-08-16T00:00:00-07:00</updated><id>http://localhost:4000/~yang/blog/2022/08/16/couette-flow</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2022/08/16/couette-flow"><![CDATA[<div style="display:none">
+$
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cA}{\mathcal A}
+$
+</div>
+
+<h3 id="couette-frame">Couette Frame</h3>
+
+<p>Let $(x, y) \in \T \times \R$. Couette flow refers to the shear flow $u _c (t, x, y) = y e _1$. If $u$ solves a transport-diffusion equation</p>
+
+\[\pt u + b \cdot \grad u = \nu \La u + f,\]
+
+<p>that is, $u$ is transported by some flow $b$ and diffuse at viscosity $\nu$, then we can make a change of variable $z = x - t y$, and</p>
+
+\[\tilde u (t, z, y) = u (t, x, y), \tilde b (t, z, y) = b (t, x, y) - u _c (t, x, y), \tilde f (t, z, y) = f (t, x, y).\]
+
+<p>Then</p>
+
+\[\begin{align*}
+    \pt u (t, x, y) &amp;= \pfr{}t \tilde u (t, x - t y, y) = \pt \tilde u - y \ptil _z \tilde u, 
+    \\
+    \ptil _x u (t, x, y) &amp;= \pfr{}x \tilde u (t, x - t y, y) = \ptil _z \tilde u,
+    \\
+    \ptil _y u (t, x, y) &amp;= \pfr{}y \tilde u (t, x - t y, y) = -t \ptil _z \tilde u + \ptil _y \tilde u,
+\end{align*}\]
+
+<p>therefore</p>
+
+\[\begin{align*}
+    (\pt + u _c \cdot \grad) u (t, x, y) &amp;= \pt \tilde u (t, z, y),
+    \\
+    (\ptil _y + t \ptil _x) u (t, x, y) &amp;= \ptil _y \tilde u (t, z, y).
+\end{align*}\]
+
+<p>Moreover, denote $\grad _L = (\ptil _z, \ptil _y - t \ptil _z)$ and $\La _L = \grad _L \cdot \grad _L = \ptil ^2 _z + (\ptil _y - t \ptil _z) ^2$, then $\grad u = \grad _L \tilde u$, $\La u = \La _L \tilde u$. Hence, $\tilde u$ solves the system</p>
+
+\[\begin{align*}
+    \pt \tilde u + \tilde b \cdot \grad _L \tilde u = \nu \La _L \tilde u + \tilde f.
+\end{align*}\]
+
+<h3 id="fourier-transform">Fourier transform</h3>
+
+<p>From now on, we drop the tildes. Suppose we adopt the Fourier transform $(z, y) \to (k, \eta)$, then</p>
+
+\[\hat \grad _L = \begin{pmatrix}
+        i k \\ i \eta - i t k
+    \end{pmatrix} = i k \begin{pmatrix}
+        1 \\ \hat \eta - t
+    \end{pmatrix}, \qquad \hat \La _L = - k ^2 (1 + (\hat \eta - t) ^2) = - k ^2 \ang{t - \hat \eta} ^2.\]
+
+<p>where $\hat \eta := \eta / k$ (we are interested in the non-zero mode $k \neq 0$).</p>
+
+<h3 id="inviscid-damping">Inviscid Damping</h3>
+
+<p>Inviscid damping refers to the phenomenon that some sort of decay exists in the Couette frame albeit without viscosity. Consider the following inviscid equation</p>
+
+\[\pt u = -\ptil _z ^2 (- \La _L) \inv u + f.\]
+
+<p>At the first sight, one may think the right hand side seems to be a positive zeroth order Riesz transform of $u$, hence there should be some exponential growth. However, let $\cN$ be a Fourier multiplier with symbol $\hat \cN = \ang{t - \hat \eta}$, then</p>
+
+\[\pt u = -\ptil _z ^2 (- \La _L) \inv u + f = \cN ^{-2} u + f.\]
+
+<p>Let $\cA$ be a time-dependent Fourier multiplier defined as $\cA \at{t = 0} = \Id$, $\dot \cA = [\pt, \cA] = - 2 \cA \cN ^{-2}$, then</p>
+
+\[\pt \cA u = \dot \cA u + \cA \pt u = - 2 \cA \cN ^{-2} u + \cA \cN ^{-2} u + \cA f = - \cA \cN ^{-2} u + \cA f.\]
+
+<p>This means</p>
+
+\[\ddt \frac{\nor{\cA u} _{H ^s} ^2}2 + \nor{\cN ^{-1} \cA u} _{H ^s} ^2 \le (\cA f, \cA u) _{H ^s} \le \half \nor{\cN ^{-1} \cA u} _{H ^s} ^2 + \half \nor{\cN \cA f} _{H ^s} ^2.\]
+
+<p>Moreover, note that</p>
+
+\[\begin{cases}
+    \pt \hat \cA = - 2 \ang{t - \hat \eta} ^{-2} \hat \cA \\
+    \hat \cA (0) = 1
+\end{cases}\]
+
+<p>which has a solution that is uniformly bounded in $\hat \eta$, so $\cA$ is a bounded multiplier from both above and below, hence</p>
+
+\[\ddt {\nor{\cA u} _{H ^s} ^2} + \nor{\cN ^{-1} u} _{H ^s} ^2 \le C \nor{\cN f} _{H ^s} ^2.\]
+
+<p>Hence</p>
+
+\[\nor{u} _{H ^s} ^2 (t) + \int _0 ^t \nor{\cN \inv u} _{H ^s} ^2 (\tau) \d \tau \le C \nor{u _{in}} _{H ^s} ^2 + C \int _0 ^t \nor{\cN f} _{H ^s} ^2 (\tau) \d \tau.\]
+
+<p>Note that $\hat \cN = \ang{t - \hat \eta} \le \ang{\hat \eta} \ang{t}$, so</p>
+
+\[\nor{u} _{H ^s} ^2 (t) + \int _0 ^t \ang \tau ^{-2} \nor{u} _{H ^{s - 1}} ^2 (\tau) \d \tau \le C \nor{u _{in}} _{H ^s} ^2 + C \int _0 ^t \ang{\tau} ^2 \nor{f} _{H ^{s + 1}} ^2 (\tau) \d \tau.\]
+
+<p>Here we used that for $\alpha \in \mathbb R$,</p>
+
+\[\ang t ^\alpha \nor{u} _{H ^{s - |\alpha|}} \le \nor{\cN ^\alpha u} _{H ^s} \le \ang t ^\alpha \nor{u} _{H ^{s + |\alpha|}}.\]
+
+<!-- $$
+    \ddt {\nor{\cA u} _{H ^s} ^2} + \ang{t} ^{-2} \nor{u} _{H ^{s - 1}} ^2 \le C \nor{\cN f} _{H ^s} ^2 \le C \ang t ^2 \nor f _{H ^{s + 1}}.
+$$
+
+###### Algebraic Decay
+
+Now, $\cN ^\half u$ solves the following system, 
+
+$$
+    \pt \cN ^\half u = -\ptil _z ^2 (- \La _L) \inv \cN ^\half u + \frac12 \cN ^{-\half} \dot \cN u + \cN ^\half f.
+$$
+
+Hence, 
+
+$$
+    \ddt {\nor{\cA \cN ^\half u} _{H ^s} ^2} + \nor{\cN ^{-\half} u} _{H ^s} ^2 \le C \nor{\cN ^\frac32 f} _{H ^s} ^2.
+$$ -->
+
+<h3 id="enhanced-dissipation">Enhanced Dissipation</h3>
+
+<p>Consider the following equation</p>
+
+\[\pt u = \nu \La _L u + f.\]
+
+<p>The naive energy estimates shows the following estimate on the energy dissipation,</p>
+
+\[\ddt \frac{\nor u _{H ^s} ^2}2 + \nu \nor{\grad _L u} _{H ^s} ^2 = (u, f) _{H ^s}.\]
+
+<p>Now, denote $\hat \nu = k ^2 \nu$, then $-\nu \La _L = \hat \nu \cN ^2$, thus (with abuse of notation we regard $\hat \nu$ as a multiplier as well)</p>
+
+\[\pt u + \hat \nu \cN ^2 u = f.\]
+
+<p>To control the enhanced dissipation, we separate the dissipation by</p>
+
+\[\pt u + \max \{\hat \nu \cN ^2, \hat \nu ^\frac13\} u = (\hat \nu ^\frac13 - \hat \nu \cN ^2) _+ u + f.\]
+
+<p>Let $\cA$ be a time-dependent Fourier multiplier defined as $\cA \at{t = 0} = \Id$, and similar as before let $\dot \cA = [\pt, \cA] = - \cA (\hat \nu ^\frac13 - \hat \nu \cN ^2) _+$, then</p>
+
+\[\pt \cA u + \max \{\hat \nu \cN ^2, \hat \nu ^\frac13\} \cA u = \cA f.\]
+
+<p>So</p>
+
+\[\ddt \frac{\nor{\cA u} _{H ^s} ^2}2 + \nor{\hat \nu ^{\frac16} \cA u} _{H ^s} ^2 \le (\cA f, \cA u) _{H ^s} \le \half \nor{\hat \nu ^{\frac16} \cA u} _{H ^s} ^2 + \half \nor{\hat \nu ^{-\frac16} \cA f} _{H ^s} ^2\]
+
+<p>Again, note that $(\hat \nu ^\frac13 - \hat \nu \cN ^2) _+$ is supported near $\abs{t - \hat \eta} &lt; \hat \nu ^{-\frac13}$, which again makes $\cA$ uniformly bounded from both sides. Therefore,</p>
+
+\[\ddt {\nor{\cA u} _{H ^s} ^2} + \nu ^\frac13 \nor{|\ptil _z| ^\frac13 u} _{H ^s} ^2 \le (\cA f, \cA u) _{H ^s} \le \nu ^{-\frac13} \nor{|\ptil _z| ^{-\frac13} f} _{H ^s} ^2\]
+
+<p>Now $\nor{\abs{\ptil _z} ^\frac13 u} _{H ^s} ^2 \ge c \nor{\cA u} _{H ^s}$, so</p>
+
+\[\nor{u} _{H ^s} ^2 (t) \le C \nor{u _{in}} _{H ^s} ^2 e ^{-c \nu ^\frac13 t} \int _0 ^t e ^{c \nu ^\frac13 \tau} \nu ^{-\frac13} \nor{f} _{H ^s} ^2 (\tau) \d \tau.\]]]></content><author><name></name></author><summary type="html"><![CDATA[$ \newcommand{\cN}{\mathcal N} \newcommand{\cA}{\mathcal A} $]]></summary></entry><entry><title type="html">Jensen’s Approximation</title><link href="http://localhost:4000/~yang/blog/2021/02/05/jensen-approximation" rel="alternate" type="text/html" title="Jensen’s Approximation" /><published>2021-02-05T00:00:00-08:00</published><updated>2021-02-05T00:00:00-08:00</updated><id>http://localhost:4000/~yang/blog/2021/02/05/jensen-approximation</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2021/02/05/jensen-approximation"><![CDATA[<h3 id="introduction">Introduction</h3>
+
+<p>Given a continuous function $u \in C (\mathbb T ^n)$, consider 
+$
+\newcommand{\xo}{x _0}
+\newcommand{\ue}{u ^\e}
+\newcommand{\xos}{x _0 ^*}
+\newcommand{\Pd}{P ^\delta}
+\newcommand{\ve}{v _\e}
+$
+\begin{align*}
+    \ue (\xo) := \sup _x \set{
+        u (x) - \frac1\e \abs{x - \xo} ^2
+    } = \sup _h \set{
+        u (\xo - h) - \frac1\e \abs h ^2.
+    }.
+\end{align*}
+Think each of the function inside $\set{}$ as a function of $\xo$, there are two intepretations:</p>
+<ol>
+  <li>$\ue$ is a sup of a family of paraboloids (concave of opening $\frac2\e$). (Left)</li>
+  <li>$\ue$ is a sup of a family of translations of $u$ ($h$ horizontally, $\frac1\e\abs h ^2$ downwards). (Right)</li>
+</ol>
+
+<p><img src="/~yang/assets/images/thumbnails/jensen.svg" alt="Jensen's Approximation Solution" class="center-image" /></p>
+
+<p>It has the following properties.</p>
+
+<ol>
+  <li>$\ue (\xo) = u (\xos) - \frac1\e \abs{x - \xos} ^2$ for some $\xos$. $\ue (\xo) = u (\xo - h ^*) - \frac1\e \abs{h ^*} ^2$.
+    <blockquote>
+      <p>This is because the sup is attainable in a compact set.</p>
+    </blockquote>
+  </li>
+  <li>$\ue (\xo) \ge u(\xo)$.
+    <blockquote>
+      <p>By definition, set $x = \xo$.</p>
+    </blockquote>
+  </li>
+  <li>$\ue$ is $\frac2\e \diam(\mathbb T)$-Lipschitz.
+    <blockquote>
+      <p>This is because for every $x$, $u (x) - \frac1\e\abs{x - \xo} ^2$ is $\frac2\e \diam(\mathbb T)$-Lipschitz in $\xo$.</p>
+    </blockquote>
+  </li>
+  <li>$\ue$ decreases as $\e \to 0$.
+    <blockquote>
+      <p>Because $u (x) - \frac1\e\abs{x - \xo} ^2$ decreases as $\e \to 0$.</p>
+    </blockquote>
+  </li>
+  <li>$\abs{\xos - \xo} ^2 \le \e \osc u$.
+    <blockquote>
+      <p>Because $u (\xo) \le u (\xos) - \frac1\e\abs{\xos - \xo} ^2$.</p>
+    </blockquote>
+  </li>
+  <li>$0 \le \ue (\xo) - u (\xo) \le u (\xos) - u (\xo)$.
+    <blockquote>
+      <p>Because 1. and 2.</p>
+    </blockquote>
+  </li>
+</ol>
+
+<div theorem="Lemma">
+  <ol>
+    <li>$\ue \in C (\mathbb T ^n)$.</li>
+    <li>$\ue \downarrow u$ uniformly as $\e \to 0$.</li>
+    <li>For every $\xo$ there exists a concave paraboloid of opening $2/\e$ that touches $\ue$ by below at $\xo$. Hence $\ue$ is $C ^{1,1}$ by below. In particular, $\ue$ is punctually second order differentiable almost everywhere.</li>
+  </ol>
+</div>
+
+<h4 id="proof">Proof.</h4>
+<ol>
+  <li>We even have Lipschitz continuity from Property 3.</li>
+  <li>Property 4. implies monotonocity. Uniformily can be seen from 
+\begin{align*}
+ \ue (\xo) - u (\xo) \le u (\xos) - u(\xo) \to 0
+\end{align*}
+uniformly since $\xos \to \xo$ uniformly and $u$ is uniform continuous.</li>
+  <li>Because Property 1. asserts that the sup is attained by $\xos$, $\ue$ is touched by a paraboloid by below.</li>
+</ol>
+
+<h3 id="jensenns-approximate-solutions">Jensenn’s Approximate Solutions</h3>
+
+<div theorem="Theorem">
+Suppose $u$ is a viscosity subsolution of $F (D ^2 u) = 0$, we have that $\ue$ is a viscosity subsolution of $F (D ^2 u) = 0$. In particular $F (D ^2 \ue) \ge 0$ a.e.
+</div>
+
+<h4 id="proof-1">Proof.</h4>
+
+<p>Let $P (x)$ touches $\ue$ at $\xo$ by above. Then it touches a translation of $u$ by above (using the second intepretation mentioned at the beginning): $P (\xo) = \ue (\xo) = u (\xo - h ^*) - \frac1\e \abs{h ^*} ^2$.</p>
+
+<p>Consider
+\begin{align*}
+    Q (x) = P (x + h ^*) + \frac1\e \abs{h ^\ast} ^2.
+\end{align*}
+Then $Q$ touches $u$ by above at $\xos$. Since $F (D ^2 u) \ge 0$ in the viscosity sense, 
+\begin{align*}
+0 \le F (D ^2 Q) = F(D ^2 P).
+\end{align*}
+Therefore $\ue$ is a viscosity subsolution.</p>
+
+<h3 id="uniqueness">Uniqueness</h3>
+
+<div theorem="Theorem">
+Let $u$ be a viscosity subsolution and $v$ be a viscosity supersolution to $F (D ^2 w) = 0$ in $\Omega$. Then
+\begin{align*}
+    u - v \in \underline S (\lambda/n, \Lambda).
+\end{align*}
+</div>
+
+<h4 id="proof-2">Proof.</h4>
+
+<p>It suffices to show $f := u ^\e - \ve \in \underline S (\lambda/n, \Lambda)$ in the interior because $S$ is closed under uniform convergence. Let $P$ be a paraboloid that touches $f$ from above at $\xo$.</p>
+
+<p>By Approximation theorem, $\ue$ and $\ve$ are again viscosity sub/supersolutions, and punctually second order differentiable almost everywhere. In particular, if they are both punctually second order differentiable at $\xo$, then 
+\begin{align*}
+    0 \le F (D ^2 \ue (\xo)) - F (D ^2 \ve (\xo)) \le \mathcal M ^+ (D ^2 f (\xo); \lambda/n, \Lambda) \le \mathcal M ^+ (D ^2 P (\xo); \lambda/n, \Lambda)
+\end{align*}
+which finishes the proof. The problem is that we don’t know if $\ue$ and $\ve$ are punctually second order differentiable at $\xo$.</p>
+
+<p>To overcome this, we fix a small $r &gt; 0$ and define
+\begin{align*}
+    \Pd (x) = P (x) + \delta \abs{x - \xo} ^2 - \delta r ^2.
+\end{align*}
+That is, we pinch $\Pd$ a little such that it bends more downward without changing its value on $\partial B _r (\xo)$. Then we still have $\Pd &gt; f$ on $\partial B _r (\xo)$ but $\Pd &lt; f$ at $\xo$. Define $w = \Pd - f$. Let $\Gamma _w$ be the convex envelope of $-w ^- \ind{B _r (\xo)}$, then since $w$ can be touched from above by a paraboloid with uniform opening at any given point ($\ue$ can be touched by below, $\ve$ can be touched from above by a paraboloid of opening $2/\e$, and $\Pd$ is a paraboloid), by Lemma 3.5 we know that the contact set $\set{w = \Gamma _w}$ has positive measure.</p>
+
+<p>Let $x _1$ be a point in $B _r$ intersect $\set{w = \Gamma _w}$ intersect the punctual second order differentiability set of $\ue - \ve$. Then at this point, $D ^2 w (x _1) = D ^2 \Gamma _w (x _1)$ is nonnegative, so
+\begin{align*}
+    0 &amp;\le F (D ^2 \ue (x _1)) - F (D ^2 \ve (x _1)) 
+    \newline 
+    &amp;\le F (D ^2 \ue (x _1) + D ^2 w (x _1)) -  F (D ^2 \ve (x _1))
+    \newline
+    &amp;\le \mathcal M ^+ (D ^2 w (x _1) + D ^2 f (x _1); \lambda/n, \Lambda) 
+    \newline 
+    &amp;\le \mathcal M ^+ (D ^2 \Pd; \lambda/n, \Lambda)
+    \newline
+    &amp;\le \mathcal M ^+ (D ^2 P; \lambda/n, \Lambda) + 2 \Lambda \delta.
+\end{align*}
+Finally take $\delta \to 0$.</p>
+
+<div theorem="Corollary">
+The Dirichlet problem 
+\begin{align*}
+    \begin{cases}
+        F (D ^2 u) = 0 &amp; \inn \Omega, \newline
+        u = \vp &amp; \onn \partial \Omega
+    \end{cases}
+\end{align*}
+has at most one viscosity solution $u \in C (\bar \Omega)$.
+</div>]]></content><author><name></name></author><summary type="html"><![CDATA[Introduction]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/~yang/true" /><media:content medium="image" url="http://localhost:4000/~yang/true" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">De Giorgi</title><link href="http://localhost:4000/~yang/blog/2021/01/22/de-giorgi" rel="alternate" type="text/html" title="De Giorgi" /><published>2021-01-22T00:00:00-08:00</published><updated>2021-01-22T00:00:00-08:00</updated><id>http://localhost:4000/~yang/blog/2021/01/22/de-giorgi</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2021/01/22/de-giorgi"><![CDATA[<h3 id="introduction">Introduction</h3>
+
+<p>Let $\Omega \subset \Rd$ be a smooth bounded domain. Let $A: \Omega \to \mathcal M ^{d \times d} (\R)$ be a measurable matrix-valued function such that it is uniformly elliptic: there exists $0 &lt; \lambda \le \Lambda$ such that
+\begin{align*}
+    \lambda \ \Id \le A (x) \le \Lambda \ \Id, \qquad \forall x \in \Omega.
+\end{align*}</p>
+
+<p>We say $u \in H ^1 (\Omega)$ is a subsolution in $\Omega$ of 
+\begin{align*}
+    - \div (A \grad u) = 0
+\end{align*}
+if for every $\vp \in H _0 ^1 (\Omega)$ such that $\vp \ge 0$, we have 
+\begin{align*}
+    \ang{\grad u, \grad \vp} _A := \int _{\Omega} (\grad u) ^\top (A \grad \vp) \dx \le 0.
+\end{align*}</p>
+
+<h3 id="de-giorgis-first-lemma-small-energy-to-boundedness">De Giorgi’s First Lemma: Small Energy to Boundedness</h3>
+
+<div theorem="Lemma">
+    Let $u$ br a subsolution in $B _2$. There exists a universal small $\delta &gt; 0$, such that if 
+    $$\nor{u} _{L ^2(B _2)} \le \delta,$$
+    then 
+    $$u \le 1 \inn B _1.$$
+</div>
+
+<h4 id="proof">Proof.</h4>
+
+<p>Define 
+\begin{align*}
+    r _k &amp;= 1 + 2 ^{-k}, &amp;
+    B \bp k &amp;= B _{r _k} (0), &amp;
+    \ind{B \bp {k + 1}} &amp;\le \vp _k \le \ind{B \bp k}.
+\end{align*}
+Denote 
+\begin{align*}
+    c _k &amp;= 1 - 2 ^{-k}, &amp; 
+    u _k &amp;= (u - c _k) _+, &amp;
+    \Omega _k &amp;= \set{\vp _k u _k &gt; 0}, &amp;
+    \ind k &amp;= \ind{\Omega _k}.
+\end{align*}</p>
+
+<p>Denote energy 
+\begin{align*}
+    U _k = \nmL2{\vp _k u _k} ^2 = \int (\vp _k u _k) ^2 \dx.
+\end{align*}</p>
+
+<ul>
+  <li>Hölder’s inequality. For $p = (1/2 - 1/d) \inv$,
+\begin{align*}
+  \nmL2{\vp _k u _k} \le \nmL p{\vp _k u _k} \nmL d{\ind k}.
+\end{align*}</li>
+</ul>
+
+<div class="columns">
+<div class="leftcolumn">
+
+    <ul>
+      <li>
+        <p>Sobolev inequality. 
+\begin{align*}
+  \nmL p{\vp _k u _k} \lesssim \nmL2{\grad (\vp _k u _k)}.
+\end{align*}</p>
+      </li>
+      <li>
+        <p>Caccioppoli inequality. 
+\begin{align*}
+  \nmL2{\grad (\vp _k u _k)} \lesssim _{\lambda, \Lambda} \nmL2{u _k \grad \vp _k}.
+\end{align*}</p>
+      </li>
+      <li>
+        <p>$|\grad \vp _k| \le C ^k \vp \bms k$, $u _k \le u \bms k$, so
+\begin{align*}
+  \nmL2{u _k \grad \vp _k} \le C ^k \nmL2{u \bms k \vp \bms k}.
+\end{align*}</p>
+      </li>
+    </ul>
+
+  </div>
+<div class="rightcolumn">
+
+    <ul>
+      <li>
+        <p>$L ^d$ of indicator,
+\begin{align*}
+  \nmL d{\ind k} = | \Omega _k | ^\frac1d.
+\end{align*}</p>
+      </li>
+      <li>
+        <p>$\vp _k u _k &gt; 0$ implies $\vp \bms k = 1$, $u \bms k &gt; 2 ^{-k}$.
+\begin{align*}
+  | \Omega _k | \le \abset{ \vp \bms k u \bms k &gt; 2 ^{-k} }.
+\end{align*}</p>
+      </li>
+      <li>
+        <p>Tchebyshev inequality. 
+\begin{align*}
+  \abset{ \vp \bms k u \bms k &gt; 2 ^{-k} } \le 2 ^{2k} \nmL2{\vp \bms k u \bms k} ^2 .
+\end{align*}</p>
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+<p>Conclusion: 
+\begin{align*}
+    U _k \lesssim C ^k U \bms k ^{1 + 2/d}.
+\end{align*}
+If $U _0 &lt; \delta$ sufficiently small, then $U _k \to 0$. That is, $\nor{(u - 1) _+} _{L ^2 (B _1)} = 0$, $u \le 1$ in $B _1$.</p>
+
+<h3 id="de-giorgis-second-lemma-boundedness-to-oscillation-decay">De Giorgi’s Second Lemma: Boundedness to Oscillation Decay</h3>
+
+<div theorem="Lemma">
+  <p>Let $u$ be a subsolution in $B _2$, satisfying</p>
+
+  <ul>
+    <li>$u \le 1$ in $B _2$.</li>
+    <li>$\abs{\set{u &lt; 0} \cap B _1} &gt; \mu$.</li>
+  </ul>
+
+  <p>Then $u \le 1 - \eta$ in $B _{1/2}$ for some universal $\eta &gt; 0$.</p>
+</div>
+
+<h4 id="proof-1">Proof.</h4>
+
+<p>Recall
+\begin{align*}
+    c _k &amp;= 1 - 2 ^{-k}, &amp; 
+    u _k &amp;= (u - c _k) _+, 
+\end{align*}
+we define 
+\begin{align*}
+    w _k &amp;= 2 \cdot 2 ^k u _k = 2 (w \bms k - 1) _+ \le 2.
+\end{align*}</p>
+
+<p>Claim that there exists a universal $K$ such that $w _{K + 2} \equiv 0$ in $B _{1/2}$.</p>
+
+<p>Otherwise, for any $k \le K$, $w \bps[2] k \not\equiv 0$ in $B _{1/2}$, then 
+\begin{align*}
+    w \bps[2] k \not\equiv 0 \inn B _{1/2}
+    &amp;
+    \Rightarrow 
+    \abs{\set{w \bps[2] k &gt; 0} \cap B _{1/2}} &gt; 0 
+    \newline
+    &amp;
+    \Rightarrow 
+    \abs{\set{w \bps k &gt; 1} \cap B _{1/2}} &gt; 0 
+    \newline
+    \text{(by the first lemma)}
+    &amp;
+    \Rightarrow 
+    \nor{w \bps k} _{L ^2 (B _1)} &gt; \delta
+    \newline
+    &amp;
+    \Rightarrow 
+    \nor{w \bps k} _{L ^\infty (B _1)} \abs{\set{w \bps k &gt; 0} \cap B _1} ^\frac12 &gt; \delta
+    \newline
+    &amp;
+    \Rightarrow 
+    \abs{\set{w \bps k &gt; 0} \cap B _1} &gt; \pthf{\delta}{2} ^2
+    \newline
+    &amp;
+    \Rightarrow 
+    \abs{\set{w _k &gt; 1} \cap B _1} &gt; \pthf{\delta}{2} ^2.
+\end{align*}</p>
+
+<!-- By Step 1, we want to show that $w _k \le 1$ for some $k$, it suffices to show that $\nor{w _k} _{L ^2 (B _1)} \le \delta$ for some $k$.
+
+Suppose there exists $K \ge 0$, such that for all $k = 0, \dots, K$, 
+\begin{align\*}
+    \nor{w _k} _{L ^2 (B _1)} > \delta.
+\end{align\*}
+Since $w _k \le 2$, 
+\begin{align\*}
+    \delta < \nor{w _k} _{L ^2 (B _1)} \le 2 \abs{\set{w _k > 0} \cap B _1} ^\half.
+\end{align\*}
+
+Then for all $k = 0, \dots, K - 1$,  -->
+
+<p>Then</p>
+
+<ul>
+  <li>
+    <p>$w _k$ has large top.
+\begin{align*}
+  \abs{\set{w _k &gt; 1} \cap B _1} &gt; \pthf{\delta}{2} ^2.
+\end{align*}</p>
+  </li>
+  <li>
+    <p>$w _k$ has large base. 
+\begin{align*}
+  \abs{\set{w _k &lt; 0} \cap B _1} 
+  \ge \abs{\set{u &lt; 0} \cap B _1} &gt; \mu.
+\end{align*}</p>
+  </li>
+  <li>
+    <p>$w _k$ has bounded energy. This is because $w _k$ is a subsolution in $B _2$, by energy inequality 
+\begin{align*}
+  \nor{\grad w _k} _{L ^2 (B _1)} \le C \nor{w _k} _{L ^2 (B _2)} \le C _0.
+\end{align*}</p>
+  </li>
+</ul>
+
+<p>By isoperimetric inequality, $w _k$ has large sides, that is, 
+\begin{align*}
+    \abs{\set{0 &lt; w _k &lt; 1} \cap B _1} &gt; \alpha.
+\end{align*}
+Since $\set{0 &lt; w _k &lt; 1} = \set{c _k &lt; u &lt; c _{k + 1}}$ are pairwise disjoint, if we let $K$ be so large such that $\mu + K \alpha &gt; |B _1|$, then we must have $w _{K + 2} \equiv 0$ in $B _\frac12$, so $u _{K + 2} = 0$, $u \le c _{K + 2}$. This finishes the proof by setting $\eta = 2 ^{-K - 2}$.</p>
+
+<h3 id="tools-six-inequalities-ethics">Tools (six inequalities, ethics).</h3>
+
+<div theorem="Caccioppoli inequality">
+If $u$ is a nonnegative subsolution, then 
+\begin{align*}
+    \nmL2{\grad (\vp u)} \lesssim _{\lambda, \Lambda} \nmL2{u \grad \vp}.
+\end{align*}
+</div>
+
+<h4 id="proof-2">Proof.</h4>
+<p>Since $\vp ^2 u \in H ^1 _0 (\Rn)$ is nonnegative,
+\begin{align*}
+    0 \ge \ang{\grad (\vp ^2 u), \grad u} _A &amp;= \ang{\vp \grad u, \vp \grad u} _A + 2\ang{u \grad \vp, \vp \grad u} _A \newline
+    &amp;= \ang{\vp \grad u + u \grad \vp, \vp \grad u + u \grad \vp} _A - \ang{u \grad \vp, u \grad \vp} _A \newline
+    &amp;= \ang{\grad (\vp u), \grad (\vp u)} _A - \ang{u \grad \vp, u \grad \vp} _A.
+\end{align*}
+By ellipticity of $A$,
+\begin{align*}
+    \lambda \nmL2{\grad (\vp u)} ^2 \le \Lambda \nmL2{u \grad \vp} ^2.
+\end{align*}</p>
+
+<div theorem="Energy inequality">
+If $u$ is a nonnegative subsolution, then
+\begin{align*}
+    \nor{\grad u} _{L ^2 (B _1)} \lesssim _{\lambda, \Lambda} \nor{u} _{L ^2 (B _2)}.
+\end{align*}
+</div>
+
+<h4 id="proof-3">Proof.</h4>
+<p>Choose $\vp$ to be a cutoff such that $\ind{B _1} \le \vp \le \ind{B _2}$, and use the Caccioppoli inequality.</p>
+
+<div theorem="Hölder's inequality">
+For $p = (1/r - 1/q) \inv$,
+\begin{align*}
+    \nmL r{fg} \le \nmL pf \nmL qg.
+\end{align*}
+</div>
+
+<div theorem="Isoperimetric inequality">
+If $u \in H ^1 (B _1)$, $\nmL2{\grad u}^2 \le C _0$, denote
+<ul>
+    <li> $\set{u \ge 1} = C$ </li>
+    <li> $\set{u \le 0} = A$ </li>
+    <li> $\set{0 &lt; u &lt; 1} = D$ </li>
+</ul>
+then 
+\begin{align*}
+    C _0 |D| \ge C _1 (|A| |C| ^{1 - \frac1n}) ^2.
+\end{align*}
+</div>
+
+<h4 id="proof-4">Proof.</h4>
+<p>Without loss of generality assume $0 \le u \le 1$, so $A = \set{u = 0}$, $C = \set{u = 1}$. Fix $x \in C$.</p>
+
+<div class="figure">
+<style>
+  svg text {
+    font: italic 3px 'PT Serif'
+  }
+</style>
+<svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg" width="30em" height="30em" style="margin:auto">
+
+    <circle cx="20" cy="20" r="0.3" fill="#f5630d" />
+
+    <path stroke="#f5630d" fill="#f5630d" fill-opacity="0.2" d="M42.9,-52.4C57.6,-38.9,72.8,-27.2,77.3,-12.1C81.8,3,75.5,21.5,66.2,38.9C57,56.4,44.7,72.8,28.5,79.1C12.2,85.5,-8.1,81.7,-27.9,75.1C-47.6,68.5,-66.9,59.1,-67.3,45.2C-67.8,31.3,-49.4,12.9,-43.8,-5.8C-38.2,-24.5,-45.4,-43.5,-40.2,-58.7C-35,-73.9,-17.5,-85.2,-1.7,-83.2C14.1,-81.2,28.3,-65.9,42.9,-52.4Z" transform="translate(20 20) scale(0.1 0.1)" />
+    <path stroke="#aa018b" fill="#aa018b" fill-opacity="0.2" d="M24.4,-31.5C30.3,-29.3,32.8,-20.4,35.6,-11.6C38.4,-2.8,41.5,5.8,40.5,14.5C39.6,23.2,34.5,31.9,27.1,31.8C19.6,31.7,9.8,22.8,0.1,22.6C-9.6,22.4,-19.2,31,-32.7,33.1C-46.2,35.2,-63.8,30.8,-72.8,19.7C-81.9,8.6,-82.5,-9.2,-77.6,-25.5C-72.7,-41.7,-62.2,-56.5,-48.3,-56.1C-34.5,-55.8,-17.2,-40.4,-4,-34.9C9.3,-29.4,18.5,-33.8,24.4,-31.5Z" transform="translate(40 30) scale(0.1 0.1)" />
+    <circle cx="28" cy="25" r="20" fill="transparent" stroke="#00508a" stroke-width="0.1" />
+
+    <path d="M 20 20 L 45 44 A 35 35, 0, 0, 0, 53 29 L 20 20" stroke="#66cb00" stroke-width="0.1" fill="#66cb00" fill-opacity="0.2" />
+
+    <circle cx="20" cy="20" r="0.3" fill="#f5630d" />
+
+    <text x="17" y="16" fill="#f5630d">C</text>
+    <text x="18" y="22" fill="#f5630d">x</text>
+    <text x="37" y="30" fill="#aa018b">A</text>
+    <text x="10" y="40" fill="#00508a">B</text>
+    <text x="50" y="40" fill="#66cb00">∑</text>
+</svg>
+</div>
+
+<p>If $\sigma$ is a direction such that the ray $\set{x + t \sigma} _{t \ge 0}$ pierces through $A$, then the variation on this ray is greater than 1,
+\begin{align*}
+    1 \le \int _0 ^{D _\sigma} \abs{\ddt u(x + r \sigma)} \d r \le \int _0 ^{D _\sigma} |\grad u (x + r \sigma)| \d r,
+\end{align*}
+where $D _\sigma$ is the distance at which $x + D _\sigma \sigma \in \partial B _1$. If $\Sigma$ is the set of all such $\sigma$, then 
+\begin{align*}
+    \abs{\Sigma} \le \int _\Sigma \int _0 ^{D _\sigma} |\grad u (x + r \sigma)| \d r \d \sigma 
+    &amp;= \int _\Sigma \int _0 ^{D _\sigma} \frac{|\grad u (x + r \sigma)|}{r ^{n - 1}} r ^{n - 1} \d r \d \sigma \newline
+    &amp;= \int _{B _1} \frac{|\grad u (y)|}{|y - x| ^{n - 1}} \dy.
+\end{align*}
+Since a circular sector with center $x$, radius $2$ and angle $\Sigma$ will cover $A$, we have $|A| \lesssim |\Sigma|$.
+Now integrate $x$ over $C$, 
+\begin{align*}
+    \abs{A} \abs{C} 
+    &amp;\lesssim
+    \int _{C} \int _{B _1} \frac{|\grad u (y)|}{|y - x| ^{n - 1}} \dy \dx = \int _{B _1} |\grad u (y)| \int _{C} \frac{1}{|y - x| ^{n - 1}} \dx \dy.
+\end{align*}
+For all set with the same measure as $C$, The integral $\int _{C} \frac{1}{|y - x| ^{n - 1}} \dx$ is minimized when $C$ is a ball centered at $y$, so 
+\begin{align*}
+    \int _{C} \frac{1}{|y - x| ^{n - 1}} \dx \lesssim |C| ^{\frac1n}.
+\end{align*}
+Therefore, 
+\begin{align*}
+    \abs{A} \abs{C} 
+    &amp;\lesssim |C ^\frac1n|
+    \int _{B _1} |\grad u (y)| \dy.
+\end{align*}
+Finally, using $\supp (\grad u) \subset D$, 
+\begin{align*}
+    \int _{B _1} |\grad u (y)| \dy \le \nor{\grad u} _{L ^2(B _1)} \nor{\ind D} _{L ^2 (B _1)} \le (C _0 |D|) ^\frac12.
+\end{align*}</p>
+
+<div theorem="Sobolev inequality">
+For $u \in H ^1 (\Rd)$, for $p = (1/2 - 1/d) \inv$,
+\begin{align*}
+    \nmL2{\grad u} \lesssim \nmL pu.
+\end{align*}
+</div>
+
+<h4 id="proof-5">Proof.</h4>
+<p>We show a $p &lt; (1/2 - 1/d) \inv$ version. If $\grad u = f$ and $u$ is compactly supported, then 
+\begin{align*}
+    u = \La \inv \div \grad u = \div \La \inv f = f * \grad \Gamma
+\end{align*}
+where $\Gamma$ is the fundamental solution to the Laplace equation, and 
+\begin{align*}
+    \grad \Gamma (x) = \frac{c _d}{|x| ^d}x \in L ^q _\loc
+\end{align*}
+for any $q &lt; \frac{d}{d - 1}$. By Young’s convolution inequality, 
+\begin{align*}
+    \nmL p u \le \nmL 2 f \nmL q{\grad \Gamma}
+\end{align*}
+with $1 + p \inv = 2 \inv + q \inv$.</p>
+
+<div theorem="Tchebyshev inequality">
+\begin{align*}
+    \abset{u &gt; \alpha} \le \frac{\nmL1u}\alpha \qquad \Rightarrow \qquad \abset{u &gt; \alpha} \le \frac{\nmL2u ^2}{\alpha ^2}.
+\end{align*}
+</div>]]></content><author><name></name></author><summary type="html"><![CDATA[Introduction]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/~yang/true" /><media:content medium="image" url="http://localhost:4000/~yang/true" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Nontangential Maximal Function</title><link href="http://localhost:4000/~yang/blog/2020/11/10/nontangential-maximal-function" rel="alternate" type="text/html" title="Nontangential Maximal Function" /><published>2020-11-10T00:00:00-08:00</published><updated>2020-11-10T00:00:00-08:00</updated><id>http://localhost:4000/~yang/blog/2020/11/10/nontangential-maximal-function</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2020/11/10/nontangential-maximal-function"><![CDATA[<h3 id="introduction">Introduction</h3>
+
+<p>We are interested in the relations between a function $f$ defined on $\Rn$ and a corresponding function $F$ defined on $\RR{n+1}_+$. For instance, $F (\cdot, t) = f * \Phi _t$ for some convolution kernel $\Phi$. We define the nontangential maximal function</p>
+
+<p>\begin{align*}
+    F ^* (x) := \sup _{|x - y| &lt; t} |F (y, t)| = \sup _{\Gamma (x)} |F|.
+\end{align*}</p>
+
+<p>Here $\Gamma (x) = \set{(y, t): \abs{y - x} &lt; t}$ is a cone centered at $x$ with aperture $1$. We may also define cone with aperture $a$ by $\Gamma _a (x) = \set{(y, t): \abs{y - x} &lt; at}$, and corresponding $F ^* _a (x)$.</p>
+
+<div theorem="Proposition">
+Let $\Phi$ has a non-increasing, bounded, integrable radial majorant. Then if $F (x, t) = f * \Phi _t (x)$, then $F ^* (x) \le c \mm f (x)$.
+</div>
+
+<h3 id="carleson-measure">Carleson Measure</h3>
+
+<p>$
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cC}{\mathcal C}
+$
+For a ball $B = B _r (x _0) \subset \Rn$, let $T (B) \subset \RR{n+1}_+$ be the cone with base $B$:</p>
+
+<p>\begin{align*}
+    T (B) = \set{
+        (x, t): \abs{x - x _0} \le r - t
+    } = \RR{n+1} _+ \setminus \bigcup _{x \notin B} \Gamma (x).
+\end{align*}</p>
+
+<p>In general for an open set $O \subset \Rn$, we define</p>
+
+<p>\begin{align*}
+    T (O) = \RR{n+1} _+ \setminus \bigcup _{x \notin O} \Gamma (x).
+\end{align*}</p>
+
+<p>It is easy to see</p>
+
+<p>\begin{align*}
+    A \subset B \Rightarrow B ^c \subset A ^c \Rightarrow \bigcup _{x \notin B} \Gamma (x) \subset \bigcup _{x \notin A} \Gamma (x) \Rightarrow T (A) \subset T (B)
+\end{align*}</p>
+
+<p>and</p>
+
+<p>\begin{align*}
+    (x, t) \in T (A) \cap T (B) &amp;\Leftrightarrow (x, t) \notin \bigcup _{x \notin B} \Gamma (x) \cup \bigcup _{x \notin A} \Gamma (x)<br />
+    \newline 
+    &amp;\Leftrightarrow (x, t) \notin \bigcup _{x \notin A \cap B} \Gamma (x) 
+    \newline 
+    &amp;\Leftrightarrow (x, t) \in T (A \cap B)
+\end{align*}</p>
+
+<p>so $T (A) \cap T (B) = T (A \cap B)$. As for the union,</p>
+
+<p>\begin{align*}
+    (x, t) \in T (A) \cup T (B) 
+    &amp;\Leftrightarrow (x, t) \notin \bigcup _{x \notin A} \Gamma (x) \cap \bigcup _{x \notin B} \Gamma (x) 
+    \newline 
+    &amp;\Rightarrow (x, t) \notin \bigcup _{x \notin A \cup B} \Gamma (x) 
+    \newline
+    &amp;\Leftrightarrow 
+    (x, t) \in T (A \cup B).
+\end{align*}</p>
+
+<p>so $T (A) \cap T (B) \subset T (A \cap B)$.</p>
+
+<p>Consider the following two spaces:</p>
+
+<p>\begin{align*}
+    \cN &amp;= \set{F: \RR{n+1} _+ \to \R \text{ measurable function with } F ^* \in L^1(\Rn)}, 
+    \newline
+    \cC &amp;= \set{\mu \text{ Borel measure on $\RR{n+1} _+$}: \mu (T (B)) \le C |B| \text{ for all $B$ for some $C &lt; \infty$}}.
+\end{align*}</p>
+
+<p>These two spaces equipped with norm</p>
+
+<p>\begin{align*}
+    \nor{F} _{\cN} &amp;= \nor{F ^*} _{L ^1 (\Rn)}, 
+    \newline
+    \nor{\mu} _{\cC} &amp;= \sup _B \frac{\mu (T (B))}{|B|} 
+    \newline
+    &amp;= \sup _{x \in \Rn} \underbrace{\sup _{B \ni x} \frac{\mu (T (B))}{|B|}} _{:=C (\d\mu) (x)}.
+\end{align*}</p>
+
+<p>are Banach spaces. $\cC$ is called the Carleson measure. The main theorem is the following.</p>
+
+<div theorem="Theorem">
+If $F \in \cN$ and $\mu \in \cC$, then 
+\begin{align}
+    \int _{\RR{n+1}_+} F (x, t) \d \mu (x, t) 
+    &amp;\le c \intRn F ^* (x) C (\d \mu) (x) \d x \\
+    &amp;\le c \nor{F} _\cN \nor{\d\mu} _\cC.
+\end{align}
+</div>
+
+<h4 id="proof">Proof.</h4>
+
+<p>The proof is based on the following two observations:</p>
+
+<ol>
+  <li>$\set{\abs F &gt; \alpha} \subset T \pth{ \set{ F ^* &gt; \alpha}}$.</li>
+  <li>$\mu (T(B)) \le \abs B$ for all $B$ implies $\mu (T(O)) \le c \abs O$ for all $O \subset \Rn$.</li>
+</ol>
+
+<p>Let’s see why they are true. Assume $F &gt; 0$ for simplicity. For the first one,</p>
+
+<p>\begin{align*}
+    (x, t) \in \set{F &gt; \alpha} &amp;\Rightarrow \forall y \in B _t (x), F ^* (y) &gt; \alpha
+    \newline
+    &amp;\Rightarrow (x, t) \in T (B _t (x)) \subset T \pth{
+        \set{
+            F ^* &gt; \alpha
+        }
+    }.
+\end{align*}</p>
+
+<p>For the second one, pick $(x, t) \in T (O)$, then $B _t (x) \subset O$. Let $\seq Q k$ be a Whitney decomposition of $O$, such that $\diam (Q _k) \sim \dist (Q _k, O ^c)$. Let $Q _k$ be the cube that contains $x$, and let $B _k$ be a ball centered at $Q _k$ with radius $c \diam (Q _k)$. Then by choosing $c$ large enough, $B _t (x) \subset B _k$, and $(t, x) \in T (B _k)$. Therefore, $T (O) \subset \bigcup _k T (B _k)$, and</p>
+
+<p>\begin{align*}
+    \mu (T(O)) \le \sum _k \mu (T(B _k))
+\end{align*}</p>
+
+<p>Now for any $x \in Q _k \subset B _k$,</p>
+
+<p>\begin{align*}
+    \mu (T(B _k)) \le C (\d \mu) (x) |B _k|,
+\end{align*}</p>
+
+<p>therefore</p>
+
+<p>\begin{align*}
+    \mu (T(B _k)) \le \frac1{|Q _k|} \int _{Q _k} C (\d \mu) (x) \d x |B _k| = c \int _{Q _k} C (\d \mu) (x) \d x,
+\end{align*}</p>
+
+<p>thus</p>
+
+<p>\begin{align*}
+    \mu (T (O)) \le c \sum _k \int _{Q _k} C (\d \mu) (x) \dx = c \int _O C (\d \mu) (x) \d x.
+\end{align*}</p>
+
+<p>After these two observations, we have</p>
+
+<p>\begin{align*}
+    \mu \ptset{F &gt; \alpha} \le \mu( T( \set{F ^* &gt; \alpha})) \le c \intset{F ^* &gt; \alpha} C (\d\mu) (x) \d x.
+\end{align*}</p>
+
+<p>Integrate with respect to $\alpha$,</p>
+
+<p>\begin{align*}
+    \int _{\RR{n+1}_+} F \d \mu \le c \intRn F ^* (x) C (\d\mu) (x) \d x.
+\end{align*}</p>
+
+<h3 id="the-effect-of-aperture">The Effect of Aperture</h3>
+
+<p>We now show that the choice of aperture is not important.</p>
+
+<div theorem="Proposition">
+Recall that for $a &gt; 0$, 
+\begin{align*}
+    F ^* _a (x) = \sup _{(y, t) \in \Gamma _a (x)} |F (y, t)| = \sup _{|y - x| \le at} |F (y, t)|.
+\end{align*}
+Then for any $a \ge b &gt; 0$, 
+\begin{align*}
+    \abset{F ^* _a &gt; \alpha} \le c _{a, b} \abset{F ^* _b &gt; \alpha}, \qquad \forall \alpha &gt; 0.
+\end{align*}
+Integrating with respect to $\alpha$ gives $\nmL1{F _a ^*} \le c _{a,b} \nmL1{F _b ^*}$. 
+</div>
+
+<p>Note that $F ^* _a \ge F ^* _b$ pointwisely, so the above inequalities are comparible.</p>
+
+<h4 id="proof-1">Proof.</h4>
+
+<p>Denote $O = \set{F ^* _b &gt; \alpha}$. For $x \in \set{F ^* _a &gt; \alpha}$, there exists $(\bar x, t)$ with $F (\bar x, t) &gt; \alpha$ and $x \in B _{at} (\bar x)$. For every $x \in B _{bt} (\bar x)$ we have $F ^* _b (x) &gt; \alpha$, so $B _{bt} (\bar x) \subset O$. If we set $B = B _{(a + b) t} (x) \supset B _{bt} (\bar x)$, then</p>
+
+<p>\begin{align*}
+    \frac{|O \cap B|}{|B|} \ge \frac{B _{bt} (\bar x)}{|B|} \ge \pthf b{a+b} ^n.
+\end{align*}</p>
+
+<p>This shows that</p>
+
+<p>\begin{align*}
+    \mm \ind O (x) \ge \pthf b{a+b} ^n.
+\end{align*}</p>
+
+<p>Therefore,</p>
+
+<p>\begin{align*}
+    \abset{F ^* _a &gt; \alpha} \le \abset{\mm \ind O \ge \pthf b{a+b} ^n} \le c_n \pthf{a+b}b ^n \nmL1{\ind O} = c _n \pthf{a+b}b ^n \abset{F ^* _b &gt; \alpha}.
+\end{align*}</p>
+
+<h3 id="atomic-decomposition">Atomic Decomposition</h3>
+
+<div theorem="Theorem">
+Any $F \in \cN$ can be written as 
+\begin{align*}
+    F = \sum _k \lambda _k a _k
+\end{align*}
+where $a _k$ are atoms, $\lambda _k \ge 0$, and 
+\begin{align*}
+    \sum _k \lambda _k \le c \nor{F}_{\cN}.
+\end{align*}
+Here $a \in \cN$ is an atom if $a$ is supported in the tent $T (B)$ of some ball $B$ with $\nor{a}_{L ^\infty} \le |B| ^{-1}$, so that $a ^* (x) \le |B| \inv$ when $x \in B$ and $a ^* (x) = 0$ when $x \notin B$, and $\nor{a} _{\cN} \le 1$.
+</div>
+
+<h4 id="proof-2">Proof.</h4>
+
+<p>We denote the dyadic level sets of $F ^*$ by $O ^j = \set{F ^* &gt; 2 ^j}$, then $\supp F \subset \bigcup _{j \in \Z} T (O ^j)$. Moreover, we Whitney decompose $O ^j$ into $Q ^j _k$, so that</p>
+
+<p>\begin{align*}
+    T (O ^j) = \bigcup _k T (B ^j _k) \cap (Q ^j _k \times (0, \infty)).
+\end{align*}</p>
+
+<p>Denote</p>
+
+<p>\begin{align*}
+    \Delta ^j _k = T (B ^j _k) \cap (Q ^j _k \times (0, \infty)) \cap (T (O ^j) \setminus T(O ^{j + 1})).
+\end{align*}</p>
+
+<p>Then $\supp F$ is the disjoint union of $\Delta _k ^j$. Now set $\lambda ^j _k a ^j _k = F \ind{\Delta _k ^j}$, where $\lambda ^j _k = 2 ^{j + 1} \abs{B _k ^j}$. Then $a ^j _k$ is an atom and</p>
+
+<p>\begin{align*}
+    \sum _{j, k} \lambda _k ^j = \sum _{j, k} 2 ^{j + 1} |B _k ^j| = c \sum _{j, k} 2 ^{j + 1} |Q _k ^j| = c \sum _j 2 ^{j + 1} |O ^j| \le c \nmL1{F ^*} = c \nor F _{\cN}.
+\end{align*}</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Vector-Valued Maximal Function</title><link href="http://localhost:4000/~yang/blog/2020/11/07/vector-valued-maximal-function" rel="alternate" type="text/html" title="Vector-Valued Maximal Function" /><published>2020-11-07T00:00:00-08:00</published><updated>2020-11-07T00:00:00-08:00</updated><id>http://localhost:4000/~yang/blog/2020/11/07/vector-valued-maximal-function</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2020/11/07/vector-valued-maximal-function"><![CDATA[<p>For $f \in L ^1 _\loc (\Rn)$, we can define</p>
+
+<p>\begin{align*}
+    \mm f (x) := \sup _{r &gt; 0} \fint _{B _x (r)} |f (y)| \d y.
+\end{align*}</p>
+
+<p>$
+\newcommand{\vf}{\boldsymbol f}
+\newcommand{\vg}{\boldsymbol g}
+\newcommand{\vb}{\boldsymbol b}
+\newcommand{\vM}{\boldsymbol{\mathcal M}}
+$</p>
+
+<p>Consider the space of function sequence $\vf = \set{f _j} \cnt j1\infty \in \pth{L^p (\Rn)} _\tensor$, define</p>
+
+<p>\begin{align*}
+    | \vf (x) | = \pth{
+        \SUM j1i |f _j (x)| ^2
+    } ^\half = \nor{\set{f _j (x)} \cnt j1\infty} _{\ell^2}
+\end{align*}</p>
+
+<p>We say $\vf \in L ^p$ if $\abs{\vf} \in L ^p (\Rn)$, or $\nor{\vf} _{L ^p} = \nor{f _j (x)} _{L ^p _x \ell ^2 _j}$.</p>
+
+<p>Vector-valued maximal operator $\vM$ is defined by</p>
+
+<p>\begin{align*}
+    \vM \vf (x) = \pth{
+        \SUM j1\infty |\mm f _j (x)| ^2
+    } ^\half = \nor{\set{\mm f _j (x)} \cnt j1\infty} _{\ell^2} .
+\end{align*}</p>
+
+<p>Then:</p>
+
+<div theorem="Theorem">
+Let $1 \le p &lt; \infty$, assume $\vf \in L ^p$. Then
+
+<div>
+    <ol>
+      <li>$\vM \vf$ is finite a.e.</li>
+      <li>$\vM$ is weak-type $(1, 1)$.</li>
+      <li>$\vM$ is strong-type $(p, p)$, $1 &lt; p &lt; \infty$.</li>
+    </ol>
+  </div>
+
+</div>
+
+<div theorem="Remark">
+The case $p = \infty$ is wrong. Think $f _j = \ind{(2 ^{j}, 2 ^{j + 1})}$.
+</div>
+
+<p>We will prove this theorem first for $p = 2$, then for $p = 1$, then for $p \in (1, 2)$, then for $p \in (2, \infty)$.</p>
+
+<h4 id="proof-for-p--2">Proof for $p = 2$</h4>
+
+<p>Case $p = 2$ is natural, because $\mm$ is bounded on $L^2$, and $L ^2 _x \ell ^2 _j = L ^2_{x, j}$.</p>
+
+<h4 id="proof-for-p--1">Proof for $p = 1$</h4>
+
+<p>When $p = 1$, we want to prove for all $\alpha &gt; 0$,</p>
+
+<p>\begin{align*}
+    \abset{
+        \vM \vf &gt; \alpha
+    } \le \frac A\alpha \nmL1\vf.
+\end{align*}</p>
+
+<p>Assume $\vf \ge 0$. We have Calder'on-Zygmund decomposition, that is, we have a collection $\set{Q _k}$ disjoint cubes, $\vf = \vg + \vb = \vg + \sum _k \vb _k$, such that</p>
+
+<ol>
+  <li>$\abs{\vg} = \abs{\vf} \le \alpha$ in $\Rn \setminus \bigcup _k Q _k$, and $\vg = 0$ in $Q _k$.</li>
+  <li>$\vb _k$ is supported in $Q _k$, and $\fint _{Q _k} \abs{\vb _k} \le A \alpha$.</li>
+  <li>$\sum _k \abs{Q _k} \le \frac A\alpha \nor\vf _{L ^1}$.</li>
+</ol>
+
+<p>Because $\abs{\vg} \le \min \set{\alpha, \abs{\vf}}$,</p>
+
+<p>\begin{align*}
+    \abset{
+        \vM \vg &gt; \frac\alpha2
+    } \le \frac4{\alpha ^2} \nmL2{\vM \vg} ^2 \le \frac A{\alpha ^2} \nmL2\vg ^2 \le \frac A\alpha \nmL1\vf.
+\end{align*}</p>
+
+<p>it suffices to show</p>
+
+<p>\begin{align*}
+    \abset{
+        \vM \vb &gt; \frac\alpha2
+    } \le \frac A\alpha \nmL1\vf.
+\end{align*}</p>
+
+<p>Denote $\bar \vb _k = \fint _{Q _k} \vb _k \le A\alpha$, and $\bar \vb = \sum _k \bar \vb _k \ind{Q _k}$. Then</p>
+
+<p>\begin{align*}
+    \abset{
+        \vM \bar \vb &gt; \frac\alpha2
+    } \le \frac4{\alpha ^2} \nmL2{\vM \bar \vb} ^2 \le \frac A{\alpha ^2} \nmL2{\bar \vb} ^2 \le A ^3 \sum _k |Q _k| \le \frac A\alpha \nmL1\vf.
+\end{align*}</p>
+
+<p>Similarly</p>
+
+<p>\begin{align*}
+    \abset{
+        c \vM \bar \vb &gt; \frac\alpha2
+    } \le \frac A\alpha \nmL1\vf.
+\end{align*}</p>
+
+<p>We want to show that</p>
+
+<p>\begin{align*}
+    \vM \vb (x) \le c \vM \bar \vb (x) \qquad x \notin \bigcup _k Q _k ^*
+\end{align*}</p>
+
+<p>where $Q _k ^* = 2 Q _k$. This would end the proof because</p>
+
+<p>\begin{align*}
+    \abset{
+        \vM \vb (x) &gt; \frac\alpha2 
+    } 
+    &amp;\le \abset{
+        c \vM \bar \vb &gt; \frac\alpha2
+    } + \abset{
+        \vM \vb (x) &gt; c \vM \bar \vb
+    } 
+    \\&amp;\le \frac A\alpha \nmL1\vf + \sum _k |Q _k ^*|
+    \\&amp;\le \frac A\alpha \nmL1\vf.
+\end{align*}</p>
+
+<p>To see why $c \vM \bar \vb$ bound $\vM \vb$ away from $Q _k ^*$, it suffices to prove for each coordinate,</p>
+
+<p>\begin{align*}
+    \mm b _j (x) \le c \mm \bar b _j (x) \qquad x \notin \bigcup _k Q _k ^*
+\end{align*}</p>
+
+<p>then the $\ell ^2$ norm are controlled. Let $B = B (x, r)$, and consider</p>
+
+<p>\begin{align*}
+    \fint _B b _j (x) \d x = \frac1{|B|} \sum _k \int _{B \cap Q _k} b _j (x) \d x.
+\end{align*}</p>
+
+<p>If $x \notin Q _k ^*, B \cap Q _k \neq \varnothing$, then $Q _k \subset 3 B$, so</p>
+
+<p>\begin{align*}
+    \fint _B b _j \d x \le \frac1{|B|} \int _{3B} b _j \d x = \frac1{|B|} \int _{3B} \bar b _j \d x \le 3 ^n M \bar b _j (x).
+\end{align*}</p>
+
+<h4 id="proof-for-1--p--2">Proof for $1 &lt; p &lt; 2$</h4>
+
+<p>By Marcinkiewicz interpolation, we have all the strong type bound for $1 &lt; p \le 2$.</p>
+
+<h4 id="proof-for-2--p--infty">Proof for $2 &lt; p &lt; \infty$</h4>
+
+<p>First we introduce the weighted maximal inequality.</p>
+
+<div theorem="Proposition">
+Let $\mu &lt; &lt; \mathcal L ^n$ be absolute continuous with respect to the Lebesgue measure, that is $\d \mu = \omega (x) \d x$ for some $\omega \in L^1_{\loc}$. Then 
+
+\begin{align*}
+    \mu \ptset{
+        \mm f (x) &gt; \alpha
+    } \le \frac A\alpha \nor{f} _{L^1(\mm \omega \d x)}
+\end{align*}
+
+and 
+
+\begin{align*}
+    \nor{\mm f} _{L ^q(\omega \d x)} \le A _q \nor f_{L ^q (\mm \omega \d x)}.
+\end{align*}
+
+Here $A$ and $A _q$ are independent from $\omega$.
+</div>
+
+<h5 id="proof">Proof.</h5>
+
+<p>The case $q = \infty$ is trivial, and the case $1 &lt; q &lt; \infty$ is by Marcinkiewicz interpolation.</p>
+
+<p>For $x \in \set{\mm f (x) &gt; \alpha}$, there exists $B _x$ such that</p>
+
+<p>\begin{align*}
+    |B _x| &lt; \frac1\alpha \int _{B _x} |f (y)| \d y.
+\end{align*}</p>
+
+<p>Then 
+\begin{align*}
+    \mu (5 B _x) = \int _{5 B _x} \omega \d x &amp;\le A |B _x| \mm \omega (y), \qquad \forall y \in B _x
+    \\&amp;
+    \le \frac A\alpha \int _{B _x} |f (y)| \mm \omega (y) \d y.
+\end{align*}</p>
+
+<p>Fincally, we choose a disjoint subselection of $B _{x _k}$ such that $5 B _{x _k}$ is a covering of $\set{\mm f (x) &gt; \alpha}$.</p>
+
+<hr />
+
+<p>Back to the case $\vf = \set{f _j} \cnt j1i$, by proposition case $q = 2$ we have</p>
+
+<p>\begin{align*}
+    \nor{\mm f _j} _{L ^2(\omega \d x)} \le A _2 \nor{f _j} _{L ^2 (\mm \omega \d x)}.
+\end{align*}</p>
+
+<p>Take $\ell ^2$ norm,</p>
+
+<p>\begin{align*}
+    \nor{\vM \vf} _{L ^2(\omega \dx)} \le A _2 \nor{\vf}  _{L ^2 (\mm \omega \d x)},
+\end{align*}</p>
+
+<p>that is</p>
+
+<p>\begin{align*}
+    \int (\vM \vf) ^2 \omega \d x \le A \int |\vf| ^2 (\mm \omega) \d x.
+\end{align*}</p>
+
+<p>Then by duality, set $q = \pthf p2 ^*$,</p>
+
+<p>\begin{align*}
+    \nmL p{\vM \vf} &amp;= \nmL{\frac p2}{(\vM \vf) ^2} 
+    \\&amp;= \sup _{\nmL q{\omega} = 1} 
+    \int (\vM \vf) ^2 \omega \d x 
+    \\&amp; \le \sup _{\nmL q{\omega} = 1} A \int |\vf| ^2 (\mm \omega) \d x \\&amp; \le A \nmL{\frac p2}{\vf ^2} \sup _{\nmL q{\omega} = 1}  \nmL{q}{\mm \omega} 
+    \\&amp; \le A \nmL p \vf.
+\end{align*}</p>
+
+<div theorem="Remark">
+We can replace $\ell ^2$ by $\ell ^q$ for $1 &lt; q \le \infty$, by setting $\vM _q \vf (x) = \nor{M f _j (x)}_{\ell ^q}$. For $q &lt; \infty$, one start the proof for $p = q$, then interpolate $(1, q)$, then bootstrap to $(q, \infty)$. For $q = \infty$, $\vM _\infty \vf \le M (|\vf| _\infty)$. However $q = 1$ doesn't work.
+</div>
+
+<div theorem="Remark">
+If $\mm \omega$ is comparible to $\omega$, then the two weights in the proposition are the same. This is called $A _1$ condition.
+</div>]]></content><author><name></name></author><summary type="html"><![CDATA[For $f \in L ^1 _\loc (\Rn)$, we can define]]></summary></entry><entry><title type="html">Latex Trick</title><link href="http://localhost:4000/~yang/blog/2020/11/04/latex-tricks" rel="alternate" type="text/html" title="Latex Trick" /><published>2020-11-04T00:00:00-08:00</published><updated>2020-11-04T00:00:00-08:00</updated><id>http://localhost:4000/~yang/blog/2020/11/04/latex-tricks</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2020/11/04/latex-tricks"><![CDATA[<h3 id="expandafter">expandafter</h3>
+
+<p>Used to change the order of expansion of macros.</p>
+
+<p>Don’t quite understand.</p>
+
+<h3 id="noexpandarg">noexpandarg</h3>
+
+<p>Don’t know either.</p>
+
+<h3 id="strsubstitute">StrSubstitute</h3>
+
+<p>Substitute arguments.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>xstring<span class="p">}</span>
+<span class="k">\StrSubstitute</span><span class="p">{</span>A Very Long Sentense<span class="p">}{</span>Very Long<span class="p">}{</span>Short<span class="p">}</span>
+<span class="c">% Output: A Short Sentense</span>
+</code></pre></div></div>
+
+<h3 id="csname-endcsname">csname, endcsname</h3>
+
+<p>Used to form the name of a command.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\newcommand</span><span class="p">{</span><span class="k">\xxx</span><span class="p">}{</span>beg<span class="p">}</span>
+<span class="k">\csname</span> <span class="k">\xxx</span> in<span class="k">\endcsname</span> <span class="p">{</span>align<span class="p">}</span>
+    3 + 5
+<span class="nt">\end{align}</span>
+<span class="c">% This is equivalent to </span>
+<span class="c">% \begin{align}</span>
+<span class="c">%   3 + 5</span>
+<span class="c">% \end{align}</span>
+</code></pre></div></div>
+
+<h3 id="automatically-align-equations">Automatically Align Equations</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>xstring<span class="p">}</span>
+<span class="k">\StrSubstitute</span><span class="na">[1]</span><span class="p">{</span>#1<span class="p">}{</span>=<span class="p">}{</span>myfirstequalitysign<span class="p">}</span>[<span class="k">\x</span>]
+<span class="k">\expandafter\StrSubstitute\expandafter</span><span class="p">{</span><span class="k">\x</span><span class="p">}{</span>=<span class="p">}{</span><span class="k">\\</span><span class="p">&amp;</span>=<span class="p">}</span>[<span class="k">\x</span>]
+<span class="k">\expandafter\StrSubstitute\expandafter</span><span class="p">{</span><span class="k">\x</span><span class="p">}{</span>&lt;<span class="p">}{</span><span class="k">\\</span><span class="p">&amp;</span>&lt;<span class="p">}</span>[<span class="k">\x</span>]
+<span class="k">\expandafter\StrSubstitute\expandafter</span><span class="p">{</span><span class="k">\x</span><span class="p">}{</span>&gt;<span class="p">}{</span><span class="k">\\</span><span class="p">&amp;</span>&gt;<span class="p">}</span>[<span class="k">\x</span>]
+<span class="k">\expandafter\StrSubstitute\expandafter</span><span class="p">{</span><span class="k">\x</span><span class="p">}{</span><span class="k">\le</span><span class="p">}{</span><span class="k">\\</span><span class="p">&amp;</span><span class="k">\le</span><span class="p">}</span>[<span class="k">\x</span>]
+<span class="k">\expandafter\StrSubstitute\expandafter</span><span class="p">{</span><span class="k">\x</span><span class="p">}{</span><span class="k">\ge</span><span class="p">}{</span><span class="k">\\</span><span class="p">&amp;</span><span class="k">\ge</span><span class="p">}</span>[<span class="k">\x</span>]
+<span class="k">\expandafter\StrSubstitute\expandafter</span><span class="p">{</span><span class="k">\x</span><span class="p">}{</span>myfirstequalitysign<span class="p">}{&amp;</span>=<span class="p">}</span>[<span class="k">\x</span>]
+<span class="nt">\begin{align*}</span>
+    <span class="k">\x</span>
+<span class="nt">\end{align*}</span>
+</code></pre></div></div>]]></content><author><name></name></author><summary type="html"><![CDATA[expandafter]]></summary></entry><entry><title type="html">Guiguzi Problem</title><link href="http://localhost:4000/~yang/blog/2020/10/15/guiguzi-problem" rel="alternate" type="text/html" title="Guiguzi Problem" /><published>2020-10-15T00:00:00-07:00</published><updated>2020-10-15T00:00:00-07:00</updated><id>http://localhost:4000/~yang/blog/2020/10/15/guiguzi-problem</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2020/10/15/guiguzi-problem"><![CDATA[<h3 id="statement-of-the-problem">Statement of the Problem</h3>
+
+<p>Cindy chose two different natural numbers between $2$ and $99$. She told Alice the sum and then she told Bob the product, then she left. And the following is a dialogue between Alice and Bob.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P1)</code> Alice: I don’t know the two numbers, but <code class="language-plaintext highlighter-rouge">(P2)</code> I know you don’t know either.</p>
+</blockquote>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P3)</code> Bob: I didn’t know, but now I know.</p>
+</blockquote>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P4)</code> Alice: Now I know, too.</p>
+</blockquote>
+
+<p>What are the numbers?</p>
+
+<h3 id="set-theory">Set Theory</h3>
+
+<p>First we reformulate this question using the language of set theory.</p>
+
+<p>Let $D = \{(a, b) \in \mathbb N ^2: 1 &lt; a &lt; b &lt; 100\},$ and</p>
+
+\[\begin{aligned}
+    s : D &amp;\to \mathbb N &amp; p: D &amp;\to \mathbb N \\
+    (a, b) &amp;\to a + b &amp; (a, b) &amp;\to a \cdot b.
+\end{aligned}\]
+
+<p>Suppose Alice was told the sum is $x$ and Bob was told the product is $y$.</p>
+
+<p>Denote $D _A = s ^{-1} (x)$ and $D _B = p ^{-1} (y)$. These are private informations for Alice and Bob. Before the dialogue starts, the public information is just $(a, b)$ belongs to the set $D$, $a + b$ belongs to $X = s (D)$, and $a \cdot b$ belongs to $Y = p (D)$.</p>
+
+<p>Let’s rewind the dialogue.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P1)</code> Alice: I don’t know the two numbers.</p>
+</blockquote>
+
+<p>This is the first piece of public information: $D _A$ has more than one element, so $x$ must belong to</p>
+
+\[\begin{aligned}
+    X _1 := \{ m \in X: |s ^{-1} (m)| &gt; 1 \}.
+\end{aligned}\]
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P2)</code> Alice: but I know you don’t know either.</p>
+</blockquote>
+
+<p>This means she is sure that for any $(a, b) \in D _A$, $p (a, b)$ is in the following set,</p>
+
+\[\begin{aligned}
+    Y _1 := \{ n \in Y: |p ^{-1} (n)| &gt; 1 \}.
+\end{aligned}\]
+
+<p>So <code class="language-plaintext highlighter-rouge">(P2)</code> means</p>
+
+\[\begin{aligned}
+    D _A = s ^{-1} (x) \subset p ^{-1} (Y _1).
+\end{aligned}\]
+
+<p>This provides the second piece of information, $x$ must be inside</p>
+
+\[\begin{aligned}
+    X _2 = \{ m \in X _1: s ^{-1} (m) \subset p ^{-1} (Y _1) \},
+\end{aligned}\]
+
+<p>so after this step, the public informations are $(a, b)$ and $y$ belong to</p>
+
+\[\begin{aligned}
+    D _2 = s ^{-1}(X _2), \qquad Y _2 = p(D _2).
+\end{aligned}\]
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P3)</code> Bob: Now I know.</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">(P3)</code> means</p>
+
+\[\begin{aligned}
+    |D _2 \cap D _B| = 1.
+\end{aligned}\]
+
+<p>This provides a third information, $y$ must be inside</p>
+
+\[\begin{aligned}
+    Y _3 = \{n \in Y _2: |D _2 \cap p ^{-1} (n)| = 1 \}.
+\end{aligned}\]
+
+<p>So $(a, b)$ and $x$ must be inside</p>
+
+\[\begin{aligned}
+    D _3 = D _2 \cap p ^{-1} (Y _3), \qquad X _3 = s (D _3).
+\end{aligned}\]
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">(P4)</code> Alice: Now I know, too.</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">(P4)</code> means</p>
+
+\[\begin{aligned}
+    |D _3 \cap D _A| = 1.
+\end{aligned}\]
+
+<p>This provides the last information, $x$ must be inside</p>
+
+\[\begin{aligned}
+    X _4 = \{ m \in X _3: |D _3 \cap s ^{-1} (m)| = 1\}.
+\end{aligned}\]
+
+<p>and $(a, b)$ and $y$ are inside</p>
+
+\[\begin{aligned}
+    D _4 = D _3 \cap s ^{-1} (X _4), \qquad Y _4 = s (D _4).
+\end{aligned}\]
+
+<p>After this formulation, we provide two ways to solve it: either by math, or by coding.</p>
+
+<h3 id="number-theory">Number Theory</h3>
+
+<p>Now we use the number theory to determine each set.</p>
+
+<p>Start from $X$ and $Y$, clearly</p>
+
+\[\begin{aligned}
+    X = \{ m \in \mathbb N: 5 \le m \le 197 \}.
+\end{aligned}\]
+
+<p>$Y$ is hard to characterise, so we just let it be. From the first public information,</p>
+
+\[\begin{aligned}
+    X _1 := \{ m \in \mathbb N: 5 \le m \le 197, |s ^{-1} (m)| &gt; 1 \},
+\end{aligned}\]
+
+<p>$x$ can be separated as the sums in at least two ways, so $x$ cannot be $5 = 2 + 3, 6 = 2 + 4, 196 = 97 + 99, 197 = 98 + 99$, which can only be uniquely decomposed as sums. Therefore</p>
+
+\[\begin{aligned}
+    X _1 := \{ m \in \mathbb N: 7 \le m \le 195 \}.
+\end{aligned}\]
+
+<p>Now for $Y _1$, one possible type of $n \notin Y _1$ that can only be uniquely decomposed are the product of prime numbers, so if we call</p>
+
+\[\begin{aligned}
+    Y _1 ^* := \{ p _1 \cdot p _2: p _1, p _2 \le 99 \text{ are prime} \}
+\end{aligned}\]
+
+<p>we have $Y _1 ^* \cap Y _1 = \varnothing$. So in $X _1$ we can exclude most even numbers (they can be expressed as a sum of primes by the famous Goldbach’s Conjecture) and also the sum of 2 and odd prime number. This leaves us with</p>
+
+\[\begin{aligned}
+    X _2 \subset \{
+        11, 17, 23, 27, 29, 35, 37, 41, 47, 51, 53, 57, 59, 65, 67, 71, 77, 79, 83, 87, 89, 93, 95, 97, \dots
+    \}
+\end{aligned}\]
+
+<p>We can also eliminate the ones that are too large to have alternative choices. The product of anything with large prime numbers can only have one possibility, if we call</p>
+
+\[\begin{aligned}
+    Y _2 ^* := \{ p \cdot m: 50 \le p \le 99 \text{ is prime}, 2 \le m \le 99 \}
+\end{aligned}\]
+
+<p>we have $Y _2 ^* \cap Y _1 = \varnothing$.</p>
+
+<p>Every number greater than $55$ can be written as the sum of a prime number between $50$ and $99$ and something else:</p>
+
+\[\begin{aligned}
+    n &amp;= 53 + (n - 53), \qquad 55 \le n \le 152, \\
+    n &amp;= 97 + (n - 97), \qquad 152 \le n \le 195.
+\end{aligned}\]
+
+<p>Therefore every element in $X _1$ is smaller than $55$, thus</p>
+
+\[\begin{aligned}
+    X _2 \subset \{
+        11, 17, 23, 27, 29, 35, 37, 41, 47, 51, 53
+    \}.
+\end{aligned}\]
+
+<p>We almost have equality here because every summation decomposition of numbers here must be 2 plus a composite number, or even number plus odd number. Their product always have alternative expression. The only exception is $51 = 17 + 34$, $17 \times 34$ have no other decomposition because $17$ is prime and half of $34$, and we only have this one case. So</p>
+
+\[\begin{aligned}
+    X _2 = \{
+        11, 17, 23, 27, 29, 35, 37, 41, 47, 53
+    \}.
+\end{aligned}\]
+
+<p>Now we think about elements in $Y _3$. For $n$ in $Y _3$, it has more than one way of product decomposition, but only one decomposition has sum in $X _2$. One possibility is</p>
+
+\[\begin{aligned}
+    Y _3 ^* = \{
+        2 ^k \cdot p: 2 \le k \le 5, p \text{ is prime}, 2 ^k + p \in X _2
+    \}.
+\end{aligned}\]
+
+<p>Then if $n = 2 ^k \cdot p$, $2 ^k + p \in X _2$, so $n \in Y _2$. Moreover, any other product decomposition of $2 ^k \cdot p$ will be the product of even numbers, so their sum is even and cannot be inside $X _2$. Therefore $Y _3 ^* \subset Y _3$. Let’s write out the elements in $Y _3 ^*$:</p>
+
+\[\begin{aligned}
+    Y _3 ^* = \{
+        &amp;2 ^3 \cdot 3, \\
+        &amp;2 ^2 \cdot 13, \\
+        &amp;2 ^2 \cdot 19, 2 ^4 \cdot 7, \\
+        &amp;2 ^2 \cdot 23, 2 ^3 \cdot 19, 2 ^4 \cdot 11, \\
+        &amp;2 ^4 \cdot 13, \\
+        &amp;2 ^2 \cdot 31, 2 ^4 \cdot 19, 2 ^5 \cdot 3, \\
+        &amp;2 ^3 \cdot 29, 2 ^5 \cdot 5, \\
+        &amp;2 ^2 \cdot 37, \\
+        &amp;2 ^2 \cdot 43, 2 ^4 \cdot 31, \\
+        &amp;2 ^4 \cdot 37
+    \}.
+\end{aligned}\]
+
+<p>Another possibility is</p>
+
+\[\begin{aligned}
+    Y _3 ^{**} = \{
+        2 ^k \cdot p ^l: p = 3 \text{ or } 5, l \ge 2, 2 ^k + 3 ^l \in X _2 
+    \} \setminus \{ 2 ^3 \cdot 3 ^2, 2 \cdot 5 ^3 \}.
+\end{aligned}\]
+
+<p>Then if $n = 2 ^k \cdot p ^l$, $2 ^k + p ^l \in X _2$, so $n \in Y _2$. Moreover, any other product decomposition of $2 ^k \cdot p ^l$ will either be the product of even numbers, or a product of multiple of $p$, so their sum is either even or multiple of $p$ and cannot be inside $X _2$ (the only exceptions are $27 = (2 ^3 \cdot 3) + 3$ and $35 = (2 \cdot 5) + 5 ^2$). Therefore $Y _3 ^{**} \subset Y _3$. It is</p>
+
+\[\begin{aligned}
+    Y _3 ^{**} = \{
+        &amp;2 ^1 \cdot 3 ^2, \\
+        &amp;2 ^1 \cdot 5 ^2, \\
+        &amp;2 ^1 \cdot 3 ^3, 2 ^2 \cdot 5 ^2, \\
+        &amp;2 ^3 \cdot 3 ^3, \\
+        &amp;2 ^5 \cdot 3 ^2, 2 ^4 \cdot 5 ^2
+    \}.
+\end{aligned}\]
+
+<p>A third possibility is</p>
+
+\[\begin{aligned}
+    Y _3 ^{***} = \{
+        p \cdot k: p \ge 27, p + k \in X _2 
+    \}.
+\end{aligned}\]
+
+<p>Similar as before, $Y _3 ^{\ast\ast\ast} \subset Y _3$, because all other product decomposition of $p \cdot k$ will involve a number no less than $2 p \ge 54$, and the sum will be greater than 53. In particular, $Y _3 ^{\ast\ast\ast}$ include</p>
+
+\[\begin{aligned}
+    Y _3 ^{***} \supset \{
+        &amp;29 \cdot 6, 31 \cdot 4, \\
+        &amp;29 \cdot 8, 31 \cdot 6, \\
+        &amp;29 \cdot 12, 31 \cdot 10, \\
+        &amp;29 \cdot 18, 31 \cdot 16, \\
+        &amp;29 \cdot 24, 31 \cdot 22
+    \}.
+\end{aligned}\]
+
+<p>Therefore,</p>
+
+\[\begin{aligned}
+    Y _3 \supset Y _3 ^* \cup Y _3 ^{**} \cup Y _3 ^{***} \supset \{
+        &amp;2 ^1 \cdot 3 ^2, 2 ^3 \cdot 3, \\
+        &amp;2 ^2 \cdot 13, \\
+        &amp;2 ^2 \cdot 19, 2 ^4 \cdot 7, \\
+        &amp;2 ^2 \cdot 23, 2 ^3 \cdot 19, 2 ^4 \cdot 11, 2 ^1 \cdot 5 ^2\\
+        &amp;2 ^4 \cdot 13, 2 ^1 \cdot 3 ^3, 2 ^2 \cdot 5 ^2\\
+        &amp;2 ^2 \cdot 31, 2 ^4 \cdot 19, 2 ^5 \cdot 3, 2 ^3 \cdot 3 ^3, 29 \cdot 4\\
+        &amp;2 ^3 \cdot 29, 2 ^5 \cdot 5, 31 \cdot 6\\
+        &amp;2 ^2 \cdot 37, 2 ^5 \cdot 3 ^2, 2 ^4 \cdot 5 ^2, 29 \cdot 12, 31 \cdot 10\\
+        &amp;2 ^2 \cdot 43, 2 ^4 \cdot 31, 29 \cdot 18\\
+        &amp;2 ^4 \cdot 37, 29 \cdot 24, 31 \cdot 22
+    \}.
+\end{aligned}\]
+
+<p>Finally we discuss $X _4$. From the above we can see that other than $m = 17$, we always have</p>
+
+\[\begin{aligned}
+    |s ^{-1} (m) \cap D _3| \ge 2.
+\end{aligned}\]
+
+<p>So $x = 17$. The numbers are $4$ and $13$. The product $y = 52$.</p>
+
+<h3 id="algorithm">Algorithm</h3>
+
+<p>Python has a set of build-in set-theory functions. We can do this completely without the knowledge of number theory.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">D</span> <span class="o">=</span> <span class="p">{(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)}</span>
+</code></pre></div></div>
+
+<p>Define the summation and multiplication maps.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tup</span><span class="p">:</span> <span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">p</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tup</span><span class="p">:</span> <span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Define the image operator. We also need to keep track of the preimage.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># image(fun, dom) will generate the image of a function as a dictionary 
+# and record the information of preimage at the same time: a key is an
+# element in the image, and its value is the preimage set of this key
+</span>
+<span class="k">def</span> <span class="nf">image</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">dom</span><span class="p">):</span>
+    <span class="n">ima</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">([])</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dom</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nf">fun</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">ima</span><span class="p">:</span>
+            <span class="n">ima</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">ima</span><span class="p">[</span><span class="n">f</span><span class="p">].</span><span class="nf">union</span><span class="p">({</span><span class="n">d</span><span class="p">})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ima</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">ima</span>
+</code></pre></div></div>
+
+<p>Then we start. Initial public information:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="nf">image</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="nf">image</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">P1</code> and <code class="language-plaintext highlighter-rouge">P2</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X1</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span> <span class="p">:</span> <span class="n">X</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X</span> <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">m</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">Y1</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span> <span class="p">:</span> <span class="n">Y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y</span> <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">D1</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y1</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">Y1</span><span class="p">[</span><span class="n">n</span><span class="p">]}</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X2</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span> <span class="p">:</span> <span class="n">X1</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X1</span> <span class="k">if</span> <span class="n">X1</span><span class="p">[</span><span class="n">m</span><span class="p">].</span><span class="nf">issubset</span><span class="p">(</span><span class="n">D1</span><span class="p">)}</span>
+<span class="n">D2</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X2</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">X2</span><span class="p">[</span><span class="n">m</span><span class="p">]}</span>
+<span class="n">Y2</span> <span class="o">=</span> <span class="nf">image</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D2</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">sorted</span><span class="p">(</span><span class="n">X2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[11, 17, 23, 27, 29, 35, 37, 41, 47, 53]
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">P3</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Y3</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span> <span class="p">:</span> <span class="n">Y2</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y2</span> <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">Y2</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">D3</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y3</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">Y3</span><span class="p">[</span><span class="n">n</span><span class="p">]}</span>
+<span class="n">X3</span> <span class="o">=</span> <span class="nf">image</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">D3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">P4</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X4</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span> <span class="p">:</span> <span class="n">X3</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X3</span> <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">X3</span><span class="p">[</span><span class="n">m</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">D4</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X4</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">X4</span><span class="p">[</span><span class="n">m</span><span class="p">]}</span>
+<span class="n">Y4</span> <span class="o">=</span> <span class="nf">image</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">X4</span><span class="p">,</span> <span class="n">Y4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>({17: {(4, 13)}}, {52: {(4, 13)}})
+</code></pre></div></div>
+
+<hr />
+<p>Download this page as <a href="/~yang/assets/files/jupyter/guiguzi.ipynb">Jupyter Notebook</a>.</p>
+
+<h3 id="swift-code">Swift Code</h3>
+
+<p>As a practice of swift’s basic language, let’s realize this algorithm via swift.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">N</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">var</span> <span class="nv">D</span> <span class="o">=</span> <span class="kt">Set</span><span class="p">(</span><span class="kt">Array</span><span class="p">(</span><span class="mi">2</span><span class="o">..&lt;</span><span class="kt">N</span><span class="p">)</span><span class="o">.</span><span class="n">flatMap</span> <span class="p">{</span> <span class="n">a</span> <span class="k">in</span>
+                <span class="kt">Array</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="o">...</span><span class="kt">N</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{[</span><span class="n">a</span><span class="p">,</span> <span class="nv">$0</span><span class="p">]}</span>
+            <span class="p">})</span>
+
+<span class="k">let</span> <span class="nv">s</span> <span class="o">=</span> <span class="p">{(</span><span class="nv">tuple</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="k">in</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+<span class="k">let</span> <span class="nv">p</span> <span class="o">=</span> <span class="p">{(</span><span class="nv">tuple</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="k">in</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+
+<span class="kd">func</span> <span class="nf">imageWithPreimage</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">domain</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;&gt;</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">data</span> <span class="k">in</span> <span class="n">domain</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">f</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">image</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="p">??</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;</span><span class="p">())</span><span class="o">.</span><span class="nf">union</span><span class="p">([</span><span class="n">data</span><span class="p">])</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">image</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">X</span> <span class="o">=</span> <span class="nf">imageWithPreimage</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="nv">domain</span><span class="p">:</span> <span class="kt">D</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">Y</span> <span class="o">=</span> <span class="nf">imageWithPreimage</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span> <span class="nv">domain</span><span class="p">:</span> <span class="kt">D</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">X1</span> <span class="o">=</span> <span class="kt">X</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="k">var</span> <span class="nv">Y1</span> <span class="o">=</span> <span class="kt">Y</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">D1</span> <span class="o">=</span> <span class="kt">D</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">X1</span><span class="p">[</span><span class="nf">s</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="kt">Y1</span><span class="p">[</span><span class="nf">p</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">X2</span> <span class="o">=</span> <span class="kt">X1</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="nf">isSubset</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="kt">D1</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">D2</span> <span class="o">=</span> <span class="kt">D1</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">X2</span><span class="p">[</span><span class="nf">s</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">in</span> <span class="kt">Y1</span> <span class="p">{</span>
+    <span class="kt">Y1</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">D2</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">Y3</span> <span class="o">=</span> <span class="kt">Y1</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">D3</span> <span class="o">=</span> <span class="kt">D2</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">Y3</span><span class="p">[</span><span class="nf">p</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">in</span> <span class="kt">X2</span> <span class="p">{</span>
+    <span class="kt">X2</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">D3</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">X4</span> <span class="o">=</span> <span class="kt">X2</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">D4</span> <span class="o">=</span> <span class="kt">D3</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">X4</span><span class="p">[</span><span class="nf">s</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="kt">D4</span><span class="p">)</span>
+</code></pre></div></div>]]></content><author><name></name></author><summary type="html"><![CDATA[Statement of the Problem]]></summary></entry><entry><title type="html">Lorentz Space</title><link href="http://localhost:4000/~yang/blog/2020/04/14/lorentz-space" rel="alternate" type="text/html" title="Lorentz Space" /><published>2020-04-14T00:00:00-07:00</published><updated>2020-04-14T00:00:00-07:00</updated><id>http://localhost:4000/~yang/blog/2020/04/14/lorentz-space</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2020/04/14/lorentz-space"><![CDATA[<p>The purpose of this note is to give a few equivalent definitions, \eqref{def1}, \eqref{def2}, \eqref{def3} and \eqref{def4} for Lorentz norm $L ^{p, q}$.</p>
+
+<h3 id="distribution-function-and-decreasing-rearrangement">Distribution function and Decreasing Rearrangement</h3>
+
+<p>Similar as Lebesgue space, Lorentz space only cares about the height of a function and the space it occupies at each height. Let $f \in \mathcal L ^0 \pth{X, \d \mu}$ be any complex-valued measurable function. Any definition below that works for $f \ge 0$ can be generalized for complex-valued (and in general Banach space-valued) $f$ by replacing $f$ by $\abs{f}$.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> <em>The</em> <strong><em>distribution function</em></strong> <em>of $f$ is defined as the measure of the superlevel set, that is</em></p>
+
+  <p>\begin{align}
+    d _f (\alpha) := \mu \pth{\set{x \in X: |f (x)| &gt; \alpha}}, \qquad \alpha \ge 0.
+\end{align}</p>
+</blockquote>
+
+<p>This definition is the opposite to the definition of cdf (cumulative distribution function) for a random variable that we are used to in probability. So in contrast to cdf, $d _f$ is left/lower semicontinuous, and is a decreasing function.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> <em>The</em> <strong><em>decreasing rearrangement</em></strong> <em>of $f$ is defined on $[0, \infty)$ by</em></p>
+
+  <p>\begin{align}
+    f ^* (\lambda) := \inf \set{t &gt; 0: d _f (t) \le \lambda}
+\end{align}</p>
+</blockquote>
+
+<p>This is almost like the “inverse function” of the distribution function. It is also left/lower semicontinuous and decreasing. Notice that the superlevel set of $f ^*$ has the same measure as $f$.</p>
+
+<p>One can take the following example to understand the construction of the distribution function and decreasing rearrangement. Assume the following is the graph of $f = \ind{S _1} + 4 \ind{S _2} + 2 \ind{S _3}$ where $\mu (S _1) = \mu (S _2) = \mu (S _3) = 1$.</p>
+
+<svg class="center-image" height="300" viewBox="0 0 250 200">
+    <image x="0" y="0" width="238" height="189" href="/~yang/assets/images/blog/2020-04-14-lorentz-space/f(x).svg" />
+</svg>
+
+<!-- ![f(x)](/~yang/assets/images/blog/2020-04-14-lorentz-space/f(x).svg){:width="40%" .center-image} -->
+
+<p>To find its distribution function, rotate by 90 degrees and then find the measure of superlevel set at each level $\alpha$.</p>
+
+<svg class="center-image" height="630" viewBox="0 0 200 420">
+    <g transform="rotate(90, 300, 300)">
+        <image x="0" y="410" width="238" height="189" href="/~yang/assets/images/blog/2020-04-14-lorentz-space/f(x).svg" />
+    </g>
+    <image x="22" y="230" width="179" height="178" href="/~yang/assets/images/blog/2020-04-14-lorentz-space/df(a).svg" />
+</svg>
+
+<!-- ![f(x)](/~yang/assets/images/blog/2020-04-14-lorentz-space/f(x).svg){:width="40%" .center-image .rotate90}
+
+![df(a)](/~yang/assets/images/blog/2020-04-14-lorentz-space/df(a).svg){:width="30%" .center-image} -->
+
+<p>Finally, rotate back and flip the distribution function to obtain decreasing rearrangement.</p>
+
+<svg class="center-image" width="100%" viewBox="0 0 570 200">
+    <image x="0" y="0" width="238" height="189" href="/~yang/assets/images/blog/2020-04-14-lorentz-space/f(x).svg" />
+    <g transform="rotate(-90, 0, 0)">
+        <image x="-168" y="230" width="179" height="178" href="/~yang/assets/images/blog/2020-04-14-lorentz-space/df(a).svg" />
+    </g>
+    <image x="420" y="-2" width="147" height="177" href="/~yang/assets/images/blog/2020-04-14-lorentz-space/fs(l).svg" />
+</svg>
+
+<!-- ![f(x)](/~yang/assets/images/blog/2020-04-14-lorentz-space/f(x).svg){:width="40%"}
+![df(a)](/~yang/assets/images/blog/2020-04-14-lorentz-space/df(a).svg){:width="30%" .rotate270}
+![f*(l)](/~yang/assets/images/blog/2020-04-14-lorentz-space/fs(l).svg){:width="25%"} -->
+
+<p>Compare $f$ and $f ^*$, it looks like just push all the level sets to the left onto the $\alpha$ axis, and end up with something decreasing.</p>
+
+<h3 id="layer-cake-representation-and-l-p-norm">Layer Cake Representation and $L ^p$ Norm</h3>
+
+<p>The layer cake representation states the following. For $f \ge 0$,</p>
+
+<p>\begin{align}
+    \int _X f \d \mu = \int _0 ^\infty d _f (\alpha) \d \alpha.
+\end{align}</p>
+
+<p>This comes from thinking integration over the hypograph,</p>
+
+<p>\begin{align}
+    \Omega _f = \set{(x, \alpha) \in X \times \R _+: f (x) &gt; \alpha}.
+\end{align}</p>
+
+<p>Therefore</p>
+
+\[\begin{align}
+\int _X f \d \mu &amp;= \int _X \int _0 ^{f(x)} \d \alpha \d \mu \notag\\\
+&amp;= \int _{\Omega _f} \d \alpha \d \mu \notag\\\
+&amp;= \int _0 ^\infty \int _X \ind{\set{f(x) &gt; \alpha}} \d \mu \d \alpha \notag \\\
+&amp;= \int _0 ^\infty \mu (f &gt; \alpha) \d \alpha \notag \\\
+&amp;= \int _0 ^\infty d _f (\alpha) \d \alpha. \notag
+\end{align}\]
+
+<p>Using decreasing rearrangement, we can also think</p>
+
+<p>\begin{align}
+\int _X f \d \mu = \int _0 ^\infty f ^* \d \lambda = \int _{\Omega _{f ^*}} \d \alpha \d \lambda. \notag
+\end{align}</p>
+
+<p>Here $\Omega _{f ^*}$ is the hypograph of $f ^*$ (and also the hypograph of $d _f$)</p>
+
+<p>\begin{align}
+    \Omega _{f ^*} = \set{(\lambda, \alpha) \in \R _+ ^2: f ^* (\lambda) &gt; \alpha} = \set{(\lambda, \alpha) \in \R _+ ^2: d _f (\alpha) &gt; \lambda}.
+\notag
+\end{align}</p>
+
+<p>Similarly, for $L ^p$ norm,</p>
+
+<p>\begin{align}
+\int _X f ^p \d \mu &amp;= \int _{\Omega _{f ^*}} \d (\alpha ^p) \d \lambda = \int _0 ^\infty d _f (\alpha) \d (\alpha ^p) = \int _0 ^\infty p \alpha ^{p - 1} d _f (\alpha) \d \alpha. \notag
+\end{align}</p>
+
+<p>So the integral of $f ^p$ can be just thought as the $\d(\alpha ^p) \tensor \d \lambda$ measure of the hypograph.</p>
+
+<h3 id="lorenze-space">Lorenze Space</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> <em>For $p, q &gt; 0$, we define the</em> <strong><em>Lorenze norm</em></strong> <em>of $f \ge 0$ by</em></p>
+
+  <p>\begin{align}
+\label{def1}
+\nor{f} _{L ^{p, q}} ^q = \int _{\Omega _{f ^*}} \d (\alpha ^q) \d \pth{\frac pq \lambda ^{\frac qp}} = \int _{\Omega _{f ^*}}  \lambda ^{\frac qp - 1} \d (\alpha ^q) \d \lambda.
+\end{align}</p>
+</blockquote>
+
+<p>That is, we change the measure we put on domain, and put $L ^q$-typed measure on range. If we integrate $\lambda$ first, we end up with</p>
+
+\[\begin{align}
+\nor{f} _{L ^{p, q}} ^q &amp;= \int _0 ^\infty \frac pq \bkt{d _f (\alpha)} ^{\frac qp} q \alpha ^{q - 1} \d \alpha \notag \\\
+&amp;= p \int _0 ^\infty \bkt{d _f (\alpha)} ^{\frac qp} \alpha ^{q} \frac{\d \alpha}\alpha \label{split} ,\\\
+\nor f _{L ^{p,q}} &amp;= p ^\frac1q \nor{\alpha [d _f (\alpha)] ^\frac1p} _{L ^q \pth{\R _+, \frac{\d \alpha}\alpha}} .
+\label{def2}
+\end{align}\]
+
+<p>If we integrate $\alpha$ first, we end up with</p>
+
+\[\begin{align}
+\nor f _{L ^{p, q}} ^q &amp;= \int _0 ^\infty [f ^* (\lambda)] ^q \lambda ^{\frac qp - 1} \d \lambda \notag \\
+&amp;= \int _0 ^\infty \lambda ^{\frac qp} [f ^* (\lambda)] ^q\frac{\d \lambda}\lambda \notag ,\\
+\nor f _{L ^{p, q}} &amp;= \nor{\lambda ^{\frac1p} f ^* (\lambda)} _{L ^q \pth{\R _+, \frac{\d \lambda}\lambda}}. 
+\label{def3}
+\end{align}\]
+
+<h3 id="dyadic-decomposition-in-range">Dyadic Decomposition in Range</h3>
+
+<p>We decompose $f \ge 0$ by range as the following. Let $E _k = \set{f &gt; 2 ^k}$ denote a sequence of nested dyadic level sets, and define</p>
+
+\[\begin{align*}
+f _k &amp;= 2 ^{k-1} \ind{E _{k + 1}} + (f - 2^{k - 1})(\ind{E _k} - \ind{E _{k + 1}}) \\\
+&amp;= f(\ind{E _k} - \ind{E _{k + 1}}) + 2 ^k \ind{E _{k + 1}} - 2^{k - 1} \ind{E _k} .
+\end{align*}\]
+
+<p>Then $f = \sum _{k \in \mathbb Z} f _k$, $f _k$ is supported in $E _k$, and $f _k$ is comparible to $2 ^k \ind{E _k}$:</p>
+
+\[\begin{align*}
+    \frac12 2 ^k \ind{E _k} \le f _k \le \frac32 2 ^k \ind{E _k}.
+\end{align*}\]
+
+<p><img src="/~yang/assets/images/blog/2020-04-14-lorentz-space/decomp.svg" alt="Decomposition" class="center-image" /></p>
+
+<p>Now we also split the integral \eqref{split} dyadically,</p>
+
+\[\begin{align*}
+     \frac1p \nor{f} _{L ^{p, q}} ^q 
+     &amp;= \int _0 ^\infty \bkt{d _f (\alpha)} ^{\frac qp} \alpha ^{q} \frac{\d \alpha}\alpha \notag \\\
+     &amp;= \sum _{k \in \Z} \int _{2 ^k} ^{2 ^{k + 1}} \bkt{d _f (\alpha)} ^{\frac qp} \alpha ^{q} \frac{\d \alpha}\alpha .\notag \\\
+\end{align*}\]
+
+<p>Since $d _f$ is decreasing,</p>
+
+\[\begin{align*}
+2 ^{kq} \bkt{d _f \pth{2 ^{k + 1}}} ^{\frac qp} \lesssim 
+\int _{2 ^k} ^{2 ^{k + 1}} \bkt{d _f (\alpha)} ^{\frac qp} \alpha ^{q} \frac{\d \alpha}\alpha \lesssim
+2 ^{kq} \bkt{d _f \pth{2 ^{k}}} ^{\frac qp}. \notag
+\end{align*}\]
+
+<p>By definition of $E _k$,</p>
+
+\[\begin{align*}
+2 ^{kq} \mu\pth{E _{k + 1}} ^{\frac qp} \lesssim 
+\int _{2 ^k} ^{2 ^{k + 1}} \bkt{d _f (\alpha)} ^{\frac qp} \alpha ^{q} \frac{\d \alpha}\alpha \lesssim
+2 ^{kq} \mu\pth{E _{k}}  ^{\frac qp}. \notag
+\end{align*}\]
+
+<p>Since $\nor{f _k} _{L ^p} \sim \nor{2 ^k \ind {E _k}} _{L ^p} = 2 ^k \mu \pth{E _k} ^{\frac 1p}$,</p>
+
+\[\begin{align*}
+\nor{f _{k + 1}} _{L ^p} ^q \lesssim 
+\int _{2 ^k} ^{2 ^{k + 1}} \bkt{d _f (\alpha)} ^{\frac qp} \alpha ^{q} \frac{\d \alpha}\alpha \lesssim
+\nor{f _k} _{L ^p} ^q. \notag
+\end{align*}\]
+
+<p>By taking the summation over $k$, we obtain an equivalent way of defining $L ^{p, q}$ norm,</p>
+
+\[\begin{align}
+\label{def4}
+\nor f _{L ^{p, q}} \sim _{p,q} \nor{ \set{\nor{f _k} _{L ^p}} _{k \in \Z}} _{\ell ^q}.
+\end{align}\]]]></content><author><name></name></author><summary type="html"><![CDATA[The purpose of this note is to give a few equivalent definitions, \eqref{def1}, \eqref{def2}, \eqref{def3} and \eqref{def4} for Lorentz norm $L ^{p, q}$.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/~yang/true" /><media:content medium="image" url="http://localhost:4000/~yang/true" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Covering Lemma</title><link href="http://localhost:4000/~yang/blog/2020/04/11/covering-lemma" rel="alternate" type="text/html" title="Covering Lemma" /><published>2020-04-11T00:00:00-07:00</published><updated>2020-04-11T00:00:00-07:00</updated><id>http://localhost:4000/~yang/blog/2020/04/11/covering-lemma</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2020/04/11/covering-lemma"><![CDATA[<h3 id="vitali-covering-lemma">Vitali Covering Lemma</h3>
+
+<h4 id="statement">Statement</h4>
+<p>Let $E$ be a measurable set in $\mathbb R ^n$, and 
+let $\{ B _\alpha \} _{\alpha \in \Lambda}$ be a collection of balls that covers $E$ with uniformly bounded radii.
+Then there exists a pairwise disjoint subcollection $\{ B _{\alpha _j} \}$ such that $\bigcup _j 5 B _{\alpha _j}$ covers $E$.</p>
+
+<h4 id="algorithm">Algorithm</h4>
+<p>In $j$-th iteration, we</p>
+
+<ul>
+  <li>Find the largest ball $B _{\alpha _j}$</li>
+  <li>Remove every $B _\beta$ that intersects with $B _{\alpha _j}$</li>
+</ul>
+
+<svg id="vitali" width="100%" viewBox="0 0 600 600"></svg>
+
+<!-- <input type="button" value="Generate" onclick="generate()"> -->
+<p><input type="button" value="Find Max" onclick="find_max()" disabled="disabled" />
+<input type="button" value="Iterate Step" onclick="find_neighbors()" disabled="disabled" />
+<input type="button" value="Remove" onclick="remove()" disabled="disabled" />
+<input type="button" value="Show Selection" id="show-hide" onclick="if(d3.select('#show-hide').attr('value') == 'Show Selection'){show_selection()}else if(d3.select('#show-hide').attr('value') == 'Show Removed'){show_removed()}else hide()" disabled="disabled" /></p>
+
+<h3 id="besicovitch-безико́вич-covering-lemma">Besicovitch (Безико́вич) Covering Lemma</h3>
+
+<h4 id="statement-1">Statement</h4>
+<p>Let $E$ be a measurable set in $\mathbb R ^n$, and Let $\{ Q _\alpha \} _{\alpha \in \Lambda}$ be a collection of cubes with uniformly bounded radii, such that for every $x \in E$ there exists at least one $Q _\alpha$ centering at $x$. 
+Then there exists a finitely overlapping subcover of $E$.</p>
+
+<h4 id="algorithm-1">Algorithm</h4>
+<p>In $j$-th iteration, we</p>
+
+<ul>
+  <li>Find the largest cube $Q _{\alpha _j}$</li>
+  <li>Remove every $Q _\beta$ that centers within $Q _{\alpha _j}$</li>
+</ul>
+
+<svg id="besicovitch" width="100%" viewBox="0 0 600 600"></svg>
+
+<!-- <input type="button" value="Generate" onclick="bgenerate()"> -->
+<p><input type="button" value="Find Max" onclick="bfind_max()" disabled="disabled" />
+<input type="button" value="Iterate Step" onclick="bfind_neighbors()" disabled="disabled" />
+<input type="button" value="Remove" onclick="bremove()" disabled="disabled" />
+<input type="button" value="Show Selection" id="bshow-hide" onclick="if(d3.select('#bshow-hide').attr('value') == 'Show Selection'){bshow_selection()}else if(d3.select('#bshow-hide').attr('value') == 'Show Removed'){bshow_removed()}else bhide()" disabled="disabled" /></p>
+
+<script src="/~yang/assets/js/covering-lemma.js"></script>]]></content><author><name></name></author><summary type="html"><![CDATA[Vitali Covering Lemma]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/~yang/true" /><media:content medium="image" url="http://localhost:4000/~yang/true" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Dispersive Equation</title><link href="http://localhost:4000/~yang/blog/2020/04/10/dispersive-equation" rel="alternate" type="text/html" title="Dispersive Equation" /><published>2020-04-10T00:00:00-07:00</published><updated>2020-04-10T00:00:00-07:00</updated><id>http://localhost:4000/~yang/blog/2020/04/10/dispersive-equation</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2020/04/10/dispersive-equation"><![CDATA[<h3 id="introduction">Introduction</h3>
+
+<p>Consider the following evolution equation for $u (t, x)$,</p>
+
+\[\begin{align}
+    \label{disp-eqn}
+    \pt u = M [u], \qquad u \at{t=0} = u _0.
+\end{align}\]
+
+<p>Here $M$ is a multiplier operator with symbol $i\lambda$, that is</p>
+
+\[\begin{align*}
+    \widehat{M [f]} (\xi) = i \lambda (\xi) \hat f (\xi).
+\end{align*}\]
+
+<p>We can solve \eqref{disp-eqn} by the means of Fourier transform in the $x$ variable.</p>
+
+\[\begin{align*}
+    \hat u _t (t, \xi) &amp;= i \lambda (\xi) \hat u (t, \xi), \\\
+    \hat u (t, \xi) &amp;= e ^{i \lambda (\xi) t} \hat u _0 (\xi), \\\
+    u (t, x) &amp;= \mathcal F ^{-1} \set{e ^{i \lambda t} \hat u _0} (x).
+\end{align*}\]
+
+<p>What does this mean? 
+Take a Fourier mode $u _0 (x) = e ^{i \xi _0 x}$, 
+then $\hat u _0 (\xi) = \delta _0 (\xi - \xi _0)$.</p>
+
+\[\begin{align*}
+    \hat u (t, \xi) &amp;= e ^{i \lambda (\xi _0) t} \delta _0 (\xi - \xi _0), \\\
+    u (t, x) &amp;= e ^{i \lambda (\xi _0) t} e ^{i \xi _0 x} \\\
+    &amp;= e ^{i \xi _0 (x - c (\xi _0) t)} \\\
+    &amp;= u _0 (x - c (\xi _0) t).
+\end{align*}\]
+
+<p>where $c (\xi _0) = \lambda (\xi _0) / \xi _0$ is called the phase velocity for the angular wavenumber $\xi _0$. 
+This means each Fourier mode is a travelling wave solutions with different travelling speed.
+This explains the word <strong>dispersive</strong>.</p>
+
+<p>We will not expect a decay in $L ^2$, because</p>
+
+<blockquote>
+  <p><strong>Lemma</strong> <em>(Energy Conservation)</em>.</p>
+
+\[\begin{align*}
+    \dfr{}{t} \nor{u (t)} _{L ^2} = 0.
+\end{align*}\]
+</blockquote>
+
+<h4 id="proof">Proof.</h4>
+
+\[\begin{align*}
+    \dfr{}{t}  \nor{u (t)} _{L ^2} ^2 
+    &amp;= \dfr{}{t}  \nor{\hat u (t)} _{L ^2} ^2 \\
+    &amp;= 2 \ang{\pt \hat u, \hat u} \\
+    &amp;= 2 \ang{i \lambda \hat u, \hat u} \\
+    &amp;= 2 i \int _{\R} \lambda (\xi) |\hat u (t, \xi)| ^2 \dx
+\end{align*}\]
+
+<p>is purely imaginary, hence zero.</p>
+
+<p>However, we expect a decay in $L ^\infty$ if the initial value has enouh regularity, because different frequencies are spreading out.</p>
+
+<h3 id="van-der-corput-lemma">Van der Corput Lemma</h3>
+
+<p>We review the following lemma in oscillatory integrals. $\newcommand{\ilp}{{i \lambda \phi}}$</p>
+
+<blockquote>
+  <p><strong>Lemma</strong> <em>(Van der Corput)</em>. <em>Let</em></p>
+
+\[\begin{align*}
+    I (\lambda) = \int _a ^b e ^{i \lambda \phi (\xi)} \d \xi,
+\end{align*}\]
+
+  <p><em>then</em></p>
+
+  <ol>
+    <li>$\abs{\phi’} &gt; 1$ and $\phi’$ is monotonic $\Rightarrow I (\lambda) = O(\lambda ^{-1})$.</li>
+    <li>$\abs{\phi ^{(k)}} &gt; 1 \Rightarrow I (\lambda) = O _k(\lambda ^{-\frac1k})$ for $k \ge 2$.</li>
+  </ol>
+
+  <p><em>with constant independent on $a$ and $b$.</em></p>
+</blockquote>
+
+<h4 id="proof-1">Proof.</h4>
+
+<ol>
+  <li>
+    <p><strong>When $k = 1$</strong>,</p>
+
+\[\begin{align*}
+     I (\lambda) &amp;= \int _a ^b \frac1{i \lambda \phi '(\xi)} (i \lambda \phi '(\xi)) e ^{i \lambda \phi (\xi)} \d \xi \\\
+     &amp;= \frac1\lambda \int _a ^b \bkt{e ^{i \lambda \phi (\xi)}}' \frac1{i\phi'} \d \xi \\\
+     &amp;= -\frac1\lambda \int _a ^b e ^\ilp \pthf1{i\phi'}' \d \xi + \frac1\lambda \bkt{e ^\ilp \frac{1}{i\phi'}} _a ^b.
+ \end{align*}\]
+
+    <p>The second is bounded by $\frac2\lambda$, and the first integral is</p>
+
+\[\begin{align*}
+     -\int _a ^b e ^\ilp \dfr{}{\xi} \pthf{1}{i\phi'} \d \xi \le \int _a ^b \abs{\dfr{}{\xi} \pthf{1}{\phi'}} \d \xi = \abs{\frac1{\phi'(b)} - \frac1{\phi'(a)}} \le 1.
+ \end{align*}\]
+
+    <p>Therefore $I (\lambda) \le \frac3\lambda$.</p>
+  </li>
+  <li>
+    <p><strong>When $k = 2$</strong>,</p>
+
+    <p>Since $|\phi’’| &gt; 1$, 
+ either $|\phi’|$ has fixed sign and obtain absolute minimum at $c = a$ or $b$, 
+ or $\phi$ has a unique critical point $c \in [a, b]$. 
+ In both case $\phi’$ is monotonic.</p>
+
+    <p>Integrate $I (\lambda)$ as</p>
+
+\[\begin{align*}
+     I (\lambda) = \int _a ^{c - \delta} e ^\ilp \d\xi
+         + \int _{c - \delta} ^{c + \delta} e ^\ilp \d\xi
+         + \int _{c + \delta} ^b e ^\ilp \d\xi
+ \end{align*}\]
+
+    <p>with $\delta$ to be chosen.</p>
+
+    <p>Since $\abs{\phi’’} &gt; 1$, $\abs{\phi’} &gt; \delta$ in $[a, c - \delta]$. So</p>
+
+\[\begin{align*}
+     \int _a ^{c - \delta} e ^\ilp \d\xi = \int _a ^{c - \delta} e ^{i (\lambda \delta) \frac\phi\delta} \d\xi \le c _k (\lambda \delta) ^{-1}.
+ \end{align*}\]
+
+    <p>Similarly $\int _{c + \delta} ^b \le c _k (\lambda \delta) ^{-1}$. For the middle one, integrant has modulus 1, so integral is bounded by $2\delta$. So</p>
+
+\[\begin{align*}
+     I (\lambda) \le c _k 2 (\lambda \delta) ^{-1} + 2 \delta \lesssim \lambda ^{-\frac12}
+ \end{align*}\]
+
+    <p>by choosing $\delta = \lambda ^{-\frac12}$.</p>
+  </li>
+  <li>
+    <p><strong>When $k = 3$</strong>,</p>
+
+    <p>Similarly, $I (\lambda) \lesssim (\lambda \delta)^{-\frac12} + \delta \lesssim \lambda ^{-\frac13}$ by choosing $\delta = \lambda ^{-\frac13}$, etc.</p>
+  </li>
+</ol>
+
+<h3 id="dispersive-decay-estimate">Dispersive Decay Estimate</h3>
+
+<p>The solution $u (t, x)$ equals to the following oscillatory integral by Fourier inverse transform,</p>
+
+\[\begin{align*}
+    u (t, x) &amp;= \mathcal F ^{-1} \set{e ^{i \lambda t} \hat u _0} (x) \\\
+    &amp;= \int _\R e ^{i x \xi} e ^{i \lambda (\xi) t} \hat u _0 (\xi) \d \xi \\\
+    &amp;= \int _\R e ^{i(x\xi + \lambda (\xi) t)} \hat u _0 (\xi) \d \xi.
+\end{align*}\]
+
+<p>For each fixed $x$, we can get a decay estimate by oscillatory integral.</p>
+
+<p>Very likely a $t ^{-\frac12}$ decay will happen by method of stationary phase, if $\lambda$ has a nondegenerate inflection point. 
+However, we want a decay in $L ^\infty$, that is independent of the choice of $x$.</p>
+
+<p>Let’s Propose the following assumption.</p>
+
+<blockquote>
+  <p><strong>Assumption</strong>. <em>Suppose $\lambda (\xi)$ only has finitely many inflection points that are all nondegenerate. 
+And assume second derivative has at most algebraic decay at infinity.
+That is,</em></p>
+
+\[\begin{align}
+    \lambda'' (\xi _1) &amp;= \dots = \lambda'' (\xi _n) = 0, \qquad \lambda''' (\xi _i) \neq 0. \notag \\\
+    \label{assumption}
+    \lambda'' (\xi) &amp;\neq 0, \qquad \forall \xi \neq \xi _1, \dots, \xi _n. \\\
+    |\lambda'' (\xi)| &amp;\geq |\xi| ^{-m} \qquad \forall |\xi| &gt; &gt; 1. \notag
+\end{align}\]
+</blockquote>
+
+<p>This assumption ensures that $\lambda$ is not “too linear”, so that the phase velocity are not too close.</p>
+
+<p>Recall the Van der Corput lemma (when $k = 2$), if $\abs{\phi’’} &gt; 1$ then</p>
+
+\[\begin{align*}
+    I (t) = \int _a ^b e ^{i t \phi (\xi)} \d \xi \lesssim t ^{-\frac12}.
+\end{align*}\]
+
+<p>Therefore for a general $\phi$,</p>
+
+\[\begin{align*}
+    \int _a ^b e ^{i \phi (\xi)} \d \xi = \int _a ^b e ^{i \min |\phi''| \frac{\phi(\xi)}{\min |\phi''|}} \d\xi 
+    \lesssim \pth{\min _{\xi \in [a , b]} |\phi'' (\xi)|}^{-\frac12}.
+\end{align*}\]
+
+<p>Here $\phi (\xi) = x \xi + t \lambda (\xi)$. $\phi’’(\xi) = t \lambda’’(\xi)$.</p>
+
+<p>Take a simple case when $\lambda$ has only one inflection point $\xi _1$ and $\abs{\lambda’’’(\xi _1)} &gt; 1$ in a small neighborhood.</p>
+
+<p>Split</p>
+
+\[\begin{align*}
+    u (t, x) &amp;= \int _\R e ^{i(x\xi + \lambda (\xi) t)} \hat u _0 (\xi) \d \xi \\\
+    &amp;= \int _{\set{|\xi| &gt; M}} + \int _{\set{|\xi - \xi _1| &lt; \delta}} + \int _{\text{elsewhere}}
+\end{align*}\]
+
+<p>Then</p>
+
+<ol>
+  <li>
+    <p>For high frequencies, assume some regularity on $u _0$,</p>
+
+\[\begin{align*}
+     \abs{\int _{|\xi| &gt; M} e ^{i(x\xi + \lambda (\xi) t)} \hat u _0 (\xi) \d \xi} 
+     &amp;\le \int _{|\xi| &gt; M} |\hat u _0 (\xi)| \d \xi \\\
+     &amp;= \int _{|\xi| &gt; M} \abs{\xi} ^{-s} \abs{\xi} ^s |\hat u _0 (\xi)| \d \xi \\\
+     &amp;\lesssim \nor{\abs{\xi} ^{-s} \mathbf1 _{\abs{\xi}&gt;M}} _{L ^1} \nor{\abs{\xi} ^s |\hat u _0 (\xi)|} _{L ^\infty} \\\
+     &amp;\lesssim M ^{-s+1} \nor{u _0} _{W ^{s, 1}}.
+ \end{align*}\]
+  </li>
+  <li>
+    <p>For frequencies near the inflection point,</p>
+
+\[\begin{align*}
+     \abs{\int _{|\xi - \xi _1| &lt; \delta} e ^{i(x\xi + \lambda (\xi) t)} \hat u _0 (\xi) \d \xi} \le 2 \delta \nor{ \hat u _0 } _{L ^\infty} \le 2 \delta \nor{u _0} _{L ^1}.
+ \end{align*}\]
+  </li>
+  <li>
+    <p>For elsewhere,</p>
+
+    <p>$|\phi’’(\xi)| &gt; t M ^{-m}$ (at most algebraic decay assumption) 
+ or $\phi’’(\xi) &gt; \delta$. 
+ Since</p>
+
+\[\begin{align*}
+     \abs{\int e ^{ix\xi} \hat f (\xi) \hat g (\xi) \d \xi} 
+     &amp;\le \nor{f * g} _{L ^\infty} \le \nor f _{L ^\infty} \nor g _{L ^1} \\\
+     &amp;\le \sup \abs{\int e ^{ix\xi} \hat f (\xi) \d \xi} \nor g _{L ^1},
+ \end{align*}\]
+
+    <p>use this trick we can pull out $\newcommand{\ew}{\text{elsewhere}}$</p>
+
+\[\begin{align*}
+     \abs{\int _\ew e ^{i x \xi} e^{i \lambda (\xi) t} \hat u _0 (\xi) \d \xi}
+     \le \nor{u _0} _{L ^1} \nor{\int _\ew e ^{i x \xi} e ^{i \lambda (\xi) t} \d \xi} _{L ^\infty}.
+ \end{align*}\]
+
+    <p>By Van der Corput lemma, this is bounded by</p>
+
+\[\begin{align*}
+     \int _\ew e ^{i (x \xi + \lambda (\xi) t)} \d \xi \lesssim \pth{\min _{\xi \in \ew} |t \lambda'' (\xi)|} ^{-\frac12} \le \min \set{M ^{-m}, \delta} ^{-\frac12} t ^{-\frac12}.
+ \end{align*}\]
+  </li>
+</ol>
+
+<p>In conclusion,</p>
+
+\[\begin{align*}
+    |u (t, x)| \lesssim M ^{-s + 1} \nor{u _0} _{W ^{s, 1}} + 2 \delta \nor{ u _0 } _{L ^1} + \min \set{M ^{-m}, \delta} ^{-\frac12} t ^{-\frac12} \nor{ u _0 } _{L ^1}.
+\end{align*}\]
+
+<p>Similar as Van der Corput lemma, choose $t ^{-\frac13} = \delta = M ^{-m} = M ^{-s + \frac12}$, we obtain</p>
+
+<blockquote>
+  <p><strong>Theorem</strong> <em>($L ^\infty$ Decay of Dispersive Equation)</em>. <em>If $u$ is a solution to \eqref{disp-eqn}, where $\lambda$ satisfy the above assumption \eqref{assumption}, we have</em></p>
+
+\[\begin{align*}
+    \nor{ u (t) } _{L ^\infty} \lesssim _\lambda t ^{-\frac13} \nor{u _0} _{W ^{s, 1}}
+\end{align*}\]
+
+  <p><em>where $s = m - 1$.</em></p>
+</blockquote>
+
+<h3 id="final-remarks">Final Remarks</h3>
+
+<ol>
+  <li>This decay rate is sharp and the regularity requirement is optimal, by selecting an initial value compactly supported near inflection frequency in Fourier space and chase the wave with critical velocity.</li>
+  <li>$L ^\infty$ decay plus $L ^2$ conservation impliy $L ^p$ decay for $p &gt; 2$ and $L ^q$ growth for $q &lt; 2$.</li>
+  <li>Decay rate is different in higher dimensions.</li>
+</ol>]]></content><author><name></name></author><summary type="html"><![CDATA[Introduction]]></summary></entry></feed>

@@ -1,6 +1,7 @@
 ---
 layout: grid
 title: Jincheng's Website | Teaching
+use-math: True
 ---
 
 <div class="content" markdown="1">
@@ -26,7 +27,8 @@ I am interested in teaching mathematics, especially topics related to analysis a
 ### The University of Chicago
 
 - 2022 Autumn: Math 18500 [Mathematical Methods in the Physical Sciences III](2022/m18500)
-- 2023 Winter: Math 20400 [Analysis in Rn II](2023/m20400)
+- 2023 Winter: Math 20400 [Analysis in $\mathbb R ^n$ II](2023/m20400)
+- 2023 Spring: Math 18500 [Mathematical Methods in the Physical Sciences III](2023/m18500)
 
 </div>
 </div>
