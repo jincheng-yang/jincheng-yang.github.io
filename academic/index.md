@@ -24,7 +24,9 @@ My general research interest includes the area of analysis, dynamic systems, and
 
 ###### Publications
 
-### Preprints
+{% include publication %}
+
+<!-- ### Preprints
 1. Alexis Vasseur, Jincheng Yang: *Layer Separation of the 3D Incompressible Navier-Stokes Equation in a Bounded Domain*, submitted (2023) [[arXiv:2303.05236](https://arxiv.org/abs/2303.05236)][[pdf](https://arxiv.org/pdf/2303.05236.pdf)]
 2. Alexis Vasseur, Jincheng Yang: *Boundary Vorticity Estimates for Navier-Stokes and Application to the Inviscid Limit*, to appear in [SIAM Journal on Mathematical Analysis](https://www.siam.org/publications/journals/siam-journal-on-mathematical-analysis-sima) (2023) [[arXiv:2110.02426](https://arxiv.org/abs/2110.02426)][[pdf](https://arxiv.org/pdf/2110.02426.pdf)]
 3. Luhao Zhang, Jincheng Yang, Rui Gao: *Optimal Robust Policy for Feature-Based Newsvendor*, to appear in [Management Science](https://pubsonline.informs.org/journal/mnsc/) (2022) [[Opt-Online](http://www.optimization-online.org/DB_HTML/2021/12/8749.html)][[pdf](https://optimization-online.org/wp-content/uploads/2021/12/Big_Data_Newsvendor-2.pdf)]
@@ -45,7 +47,7 @@ My general research interest includes the area of analysis, dynamic systems, and
 ### Theses
 
 1. Undergraduate thesis: *Linear Inviscid Damping of a Shear Flow in a Half-Space and a Finite Channel*, supervised by Prof. Dongsheng Li and Prof. Zhiwu Lin [[slides]({{ site.baseurl }}/assets/files/bachelor-slides.pdf)][[pdf]({{ site.baseurl }}/assets/files/bachelor.pdf)]
-2. Doctoral thesis: *Partial regularity results for the three-dimensional incompressible Navier-Stokes equation*, supervised by Prof. Luis Caffarelli and Prof. Alexis Vasseur [[slides]({{ site.baseurl }}/assets/files/doctoral-slides.pdf)][[pdf]({{ site.baseurl }}/assets/files/doctoral.pdf)]
+2. Doctoral thesis: *Partial regularity results for the three-dimensional incompressible Navier-Stokes equation*, supervised by Prof. Luis Caffarelli and Prof. Alexis Vasseur [[slides]({{ site.baseurl }}/assets/files/doctoral-slides.pdf)][[pdf]({{ site.baseurl }}/assets/files/doctoral.pdf)] -->
 
 </div>
 </div>

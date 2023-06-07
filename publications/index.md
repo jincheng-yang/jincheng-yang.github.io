@@ -7,7 +7,7 @@ title: Jincheng's Website | Publications
 
 <div class="post" markdown="1">
 
-### Journal Articles
+<!-- ### Journal Articles
 
 1. Jincheng Yang, Zhiwu Lin: *Linear Inviscid Damping for Couette Flow in Stratified Fluid*, [Journal of Mathematical Fluid Mechanics](https://doi.org/10.1007/s00021-017-0328-3), **20:** 445-472 (2018). [[arXiv:1610.08924](https://arxiv.org/abs/1610.08924)][[pdf]({{ site.baseurl }}/assets/files/Linear Inviscid Damping for Couette Flow in Stratified Fluid.pdf)]
 2. Zhiwu Lin, Jincheng Yang, Hao Zhu: *Barotropic Instability of Shear Flows*, [Studies in Applied Mathematics](https://doi.org/10.1111/sapm.12297), **144:** 289-326 (2020). [[arXiv: 1801.00950](https://arxiv.org/abs/1801.00950)][[pdf]({{ site.baseurl }}/assets/files/Barotropic Instability of Shear Flows.pdf)]
@@ -18,6 +18,7 @@ title: Jincheng's Website | Publications
 
 ### Thesis
 
-- Undergraduate thesis: *Linear Inviscid Damping of a Shear Flow in a Half Space and in a Finite Channel*, supervised by Prof. Dongsheng Li and Prof. Zhiwu Lin [[slides]({{ site.baseurl }}/assets/files/bachelor-slides.pdf)][[pdf]({{ site.baseurl }}/assets/files/bachelor.pdf)]
+- Undergraduate thesis: *Linear Inviscid Damping of a Shear Flow in a Half Space and in a Finite Channel*, supervised by Prof. Dongsheng Li and Prof. Zhiwu Lin [[slides]({{ site.baseurl }}/assets/files/bachelor-slides.pdf)][[pdf]({{ site.baseurl }}/assets/files/bachelor.pdf)] -->
+{% include publication %}
 
 </div>
