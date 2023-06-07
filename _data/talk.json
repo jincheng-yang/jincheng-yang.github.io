@@ -1,6 +1,13 @@
 {
     "Talk": [
         {
+            "Title": "Layer separation, anomalous dissipation, and drag force in the inviscid limit for 3D NSE",
+            "Date": "2023-05-06",
+            "Location": "University of Notre Dame",
+            "Series": "Midwest PDE Seminar",
+            "Abstract": "We provide an unconditional upper bound for the boundary layer separation, anomalous dissi- pation, and the work of drag force in the zero viscosity limit, of Leray–Hopf weak solutions to the 3D incompressible Navier-Stokes equation in a smooth bounded domain. Layer separation refers to the discrepancy between a (turbulent) low-viscosity Leray–Hopf solution and a fixed (laminar) regular Euler solution with similar initial conditions and body force. In addition, we show the boundedness of the drag coefficient with a high Reynolds number."
+        },
+        {
             "Title": "Layer separation for the 3D Navier-Stokes equation in a bounded domain",
             "Date": "2023-01-09",
             "Location": "University of Chicago",
