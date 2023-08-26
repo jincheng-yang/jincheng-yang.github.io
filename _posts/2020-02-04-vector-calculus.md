@@ -61,6 +61,6 @@ $$
     \newline
     \div (f \A) &= f \div \A + \A \grad f
     \newline
-    \div (\u ^\top \A) &= \u \cdot \div \A + \A : \grad \u
+    \div (\A ^\top \u) &= \div \A \cdot \u  + \A : \grad \u
 \end{align*}
 $$
