@@ -12,5 +12,4 @@ defaults:
       path: ~yang/assets/files/shorthand-scans
     values:
       shorthand-scan: true
-roooot: /~yang
-baseurl: /~yang
+baseurl: /
