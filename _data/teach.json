@@ -1,52 +1,97 @@
 {
-    "Teach": [
+    "uchicago": [
+        {
+            "Code": "Math 18500", 
+            "Course": "Mathematical Methods in the Physical Sciences III",
+            "Season": "Spring",
+            "Year": "2024",
+            "Link": "2024/m18500"
+        },
+        {
+            "Code": "Math 27300", 
+            "Course": "Basic Theory of Ordinary Differential Equations",
+            "Season": "Winter",
+            "Year": "2024",
+            "Link": "2024/m27300"
+        },
+        {
+            "Code": "Math 18500", 
+            "Course": "Mathematical Methods in the Physical Sciences III",
+            "Season": "Spring",
+            "Year": "2023",
+            "Link": "2023/m18500"
+        },
+        {
+            "Code": "Math 20400", 
+            "Course": "Analysis in $\\mathbb R ^n$ II",
+            "Season": "Winter",
+            "Year": "2023",
+            "Link": "2023/m20400"
+        },
+        {
+            "Code": "Math 18500", 
+            "Course": "Mathematical Methods in the Physical Sciences III",
+            "Season": "Fall",
+            "Year": "2022",
+            "Link": "2022/m18500"
+        }
+    ],
+    "utaustin": [
         {
             "Code": "M383D", 
             "Course": "Methods of Applied Mathematics II",
             "Season": "Spring",
-            "Year": "2021"
+            "Year": "2021",
+            "Link": "2021/m383d"
         },
         {
             "Code": "M427J", 
             "Course": "Differential Equations with Linear Algebra",
             "Season": "Fall",
-            "Year": "2020"
+            "Year": "2020",
+            "Link": "2020/m427j-2"
         },
         {
             "Code": "M427J", 
             "Course": "Differential Equations with Linear Algebra",
             "Season": "Spring",
-            "Year": "2020"
+            "Year": "2020",
+            "Link": "2020/m427j"
         },
         {
             "Code": "M427J", 
             "Course": "Differential Equations with Linear Algebra",
             "Season": "Fall",
-            "Year": "2019"
+            "Year": "2019",
+            "Link": "2019/m427j-2"
         },
         {
             "Code": "M427J", 
             "Course": "Differential Equations with Linear Algebra",
             "Season": "Spring",
-            "Year": "2019"
+            "Year": "2019",
+            "Link": "2019/m427j"
         },
         {
             "Code": "M427L",
             "Course": "Advanced Calculus for Applications II",
             "Season": "Fall",
-            "Year": "2018"
+            "Year": "2018",
+            "Link": "2018/m427l"
         },
         {
             "Code": "M408D", 
             "Course": "Sequences, Series, and Multivariable Calculus",
             "Season": "Spring",
-            "Year": "2018"
+            "Year": "2018",
+            "Link": "2018/m408d"
         },
         {
             "Code": "M408K",
             "Course": "Differential Calculus",
             "Season": "Fall",
-            "Year": "2017"
+            "Year": "2017",
+            "Link": "2017/m408k"
         }
     ], 
     "DRP": [
