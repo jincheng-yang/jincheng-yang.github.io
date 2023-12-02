@@ -200,3 +200,6 @@ Now $\nor{\abs{\ptil _z} ^\frac13 u} _{H ^s} ^2 \ge c \nor{\cA u} _{H ^s}$, so
 $$
     \nor{u} _{H ^s} ^2 (t) \le C \nor{u _{in}} _{H ^s} ^2 e ^{-c \nu ^\frac13 t} \int _0 ^t e ^{c \nu ^\frac13 \tau} \nu ^{-\frac13} \nor{f} _{H ^s} ^2 (\tau) \d \tau.
 $$
+
+Reference: C. Zhai and W. Zhao, “Stability Threshold of the Couette Flow for Navier–Stokes Boussinesq System with Large Richardson Number $\boldsymbol{\gamma}^{\boldsymbol{2}} \boldsymbol{\gt} \frac{\boldsymbol 1}{\boldsymbol 4}$,” SIAM J. Math. Anal., vol. 55, no. 2, pp. 1284–1318, Apr. 2023, doi: 10.1137/22M1495160.
+[arXiv:2204.09662](https://arxiv.org/pdf/2204.09662.pdf)

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Couette flow</title>
+		<title>Drag and lift</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
@@ -37,8 +37,6 @@
 </script>
 
 		
-		
-			<script src="https://d3js.org/d3.v4.min.js"></script>
 		
 
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -261,171 +259,84 @@
 
 <div class="post">
 
-<h2>Couette flow</h2>
+<h2>Drag and lift</h2>
 
-<p class="meta">2022, August 16</p>
+<p class="meta">2023, December 02</p>
 
-  <div style="display:none">
-$
-\newcommand{\cN}{\mathcal N}
-\newcommand{\cA}{\mathcal A}
-$
-</div>
+  <p>Let $K _t = K + t u _\infty$ be an object moving with constant horizontal velocity $u _\infty$. It experiences a thrust force and gravity $F _{\text{thrust}} \parallel u _\infty$ and $F _{\text{gravity}} \perp u _\infty$. Fluid around it obeys the Navier-Stokes equation:</p>
 
-<h3 id="couette-frame">Couette Frame</h3>
+\[\begin{align}
+	&amp; \pt u + u \cdot \grad u = \div (-p \,\Id + \tau), \qquad \div u = 0 \\
+	&amp; u \at{\partial K _t} = u _\infty, \qquad u \at{|x| = \infty} = 0.
+\end{align}\]
 
-<p>Let $(x, y) \in \T \times \R$. Couette flow refers to the shear flow $u _c (t, x, y) = y e _1$. If $u$ solves a transport-diffusion equation</p>
-
-\[\pt u + b \cdot \grad u = \nu \La u + f,\]
-
-<p>that is, $u$ is transported by some flow $b$ and diffuse at viscosity $\nu$, then we can make a change of variable $z = x - t y$, and</p>
-
-\[\tilde u (t, z, y) = u (t, x, y), \tilde b (t, z, y) = b (t, x, y) - u _c (t, x, y), \tilde f (t, z, y) = f (t, x, y).\]
-
-<p>Then</p>
+<p>Here $\tau = 2 \nu D u$ is the deviatoric stress tensor, and $-p\,\Id$ is the volumetric stress tensor. $\div \tau = \nu \La u$. 
+Make a change of variable:</p>
 
 \[\begin{align*}
-    \pt u (t, x, y) &amp;= \pfr{}t \tilde u (t, x - t y, y) = \pt \tilde u - y \ptil _z \tilde u, 
-    \\
-    \ptil _x u (t, x, y) &amp;= \pfr{}x \tilde u (t, x - t y, y) = \ptil _z \tilde u,
-    \\
-    \ptil _y u (t, x, y) &amp;= \pfr{}y \tilde u (t, x - t y, y) = -t \ptil _z \tilde u + \ptil _y \tilde u,
+	v (t, x) &amp;= u (t, x + t u _\infty) - u _\infty \\
+	\pi (t, x) &amp;= p (t, x + t u _\infty) \\
+	R (t, x) &amp;= \tau (t, x + t u _\infty) = 2 \nu D v.
 \end{align*}\]
 
-<p>therefore</p>
+<p>Then $v, \pi$ solves</p>
 
 \[\begin{align*}
-    (\pt + u _c \cdot \grad) u (t, x, y) &amp;= \pt \tilde u (t, z, y),
-    \\
-    (\ptil _y + t \ptil _x) u (t, x, y) &amp;= \ptil _y \tilde u (t, z, y).
+	&amp; \pt v + v \cdot \grad v + \grad \pi = \div R, \qquad \div v = 0 \\
+	&amp; v \at{\partial K} = 0, \qquad v \at{|x| = \infty} = -u _\infty.
 \end{align*}\]
 
-<p>Moreover, denote $\grad _L = (\ptil _z, \ptil _y - t \ptil _z)$ and $\La _L = \grad _L \cdot \grad _L = \ptil ^2 _z + (\ptil _y - t \ptil _z) ^2$, then $\grad u = \grad _L \tilde u$, $\La u = \La _L \tilde u$. Hence, $\tilde u$ solves the system</p>
+<p>Total force exerted by the fluid to body: ($n$ is inward of $K _t$)</p>
+
+\[F = \int _{\partial K _t} (p \,\Id - \tau) n \d S = \int _{\partial K} (\pi \,\Id - R) n \d S = F _{\text{form}} + F _{\text{skin}}.\]
+
+<p>Form force is</p>
+
+\[F _{\text{form}} = \int _{\partial K} \pi n \d S = F _{\text{form drag}} + F _{\text{form lift}}.\]
+
+<p>Skin force is</p>
+
+\[F _{\text{skin}} = -\int _{\partial K} R n \d S = -2 \nu \int _{\partial K} D v \d S = - \nu \int _{\partial K} \nabla v + \nabla v ^\top \d S = F _{\text{skin drag}} + F _{\text{skin lift}}.\]
+
+<p>If $u$ has fast decay, then</p>
+
+\[F \cdot u _\infty = \int _{\partial K _t} u _\infty ^\top (p \,\Id - \tau) n \d S = \int _{\partial K _t} u ^\top (p \,\Id - \tau) n \d S = \int _{\RR3 \setminus K _t} \div ((p \,\Id - \tau) ^\top u) \d x.\]
+
+<p>Here</p>
 
 \[\begin{align*}
-    \pt \tilde u + \tilde b \cdot \grad _L \tilde u = \nu \La _L \tilde u + \tilde f.
+	\div ((p \,\Id - \tau) ^\top u) &amp;= \div (p \,\Id - \tau) \cdot u + (p \,\Id - \tau) : \grad u \\
+	&amp;= (-\pt u - u \cdot \nabla u) \cdot u + p \div u - 2 \nu D u : \nabla u
 \end{align*}\]
-
-<h3 id="fourier-transform">Fourier transform</h3>
-
-<p>From now on, we drop the tildes. Suppose we adopt the Fourier transform $(z, y) \to (k, \eta)$, then</p>
-
-\[\hat \grad _L = \begin{pmatrix}
-        i k \\ i \eta - i t k
-    \end{pmatrix} = i k \begin{pmatrix}
-        1 \\ \hat \eta - t
-    \end{pmatrix}, \qquad \hat \La _L = - k ^2 (1 + (\hat \eta - t) ^2) = - k ^2 \ang{t - \hat \eta} ^2.\]
-
-<p>where $\hat \eta := \eta / k$ (we are interested in the non-zero mode $k \neq 0$).</p>
-
-<h3 id="inviscid-damping">Inviscid Damping</h3>
-
-<p>Inviscid damping refers to the phenomenon that some sort of decay exists in the Couette frame albeit without viscosity. Consider the following inviscid equation</p>
-
-\[\pt u = -\ptil _z ^2 (- \La _L) \inv u + f.\]
-
-<p>At the first sight, one may think the right hand side seems to be a positive zeroth order Riesz transform of $u$, hence there should be some exponential growth. However, let $\cN$ be a Fourier multiplier with symbol $\hat \cN = \ang{t - \hat \eta}$, then</p>
-
-\[\pt u = -\ptil _z ^2 (- \La _L) \inv u + f = \cN ^{-2} u + f.\]
-
-<p>Let $\cA$ be a time-dependent Fourier multiplier defined as $\cA \at{t = 0} = \Id$, $\dot \cA = [\pt, \cA] = - 2 \cA \cN ^{-2}$, then</p>
-
-\[\pt \cA u = \dot \cA u + \cA \pt u = - 2 \cA \cN ^{-2} u + \cA \cN ^{-2} u + \cA f = - \cA \cN ^{-2} u + \cA f.\]
-
-<p>This means</p>
-
-\[\ddt \frac{\nor{\cA u} _{H ^s} ^2}2 + \nor{\cN ^{-1} \cA u} _{H ^s} ^2 \le (\cA f, \cA u) _{H ^s} \le \half \nor{\cN ^{-1} \cA u} _{H ^s} ^2 + \half \nor{\cN \cA f} _{H ^s} ^2.\]
-
-<p>Moreover, note that</p>
-
-\[\begin{cases}
-    \pt \hat \cA = - 2 \ang{t - \hat \eta} ^{-2} \hat \cA \\
-    \hat \cA (0) = 1
-\end{cases}\]
-
-<p>which has a solution that is uniformly bounded in $\hat \eta$, so $\cA$ is a bounded multiplier from both above and below, hence</p>
-
-\[\ddt {\nor{\cA u} _{H ^s} ^2} + \nor{\cN ^{-1} u} _{H ^s} ^2 \le C \nor{\cN f} _{H ^s} ^2.\]
-
-<p>Hence</p>
-
-\[\nor{u} _{H ^s} ^2 (t) + \int _0 ^t \nor{\cN \inv u} _{H ^s} ^2 (\tau) \d \tau \le C \nor{u _{in}} _{H ^s} ^2 + C \int _0 ^t \nor{\cN f} _{H ^s} ^2 (\tau) \d \tau.\]
-
-<p>Note that $\hat \cN = \ang{t - \hat \eta} \le \ang{\hat \eta} \ang{t}$, so</p>
-
-\[\nor{u} _{H ^s} ^2 (t) + \int _0 ^t \ang \tau ^{-2} \nor{u} _{H ^{s - 1}} ^2 (\tau) \d \tau \le C \nor{u _{in}} _{H ^s} ^2 + C \int _0 ^t \ang{\tau} ^2 \nor{f} _{H ^{s + 1}} ^2 (\tau) \d \tau.\]
-
-<p>Here we used that for $\alpha \in \mathbb R$,</p>
-
-\[\ang t ^\alpha \nor{u} _{H ^{s - |\alpha|}} \le \nor{\cN ^\alpha u} _{H ^s} \le \ang t ^\alpha \nor{u} _{H ^{s + |\alpha|}}.\]
-
-<!-- $$
-    \ddt {\nor{\cA u} _{H ^s} ^2} + \ang{t} ^{-2} \nor{u} _{H ^{s - 1}} ^2 \le C \nor{\cN f} _{H ^s} ^2 \le C \ang t ^2 \nor f _{H ^{s + 1}}.
-$$
-
-###### Algebraic Decay
-
-Now, $\cN ^\half u$ solves the following system, 
-
-$$
-    \pt \cN ^\half u = -\ptil _z ^2 (- \La _L) \inv \cN ^\half u + \frac12 \cN ^{-\half} \dot \cN u + \cN ^\half f.
-$$
-
-Hence, 
-
-$$
-    \ddt {\nor{\cA \cN ^\half u} _{H ^s} ^2} + \nor{\cN ^{-\half} u} _{H ^s} ^2 \le C \nor{\cN ^\frac32 f} _{H ^s} ^2.
-$$ -->
-
-<h3 id="enhanced-dissipation">Enhanced Dissipation</h3>
-
-<p>Consider the following equation</p>
-
-\[\pt u = \nu \La _L u + f.\]
-
-<p>The naive energy estimates shows the following estimate on the energy dissipation,</p>
-
-\[\ddt \frac{\nor u _{H ^s} ^2}2 + \nu \nor{\grad _L u} _{H ^s} ^2 = (u, f) _{H ^s}.\]
-
-<p>Now, denote $\hat \nu = k ^2 \nu$, then $-\nu \La _L = \hat \nu \cN ^2$, thus (with abuse of notation we regard $\hat \nu$ as a multiplier as well)</p>
-
-\[\pt u + \hat \nu \cN ^2 u = f.\]
-
-<p>To control the enhanced dissipation, we separate the dissipation by</p>
-
-\[\pt u + \max \{\hat \nu \cN ^2, \hat \nu ^\frac13\} u = (\hat \nu ^\frac13 - \hat \nu \cN ^2) _+ u + f.\]
-
-<p>Let $\cA$ be a time-dependent Fourier multiplier defined as $\cA \at{t = 0} = \Id$, and similar as before let $\dot \cA = [\pt, \cA] = - \cA (\hat \nu ^\frac13 - \hat \nu \cN ^2) _+$, then</p>
-
-\[\pt \cA u + \max \{\hat \nu \cN ^2, \hat \nu ^\frac13\} \cA u = \cA f.\]
 
 <p>So</p>
 
-\[\ddt \frac{\nor{\cA u} _{H ^s} ^2}2 + \nor{\hat \nu ^{\frac16} \cA u} _{H ^s} ^2 \le (\cA f, \cA u) _{H ^s} \le \half \nor{\hat \nu ^{\frac16} \cA u} _{H ^s} ^2 + \half \nor{\hat \nu ^{-\frac16} \cA f} _{H ^s} ^2\]
+\[F \cdot u _\infty = -\int _{\RR3 \setminus K _t} (\pt + u \cdot \grad) \frac{|u| ^2}2 \dx - 2 \nu \int _{\RR3 \setminus K _t} |D u| ^2 \d x.\]
 
-<p>Again, note that $(\hat \nu ^\frac13 - \hat \nu \cN ^2) _+$ is supported near $\abs{t - \hat \eta} &lt; \hat \nu ^{-\frac13}$, which again makes $\cA$ uniformly bounded from both sides. Therefore,</p>
+<p>If the total energy is conserved, then</p>
 
-\[\ddt {\nor{\cA u} _{H ^s} ^2} + \nu ^\frac13 \nor{|\ptil _z| ^\frac13 u} _{H ^s} ^2 \le (\cA f, \cA u) _{H ^s} \le \nu ^{-\frac13} \nor{|\ptil _z| ^{-\frac13} f} _{H ^s} ^2\]
+\[\int _{\RR3 \setminus K _t} (\pt + u \cdot \grad) \frac{|u| ^2}2 \dx = \int _{\partial K _t} \hfsq u (u \cdot n) \dx = \int _{\partial K _t} \hfsq {u _\infty} (u _\infty \cdot n) \dx = 0.\]
 
-<p>Now $\nor{\abs{\ptil _z} ^\frac13 u} _{H ^s} ^2 \ge c \nor{\cA u} _{H ^s}$, so</p>
+<p>So we have</p>
 
-\[\nor{u} _{H ^s} ^2 (t) \le C \nor{u _{in}} _{H ^s} ^2 e ^{-c \nu ^\frac13 t} \int _0 ^t e ^{c \nu ^\frac13 \tau} \nu ^{-\frac13} \nor{f} _{H ^s} ^2 (\tau) \d \tau.\]
+\[F \cdot u _\infty = F _{\text{drag}} \cdot u _\infty = -2 \nu \int _{\RR3 \setminus K _t} |D u| ^2 \dx = -2\nu \int _K |D v| ^2 \dx.\]
 
-<p>Reference: C. Zhai and W. Zhao, “Stability Threshold of the Couette Flow for Navier–Stokes Boussinesq System with Large Richardson Number $\boldsymbol{\gamma}^{\boldsymbol{2}} \boldsymbol{\gt} \frac{\boldsymbol 1}{\boldsymbol 4}$,” SIAM J. Math. Anal., vol. 55, no. 2, pp. 1284–1318, Apr. 2023, doi: 10.1137/22M1495160.
-<a href="https://arxiv.org/pdf/2204.09662.pdf">arXiv:2204.09662</a></p>
+<p>There are two types of integration by part:</p>
+
+\[\begin{align}
+	u \cdot \La u &amp;= \div(\grad u ^\top u ) - |\grad u| ^2. \\
+	u \cdot \La u &amp;= -u \cdot \curl \omega = \div (u \cross \omega) - |\omega| ^2 \\
+	\notag
+	\implies 2 u \cdot \La u &amp;= \div (-(S u) \omega) - |S u| ^2.
+\end{align}\]
+
+<p>Here $S u = \frac12 (\grad u - \grad u ^\top)$, $\grad u = D u + S u$. 
+Note that $|\grad u| ^2 = |S u| ^2 + |D u| ^2$ and $2 u \cross \omega = (Su) u$. So we have a third identity:</p>
+
+\[-u \cdot \La u = \div ((D u) u) - |D u| ^2.\]
 
 
 
-  
-  <script>
-    var thms = d3.selectAll("[theorem]")._groups[0];
-    for (var thm of thms) {
-      var oldHTML = thm.innerHTML;
-      var theoremTitle = "<b>" + thm.getAttribute("theorem") + ".</b>";
-      var newHTML = "<blockquote><p>" + theoremTitle + oldHTML + "</blockquote></p>";
-      thm.innerHTML = newHTML;
-    }
-  </script>
   
 
   

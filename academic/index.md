@@ -104,7 +104,7 @@ My general research interest includes the area of analysis, dynamic systems, and
 {% for post in site.posts %}
 {% if post.hide %}
 {% else %}
-	<li><span>{{ post.date | date: "%b. %-d, %Y" }}</span> » <a href="{{ site.baseurl }}/{{ post.url }}.html" title="{{ post.title }}">{{ post.title }}</a></li>
+	<li><span>{{ post.date | date: "%b. %-d, %Y" }}</span> » <a href="{{ site.baseurl }}{{ post.url }}.html" title="{{ post.title }}">{{ post.title }}</a></li>
 {% endif %}
 {% endfor %}
 </ul>
