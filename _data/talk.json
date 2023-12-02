@@ -1,10 +1,74 @@
 {
     "Talk": [
         {
+            "Title": "",
+            "Date": "2024-06-10",
+            "Location": "Karlstad University",
+            "Series": "EquaDiff 2024",
+            "Abstract": ""
+        },
+        {
+            "Title": "",
+            "Date": "2024-03-23",
+            "Location": "Florida State University",
+            "Series": "AMS Spring Southeastern Sectional Meeting",
+            "Abstract": "",
+            "Session": "PDEs in Incompressible Fluid Mechanics"
+        },
+        {
+            "Title": "Higher regularity and trace estimates for Navier-Stokes equation",
+            "Date": "2023-11-13",
+            "Location": "University of Chicago",
+            "Series": "Calderón-Zygmund Analysis Seminar",
+            "Type": "invited",
+            "Abstract": "We derive several nonlinear a priori trace estimates for the 3D incompressible Navier-Stokes equation. They recover and extend the current picture of higher derivative estimates in the mixed norm. The main ingredient is the blow-up method and a novel averaging operator, which could apply to PDEs with scaling invariance and quantitative one-scale ε-regularity."
+        },
+        {
+            "Title": "Higher regularity and trace estimates for Navier-Stokes equation",
+            "Date": "2023-11-02",
+            "Location": "Purdue University",
+            "Series": "PDE Seminar",
+            "Type": "invited",
+            "Abstract": "We derive several nonlinear a priori trace estimates for the 3D incompressible Navier-Stokes equation. They recover and extend the current picture of higher derivative estimates in the mixed norm. The main ingredient is the blow-up method and a novel averaging operator, which could apply to PDEs with scaling invariance and quantitative one-scale ε-regularity."
+        },
+        {
+            "Title": "Recent developments in the Navier-Stokes equation",
+            "Date": "2023-10-12",
+            "Location": "Johns Hopkins University",
+            "Series": "Applied Mathematics and Statistics Seminar",
+            "Type": "invited",
+            "Abstract": "In this presentation, I will discuss recent progress regarding the regularity of the three-dimensional Navier-Stokes equation, a system of partial differential equations that models the behavior of fluids. While the full regularity of the 3D incompressible Navier-Stokes equation remains an outstanding open question, recently there have been significant breakthroughs in the fluid dynamics community. I will present new mathematical tools that provide deeper insights into the partial regularity of the Navier-Stokes equation and general supercritical systems. We derive nonlinear a priori estimates and trace estimates for the 3D incompressible Navier-Stokes equation, which extend the current picture of higher derivative estimates in the mixed norm. Additionally, I will demonstrate an intriguing application to the inviscid limit problem, which questions to what extent ideal fluids can model slightly viscous fluid."
+        },
+        {
+            "Title": "New a propri interior trace estimates on the 3D incompressible Navier-Stokes equation",
+            "Date": "2023-10-06",
+            "Location": "University of Nebraska-Lincoln",
+            "Series": "8<sup>th</sup> Annual Meeting of the SIAM Central States Section",
+            "Type": "invited",
+            "Abstract": "We derive several nonlinear a priori trace estimates for the 3D incompressible Navier-Stokes equation, which extend the current picture of higher derivative estimates in the mixed norm. The main ingredient is the blow-up method and a novel averaging operator, which could apply to PDEs with scaling invariance and ε-regularity, possibly with a drift."
+        },
+        {
+            "Title": "Vorticity estimates for the 3D incompressible Navier-Stokes equation",
+            "Date": "2023-08-21",
+            "Location": "Waseda University (zoom talk)",
+            "Series": "10<sup>th</sup> International Congress on Industrial and Applied Mathematics",
+            "Type": "invited",
+            "Abstract": "We show some a priori regularity estimates for the vorticity and its trace in the three-dimensional incompressible Navier-Stokes equation. These a priori estimates are obtained via the blow-up method and a novel averaging operator. The averaging operator can be used to provide regularity and trace estimates for PDEs with ε-regularity."
+        },
+        {
+            "Title": "Trace estimates of 3D NSE via blow-up",
+            "Date": "2023-07-07",
+            "Location": "Chinese Academy of Sciences",
+            "Series": "PDE and Applications Seminar",
+            "Type": "invited",
+            "Abstract": "We derive several nonlinear a priori trace estimates for the 3D incompressible Navier-Stokes equation, which extend the current picture of higher derivative estimates in the mixed norm. The main ingredient is the blow-up method and a novel averaging operator, which could apply to PDEs with scaling invariance and ε-regularity, possibly with a drift."
+        },
+        {
             "Title": "Layer separation, anomalous dissipation, and drag force in the inviscid limit for 3D NSE",
             "Date": "2023-05-06",
             "Location": "University of Notre Dame",
             "Series": "Midwest PDE Seminar",
+            "Type": "invited",
             "Abstract": "We provide an unconditional upper bound for the boundary layer separation, anomalous dissi- pation, and the work of drag force in the zero viscosity limit, of Leray–Hopf weak solutions to the 3D incompressible Navier-Stokes equation in a smooth bounded domain. Layer separation refers to the discrepancy between a (turbulent) low-viscosity Leray–Hopf solution and a fixed (laminar) regular Euler solution with similar initial conditions and body force. In addition, we show the boundedness of the drag coefficient with a high Reynolds number."
         },
         {
@@ -12,13 +76,23 @@
             "Date": "2023-01-09",
             "Location": "University of Chicago",
             "Series": "Calderón-Zygmund Analysis Seminar",
+            "Type": "invited",
             "Abstract": "We provide an unconditional $L^2$ upper bound for the boundary layer separation of 3D Leray-Hopf solutions in a smooth bounded domain. By layer separation, we mean the discrepency between a (turbulent) low-viscosity Leray-Hopf solution $u^\\nu$ and a fixed (laminar) regular Euler solution $\\bar u$ with initial conditions close in $L^2$. Layer separation appears in physical and numerical experiments near the boundary, and we bound it asymptotically by $C \\lVert\\bar u\\rVert_{L^\\infty}^3 t$. This extends the previous result when the Euler solution is a regular shear in a finite channel. The key estimate is to control the boundary vorticity in a way that does not degenerate in the vanishing viscosity limit. This is joint work with Alexis Vasseur."
+        },
+        {
+            "Title": "Layer separation for the 3D Navier-Stokes equation in a bounded domain",
+            "Date": "2022-12-16",
+            "Location": "Chinese Academy of Sciences (zoom talk)",
+            "Series": "PDE and Applications Seminar",
+            "Type": "invited",
+            "Abstract": "We provide an unconditional $L^2$ upper bound for the boundary layer separation of 3D Leray--Hopf solutions in a smooth bounded domain. By layer separation, we mean the discrepancy between a (turbulent) low-viscosity Leray--Hopf solution $u^\nu$ and a fixed (laminar) regular Euler solution $\bar u$ with initial conditions close in $L^2$. Layer separation appears in physical and numerical experiments near the boundary, and we bound it asymptotically by $C \\|\bar u\\|_{L^\\infty}^3 t$. This extends the previous result when the Euler solution is a regular shear in a finite channel. The key estimate is to control the boundary vorticity in a way that does not degenerate in the vanishing viscosity limit."
         },
         {
             "Title": "Layer separation for the 3D Navier-Stokes equation in a bounded domain",
             "Date": "2022-11-03",
             "Location": "Princeton University",
             "Series": "Analysis of Fluids and Related Topics",
+            "Type": "invited",
             "Abstract": "We provide an unconditional $L^2$ upper bound for the boundary layer separation of 3D Leray-Hopf solutions in a smooth bounded domain. By layer separation, we mean the discrepency between a (turbulent) low-viscosity Leray-Hopf solution $u^\\nu$ and a fixed (laminar) regular Euler solution $\\bar u$ with initial conditions close in $L^2$. Layer separation appears in physical and numerical experiments near the boundary, and we bound it asymptotically by $C \\lVert\\bar u\\rVert_{L^\\infty}^3 t$. This extends the previous result when the Euler solution is a regular shear in a finite channel. The key estimate is to control the boundary vorticity in a way that does not degenerate in the vanishing viscosity limit. This is joint work with Alexis Vasseur."
         },
         {
@@ -26,6 +100,7 @@
             "Date": "2022-10-16",
             "Location": "Indianapolis",
             "Series": "Informs Annual Meeting 2022",
+            "Type": "invited",
             "Abstract": "We consider data-driven decision-making under uncertainty with side information, in which exogenous covariates data are available to reveal partial information about random problem parameters and thus facilitate better decisions. The decision maker's goal is to find an optimal end-to-end policy that directly outputs a decision for any new context. We propose a distributionally robust formulation based on the causal transport distance, which preserves the conditional information structure of random problem parameters given the value of covariates. We derive a dual reformulation and study its regularization effect. We prove that the infinite-dimensional policy optimization admits a finite-dimensional convex programming equivalent reformulation. This result renders a new class of optimal policy for adjustable robust optimization."
         },
         {

@@ -58,6 +58,9 @@ My general research interest includes the area of analysis, dynamic systems, and
 ###### Talks
 
 {% for talk in site.data.talk.Talk %}
+{% assign today_date = 'now' | date: '%s' %}
+{% assign pre_date = talk.Date | date: '%s' %}
+{% if today_date > pre_date %}
 
 <div>
 
@@ -85,6 +88,7 @@ My general research interest includes the area of analysis, dynamic systems, and
 
 </div>
 
+{% endif %}
 {% endfor %}
 
 </div>
