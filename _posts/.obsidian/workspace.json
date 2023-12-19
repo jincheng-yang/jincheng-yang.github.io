@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-12-02-drag-and-lift.md",
+                "file": "2023-12-17-polish-space.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023-12-02-drag-and-lift.md",
+                "file": "2023-12-17-polish-space.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2023-12-02-drag-and-lift.md",
+                "file": "2023-12-17-polish-space.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023-12-02-drag-and-lift.md"
+                "file": "2023-12-17-polish-space.md"
               }
             }
           }
@@ -148,13 +148,19 @@
   },
   "active": "11b97d510eda1a2f",
   "lastOpenFiles": [
+    "2020-04-10-dispersive-equation.md",
     "2023-10-31-guess-drift.md",
+    "2022-08-16-couette-flow.md",
+    "2021-02-05-jensen-approximation.md",
+    "2021-01-21-de-giorgi.md",
+    "2020-11-07-vector-valued-maximal-function.md",
+    "2020-04-14-lorentz-space.md",
     "2023-12-02-drag-and-lift.md",
+    "2023-12-17-polish-space.md",
     "2023-12-02-object-moving-in-fluid.md",
     "object-moving-in-fluid.md",
     "2023-09-17.md",
     "2020-11-04-latex-tricks.md",
-    "2022-08-16-couette-flow.md",
     "2018-11-01-列紧与紧性.md",
     "test preamble.md",
     "macro.md",
