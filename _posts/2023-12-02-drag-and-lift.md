@@ -50,7 +50,7 @@ $$
 Skin force is 
 
 $$
-	F _{\text{skin}} = -\int _{\partial K} R n \d S = -2 \nu \int _{\partial K} D v \d S = - \nu \int _{\partial K} \nabla v + \nabla v ^\top \d S = F _{\text{skin drag}} + F _{\text{skin lift}}.
+	F _{\text{skin}} = -\int _{\partial K} R n \d S = -2 \nu \int _{\partial K} D v \d S = - \nu \int _{\partial K} \nabla v + \nabla v ^\top \d S = -\nu \int _{\partial K} \partial _n v \d S = F _{\text{skin drag}} + F _{\text{skin lift}}.
 $$
 
 If $u$ has fast decay, then 
