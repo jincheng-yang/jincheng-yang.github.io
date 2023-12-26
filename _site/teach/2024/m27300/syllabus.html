@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/~yang/css/grid.css">
+		<!-- link to fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Exo:300,600|Roboto:400|Roboto+Condensed:300|Dancing+Script:400|PT+Serif:400,400i|Palanquin+Dark:400|Noto+Serif:400,400i" rel="stylesheet">
+		<!-- JavaScrips -->
+		<script type="text/javascript" src="/~yang/plugin/drag-and-drop.js"></script>
+		
+			<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      },
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+    },
+    jax: ["input/TeX", "output/CommonHTML"]
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS_CHTML">
+</script>
+
+		
+		
+
+		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108717380-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-108717380-1');
+		</script>
+	</head>
+
+	<body>
+
+		<canvas id="myCanvas" width="1000" height="360" >
+			Your browser does not support the canvas element.
+		</canvas>
+
+		<div id="mt">
+			<p id="name">Jincheng Yang</p>
+			<p id="institute">The University of Chicago</p>
+		</div>
+
+		<nav>
+			<div id="nav-container">
+
+				<div class = "dropdown-block" id = "academic-dropdown-block">
+					<a href="/~yang/academic" ondrop="drop(event)" ondragover="allowDrop(event)" id="academic">Academic &#9662;</a>
+	
+					<div class= "dropdown" id="academic-dropdown">
+						<a class = "dropdown-first" href="/~yang/academic#publications">Publications</a>
+						<a href="/~yang/academic#talks">Talks</a>
+						<a href="/~yang/academic#blog">Blog</a>
+						<a class = "dropdown-last" href="/~yang/academic#conferences">Conferences</a>
+					</div>
+				</div>
+
+				<a href="/~yang/cv" ondrop="drop(event)" ondragover="allowDrop(event)" id="cv">Curriculum Vitae</a>
+				
+				<a id = "icon" href="/~yang/" draggable="true" ondragstart="drag(event)" title="Home Page"></a>
+
+				<a href="/~yang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="teaching">Teaching</a>
+
+				<a href="/~yang/music" ondrop="drop(event)" ondragover="allowDrop(event)" id="music">Music</a>
+
+				<div class = "dropdown-block" id = "menu-dropdown-block">
+					<a href="#" id="menu">Menu &#9662;</a>
+	
+					<div class= "dropdown" id="menu-dropdown">
+						<a class="dropdown-first" href="/~yang/academic">Academic</a>
+						<a href="/~yang/cv">Curriculum Vitae</a>
+						<a href="/~yang/academic#publications">Publications</a>
+						<a href="/~yang/teach">Teaching</a>
+						<a class="dropdown-last" href="/~yang/music">Music</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div>
+	<div class="content">
+		
+  <div style="display:none">
+    
+    %--Paired Delimiters--
+    $
+    \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\ang}[1]{\left\langle #1 \right\rangle}
+    \newcommand{\bkt}[1]{\left\lbrack #1 \right\rbrack}
+    \newcommand{\nor}[1]{\left\lVert #1 \right\rVert}
+    \newcommand{\pth}[1]{\left( #1 \right)}
+    \newcommand{\set}[1]{\left\lbrace #1 \right\rbrace}
+    \newcommand{\abset}[1]{\abs{\set{#1}}}
+    \newcommand{\ptset}[1]{\pth{\set{#1}}}
+    $
+
+    %--Operators--
+    $
+    \newcommand{\grad}{\nabla}
+    \newcommand{\La}{\Delta}
+    \renewcommand{\div}{\operatorname{div}}
+    \newcommand{\curl}{\operatorname{curl}}
+    \newcommand{\tr}{\operatorname{tr}}
+    \newcommand{\Hess}{\operatorname{Hess}}
+    \newcommand{\mm}{\mathcal{M}}
+    \newcommand{\inv}{^{-1}}
+    \newcommand{\tensor}{\otimes}
+    \newcommand{\cross}{\times}
+    \newcommand{\weak}[1]{\xrightharpoonup{#1}}
+    $
+
+    %--Notations--
+    $
+    \newcommand{\Vol}{\mathrm{Vol}}
+    \newcommand{\loc}{\mathrm{loc}}
+    \renewcommand{\dim}{\mathrm{dim}}
+    \newcommand{\Span}{\mathrm{Span}}
+    \newcommand{\diam}{\mathrm{diam}}
+    \newcommand{\Id}{\mathrm{Id}}
+    \newcommand{\Lip}{\mathrm{Lip}}
+    \newcommand{\dist}{\mathrm{dist}}
+    \newcommand{\inv}{^{-1}}
+    $
+
+    %--Algebra--
+    $
+    \newcommand{\hfsq}[1]{\frac{\abs{#1} ^2}{2}}
+    $
+
+    %--Sets--
+    $
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\RR}[1]{\R ^{#1}}
+    \newcommand{\Rd}{\RR d}
+    \newcommand{\Rn}{\RR n}
+    \renewcommand{\S}{\mathbb{S}}
+    \renewcommand{\Z}{\mathbb{Z}}
+    \newcommand{\T}{\mathbb{T}}
+    \newcommand{\ssubset}{\subset \subset}
+    \newcommand{\spt}{\operatorname{spt}}
+    \newcommand{\supp}{\operatorname{supp}}
+    \newcommand{\diam}{\mathrm{diam}}
+    \newcommand{\diag}{\operatorname{diag}}
+    \renewcommand{\dim}{\mathrm{dim}}
+    \newcommand{\dimH}{\mathrm{dim} _\mathcal{H}}
+    \newcommand{\Sing}{\mathrm{Sing}}
+    \newcommand{\Vol}{\mathrm{Vol}}
+    \newcommand{\inds}[1]{\mathbf1_{\set{#1}}}
+    \newcommand{\ind}[1]{\mathbf1_{#1}}
+    $
+    
+    %--Summations--
+    $
+    \newcommand{\SUM}[3]{\sum \cnt{#1}{#2}{#3}}
+    \newcommand{\PROD}[3]{\prod \cnt{#1}{#2}{#3}}
+    \newcommand{\cnt}[3]{ _{#1 = #2} ^{#3} }
+    \newcommand{\seq}[2]{\set{#1 _{#2}} _{#2}}
+    \newcommand{\seqi}[2]{\set{#1 _{#2}} \cnt{#2}1i}
+    $
+
+    %--Superscript and Subscript
+    $
+    \newcommand{\pp}[1]{^{(#1)}}
+    \newcommand{\bp}[1]{^{(#1)}}
+    \newcommand{\pps}[2][1]{^{#2 + #1}}
+    \newcommand{\bps}[2][1]{_{#2 + #1}}
+    \newcommand{\pms}[2][1]{^{#2 - #1}}
+    \newcommand{\bms}[2][1]{_{#2 - #1}}
+    $
+
+
+    %--Notations--
+    $
+    \newcommand{\loc}{\mathrm{loc}}
+    \newcommand{\Span}{\operatorname{Span}}
+    \newcommand{\argmin}{\operatorname{argmin}}
+    \newcommand{\argmax}{\operatorname{argmax}}
+    \newcommand{\osc}{\operatorname{osc}}
+    \newcommand{\Id}{\mathrm{Id}}
+    \newcommand{\Lip}{\operatorname{Lip}}
+    \newcommand{\Leb}{\operatorname{Leb}}
+    \newcommand{\PV}{\mathrm{P.V.}}
+    \newcommand{\dist}{\operatorname{dist}}
+    \newcommand{\at}[1]{\bigr\rvert _{#1}}
+    \newcommand{\At}[1]{\biggr\rvert _{#1}}
+    \newcommand{\half}{\frac12}
+    $
+
+
+    %--Text--
+    $
+    \newcommand{\inn}{\text{ in }}
+    \newcommand{\onn}{\text{ on }}
+    \renewcommand{\ae}{\text{ a.e. }}
+    \newcommand{\st}{\text{ s.t. }}
+    \newcommand{\forr}{\text{ for }}
+    \newcommand{\as}{\text{ as }}
+    $
+
+    %--Differential--
+    $
+    \newcommand{\d}{\mathop{\kern0pt\mathrm{d}}\!{}}
+    \newcommand{\dt}{\d t}
+    \newcommand{\dx}{\d x}
+    \newcommand{\dy}{\d y}
+    \newcommand{\ptil}{\partial}
+    \newcommand{\pt}{\ptil _t}
+    \newcommand{\pfr}[2]{\frac{\partial #1}{\partial #2}}
+    \newcommand{\dfr}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+    \newcommand{\ddt}{\dfr{}t}
+    \newcommand{\pthf}[2]{\pth{\frac{#1}{#2}}}
+    $
+    
+    %--Integral--
+    $
+    \newcommand{\intR}{\int _0 ^\infty}
+    \newcommand{\intRn}{\int _{\Rn}}
+    \newcommand{\intRd}{\int _{\Rd}}
+    \newcommand{\fint}{-\!\!\!\!\!\!\int}
+    \newcommand{\intset}[1]{\int _{\set{#1}}}
+    $
+
+    %--Greek--
+    $
+    \newcommand{\e}{\varepsilon}
+    \newcommand{\vp}{\varphi}
+    $
+
+    %--Norm--
+    $
+    \newcommand{\nmL}[2]{\nor{#2} _{L ^#1}}
+    $
+  </div>
+
+
+
+
+<h1>Research Blog</h1>
+
+<div class="post">
+
+<h2></h2>
+
+<p class="meta"></p>
+
+  <h1 id="math-27300-40--50--basic-theory-of-ordinary-differential-equations">Math 27300/[ 40 | 50 ] Basic Theory of Ordinary Differential Equations</h1>
+
+<h2 id="contact">Contact</h2>
+
+<p>Instructor: Dr. Jincheng Yang</p>
+
+<p>Office: Eckhart 318</p>
+
+<p>E-mail: jincheng@uchicago.edu</p>
+
+<p>Canvas message is preferred.</p>
+
+<h2 id="schedule">Schedule</h2>
+
+<p>Regular Class: TTh [ 11:00 am-12:20 pm | 12:30 am-1:50 pm ] @ [ Ryerson 178 | Eckhart 206 ]</p>
+
+<p>Office hours: T 3:00-4:30 pm, Th 9:00-10:30 am @ Eckhart 318</p>
+
+<p>Tests:</p>
+
+<ul>
+  <li>Midterm: 2/6/2024 (Tuesday), [ 11:00 am-12:20 pm | 12:30 pm-1:50 pm ], Week 6</li>
+  <li>Final exam: to be announced</li>
+</ul>
+
+<p>A calendar can be found on Canvas.</p>
+
+<h2 id="course-description">Course description</h2>
+
+<p>Math 27300 is an introductory course to ordinary differential equations (ODE) and dynamic systems (DS). The focus of this course is to understand the basic properties of solutions to various types of ODEs in one or higher dimensions and the behaviors of (planar autonomous) dynamic systems. The first half of the course is devoted to the well-posedness of equations, eigensolutions, and constant coefficient linear differential systems. The second half of the course studies autonomous DS and covers topics including classification of critical points, stability, limit cycles, and bifurcation.</p>
+
+<h3 id="course-objectives">Course objectives</h3>
+
+<p>The overall objective of this course is to analyze the behavior of a given differential system. You will use your knowledge of analysis in $\R ^n$ to understand the short-time behavior of solutions, including existence, uniqueness, nonuniqueness, and well-posedness. You will use your knowledge of linear algebra to understand the structure of solutions to linear equations, to compute solutions to constant coefficient DS, and to locate and classify critical points of nonlinear systems. You will learn to plot (with pencil and eraser) the graph and phase portraits of solutions.</p>
+
+<h3 id="textbook">Textbook</h3>
+
+<p>The textbook for the course is <em>Ordinary Differential Equations, 4th Edition</em>, by Garrett Birkhoff and Gian-Carlo Rota. This book will be helpful to you as a reference and also as a source of additional practice problems. We will be using exercises from this textbook.</p>
+
+<h2 id="policies">Policies</h2>
+
+<h3 id="grading">Grading</h3>
+
+<p>The total grade for this course is 100 points. Your grade will be based on:</p>
+
+<ul>
+  <li>7 homework: 3 pts each, 18 pts total (the lowest score will be dropped)</li>
+  <li>1 midterm: 32 pts</li>
+  <li>1 final exam: 50 pts</li>
+</ul>
+
+<p>The course grade lines will be adjusted based on the distribution of scores in the course, but will be no more strict than the following:</p>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td> </td>
+        <td>A: 91–100 </td>
+        <td>A-: 87–90.99</td>
+        <td>B+: 83–87.99</td>
+        <td> B: 79–83.99 </td>
+        <td> B-: 75–78.99 </td>
+        <td> C+: 70–74.99 </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>C: 65–69.99</td>
+        <td>C-: 60–64.99</td>
+        <td>D+: 55–59.99</td>
+        <td>D: 50–54.99</td>
+        <td> F: 0–49.99</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<h3 id="homework">Homework</h3>
+
+<p>Homework is due at 11:59 pm on Tuesdays unless otherwise specified. The first two late homework can be accepted for up to 48 hours without punishment. Additional late submissions will be rejected. You can collaborate with your classmates in small study groups of up to 3 members. If you do so, please mark the full names of your collaborators at the beginning of each assignment. Each member still needs to submit their own solution. Homework submission will be via Canvas. You are responsible for submitting a legible scan of your written solutions.</p>
+
+<h3 id="final-exam">Final exam</h3>
+
+<p>The time and location of the final exam will be announced in Week 3 or 4.
+It is the policy of the Department of Mathematics that the following rules apply to final exams in all undergraduate mathematics courses: The Final Exam MUST occur at the time and place designated on the College Final Exam Schedule. Instructors are not permitted to excuse students from the scheduled time of the final exam except in the cases of an Incomplete.</p>
+
+<h2 id="covid-19">COVID-19</h2>
+
+<h3 id="uchicago-health-pact">UChicago Health Pact</h3>
+
+<p>All students on campus are required to adhere to the guidelines in the UChicago Health Pact in order to promote a safe environment in the classroom. For the most up-to-date information on University policies, visit https://goforward.uchicago.edu.</p>
+
+<p>Any concerns over inappropriate PPE usage, physical distancing, cleaning/disinfection, or other COVID-19 related public health concerns should be directed to UCAIR.</p>
+
+<p>If there is an emergency, call (773) 702-8181 or dial 123 on any campus phone.</p>
+
+<p>If you were potentially exposed to COVID-19 or your COVID-19 test results come back positive, reach out immediately to C19HealthReport@uchicago.edu. Follow whatever subsequent instructions you receive from this team of medical professionals.</p>
+
+<h3 id="attendance">Attendance</h3>
+
+<p>Students who have been exposed to or who are experiencing symptoms of COVID-19 should contact UChicago Student Wellness immediately to be tested and reach out to their area Dean of Students to request accommodations for classes as instructed here: https://goforward.uchicago.edu.</p>
+
+<h2 id="zoom-protocols">Zoom protocols</h2>
+
+<p>We do not expect to use Zoom in this course. However, in the unfortunate situation when the instructor is quarantined, we ask the following:</p>
+
+<p>There is an expectation that students in this course will be actively engaged and on camera while on Zoom. If a student requires an exception, they will need to reach out to the instructor directly.</p>
+
+<h3 id="recording-and-deletion-policies">Recording and Deletion Policies</h3>
+
+<p>The Recording and Deletion Policies for the current academic year can be found in the Student Manual under Petitions, Audio &amp; Video Recording on Campus.
+Do not record, share, or disseminate any course sessions, videos, transcripts, audio, or chats. 
+Do not share links for the course to those not currently enrolled.
+Any Zoom cloud recordings will be automatically deleted 90 days after the completion of the recording.</p>
+
+<h2 id="academic-integrity">Academic Integrity</h2>
+
+<p>The University of Chicago takes academic honesty very seriously. Students are expected to be independently familiar with the university policy and to understand that their work in the course must be their own original work. Violations of the policy are taken seriously.</p>
+
+<h3 id="using-generative-artificial-intelligence">Using Generative Artificial Intelligence</h3>
+
+<p>You can use generative artificial intelligence tools (ChatGPT, New Bing, Gemini, etc.) to help you study. Find the learning strategy that best suits you. However, you have to complete your homework by yourself. This means you can never copy and paste (by keyboard or by hand) any answers from Chatbot or Copilot to your homework. You should learn, understand, internalize, and create your own solution. Grammar and spelling check tools are allowed.</p>
+
+<h2 id="accommodations">Accommodations</h2>
+
+<p>The University of Chicago is committed to ensuring equitable access to our academic programs and services. Students with disabilities who have been approved for the use of academic accommodations by Student Disability Services (SDS) and need a reasonable accommodation(s) to participate fully in this course should follow the procedures established by SDS for using accommodations. Timely notifications are required in order to ensure that your accommodations can be implemented. Please meet with me to discuss your access needs in this class after you have completed the SDS procedures for requesting accommodations.</p>
+
+<p>Phone: (773) 702-6000</p>
+
+<p>Email: disabilities@uchicago.edu</p>
+
+
+
+  
+
+  
+  
+  <h3>Recent <a href="/~yang/academic/#blog" style="color:#526d6d">Posts</a></h3>
+    
+    <!-- 
+    
+    
+    <div class="thumb">
+      
+    
+    <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/jensen.svg')"></div>
+    </a>
+    <h5>05 Feb 2021</h5>
+    <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
+      <h4>Jensen's Approximation</h4>
+    </a>
+    </div><div class="thumb" style="margin-left:5%">
+    
+    <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/isoperimetric.png')"></div>
+    </a>
+    <h5>22 Jan 2021</h5>
+    <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
+      <h4>De Giorgi</h4>
+    </a>
+    </div><div class="thumb" style="margin-left:5%">
+    
+    <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/lorentz.svg')"></div>
+    </a>
+    <h5>14 Apr 2020</h5>
+    <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
+      <h4>Lorentz Space</h4>
+    </a>
+    </div> -->
+
+  <div style="display:grid;grid-template-columns:30% 30% 30%;align-items:center;justify-content:space-between;grid-row-gap:2.5em">
+
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/~yang/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/jensen.svg')"></div>
+      </a>
+      <h5>05 Feb 2021</h5>
+      <a href="/~yang/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+        <h4>Jensen's Approximation</h4>
+      </a>
+      </div>
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/~yang/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/isoperimetric.png')"></div>
+      </a>
+      <h5>22 Jan 2021</h5>
+      <a href="/~yang/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+        <h4>De Giorgi</h4>
+      </a>
+      </div>
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/~yang/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/lorentz.svg')"></div>
+      </a>
+      <h5>14 Apr 2020</h5>
+      <a href="/~yang/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+        <h4>Lorentz Space</h4>
+      </a>
+      </div>
+    
+    
+    
+  </div>
+
+</div>
+
+	</div><!-- /.container -->
+</div>	
+
+		<footer>
+			<div id="footer-container">
+				<a href="https://www.uchicago.edu"><img id="logo" src="/~yang/assets/images/uc_logo.jpeg"></a>
+				
+				<p id="copyright">Copyright &#169 2023 Jincheng Yang</p>
+
+				<ul>
+					<li id="uchimath"><a href="https://mathematics.uchicago.edu/">UChi Math</a></li>
+					<li><a href="https://www.linkedin.com/in/jincheng-yang/">LinkedIn</a></li>
+					<li><a href="https://www.researchgate.net/profile/Jincheng-Yang">ResearchGate</a></li>
+					<li><a href="mailto:jincheng@uchicago.edu">Email</a></li>
+				</ul>
+			</div>
+		</footer>
+
+
+		
+		<script type="text/javascript" src="/~yang/plugin/Escher.js"></script>
+		<script type="text/javascript" src="/~yang/plugin/set_icon.js"></script>
+	</body>
+</html>

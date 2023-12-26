@@ -1,5 +1,12 @@
 {
     "githubPullRequests.ignoredPullRequestBranches": [
         "master"
+    ],
+    "grammarly.selectors": [
+        {
+            "language": "markdown",
+            "scheme": "file",
+            "pattern": "teach/2024/m27300/syllabus.md"
+        }
     ]
 }
