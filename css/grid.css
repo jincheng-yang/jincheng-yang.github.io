@@ -469,3 +469,20 @@ pre {
 .highlight {
     border-radius: 0.6em;
 }
+
+@media print {
+    /* All your print styles go here */
+    header, #mt, #myCanvas,
+    footer,
+    nav {
+      display: none !important;
+    }
+
+    blockquote {
+        color: black !important;
+    }
+
+    blockquote p {
+        color: black !important;
+    }
+  }
