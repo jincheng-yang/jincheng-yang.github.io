@@ -170,6 +170,21 @@ layout: default
 
   {{ content }}
 
+  <script>
+    var blockquotes = document.getElementsByTagName("blockquote");
+    for (var i = 0; i < blockquotes.length; i++) {
+      var bq = blockquotes[i];
+      content = bq.children[0].innerHTML;
+
+      var pattern = /^\[\!(\w+)\]/; // Regular expression pattern
+      if (pattern.test(content)) {
+        var match = content.match(pattern); // Extract the word and text
+        var word = match[1]; // Extracted word
+        bq.children[0].innerHTML = content.replace(pattern, ""); 
+        bq.children[0].innerHTML = "<b>" + word + ".</b> " + bq.children[0].innerHTML;
+      }
+    }
+  </script>
 
   {% if page.use-d3 %}
   <script>

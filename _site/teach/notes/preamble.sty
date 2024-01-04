@@ -1,0 +1,148 @@
+%--Paired Delimiters--
+
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\ang}[1]{\left\langle #1 \right\rangle}
+\newcommand{\bkt}[1]{\left\lbrack #1 \right\rbrack}
+\newcommand{\nor}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\pth}[1]{\left( #1 \right)}
+\newcommand{\set}[1]{\left\lbrace #1 \right\rbrace}
+\newcommand{\abset}[1]{\abs{\set{#1}}}
+\newcommand{\ptset}[1]{\pth{\set{#1}}}
+
+
+%--Operators--
+
+\newcommand{\grad}{\nabla}
+\newcommand{\La}{\Delta}
+\renewcommand{\div}{\operatorname{div}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\mm}{\mathcal{M}}
+\newcommand{\inv}{^{-1}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\cross}{\times}
+\newcommand{\weak}[1]{\xrightharpoonup{#1}}
+
+
+%--Notations--
+
+\newcommand{\Vol}{\mathrm{Vol}}
+\newcommand{\loc}{\mathrm{loc}}
+\renewcommand{\dim}{\mathrm{dim}}
+\newcommand{\Span}{\mathrm{Span}}
+\newcommand{\diam}{\mathrm{diam}}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\Lip}{\mathrm{Lip}}
+\newcommand{\dist}{\mathrm{dist}}
+\newcommand{\inv}{^{-1}}
+
+
+%--Algebra--
+
+\newcommand{\hfsq}[1]{\frac{\abs{#1} ^2}{2}}
+
+
+%--Sets--
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\RR}[1]{\R ^{#1}}
+\newcommand{\Rd}{\RR d}
+\newcommand{\Rn}{\RR n}
+\renewcommand{\S}{\mathbb{S}}
+\renewcommand{\Z}{\mathbb{Z}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\ssubset}{\subset \subset}
+\newcommand{\spt}{\operatorname{spt}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\diam}{\mathrm{diam}}
+\newcommand{\diag}{\operatorname{diag}}
+\renewcommand{\dim}{\mathrm{dim}}
+\newcommand{\dimH}{\mathrm{dim} _\mathcal{H}}
+\newcommand{\Sing}{\mathrm{Sing}}
+\newcommand{\Vol}{\mathrm{Vol}}
+\newcommand{\inds}[1]{\mathbf1_{\set{#1}}}
+\newcommand{\ind}[1]{\mathbf1_{#1}}
+
+
+%--Summations--
+
+\newcommand{\SUM}[3]{\sum \cnt{#1}{#2}{#3}}
+\newcommand{\PROD}[3]{\prod \cnt{#1}{#2}{#3}}
+\newcommand{\cnt}[3]{ _{#1 = #2} ^{#3} }
+\newcommand{\seq}[2]{\set{#1 _{#2}} _{#2}}
+\newcommand{\seqi}[2]{\set{#1 _{#2}} \cnt{#2}1i}
+
+
+%--Superscript and Subscript
+
+\newcommand{\pp}[1]{^{(#1)}}
+\newcommand{\bp}[1]{^{(#1)}}
+\newcommand{\pps}[2][1]{^{#2 + #1}}
+\newcommand{\bps}[2][1]{_{#2 + #1}}
+\newcommand{\pms}[2][1]{^{#2 - #1}}
+\newcommand{\bms}[2][1]{_{#2 - #1}}
+
+
+
+%--Notations--
+
+\newcommand{\loc}{\mathrm{loc}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\argmin}{\operatorname{argmin}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\osc}{\operatorname{osc}}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\Lip}{\operatorname{Lip}}
+\newcommand{\Leb}{\operatorname{Leb}}
+\newcommand{\PV}{\mathrm{P.V.}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\at}[1]{\bigr\rvert _{#1}}
+\newcommand{\At}[1]{\biggr\rvert _{#1}}
+\newcommand{\half}{\frac12}
+
+
+
+%--Text--
+
+\newcommand{\inn}{\text{ in }}
+\newcommand{\onn}{\text{ on }}
+\renewcommand{\ae}{\text{ a.e. }}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\forr}{\text{ for }}
+\newcommand{\as}{\text{ as }}
+
+
+%--Differential--
+
+\newcommand{\d}{\mathop{\kern0pt\mathrm{d}}\!{}}
+\newcommand{\dt}{\d t}
+\newcommand{\dx}{\d x}
+\newcommand{\dy}{\d y}
+\newcommand{\ptil}{\partial}
+\newcommand{\pt}{\ptil _t}
+\newcommand{\pfr}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dfr}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\ddt}{\dfr{}t}
+\newcommand{\pthf}[2]{\pth{\frac{#1}{#2}}}
+
+
+%--Integral--
+
+\newcommand{\intR}{\int _0 ^\infty}
+\newcommand{\intRn}{\int _{\Rn}}
+\newcommand{\intRd}{\int _{\Rd}}
+\newcommand{\fint}{-\!\!\!\!\!\!\int}
+\newcommand{\intset}[1]{\int _{\set{#1}}}
+
+
+%--Greek--
+
+\newcommand{\e}{\varepsilon}
+\newcommand{\vp}{\varphi}
+
+
+%--Norm--
+
+\newcommand{\nmL}[2]{\nor{#2} _{L ^#1}}
+

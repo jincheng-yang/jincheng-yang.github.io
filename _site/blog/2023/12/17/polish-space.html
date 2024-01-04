@@ -38,6 +38,8 @@
 
 		
 		
+			<script src="https://d3js.org/d3.v4.min.js"></script>
+		
 
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -348,7 +350,32 @@ A measurable space $(P, \mathscr P)$ is called a <strong>standard Borel space</s
 \end{array}\]
 
 
+  <script>
+    var blockquotes = document.getElementsByTagName("blockquote");
+    for (var i = 0; i < blockquotes.length; i++) {
+      var bq = blockquotes[i];
+      content = bq.children[0].innerHTML;
 
+      var pattern = /^\[\!(\w+)\]/; // Regular expression pattern
+      if (pattern.test(content)) {
+        var match = content.match(pattern); // Extract the word and text
+        var word = match[1]; // Extracted word
+        bq.children[0].innerHTML = content.replace(pattern, ""); 
+        bq.children[0].innerHTML = "<b>" + word + ".</b> " + bq.children[0].innerHTML;
+      }
+    }
+  </script>
+
+  
+  <script>
+    var thms = d3.selectAll("[theorem]")._groups[0];
+    for (var thm of thms) {
+      var oldHTML = thm.innerHTML;
+      var theoremTitle = "<b>" + thm.getAttribute("theorem") + ".</b>";
+      var newHTML = "<blockquote><p>" + theoremTitle + oldHTML + "</blockquote></p>";
+      thm.innerHTML = newHTML;
+    }
+  </script>
   
 
   
@@ -463,7 +490,7 @@ A measurable space $(P, \mathscr P)$ is called a <strong>standard Borel space</s
 			<div id="footer-container">
 				<a href="https://www.uchicago.edu"><img id="logo" src="/~yang/assets/images/uc_logo.jpeg"></a>
 				
-				<p id="copyright">Copyright &#169 2023 Jincheng Yang</p>
+				<p id="copyright">Copyright &#169 2024 Jincheng Yang</p>
 
 				<ul>
 					<li id="uchimath"><a href="https://mathematics.uchicago.edu/">UChi Math</a></li>

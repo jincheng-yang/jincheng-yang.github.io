@@ -3,6 +3,7 @@ layout: post
 title: Polish space
 date: 2023-12-17
 use-math: true
+use-d3: true
 comments: true
 hide: true
 ---
