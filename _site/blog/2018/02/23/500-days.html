@@ -95,6 +95,21 @@
 <p>Environment: Processing 3.0</p>
 
 
+  <script>
+    var blockquotes = document.getElementsByTagName("blockquote");
+    for (var i = 0; i < blockquotes.length; i++) {
+      var bq = blockquotes[i];
+      content = bq.children[0].innerHTML;
+
+      var pattern = /^\[\!(\w+)\]/; // Regular expression pattern
+      if (pattern.test(content)) {
+        var match = content.match(pattern); // Extract the word and text
+        var word = match[1]; // Extracted word
+        bq.children[0].innerHTML = content.replace(pattern, ""); 
+        bq.children[0].innerHTML = "<b>" + word + ".</b> " + bq.children[0].innerHTML;
+      }
+    }
+  </script>
 
   
 
@@ -187,7 +202,7 @@
 			<div id="footer-container">
 				<a href="https://www.uchicago.edu"><img id="logo" src="/~yang/assets/images/uc_logo.jpeg"></a>
 				
-				<p id="copyright">Copyright &#169 2023 Jincheng Yang</p>
+				<p id="copyright">Copyright &#169 2024 Jincheng Yang</p>
 
 				<ul>
 					<li id="uchimath"><a href="https://mathematics.uchicago.edu/">UChi Math</a></li>
