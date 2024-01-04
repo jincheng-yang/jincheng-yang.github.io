@@ -91,8 +91,9 @@ If $\bF$ is affine in $\bx \pp n$, then we say the system of ODE is **quasilinea
 # First order ODE
 
 $$
-    x' = f (x, t).
+    F (t, x, x') = 0.
 $$
+
 Trajectory/integral curve: the graph of $u$: $\{(t, x): t \in I, x = u (t)\}$.
 ## Separable equation
 
@@ -211,7 +212,7 @@ $$
 	M (t, u (t)) + N (t, u (t)) u' (t) = 0.
 $$
 
-Geometrically, it means that on the $(t, x)$-plane, the graph of the solution $(t, u (t))$ is a curve that is **perpendicular** to the vector fields $(M, N)$ everywhere. Of course, it is also perpendicular to $(\mu M, \mu N)$ for some nonzero function $\mu$ of $(t, x)$. 
+Geometrically, it means that on the $(t, x)$-plane, the graph of the solution $(t, u (t))$ is a curve that is **perpendicular** to the vector field $(M, N)$ everywhere. Of course, it is also perpendicular to $(\mu M, \mu N)$ for some nonzero function $\mu$ of $(t, x)$. 
 
 For simplicity suppose $I = \R$. Recall that for a differentiable function $G: \R \times \R \to \R$, its **gradient fields** is perpendicular to its **contour** (level curves). Hence, if $(\mu M, \mu N) = \grad G = (\partial _t G, \partial _x G)$ is a gradient field of some scalar field $G$, then $(t, u (t))$ is constant on $G$, i.e. $G (t, u (t)) = C$ for some constant $C$. 
 
