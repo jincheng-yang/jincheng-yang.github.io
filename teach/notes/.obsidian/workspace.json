@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ode-01.md",
+                "file": "ode-02.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ode-01.md",
+                "file": "ode-02.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ode-01.md",
+                "file": "ode-02.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ode-01.md"
+                "file": "ode-02.md"
               }
             }
           }
@@ -148,7 +148,9 @@
   },
   "active": "5c82d6dd483763ac",
   "lastOpenFiles": [
+    "ode-03.md",
     "ode-02.md",
+    "preamble~.sty",
     "ode-01.md",
     "preamble.sty"
   ]

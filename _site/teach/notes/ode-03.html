@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Lecture 2: Comparison lemma, Grönwall inequality</title>
+		<title>Lecture 3: Existence and uniqueness: Picard iteration</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
@@ -257,123 +257,157 @@
 
 <div class="post">
 
-<h2>Lecture 2: Comparison lemma, Grönwall inequality</h2>
+<h2>Lecture 3: Existence and uniqueness: Picard iteration</h2>
 
 <p class="meta"></p>
 
-  <h1 id="solution-curve-and-flow-map">Solution curve and flow map</h1>
+  <h1 id="banach-fixed-point-theorem">Banach fixed point theorem</h1>
 
 \[\newcommand{\bx}{\boldsymbol x}
+\newcommand{\by}{\boldsymbol y}
 \newcommand{\bu}{\boldsymbol u}
+\newcommand{\bv}{\boldsymbol v}
 \newcommand{\bF}{\boldsymbol F}
 \newcommand{\bf}{\boldsymbol f}\]
 
-<p>The graph of a solution $u: I \to \R$ to an ODE is called a <strong>solution curve</strong> or <strong>trajectory</strong>. Suppose the ODE is a one dimensional dynamic system:</p>
-
-\[u' (t) = f (t, u (t)).\]
-
-<p>Pick $t \in I$ and $x = u (t)$. Then the tangent vector of a solution passing $(t, x)$ is $(1, u’ (t)) = (1, f (t, x))$. The solution curve is tangent to the vector field $(1, f (t, x))$ everywhere.</p>
-
-<p>We will show soon that under suitable conditions, a dynamic system coupled with an initial datum admits a unique solution.</p>
-
-\[\begin{cases}
-		\bu ' (t) = \bf (t, \bu (t)) \\
-		\bu (t _0) = \bx _0
-	\end{cases}
-	\iff
-	\begin{cases}
-		\dot \bx = \bf _t (\bx) \\
-		\bx \at{t = t _0} = \bx _0
-	\end{cases}\]
-
-<p>A <strong>flow map</strong> is a function $\Phi$ is defined by $\Phi (t; t _0, \bx _0) = \bu (t)$ if $\bu (t)$ is the solution to this dynamic system with initial datum $\bx _0$.</p>
-
-<h3 id="comparison-lemma">Comparison lemma</h3>
-
-<blockquote>
-  <p>[!Lemma] 
-(comparison lemma) Let $f (t, x) &lt; g (t, x)$ for all $(t, x)$. Let $u, v: I \to \R$ be two differentiable functions satisfying</p>
-
-\[u' (t) \le f (t, u (t)), \qquad v' (t) \ge g (t, v (t)).\]
-
-  <p>If $u (t _0) \le v (t _0)$, then $u (t) &lt; v (t)$ for every $t &gt; t _0$.</p>
-
-  <p>If $u (t _0) \ge v (t _0)$, then $u (t) &gt; v (t)$ for every $t &lt; t _0$.</p>
-</blockquote>
-
-<p>Proof. We prove by contradiction. Suppose $u (t _0) \le v (t _0)$, and $u (t _1) \ge v (t _1)$ for some $t _1 &gt; t _0$. Let $S = \set{t \in [t _0, t _1]: u (t) = v (t)}$ be the set of times when they meet. For every $t \in S$,  $u’ (t) \le f (t, u (t)) &lt; g (t, v (t)) \le v’ (t)$. This means every time $u$ and $v$ meet, $u$ cross $v$ from above to below. Intuitively, this cannot happen. Below we make a step-by-step rigorous proof of this intuition.</p>
-
-<ol>
-  <li>$S$ is isolated: if $t \in S$, $u’ (t) &lt; v’ (t)$, then $u (s) &gt; v (s)$ for $s &lt; t$ sufficiently close, and $u (s) &lt; v (s)$ for $s &gt; t$ sufficiently close.</li>
-  <li>$S$ contains at least one point. This is because $u (t _0) \le v (t _0)$ and $u (t _1) \ge v (t _1)$. Since $u,v$ are both differentiable, they are continuous, and we can find at least one point by intermediate value theorem.</li>
-  <li>$S$ contains at least two points. To prove this, the previous step yields $t _2 \in [t _0, t _1]$. If $t _2 &gt; t _0$, we can find $s _2 &lt; t _2$ sufficiently close to $t _2$ such that $u (s _2) &gt; v (s _2)$. We run IVT again in $[t _0, s _2]$ to locate another point in $S$. If $t _2 = t _0$, then we find $s _2 &gt; t _2$ sufficiently close such that $u (s _2) &lt; v (s _2)$. We run IVT in $[s _2, t _1]$.</li>
-  <li>Let $t _2, t _3$ be two adjacent points in $S$. Then we find $s _2 &gt; t _2$ with $u (s _2) &gt; v (s _2)$, $s _3 &lt; t _3$ with $u (s _3) &lt; v (s _3)$. We run IVT in $[s _2, s _3]$ yielding another point in $S$, which is a contradiction.</li>
-</ol>
-
-<p>Here we request $f &lt; g$ strictly. What happens if $f \le g$? We defer this to the next lecture.</p>
-
-<h3 id="grönwall-inequality">Grönwall inequality</h3>
-
-<blockquote>
-  <p>[!lemma] 
-(Grönwall inequality) If $u (t): I \to \R$ is $C ^1$, positive, and satisfies the inequality</p>
-
-\[u' (t) \le \beta (t) u (t)\]
-
-  <p>and $\beta$ is continuous, then for any $t _0, t \in I$ with $t _0 &lt; t$, it holds that</p>
-
-\[u (t) \le u (t _0) \exp \left(
-		\int _{t _0} ^{t} \beta (s) \d s
-	\right).\]
-</blockquote>
-
-<p>Proof. Define $f (t, x) =  \beta (t) x$. Then $u’ (t) \le f (t, u (t))$. Fix $\e &gt; 0$ and define</p>
-
-\[g (t, x) = \begin{cases}
-		(\beta (t) + \e) x &amp; x &gt; 0 \\
-		\beta (t) x + \e &amp; x \le 0.
-	\end{cases}\]
-
-<p>Then $f (t, x) &lt; g (t, x)$. Let $v (t)$ solves $v’ (t) = g (t, v (t))$ with $v (t _0) = u (t _0)$. Then $v (t) = u (t _0) \exp \pth{\int _{t _0} ^{t} (\beta (s) + \e) \d s}$ is continuous and differentiable. By comparison lemma,</p>
-
-\[u (t) &lt; v (t) = u (t _0) \exp \pth{\int _{t _0} ^{t} (\beta (s) + \e) \d s}\]
-
-<p>for any $\e &gt; 0$. Taking $\e \to 0$ finishes the proof.</p>
-
-<h1 id="strong-solutions-of-dynamic-system">Strong solutions of dynamic system</h1>
-
-<p>Recall $I$ is an interval. It can be either open, closed, half open half closed, finite or infinite. Now we introduce the following <strong>function spaces</strong>.</p>
-
-<p>We define $C ^0 (I)$ to be the set of functions $u: I \to \R$ that are continuous and bounded. We define $C ^1 (I)$ to be the set of differentiable functions $u \in C ^0 (I)$ with $u’ \in C ^0 (I)$. We define $C ^n (I)$ to be the set of differentiable functions $u \in C ^{n - 1} (I)$ with $u’ \in C ^{n - 1} (I)$.</p>
-
-<p>For vector-valued function $\bu: I \to \Rd$, we say $\bu \in C ^n (I \to \Rd)$ (or $C ^n (I; \Rd)$) if each component of $\bu$ is in $C ^n (I)$.</p>
-
-<p>We say $u \in C ^n _\loc (I)$, if for every $x \in I$, $x$ has a neighborhood $x \in U \subset I$ such that $u \at U \in C ^n (U)$. Vector-valued version is defined similarly.</p>
-
-<p>Next, we generalize the notion of “solution”.</p>
-
-<blockquote>
-  <p>[!Definition] 
-The following is called an initial value problem (DS + initial condition)</p>
-
-\[\begin{align}
-	\begin{cases}
-		\bu' (t) = \bf (t, \bu (t)) \\
-		\bu (t _0) = \bx _0 
-	\end{cases}
-\end{align}\]
-
-  <p>Let $I \subset \R$ be an interval such that $t _0 \in \bar I$.</p>
-
-  <p>$\bu \in C ^1 _{\loc} (I \to \Rd)$ is called a classical solution if it solves it for every $t \in I$.</p>
-
-  <p>$\bu \in C ^0 _\loc (I \to \Rd)$ is called a <strong>strong solution</strong> if it satisfies</p>
+<p>The goal of this lecture is to locate a strong solution. Recall a strong solution $\bu$ to the aforementioned IVP satisfies</p>
 
 \[\bu (t) = \bx _0 + \int _{t _0} ^t \bf (s, \bu (s)) \d s\]
 
-  <p>for every $t \in I$. (Recall $\int _{t _0} ^t = -\int _t ^{t _0}$ if $t &lt; t _0$)</p>
+<p>The idea of Picard is to view each continuous function $\bu$ as an element in the space of continuous functions, and view a strong solution as a fixed point to the following map:</p>
+
+\[T (\bu) (t) = \bx _0 + \int _{t _0} ^t \bf (s, \bu (s)) \d s\]
+
+<p>Indeed, $\bu$ is a solution if and only if $\bu = T (\bu)$. When does a mapping $T: C ^0 (I) \to C ^0 (I)$ has a fixed point?</p>
+
+<p>To answer this question, we recall a <strong>metric space</strong> $(X, d)$ is a nonempty set $X$ and a bivariate function $d: X \times X \to \R$ with the following properties:</p>
+<ol>
+  <li>$d (x, y) \ge 0$ for any $x, y \in X$. Equality holds if and only if $x = y$.</li>
+  <li>$d (x, y) = d (y, x)$.</li>
+  <li>$d (x, y) + d (y, z) \ge d (x, z)$. 
+A metric space is <strong>complete</strong> if every Cauchy sequence converges.</li>
+</ol>
+
+<p>A mapping with the following property will be called <strong>contraction mapping</strong>.</p>
+
+<blockquote>
+  <p>[!Theorem] 
+(Banach fixed point theorem) Let $(X, d)$ be a metric space. A map $T: X \to X$ is called a contraction if there exists a number $\gamma \in [0, 1)$ such that for any $x, y \in X$, it holds that</p>
+
+\[d(T (x), T (y)) \le \gamma d (x, y).\]
+
+  <p>If $X$ is complete and $T$ is a contraction, then $T$ admits a unique fixed point: $T (x ^<em>) = x ^</em>$.</p>
 </blockquote>
 
+<p>Proof. Take $x \bp 0 \in X$. For $n \ge 0$, define $x \bp {n + 1} = T x \bp n$. We claim $x \bp n$ is a Cauchy sequence. Denote $D = d (x \bp 0, x \bp 1)$. Then by the contraction property:</p>
+
+\[\begin{align*}
+	d (x \bp 1, x \bp 2) &amp;\le \gamma D \\
+	d (x \bp 2, x \bp 3) &amp;\le \gamma ^2 D \\
+	 \dots \\
+	d (x \bp n, x \bp {n + 1}) &amp;\le \gamma ^n D.
+\end{align*}\]
+
+<p>Then $x \bp n$ forms a Cauchy sequence:</p>
+
+\[d (x \bp k, x \bp {k + l}) \le d (x \bp k, x \bp {k + 1}) + \dots + d (x \bp {k + l - 1}, x \bp {k + l}) \le (\gamma ^k + \gamma ^{k + 1} + \dots + \gamma ^{k + l - 1}) D \le \frac{\gamma ^k D}{1 - \gamma} \to 0\]
+
+<p>as $k \to +\infty$. Because $X$ is complete, $x \bp n \to x ^*$ is converging to some $x ^\ast$.</p>
+
+<p>$x ^*$ is a fixed point, because</p>
+
+\[d (x ^*, T (x ^*)) \le d (x ^*, x \bp n) + d (x \bp n, T (x \bp n)) + d (T (x \bp n), T (x ^*)) \le (1 + \gamma) d (x ^*, x \bp n) + \gamma ^n D \to 0\]
+
+<p>as $n \to \infty$. $x ^\ast$ is unique, because if $y ^*$ is also a fixed point then</p>
+
+\[d (x ^*, y ^*) = d (T (x ^*), T (y ^*)) \le \gamma d (x ^*, y ^*) \implies d (x ^*, y ^*) = 0.\]
+
+<h3 id="picard-existence-and-uniqueness">Picard existence and uniqueness</h3>
+
+<blockquote>
+  <p>[!Theorem]
+(Existence and uniqueness of DS) Let $I \subset \R$ be an interval and let $U \subset \Rd$ be an open set. Let $L &gt; 0$ and suppose $f: I \times U \to \Rd$ is a continuous function satisfying the following <strong>$L$-Lipschitz condition in $x$</strong>: for every $t \in I, x, y \in U$, it holds that
+\(|\bf (t, \bx) - \bf (t, \by)| \le L |\bx - \by|.\)
+Consider the following initial value problem: given $t _0 \in \bar I, \bx _0 \in U$,
+\(\bu' (t) = \bf (t, \bu (t)), \qquad \bu (t _0) = \bx _0.\)
+Then there exists an interval $t \in I’ \subset I$ such that the IVP has a unique strong solution $\bu \in C ^0 (I’ \to \Rd)$.</p>
+</blockquote>
+
+<p>Proof.</p>
+
+<p>Pick $\rho &gt; 0$ such that $V = B _\rho (\bx _0) \subset \subset U$. Pick $\bx _0 \in I _1 \subset \subset I$ bounded. Since $\bf$ is continuous, there exists $M &gt; 0$ such that</p>
+
+\[\sup _{t \in I', \bx \in B _{\rho} (\bx _0)}|\bf (t, \bx)| \le M &lt; \infty.\]
+
+<p>For some bounded $I’ \subset I _1$ to be determined, let $X = C ^0 (I’ \to V)$ be the space of continuous and bounded functions from $I’$ to $V$. It is a metric space under the supremum of difference:</p>
+
+\[d (u, v) = \sup _{t \in I'} |u (t) - v (t)|.\]
+
+<p>$(X, d)$ is complete: $u _n \to v$ in $X$ if and only if $u _n$ converges uniformly to $v$.</p>
+
+<p>We define a mapping $T$ by the following:</p>
+
+\[T (\bu) (t) = \bx _0 + \int _{t _0} ^t \bf (s, \bu (s)) \d s, \qquad \bu \in X.\]
+
+<p>First, we verify that $T$ has image in $X$. Clearly $T (\bu)$ is continuous, so we only need to verify $T (\bu) (t) \in V$. To see this, note that</p>
+
+\[|T (\bu) (t) - \bx _0| \le \abs{\int _{t _0} ^t \bf (s, \bu (s)) \d s} \le (t - t _0) M &lt; \rho,\]
+
+<table>
+  <tbody>
+    <tr>
+      <td>provided that $</td>
+      <td>t - t _0</td>
+      <td>&lt; \frac \rho M$ in $I’$.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We claim it is a contraction. To see this, let $\bu, \bv \in X$. Then for any $t \in I$ with $t \ge t _0$, it holds that</p>
+
+\[\begin{align*}
+	\abs{T (\bu) (t) - T (\bv) (t)} &amp;= \abs{\int _{t _0} ^t \bf (s, \bu (s)) \d s - \int _{t _0} ^t \bf (s, \bv (s)) \d s } \\
+	&amp; \le \int _{t _0} ^t \abs{\bf (s, \bu (s)) - \bf (s, \bv (s))} \d s \\
+	&amp; \le \int _{t _0} ^t L \abs{\bu (s) - \bv (s)} \d s \\
+	&amp; \le L |t - t _0| d (\bu, \bv).
+\end{align*}\]
+
+<table>
+  <tbody>
+    <tr>
+      <td>Similarly, for $t \le t _0$, $\abs{T (\bu) (t) - T (\bv) (t)} \le L</td>
+      <td>t - t _0</td>
+      <td>d (\bu, \bv)$. Take the sup of $t \in I’$, we have verified that</td>
+    </tr>
+  </tbody>
+</table>
+
+\[d (T (\bu), T (\bv)) \le L \sup _{t \in I'} |t - t _0| d (\bu, \bv).\]
+
+<table>
+  <tbody>
+    <tr>
+      <td>To make it contractive, it suffices to impose $</td>
+      <td>t - t _0</td>
+      <td>&lt; \frac\gamma L$ for $t \in I’$.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For instance, let $I’ = I _2 \cap (t _0 - \frac\rho M, t _0 + \frac\rho M) \cap (t _0 - \frac\gamma L, t _0 + \frac\gamma L)$.</p>
+
+<p>Since $T$ is contractive, there exists a unique $\bu ^* \in X$ such that $\bu ^* = T (\bu ^<em>)$. That is, $\bu ^</em>: I’ \to V$ is a strong solution.</p>
+
+<p>To see $\bu ^<em>$ is the unique $C ^0 (I’ \to \Rd)$ strong solution, suppose there is another $\bv ^</em>: I’ \to \Rd$. If $\bv ^* (t) \in V$ for any $t \in I’$, then $\bv ^* = \bu ^<em>$ by uniqueness. Otherwise, there exists a time $t _1$ such that $\bv ^</em> (t _1) \notin V$, but $\bv ^* (s) \in V$ for any $s$ between $t _0$ and $t _1$. Without loss of generality, let $t _1 &gt; t _0$, and define $I’’ = (t _0, t _1)$. Restricting to $I’’$, $\bu ^<em>, \bv ^</em>: C ^0 (I’’ \to V)$ are both strong solutions, so by the same uniqueness theorem, they agree in $I’’$. By continuity, they agree at $t _1$, which contracts the fact that $\bv ^* (t _1) \notin V$ but $\bu ^* (t _1) \in V$.</p>
+
+<blockquote>
+  <p>[!Theorem]
+(Continuition) Under the assumptions on the previous theorem, $\bu$ is a classical solution. $\bu$ can be uniquely continued until $t \notin I$ or $\bu (t) \notin U$.</p>
+</blockquote>
+
+<p>Proof.</p>
+
+<p>To see $\bu ^<em>$ is a classical solution, it suffices to verify $\bu ^</em> \in C ^1 (I’ \to V)$. This can be verified directly because $\bu ^{\ast \prime} (t) = \bf (t, \bu ^* (t))$.</p>
 
 
   <script>
