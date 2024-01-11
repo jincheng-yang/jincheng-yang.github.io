@@ -123,7 +123,7 @@ $$
 > 2. Lipschitzness: $\abs{f (t, \bx) - f (t, \by)} \le L \abs{\bx - \by}$ for all $t \in I, \bx, \by \in U$.
 >
 > Define $T' = \min \set{T, \frac\rho M, \frac 1{2L}}$, $I' = [t _0 - T', t _0 + T']$. 
-> There exists a unique $\bu \in C ^0 (I' \to U)$ solving \eqref{eqn:DS}.
+> There exists a unique $\bu \in C ^0 (I' \to U)$ solving \eqref{eqn:DS-strong}.
 
 Proof. 
 
@@ -187,7 +187,7 @@ Proof.
 
 First, we start at $(t _0, \bx _0)$. Local Lipschitz-ness implies we can find $\e _0 > 0$, $L _0 > 0$, $M _0 > 0$, and by existence theorem a strong solution $\bu \bp 0: [t _0 - \e _0', t _0 + \e _0'] \to B _{\rho _0} (\bx _0)$, with $\e _0' = \min \set{\e _0, \frac {\rho _0} {M _0}, \frac 1{2L _0}}$. There are different choices of $\e _0$ which leads to different $L _0, M _0, \e' _0$. We assume we pick the one that maximizes $\e _0'$ (say, greater than half the supremum). 
 
-Define $t _1 = t _0 + \e _0'$ and $\bx _1 = \bu \bp 0 (t _1)$. Now from $(t _1, \bx _1)$, we can construct another solution $\bu \bp 1$ of length $\e _1' > 0$. It can be shown that $\bu \bp 0$ and $\bu \bp 1$ agrees on their domain (why?), and we can concatenate them to a strong solution $\bu \bp 1 ^\ast$ whose domain is the union of these two (why?). Now start at $t _2 = t _1 + \e _1 '$ and $\bx _2 = \bu \bp 0 (t _2)$, we continue the solution $\bu \bp 2 ^\ast$. Repeating this process, we get a sequence of solutions $\bu \bp n$. We can also do this backward: find $t _{-1} = t _0 - \e _0'$, $t _{-2} = t _{-1} - \e _{-1} '$ etc. Concatenating all the $\bu \bp n$ yields a strong solution $\bu ^\ast: (t _-, t _+) \to \Rd$.
+Define $t _1 = t _0 + \e _0'$ and $\bx _1 = \bu \bp 0 (t _1)$. Now from $(t _1, \bx _1)$, we can construct another solution $\bu \bp 1$ of length $\e _1' > 0$. It can be shown that $\bu \bp 0$ and $\bu \bp 1$ agrees on their domain (why?), and we can concatenate them to a strong solution $\bu \bp 1 ^\ast$ whose domain is the union of these two (why?). Now start at $t _2 = t _1 + \e _1 '$ and $\bx _2 = \bu \bp 0 (t _2)$, we continue the solution $\bu \bp 2 ^\ast$. Repeating this process, we get a sequence of solutions $\bu \bp n$. We can also do this backward: find $t _{-1} = t _0 - \e _0'$, $t _{-2} = t _{-1} - \e _{-1}'$ etc. Concatenating all the $\bu \bp n$ yields a strong solution $\bu ^\ast: (t _-, t _+) \to \Rd$.
 
 Now we prove the trichotomy. Suppose $t _+ < +\infty$.
 
