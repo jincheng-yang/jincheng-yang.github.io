@@ -181,7 +181,7 @@
     %--Superscript and Subscript
     $
     \newcommand{\pp}[1]{^{(#1)}}
-    \newcommand{\bp}[1]{^{(#1)}}
+    \newcommand{\bp}[1]{_{(#1)}}
     \newcommand{\pps}[2][1]{^{#2 + #1}}
     \newcommand{\bps}[2][1]{_{#2 + #1}}
     \newcommand{\pms}[2][1]{^{#2 - #1}}
@@ -270,23 +270,49 @@
 \newcommand{\bF}{\boldsymbol F}
 \newcommand{\bf}{\boldsymbol f}\]
 
-<p>The goal of this lecture is to locate a strong solution. Recall a strong solution $\bu$ to the aforementioned IVP satisfies</p>
+<p>The goal of this lecture is to locate a strong solution. Recall a strong solution $\bu$ to</p>
 
-\[\bu (t) = \bx _0 + \int _{t _0} ^t \bf (s, \bu (s)) \d s\]
+\[\begin{align}
+	\label{eqn:DS}
+	\begin{cases}
+		\bu' (t) = \bf (t, \bu (t)), \\
+		\bu (t _0) = \bx _0
+	\end{cases}
+\end{align}\]
 
-<p>The idea of Picard is to view each continuous function $\bu$ as an element in the space of continuous functions, and view a strong solution as a fixed point to the following map:</p>
+<p>satisfies</p>
+
+\[\begin{align}
+	\label{eqn:DS-strong}
+	\bu (t) = \bx _0 + \int _{t _0} ^t \bf (s, \bu (s)) \d s
+	\end{align}\]
+
+<p>The idea of Picard is to start the following iteration: define $\bu \bp 0 = \bx _0$, and</p>
+
+\[\begin{align*}
+		\bu \bp 1 (t) &amp;= \bx _0 + \int _{t _0} ^t \bf (s, \bu \bp 0 (s)) \d s, \\
+		\bu \bp 2 (t) &amp;= \bx _0 + \int _{t _0} ^t \bf (s, \bu \bp 1 (s)) \d s, \\
+		\bu \bp 3 (t) &amp;= \bx _0 + \int _{t _0} ^t \bf (s, \bu \bp 2 (s)) \d s, \\
+		&amp;\dots
+	\end{align*}\]
+
+<p>If $\bu \bp n$ converges to some $\bu ^\ast$, then $\bu ^\ast$ should be a strong solution. How to prove it?</p>
+
+<p>We can view each continuous function $\bu$ as an element in the space of continuous functions, and view a strong solution as a fixed point to the following map:</p>
 
 \[T (\bu) (t) = \bx _0 + \int _{t _0} ^t \bf (s, \bu (s)) \d s\]
 
 <p>Indeed, $\bu$ is a solution if and only if $\bu = T (\bu)$. When does a mapping $T: C ^0 (I) \to C ^0 (I)$ has a fixed point?</p>
 
 <p>To answer this question, we recall a <strong>metric space</strong> $(X, d)$ is a nonempty set $X$ and a bivariate function $d: X \times X \to \R$ with the following properties:</p>
+
 <ol>
   <li>$d (x, y) \ge 0$ for any $x, y \in X$. Equality holds if and only if $x = y$.</li>
   <li>$d (x, y) = d (y, x)$.</li>
-  <li>$d (x, y) + d (y, z) \ge d (x, z)$. 
-A metric space is <strong>complete</strong> if every Cauchy sequence converges.</li>
+  <li>$d (x, y) + d (y, z) \ge d (x, z)$.</li>
 </ol>
+
+<p>A metric space is <strong>complete</strong> if every Cauchy sequence converges.</p>
 
 <p>A mapping with the following property will be called <strong>contraction mapping</strong>.</p>
 
@@ -310,13 +336,19 @@ A metric space is <strong>complete</strong> if every Cauchy sequence converges.<
 
 <p>Then $x \bp n$ forms a Cauchy sequence:</p>
 
-\[d (x \bp k, x \bp {k + l}) \le d (x \bp k, x \bp {k + 1}) + \dots + d (x \bp {k + l - 1}, x \bp {k + l}) \le (\gamma ^k + \gamma ^{k + 1} + \dots + \gamma ^{k + l - 1}) D \le \frac{\gamma ^k D}{1 - \gamma} \to 0\]
+\[\begin{align*}
+	d (x \bp k, x \bp {k + l}) &amp;\le d (x \bp k, x \bp {k + 1}) + \dots + d (x \bp {k + l - 1}, x \bp {k + l}) \\
+	&amp;\le (\gamma ^k + \gamma ^{k + 1} + \dots + \gamma ^{k + l - 1}) D \le \frac{\gamma ^k D}{1 - \gamma} \to 0
+\end{align*}\]
 
 <p>as $k \to +\infty$. Because $X$ is complete, $x \bp n \to x ^*$ is converging to some $x ^\ast$.</p>
 
 <p>$x ^*$ is a fixed point, because</p>
 
-\[d (x ^*, T (x ^*)) \le d (x ^*, x \bp n) + d (x \bp n, T (x \bp n)) + d (T (x \bp n), T (x ^*)) \le (1 + \gamma) d (x ^*, x \bp n) + \gamma ^n D \to 0\]
+\[\begin{align*}
+	d (x ^*, T (x ^*)) &amp;\le d (x ^*, x \bp n) + d (x \bp n, T (x \bp n)) + d (T (x \bp n), T (x ^*)) \\
+	&amp;\le (1 + \gamma) d (x ^*, x \bp n) + \gamma ^n D \to 0
+\end{align*}\]
 
 <p>as $n \to \infty$. $x ^\ast$ is unique, because if $y ^*$ is also a fixed point then</p>
 
@@ -326,20 +358,22 @@ A metric space is <strong>complete</strong> if every Cauchy sequence converges.<
 
 <blockquote>
   <p>[!Theorem]
-(Existence and uniqueness of DS) Let $I \subset \R$ be an interval and let $U \subset \Rd$ be an open set. Let $L &gt; 0$ and suppose $f: I \times U \to \Rd$ is a continuous function satisfying the following <strong>$L$-Lipschitz condition in $x$</strong>: for every $t \in I, x, y \in U$, it holds that
-\(|\bf (t, \bx) - \bf (t, \by)| \le L |\bx - \by|.\)
-Consider the following initial value problem: given $t _0 \in \bar I, \bx _0 \in U$,
-\(\bu' (t) = \bf (t, \bu (t)), \qquad \bu (t _0) = \bx _0.\)
-Then there exists an interval $t \in I’ \subset I$ such that the IVP has a unique strong solution $\bu \in C ^0 (I’ \to \Rd)$.</p>
+(Existence and uniqueness) Let $t _0, T \in \R$ and $I = [t _0 - T, t _0 + T]$. Let $\bx _0 \in \Rd$, $\rho &gt; 0$, and $U = \overline{B _\rho (\bx)}$. 
+Let $L, M &gt; 0$ be two constants.
+Suppose $f: I \times U \to \Rd$ is a piecewise continuous function that satisfies:</p>
+
+  <ol>
+    <li>Boundedness: $\abs{f (t, \bx)} \le M$ for all $(t, \bx) \in I \times U$.</li>
+    <li>Lipschitzness: $\abs{f (t, \bx) - f (t, \by)} \le L \abs{\bx - \by}$ for all $t \in I, \bx, \by \in U$.</li>
+  </ol>
+
+  <p>Define $T’ = \min \set{T, \frac\rho M, \frac 1{2L}}$, $I’ = [t _0 - T’, t _0 + T’]$. 
+There exists a unique $\bu \in C ^0 (I’ \to U)$ solving \eqref{eqn:DS}.</p>
 </blockquote>
 
 <p>Proof.</p>
 
-<p>Pick $\rho &gt; 0$ such that $V = B _\rho (\bx _0) \subset \subset U$. Pick $\bx _0 \in I _1 \subset \subset I$ bounded. Since $\bf$ is continuous, there exists $M &gt; 0$ such that</p>
-
-\[\sup _{t \in I', \bx \in B _{\rho} (\bx _0)}|\bf (t, \bx)| \le M &lt; \infty.\]
-
-<p>For some bounded $I’ \subset I _1$ to be determined, let $X = C ^0 (I’ \to V)$ be the space of continuous and bounded functions from $I’$ to $V$. It is a metric space under the supremum of difference:</p>
+<p>let $X = C ^0 (I’ \to U)$ be the space of continuous and bounded functions from $I’$ to $U$. It is a metric space under the supremum of difference:</p>
 
 \[d (u, v) = \sup _{t \in I'} |u (t) - v (t)|.\]
 
@@ -349,65 +383,55 @@ Then there exists an interval $t \in I’ \subset I$ such that the IVP has a uni
 
 \[T (\bu) (t) = \bx _0 + \int _{t _0} ^t \bf (s, \bu (s)) \d s, \qquad \bu \in X.\]
 
-<p>First, we verify that $T$ has image in $X$. Clearly $T (\bu)$ is continuous, so we only need to verify $T (\bu) (t) \in V$. To see this, note that</p>
+<p>First, we verify that $T$ has image in $X$. Clearly $T (\bu)$ is a continuous function, so we only need to verify $T (\bu) (t) \in U$. To see this, note that</p>
 
-\[|T (\bu) (t) - \bx _0| \le \abs{\int _{t _0} ^t \bf (s, \bu (s)) \d s} \le (t - t _0) M &lt; \rho,\]
+\[|T (\bu) (t) - \bx _0| \le \abs{\int _{t _0} ^t \bf (s, \bu (s)) \d s} \le (t - t _0) M \le T' M \le \rho.\]
 
-<table>
-  <tbody>
-    <tr>
-      <td>provided that $</td>
-      <td>t - t _0</td>
-      <td>&lt; \frac \rho M$ in $I’$.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>We claim it is a contraction. To see this, let $\bu, \bv \in X$. Then for any $t \in I$ with $t \ge t _0$, it holds that</p>
+<p>We claim $T$ is a contraction. To see this, let $\bu, \bv \in X$. Then for any $t \in I$ with $t \ge t _0$, it holds that</p>
 
 \[\begin{align*}
 	\abs{T (\bu) (t) - T (\bv) (t)} &amp;= \abs{\int _{t _0} ^t \bf (s, \bu (s)) \d s - \int _{t _0} ^t \bf (s, \bv (s)) \d s } \\
 	&amp; \le \int _{t _0} ^t \abs{\bf (s, \bu (s)) - \bf (s, \bv (s))} \d s \\
 	&amp; \le \int _{t _0} ^t L \abs{\bu (s) - \bv (s)} \d s \\
-	&amp; \le L |t - t _0| d (\bu, \bv).
+	&amp; \le L |t - t _0| d (\bu, \bv) \le \frac12 d (\bu, \bv).
 \end{align*}\]
 
-<table>
-  <tbody>
-    <tr>
-      <td>Similarly, for $t \le t _0$, $\abs{T (\bu) (t) - T (\bv) (t)} \le L</td>
-      <td>t - t _0</td>
-      <td>d (\bu, \bv)$. Take the sup of $t \in I’$, we have verified that</td>
-    </tr>
-  </tbody>
-</table>
+<p>Similarly, for $t \le t _0$, $\abs{T (\bu) (t) - T (\bv) (t)} \le \frac12 d (\bu, \bv)$. 
+Take the sup of $t \in I’$, we have verified that</p>
 
-\[d (T (\bu), T (\bv)) \le L \sup _{t \in I'} |t - t _0| d (\bu, \bv).\]
+\[d (T (\bu), T (\bv)) \le \frac12 d (\bu, \bv).\]
 
-<table>
-  <tbody>
-    <tr>
-      <td>To make it contractive, it suffices to impose $</td>
-      <td>t - t _0</td>
-      <td>&lt; \frac\gamma L$ for $t \in I’$.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>For instance, let $I’ = I _2 \cap (t _0 - \frac\rho M, t _0 + \frac\rho M) \cap (t _0 - \frac\gamma L, t _0 + \frac\gamma L)$.</p>
-
-<p>Since $T$ is contractive, there exists a unique $\bu ^* \in X$ such that $\bu ^* = T (\bu ^<em>)$. That is, $\bu ^</em>: I’ \to V$ is a strong solution.</p>
-
-<p>To see $\bu ^<em>$ is the unique $C ^0 (I’ \to \Rd)$ strong solution, suppose there is another $\bv ^</em>: I’ \to \Rd$. If $\bv ^* (t) \in V$ for any $t \in I’$, then $\bv ^* = \bu ^<em>$ by uniqueness. Otherwise, there exists a time $t _1$ such that $\bv ^</em> (t _1) \notin V$, but $\bv ^* (s) \in V$ for any $s$ between $t _0$ and $t _1$. Without loss of generality, let $t _1 &gt; t _0$, and define $I’’ = (t _0, t _1)$. Restricting to $I’’$, $\bu ^<em>, \bv ^</em>: C ^0 (I’’ \to V)$ are both strong solutions, so by the same uniqueness theorem, they agree in $I’’$. By continuity, they agree at $t _1$, which contracts the fact that $\bv ^* (t _1) \notin V$ but $\bu ^* (t _1) \in V$.</p>
+<p>Since $T$ is contractive, there exists a unique $\bu ^\ast \in X$ such that $\bu ^\ast = T (\bu ^\ast)$. That is, $\bu ^\ast: I’ \to U$ is a strong solution.</p>
 
 <blockquote>
   <p>[!Theorem]
-(Continuition) Under the assumptions on the previous theorem, $\bu$ is a classical solution. $\bu$ can be uniquely continued until $t \notin I$ or $\bu (t) \notin U$.</p>
+(Continuation) Let $G \subset \R \times \Rd$ be an open set. Suppose $f: G \to \Rd$ is a continuous function that are locally Lipschitz in $x$: for every $(t _1, \bx _1) \in G$, there exists $\e &gt; 0$, $\rho &gt; 0$, $L &gt; 0$ such that</p>
+
+\[|\bf (t, \bx) - \bf (t, \by)| \le L |\bx - \by|, \qquad \forall t \in [t _1 - \e, t _1 + \e], \bx, \by \in \overline{B _\rho (x)}.\]
+
+  <p>Consider \eqref{eqn:DS} with some $(t _0, \bx _0) \in G$. There exists a classical solution $\bu ^\ast: (t _-, t _+) \to \Rd$, such that $\operatorname{Graph} (\bu ^*) \subset G$. Moreover, one of the following holds:</p>
+
+  <ol>
+    <li>$t _+ = +\infty$</li>
+    <li>$\lim _{t \uparrow t _+} \bu (t)$ diverges and $\abs{\bf (t, \bu (t))}$ is unbounded</li>
+    <li>$\lim _{t \uparrow t _+} \bu (t)$ converges and $(t _+, \bu (t _+)) \in \partial G$</li>
+  </ol>
+
+  <p>Similar trichotomy holds for $t _-$. Moreover, any strong solution agrees with $\bu ^\ast$.
+$(t _-, t _+)$ is called the maximum interval of existence.</p>
 </blockquote>
 
 <p>Proof.</p>
 
-<p>To see $\bu ^<em>$ is a classical solution, it suffices to verify $\bu ^</em> \in C ^1 (I’ \to V)$. This can be verified directly because $\bu ^{\ast \prime} (t) = \bf (t, \bu ^* (t))$.</p>
+<p>First, we start at $(t _0, \bx _0)$. Local Lipschitz-ness implies we can find $\e _0 &gt; 0$, $L _0 &gt; 0$, $M _0 &gt; 0$, and by existence theorem a strong solution $\bu \bp 0: [t _0 - \e _0’, t _0 + \e _0’] \to B _{\rho _0} (\bx _0)$, with $\e _0’ = \min \set{\e _0, \frac {\rho _0} {M _0}, \frac 1{2L _0}}$. There are different choices of $\e _0$ which leads to different $L _0, M _0, \e’ _0$. We assume we pick the one that maximizes $\e _0’$ (say, greater than half the supremum).</p>
+
+<p>Define $t _1 = t _0 + \e _0’$ and $\bx _1 = \bu \bp 0 (t _1)$. Now from $(t _1, \bx _1)$, we can construct another solution $\bu \bp 1$ of length $\e _1’ &gt; 0$. It can be shown that $\bu \bp 0$ and $\bu \bp 1$ agrees on their domain (why?), and we can concatenate them to a strong solution $\bu \bp 1 ^\ast$ whose domain is the union of these two (why?). Now start at $t _2 = t _1 + \e _1 ‘$ and $\bx _2 = \bu \bp 0 (t _2)$, we continue the solution $\bu \bp 2 ^\ast$. Repeating this process, we get a sequence of solutions $\bu \bp n$. We can also do this backward: find $t _{-1} = t _0 - \e _0’$, $t _{-2} = t _{-1} - \e _{-1} ‘$ etc. Concatenating all the $\bu \bp n$ yields a strong solution $\bu ^\ast: (t _-, t _+) \to \Rd$.</p>
+
+<p>Now we prove the trichotomy. Suppose $t _+ &lt; +\infty$.</p>
+
+<p>If $\lim _{t \uparrow t _+} \bu (t)$ converges and $(t _+, \bu (t _+)) \in G$, then near $(t _+, \bu (t _+))$ we can find $\e _+, L _+, M _+$ as before. However, this means if $(t _n, \bu (t _n))$ is sufficiently close to $(t _+, \bu (t _+))$, we should be able to find a better $\e _n’$ such that $t _{n + 1} = t _n + \e _n’ &gt; t _+$, a contradiction. For instance, if $\abs{t _n - t _+} &lt; \frac{\e _+’}4$ and $\abs{\bu (t _n) - \bu (t _+)} &lt; \frac{M _+ \e _+’}4$, then $f$ is bounded by $M _+$ and is $L _+$-Lipschitz in $x$ inside $[t _n - \frac{\e’ _+}2, t _n + \frac{\e’ _+}2] \times \overline{B _{\frac{M _+ \e’ _+}2} (\bx _n)}$. By existence theorem, we can extend $\bu$ til $t _n + \frac{\e’ _+}2$, contradicting our claim that we maximized $\e’ _n$.</p>
+
+<p>If $\abs{\bf (t, \bu (t))} \le M$ as $t \uparrow t _+$, then $\abs{\bu (t) - \bu (s)} \le \int _t ^s \abs{\bf (t, \bu (t))} \dt \le M (t - s)$. Therefore, $\bu$ is $M$-Lipschitz. For any sequence $t _n \to t _+$, $\bu (t _n)$ is a Cauchy sequence. Hence $\bu (t)$ converges as $t \uparrow t _+$.</p>
 
 
   <script>
