@@ -123,7 +123,7 @@ $$
 > 2. Lipschitzness: $\abs{f (t, \bx) - f (t, \by)} \le L \abs{\bx - \by}$ for all $t \in I, \bx, \by \in U$.
 >
 > Define $T' = \min \set{T, \frac\rho M, \frac 1{2L}}$, $I' = [t _0 - T', t _0 + T']$. 
-> There exists a unique $\bu \in C ^0 (I' \to U)$ solving \eqref{eqn:DS}.
+> There exists a unique $\bu \in C ^0 (I' \to U)$ solving \eqref{eqn:DS-strong}.
 
 Proof. 
 
@@ -187,10 +187,10 @@ Proof.
 
 First, we start at $(t _0, \bx _0)$. Local Lipschitz-ness implies we can find $\e _0 > 0$, $L _0 > 0$, $M _0 > 0$, and by existence theorem a strong solution $\bu \bp 0: [t _0 - \e _0', t _0 + \e _0'] \to B _{\rho _0} (\bx _0)$, with $\e _0' = \min \set{\e _0, \frac {\rho _0} {M _0}, \frac 1{2L _0}}$. There are different choices of $\e _0$ which leads to different $L _0, M _0, \e' _0$. We assume we pick the one that maximizes $\e _0'$ (say, greater than half the supremum). 
 
-Define $t _1 = t _0 + \e _0'$ and $\bx _1 = \bu \bp 0 (t _1)$. Now from $(t _1, \bx _1)$, we can construct another solution $\bu \bp 1$ of length $\e _1' > 0$. It can be shown that $\bu \bp 0$ and $\bu \bp 1$ agrees on their domain (why?), and we can concatenate them to a strong solution $\bu \bp 1 ^\ast$ whose domain is the union of these two (why?). Now start at $t _2 = t _1 + \e _1 '$ and $\bx _2 = \bu \bp 0 (t _2)$, we continue the solution $\bu \bp 2 ^\ast$. Repeating this process, we get a sequence of solutions $\bu \bp n$. We can also do this backward: find $t _{-1} = t _0 - \e _0'$, $t _{-2} = t _{-1} - \e _{-1} '$ etc. Concatenating all the $\bu \bp n$ yields a strong solution $\bu ^\ast: (t _-, t _+) \to \Rd$.
+Define $t _1 = t _0 + \e _0'$ and $\bx _1 = \bu \bp 0 (t _1)$. Now from $(t _1, \bx _1)$, we can construct another solution $\bu \bp 1$ of length $\e _1' > 0$. It can be shown that $\bu \bp 0$ and $\bu \bp 1$ agrees on their domains (why?), and we can concatenate them to a strong solution $\bu \bp 1 ^\ast$ whose domain is the union of these two (why?). Now start at $t _2 = t _1 + \e _1 '$ and $\bx _2 = \bu \bp 0 (t _2)$, we continue the solution $\bu \bp 2 ^\ast$. Repeating this process, we get a sequence of solutions $\bu \bp n$. We can also do this backward: find $t _{-1} = t _0 - \e _0'$, $t _{-2} = t _{-1} - \e _{-1}'$ etc. Concatenating all the $\bu \bp n$ yields a strong solution $\bu ^\ast: (t _-, t _+) \to \Rd$.
 
 Now we prove the trichotomy. Suppose $t _+ < +\infty$.
 
 If $\lim _{t \uparrow t _+} \bu (t)$ converges and $(t _+, \bu (t _+)) \in G$, then near $(t _+, \bu (t _+))$ we can find $\e _+, L _+, M _+$ as before. However, this means if $(t _n, \bu (t _n))$ is sufficiently close to $(t _+, \bu (t _+))$, we should be able to find a better $\e _n'$ such that $t _{n + 1} = t _n + \e _n' > t _+$, a contradiction. For instance, if $\abs{t _n - t _+} < \frac{\e _+'}4$ and $\abs{\bu (t _n) - \bu (t _+)} < \frac{M _+ \e _+'}4$, then $f$ is bounded by $M _+$ and is $L _+$-Lipschitz in $x$ inside $[t _n - \frac{\e' _+}2, t _n + \frac{\e' _+}2] \times \overline{B _{\frac{M _+ \e' _+}2} (\bx _n)}$. By existence theorem, we can extend $\bu$ til $t _n + \frac{\e' _+}2$, contradicting our claim that we maximized $\e' _n$. 
 
-If $\abs{\bf (t, \bu (t))} \le M$ as $t \uparrow t _+$, then $\abs{\bu (t) - \bu (s)} \le \int _t ^s \abs{\bf (t, \bu (t))} \dt \le M (t - s)$. Therefore, $\bu$ is $M$-Lipschitz. For any sequence $t _n \to t _+$, $\bu (t _n)$ is a Cauchy sequence. Hence $\bu (t)$ converges as $t \uparrow t _+$.
+If $\abs{\bf (t, \bu (t))} \le M$ as $t \uparrow t _+$, then for $s < t$ close to $t _+$, $\abs{\bu (t) - \bu (s)} \le \int _s ^t \abs{\bf (t, \bu (t))} \dt \le M (t - s)$. Therefore, $\bu$ is $M$-Lipschitz. For any sequence $t _n \to t _+$, $\bu (t _n)$ is a Cauchy sequence. Hence $\bu (t)$ converges as $t \uparrow t _+$.

@@ -97,11 +97,9 @@ for any $\e > 0$. Taking $\e \to 0$ finishes the proof.
 
 Recall $I$ is an interval. It can be either open, closed, half open half closed, finite or infinite. Now we introduce the following **function spaces**.
 
-We define $C ^0 (I)$ to be the set of functions $u: I \to \R$ that are continuous and bounded. We define $C ^1 (I)$ to be the set of differentiable functions $u \in C ^0 (I)$ with $u' \in C ^0 (I)$. We define $C ^n (I)$ to be the set of differentiable functions $u \in C ^{n - 1} (I)$ with $u' \in C ^{n - 1} (I)$.
+We define $C ^0 (I)$ to be the set of functions $u: I \to \R$ that are continuous. When $I$ is open, we define $C ^1 (I)$ to be the set of differentiable functions $u \in C ^0 (I)$ with $u' \in C ^0 (I)$; we define $C ^n (I)$ to be the set of differentiable functions $u \in C ^{n - 1} (I)$ with $u' \in C ^{n - 1} (I)$.
 
 For vector-valued function $\bu: I \to \Rd$, we say $\bu \in C ^n (I \to \Rd)$ (or $C ^n (I; \Rd)$) if each component of $\bu$ is in $C ^n (I)$. 
-
-We say $u \in C ^n _\loc (I)$, if for every $x \in I$, $x$ has a neighborhood $x \in U \subset I$ such that $u \at U \in C ^n (U)$. Vector-valued version is defined similarly.
 
 Next, we generalize the notion of "solution". 
 
@@ -110,23 +108,21 @@ Next, we generalize the notion of "solution".
 > 
 > $$
 > \begin{align}
- >	\begin{cases}
- >		\bu' (t) = \bf (t, \bu (t)) \\
- >		\bu (t _0) = \bx _0 
- >	\end{cases}
- >\end{align}
- >$$
- >
- >Let $I \subset \R$ be an interval such that $t _0 \in \bar I$.
- >
-> $\bu \in C ^1 _{\loc} (I \to \Rd)$ is called a classical solution if it solves it for every $t \in I$. 
+> 	\begin{cases}
+> 		\bu' (t) = \bf (t, \bu (t)) \\
+> 		\bu (t _0) = \bx _0 
+> 	\end{cases}
+> \end{align}
+> $$
 > 
-> $\bu \in C ^0 _\loc (I \to \Rd)$ is called a **strong solution** if it satisfies 
+> Let $I \subset \R$ be an interval such that $t _0 \in I$.
+> 
+> $\bu \in C ^0 (I \to \Rd) \cap C ^1 (I ^\circ \to \Rd)$ is called a classical solution if it solves it for every $t \in I ^\circ$. 
+> 
+> $\bu \in C ^0 (I \to \Rd)$ is called a **strong solution** if it satisfies 
 > 
 > $$
 >	\bu (t) = \bx _0 + \int _{t _0} ^t \bf (s, \bu (s)) \d s
 > $$
 > 
 > for every $t \in I$. (Recall $\int _{t _0} ^t = -\int _t ^{t _0}$ if $t < t _0$)
-
-
