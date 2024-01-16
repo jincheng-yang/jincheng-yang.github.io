@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Lecture 3: Existence and uniqueness: Picard iteration</title>
+		<title>Lecture 4: Dependence on initial data and parameters</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
@@ -257,11 +257,11 @@
 
 <div class="post">
 
-<h2>Lecture 3: Existence and uniqueness: Picard iteration</h2>
+<h2>Lecture 4: Dependence on initial data and parameters</h2>
 
 <p class="meta"></p>
 
-  <h1 id="banach-fixed-point-theorem">Banach fixed point theorem</h1>
+  <h1 id="dependence-on-initial-data">Dependence on initial data</h1>
 
 \[\newcommand{\bx}{\boldsymbol x}
 \newcommand{\by}{\boldsymbol y}
@@ -270,168 +270,177 @@
 \newcommand{\bF}{\boldsymbol F}
 \newcommand{\bf}{\boldsymbol f}\]
 
-<p>The goal of this lecture is to locate a strong solution. Recall a strong solution $\bu$ to</p>
+<p>The well-posedness for an initial value problem</p>
 
-\[\begin{align}
-	\label{eqn:DS}
-	\begin{cases}
+\[\begin{cases}
 		\bu' (t) = \bf (t, \bu (t)), \\
 		\bu (t _0) = \bx _0
-	\end{cases}
-\end{align}\]
+	\end{cases}\]
 
-<p>satisfies</p>
-
-\[\begin{align}
-	\label{eqn:DS-strong}
-	\bu (t) = \bx _0 + \int _{t _0} ^t \bf (s, \bu (s)) \d s
-	\end{align}\]
-
-<p>The idea of Picard is to start the following iteration: define $\bu \bp 0 = \bx _0$, and</p>
-
-\[\begin{align*}
-		\bu \bp 1 (t) &amp;= \bx _0 + \int _{t _0} ^t \bf (s, \bu \bp 0 (s)) \d s, \\
-		\bu \bp 2 (t) &amp;= \bx _0 + \int _{t _0} ^t \bf (s, \bu \bp 1 (s)) \d s, \\
-		\bu \bp 3 (t) &amp;= \bx _0 + \int _{t _0} ^t \bf (s, \bu \bp 2 (s)) \d s, \\
-		&amp;\dots
-	\end{align*}\]
-
-<p>If $\bu \bp n$ converges to some $\bu ^\ast$, then $\bu ^\ast$ should be a strong solution. How to prove it?</p>
-
-<p>We can view each continuous function $\bu$ as an element in the space of continuous functions, and view a strong solution as a fixed point to the following map:</p>
-
-\[T (\bu) (t) = \bx _0 + \int _{t _0} ^t \bf (s, \bu (s)) \d s\]
-
-<p>Indeed, $\bu$ is a solution if and only if $\bu = T (\bu)$. When does a mapping $T: C ^0 (I) \to C ^0 (I)$ has a fixed point?</p>
-
-<p>To answer this question, we recall a <strong>metric space</strong> $(X, d)$ is a nonempty set $X$ and a bivariate function $d: X \times X \to \R$ with the following properties:</p>
+<p>means</p>
 
 <ol>
-  <li>$d (x, y) \ge 0$ for any $x, y \in X$. Equality holds if and only if $x = y$.</li>
-  <li>$d (x, y) = d (y, x)$.</li>
-  <li>$d (x, y) + d (y, z) \ge d (x, z)$.</li>
+  <li>Existence: there exists at least one solution.</li>
+  <li>Uniqueness: there exists at most one solution.</li>
+  <li>Continuous dependence on initial data: if $\bx _0 \pp 1$ and $\bx _0 \pp 2$ are two different initial data that are sufficiently close, the corresponding solutions should be close in some sense.</li>
 </ol>
 
-<p>A metric space is <strong>complete</strong> if every Cauchy sequence converges.</p>
+<p>Recall that a flow map $\Phi (t; t _0, \bx _0)$ gives the value of the solution to IVP at time $t$. It has the following property:</p>
 
-<p>A mapping with the following property will be called <strong>contraction mapping</strong>.</p>
+\[\Phi (t _2; t _0, \cdot) = \Phi (t _2; t _1, \cdot)  \circ \Phi (t _1; t _0, \cdot).\]
+
+<p>The first two shows a flow map is well-defined, and the third shows the flow map is continuous in $\bx _0$.</p>
+
+<p>We have proven in the last lecture the existence and uniqueness of IVP. Now we study the continuous dependence.</p>
 
 <blockquote>
   <p>[!Theorem] 
-(Banach fixed point theorem) Let $(X, d)$ be a metric space. A map $T: X \to X$ is called a contraction if there exists a number $\gamma \in [0, 1)$ such that for any $x, y \in X$, it holds that</p>
-
-\[d(T (x), T (y)) \le \gamma d (x, y).\]
-
-  <p>If $X$ is complete and $T$ is a contraction, then $T$ admits a unique fixed point: $T (x ^<em>) = x ^</em>$.</p>
+Let $G \subset \R \times \Rd$. Suppose $\bf: G \to \Rd$ is continuous in $(t, \bx)$ and locally Lipschitz in $\bx$. Then $\Phi$ is continuous in $\bx _0$.</p>
 </blockquote>
 
-<p>Proof. Take $x \bp 0 \in X$. For $n \ge 0$, define $x \bp {n + 1} = T x \bp n$. We claim $x \bp n$ is a Cauchy sequence. Denote $D = d (x \bp 0, x \bp 1)$. Then by the contraction property:</p>
+<p>Proof. Similar as the proof of continuation, we only need to prove it in a box. Suppose $I = [t _0 - T, t _0 + T]$, $U = \overline{B _\rho (\bx _0)}$, and $\bf$ is continuous in $I \times U \subset G$, bounded by $M$, and $L$-Lipschitz in $\bx$. Let $\tilde \bx _0 \in U$ and $\abs{\tilde \bx _0 - \bx _0} \le \frac\rho2$. Then for some $T’ \in (0, T]$ to be determined, we can find strong solution $\bu$ and $\tilde \bu$, so for $t \in I’ = [t _0 - T’, t _0 + T’]$, it holds that</p>
 
 \[\begin{align*}
-	d (x \bp 1, x \bp 2) &amp;\le \gamma D \\
-	d (x \bp 2, x \bp 3) &amp;\le \gamma ^2 D \\
-	 \dots \\
-	d (x \bp n, x \bp {n + 1}) &amp;\le \gamma ^n D.
+	\bu (t) = \bx _0 + \int _{t _0} ^t \bf (s, \bu (s)) \d s, \qquad \tilde \bu (t) = \tilde \bx _0 + \int _{t _0} ^t \bf (s, \tilde \bu (s)) \d s, \qquad 
 \end{align*}\]
 
-<p>Then $x \bp n$ forms a Cauchy sequence:</p>
+<p>If $T’ \le \frac{\rho}{2M}$, then $\tilde \bu (t) \in U$ for all $t \in I’$. We take the difference, and conclude</p>
 
 \[\begin{align*}
-	d (x \bp k, x \bp {k + l}) &amp;\le d (x \bp k, x \bp {k + 1}) + \dots + d (x \bp {k + l - 1}, x \bp {k + l}) \\
-	&amp;\le (\gamma ^k + \gamma ^{k + 1} + \dots + \gamma ^{k + l - 1}) D \le \frac{\gamma ^k D}{1 - \gamma} \to 0
+	\abs{\tilde \bu (t) - \bu (t)} &amp;\le \abs{\tilde \bx _0 - \bx _0} + \int _{t _0} ^t \abs{\bf (s, \tilde \bu (s)) - \bf (s, \bu (s))} \d s \\
+	&amp;\le \abs{\tilde \bx _0 - \bx _0} + L \int _{t _0} ^t \abs{\tilde \bu (s) - \bu (s)} \d s =: G (t).
 \end{align*}\]
 
-<p>as $k \to +\infty$. Because $X$ is complete, $x \bp n \to x ^*$ is converging to some $x ^\ast$.</p>
+<p>Since $G$ is continuously differentiable, and</p>
 
-<p>$x ^*$ is a fixed point, because</p>
+\[G' (t) = L \abs{\tilde \bu (t) - \bu (t)} \le L G (t),\]
+
+<p>we can use Grönwall inequality. For $t _0 \le t \le t _0 + T’$,</p>
 
 \[\begin{align*}
-	d (x ^*, T (x ^*)) &amp;\le d (x ^*, x \bp n) + d (x \bp n, T (x \bp n)) + d (T (x \bp n), T (x ^*)) \\
-	&amp;\le (1 + \gamma) d (x ^*, x \bp n) + \gamma ^n D \to 0
+	\abs{\tilde \bu (t) - \bu (t)} &amp;\le G (t) \le G (t _0) e ^{L (t - t _0)} = \abs{\tilde \bx _0 - \bx _0} e ^{L (t - t _0)}.
 \end{align*}\]
 
-<p>as $n \to \infty$. $x ^\ast$ is unique, because if $y ^*$ is also a fixed point then</p>
+<p>By a same estimate on $[t _0 - T’, t _0]$, we conclude $\tilde \bu \to \bu$ uniformly in $I’$ as $\tilde \bx _0 \to \bx _0$. In particular, for any $t \in I’$, it holds that $\Phi (t; t _0, \tilde \bx _0) = \tilde \bu (t) \to \bu (t) = \Phi (t; t _0, \bx _0)$ as $\tilde \bx _0 \to \bx _0$. That is, for any $t \in I’$, $\Phi (t; t _0, \bx _0)$ is continuous in $\bx _0$.</p>
 
-\[d (x ^*, y ^*) = d (T (x ^*), T (y ^*)) \le \gamma d (x ^*, y ^*) \implies d (x ^*, y ^*) = 0.\]
+<p>In general, we let $(t _0, \bx _0) \in G$, then a strong solution $\bu$ exists in $(T _-, T _+)$. Pick $t _1 \in (T _-, T _+)$, now we show $\Phi (t _1; t _0, \cdot)$ is continuous at $\bx _0$. Without loss of generality assume $t _1 &gt; t _0$. By the previous argument, for every $t \in [t _0, t _1]$, there exists an interval $I’ _t$ such that for every $s \in I’$, $\Phi (s; t, \cdot)$ is continuous at $\bx = \bu (t)$. We now use the interior of $I’ _t$ to form an open cover of $[t _0, t _1]$ and extract a finite subcover, yielding a sequence $t _0 = s _0 &lt; s _1 &lt; s _2 &lt; \dots &lt; s _n = t _1$ such that $\Phi (s _i; s _{i - 1}, \cdot)$ is continuous at $\bx _{i - 1} = \bu (s _{i - 1})$. Note that $\Phi (s _i; s _{i - 1}, \bx _{i - 1}) = \bx _i$. Therefore,</p>
 
-<h3 id="picard-existence-and-uniqueness">Picard existence and uniqueness</h3>
+\[\Phi (t _1; t _0, \cdot) = \Phi (s _n; s _{n - 1}, \cdot) \circ \dots \circ \Phi (s _1; s _0, \cdot)\]
+
+<p>is continuous at $\bx _0$.</p>
 
 <blockquote>
-  <p>[!Theorem]
-(Existence and uniqueness) Let $t _0, T \in \R$ and $I = [t _0 - T, t _0 + T]$. Let $\bx _0 \in \Rd$, $\rho &gt; 0$, and $U = \overline{B _\rho (\bx)}$. 
-Let $L, M &gt; 0$ be two constants.
-Suppose $f: I \times U \to \Rd$ is a piecewise continuous function that satisfies:</p>
-
-  <ol>
-    <li>Boundedness: $\abs{f (t, \bx)} \le M$ for all $(t, \bx) \in I \times U$.</li>
-    <li>Lipschitzness: $\abs{f (t, \bx) - f (t, \by)} \le L \abs{\bx - \by}$ for all $t \in I, \bx, \by \in U$.</li>
-  </ol>
-
-  <p>Define $T’ = \min \set{T, \frac\rho M, \frac 1{2L}}$, $I’ = [t _0 - T’, t _0 + T’]$. 
-There exists a unique $\bu \in C ^0 (I’ \to U)$ solving \eqref{eqn:DS-strong}.</p>
+  <p>[!Corollary] 
+Under the same assumption as before, $\Phi (t _1; t _0, \bx _0)$ is continuous in $(t _1, t _0, \bx _0)$.</p>
 </blockquote>
 
 <p>Proof.</p>
 
-<p>let $X = C ^0 (I’ \to U)$ be the space of continuous and bounded functions from $I’$ to $U$. It is a metric space under the supremum of difference:</p>
-
-\[d (u, v) = \sup _{t \in I'} |u (t) - v (t)|.\]
-
-<p>$(X, d)$ is complete: $u _n \to v$ in $X$ if and only if $u _n$ converges uniformly to $v$.</p>
-
-<p>We define a mapping $T$ by the following:</p>
-
-\[T (\bu) (t) = \bx _0 + \int _{t _0} ^t \bf (s, \bu (s)) \d s, \qquad \bu \in X.\]
-
-<p>First, we verify that $T$ has image in $X$. Clearly $T (\bu)$ is a continuous function, so we only need to verify $T (\bu) (t) \in U$. To see this, note that</p>
-
-\[|T (\bu) (t) - \bx _0| \le \abs{\int _{t _0} ^t \bf (s, \bu (s)) \d s} \le (t - t _0) M \le T' M \le \rho.\]
-
-<p>We claim $T$ is a contraction. To see this, let $\bu, \bv \in X$. Then for any $t \in I$ with $t \ge t _0$, it holds that</p>
+<p>Given $\tilde t _0, \tilde \bx _0$, let $\boldsymbol y _0 = \Phi (t _0; \tilde t _0, \tilde \bx _0)$. If $\abs{\bf (t, \bx)} \le M$ in a neighborhood of $(t _0, \bx _0)$, then for $(\tilde t _0, \tilde \bx _0)$ sufficiently close to $(t _0, \bx _0)$, $\abs{\boldsymbol y _0 - \tilde \bx _0} \le M \abs{\tilde t _0 - t _0}$. So</p>
 
 \[\begin{align*}
-	\abs{T (\bu) (t) - T (\bv) (t)} &amp;= \abs{\int _{t _0} ^t \bf (s, \bu (s)) \d s - \int _{t _0} ^t \bf (s, \bv (s)) \d s } \\
-	&amp; \le \int _{t _0} ^t \abs{\bf (s, \bu (s)) - \bf (s, \bv (s))} \d s \\
-	&amp; \le \int _{t _0} ^t L \abs{\bu (s) - \bv (s)} \d s \\
-	&amp; \le L |t - t _0| d (\bu, \bv) \le \frac12 d (\bu, \bv).
+	\Phi (t _1; \tilde t _0, \tilde \bx _0) - \Phi (t _1; t _0, \bx _0) = \Phi (t _1; t _0, \boldsymbol y _0) - \Phi (t _1; t _0, \bx _0) \to 0 
 \end{align*}\]
 
-<p>Similarly, for $t \le t _0$, $\abs{T (\bu) (t) - T (\bv) (t)} \le \frac12 d (\bu, \bv)$. 
-Take the sup of $t \in I’$, we have verified that</p>
+<p>as $(\tilde t _0, \tilde \bx _0) \to (t _0, \bx _0)$. Denote $\bx _1 = \Phi (t _1; t _0, \bx _0)$, $\tilde \bx _1 = \Phi (t _1; \tilde t _0, \tilde \bx _0)$, then $\tilde \bx _1 \to \bx _1$. In a neighborhood of $(t _1, \bx _1)$, $\bf$ is bounded by some $M’$, so</p>
 
-\[d (T (\bu), T (\bv)) \le \frac12 d (\bu, \bv).\]
+\[\abs{\Phi (\tilde t _1; \tilde t _0, \tilde \bx _0) - \tilde \bx _1} = \abs{\Phi (\tilde t _1; t _1, \tilde \bx _1) - \tilde \bx _1} \le M' (\tilde t _1 - t _1) \to 0.\]
 
-<p>Since $T$ is contractive, there exists a unique $\bu ^\ast \in X$ such that $\bu ^\ast = T (\bu ^\ast)$. That is, $\bu ^\ast: I’ \to U$ is a strong solution.</p>
+<p>In conclusion, $\Phi (\tilde t _1; \tilde t _0, \tilde \bx _0) \to \Phi (t _1; t _0, \bx _0)$ as $(\tilde t _1; \tilde t _0, \tilde \bx _0) \to (t _1; t _0, \bx _0)$.</p>
+
+<h3 id="dependence-on-parameter-and-function">Dependence on parameter and function</h3>
+
+<p>Sometimes, we have a differential system with some parameter $\lambda \in \Lambda \subset \R ^{d’}$:</p>
+
+\[\begin{align*}
+	\begin{cases}
+		\bu ' (t) = \bf (t, \bu (t); \lambda) \\
+		\bu (t _0) = \bx _0
+	\end{cases}
+\end{align*}\]
+
+<p>A natural question is: if $\lambda$ is changed by a little, is the solution going to be drastically different? In fact, we have the following dependence on $\lambda$.</p>
+
+<blockquote>
+  <p>[!Theorem] 
+(Continuous dependence on the parameter) Let $G \subset \R \times \Rd$, $\Lambda \subset \RR{d’}$ be open sets. Suppose $\bf: G \times \Lambda \to \Rd$ is continuous in $(t, \bx, \lambda)$ and locally Lipschitz in $\bx$. Then $\Phi$ is continuous in $\lambda$.</p>
+</blockquote>
+
+<p>Proof. This can be achieved by introducing another auxiliary IVP: define</p>
+
+\[\tilde {\bf} : G \times \Lambda \to \Rd \times \RR{d'}, \qquad \tilde {\bf} (t, \bx, \lambda) = (\bf (t, \bx; \lambda), 0).\]
+
+<p>That is, we treat the parameter $\lambda$ as additional dimensions and the system is static in these directions. Then</p>
+
+\[\begin{cases}
+	\tilde{\bu} ' (t) = \tilde{\bf} (t, \tilde{\bu} (t)), \\
+	\tilde{\bu} (t _0) = (\bx _0, \lambda)
+\end{cases}\]
+
+<p>We use continuity in initial condition to conclude the proof.</p>
+
+<p>We also have the following continuous dependence on the function. The proof is left as an exercise.</p>
 
 <blockquote>
   <p>[!Theorem]
-(Continuation) Let $G \subset \R \times \Rd$ be an open set. Suppose $f: G \to \Rd$ is a continuous function that are locally Lipschitz in $x$: for every $(t _1, \bx _1) \in G$, there exists $\e &gt; 0$, $\rho &gt; 0$, $L &gt; 0$ such that</p>
+(Continuous dependence on the function) Let $G \subset \R \times \Rd$ be open. Suppose $\bf: G \to \Rd$ is continuous in $(t, \bx)$ and locally Lipschitz in $\bx$. If $I$ is a closed interval, $t _0 \in I$, $(t _0, \bx _0) \in G$, and $\bu: I \to \Rd$ is a strong solution to</p>
 
-\[|\bf (t, \bx) - \bf (t, \by)| \le L |\bx - \by|, \qquad \forall t \in [t _1 - \e, t _1 + \e], \bx, \by \in \overline{B _\rho (x)}.\]
+\[\begin{cases}
+	\bu' (t) = \bf (t, \bu (t)) \\
+	\bu (t _0) = \bx _0
+\end{cases}.\]
 
-  <p>Consider \eqref{eqn:DS} with some $(t _0, \bx _0) \in G$. There exists a classical solution $\bu ^\ast: (t _-, t _+) \to \Rd$, such that $\operatorname{Graph} (\bu ^*) \subset G$. Moreover, one of the following holds:</p>
+  <p>For every $\e &gt; 0$, there exists $\delta &gt; 0$, such that for any piecewise continuous $\boldsymbol g: G \to \Rd$ with $\sup _I \abs{\bf - \boldsymbol g} \le \delta$, any strong solution $\boldsymbol v$ to</p>
 
-  <ol>
-    <li>$t _+ = +\infty$</li>
-    <li>$\lim _{t \uparrow t _+} \bu (t)$ diverges and $\abs{\bf (t, \bu (t))}$ is unbounded</li>
-    <li>$\lim _{t \uparrow t _+} \bu (t)$ converges and $(t _+, \bu (t _+)) \in \partial G$</li>
-  </ol>
+\[\begin{cases}
+	\bv' (t) = \boldsymbol g (t, \bv (t)) \\
+	\bv (t _0) = \bx _0
+\end{cases}\]
 
-  <p>Similar trichotomy holds for $t _-$. Moreover, any strong solution agrees with $\bu ^\ast$.
-$(t _-, t _+)$ is called the maximum interval of existence.</p>
+  <p>satisfies $\sup _I \abs{\bu - \bv} \le \e$.</p>
+</blockquote>
+
+<h3 id="regularity">Regularity</h3>
+
+<p>Suppose $\bu \in C (I)$ is a strong solution, then for any $t \in I$,</p>
+
+\[\bu (t) = \bx _0 + \int _{t _0} ^t \bf (t, \bu (t)) \d t.\]
+
+<p>Is $\bu$ a classical solution?</p>
+
+<blockquote>
+  <p>[!Theorem] 
+Let $\bf: G \to \Rd$ and let $\bu \in C (I)$ be a strong solution. If $\bf \in C (G)$, then $\bu \in C ^1 (I ^\circ)$ is a classical solution. If $\bf \in C ^n (G)$ for $n \ge 1$, then $\bu \in C ^{n + 1} (I ^\circ)$.</p>
 </blockquote>
 
 <p>Proof.</p>
 
-<p>First, we start at $(t _0, \bx _0)$. Local Lipschitz-ness implies we can find $\e _0 &gt; 0$, $L _0 &gt; 0$, $M _0 &gt; 0$, and by existence theorem a strong solution $\bu \bp 0: [t _0 - \e _0’, t _0 + \e _0’] \to B _{\rho _0} (\bx _0)$, with $\e _0’ = \min \set{\e _0, \frac {\rho _0} {M _0}, \frac 1{2L _0}}$. There are different choices of $\e _0$ which leads to different $L _0, M _0, \e’ _0$. We assume we pick the one that maximizes $\e _0’$ (say, greater than half the supremum).</p>
+<p>If $\bf$ is continuous, then $\bf (t, \bu (t))$ is continuous in $t$, so $\bu’ (t) = \bf (t, \bu (t))$ is continuous in $t \in I ^\circ$. Assume without loss of generality that $G \subset I ^\circ \times \Rd$.</p>
 
-<p>Define $t _1 = t _0 + \e _0’$ and $\bx _1 = \bu \bp 0 (t _1)$. Now from $(t _1, \bx _1)$, we can construct another solution $\bu \bp 1$ of length $\e _1’ &gt; 0$. It can be shown that $\bu \bp 0$ and $\bu \bp 1$ agrees on their domains (why?), and we can concatenate them to a strong solution $\bu \bp 1 ^\ast$ whose domain is the union of these two (why?). Now start at $t _2 = t _1 + \e _1 ‘$ and $\bx _2 = \bu \bp 0 (t _2)$, we continue the solution $\bu \bp 2 ^\ast$. Repeating this process, we get a sequence of solutions $\bu \bp n$. We can also do this backward: find $t _{-1} = t _0 - \e _0’$, $t _{-2} = t _{-1} - \e _{-1}’$ etc. Concatenating all the $\bu \bp n$ yields a strong solution $\bu ^\ast: (t _-, t _+) \to \Rd$.</p>
+<p>If $\bf$ is $C ^1 (G)$, then $\bu \in C ^1 (I ^\circ)$, and</p>
 
-<p>Now we prove the trichotomy. Suppose $t _+ &lt; +\infty$.</p>
+\[\bu '' (t) = \partial _t \bf (t, \bu (t)) + \bu' (t) \cdot \grad \bf (t, \bu (t)) = (\partial _t + \bu ' (t) \cdot \grad) \bf (t, \bu (t)).\]
 
-<p>If $\lim _{t \uparrow t _+} \bu (t)$ converges and $(t _+, \bu (t _+)) \in G$, then near $(t _+, \bu (t _+))$ we can find $\e _+, L _+, M _+$ as before. However, this means if $(t _n, \bu (t _n))$ is sufficiently close to $(t _+, \bu (t _+))$, we should be able to find a better $\e _n’$ such that $t _{n + 1} = t _n + \e _n’ &gt; t _+$, a contradiction. For instance, if $\abs{t _n - t _+} &lt; \frac{\e _+’}4$ and $\abs{\bu (t _n) - \bu (t _+)} &lt; \frac{M _+ \e _+’}4$, then $f$ is bounded by $M _+$ and is $L _+$-Lipschitz in $x$ inside $[t _n - \frac{\e’ _+}2, t _n + \frac{\e’ _+}2] \times \overline{B _{\frac{M _+ \e’ _+}2} (\bx _n)}$. By existence theorem, we can extend $\bu$ til $t _n + \frac{\e’ _+}2$, contradicting our claim that we maximized $\e’ _n$.</p>
+<p>Denote $\frac{D}{Dt} = \partial _t + \bu ^\prime (t) \cdot \grad$. 
+Then $\bu’ \in C ^0 (I)$ and</p>
 
-<p>If $\abs{\bf (t, \bu (t))} \le M$ as $t \uparrow t _+$, then for $s &lt; t$ close to $t _+$, $\abs{\bu (t) - \bu (s)} \le \int _s ^t \abs{\bf (t, \bu (t))} \dt \le M (t - s)$. Therefore, $\bu$ is $M$-Lipschitz. For any sequence $t _n \to t _+$, $\bu (t _n)$ is a Cauchy sequence. Hence $\bu (t)$ converges as $t \uparrow t _+$.</p>
+\[\boldsymbol g (t, \bx) = \frac {D \bf}{D t} (t, \bx) = (\partial _t + \bu ' (t) \cdot \grad) \bf (t, \bx)\]
+
+<p>is $C ^0$ in $G$, so $\bu’’ (t) = \boldsymbol g (t, \bu (t))$ is $C ^0$ in $I$, hence $\bu \in C ^2 (I ^\circ)$.</p>
+
+<p>If $\bf$ is $C ^2 (G)$, then $\bu \in C ^2 (I ^\circ)$, $\bu’$ is $C ^1$, so $\boldsymbol g \in C ^1 (G)$. and</p>
+
+\[\begin{align*}
+	\bu''' (t) &amp;= \ddt \boldsymbol g (t, \bu (t)) = \frac{D \boldsymbol g}{Dt} (t, \bu (t)).
+\end{align*}\]
+
+<p>$\boldsymbol h = \frac{D \boldsymbol g}{Dt} \in C ^0 (G)$, and $\bu ^{\prime\prime\prime} (t) = \boldsymbol h (t, \bu (t))$ is thus continuous. We leave the induction as an exercise.</p>
+
+<blockquote>
+  <p>[!Remark]
+With local Lipschitz condition, this theorem shows the flow map $\Phi (t; t _0, \bx _0)$ is $C ^{n + 1}$ in $t$. In fact, $\Phi (t _1; t _0, \bx _0)$ is $C ^{n + 1}$ in $(t _1, t _0, \bx _0)$.</p>
+</blockquote>
+
 
 
   <script>

@@ -30,7 +30,13 @@ means
 2. Uniqueness: there exists at most one solution.
 3. Continuous dependence on initial data: if $\bx _0 \pp 1$ and $\bx _0 \pp 2$ are two different initial data that are sufficiently close, the corresponding solutions should be close in some sense.
 
-Recall that a flow map $\Phi (t; t _0, \bx _0)$ gives the value of the solution to IVP at time $t$. The first two shows a flow map is well-defined, and the third shows the flow map is continuous in $\bx _0$. 
+Recall that a flow map $\Phi (t; t _0, \bx _0)$ gives the value of the solution to IVP at time $t$. It has the following property:
+
+$$
+	\Phi (t _2; t _0, \cdot) = \Phi (t _2; t _1, \cdot)  \circ \Phi (t _1; t _0, \cdot).
+$$
+
+The first two shows a flow map is well-defined, and the third shows the flow map is continuous in $\bx _0$. 
 
 We have proven in the last lecture the existence and uniqueness of IVP. Now we study the continuous dependence. 
 
@@ -45,7 +51,7 @@ $$
 \end{align*}
 $$
 
-If $\tilde \bu (t) \in U$ for all $t \in I'$, we take the difference, and conclude
+If $T' \le \frac{\rho}{2M}$, then $\tilde \bu (t) \in U$ for all $t \in I'$. We take the difference, and conclude
 
 $$
 \begin{align*}
@@ -64,13 +70,13 @@ we can use Grönwall inequality. For $t _0 \le t \le t _0 + T'$,
 
 $$
 \begin{align*}
-	\abs{\tilde \bu (t) - \bu (t)} &\le G (t) \le G (t _0) e ^{L (t - t _0)} = \abs{\tilde \bx - \bx} e ^{L (t - t _0)}.
+	\abs{\tilde \bu (t) - \bu (t)} &\le G (t) \le G (t _0) e ^{L (t - t _0)} = \abs{\tilde \bx _0 - \bx _0} e ^{L (t - t _0)}.
 \end{align*}
 $$
 
-By a same estimate on the left hand side, we conclude $\tilde \bu \to \bu$ uniformly in $I'$ as $\bx \pp 2 \to \bx \pp 1$. In particular, for any $t \in [t _0, t _0 + T']$, it holds that $\Phi (t; t _0, \tilde \bx _0) = \tilde \bu (t) \to \bu (t) = \Phi (t; t _0, \bx _0)$ as $\tilde \bx _0 \to \bx _0$. That is, for any $t \in [t _0, t _0 + T']$, $\Phi (t; t _0, \bx _0)$ is continuous in $\bx _0$.
+By a same estimate on $[t _0 - T', t _0]$, we conclude $\tilde \bu \to \bu$ uniformly in $I'$ as $\tilde \bx _0 \to \bx _0$. In particular, for any $t \in I'$, it holds that $\Phi (t; t _0, \tilde \bx _0) = \tilde \bu (t) \to \bu (t) = \Phi (t; t _0, \bx _0)$ as $\tilde \bx _0 \to \bx _0$. That is, for any $t \in I'$, $\Phi (t; t _0, \bx _0)$ is continuous in $\bx _0$.
 
-In general, we let $(t _0, \bx _0) \in G$, then a strong solution $\bu$ exists in $(T _-, T _+)$. Pick $t _1 \in (T _-, T _+)$, now we show $\Phi (t _1; t _0, \cdot)$ is continuous at $\bx _0$. Without loss of generality assume $t _1 > t _0$. By the previous argument, for every $t \in [t _0, t _1]$, there exists an interval $I' _t$ such that for every $s \in I'$, $\Phi (s; t, \cdot)$ is continuous at $\bu (t)$. We now use the interior of $I' _t$ to form an open cover of $[t _0, t _1]$ and extract a finite subcover, yielding a sequence $t _0 = s _0 < s _1 < s _2 < \dots < s _n = t _1$ such that $\Phi (s _i; s _{i - 1}, \cdot)$ is continuous at $\bx _{i - 1} = \bu (s _{i - 1})$. Note that $\Phi (s _i; s _{i - 1}, \bx _{i - 1}) = \bx _i$. Therefore, 
+In general, we let $(t _0, \bx _0) \in G$, then a strong solution $\bu$ exists in $(T _-, T _+)$. Pick $t _1 \in (T _-, T _+)$, now we show $\Phi (t _1; t _0, \cdot)$ is continuous at $\bx _0$. Without loss of generality assume $t _1 > t _0$. By the previous argument, for every $t \in [t _0, t _1]$, there exists an interval $I' _t$ such that for every $s \in I'$, $\Phi (s; t, \cdot)$ is continuous at $\bx = \bu (t)$. We now use the interior of $I' _t$ to form an open cover of $[t _0, t _1]$ and extract a finite subcover, yielding a sequence $t _0 = s _0 < s _1 < s _2 < \dots < s _n = t _1$ such that $\Phi (s _i; s _{i - 1}, \cdot)$ is continuous at $\bx _{i - 1} = \bu (s _{i - 1})$. Note that $\Phi (s _i; s _{i - 1}, \bx _{i - 1}) = \bx _i$. Therefore, 
 
 $$
 	\Phi (t _1; t _0, \cdot) = \Phi (s _n; s _{n - 1}, \cdot) \circ \dots \circ \Phi (s _1; s _0, \cdot)
@@ -78,9 +84,30 @@ $$
 
 is continuous at $\bx _0$.
 
-### Dependence on parameter
+> [!Corollary] 
+> Under the same assumption as before, $\Phi (t _1; t _0, \bx _0)$ is continuous in $(t _1, t _0, \bx _0)$.
 
-Sometimes, we have a differential system with an unknown parameter $\lambda \in \Lambda \subset \R ^{d'}$:
+Proof. 
+
+Given $\tilde t _0, \tilde \bx _0$, let $\boldsymbol y _0 = \Phi (t _0; \tilde t _0, \tilde \bx _0)$. If $\abs{\bf (t, \bx)} \le M$ in a neighborhood of $(t _0, \bx _0)$, then for $(\tilde t _0, \tilde \bx _0)$ sufficiently close to $(t _0, \bx _0)$, $\abs{\boldsymbol y _0 - \tilde \bx _0} \le M \abs{\tilde t _0 - t _0}$. So 
+
+$$
+\begin{align*}
+	\Phi (t _1; \tilde t _0, \tilde \bx _0) - \Phi (t _1; t _0, \bx _0) = \Phi (t _1; t _0, \boldsymbol y _0) - \Phi (t _1; t _0, \bx _0) \to 0 
+\end{align*}
+$$
+
+as $(\tilde t _0, \tilde \bx _0) \to (t _0, \bx _0)$. Denote $\bx _1 = \Phi (t _1; t _0, \bx _0)$, $\tilde \bx _1 = \Phi (t _1; \tilde t _0, \tilde \bx _0)$, then $\tilde \bx _1 \to \bx _1$. In a neighborhood of $(t _1, \bx _1)$, $\bf$ is bounded by some $M'$, so 
+
+$$
+	\abs{\Phi (\tilde t _1; \tilde t _0, \tilde \bx _0) - \tilde \bx _1} = \abs{\Phi (\tilde t _1; t _1, \tilde \bx _1) - \tilde \bx _1} \le M' (\tilde t _1 - t _1) \to 0.  
+$$
+
+In conclusion, $\Phi (\tilde t _1; \tilde t _0, \tilde \bx _0) \to \Phi (t _1; t _0, \bx _0)$ as $(\tilde t _1; \tilde t _0, \tilde \bx _0) \to (t _1; t _0, \bx _0)$.
+
+### Dependence on parameter and function
+
+Sometimes, we have a differential system with some parameter $\lambda \in \Lambda \subset \R ^{d'}$:
 
 $$
 \begin{align*}
@@ -94,9 +121,9 @@ $$
 A natural question is: if $\lambda$ is changed by a little, is the solution going to be drastically different? In fact, we have the following dependence on $\lambda$.
 
 > [!Theorem] 
-> Let $G \subset \R \times \Rd$, $\Lambda \subset \RR{d'}$ be open sets. Suppose $\bf: G \times \Lambda \to \Rd$ is continuous in $(t, \bx, \lambda)$ and locally Lipschitz in $\bx$. Then $\Phi$ is continuous in $\lambda$.
+> (Continuous dependence on the parameter) Let $G \subset \R \times \Rd$, $\Lambda \subset \RR{d'}$ be open sets. Suppose $\bf: G \times \Lambda \to \Rd$ is continuous in $(t, \bx, \lambda)$ and locally Lipschitz in $\bx$. Then $\Phi$ is continuous in $\lambda$.
 
-Proof. This can be achieved by introducing another auxillary IVP: define
+Proof. This can be achieved by introducing another auxiliary IVP: define
 
 $$
 	\tilde {\bf} : G \times \Lambda \to \Rd \times \RR{d'}, \qquad \tilde {\bf} (t, \bx, \lambda) = (\bf (t, \bx; \lambda), 0).
@@ -112,6 +139,29 @@ $$
 $$
 
 We use continuity in initial condition to conclude the proof.
+
+We also have the following continuous dependence on the function. The proof is left as an exercise.
+
+> [!Theorem]
+> (Continuous dependence on the function) Let $G \subset \R \times \Rd$ be open. Suppose $\bf: G \to \Rd$ is continuous in $(t, \bx)$ and locally Lipschitz in $\bx$. If $I$ is a closed interval, $t _0 \in I$, $(t _0, \bx _0) \in G$, and $\bu: I \to \Rd$ is a strong solution to 
+> 
+> $$
+> \begin{cases}
+> 	\bu' (t) = \bf (t, \bu (t)) \\
+> 	\bu (t _0) = \bx _0
+> \end{cases}.
+> $$
+> 
+> For every $\e > 0$, there exists $\delta > 0$, such that for any piecewise continuous $\boldsymbol g: G \to \Rd$ with $\sup _I \abs{\bf - \boldsymbol g} \le \delta$, any strong solution $\boldsymbol v$ to  
+> 
+> $$
+> \begin{cases}
+> 	\bv' (t) = \boldsymbol g (t, \bv (t)) \\
+> 	\bv (t _0) = \bx _0
+> \end{cases}
+> $$
+> 
+> satisfies $\sup _I \abs{\bu - \bv} \le \e$.
 
 ### Regularity
 
@@ -136,7 +186,8 @@ $$
 	\bu '' (t) = \partial _t \bf (t, \bu (t)) + \bu' (t) \cdot \grad \bf (t, \bu (t)) = (\partial _t + \bu ' (t) \cdot \grad) \bf (t, \bu (t)).
 $$
 
-Denote $\frac{D}{Dt} = \partial _t + \bu ' (t) \cdot \grad$. Then $\bu' \in C ^0 (I)$ and
+Denote $\frac{D}{Dt} = \partial _t + \bu ^\prime (t) \cdot \grad$. 
+Then $\bu' \in C ^0 (I)$ and
 
 $$
 	\boldsymbol g (t, \bx) = \frac {D \bf}{D t} (t, \bx) = (\partial _t + \bu ' (t) \cdot \grad) \bf (t, \bx)
@@ -152,4 +203,8 @@ $$
 \end{align*}
 $$
 
-$\boldsymbol h = \frac{D \boldsymbol g}{Dt} \in C ^0 (G)$, and $\bu ''' (t) = \boldsymbol h (t, \bu (t))$ is thus continuous. We leave the induction as an exercise. 
+$\boldsymbol h = \frac{D \boldsymbol g}{Dt} \in C ^0 (G)$, and $\bu ^{\prime\prime\prime} (t) = \boldsymbol h (t, \bu (t))$ is thus continuous. We leave the induction as an exercise. 
+
+> [!Remark]
+> With local Lipschitz condition, this theorem shows the flow map $\Phi (t; t _0, \bx _0)$ is $C ^{n + 1}$ in $t$. In fact, $\Phi (t _1; t _0, \bx _0)$ is $C ^{n + 1}$ in $(t _1, t _0, \bx _0)$. 
+
