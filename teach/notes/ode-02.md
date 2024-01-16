@@ -125,5 +125,7 @@ Next, we generalize the notion of "solution".
 >	\bu (t) = \bx _0 + \int _{t _0} ^t \bf (s, \bu (s)) \d s
 > $$
 > 
-> for every $t \in I$. (Recall $\int _{t _0} ^t = -\int _t ^{t _0}$ if $t < t _0$)
+> for every $t \in I$. (Recall $\int _{t _0} ^t = -\int _t ^{t _0}$ if $t < t _0$).
+
+
 
