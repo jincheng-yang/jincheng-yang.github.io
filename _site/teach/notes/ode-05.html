@@ -401,13 +401,17 @@ Euler solutions $\bu _n$ converge uniformly to a classical solution.</p>
 
 <blockquote>
   <p>[!Lemma] 
-(Second comparison lemma) Let $G$ be open, $f, g \in C (G)$ and $f \le g$. Let $\underline u, \underline v, \overline u, \overline v: I \to \R$ be maximal and minimal solutions to</p>
+(Second comparison lemma) Let $G$ be open, $f, g \in C (G)$ and $f \le g$. Let $u, v, \underline u, \underline v, \overline u, \overline v: I \to \R$ be solutions, maximal solutions, and minimal solutions to</p>
 
 \[u' (t) \le f (t, u (t)), \qquad v' (t) \ge g (t, v (t)).\]
 
-  <p>If $\underline u (t _0) \le \overline v (t _0)$, then $\underline u (t) \le \overline v (t)$ for every $t &gt; t _0$.</p>
+  <p>If $u (t _0) \le \overline v (t _0)$, then $u (t) \le \overline v (t)$ for every $t &gt; t _0$.</p>
 
-  <p>If $\overline u (t _0) \ge \underline v (t _0)$, then $\overline u (t) &gt; \underline v (t)$ for every $t &lt; t _0$.</p>
+  <p>If $\underline u (t _0) \le v (t _0)$, then $\underline u (t) \le v (t)$ for every $t &gt; t _0$.</p>
+
+  <p>If $\overline u (t _0) \ge v (t _0)$, then $\overline u (t) &gt; v (t)$ for every $t &lt; t _0$.</p>
+
+  <p>If $u (t _0) \ge \underline v (t _0)$, then $u (t) &gt; \underline v (t)$ for every $t &lt; t _0$.</p>
 </blockquote>
 
 <p>Proof. This is proven by constructing approximating solutions as in the previous lemma.</p>
