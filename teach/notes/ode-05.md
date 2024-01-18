@@ -150,15 +150,19 @@ By our old comparison lemma, $u _n (t) > u (t)$ at any $t > t _0$ for any soluti
 Now we are ready to have a better comparison lemma, which allows drivers to be equal.
 
 > [!Lemma] 
-> (Second comparison lemma) Let $G$ be open, $f, g \in C (G)$ and $f \le g$. Let $\underline u, \underline v, \overline u, \overline v: I \to \R$ be maximal and minimal solutions to
+> (Second comparison lemma) Let $G$ be open, $f, g \in C (G)$ and $f \le g$. Let $u, v, \underline u, \underline v, \overline u, \overline v: I \to \R$ be solutions, maximal solutions, and minimal solutions to
 >  
 > $$
 > 	u' (t) \le f (t, u (t)), \qquad v' (t) \ge g (t, v (t)).
 > $$
 > 
-> If $\underline u (t _0) \le \overline v (t _0)$, then $\underline u (t) \le \overline v (t)$ for every $t > t _0$. 
+> If $u (t _0) \le \overline v (t _0)$, then $u (t) \le \overline v (t)$ for every $t > t _0$. 
 > 
-> If $\overline u (t _0) \ge \underline v (t _0)$, then $\overline u (t) > \underline v (t)$ for every $t < t _0$.
+> If $\underline u (t _0) \le v (t _0)$, then $\underline u (t) \le v (t)$ for every $t > t _0$. 
+> 
+> If $\overline u (t _0) \ge v (t _0)$, then $\overline u (t) > v (t)$ for every $t < t _0$.
+> 
+> If $u (t _0) \ge \underline v (t _0)$, then $u (t) > \underline v (t)$ for every $t < t _0$.
 
 Proof. This is proven by constructing approximating solutions as in the previous lemma. 
 
