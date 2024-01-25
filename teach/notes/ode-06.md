@@ -84,6 +84,20 @@ $$
 
 We can verify that $\bf$ is globally Lipschitz in $\bx$. The initial value problem for $\bu$ admits a unique $C ^1$ solution. Therefore IVP for $u$ admits a unique $C ^2$ solution. 
 
+> [!Corollary]
+> Suppose $r (t) = 0$. We say two functions are linearly dependent if one is a scalar multiple of the other. Two solutions $u _1, u _2$ to the ODE
+> 
+> $$
+> u'' (t) + p (t) u ' (t) + q (t) u (t) = 0
+> $$
+> 
+> are linearly dependent if and only if 
+> 
+> $$\begin{pmatrix}u _1 (t _0) \\ u' _1 (t _0)\end{pmatrix} \text{  and  } \begin{pmatrix}u _2 (t _0) \\ u' _2 (t _0)\end{pmatrix}$$ 
+> 
+> are linearly dependent.
+
+Proof. If $u _1 (t _0) = c u _2 (t _0)$, $u _1' (t _0) = c u _2' (t _0)$, then $u _1$ and $c u _2$ are solutions to the same IVP, hence they are identical, and $u _1 = c u _2$ implies they are dependent solutions. The other direction is trivial.
 ## Linear structure of solution set
 
 By the linearity of the equation, the IVP can be decomposed as follows. Consider the following three IVPs: 
@@ -156,7 +170,7 @@ $$
 \end{align*}
 $$
 
-as a linear system of $c _1, c _2$ has a unique solution. This holds if and only if the solution matrix (called Wronskian matrix)
+as a linear system of $c _1, c _2$ has a unique solution. This holds if and only if the solution matrix (called **Wronskian** matrix)
 
 $$
 	\boldsymbol W (u _1, u _2; t _0) := \begin{pmatrix}
@@ -165,4 +179,4 @@ $$
 	\end{pmatrix}
 $$
 
-is nonsingular. It is singular if and only if one column is the multiple of the other column. Say if $u _1 (t _0) = c u _2 (t _0)$, $u _1' (t _0) = c u _2' (t _0)$, then $u _1$ and $c u _2$ are solutions to the same IVP, hence they are identical, and $u _1 = c u _2$ implies they are dependent solutions. Contrariwise, If $u _1, u _2$ are independent solutions, then the Wronskian matrix is never singular, and thus a pair of constants $c _1, c _2$ can be uniquely determined. 
+is nonsingular. It is singular if and only if one column is the multiple of the other column, which would imply $u _1$ and $u _2$ are dependent solutions.  Contrariwise, If $u _1, u _2$ are independent solutions, then the Wronskian matrix is never singular, and thus a pair of constants $c _1, c _2$ can be uniquely determined. 

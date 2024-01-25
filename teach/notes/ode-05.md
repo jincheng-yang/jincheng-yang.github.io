@@ -150,19 +150,32 @@ By our old comparison lemma, $u _n (t) > u (t)$ at any $t > t _0$ for any soluti
 Now we are ready to have a better comparison lemma, which allows drivers to be equal.
 
 > [!Lemma] 
-> (Second comparison lemma) Let $G$ be open, $f, g \in C (G)$ and $f \le g$. Let $u, v, \underline u, \underline v, \overline u, \overline v: I \to \R$ be solutions, maximal solutions, and minimal solutions to
+> (Second comparison lemma) Let $G \subset \R \times \R$ be open, $f, g \in C (G)$ and $f \le g$. Let $I \subset \R$ be open and $u, v: I \to \R$ be two functions whose graph is contained in $G$ and satisfy 
 >  
 > $$
-> 	u' (t) \le f (t, u (t)), \qquad v' (t) \ge g (t, v (t)).
+> 	u' (t) \le f (t, u (t)), \qquad v' (t) \ge g (t, v (t)), \qquad \forall t \in I.
 > $$
 > 
-> If $u (t _0) \le \overline v (t _0)$, then $u (t) \le \overline v (t)$ for every $t > t _0$. 
+> Let $t _0 \in I$ and denote $x _0 = u (t _0)$, $y _0 = v (t _0)$. Let $\underline u, \underline v, \overline u, \overline v: I \to \R$ be the minimal and maximal solutions to 
 > 
-> If $\underline u (t _0) \le v (t _0)$, then $\underline u (t) \le v (t)$ for every $t > t _0$. 
+> $$
+> 	\begin{cases}
+> 		u' (t) = f (t, u (t)) \\
+> 		u (t _0) = x _0
+> 	\end{cases}, \qquad 
+> 	\begin{cases}
+> 		v' (t) = g (t, v (t)) \\
+> 		v (t _0) = y _0
+> 	\end{cases}.
+> $$
 > 
-> If $\overline u (t _0) \ge v (t _0)$, then $\overline u (t) > v (t)$ for every $t < t _0$.
+> If $x _0 \le y _0$, then $u (t) \le \overline v (t)$ for every $t > t _0$. 
 > 
-> If $u (t _0) \ge \underline v (t _0)$, then $u (t) > \underline v (t)$ for every $t < t _0$.
+> If $x _0 \le y _0$, then $\underline u (t) \le v (t)$ for every $t > t _0$. 
+> 
+> If $x _0 \ge y _0$, then $\overline u (t) \ge v (t)$ for every $t < t _0$.
+> 
+> If $x _0 \ge y _0$, then $u (t) \ge \underline v (t)$ for every $t < t _0$.
 
 Proof. This is proven by constructing approximating solutions as in the previous lemma. 
 
