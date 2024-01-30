@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Lecture 1: First order ODE</title>
+		<title>Lecture 7: Constant coefficient second order equations</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
@@ -257,202 +257,184 @@
 
 <div class="post">
 
-<h2>Lecture 1: First order ODE</h2>
+<h2>Lecture 7: Constant coefficient second order equations</h2>
 
 <p class="meta"></p>
 
-  <h1 id="classification-of-odes">Classification of ODEs</h1>
+  <h1 id="second-order-linear-equations">Second order linear equations</h1>
 
 \[\newcommand{\bx}{\boldsymbol x}
+\newcommand{\by}{\boldsymbol y}
 \newcommand{\bu}{\boldsymbol u}
+\newcommand{\bv}{\boldsymbol v}
 \newcommand{\bF}{\boldsymbol F}
 \newcommand{\bf}{\boldsymbol f}\]
 
-<p>Ordinary differential equation (system), refers to one (or multiple) identities relating one or more univariate <strong>unknown functions</strong> and their derivatives and higher order derivatives.</p>
+<p>Recall the normal form of a second order equation:</p>
 
-<p>General form of <strong>ODE</strong>: find a scalar-valued function $u: I \subset \R \to \R$ that satisfies</p>
+\[u'' (t) + p (t) u ' (t) + q (t) u (t) = r (t).\]
 
-\[F (t, u (t), u' (t), \dots, u \pp n (t)) = 0.\]
+<p>Today, we learn how to solve the case of constant coefficient. That is:</p>
 
-<p>for some given $F: \R \times \R ^n \to \R$. One may abbreviate it with $x = u (t)$ as</p>
+\[u'' (t) + p u (t) + q u (t) = 0.\]
 
-\[F (t, x, x', \dots, x \pp n) = 0.\]
+<h2 id="differential-operators">Differential operators</h2>
 
-<p>$n$ is called the order of ODE.</p>
+<p>To solve a second order equation, we want to reduce it back to first order equations which we know how to solve. Recall that a constant-coefficient homogeneous first order equation</p>
 
-<p>General form of <strong>a system of ODE</strong>: find a vector-valued function $\bu: I \subset \R \to \R ^d$  that satisfies</p>
+\[u' (t) + p u (t) = 0, \qquad t \in \R\]
 
-\[\bF (t, \bu (t), \bu' (t), \dots, \bu \pp n (t)) = \boldsymbol 0\]
+<p>is simply solved by $u (t) = C e ^{-p t}$. We should expect similar exponential-type solutions appear for the second order equation as well, for the following reasons.</p>
 
-<p>for some given $\bF: \R \times (\Rd) ^n \to \Rd$. One may reduce it to the case $n = 1$ by increasing the dimension $d$. If we write out $\bu = (u _1, \dots, u _d)$, and $\bF = (F _1, \dots, F _d)$, then</p>
+<p>One way to understand derivatives is by differential operator. For simplicity, let’s focus on the set of smooth functions $C ^\infty (\R)$. The differential operator $D$ is defined by</p>
 
-\[F _i (t, u _1 (t), \dots, u _d (t), u _1' (t), \dots, u _d ' (t), \dots, u _d \pp n (t)) = 0, \qquad i = 1, \dots, d.\]
+\[D: C ^\infty (\R) \to C ^\infty (\R) \qquad D (u) = u'\]
 
-<p>Again, we may abbreviate it with $\bx = \bu (t)$ as</p>
+<p>That is, it maps a function to its derivative. Then, the above equation becomes</p>
 
-\[\bF (t, \bx, \bx', \dots, \bx \pp n) = 0.\]
+\[D u + p u = 0 \implies (D + p \,\Id) u = 0.\]
 
-<p>General form of <strong>dynamic system</strong>: find a vector-valued function $\bu: I \subset \R \to \R ^d$  that satisfies</p>
-
-\[\bu' (t) = \bf (t, \bu (t)).\]
-
-<p>or</p>
-
-\[\dot \bx = \dfr{\bx}t = \bf (t, \bx) = \bf _t (\bx).\]
-
-<p>It is a special kind of ODE (and in many cases ODE are locally a dynamic system). $d$ is called the <strong>dimension</strong> of the dynamic system.</p>
-
-<p>If $\bf$ is independent of $t$, we say the dynamic system is <strong>autonomous</strong>.</p>
-
-<blockquote>
-  <p>[!Example] 
-Newton’s second law: $g = 9.8$</p>
-
-\[x'' + g = 0 \qquad \implies \qquad \ddt \begin{pmatrix} x \\ v \end{pmatrix} = \begin{pmatrix} v \\ -g \end{pmatrix}\]
-
-  <p>Simple pendulum: $L &gt; 0$ is a constant</p>
-
-\[L \theta '' + g \sin (\theta) = 0 \qquad \implies \qquad \ddt \begin{pmatrix} \theta \\ \omega \end{pmatrix} = \begin{pmatrix} \omega \\ -\dfrac gL \sin \theta \end{pmatrix}\]
-
-  <p>Van del Pol oscillator: $\mu \in \R$ and</p>
-
-\[\dfr{^2 x}{t ^2} - \mu (1 - x ^2) \dfr xt + x = 0.\]
-</blockquote>
-
-<p>If $\bF$ is affine in $\bx, \bx’, \dots, \bx \pp n$, then we say the system of ODE is <strong>linear</strong>. In addition if $\bF$ is linear in $\bx, \bx’, \dots, \bx \pp n$, we say the system of ODE is linear and <strong>homogeneous</strong>, otherwise ODE is <strong>non-homogeneous</strong>.</p>
-
-<p>If $\bF$ is affine in $\bx \pp n$, then we say the system of ODE is <strong>quasilinear</strong>.</p>
-<h1 id="first-order-ode">First order ODE</h1>
-
-\[F (t, x, x') = 0.\]
-
-<p>Trajectory/integral curve: the graph of $u$: ${(t, x): t \in I, x = u (t)}$.</p>
-<h2 id="separable-equation">Separable equation</h2>
-
-\[x' = \frac{f (t)}{g (x)}.\]
-
-<p>If $x = u (t)$ is a solution, then</p>
-
-\[f (t) = g (u (t)) u' (t).\]
-
-<p>Integrate from some $t _0 \in I$ to $t$,</p>
-
-\[\int _{t _0} ^t f (s) \d s = \int _{t _0} ^t g (u (s)) u' (s) \d s\]
-
-<p>Suppose $G$ is a primitive of $g$, $F$ is a primitive of $f$, then</p>
-
-\[F (t) - F (t _0) = G (u (t)) - G (u (t _0)).\]
-
-<h2 id="first-order-linear-equation">First order linear equation</h2>
-<h3 id="homogeneous-linear-equation">Homogeneous linear equation</h3>
-
-<p>Given $p: I \to \R$.</p>
-
-\[x' + p (t) x = 0.\]
-
-<p>If $x = u (t)$ is a solution, and $u &gt; 0$ in $I$, then it is a separable equation with $f (t) = -p (t)$ and $g (x) = \frac1x$.</p>
-
-\[- \int _{t _0} ^t p (s) \d s = \log (u (t)) - \log (u (t _0)).\]
-
-<p>Then</p>
-
-\[u (t) = u (t _0) \exp \pth{-\int _{t _0} ^t p (s) \d s}.\]
-
-<p>Therefore, if $u (t _0) = C &gt; 0$, then</p>
-
-\[u (t) = C \exp \pth{-\int _{t _0} ^t p (s) \d s}.\]
-
-<p>Similarly, if $u &lt; 0$ in $I$, then for some $C &lt; 0$, we have</p>
-
-\[u (t) = C \exp \pth{-\int _{t _0} ^t p (s) \d s}.\]
-
-<p>If $u = 0$ in $I$, we can verify $u \equiv 0$ is a solution. Combined, we have shown that the solution are of the form</p>
-
-\[u (t) = C \exp \pth{-\int _{t _0} ^t p (s) \d s}\]
-
-<p>for some constant $C \in \R$.</p>
-
-<blockquote>
-  <p>[!Question] Are these all the solutions? Is it possible that $u$ changes sign in $I$?</p>
-</blockquote>
-
-<h3 id="inhomogeneous-linear-equation">Inhomogeneous linear equation</h3>
-
-<p>Given $p, q: I \to \R$.</p>
-
-\[x' + p (t) x = q (t)\]
-
-<p>Method of integrating factor: define $\mu (t) = \exp (\int p (s) \d s)$ to be the exponential of some primitive of $p$. Since primitives can differ by a additional constant, choice of $\mu$ can differ by a multiplicative coefficient. $\mu (t)$ solves the following homogeneous equation:</p>
-
-\[\mu' (t) = p (t) \mu (t).\]
-
-<p>If $x = u (t)$ is a solution then multiplying by $\mu (t)$:</p>
-
-\[q (t) \mu (t) = u' (t) \mu (t) + p (t) \mu (t) u (t) = u' (t) \mu (t) + \mu' (t) u (t) = \ddt (\mu (t) u (t)).\]
-
-<p>Integrate from $t _0 \in I$ to $t$,</p>
-
-\[\mu (t) u (t) - \mu (t _0) u (t _0) = \int _{t _0} ^t \mu (s) q (s) \d s.\]
-
-<p>So</p>
-
-\[u (t) = \frac1{\mu (t)} \pth{
-		\mu (t _0) u (t _0) + \int _{t _0} ^t \mu (s) q (s) \d s
-	}.\]
-
-<p>We can divide by $\mu$ because it is nonzero.</p>
-
-<h2 id="quasilinear-equations">Quasilinear equations</h2>
-
-<p>The scenarios above can be unified in the framework of quasilinear equations:</p>
-
-\[M (t, x) + N (t, x) \dfr xt = 0 \iff M (t, x) \dt + N (t, x) \dx = 0.\]
-
-<p>That is</p>
-
-\[M (t, u (t)) + N (t, u (t)) u' (t) = 0.\]
-
-<p>Geometrically, it means that on the $(t, x)$-plane, the graph of the solution $(t, u (t))$ is a curve that is <strong>perpendicular</strong> to the vector field $(M, N)$ everywhere. Of course, it is also perpendicular to $(\mu M, \mu N)$ for some nonzero function $\mu$ of $(t, x)$.</p>
-
-<p>For simplicity suppose $I = \R$. Recall that for a differentiable function $G: \R \times \R \to \R$, its <strong>gradient fields</strong> is perpendicular to its <strong>contour</strong> (level curves). Hence, if $(\mu M, \mu N) = \grad G = (\partial _t G, \partial _x G)$ is a gradient field of some scalar field $G$, then $(t, u (t))$ is constant on $G$, i.e. $G (t, u (t)) = C$ for some constant $C$.</p>
+<p>Here $\Id$ is the identity operator that maps a function to itself. The summation of operators is the same as summation of functions: you add operators by defining the transform under addition as the sum of transforms under two operators. Additions of operators are commutative and associative by definition. Operators can be compounded and it is also associative. It is not always commutative. However, for any polynomial $p _1, p _2 \in P ^k$, operator $p _1 (D)$ and $p _2 (D)$ are commutative. Here $p _1 (D)$ is defined as the following: if $p _1 (t) = \sum _{r = 0} ^k c _r t ^r$, then $p _1 = \sum _{r = 0} ^k c _r D ^r$. $D ^r$ is $D \circ D \circ \dots \circ D$, the r-times differentiation operator.</p>
 
 <blockquote>
   <p>[!Definition]
-$G$ is called an <strong>integral</strong> of the ODE if it is constant on any solution curve $(t, u (t))$.</p>
+$\sum _{r = 0} ^k c _r (t) D ^r$, $c _k \not \equiv 0$ is a differential operator or order $k$.</p>
 </blockquote>
 
-<p>The question becomes to find the correct integrating factor $\mu$ that makes $(\mu M, \mu N)$ a gradient field.</p>
+<p>If each $c _r$ is a constant, then this is a constant coefficient differential operators, and they commute, because differentiation commutes with scalar multiplication.</p>
 
-<ul>
-  <li>For separable equation:</li>
-</ul>
+<h2 id="solving-second-order-equations">Solving second order equations</h2>
 
-\[g (x) \d x - f (t) \d t = 0.\]
+<p>One simple class of equations are</p>
 
-<ul>
-  <li>$(M (t, x), N (t, x)) = (-f (t), g (x)) = \grad (G (x) - F (t))$.</li>
-  <li>For linear equation:</li>
-</ul>
+\[(D - \lambda _1 \,\Id) (D - \lambda _2 \,\Id) u = u'' - (\lambda _1 + \lambda _2) u' + \lambda _1 \lambda _2 u = 0.\]
 
-\[\dx + (p(t) x - q (t)) \dt = 0\]
+<p>Here $\lambda _1, \lambda _2 \in \R$. If we denote $v = (D - \lambda _2 \; \Id) u$, then this can be written as a decoupled system</p>
 
-<ul>
-  <li>$\mu (x, t) = \exp (\int p (t) \dt)$.</li>
-</ul>
+\[\begin{cases}
+	u' - \lambda _2 u = v \\ 
+	v' - \lambda _1 v = 0
+\end{cases}\]
+
+<p>We solve the second first, $v (t) = c _1 e ^{\lambda _1 t}$. Then for the first, integrating factor is</p>
+
+\[\mu (t) = \exp \pth{\int -\lambda _2 \dt } = e ^{-\lambda _2 t}.\]
+
+<p>So</p>
+
+\[e ^{-\lambda _2 t} u (t) = \int c _1 e ^{\lambda _1 t - \lambda _2 t} \d t = \begin{cases}
+		\frac1{\lambda _1 - \lambda _2} c _1 e ^{(\lambda _1 - \lambda _2) t} + c _2 &amp; \lambda _1 \neq \lambda _2 \\
+		c _1 t + c _2 &amp; \lambda _1 = \lambda _2
+	\end{cases}\]
+
+<p>Thus</p>
+
+\[u (t) = \begin{cases}
+		\frac1{\lambda _1 - \lambda _2} c _1 e ^{\lambda _1 t} + c _2 e ^{\lambda _2 t} &amp; \lambda _1 \neq \lambda _2 \\
+		(c _1 t + c _2) e ^{\lambda _2 t} &amp; \lambda _1 = \lambda _2
+	\end{cases}.\]
+
+<p>Here $c _1, c _2$ are arbitrary real numbers. We have thus obtained solutions</p>
 
 \[\begin{align*}
-	(\mu M, \mu N) &amp;= (p (t) \mu (t) x - \mu (t) q (t), \mu (t)) \\
-	&amp;= (\mu' (t) x - \mu (t) q (t), \mu (t)) \\
-	&amp;= \grad \pth{\mu (t) x - \int \mu (t) q (t) \d t}
+	u _1 (t) = e ^{\lambda _1 t}&amp;, u _2 (t) = e ^{\lambda _2 t} &amp; \lambda _1 &amp;\neq \lambda _2 \\
+	u _1 (t) = e ^{\lambda t}&amp;, u _2 (t) = t e ^{\lambda t} &amp; \lambda _1 &amp;= \lambda _2 = \lambda
 \end{align*}\]
 
-<p>In general, the task of finding $\mu$ such that $\mu M = \partial _t G$, $\mu N = \partial _x G$ is not so trivial. If $G$ is twice continuously differentiable, then</p>
+<p>We can verify they are independent by computing the Wronskian at $t = 0$. If $\lambda _1 \neq \lambda _2$, the Wronskian is</p>
 
-\[M \partial _x \mu + \mu \partial _x M = N \partial _t \mu + \mu \partial _t N.\]
+\[W (u _1, u _2) (0) = \left\lvert
+		\begin{matrix}
+			1 &amp; 1 \\
+			\lambda _1 &amp; \lambda _2
+		\end{matrix}
+	\right\rvert = \lambda _2 - \lambda _1 \neq 0.\]
 
-<p>This is a first-order <strong>partial differential equation</strong> and outside the scope of this course (in fact, it is solved by converting it back to ODE).</p>
+<p>If $\lambda _1 = \lambda _2$, the Wronskian is</p>
 
-<p>$\mu$ is also nonunique: if $(\mu M, \mu N) = \grad G$, then for a differentiable, strictly increasing function $\beta: \R \to \R$, $\grad (\beta \circ G) = \beta’ (G) \grad G = (\mu \beta’ (G) M, \mu \beta’ (G) N)$ is also a gradient field, so $\mu \beta’ (G)$ is also an integrating factor. This is because the contours of $G$ and the contours of $\beta (G)$ are the same.</p>
+\[W (u _1, u _2) (0) = \left\lvert
+		\begin{matrix}
+			1 &amp; 0 \\
+			\lambda &amp; 1
+		\end{matrix}
+	\right\rvert = 1 \neq 0.\]
+
+<p>Therefore, we conclude that the general solution to the ODE is $u = C _1 u _1 + C _2 u _2$ for constants $C _1, C _2 \in \R$.</p>
+
+<h2 id="complex-roots">Complex roots</h2>
+
+<p>From the previous discussion, we find that if the ODE can be written as</p>
+
+\[u'' - (\lambda _1 + \lambda _2) u' + \lambda _1 \lambda _2 u = 0\]
+
+<p>then the solutions can be found as above. That is, when $p = -(\lambda _1 +\lambda _2)$, $q = \lambda _1 \lambda _2$. For any $p, q \in \R$, the two $\lambda$’s can be determined by solving the following quadratic algebraic equation:</p>
+
+\[\lambda ^2 + p \lambda + q = 0.\]
+
+<p>This is called the <strong>characteristic equation</strong> of the constant-coefficient ODE. We know that there are three possibilities for the roots:</p>
+
+<ul>
+  <li>Distinct real roots: $\lambda _1 \neq \lambda _2 \in \R$. In this case $u _1 (t) = e ^{\lambda _1 t}$, $u _2 (t) = e ^{\lambda _2 t}$ are independent solutions.</li>
+  <li>Repeated real roots: $\lambda _1 = \lambda _2 = \lambda$. In this case $u _1 (t) = e ^{\lambda t}, u _2 (t) = t e ^{\lambda t}$ are independent solutions.</li>
+  <li>Complex roots: $\lambda _{1, 2} = \alpha \pm i \beta$. What are the solutions for this system?</li>
+</ul>
+
+<p>If we branch out our search, and look for <strong>complex-valued solutions</strong>, then we can easily conclude as the real case that $U _1 = e ^{\lambda _1 t} = e ^{(\alpha + i \beta) t}$, $U _2 = e ^{\lambda _2 t} = e ^{(\alpha - i \beta) t}$ are solutions. Even though we did not discuss the complex-valued ODE or dynamical systems, the uniqueness and existence theories are essentially the same because $\mathbb C ^n$, as a vector space over $\mathbb R$, is linear isomorphic to $\mathbb R ^{2n}$.</p>
+
+<p>How to look for real-valued solutions from these two complex-valued solutions? Well, we have the following lemma.</p>
+
+<blockquote>
+  <p>[!Lemma]
+For a complex-valued solution $U$ to a homogeneous linear equation</p>
+
+\[u'' (t) + p (t) u' (t) + q (t) u (t) = 0\]
+
+  <p>both the real part and the imaginary part are solutions.</p>
+</blockquote>
+
+<blockquote>
+  <p>[!Remark]
+The real part of a complex number $c = \alpha + i \beta$, $\alpha, \beta \in \R$, is $\alpha = \operatorname{Re} c$. The imaginary part is $\beta = \operatorname{Im} c$. In this class, the imaginary part always refers to the imaginary part without the $i$.</p>
+
+</blockquote>
+
+<p>Proof. From the equation, if $U$ is a complex-valued solution, then we can directly verify that $\bar U$ is also a complex-valued solution. Therefore, their linear combinations are solutions because the equation is homogeneous. This means</p>
+
+\[\operatorname{Re} U = \frac12 \pth{U + \bar U}, \qquad \operatorname{Im} U = \frac1{2i} \pth{U - \bar U}\]
+
+<p>are both solutions.</p>
+
+<p>Back to the constant-coefficient case. $U _1 = e ^{(\alpha + i \beta) t}$ and $U _2 = e ^{(\alpha - i \beta) t}$ are two complex-valued solutions, and they are complex conjugate to each other, so they have the same real part and opposite imaginary part. They are:</p>
+
+\[\begin{align*}
+		u _1 = \operatorname{Re} U _1 = \operatorname{Re} e ^{(\alpha + i \beta) t} = e ^{\alpha t} \cos \beta t, \\
+		u _2 = \operatorname{Im} U _2 = \operatorname{Im} e ^{(\alpha + i \beta) t} = e ^{\alpha t} \sin \beta t.
+	\end{align*}\]
+
+<p>Here we used the Euler formula: $e ^{i \theta} = \cos \theta + i \sin \theta$.</p>
+
+<p>Are they linearly independent? Let’s verify.</p>
+
+\[W (u _1, u _2) (t) = \left\lvert
+		\begin{matrix}
+			1 &amp; 0 \\
+			\alpha &amp; -\beta
+		\end{matrix}
+	\right\rvert = -\beta \neq 0.\]
+
+<h2 id="summary">Summary</h2>
+
+<p>In summary, to solve</p>
+
+\[u'' (t) + p u (t) + q u (t) = 0,\]
+
+<p>we need to solve the characteristic equation and find two roots $\lambda _{1, 2}$, and then we can find independent solutions according to the roots:</p>
+
+<ul>
+  <li>Distinct real roots: $\lambda _1 \neq \lambda _2 \in \R$. In this case $u _1 (t) = e ^{\lambda _1 t}$, $u _2 (t) = e ^{\lambda _2 t}$ are independent solutions.</li>
+  <li>Repeated real roots: $\lambda _1 = \lambda _2 = \lambda$. In this case $u _1 (t) = e ^{\lambda t}$, $u _2 (t) = t e ^{\lambda t}$ are independent solutions.</li>
+  <li>Complex roots: $\lambda _{1, 2} = \alpha \pm i \beta$. In this case $u _1 (t) = e ^{\alpha t} \cos \beta t$, $u _2 (t) = e ^{\alpha t} \sin \beta t$ are independent solutions.</li>
+</ul>
 
 
   <script>
