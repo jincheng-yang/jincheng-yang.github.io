@@ -375,11 +375,12 @@ If $\bA$ has $n$ real eigenvalue $\lambda _i$ (repetition is allowed) and $n$ in
 
 <p>The columns of $\bV$ are eigenvectors and generalized eigenvectors. If we label the columns by $i j k$ according to Jordan blocks, where $1 \le i \le I, 1 \le j \le J _i, 1 \le k \le d _{ij}$, then the $ijk$-th column $\bv _{i j k}$ satisfies</p>
 
-<p>\(\bA \bv _{i j k} = \begin{cases} 
+\[\bA \bv _{i j k} = \begin{cases} 
 		\lambda _i \bv _{i j k} &amp; k = 1 \\
 		\lambda _i \bv _{i j k} + \bv _{i j (k - 1)} &amp; k &gt; 1
-	\end{cases}\)
-Therefore $\bv _{i j 1}$ is an eigenvector and $\bv _{i j k}$ for $k &gt; 1$ is a generalized eigenvector.</p>
+	\end{cases}\]
+
+<p>Therefore $\bv _{i j 1}$ is an eigenvector and $\bv _{i j k}$ for $k &gt; 1$ is a generalized eigenvector.</p>
 
 <p>If $\bw$ satisfy $\bw’ (t) = \bJ \bw (t)$, then $\bu (t) = \bV \bw (t)$ satisfy</p>
 
@@ -399,15 +400,16 @@ Therefore $\bv _{i j 1}$ is an eigenvector and $\bv _{i j k}$ for $k &gt; 1$ is 
 
 <blockquote>
   <p>[!Lemma]
-Denote $\lambda = \lambda _i$, $d = d _{i j}$. The fundamental matrix to the above ODE is 
-\(\Phi (t) = e ^{\lambda t} \begin{pmatrix} 
+Denote $\lambda = \lambda _i$, $d = d _{i j}$. The fundamental matrix to the above ODE is</p>
+
+\[\Phi (t) = e ^{\lambda t} \begin{pmatrix} 
 	1 &amp; t &amp; t ^2/2! &amp; t ^3 / 3! &amp; \dots &amp; t ^{d-2}/(d-2)! &amp; t ^{d-1}/(d-1)! \\
 	0 &amp; 1 &amp; t &amp; t ^2/2!  &amp; \dots &amp; t ^{d-3}/(d-3)! &amp; t ^{d-2}/(d-2)! \\
 	0 &amp; 0 &amp; 1 &amp; t &amp; \dots &amp; t ^{d-4}/(d-4)! &amp; t ^{d-3}/(d-3)! \\
 	\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots &amp; \vdots \\
 	0 &amp; 0 &amp; 0 &amp; 0 &amp; \dots &amp; 1 &amp; t \\
 	0 &amp; 0 &amp; 0 &amp; 0 &amp; \dots &amp; 0 &amp; 1
-	\end{pmatrix}\)</p>
+	\end{pmatrix}\]
 </blockquote>
 
 <p>Proof. For simplicity denote $\bw = \bw _{i j}$. Then the above system is written as</p>
