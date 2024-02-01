@@ -147,6 +147,7 @@ $$
 		\lambda _i \bv _{i j k} + \bv _{i j (k - 1)} & k > 1
 	\end{cases}
 $$
+
 Therefore $\bv _{i j 1}$ is an eigenvector and $\bv _{i j k}$ for $k > 1$ is a generalized eigenvector.
 
 If $\bw$ satisfy $\bw' (t) = \bJ \bw (t)$, then $\bu (t) = \bV \bw (t)$ satisfy 
@@ -173,6 +174,7 @@ $$
 
 > [!Lemma]
 > Denote $\lambda = \lambda _i$, $d = d _{i j}$. The fundamental matrix to the above ODE is 
+> 
 > $$
 > 	\Phi (t) = e ^{\lambda t} \begin{pmatrix} 
 > 	1 & t & t ^2/2! & t ^3 / 3! & \dots & t ^{d-2}/(d-2)! & t ^{d-1}/(d-1)! \\
