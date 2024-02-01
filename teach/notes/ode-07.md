@@ -192,9 +192,9 @@ $$
 	W (u _1, u _2) (t) = \left\lvert
 		\begin{matrix}
 			1 & 0 \\
-			\alpha & -\beta
+			\alpha & \beta
 		\end{matrix}
-	\right\rvert = -\beta \neq 0.
+	\right\rvert = \beta \neq 0.
 $$
 
 ## Summary 
@@ -210,3 +210,66 @@ we need to solve the characteristic equation and find two roots $\lambda _{1, 2}
 * Distinct real roots: $\lambda _1 \neq \lambda _2 \in \R$. In this case $u _1 (t) = e ^{\lambda _1 t}$, $u _2 (t) = e ^{\lambda _2 t}$ are independent solutions.
 * Repeated real roots: $\lambda _1 = \lambda _2 = \lambda$. In this case $u _1 (t) = e ^{\lambda t}$, $u _2 (t) = t e ^{\lambda t}$ are independent solutions. 
 * Complex roots: $\lambda _{1, 2} = \alpha \pm i \beta$. In this case $u _1 (t) = e ^{\alpha t} \cos \beta t$, $u _2 (t) = e ^{\alpha t} \sin \beta t$ are independent solutions.
+
+## Nonhomogoeneous case
+
+Recall that the solution to 
+
+$$
+	\begin{cases}
+		u'' (t) + p u ' (t) + q u (t) = r (t) \\
+		u (t _0) = x _0 \\
+		u' (t _0) = x _0'
+	\end{cases}	
+$$
+
+is $u = x _0 \phi _1 + x _0' \phi _2 + \phi _r$, where $\phi _1, \phi _2$ are fundamental solutions, and $\phi _r$ is a solution to 
+
+$$
+	\begin{cases}
+		u'' (t) + p u ' (t) + q u (t) = r (t) \\
+		u (t _0) = 0 \\
+		u' (t _0) = 0
+	\end{cases}	.
+$$
+
+Now, since $u _1, u _2$ are independent solutions, we know $\phi _1 = c _1 u _1 + c _2 u _2$ and $\phi _2 = c _3 u _1 + c _4 u _2$ for some constants $c _1, c _2, c _3, c _4$. These constants can be determined by solving linear systems. What about $\phi _r$? It has the following convolution expression.
+
+> [!Theorem] For nonhomogeneous constant coefficient equation 
+> 
+> $$
+> u'' (t) + p u' (t) + q u (t) = r (t) 
+> $$
+> 
+> $\phi _r$ can be computed by 
+> 
+> $$
+> 	\phi _r (t) = \int _{t _0} ^t \phi _2 (t _0 + t - s) r (s) \d s.
+> $$
+>
+> Recall $\phi _2$ is the second fundamental solution.
+
+Proof. We verify directly.
+
+$$
+\begin{align*}
+	\phi _r ' (t) = \int _{t _0} ^t \phi _2 (t _0 + t - s) r (s) \d s + \phi _2 (t _0 + t - t) r (t) = \int _{t _0} ^t \phi _2 (t _0 + t - s) r (s) \d s .
+\end{align*}
+$$
+
+Here we use $\phi _2 (t _0) = 0$. 
+
+
+$$
+\begin{align*}
+	\phi _r '' (t) = \int _{t _0} ^t \phi _2 '' (t _0 + t - s) r (s) \d s + \phi _2 ' (t _0 + t - t) r (t) = \int _{t _0} ^t \phi _2 ''(t _0 + t - s) r (s) \d s + r (t).
+\end{align*}
+$$
+
+Here we use $\phi _2' (t _0) = 1$. So 
+
+$$
+	(\phi _r '' + p \phi _r ' + q \phi _r) (t) = \int _{t _0} ^t (\phi _2 '' + p \phi _2 ' + q \phi _2) (t _0 + t - s) r (s) \d s + r (t) = r (t).
+$$ 
+
+Here we used $\phi _2$ is a reduced solution so $\phi _2 ^{\prime\prime} + p \phi _2 ^\prime + q \phi _2 = 0$. Moreover, $\phi _r (t _0) = \phi _r' (t _0) = 0$ since they are integrals from $t _0$ to $t _0$.
