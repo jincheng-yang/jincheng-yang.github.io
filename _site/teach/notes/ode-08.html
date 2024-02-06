@@ -425,52 +425,56 @@ Denote $\lambda = \lambda _i$, $d = d _{i j}$. The fundamental matrix to the abo
 
 <p>They are all first order linear equations. Integrating factor for them is all $\mu (t) = \exp (-\lambda t)$. So</p>
 
-\[(\mu (t) w _{i} (t))' = (\mu (t) w _{i + 1} (t)),\]
+\[(\mu (t) w _{l} (t))' = (\mu (t) w _{l + 1} (t)),\]
 
-<p>with $\mu (t) w _{d + 1} (t) := 0$. For the $j$-th fundamental solution, $w (0) = \be _j$ , so $w _{i} (0) = 0$ for $i \neq j$ and $w _j (0) = 1$.  By the above induction:</p>
+<p>with $\mu (t) w _{d + 1} (t) := 0$. For the $k$-th fundamental solution, $w (0) = \be _k$ , so $w _{l} (0) = 0$ for $l \neq k$ and $w _k (0) = 1$.  By the above induction:</p>
 
 \[\begin{align*}
 	\mu (t) w _d (t) &amp;= 0 \\ 
 	\mu (t) w _{d - 1} (t) &amp;= 0 \\
 	 \vdots\\
-	 \mu (t) w _j (t) &amp;= 1 \\
-	 \mu (t) w _{j - 1} &amp;= t \\
-	 \mu (t) w _{j - 2} (t) &amp;= \frac{t ^2}2 \\
+	 \mu (t) w _k (t) &amp;= 1 \\
+	 \mu (t) w _{k - 1} &amp;= t \\
+	 \mu (t) w _{k - 2} (t) &amp;= \frac{t ^2}2 \\
 	 \vdots \\
 	 \mu (t) w _1 (t) &amp;= \frac{t ^{j-1}}{(j-1)!}.
 \end{align*}\]
 
-<p>This is the $j$-th column of the fundamental matrix without $e ^{\lambda t}$.</p>
+<p>This is the $k$-th column of the fundamental matrix without $e ^{\lambda t}$.</p>
 
 <p>To summarize, adding back the subscripts, we get the fundamental solutions to $\bw’ (t) = \bJ \bw (t)$:</p>
 
 \[\bphi _{i j k} (t) = e ^{\lambda _i t} \left(
-		\be _{i j k} + t \be _{i j (k - 1)} + \frac{t ^2}2 \be _{i j (k - 2)} + \dots + \frac{t ^{j - 1}}{(j - 1)!} \be_{i j (k - 1)}
+		\be _{i j k} + t \be _{i j (k - 1)} + \frac{t ^2}2 \be _{i j (k - 2)} + \dots + \frac{t ^{k - 1}}{(k - 1)!} \be_{i j 1}
 	\right).\]
 
 <p>Correspondingly, we get a solution $\bu _{i j k}$ by multiplying $\bV$:</p>
 
 \[\bu _{i j k} = \bV \bphi _{i j k} = e ^{\lambda _i t} \left(
-		\bv _{i j k} + t \bv _{i j (k - 1)} + \frac{t ^2}2 \bv _{i j (k - 2)} + \dots + \frac{t ^{j - 1}}{(j - 1)!} \bv_{i j (k - 1)}
+		\bv _{i j k} + t \bv _{i j (k - 1)} + \frac{t ^2}2 \bv _{i j (k - 2)} + \dots + \frac{t ^{k - 1}}{(k - 1)!} \bv_{i j 1}
 	\right).\]
 
 <p>It is however, possibly complex-valued. In this case, we may take its real part and imaginary parts.</p>
 
 <blockquote>
   <p>[!Proposition]
-Given a matrix $\bA$, we follow the procedure beneath to find the solutions:
-<strong>Step 1</strong>. Find distinct eigenvalues $\lambda _i$ by solving $\det (\lambda \Id - \bA) = 0$. Its multiplicity is $l _i$ (this is called algebraic multiplicity).
-<strong>Step 2</strong>. For each eigenvalue $\lambda _i$, find independent eigenvectors $\bv _{ij1}$ by solving $(\bA - \lambda \Id) \bv _{i j 1} = 0$, $j = 1, \dots, J _i$. ($J _i$ is called geometric multiplicity)
-<strong>Step 3</strong>. For each eigenvector $\bv _{i j 1}$, find independent generalized eigenvectors $\bv _{ijk}$ by solving $(\bA - \lambda \Id) \bv _{i j k} = \bv _{i j (k - 1)}$, $k = 2, 3, \dots, d _{i j}$, iteratively, until no more can be found.
-<strong>Step 4</strong>. The general complex-valued solution of is</p>
+Given a matrix $\bA$, we follow the procedure beneath to find the solutions:</p>
 
-\[\bu (t) = \sum _{i = 1} ^I \sum _{j = 1} ^{J _i} \sum _{k = 1} ^{d _{i j}} c _{i j k} \bu _{i j k}, \qquad c _{i j k} \in \mathbb C.\]
+  <p><strong>Step 1</strong>. Find distinct eigenvalues $\lambda _i$ by solving $\det (\lambda \Id - \bA) = 0$. Its multiplicity is $l _i$ (this is called algebraic multiplicity).</p>
+
+  <p><strong>Step 2</strong>. For each eigenvalue $\lambda _i$, find independent eigenvectors $\bv _{ij1}$ by solving $(\bA - \lambda \Id) \bv _{i j 1} = 0$, $j = 1, \dots, J _i$. ($J _i$ is called geometric multiplicity)</p>
+
+  <p><strong>Step 3</strong>. For each eigenvector $\bv _{i j 1}$, find independent generalized eigenvectors $\bv _{ijk}$ by solving $(\bA - \lambda \Id) \bv _{i j k} = \bv _{i j (k - 1)}$, $k = 2, 3, \dots, d _{i j}$, iteratively, until no more can be found.</p>
+
+  <p><strong>Step 4</strong>. The general complex-valued solution of is</p>
+
+\[\bu (t) = \sum _{i = 1} ^I \sum _{j = 1} ^{J _i} \sum _{k = 1} ^{d _{i j}} c _{i j k} \bu _{i j k}, \qquad c _{i j k} \in \mathbb C,\]
 
   <p>where</p>
 
 \[\bu _{i j k} = e ^{\lambda _i t} \left(
 	\bv _{i j k} + t \bv _{i j (k - 1)} + \frac{t ^2}2 \bv _{i j (k - 2)} + 
-	\dots + \frac{t ^{j - 1}}{(j - 1)!} \bv_{i j (k - 1)}
+	\dots + \frac{t ^{k - 1}}{(k - 1)!} \bv_{i j 1}
 	\right).\]
 
   <p><strong>Step 5</strong>. Take real and imaginary parts if necessary.</p>
