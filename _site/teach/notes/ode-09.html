@@ -412,7 +412,7 @@
 
 <p>Note that $\bf$ is a function of $\bx$ only.</p>
 
-<p>Because $\bf$ does not depend on $t$ directly but only through $\bu$, if we have one solution $\bu (t)$, then for any $s \in \R$, $\bu (t + s)$ is also a solution. That is, the equation has time translation invariance. As a consequence, the flow map</p>
+<p>Because $\bf$ does not depend on $t$ directly but only through $\bu$, if we have one solution $\bu (t)$, then for any $s \in \R$, $\bu (t + s)$ is also a solution. That is, the equation has time translation invariance. As a consequence, if $\bf$ is Lipschitz, the flow map satisfies</p>
 
 \[\Phi (t _1; t _0, \bx _0) = \Phi (t _1 + s; t _0 + s, \bx _0) = \Phi (t _1 - t _0; 0, \bx _0).\]
 
@@ -427,7 +427,7 @@ $\bx _0$ is called a <strong>critical point/equilibrium</strong> of the dynamica
 
 <blockquote>
   <p>[!Lemma]
-If $\bu$ is a solution to an autonomous dynamic system, then either $\bu’ (t) \equiv 0$ for all $t$ or $\bu’ (t) \neq \boldsymbol 0$ at any $t$.</p>
+If $\bu$ is a solution to an autonomous dynamic system and $\bf$ is locally Lipschitz continuous, then either $\bu’ (t) \equiv 0$ for all $t$ or $\bu’ (t) \neq \boldsymbol 0$ at any $t$.</p>
 </blockquote>
 
 <p>We can further weaken the notion of “time” by looking at the “phase space” $\Rd$. Note that the image of a solution is the projection of its graph from $\R \times \Rd$ to $\Rd$. For a solution $\bu$, its graph (which lives in $\R \times \Rd$) is called the trajectory/solution curve, while its image (which lives in $\Rd$) is called the streamline/orbit. If some textbook mixes these two notions, you need to determine what they mean by context.</p>
