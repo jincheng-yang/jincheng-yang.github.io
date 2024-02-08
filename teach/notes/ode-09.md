@@ -173,7 +173,7 @@ $$
 
 Note that $\bf$ is a function of $\bx$ only.
 
-Because $\bf$ does not depend on $t$ directly but only through $\bu$, if we have one solution $\bu (t)$, then for any $s \in \R$, $\bu (t + s)$ is also a solution. That is, the equation has time translation invariance. As a consequence, the flow map
+Because $\bf$ does not depend on $t$ directly but only through $\bu$, if we have one solution $\bu (t)$, then for any $s \in \R$, $\bu (t + s)$ is also a solution. That is, the equation has time translation invariance. As a consequence, if $\bf$ is Lipschitz, the flow map satisfies
 
 $$
 	\Phi (t _1; t _0, \bx _0) = \Phi (t _1 + s; t _0 + s, \bx _0) = \Phi (t _1 - t _0; 0, \bx _0).
@@ -187,7 +187,7 @@ Sometimes we omit the $t _0$ argument if it is zero. Then $\Phi (t; \bx _0) = \b
 By uniqueness, we immediately deduce the following.
 
 > [!Lemma]
-> If $\bu$ is a solution to an autonomous dynamic system, then either $\bu' (t) \equiv 0$ for all $t$ or $\bu' (t) \neq \boldsymbol 0$ at any $t$.
+> If $\bu$ is a solution to an autonomous dynamic system and $\bf$ is locally Lipschitz continuous, then either $\bu' (t) \equiv 0$ for all $t$ or $\bu' (t) \neq \boldsymbol 0$ at any $t$.
 
 We can further weaken the notion of "time" by looking at the "phase space" $\Rd$. Note that the image of a solution is the projection of its graph from $\R \times \Rd$ to $\Rd$. For a solution $\bu$, its graph (which lives in $\R \times \Rd$) is called the trajectory/solution curve, while its image (which lives in $\Rd$) is called the streamline/orbit. If some textbook mixes these two notions, you need to determine what they mean by context. 
 

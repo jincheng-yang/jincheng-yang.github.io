@@ -38,8 +38,7 @@ y
 $\begin{pmatrix}
 a _{11} & a _{12} \\
 a _{21} & a _{22}
-\end{pmatrix} = \bigg($
-<table>
+\end{pmatrix} = \bigg($<table style="display:inline">
 	<tr>
 		<td>
 			<input type="text" id="a11" onchange="updateArgument()" value="1" size="4">
@@ -55,8 +54,7 @@ a _{21} & a _{22}
 			<input type="text" id="a22" onchange="updateArgument()" value="1" size="4">
 		</td>		
 	</tr>
-</table>
-$\bigg).$
+</table>$\bigg).$
 </div> 
 
 #### Bifurcation Diagram
