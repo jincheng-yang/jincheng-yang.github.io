@@ -257,4 +257,4 @@ $$
 	1. If $\tr \bA > 0$, $\alpha > 0$, the origin is called an unstable focal point.
 	2. If $\tr \bA < 0$, $\alpha < 0$, the origin is called a stable focal point.
 	3. If $\tr \bA = 0$, $\alpha = 0$, the origin is called a vortex point.
-	4. If $\beta \det \begin{pmatrix} \bv _{\Re} & \bv _{\Im} \end{pmatrix} > 0$, then it spirals counter-clockwise, otherwise it spirals clockwise.
+	4. If $\beta \det \begin{pmatrix} \bv _{\Re} & \bv _{\Im} \end{pmatrix} > 0$, then it spirals clockwise, otherwise it spirals counter-clockwise.
