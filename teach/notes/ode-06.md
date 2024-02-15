@@ -135,13 +135,13 @@ We usually studies ODE first then IVP, but this time let's return to the IVP.
 > Let $u _p$ be a solution to the ODE
 > 
 > $$
-> u'' (t) + p (t) u ' (t) + q (t) u (t) = r (t)
+> u'' (t) + p (t) u ' (t) + q (t) u (t) = r (t),
 > $$
 > 
 > $u _1, u _2$ be two solutions to the *reduced* ODE
 > 
 > $$
-> u'' (t) + p (t) u ' (t) + q (t) u (t) = r (t)
+> u'' (t) + p (t) u ' (t) + q (t) u (t) = 0.
 > $$
 > 
 > Then for any $c _1, c _2 \in \R$, 
