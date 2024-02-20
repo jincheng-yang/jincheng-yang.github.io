@@ -77,9 +77,7 @@ $$
 	E _0 = \min _{\bx \in \partial B _\e (\bx _0)} E (\bx) > 0.
 $$
 
-As $E (\bx _0) = 0 < E _0$, there exists a $\delta$-neighborhood of $\bx _0$ such that $E (\bx) < E _0$ for all $\bx \in B _\delta (\bx _0)$.
-
-We if $\bu (0) \in B _\delta (\bx _0)$, then $\bu (t) \in B _\e (\bx _0)$ for all $t > 0$ and $\lim _{t \to +\infty} \bu (t) = \bx _0$. This implies $\bx _0$ is attractive and stable, thus strictly stable.
+As $E (\bx _0) = 0 < E _0$, there exists a $\delta _\e$-neighborhood of $\bx _0$ such that $E (\bx) < E _0$ for all $\bx \in B _{\delta _\e} (\bx _0)$. We want to show if $\bu (0) \in B _\delta (\bx _0)$, then $\bu (t) \in B _\e (\bx _0)$ for all $t > 0$ and $\lim _{t \to +\infty} \bu (t) = \bx _0$. This implies $\bx _0$ is attractive and stable, thus strictly stable.
 
 Define $V (t) = E (\bu (t))$. Then by chain rule, $V$ is strictly decreasing. This implies  $V (t) < V (0) = E (\bu (0))  < E _0$. From this we know $\bu (t) \notin \partial B _\e (\bx _0)$ for any $t$, and due to continuity $\bu (t) \in B _\e (\bx _0)$ for all $t$. Therefore, $\bx _0$ is stable.
 
@@ -138,36 +136,36 @@ To make this negative near $\bx _0 = \boldsymbol 0$, we need the symmetric matri
 
 The question becomes: if all eigenvalues of $\bA$ are negative, does there exists a positive definite matrix $\bB$ such that $\bC$ is negative definite? The answer is affirmative, and the proof is purely linear algebra. We take $d = 2$ as an example.
 
-First, note that $\bA = \bV \bJ \bV \inv$. So $\bC = \bB \bA + \bA ^\top \bB$ is equivalent to 
+First, note that for $\bV \in \mm _{n \times n}(\R)$, if $\bA = \bV \bA ^* \bV \inv$, then $\bC = \bB \bA + \bA ^\top \bB$ is equivalent to 
 
 $$
-	\bV ^\top \bC \bV = \bV ^\top \bB \bA \bV + \bV ^\top \bA ^\top \bB \bV = \bV ^\top \bB \bV \bJ + \bJ ^\top \bV ^\top \bB \bV.
+	\bV ^\top \bC \bV = \bV ^\top \bB \bA \bV + \bV ^\top \bA ^\top \bB \bV = \bV ^\top \bB \bV \bA ^* + \bA ^{*\top} \bV ^\top \bB \bV.
 $$
 
-The problem becomes to find positive definite $\bB ^* = \bV ^\top \bB \bV$ and negative definite $\bC ^* = \bV ^\top \bC \bV$ such that $\bC ^* = \bB ^* \bJ + \bJ ^\top \bB ^*$. We can thus without loss of generality, assume $\bV = \Id$ and $\bA = \bJ$.
+The problem becomes to find positive definite $\bB ^* = \bV ^\top \bB \bV$ and negative definite $\bC ^* = \bV ^\top \bC \bV$ such that $\bC ^* = \bB ^* \bA ^* + \bA ^{*\top} \bB ^*$. 
 
-Then there is only a few possibilities: if there are two Jordan blocks, then 
+Then there is only a few possibilities: if $\bA$ has two eigenvalues with two eigenvectors (stable nodal/star), then $\bA = \bV \bJ \bV \inv$ where columns of $\bV$ are eigenvectors and 
 
 $$
-	\bA = \begin{pmatrix}
+	\bA ^* = \bJ = \begin{pmatrix}
 		\lambda _1 & 0 \\
 		0 & \lambda _2
 	\end{pmatrix}, \lambda _1, \lambda _2 < 0
 $$
 
-We can take $\bB = \Id$, then $2 \bC = \bA$ is negative definite. If there is only one Jordan block, than 
+We can take $\bB ^* = \Id$, then $\bC ^* = 2 \bA ^*$ is negative definite. If $\bA$ has one eigenvalue of algebraic multiplicity 2, but there is only one eigenvector(degenerate stable nodal), then $\bA = \bV \bJ \bV \inv$ where columns of $\bV$ are the eigenvector and the generalized eigenvector, and 
 
 $$
-	\bA = \begin{pmatrix}
+	\bA ^* = \bJ = \begin{pmatrix}
 		\lambda & 1 \\
 		0 & \lambda
-	\end{pmatrix}
+	\end{pmatrix}, \lambda < 0.
 $$
 
-We can take $\bB = \begin{pmatrix} 1 & 0 \\ 0 & \mu \end{pmatrix}$ for some $\mu > 0$. Then 
+We can take $\bB ^* = \begin{pmatrix} 1 & 0 \\ 0 & \mu \end{pmatrix}$ for some $\mu > 0$. Then 
 
 $$
-	\bC = \begin{pmatrix} 
+	\bC ^* = \begin{pmatrix} 
 		1 & 0 \\ 
 		0 & \mu 
 	\end{pmatrix} \begin{pmatrix}
@@ -197,7 +195,16 @@ $$
 	\det \bC = 4 \lambda ^2 \mu - 1 > 0 \impliedby \mu > \frac1{4 \lambda ^2}.
 $$
 
-*Therefore*, we take $\mu$ sufficiently large, and the proof is completed.
+Therefore, we take $\mu$ sufficiently large, and the proof is completed. If $\bA$ has a pair of complex eigenvalues, then $\bA = \bV \bA ^* \bV \inv$ where columns of $\bV$ are the real and imaginary part of a complex eigenvector, and 
+
+$$
+	\bA ^* = \begin{pmatrix}
+		\alpha & \beta \\
+		-\beta & \alpha
+	\end{pmatrix}, \alpha < 0.
+$$
+
+We take $\bB ^* = \Id$ again, then $\bC ^* = \bA ^* + \bA ^{*\top} = 2 \alpha\,\Id$ is negative definite.
 
 In fact, not only stability of the nonlinear system is implied by the ones of the linear system, the type of critical points to the planar system is also consistent with the type of critical points to the linearized system.
 
