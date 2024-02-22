@@ -44,7 +44,7 @@ For a dynamical system, other than the question of stability, the most important
 > 
 > The set of all $\omega$-limit point is called the $\omega$-limit set, denoted as $\Omega _{\bx _0}$. The set of all $\alpha$-limit point is called the $\alpha$-limit set, denoted as $A _{\bx _0}$. 
 
-For example, if $\bx _0$ is a critical point, then $\Omega _{\bx _0} = A _{\bx _0} = \{\bx _0\}$. If there is a closed orbit (loop) $\Gamma$ passing $\bx _0$, then $\bu$ is periodic and $\Omega _{\bx _0} = A _{\bx _0} = \Gamma$. If $\lim _{t \to +\infty} \bu (t) = \bx _1$, then  $\Omega _{\bx _0} = A _{\bx _0} = \{\bx _1\}$. It is also possible that an orbit gets closer and closer to a closed orbit.
+For example, if $\bx _0$ is a critical point, then $\Omega _{\bx _0} = A _{\bx _0} = \{\bx _0\}$. If there is a closed orbit (loop) $\Gamma$ passing $\bx _0$, then $\bu$ is periodic and $\Omega _{\bx _0} = A _{\bx _0} = \Gamma$. If $\lim _{t \to +\infty} \bu (t) = \bx _1$, then  $\Omega _{\bx _0} = \{\bx _1\}$. It is also possible that an orbit gets closer and closer to a closed orbit.
 
 > [!Definition]
 > We say a set $B$ is invariant if for every $\bx _0 \in B$, it holds that $L _{\bx _0} \subset B$. 
@@ -109,7 +109,7 @@ Before we present the theorem, we first prove a useful lemma.
 
 Proof. If you know topology, then there is a topological proof (hairy ball theorem). However, we prefer an analysis proof in this class.
 
-We prove by contradiction. Let $\Gamma$ be a closed orbit, which enclose an open set $U$. If $U$ contains no critical point. Then for every $\bx \in U$, $L _{\bx}$ is bounded inside $U$ and thus $\Omega _{\bx}$ is some orbit. Similarly, $A _{\bx}$ is some orbit as well. $\bx$ is trapped between these two distinct (why) orbits. Every point is either on an orbit, or its limit sets are two orbits. Moreover, each orbit must enclose some other orbit. 
+We prove by contradiction. Let $\Gamma$ be a closed orbit, which enclose an open set $U$. If $U$ contains no critical point. Then for every $\bx \in U$, $L _{\bx}$ is bounded inside $U$ and thus $\Omega _{\bx}$ is some orbit. Similarly, $A _{\bx}$ is some orbit as well. Every point is either on an orbit, or its limit sets are two orbits. Moreover, each orbit must enclose some other orbit. 
 
 We can equip the set of orbits a partial order: $\Gamma _1 \le \Gamma _2$ if $\Gamma _1$ is enclosed by $\Gamma _2$. We want to use Zorn's lemma. Indeed, if we have a totally ordered subset, we can also sort them and index them by area. Let $\{\Gamma _t\} _{t \in \mathcal T}$ be a family of orbits that are totally ordered, and let $\Gamma _{t _n}$ be a sequence of orbits that minimizes area. Then we take a sequence $\bx _n \in \Gamma _{t _n}$, which has a converging subsequence to $\bx _\infty$ that is enclosed by all of $\Gamma _{t _n}$, so $\Omega _{\bx _\infty}$ serves as a lower bound. Zorn's lemma asserts the existence of a minimal element, which is a contradiction because each orbits encloses some other orbit.
 
