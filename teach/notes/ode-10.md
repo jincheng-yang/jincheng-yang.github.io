@@ -48,9 +48,9 @@ $$
 
 Proof. If a nonnegative real eigenvalue $\lambda$ exists and there is a corresponding eigenvector $\bv$ of unit length, then $\bu (t) = \frac\delta2 e ^{\lambda t} \bv$ is a solution with $\abs{\bu (0)} < \delta$, but $\lim _{t \to +\infty} \abs{\bu (t)} = \lim _{t \to +\infty} \frac\delta2 e ^{\lambda t} \neq 0$. If a complex eigenvalue $\lambda = \alpha + i \beta$ has nonnegative real part $\alpha \ge 0$, and there is a corresponding unit complex eigenvector $\bv = \bv _{\Re} + i \bv _{\Im}$ (that is, $\abs{\bv} ^2 = \abs{\bv _\Re} ^2 + \abs{\bv _{\Im}} ^2 = 1$), then $\bu (t) = \frac\delta2 e ^{\alpha t} (\cos (\beta t) \bv _{\Re} - \sin (\beta t) \bv _{\Im})$ does not converge to zero as $t \to +\infty$. If all eigenvalue has negative real parts $\alpha < 0$, then we have independent solutions that are $e ^{\alpha t} O (t ^d)$ as $t \to +\infty$, where the $O (t ^d)$ part is a combination of sine, cosine, and polynomials. So each independent solution converges to zero exponentially, thus their linear combinations also converges to zero exponentially. The stability follow from the fact that $e ^{\alpha t} t ^d$ is a bounded function for $t \in [0, \infty)$ when $\alpha$ has negative real part.
 
-## Lyapunov functional
+## Lyapunov function
 
-How to decide if a critical point is stable or attractive? We can use Lyapunov functional. 
+How to decide if a critical point is stable or attractive? We can use Lyapunov function. 
 
 Let $R > 0$. A Lyapunov function $E: B _R (\bx _0) \subset \Rd \to \R$ for a critical point $\bx _0$ to the autonomous system $\bu' (t) = \bf (\bu (t))$ is a differentiable function that assumes its global minimum at $\bx _0$ and satisfies 
 
@@ -142,7 +142,7 @@ $$
 	\bV ^\top \bC \bV = \bV ^\top \bB \bA \bV + \bV ^\top \bA ^\top \bB \bV = \bV ^\top \bB \bV \bA ^* + \bA ^{*\top} \bV ^\top \bB \bV.
 $$
 
-The problem becomes to find positive definite $\bB ^* = \bV ^\top \bB \bV$ and negative definite $\bC ^* = \bV ^\top \bC \bV$ such that $\bC ^* = \bB ^* \bA ^* + \bA ^{*\top} \bB ^*$. 
+The problem becomes to find positive definite $\bB ^* = \bV ^\top \bB \bV$ and negative definite $\bC ^* = \bV ^\top \bC \bV$ such that $\bC ^\ast = \bB ^\ast \bA ^\ast + \bA ^{\ast\top} \bB ^\ast$. 
 
 Then there is only a few possibilities: if $\bA$ has two eigenvalues with two eigenvectors (stable nodal/star), then $\bA = \bV \bJ \bV \inv$ where columns of $\bV$ are eigenvectors and 
 
