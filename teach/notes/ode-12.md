@@ -157,3 +157,60 @@ $$
 $$
 
 If $\int _{0} ^{2 \pi} \partial _r \phi (1, s) \d s > 0$ then $r (2 \pi) > r (0)$, so the limit cycle is unstable. If $\int _{0} ^{2 \pi} \partial _r \phi (1, s) \d s < 0$ then the limit cycle is stable. If $\int _{0} ^{2 \pi} \partial _r \phi (1, s) \d s = 0$, then it is hard to tell unless we investigate higher derivatives.
+
+Now, suppose the system 
+
+$$
+	\bu' (t) = \bf (\bu (t))
+$$
+
+has a periodic solution $\bu _{\Gamma} (t)$, whose period is $T$ and image is a closed orbit $\Gamma$. Moreover, for $\bx = \bu _{\Gamma} (t)$, denote $\boldsymbol n (t) = \boldsymbol n _{\boldsymbol x}$ to be the normal vector of $\Gamma$ at $\bx$. It is computed by 
+
+$$
+	\boldsymbol n (t) = \frac{\bu' _{\Gamma}  (t) ^\perp}{\abs{\bu' _{\Gamma}  (t)}} = \frac{\bf (\bu_{\Gamma}  (t)) ^\perp}{\abs{\bf (\bu_{\Gamma}  (t))}}.
+$$
+
+Let $\bu (t) = \bu _{\Gamma} (t) + z (t) \boldsymbol n (t)$. Then 
+
+$$
+	\bu' (t) = \bu _{\Gamma}' (t) + z' (t) \boldsymbol n (t) + z (t) \boldsymbol n' (t).
+$$
+
+where 
+
+$$
+	\bu' (t) = \bf (\bu (t)) = \bf (\bu _{\Gamma} (t) + z (t) \boldsymbol n (t)) = \bf (\bu _{\Gamma} (t)) + \nabla f (\bu _{\Gamma} (t)) \boldsymbol n (t) z (t) + o (\abs{z (t)}),
+$$
+
+and $\boldsymbol n' (t) \perp \boldsymbol n (t)$. Taking the dot product with $\boldsymbol n (t)$, we have
+
+$$
+	z' (t) = \boldsymbol n (t) ^\top \nabla \bf (\bu _{\Gamma} (t)) \boldsymbol n (t) z (t) + o (\abs{z (t)}).
+$$
+
+Same as before, by Grönwall we can show that $\Gamma$ is a stable/unstable limit cycle if the following integral is negative/positive:
+
+$$
+	I = \int _0 ^T \boldsymbol n (t) ^\top \nabla \bf (\bu _{\Gamma} (t)) \boldsymbol n (t) \d t.
+$$
+
+Note that for $\boldsymbol \ell (t) = \dfrac{\bu' _{\Gamma}  (t)}{\abs{\bu' _{\Gamma}  (t)}}$, it holds that 
+                    
+$$
+	\int _0 ^T \boldsymbol \ell (t) ^\top \nabla \bf (\bu _{\Gamma} (t)) \boldsymbol \ell (t) \d t = \int _{0} ^T \frac{\nabla \bf (\bu _\Gamma (t))}{\abs{\bf (\bu _{\Gamma} (t))} ^2} \bf (\bu _\Gamma (t)) \cdot \bu' _{\Gamma} (t) \d t = \oint _{\Gamma} \grad \log \abs{\bf (\bx)} \cdot \d \ell = 0.
+$$
+
+Here we made the assumption that $\bf$ does not vanish, which is true on $\Gamma$. Hence 
+
+$$
+	I = \int _0 ^T \operatorname{div} \bf (\bu (t)) \d t.
+$$
+
+> [!Lemma]
+> Let $\bu$ be a periodic solution to $\bu' (t) = \bf (\bu (t))$ of period $T$, and let $\Gamma$ be its trajectory. Define
+> 
+> $$
+> 	I = \int _0 ^T \div \bf (\bu (t)) \d t.
+> $$
+> 
+> If $I > 0$ then $\Gamma$ is an unstable limit cycle. If $I < 0$ then $\Gamma$ is a stable limit cycle. Whenever $I \neq 0$, $\Gamma$ is called a hyperbolic limit cycle.

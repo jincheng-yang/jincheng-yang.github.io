@@ -98,7 +98,7 @@ Combine this two, we have the following proposition.
 > 
 > 1. $\Omega _{\bx _0} = \set{\bx _\ast}$. In this case either $L _{\bx _0} = \set{\bx _\ast}$ or $L _{\bx _0} \cap \Omega _{\bx _0} = \varnothing$.
 > 2. $\Omega _{\bx _0} = \Gamma$ is a closed orbit. In this case either $L _{\bx _0} = \Gamma$ or $L _{\bx _0} \cap \Omega _{\bx _0} = \varnothing$.
-> 3. $\Omega _{\bx _0}$ is a union of $\bx _0$ and open orbits in $D$ whose $\alpha$- and $\omega$-limit sets are all $\{\bx _0\}$. In this case $L _{\bx _0} \cap \Omega _{\bx _0} = \varnothing$.
+> 3. $\Omega _{\bx _0}$ is a union of $\bx _\ast$ and open orbits in $D$ whose $\alpha$- and $\omega$-limit sets are all $\{\bx _\ast\}$. In this case $L _{\bx _0} \cap \Omega _{\bx _0} = \varnothing$.
 
 ## Poincaré-Bendixson Theorem 
 
