@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ode-12.md",
+                "file": "ode-01.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6d9312d282b37005",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ode-10.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ode-12.md",
+                "file": "ode-10.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ode-12.md",
+                "file": "ode-10.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ode-12.md"
+                "file": "ode-10.md"
               }
             }
           }
@@ -146,25 +159,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5c82d6dd483763ac",
+  "active": "6d9312d282b37005",
   "lastOpenFiles": [
-    "ode-11.md",
+    "index.md",
+    "ode-02.md",
+    "ode-01.md",
+    "ode-13.md",
+    "poincare.png",
     "ode-12.md",
+    "ode-11.md",
     "ode-10.md",
     "ode-09.md",
     "ode-08.md",
     "ode-07.md",
-    "Untitled.md",
     "ode-06.md",
     "ode-06 copy.md",
     "ode-05.md",
     "ode-05 copy.md",
     "ode-04.md",
     "ode-03.md",
-    "ode-02.md",
     "ode-04 copy.md",
     "preamble~.sty",
-    "ode-01.md",
     "preamble.sty"
   ]
 }

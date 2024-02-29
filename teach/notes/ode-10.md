@@ -1,6 +1,6 @@
 ---
 layout: note
-title: "Lecture 10: critical points"
+title: "Lecture 10: Critical points"
 use-math: true
 ---
 
