@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ode-10.md",
+                "file": "ode-12.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ode-10.md",
+                "file": "ode-12.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ode-10.md",
+                "file": "ode-12.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ode-10.md"
+                "file": "ode-12.md"
               }
             }
           }
@@ -161,6 +161,7 @@
   },
   "active": "6d9312d282b37005",
   "lastOpenFiles": [
+    "ode-10.md",
     "index.md",
     "ode-02.md",
     "ode-01.md",
@@ -168,7 +169,6 @@
     "poincare.png",
     "ode-12.md",
     "ode-11.md",
-    "ode-10.md",
     "ode-09.md",
     "ode-08.md",
     "ode-07.md",
