@@ -1,11 +1,17 @@
 
-\cvitem{2023}
+\cvitem{2024}
 {Luhao Zhang, Jincheng Yang, and Rui Gao.
 \newblock Optimal robust policy for feature-based newsvendor.
-\newblock {\em Management Science}, 2023.
-\newblock Forthcoming.
+\newblock {\em Management Science}, 70(4):2315--2329, 2024.
 }
 \cvitem{}
+{Alexis~F. Vasseur and Jincheng Yang.
+\newblock Layer separation of the 3{D} incompressible {N}avier--{S}tokes
+  equation in a bounded domain.
+\newblock {\em Comm. Part. Diff. Equat.}, 2024.
+\newblock Forthcoming.
+}
+\cvitem{2023}
 {Jincheng Yang.
 \newblock Vorticity interior trace estimates and higher derivative estimates
   via blow-up method.
@@ -13,14 +19,8 @@
 }
 \cvitem{}
 {Alexis~F. Vasseur and Jincheng Yang.
-\newblock Layer separation of the 3{D} incompressible {N}avier-{S}tokes
-  equation in a bounded domain.
-\newblock {\em arXiv e-prints}, page arXiv:2303.05236, 2023.
-}
-\cvitem{}
-{Alexis~F. Vasseur and Jincheng Yang.
-\newblock Boundary vorticity estimates for {N}avier-{S}tokes and application to
-  the inviscid limit.
+\newblock Boundary vorticity estimates for {N}avier--{S}tokes and application
+  to the inviscid limit.
 \newblock {\em SIAM J. Math Anal.}, 55(4):3081--3107, 2023.
 }
 \cvitem{2022}

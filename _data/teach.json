@@ -96,6 +96,18 @@
     ], 
     "DRP": [
         {
+            "Name": "Dante Strollo and Jakob Wellington",
+            "Topic": "on the topic of Fourier Analysis",
+            "Season": "Spring",
+            "Year": "2024"
+        },
+        {
+            "Name": "Ariana Qin",
+            "Topic": "on the topic of Optimal Control Theory",
+            "Season": "Spring",
+            "Year": "2024"
+        },
+        {
             "Name": "Kyle Alkire",
             "Topic": "on the topic of Schauder Theory in Elliptic Equations",
             "Season": "Fall",
