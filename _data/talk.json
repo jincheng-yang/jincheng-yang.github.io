@@ -8,12 +8,21 @@
             "Abstract": ""
         },
         {
-            "Title": "",
+            "Title": "Vorticity interior trace estimates and higher derivative estimates via blow-up method",
             "Date": "2024-03-23",
             "Location": "Florida State University",
             "Series": "AMS Spring Southeastern Sectional Meeting",
-            "Abstract": "",
+            "Type": "invited",
+            "Abstract": "We derive several nonlinear a priori trace estimates for the 3D incompressible Navier-Stokes equation, which extend the current picture of higher derivative estimates in the mixed norm. The main ingredient is the blow-up method and a novel averaging operator, which could apply to PDEs with scaling invariance and -regularity, possibly with a drift.",
             "Session": "PDEs in Incompressible Fluid Mechanics"
+        },
+        {
+            "Title": "Layer separation and energy dissipation for 3D NSE at high Reynolds number",
+            "Date": "2024-02-19",
+            "Location": "Johns Hopkins University (zoom talk)",
+            "Series": "Simons Turbulence Seminar",
+            "Type": "invited",
+            "Abstract": "In this talk, we consider the 3D incompressible Navier-Stokes equation in a bounded domain, with a canonical example of Poiseuille flow in mind. We provide an unconditional upper bound for the boundary layer separation and energy dissipation of Leray–Hopf weak solutions, uniformly in high Reynolds numbers. We estimate layer separation by measuring the energy norm of the discrepancy between a (turbulent) low-viscosity Leray–Hopf solution and a fixed (laminar) regular Euler solution with similar initial conditions and body force. This is accomplished by a new nonlinear boundary vorticity estimate."
         },
         {
             "Title": "Higher regularity and trace estimates for Navier-Stokes equation",

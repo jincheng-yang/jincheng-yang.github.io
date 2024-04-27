@@ -2,7 +2,7 @@
 layout: post
 title: "Phase Portriat"
 date: 2019-10-31
-comments: true
+comments: false
 image: false
 ---
 
