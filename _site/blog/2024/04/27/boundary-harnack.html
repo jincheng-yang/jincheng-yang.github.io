@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Boundary Harnack inequality</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/~yang/css/grid.css">
+		<!-- link to fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Exo:300,600|Roboto:400|Roboto+Condensed:300|Dancing+Script:400|PT+Serif:400,400i|Palanquin+Dark:400|Noto+Serif:400,400i" rel="stylesheet">
+		<!-- JavaScrips -->
+		<script type="text/javascript" src="/~yang/plugin/drag-and-drop.js"></script>
+		
+			<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      },
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+    },
+    jax: ["input/TeX", "output/CommonHTML"]
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS_CHTML">
+</script>
+
+		
+		
+			<script src="https://d3js.org/d3.v4.min.js"></script>
+		
+
+		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108717380-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-108717380-1');
+		</script>
+	</head>
+
+	<body>
+
+		<canvas id="myCanvas" width="1000" height="360" >
+			Your browser does not support the canvas element.
+		</canvas>
+
+		<div id="mt">
+			<p id="name">Jincheng Yang</p>
+			<p id="institute">The University of Chicago</p>
+		</div>
+
+		<nav>
+			<div id="nav-container">
+
+				<div class = "dropdown-block" id = "academic-dropdown-block">
+					<a href="/~yang/academic" ondrop="drop(event)" ondragover="allowDrop(event)" id="academic">Academic &#9662;</a>
+	
+					<div class= "dropdown" id="academic-dropdown">
+						<a class = "dropdown-first" href="/~yang/academic#publications">Publications</a>
+						<a href="/~yang/academic#talks">Talks</a>
+						<a href="/~yang/academic#blog">Blog</a>
+						<a class = "dropdown-last" href="/~yang/academic#conferences">Conferences</a>
+					</div>
+				</div>
+
+				<a href="/~yang/cv" ondrop="drop(event)" ondragover="allowDrop(event)" id="cv">Curriculum Vitae</a>
+				
+				<a id = "icon" href="/~yang/" draggable="true" ondragstart="drag(event)" title="Home Page"></a>
+
+				<a href="/~yang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="teaching">Teaching</a>
+
+				<a href="/~yang/music" ondrop="drop(event)" ondragover="allowDrop(event)" id="music">Music</a>
+
+				<div class = "dropdown-block" id = "menu-dropdown-block">
+					<a href="#" id="menu">Menu &#9662;</a>
+	
+					<div class= "dropdown" id="menu-dropdown">
+						<a class="dropdown-first" href="/~yang/academic">Academic</a>
+						<a href="/~yang/cv">Curriculum Vitae</a>
+						<a href="/~yang/academic#publications">Publications</a>
+						<a href="/~yang/teach">Teaching</a>
+						<a class="dropdown-last" href="/~yang/music">Music</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div>
+	<div class="content">
+		
+  <div style="display:none">
+    
+    %--Paired Delimiters--
+    $
+    \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\ang}[1]{\left\langle #1 \right\rangle}
+    \newcommand{\bkt}[1]{\left\lbrack #1 \right\rbrack}
+    \newcommand{\nor}[1]{\left\lVert #1 \right\rVert}
+    \newcommand{\pth}[1]{\left( #1 \right)}
+    \newcommand{\set}[1]{\left\lbrace #1 \right\rbrace}
+    \newcommand{\abset}[1]{\abs{\set{#1}}}
+    \newcommand{\ptset}[1]{\pth{\set{#1}}}
+    $
+
+    %--Operators--
+    $
+    \newcommand{\grad}{\nabla}
+    \newcommand{\La}{\Delta}
+    \renewcommand{\div}{\operatorname{div}}
+    \newcommand{\curl}{\operatorname{curl}}
+    \newcommand{\tr}{\operatorname{tr}}
+    \newcommand{\Hess}{\operatorname{Hess}}
+    \newcommand{\mm}{\mathcal{M}}
+    \newcommand{\inv}{^{-1}}
+    \newcommand{\tensor}{\otimes}
+    \newcommand{\cross}{\times}
+    \newcommand{\weak}[1]{\xrightharpoonup{#1}}
+    $
+
+    %--Notations--
+    $
+    \newcommand{\Vol}{\mathrm{Vol}}
+    \newcommand{\loc}{\mathrm{loc}}
+    \renewcommand{\dim}{\mathrm{dim}}
+    \newcommand{\Span}{\mathrm{Span}}
+    \newcommand{\diam}{\mathrm{diam}}
+    \newcommand{\Id}{\mathrm{Id}}
+    \newcommand{\Lip}{\mathrm{Lip}}
+    \newcommand{\dist}{\mathrm{dist}}
+    \newcommand{\inv}{^{-1}}
+    $
+
+    %--Algebra--
+    $
+    \newcommand{\hfsq}[1]{\frac{\abs{#1} ^2}{2}}
+    $
+
+    %--Sets--
+    $
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\RR}[1]{\R ^{#1}}
+    \newcommand{\Rd}{\RR d}
+    \newcommand{\Rn}{\RR n}
+    \renewcommand{\S}{\mathbb{S}}
+    \renewcommand{\Z}{\mathbb{Z}}
+    \newcommand{\T}{\mathbb{T}}
+    \newcommand{\ssubset}{\subset \subset}
+    \newcommand{\spt}{\operatorname{spt}}
+    \newcommand{\supp}{\operatorname{supp}}
+    \newcommand{\diam}{\mathrm{diam}}
+    \newcommand{\diag}{\operatorname{diag}}
+    \renewcommand{\dim}{\mathrm{dim}}
+    \newcommand{\dimH}{\mathrm{dim} _\mathcal{H}}
+    \newcommand{\Sing}{\mathrm{Sing}}
+    \newcommand{\Vol}{\mathrm{Vol}}
+    \newcommand{\inds}[1]{\mathbf1_{\set{#1}}}
+    \newcommand{\ind}[1]{\mathbf1_{#1}}
+    $
+    
+    %--Summations--
+    $
+    \newcommand{\SUM}[3]{\sum \cnt{#1}{#2}{#3}}
+    \newcommand{\PROD}[3]{\prod \cnt{#1}{#2}{#3}}
+    \newcommand{\cnt}[3]{ _{#1 = #2} ^{#3} }
+    \newcommand{\seq}[2]{\set{#1 _{#2}} _{#2}}
+    \newcommand{\seqi}[2]{\set{#1 _{#2}} \cnt{#2}1i}
+    $
+
+    %--Superscript and Subscript
+    $
+    \newcommand{\pp}[1]{^{(#1)}}
+    \newcommand{\bp}[1]{_{(#1)}}
+    \newcommand{\pps}[2][1]{^{#2 + #1}}
+    \newcommand{\bps}[2][1]{_{#2 + #1}}
+    \newcommand{\pms}[2][1]{^{#2 - #1}}
+    \newcommand{\bms}[2][1]{_{#2 - #1}}
+    $
+
+
+    %--Notations--
+    $
+    \newcommand{\loc}{\mathrm{loc}}
+    \newcommand{\Span}{\operatorname{Span}}
+    \newcommand{\argmin}{\operatorname{argmin}}
+    \newcommand{\argmax}{\operatorname{argmax}}
+    \newcommand{\osc}{\operatorname{osc}}
+    \newcommand{\Id}{\mathrm{Id}}
+    \newcommand{\Lip}{\operatorname{Lip}}
+    \newcommand{\Leb}{\operatorname{Leb}}
+    \newcommand{\PV}{\mathrm{P.V.}}
+    \newcommand{\dist}{\operatorname{dist}}
+    \newcommand{\at}[1]{\bigr\rvert _{#1}}
+    \newcommand{\At}[1]{\biggr\rvert _{#1}}
+    \newcommand{\half}{\frac12}
+    $
+
+
+    %--Text--
+    $
+    \newcommand{\inn}{\text{ in }}
+    \newcommand{\onn}{\text{ on }}
+    \renewcommand{\ae}{\text{ a.e. }}
+    \newcommand{\st}{\text{ s.t. }}
+    \newcommand{\forr}{\text{ for }}
+    \newcommand{\as}{\text{ as }}
+    $
+
+    %--Differential--
+    $
+    \newcommand{\d}{\mathop{\kern0pt\mathrm{d}}\!{}}
+    \newcommand{\dt}{\d t}
+    \newcommand{\dx}{\d x}
+    \newcommand{\dy}{\d y}
+    \newcommand{\ptil}{\partial}
+    \newcommand{\pt}{\ptil _t}
+    \newcommand{\pfr}[2]{\frac{\partial #1}{\partial #2}}
+    \newcommand{\dfr}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+    \newcommand{\ddt}{\dfr{}t}
+    \newcommand{\pthf}[2]{\pth{\frac{#1}{#2}}}
+    $
+    
+    %--Integral--
+    $
+    \newcommand{\intR}{\int _0 ^\infty}
+    \newcommand{\intRn}{\int _{\Rn}}
+    \newcommand{\intRd}{\int _{\Rd}}
+    \newcommand{\fint}{-\!\!\!\!\!\!\int}
+    \newcommand{\intset}[1]{\int _{\set{#1}}}
+    $
+
+    %--Greek--
+    $
+    \newcommand{\e}{\varepsilon}
+    \newcommand{\vp}{\varphi}
+    $
+
+    %--Norm--
+    $
+    \newcommand{\nmL}[2]{\nor{#2} _{L ^#1}}
+    $
+  </div>
+
+
+
+
+<h1>Research Blog</h1>
+
+<div class="post">
+
+<h2>Boundary Harnack inequality</h2>
+
+<p class="meta">2024, April 27</p>
+
+  <p>Let $e = (1, 0, \dots, 0)$. Consider a function $u$ satisfying</p>
+
+\[\begin{cases}
+	\La u = 0 &amp; \inn \Omega \cap B _2 \\
+	u \ge 0 &amp; \inn \Omega \cap B _2 \\
+	u = 0 &amp; \onn \partial \Omega \cap B _2
+\end{cases}\]
+
+<blockquote>
+  <p>[!Theorem]
+If $u, v$ satisfies above then</p>
+  <ul>
+    <li>
+\[\max _{\Omega \cap B _1} u \le C u (e)\]
+    </li>
+    <li>
+\[\sup _{\Omega \cap B _1} \frac uv \le C \frac{u(e)}{v(e)}\]
+    </li>
+    <li>
+\[\left[\frac uv\right] _{C ^\alpha (\Omega \cap B _1)} \le C \frac{u (e)}{v (e)}\]
+    </li>
+  </ul>
+</blockquote>
+
+<p>Recall that:</p>
+
+<ol>
+  <li>Interior Harnack inequality: if $x$ can be connected to $e$ by a chain of $N$ balls, then $u(x) \le C ^N u (e)$.</li>
+  <li>Therefore, if the boundary is Lipschitz (or more generally called nontangentially accessible domains) then $c d (x) ^q u (e) \le u (x) \le C d (x) ^{-q} u (e)$. Here $d (x) = d (x, \partial \Omega)$</li>
+  <li>Zero extension is subharmonic, for which weak Harnack inequality holds: if $\La u \ge 0$ in $B _1$, $u \le 1$ in $B _1$, $\abs{\set{u \le 0} \cap B _1} \ge \mu &gt; 0$ then $\max _{B _\frac12} u \le 1- \theta$. $\theta$ can becomes large (close to 1) if $\mu$ is close to $\abs{B _1}$.</li>
+  <li>Weak Harnack inequality means: if $\La u \ge 0$ in $B _1$, $u (x) \ge 1$ at some $x \in B _\frac12$, $\abs{\set{u \le 0} \cap B _1} \ge \mu &gt; 0$, then $\max _{B _\frac12} u \ge 1 + \theta$.</li>
+</ol>
+
+<h3 id="proof-of-1">Proof of 1.</h3>
+
+<p>If it fails, then for arbitrarily large $A$ we can find $x _1 \in \Omega \cap B _1$ with $u (x _1) &gt; A$.</p>
+
+<ul>
+  <li>$x _1$ must be $\delta$-close to $\partial \Omega$, otherwise we can use regular Harnack</li>
+  <li>by weak Harnack, there exists $x _2$ with $d(x _1, x _2) \le 2 d (x _1)$ such that $u (x _2) \ge (1 + \theta) u (x _1)$. Reason: take $r = d (x _1)$. Then $B _{2 r} (x _1)$ has a lot of zeros.</li>
+  <li>Then $d (x _2) \le 3 d (x _1)$. We can find $x _3$ such that $d (x _2, x _3) \le 2 d (x _2)$, and $u (x _3) \ge u (x _2) (1 + \theta) ^2$.</li>
+</ul>
+
+<p>Then</p>
+
+\[C d (x _j) ^{-q} u (e) \ge u (x _j) \ge u (x _1) (1 + \theta) ^j \ge A (1 + \theta) ^j.\]
+
+<p>So $d (x _j) ^q \le \pthf{C u (e)}A (1 + \theta) ^{-j} \to 0$. Then $u (x _j) \to 0$, contradicting to $u (x _j) \ge A$.</p>
+
+<h3 id="proof-of-2">Proof of 2.</h3>
+
+<p>First we show the lemma.</p>
+
+<blockquote>
+  <p>[!Lemma] 
+There exists $\delta, \varepsilon &gt; 0$. If</p>
+
+\[\begin{cases}
+	\La u = 0 &amp; \inn \Omega \cap B _1 \\
+	u \ge 1 &amp; \inn \Omega _\delta \cap B _1 \\
+	u \ge -\varepsilon &amp; \inn \Omega \cap B _1 \\
+	u = 0 &amp; \onn \partial \Omega \cap B _1
+\end{cases}\]
+
+  <p>then $u \ge 0$ in $\Omega \cap B _{\frac12}$.</p>
+</blockquote>
+
+<p>From Lemma to 2: WLOG $u (e) = v (e)$ and $u, v \le 1$ in $B _2$. Apply to $u - \varepsilon _0 v$. Regular Harnack implies $u - \varepsilon _0 v \ge c$.</p>
+
+<blockquote>
+  <p>[!Lelemmamma]
+There exists $\delta, a &gt; 0$. If</p>
+
+\[\begin{cases}
+	\La u = 0 &amp; \inn \Omega \cap B _1 \\
+	u \ge 1 &amp; \inn \Omega _\delta \cap B _1 \\
+	u \ge -\varepsilon &amp; \inn \Omega \cap B _1 \\
+	u = 0 &amp; \onn \partial \Omega \cap B _1
+\end{cases}\]
+
+  <p>then $u \ge a$ in $\Omega _{\frac\delta2} \cap B _{\frac12}$, and $u \ge -a \varepsilon$ in $\Omega \cap B _\frac12$.</p>
+</blockquote>
+
+<p>Lemma is an extreme version of Lelemmamma with $a = 0$.</p>
+
+<p>From Lelemmamma to Lemma: Iterate it to get a cone of positivity, which is the union $\Omega _{\delta / 2 ^k} \cap B _{2 ^{-k}}$.</p>
+
+<p><em>Proof of Lelemmamma</em>. Let $v = u + \varepsilon _0$. $v \ge 0$ and $v \ge 1$ in $\Omega _\delta \cap B _\frac12$. So using Harnack <em>once</em> we can get $v \ge 2 a$ in $\Omega _{\delta/2} \cap B _\frac12$. 
+Apply weak Harnack inequality to $u _- = \max (0, -u)$. 
+Recall the $\theta$ can be large: $\max _{B _\frac12} u _- \le C \nor{u _-} _{L ^1 (B _1)}$. 
+Since $u _-$ is only nonzero in $\Omega \setminus \Omega _\delta$, it is a thin strip with very little measure.</p>
+
+<h3 id="proof-of-3">Proof of 3.</h3>
+
+<p>Harnack inequality implies oscillation decay, which implies Hölder.</p>
+
+<p>By part 2, $\frac1A \le \frac uv \le A$ in $B _1$. So</p>
+
+\[\frac1A u \le v \le A u.\]
+
+<p>Now $A u - v$ and $A v - u$ are both harmonic and nonnegative in $B _1$ and vanish on $\partial \Omega$, so by boundary Harnack</p>
+
+\[\frac1C \le \frac{A u - v}{A v - u} \le C \qquad \text{ in } B _{\frac12} \cap \Omega.\]
+
+<p>So</p>
+
+\[\frac{C + A}{C + \frac1A} \cdot \frac1A u \le \frac{A + C}{A C + 1} u \le v \le \frac{A C + 1}{A + C} u = \frac{C + \frac1A}{C + A} \cdot A u.\]
+
+<p>We have oscillation decay!</p>
+
+
+  <script>
+    var blockquotes = document.getElementsByTagName("blockquote");
+    for (var i = 0; i < blockquotes.length; i++) {
+      var bq = blockquotes[i];
+      content = bq.children[0].innerHTML;
+
+      var pattern = /^\[\!(\w+)\]/; // Regular expression pattern
+      if (pattern.test(content)) {
+        var match = content.match(pattern); // Extract the word and text
+        var word = match[1]; // Extracted word
+        bq.children[0].innerHTML = content.replace(pattern, ""); 
+        bq.children[0].innerHTML = "<b>" + word + ".</b> " + bq.children[0].innerHTML;
+      }
+    }
+  </script>
+
+  
+  <script>
+    var thms = d3.selectAll("[theorem]")._groups[0];
+    for (var thm of thms) {
+      var oldHTML = thm.innerHTML;
+      var theoremTitle = "<b>" + thm.getAttribute("theorem") + ".</b>";
+      var newHTML = "<blockquote><p>" + theoremTitle + oldHTML + "</blockquote></p>";
+      thm.innerHTML = newHTML;
+    }
+  </script>
+  
+
+  
+    <div id="disqus_thread"></div>
+    <script>
+
+      /**
+      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      
+      var disqus_config = function () {
+        this.page.url = "https://teddyyjc.github.io/" + "/blog/2024/04/27/boundary-harnack";  // Replace PAGE_URL with your page's canonical URL variable
+        console.log(this.page.url);
+        this.page.identifier = "/blog/2024/04/27/boundary-harnack"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+
+      (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://jcyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+  
+  <h3>Recent <a href="/~yang/academic/#blog" style="color:#526d6d">Posts</a></h3>
+    
+    <!-- 
+    
+    
+    <div class="thumb">
+      
+    
+    <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/jensen.svg')"></div>
+    </a>
+    <h5>05 Feb 2021</h5>
+    <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
+      <h4>Jensen's Approximation</h4>
+    </a>
+    </div><div class="thumb" style="margin-left:5%">
+    
+    <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/isoperimetric.png')"></div>
+    </a>
+    <h5>22 Jan 2021</h5>
+    <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
+      <h4>De Giorgi</h4>
+    </a>
+    </div><div class="thumb" style="margin-left:5%">
+    
+    <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
+    <div class="thumbpic" style="background-color:white;background-image:url('/~yang/assets/images/thumbnails/lorentz.svg')"></div>
+    </a>
+    <h5>14 Apr 2020</h5>
+    <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
+      <h4>Lorentz Space</h4>
+    </a>
+    </div> -->
+
+  <div style="display:grid;grid-template-columns:30% 30% 30%;align-items:center;justify-content:space-between;grid-row-gap:2.5em">
+
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/~yang/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/jensen.svg')"></div>
+      </a>
+      <h5>05 Feb 2021</h5>
+      <a href="/~yang/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+        <h4>Jensen's Approximation</h4>
+      </a>
+      </div>
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/~yang/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/isoperimetric.png')"></div>
+      </a>
+      <h5>22 Jan 2021</h5>
+      <a href="/~yang/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+        <h4>De Giorgi</h4>
+      </a>
+      </div>
+    
+    
+    
+      <div class="thumb" style="background-color: #EEE;">
+      <a href="/~yang/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+        <div class="thumbpic" style="background-image:url('/~yang/assets/images/thumbnails/lorentz.svg')"></div>
+      </a>
+      <h5>14 Apr 2020</h5>
+      <a href="/~yang/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+        <h4>Lorentz Space</h4>
+      </a>
+      </div>
+    
+    
+    
+  </div>
+
+</div>
+
+	</div><!-- /.container -->
+</div>	
+
+		<footer>
+			<div id="footer-container">
+				<a href="https://www.uchicago.edu"><img id="logo" src="/~yang/assets/images/uc_logo.jpeg"></a>
+				
+				<p id="copyright">Copyright &#169 2024 Jincheng Yang</p>
+
+				<ul>
+					<li id="uchimath"><a href="https://mathematics.uchicago.edu/">UChi Math</a></li>
+					<li><a
+						id="cy-effective-orcid-url"
+						class="underline"
+						 href="https://orcid.org/0000-0002-3581-9425"
+						 target="orcid.widget"
+						 rel="me noopener noreferrer"
+						 style="vertical-align: bottom">
+						 <img
+							src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
+							style="width: 1em; vertical-align: text-bottom;"
+							alt="ORCID iD icon"/>
+							ORCiD
+						</a></li>
+					<li><a href="https://arxiv.org/a/yang_j_6.html">arXiv</a></li>
+					<li><a href="https://www.linkedin.com/in/jincheng-yang/">LinkedIn</a></li>
+					<li><a href="https://www.researchgate.net/profile/Jincheng-Yang">ResearchGate</a></li>
+					<li><a href="mailto:jincheng@uchicago.edu">Email</a></li>
+				</ul>
+			</div>
+		</footer>
+
+
+		
+		<script type="text/javascript" src="/~yang/plugin/Escher.js"></script>
+		<script type="text/javascript" src="/~yang/plugin/set_icon.js"></script>
+	</body>
+</html>

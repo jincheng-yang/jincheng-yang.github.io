@@ -1,11 +1,30 @@
 {
     "Talk": [
         {
-            "Title": "",
-            "Date": "2024-06-10",
+            "Title": "Layer separation and energy dissipation for 3D NSE at high Reynolds number",
+            "Date": "2024-06-11",
             "Location": "Karlstad University",
             "Series": "EquaDiff 2024",
-            "Abstract": ""
+            "Abstract": "In this talk, we consider the 3D incompressible Navier-Stokes equation in a bounded domain, with a canonical example of Poiseuille flow in mind. We provide an unconditional upper bound for the boundary layer separation and energy dissipation of Leray–Hopf weak solutions, uniformly in high Reynolds numbers. We estimate layer separation by measuring the energy norm of the discrepancy between a (turbulent) low-viscosity Leray–Hopf solution and a fixed (laminar) regular Euler solution with similar initial conditions and body forces. This is accomplished by a new nonlinear boundary vorticity estimate, achieved along with several new trace estimates and higher derivative estimates using blow-up methods."
+        },
+        {
+            "Title": "A discrete Fokker-Planck equation for the dispersion process",
+            "Date": "2024-05-14",
+            "Location": "University of Minnesota",
+            "Series": "Recent Advances in Nonlinear Partial Differential Equations",
+            "Type": "invited",
+            "Abstract": "We study the dispersion process on the complete graph introduced in the recent work under the mean-field framework. In contrast to the probabilistic approach, our focus is on the investigation of the large time behavior of solutions of the associated kinetic mean-field system of nonlinear ordinary differential equations (ODEs). We establish various analytical and quantitative convergence results for the long time behaviour of the mean-field system and related numerical illustrations are also provided."
+        },
+        {
+            "Title": "Layer separation and energy dissipation for 3D NSE at high Reynolds number",
+            "Date": "2024-05-07",
+            "Location": "New York University Abu Dhabi (zoom talk)",
+            "Series": "SITE Research Center Talk Series",
+            "Type": "invited",
+            "link": "https://wp.nyu.edu/stability/tuesday-talk-series-2021/",
+            "video": "https://www.youtube.com/watch?v=oIlyjbkLpv4&feature=youtu.be",
+            "slide": "https://s18798.pcdn.co/stability/wp-content/uploads/sites/15485/2024/05/layer-separation.pdf",
+            "Abstract": "In this talk, we consider the 3D incompressible Navier-Stokes equation in a bounded domain, with a canonical example of Poiseuille flow in mind. We provide an unconditional upper bound for the boundary layer separation and energy dissipation of Leray–Hopf weak solutions, uniformly in high Reynolds numbers. We estimate layer separation by measuring the energy norm of the discrepancy between a (turbulent) low-viscosity Leray–Hopf solution and a fixed (laminar) regular Euler solution with similar initial conditions and body force. This is accomplished by a new nonlinear boundary vorticity estimate."
         },
         {
             "Title": "Vorticity interior trace estimates and higher derivative estimates via blow-up method",
@@ -45,6 +64,7 @@
             "Date": "2023-10-12",
             "Location": "Johns Hopkins University",
             "Series": "Applied Mathematics and Statistics Seminar",
+            "link": "https://engineering.jhu.edu/ams/event/ams-weekly-seminar-dickerson-instructor-jincheng-yang/",
             "Type": "invited",
             "Abstract": "In this presentation, I will discuss recent progress regarding the regularity of the three-dimensional Navier-Stokes equation, a system of partial differential equations that models the behavior of fluids. While the full regularity of the 3D incompressible Navier-Stokes equation remains an outstanding open question, recently there have been significant breakthroughs in the fluid dynamics community. I will present new mathematical tools that provide deeper insights into the partial regularity of the Navier-Stokes equation and general supercritical systems. We derive nonlinear a priori estimates and trace estimates for the 3D incompressible Navier-Stokes equation, which extend the current picture of higher derivative estimates in the mixed norm. Additionally, I will demonstrate an intriguing application to the inviscid limit problem, which questions to what extent ideal fluids can model slightly viscous fluid."
         },

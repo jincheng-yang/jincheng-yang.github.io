@@ -68,7 +68,7 @@ My general research interest includes the area of analysis, dynamic systems, and
 <span>
 	{{ talk.Title }}
 </span>
-<span>
+<span class="talkdate">
 	{{ talk.Date }}
 </span>
 </h3>

@@ -1,4 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/~yang/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/~yang/" rel="alternate" type="text/html" /><updated>2024-04-27T11:09:32-05:00</updated><id>http://localhost:4000/~yang/feed.xml</id><title type="html">Jincheng Yang’s Home Page</title><entry><title type="html">Polish space</title><link href="http://localhost:4000/~yang/blog/2023/12/17/polish-space" rel="alternate" type="text/html" title="Polish space" /><published>2023-12-17T00:00:00-06:00</published><updated>2023-12-17T00:00:00-06:00</updated><id>http://localhost:4000/~yang/blog/2023/12/17/polish-space</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2023/12/17/polish-space"><![CDATA[<p>Usually, we define mathematical notions (spaces) by adding structure. Set plus topology is a topological space. Set plus $\sigma$-algebra (tribe) is a measurable space. Measurable space with a measure is a measure space, etc. However, there are times when notions can be defined by <strong>forgetting structure</strong>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/~yang/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/~yang/" rel="alternate" type="text/html" /><updated>2024-05-21T15:02:18-05:00</updated><id>http://localhost:4000/~yang/feed.xml</id><title type="html">Jincheng Yang’s Home Page</title><entry><title type="html">Boundary Harnack inequality</title><link href="http://localhost:4000/~yang/blog/2024/04/27/boundary-harnack" rel="alternate" type="text/html" title="Boundary Harnack inequality" /><published>2024-04-27T00:00:00-05:00</published><updated>2024-04-27T00:00:00-05:00</updated><id>http://localhost:4000/~yang/blog/2024/04/27/boundary-harnack</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2024/04/27/boundary-harnack"><![CDATA[<p>Let $e = (1, 0, \dots, 0)$. Consider a function $u$ satisfying</p>
+
+\[\begin{cases}
+	\La u = 0 &amp; \inn \Omega \cap B _2 \\
+	u \ge 0 &amp; \inn \Omega \cap B _2 \\
+	u = 0 &amp; \onn \partial \Omega \cap B _2
+\end{cases}\]
+
+<blockquote>
+  <p>[!Theorem]
+If $u, v$ satisfies above then</p>
+  <ul>
+    <li>
+\[\max _{\Omega \cap B _1} u \le C u (e)\]
+    </li>
+    <li>
+\[\sup _{\Omega \cap B _1} \frac uv \le C \frac{u(e)}{v(e)}\]
+    </li>
+    <li>
+\[\left[\frac uv\right] _{C ^\alpha (\Omega \cap B _1)} \le C \frac{u (e)}{v (e)}\]
+    </li>
+  </ul>
+</blockquote>
+
+<p>Recall that:</p>
+
+<ol>
+  <li>Interior Harnack inequality: if $x$ can be connected to $e$ by a chain of $N$ balls, then $u(x) \le C ^N u (e)$.</li>
+  <li>Therefore, if the boundary is Lipschitz (or more generally called nontangentially accessible domains) then $c d (x) ^q u (e) \le u (x) \le C d (x) ^{-q} u (e)$. Here $d (x) = d (x, \partial \Omega)$</li>
+  <li>Zero extension is subharmonic, for which weak Harnack inequality holds: if $\La u \ge 0$ in $B _1$, $u \le 1$ in $B _1$, $\abs{\set{u \le 0} \cap B _1} \ge \mu &gt; 0$ then $\max _{B _\frac12} u \le 1- \theta$. $\theta$ can becomes large (close to 1) if $\mu$ is close to $\abs{B _1}$.</li>
+  <li>Weak Harnack inequality means: if $\La u \ge 0$ in $B _1$, $u (x) \ge 1$ at some $x \in B _\frac12$, $\abs{\set{u \le 0} \cap B _1} \ge \mu &gt; 0$, then $\max _{B _\frac12} u \ge 1 + \theta$.</li>
+</ol>
+
+<h3 id="proof-of-1">Proof of 1.</h3>
+
+<p>If it fails, then for arbitrarily large $A$ we can find $x _1 \in \Omega \cap B _1$ with $u (x _1) &gt; A$.</p>
+
+<ul>
+  <li>$x _1$ must be $\delta$-close to $\partial \Omega$, otherwise we can use regular Harnack</li>
+  <li>by weak Harnack, there exists $x _2$ with $d(x _1, x _2) \le 2 d (x _1)$ such that $u (x _2) \ge (1 + \theta) u (x _1)$. Reason: take $r = d (x _1)$. Then $B _{2 r} (x _1)$ has a lot of zeros.</li>
+  <li>Then $d (x _2) \le 3 d (x _1)$. We can find $x _3$ such that $d (x _2, x _3) \le 2 d (x _2)$, and $u (x _3) \ge u (x _2) (1 + \theta) ^2$.</li>
+</ul>
+
+<p>Then</p>
+
+\[C d (x _j) ^{-q} u (e) \ge u (x _j) \ge u (x _1) (1 + \theta) ^j \ge A (1 + \theta) ^j.\]
+
+<p>So $d (x _j) ^q \le \pthf{C u (e)}A (1 + \theta) ^{-j} \to 0$. Then $u (x _j) \to 0$, contradicting to $u (x _j) \ge A$.</p>
+
+<h3 id="proof-of-2">Proof of 2.</h3>
+
+<p>First we show the lemma.</p>
+
+<blockquote>
+  <p>[!Lemma] 
+There exists $\delta, \varepsilon &gt; 0$. If</p>
+
+\[\begin{cases}
+	\La u = 0 &amp; \inn \Omega \cap B _1 \\
+	u \ge 1 &amp; \inn \Omega _\delta \cap B _1 \\
+	u \ge -\varepsilon &amp; \inn \Omega \cap B _1 \\
+	u = 0 &amp; \onn \partial \Omega \cap B _1
+\end{cases}\]
+
+  <p>then $u \ge 0$ in $\Omega \cap B _{\frac12}$.</p>
+</blockquote>
+
+<p>From Lemma to 2: WLOG $u (e) = v (e)$ and $u, v \le 1$ in $B _2$. Apply to $u - \varepsilon _0 v$. Regular Harnack implies $u - \varepsilon _0 v \ge c$.</p>
+
+<blockquote>
+  <p>[!Lelemmamma]
+There exists $\delta, a &gt; 0$. If</p>
+
+\[\begin{cases}
+	\La u = 0 &amp; \inn \Omega \cap B _1 \\
+	u \ge 1 &amp; \inn \Omega _\delta \cap B _1 \\
+	u \ge -\varepsilon &amp; \inn \Omega \cap B _1 \\
+	u = 0 &amp; \onn \partial \Omega \cap B _1
+\end{cases}\]
+
+  <p>then $u \ge a$ in $\Omega _{\frac\delta2} \cap B _{\frac12}$, and $u \ge -a \varepsilon$ in $\Omega \cap B _\frac12$.</p>
+</blockquote>
+
+<p>Lemma is an extreme version of Lelemmamma with $a = 0$.</p>
+
+<p>From Lelemmamma to Lemma: Iterate it to get a cone of positivity, which is the union $\Omega _{\delta / 2 ^k} \cap B _{2 ^{-k}}$.</p>
+
+<p><em>Proof of Lelemmamma</em>. Let $v = u + \varepsilon _0$. $v \ge 0$ and $v \ge 1$ in $\Omega _\delta \cap B _\frac12$. So using Harnack <em>once</em> we can get $v \ge 2 a$ in $\Omega _{\delta/2} \cap B _\frac12$. 
+Apply weak Harnack inequality to $u _- = \max (0, -u)$. 
+Recall the $\theta$ can be large: $\max _{B _\frac12} u _- \le C \nor{u _-} _{L ^1 (B _1)}$. 
+Since $u _-$ is only nonzero in $\Omega \setminus \Omega _\delta$, it is a thin strip with very little measure.</p>
+
+<h3 id="proof-of-3">Proof of 3.</h3>
+
+<p>Harnack inequality implies oscillation decay, which implies Hölder.</p>
+
+<p>By part 2, $\frac1A \le \frac uv \le A$ in $B _1$. So</p>
+
+\[\frac1A u \le v \le A u.\]
+
+<p>Now $A u - v$ and $A v - u$ are both harmonic and nonnegative in $B _1$ and vanish on $\partial \Omega$, so by boundary Harnack</p>
+
+\[\frac1C \le \frac{A u - v}{A v - u} \le C \qquad \text{ in } B _{\frac12} \cap \Omega.\]
+
+<p>So</p>
+
+\[\frac{C + A}{C + \frac1A} \cdot \frac1A u \le \frac{A + C}{A C + 1} u \le v \le \frac{A C + 1}{A + C} u = \frac{C + \frac1A}{C + A} \cdot A u.\]
+
+<p>We have oscillation decay!</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Let $e = (1, 0, \dots, 0)$. Consider a function $u$ satisfying]]></summary></entry><entry><title type="html">Polish space</title><link href="http://localhost:4000/~yang/blog/2023/12/17/polish-space" rel="alternate" type="text/html" title="Polish space" /><published>2023-12-17T00:00:00-06:00</published><updated>2023-12-17T00:00:00-06:00</updated><id>http://localhost:4000/~yang/blog/2023/12/17/polish-space</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2023/12/17/polish-space"><![CDATA[<p>Usually, we define mathematical notions (spaces) by adding structure. Set plus topology is a topological space. Set plus $\sigma$-algebra (tribe) is a measurable space. Measurable space with a measure is a measure space, etc. However, there are times when notions can be defined by <strong>forgetting structure</strong>.</p>
 
 <blockquote>
   <p>[!Definition]
@@ -1386,403 +1494,4 @@ If $\mm \omega$ is comparible to $\omega$, then the two weights in the propositi
 <span class="nt">\begin{align*}</span>
     <span class="k">\x</span>
 <span class="nt">\end{align*}</span>
-</code></pre></div></div>]]></content><author><name></name></author><summary type="html"><![CDATA[expandafter]]></summary></entry><entry><title type="html">Guiguzi Problem</title><link href="http://localhost:4000/~yang/blog/2020/10/15/guiguzi-problem" rel="alternate" type="text/html" title="Guiguzi Problem" /><published>2020-10-15T00:00:00-05:00</published><updated>2020-10-15T00:00:00-05:00</updated><id>http://localhost:4000/~yang/blog/2020/10/15/guiguzi-problem</id><content type="html" xml:base="http://localhost:4000/~yang/blog/2020/10/15/guiguzi-problem"><![CDATA[<h3 id="statement-of-the-problem">Statement of the Problem</h3>
-
-<p>Cindy chose two different natural numbers between $2$ and $99$. She told Alice the sum and then she told Bob the product, then she left. And the following is a dialogue between Alice and Bob.</p>
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">(P1)</code> Alice: I don’t know the two numbers, but <code class="language-plaintext highlighter-rouge">(P2)</code> I know you don’t know either.</p>
-</blockquote>
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">(P3)</code> Bob: I didn’t know, but now I know.</p>
-</blockquote>
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">(P4)</code> Alice: Now I know, too.</p>
-</blockquote>
-
-<p>What are the numbers?</p>
-
-<h3 id="set-theory">Set Theory</h3>
-
-<p>First we reformulate this question using the language of set theory.</p>
-
-<p>Let $D = \{(a, b) \in \mathbb N ^2: 1 &lt; a &lt; b &lt; 100\},$ and</p>
-
-\[\begin{aligned}
-    s : D &amp;\to \mathbb N &amp; p: D &amp;\to \mathbb N \\
-    (a, b) &amp;\to a + b &amp; (a, b) &amp;\to a \cdot b.
-\end{aligned}\]
-
-<p>Suppose Alice was told the sum is $x$ and Bob was told the product is $y$.</p>
-
-<p>Denote $D _A = s ^{-1} (x)$ and $D _B = p ^{-1} (y)$. These are private informations for Alice and Bob. Before the dialogue starts, the public information is just $(a, b)$ belongs to the set $D$, $a + b$ belongs to $X = s (D)$, and $a \cdot b$ belongs to $Y = p (D)$.</p>
-
-<p>Let’s rewind the dialogue.</p>
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">(P1)</code> Alice: I don’t know the two numbers.</p>
-</blockquote>
-
-<p>This is the first piece of public information: $D _A$ has more than one element, so $x$ must belong to</p>
-
-\[\begin{aligned}
-    X _1 := \{ m \in X: |s ^{-1} (m)| &gt; 1 \}.
-\end{aligned}\]
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">(P2)</code> Alice: but I know you don’t know either.</p>
-</blockquote>
-
-<p>This means she is sure that for any $(a, b) \in D _A$, $p (a, b)$ is in the following set,</p>
-
-\[\begin{aligned}
-    Y _1 := \{ n \in Y: |p ^{-1} (n)| &gt; 1 \}.
-\end{aligned}\]
-
-<p>So <code class="language-plaintext highlighter-rouge">(P2)</code> means</p>
-
-\[\begin{aligned}
-    D _A = s ^{-1} (x) \subset p ^{-1} (Y _1).
-\end{aligned}\]
-
-<p>This provides the second piece of information, $x$ must be inside</p>
-
-\[\begin{aligned}
-    X _2 = \{ m \in X _1: s ^{-1} (m) \subset p ^{-1} (Y _1) \},
-\end{aligned}\]
-
-<p>so after this step, the public informations are $(a, b)$ and $y$ belong to</p>
-
-\[\begin{aligned}
-    D _2 = s ^{-1}(X _2), \qquad Y _2 = p(D _2).
-\end{aligned}\]
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">(P3)</code> Bob: Now I know.</p>
-</blockquote>
-
-<p><code class="language-plaintext highlighter-rouge">(P3)</code> means</p>
-
-\[\begin{aligned}
-    |D _2 \cap D _B| = 1.
-\end{aligned}\]
-
-<p>This provides a third information, $y$ must be inside</p>
-
-\[\begin{aligned}
-    Y _3 = \{n \in Y _2: |D _2 \cap p ^{-1} (n)| = 1 \}.
-\end{aligned}\]
-
-<p>So $(a, b)$ and $x$ must be inside</p>
-
-\[\begin{aligned}
-    D _3 = D _2 \cap p ^{-1} (Y _3), \qquad X _3 = s (D _3).
-\end{aligned}\]
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">(P4)</code> Alice: Now I know, too.</p>
-</blockquote>
-
-<p><code class="language-plaintext highlighter-rouge">(P4)</code> means</p>
-
-\[\begin{aligned}
-    |D _3 \cap D _A| = 1.
-\end{aligned}\]
-
-<p>This provides the last information, $x$ must be inside</p>
-
-\[\begin{aligned}
-    X _4 = \{ m \in X _3: |D _3 \cap s ^{-1} (m)| = 1\}.
-\end{aligned}\]
-
-<p>and $(a, b)$ and $y$ are inside</p>
-
-\[\begin{aligned}
-    D _4 = D _3 \cap s ^{-1} (X _4), \qquad Y _4 = s (D _4).
-\end{aligned}\]
-
-<p>After this formulation, we provide two ways to solve it: either by math, or by coding.</p>
-
-<h3 id="number-theory">Number Theory</h3>
-
-<p>Now we use the number theory to determine each set.</p>
-
-<p>Start from $X$ and $Y$, clearly</p>
-
-\[\begin{aligned}
-    X = \{ m \in \mathbb N: 5 \le m \le 197 \}.
-\end{aligned}\]
-
-<p>$Y$ is hard to characterise, so we just let it be. From the first public information,</p>
-
-\[\begin{aligned}
-    X _1 := \{ m \in \mathbb N: 5 \le m \le 197, |s ^{-1} (m)| &gt; 1 \},
-\end{aligned}\]
-
-<p>$x$ can be separated as the sums in at least two ways, so $x$ cannot be $5 = 2 + 3, 6 = 2 + 4, 196 = 97 + 99, 197 = 98 + 99$, which can only be uniquely decomposed as sums. Therefore</p>
-
-\[\begin{aligned}
-    X _1 := \{ m \in \mathbb N: 7 \le m \le 195 \}.
-\end{aligned}\]
-
-<p>Now for $Y _1$, one possible type of $n \notin Y _1$ that can only be uniquely decomposed are the product of prime numbers, so if we call</p>
-
-\[\begin{aligned}
-    Y _1 ^* := \{ p _1 \cdot p _2: p _1, p _2 \le 99 \text{ are prime} \}
-\end{aligned}\]
-
-<p>we have $Y _1 ^* \cap Y _1 = \varnothing$. So in $X _1$ we can exclude most even numbers (they can be expressed as a sum of primes by the famous Goldbach’s Conjecture) and also the sum of 2 and odd prime number. This leaves us with</p>
-
-\[\begin{aligned}
-    X _2 \subset \{
-        11, 17, 23, 27, 29, 35, 37, 41, 47, 51, 53, 57, 59, 65, 67, 71, 77, 79, 83, 87, 89, 93, 95, 97, \dots
-    \}
-\end{aligned}\]
-
-<p>We can also eliminate the ones that are too large to have alternative choices. The product of anything with large prime numbers can only have one possibility, if we call</p>
-
-\[\begin{aligned}
-    Y _2 ^* := \{ p \cdot m: 50 \le p \le 99 \text{ is prime}, 2 \le m \le 99 \}
-\end{aligned}\]
-
-<p>we have $Y _2 ^* \cap Y _1 = \varnothing$.</p>
-
-<p>Every number greater than $55$ can be written as the sum of a prime number between $50$ and $99$ and something else:</p>
-
-\[\begin{aligned}
-    n &amp;= 53 + (n - 53), \qquad 55 \le n \le 152, \\
-    n &amp;= 97 + (n - 97), \qquad 152 \le n \le 195.
-\end{aligned}\]
-
-<p>Therefore every element in $X _1$ is smaller than $55$, thus</p>
-
-\[\begin{aligned}
-    X _2 \subset \{
-        11, 17, 23, 27, 29, 35, 37, 41, 47, 51, 53
-    \}.
-\end{aligned}\]
-
-<p>We almost have equality here because every summation decomposition of numbers here must be 2 plus a composite number, or even number plus odd number. Their product always have alternative expression. The only exception is $51 = 17 + 34$, $17 \times 34$ have no other decomposition because $17$ is prime and half of $34$, and we only have this one case. So</p>
-
-\[\begin{aligned}
-    X _2 = \{
-        11, 17, 23, 27, 29, 35, 37, 41, 47, 53
-    \}.
-\end{aligned}\]
-
-<p>Now we think about elements in $Y _3$. For $n$ in $Y _3$, it has more than one way of product decomposition, but only one decomposition has sum in $X _2$. One possibility is</p>
-
-\[\begin{aligned}
-    Y _3 ^* = \{
-        2 ^k \cdot p: 2 \le k \le 5, p \text{ is prime}, 2 ^k + p \in X _2
-    \}.
-\end{aligned}\]
-
-<p>Then if $n = 2 ^k \cdot p$, $2 ^k + p \in X _2$, so $n \in Y _2$. Moreover, any other product decomposition of $2 ^k \cdot p$ will be the product of even numbers, so their sum is even and cannot be inside $X _2$. Therefore $Y _3 ^* \subset Y _3$. Let’s write out the elements in $Y _3 ^*$:</p>
-
-\[\begin{aligned}
-    Y _3 ^* = \{
-        &amp;2 ^3 \cdot 3, \\
-        &amp;2 ^2 \cdot 13, \\
-        &amp;2 ^2 \cdot 19, 2 ^4 \cdot 7, \\
-        &amp;2 ^2 \cdot 23, 2 ^3 \cdot 19, 2 ^4 \cdot 11, \\
-        &amp;2 ^4 \cdot 13, \\
-        &amp;2 ^2 \cdot 31, 2 ^4 \cdot 19, 2 ^5 \cdot 3, \\
-        &amp;2 ^3 \cdot 29, 2 ^5 \cdot 5, \\
-        &amp;2 ^2 \cdot 37, \\
-        &amp;2 ^2 \cdot 43, 2 ^4 \cdot 31, \\
-        &amp;2 ^4 \cdot 37
-    \}.
-\end{aligned}\]
-
-<p>Another possibility is</p>
-
-\[\begin{aligned}
-    Y _3 ^{**} = \{
-        2 ^k \cdot p ^l: p = 3 \text{ or } 5, l \ge 2, 2 ^k + 3 ^l \in X _2 
-    \} \setminus \{ 2 ^3 \cdot 3 ^2, 2 \cdot 5 ^3 \}.
-\end{aligned}\]
-
-<p>Then if $n = 2 ^k \cdot p ^l$, $2 ^k + p ^l \in X _2$, so $n \in Y _2$. Moreover, any other product decomposition of $2 ^k \cdot p ^l$ will either be the product of even numbers, or a product of multiple of $p$, so their sum is either even or multiple of $p$ and cannot be inside $X _2$ (the only exceptions are $27 = (2 ^3 \cdot 3) + 3$ and $35 = (2 \cdot 5) + 5 ^2$). Therefore $Y _3 ^{**} \subset Y _3$. It is</p>
-
-\[\begin{aligned}
-    Y _3 ^{**} = \{
-        &amp;2 ^1 \cdot 3 ^2, \\
-        &amp;2 ^1 \cdot 5 ^2, \\
-        &amp;2 ^1 \cdot 3 ^3, 2 ^2 \cdot 5 ^2, \\
-        &amp;2 ^3 \cdot 3 ^3, \\
-        &amp;2 ^5 \cdot 3 ^2, 2 ^4 \cdot 5 ^2
-    \}.
-\end{aligned}\]
-
-<p>A third possibility is</p>
-
-\[\begin{aligned}
-    Y _3 ^{***} = \{
-        p \cdot k: p \ge 27, p + k \in X _2 
-    \}.
-\end{aligned}\]
-
-<p>Similar as before, $Y _3 ^{\ast\ast\ast} \subset Y _3$, because all other product decomposition of $p \cdot k$ will involve a number no less than $2 p \ge 54$, and the sum will be greater than 53. In particular, $Y _3 ^{\ast\ast\ast}$ include</p>
-
-\[\begin{aligned}
-    Y _3 ^{***} \supset \{
-        &amp;29 \cdot 6, 31 \cdot 4, \\
-        &amp;29 \cdot 8, 31 \cdot 6, \\
-        &amp;29 \cdot 12, 31 \cdot 10, \\
-        &amp;29 \cdot 18, 31 \cdot 16, \\
-        &amp;29 \cdot 24, 31 \cdot 22
-    \}.
-\end{aligned}\]
-
-<p>Therefore,</p>
-
-\[\begin{aligned}
-    Y _3 \supset Y _3 ^* \cup Y _3 ^{**} \cup Y _3 ^{***} \supset \{
-        &amp;2 ^1 \cdot 3 ^2, 2 ^3 \cdot 3, \\
-        &amp;2 ^2 \cdot 13, \\
-        &amp;2 ^2 \cdot 19, 2 ^4 \cdot 7, \\
-        &amp;2 ^2 \cdot 23, 2 ^3 \cdot 19, 2 ^4 \cdot 11, 2 ^1 \cdot 5 ^2\\
-        &amp;2 ^4 \cdot 13, 2 ^1 \cdot 3 ^3, 2 ^2 \cdot 5 ^2\\
-        &amp;2 ^2 \cdot 31, 2 ^4 \cdot 19, 2 ^5 \cdot 3, 2 ^3 \cdot 3 ^3, 29 \cdot 4\\
-        &amp;2 ^3 \cdot 29, 2 ^5 \cdot 5, 31 \cdot 6\\
-        &amp;2 ^2 \cdot 37, 2 ^5 \cdot 3 ^2, 2 ^4 \cdot 5 ^2, 29 \cdot 12, 31 \cdot 10\\
-        &amp;2 ^2 \cdot 43, 2 ^4 \cdot 31, 29 \cdot 18\\
-        &amp;2 ^4 \cdot 37, 29 \cdot 24, 31 \cdot 22
-    \}.
-\end{aligned}\]
-
-<p>Finally we discuss $X _4$. From the above we can see that other than $m = 17$, we always have</p>
-
-\[\begin{aligned}
-    |s ^{-1} (m) \cap D _3| \ge 2.
-\end{aligned}\]
-
-<p>So $x = 17$. The numbers are $4$ and $13$. The product $y = 52$.</p>
-
-<h3 id="algorithm">Algorithm</h3>
-
-<p>Python has a set of build-in set-theory functions. We can do this completely without the knowledge of number theory.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">D</span> <span class="o">=</span> <span class="p">{(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)}</span>
-</code></pre></div></div>
-
-<p>Define the summation and multiplication maps.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tup</span><span class="p">:</span> <span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">p</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tup</span><span class="p">:</span> <span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</code></pre></div></div>
-
-<p>Define the image operator. We also need to keep track of the preimage.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># image(fun, dom) will generate the image of a function as a dictionary 
-# and record the information of preimage at the same time: a key is an
-# element in the image, and its value is the preimage set of this key
-</span>
-<span class="k">def</span> <span class="nf">image</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">dom</span><span class="p">):</span>
-    <span class="n">ima</span> <span class="o">=</span> <span class="nf">dict</span><span class="p">([])</span>
-    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dom</span><span class="p">:</span>
-        <span class="n">f</span> <span class="o">=</span> <span class="nf">fun</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">ima</span><span class="p">:</span>
-            <span class="n">ima</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">ima</span><span class="p">[</span><span class="n">f</span><span class="p">].</span><span class="nf">union</span><span class="p">({</span><span class="n">d</span><span class="p">})</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">ima</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span><span class="p">}</span>
-    <span class="k">return</span> <span class="n">ima</span>
-</code></pre></div></div>
-
-<p>Then we start. Initial public information:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="nf">image</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
-<span class="n">Y</span> <span class="o">=</span> <span class="nf">image</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">P1</code> and <code class="language-plaintext highlighter-rouge">P2</code>:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X1</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span> <span class="p">:</span> <span class="n">X</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X</span> <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">m</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">}</span>
-<span class="n">Y1</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span> <span class="p">:</span> <span class="n">Y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y</span> <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">}</span>
-<span class="n">D1</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y1</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">Y1</span><span class="p">[</span><span class="n">n</span><span class="p">]}</span>
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X2</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span> <span class="p">:</span> <span class="n">X1</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X1</span> <span class="k">if</span> <span class="n">X1</span><span class="p">[</span><span class="n">m</span><span class="p">].</span><span class="nf">issubset</span><span class="p">(</span><span class="n">D1</span><span class="p">)}</span>
-<span class="n">D2</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X2</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">X2</span><span class="p">[</span><span class="n">m</span><span class="p">]}</span>
-<span class="n">Y2</span> <span class="o">=</span> <span class="nf">image</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D2</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">sorted</span><span class="p">(</span><span class="n">X2</span><span class="p">))</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[11, 17, 23, 27, 29, 35, 37, 41, 47, 53]
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">P3</code>:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Y3</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span> <span class="p">:</span> <span class="n">Y2</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y2</span> <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">Y2</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">}</span>
-<span class="n">D3</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">Y3</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">Y3</span><span class="p">[</span><span class="n">n</span><span class="p">]}</span>
-<span class="n">X3</span> <span class="o">=</span> <span class="nf">image</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">D3</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">P4</code>:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X4</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span> <span class="p">:</span> <span class="n">X3</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X3</span> <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">X3</span><span class="p">[</span><span class="n">m</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">}</span>
-<span class="n">D4</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">X4</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">X4</span><span class="p">[</span><span class="n">m</span><span class="p">]}</span>
-<span class="n">Y4</span> <span class="o">=</span> <span class="nf">image</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">D4</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">X4</span><span class="p">,</span> <span class="n">Y4</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>({17: {(4, 13)}}, {52: {(4, 13)}})
-</code></pre></div></div>
-
-<hr />
-<p>Download this page as <a href="/~yang/assets/files/jupyter/guiguzi.ipynb">Jupyter Notebook</a>.</p>
-
-<h3 id="swift-code">Swift Code</h3>
-
-<p>As a practice of swift’s basic language, let’s realize this algorithm via swift.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">N</span> <span class="o">=</span> <span class="mi">100</span>
-
-<span class="k">var</span> <span class="nv">D</span> <span class="o">=</span> <span class="kt">Set</span><span class="p">(</span><span class="kt">Array</span><span class="p">(</span><span class="mi">2</span><span class="o">..&lt;</span><span class="kt">N</span><span class="p">)</span><span class="o">.</span><span class="n">flatMap</span> <span class="p">{</span> <span class="n">a</span> <span class="k">in</span>
-                <span class="kt">Array</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="o">...</span><span class="kt">N</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{[</span><span class="n">a</span><span class="p">,</span> <span class="nv">$0</span><span class="p">]}</span>
-            <span class="p">})</span>
-
-<span class="k">let</span> <span class="nv">s</span> <span class="o">=</span> <span class="p">{(</span><span class="nv">tuple</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="k">in</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
-<span class="k">let</span> <span class="nv">p</span> <span class="o">=</span> <span class="p">{(</span><span class="nv">tuple</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="k">in</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
-
-<span class="kd">func</span> <span class="nf">imageWithPreimage</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">domain</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;&gt;</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">data</span> <span class="k">in</span> <span class="n">domain</span> <span class="p">{</span>
-        <span class="k">let</span> <span class="nv">f</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        <span class="n">image</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="p">??</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="o">&gt;</span><span class="p">())</span><span class="o">.</span><span class="nf">union</span><span class="p">([</span><span class="n">data</span><span class="p">])</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">image</span>
-<span class="p">}</span>
-
-<span class="k">var</span> <span class="nv">X</span> <span class="o">=</span> <span class="nf">imageWithPreimage</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="nv">domain</span><span class="p">:</span> <span class="kt">D</span><span class="p">)</span>
-<span class="k">var</span> <span class="nv">Y</span> <span class="o">=</span> <span class="nf">imageWithPreimage</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span> <span class="nv">domain</span><span class="p">:</span> <span class="kt">D</span><span class="p">)</span>
-
-<span class="k">let</span> <span class="nv">X1</span> <span class="o">=</span> <span class="kt">X</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
-<span class="k">var</span> <span class="nv">Y1</span> <span class="o">=</span> <span class="kt">Y</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
-
-<span class="k">let</span> <span class="nv">D1</span> <span class="o">=</span> <span class="kt">D</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">X1</span><span class="p">[</span><span class="nf">s</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="kt">Y1</span><span class="p">[</span><span class="nf">p</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
-
-<span class="k">var</span> <span class="nv">X2</span> <span class="o">=</span> <span class="kt">X1</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="nf">isSubset</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="kt">D1</span><span class="p">)</span> <span class="p">}</span>
-<span class="k">let</span> <span class="nv">D2</span> <span class="o">=</span> <span class="kt">D1</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">X2</span><span class="p">[</span><span class="nf">s</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">in</span> <span class="kt">Y1</span> <span class="p">{</span>
-    <span class="kt">Y1</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">D2</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">let</span> <span class="nv">Y3</span> <span class="o">=</span> <span class="kt">Y1</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
-<span class="k">let</span> <span class="nv">D3</span> <span class="o">=</span> <span class="kt">D2</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">Y3</span><span class="p">[</span><span class="nf">p</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">in</span> <span class="kt">X2</span> <span class="p">{</span>
-    <span class="kt">X2</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">D3</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">let</span> <span class="nv">X4</span> <span class="o">=</span> <span class="kt">X2</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
-<span class="k">let</span> <span class="nv">D4</span> <span class="o">=</span> <span class="kt">D3</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">X4</span><span class="p">[</span><span class="nf">s</span><span class="p">(</span><span class="nv">$0</span><span class="p">)]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="kt">D4</span><span class="p">)</span>
-</code></pre></div></div>]]></content><author><name></name></author><summary type="html"><![CDATA[Statement of the Problem]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name></name></author><summary type="html"><![CDATA[expandafter]]></summary></entry></feed>
