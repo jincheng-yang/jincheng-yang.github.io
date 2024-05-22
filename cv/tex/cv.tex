@@ -30,6 +30,11 @@
 \usepackage{xstring}
 \usepackage[calc,showdow,english]{datetime2}
 
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\renewcommand*{\bibliographyhead}[1]{\section{Publications and Preprints}}
+\makeatother
+
 \DTMnewdatestyle{MMyyyy}{%
 \renewcommand{\DTMdisplaydate}[4]{%
   \DTMshortmonthname{##2}\space%  (full) Month
@@ -132,10 +137,10 @@
 \section{Research Interests}
 \input{section/interest.tex}
 
-\section{Publications and Preprints}
+% \section{Publications and Preprints}
 
-\nocite{vasseur2024,zhang2024,yang2023,vasseur2023,yang2022a,zhang2022,yang2022,vasseur2021,lin2020,yang2018}
-\bibliographystyle{plainyrrev}
+\nocite{vasseur2024,zhang2022,zhang2024,yang2023,vasseur2023,yang2022a,yang2022,vasseur2021,lin2020,yang2018}
+\bibliographystyle{unsrt}
 \bibliography{../../_data/publication.bib}
 % \input{pub.tex}
 % \input{publication}
