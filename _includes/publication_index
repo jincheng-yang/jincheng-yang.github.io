@@ -1,4 +1,4 @@
-### Preprints
+###### Publications and Preprints
 
 {% for row in site.data.publication %}
 {% if row["journal"] == "arXiv e-prints" or row["journal"] == "OptOnline e-prints" %}
@@ -9,8 +9,6 @@
 {% endif %}
 {% endif %}
 {% endfor %}
-
-### Journal Articles
 
 {% for row in site.data.publication %} 
 {% if row["entry_type"] == "article" %}
@@ -25,16 +23,3 @@
 {% endif %}
 {% endif %}
 {% endfor %}
-
-### Book
-
-{% for row in site.data.publication %}
-{% if row["entry_type"] == "book" %}
-1. {{ row["author"] }}: *{{ row['title'] }}*, [{{ row["publisher"] }}]({{ row["url"] }}), {{ row["address"] }} ({{ row["year"] }})
-{% endif %}
-{% endfor %}
-
-### Theses
-
-1. Undergraduate thesis: *Linear Inviscid Damping of a Shear Flow in a Half-Space and a Finite Channel*, supervised by Prof. Dongsheng Li and Prof. Zhiwu Lin [[slides]({{ site.baseurl }}/assets/files/bachelor-slides.pdf)][[pdf]({{ site.baseurl }}/assets/files/bachelor.pdf)]
-2. Doctoral thesis: *Partial regularity results for the three-dimensional incompressible Navier-Stokes equation*, supervised by Prof. Luis Caffarelli and Prof. Alexis Vasseur [[slides]({{ site.baseurl }}/assets/files/doctoral-slides.pdf)][[pdf]({{ site.baseurl }}/assets/files/doctoral.pdf)]

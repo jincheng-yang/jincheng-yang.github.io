@@ -2,7 +2,7 @@
 
 int act;
 
-PImage teddyLogo, caseyLogo, worldMap;
+PImage tracyLogo, caseyLogo, worldMap;
 PImage opening;
 
 color tColor, cColor, dColor;
@@ -74,7 +74,7 @@ void setup() {
   
   dateCount = 0;
     
-  teddyLogo = loadImage(pathToMe + "image/teddy-logo.jpg");
+  tracyLogo = loadImage(pathToMe + "image/tracy-logo.jpg");
   caseyLogo = loadImage(pathToMe + "image/casey-logo.jpg");
   worldMap = loadImage(pathToMe + "image/map.jpg");
   opening = loadImage(pathToMe + "video/opening.png");
@@ -207,9 +207,9 @@ void draw() {
   fill(tColor);
   textFont(font, 24);
   rect(logoPadding - shadowWidth, logoPaddingTop - shadowWidth, logoSize + shadowWidth * 2, logoSize + shadowWidth * 2, roundAngleRadius); 
-  image(teddyLogo, logoPadding, logoPaddingTop, logoSize, logoSize);
+  image(tracyLogo, logoPadding, logoPaddingTop, logoSize, logoSize);
   textAlign(LEFT);
-  text("Teddy", logoPadding + logoSize + logoPadding / 4, logoPaddingTop + logoSize / 3);
+  text("Tracy", logoPadding + logoSize + logoPadding / 4, logoPaddingTop + logoSize / 3);
   
   rect(logoPadding + logoSize + logoPadding / 4, logoPaddingTop + logoSize / 2 + 3, 50, 2);
   
@@ -316,7 +316,7 @@ void updateInfos() {
   cx1 = cx2 = cDot.x;
   cy1 = cy2 = cDot.y;
   
-  // Update Teddy's City
+  // Update Tracy's City
   for (int i = 0; i < nttl.size(); i++) {
     TAItem thisObj = nttl.get(i);
     
@@ -358,7 +358,7 @@ void updateInfos() {
   
   parted = (abs(cx1 - tx1) + abs(cx2 - tx2) + abs(cy1 - ty1) + abs(cy2 - ty2) > 1);
   
-  // Update Teddy's Institute
+  // Update Tracy's Institute
   for (int i = 0; i < ntal.size(); i++) {
     TAItem thisObj = ntal.get(i);
     
