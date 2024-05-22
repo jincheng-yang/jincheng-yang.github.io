@@ -360,6 +360,10 @@ nav .dropdown a.dropdown-last {
     border-top-right-radius: 2em;
 }
 
+.talkdate {
+    white-space: nowrap;
+}
+
 /* Footer */
 
 footer {
