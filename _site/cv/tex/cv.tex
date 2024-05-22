@@ -29,6 +29,10 @@
 \usepackage{xfrac}
 \usepackage{xstring}
 \usepackage[calc,showdow,english]{datetime2}
+\AfterPreamble{
+  \usepackage{doi}
+}
+
 
 \makeatletter
 \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
@@ -140,7 +144,7 @@
 % \section{Publications and Preprints}
 
 \nocite{vasseur2024,zhang2022,zhang2024,yang2023,vasseur2023,yang2022a,yang2022,vasseur2021,lin2020,yang2018}
-\bibliographystyle{unsrt}
+\bibliographystyle{unsrturl}
 \bibliography{../../_data/publication.bib}
 % \input{pub.tex}
 % \input{publication}

@@ -60,7 +60,7 @@ Chicago, IL 60637, USA
 <div style="background: aliceblue">
 <div class="content" markdown="1">
 
-###### Education
+<!-- ###### Education
 
 - **Xi'an Jiaotong University**, B.Sc. in Mathematics and Applied Mathematics (Aug. 2013 - June 2017)
 - **The University of Texas at Austin**, Ph.D. in Mathematics (Aug. 2017 - May 2022)
@@ -69,7 +69,9 @@ Chicago, IL 60637, USA
 
 - **Columbia University in the City of New York**, Visiting Undergraduate Student (Jan. 2015 - May 2015)
 - **Georgia Institute of Technology**, School of Mathematics and Language Institute Visiting Honors Student Program (Jan. 2016 - May 2016)
-- **Georgia Institute of Technology**, Visiting Research Student (Jan. 2017 - May 2017)
+- **Georgia Institute of Technology**, Visiting Research Student (Jan. 2017 - May 2017) -->
+
+{% include publication_index %}
 
 </div>
 </div>
