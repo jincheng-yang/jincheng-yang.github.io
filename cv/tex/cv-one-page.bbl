@@ -1,21 +1,23 @@
 
 \cvitem{2024}
 {Luhao Zhang, Jincheng Yang, and Rui Gao.
-\newblock Optimal robust policy for feature-based newsvendor.
-\newblock {\em Manag. Sci.}, 70(4):2315--2329, 2024.
+\newblock A simple and general duality proof for {W}asserstein distributionally
+  robust optimization.
+\newblock {\em Oper. Res.}, 2024.
+\newblock Forthcoming.
 }
 \cvitem{}
-{Alexis~F. Vasseur and Jincheng Yang.
-\newblock Layer separation of the 3{D} incompressible {N}avier--{S}tokes
-  equation in a bounded domain.
-\newblock {\em Comm. Partial Differential Equations}, 2024.
-\newblock Forthcoming.
+{Luhao Zhang, Jincheng Yang, and Rui Gao.
+\newblock Optimal robust policy for feature-based newsvendor.
+\newblock {\em Manag. Sci.}, 70(4):2315--2329, 2024.
+\newblock
+  \href{https://optimization-online.org/?p=18579}{\texttt{OptOnline:18579}}.
 }
 \cvitem{2023}
 {Jincheng Yang.
 \newblock Vorticity interior trace estimates and higher derivative estimates
   via blow-up method.
-\newblock {\em arXiv e-prints}, page arXiv:2308.09350, 2023.
+\newblock {\em arXiv e-prints}, 2023.
 }
 \cvitem{}
 {Alexis~F. Vasseur and Jincheng Yang.
@@ -24,16 +26,12 @@
 \newblock {\em SIAM J. Math Anal.}, 55(4):3081--3107, 2023.
 }
 \cvitem{2022}
-{Luhao Zhang, Jincheng Yang, and Rui Gao.
-\newblock A simple and general duality proof for {W}asserstein distributionally
-  robust optimization.
-\newblock {\em arXiv e-prints}, page arXiv:2205.00362, 2022.
-}
-\cvitem{}
 {Jincheng Yang, Luhao Zhang, Ningyuan Chen, Rui Gao, and Ming Hu.
 \newblock Decision-making with side information: a causal transport robust
   approach.
 \newblock {\em OptOnline e-prints}, 2022.
+\newblock
+  \href{https://optimization-online.org/?p=20639}{\texttt{OptOnline:20639}}.
 }
 \cvitem{}
 {Jincheng Yang.
