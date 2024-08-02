@@ -107,6 +107,10 @@ a:hover {
     color: #2D5493;
 }
 
+ol li p {
+    text-align: left;
+}
+
 ul li, ol li {
     font-size: 1.0em;
     line-height: 1.8em;

@@ -1,37 +1,44 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Jincheng Yang at 2023-08-23 19:10:26 -0400 
+%% Created for Jincheng Yang at 2024-07-15 11:07:56 -0500 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
 
-@article{zhang2022,
-	adsnote = {Provided by the SAO/NASA Astrophysics Data System},
-	adsurl = {https://ui.adsabs.harvard.edu/abs/2022arXiv220500362Z},
-	archiveprefix = {arXiv},
+@article{cao2024,
+	abstract = {We derive several nonlinear a priori trace estimates for the 3D incompressible Navier-Stokes equation, which extend the current picture of higher derivative estimates in the mixed norm. The main ingredient is the blow-up method and a novel averaging operator, which could apply to PDEs with scaling invariance and $\varepsilon$-regularity, possibly with a drift.},
+	author = {Cao, Fei and Yang, Jincheng},
+	eprint = {2406.05043},
+	journal = {arXiv e-prints},
+	title = {Quantitative convergence guarantees for the mean-field dispersion process},
+	year = {2024},
+	bdsk-url-1 = {https://arxiv.org/pdf/2406.05043.pdf},
+	bdsk-url-2 = {https://arxiv.org/abs/2406.05043}}
+
+@article{zhang2024b,
+	abstract = { Wasserstein distributionally robust optimization has emerged as a recent topic with broader applications in operations research and machine learning. Various proofs have been presented in the literature, each differing in assumptions and levels of generality. In ``A Short and General Duality Proof for Wasserstein Distributionally Robust Optimization,'' Zhang, Yang, and Gao present a novel elementary proof that not only shortens existing frameworks but also offers surprising generalizations. Leveraging classical Legendre---Fenchel duality, they demonstrate that strong duality is contingent on a certain interchangeability principle. Moreover, they extend this duality result to encompass risk-averse optimization and globalized distributionally robust counterparts. },
 	author = {Zhang, Luhao and Yang, Jincheng and Gao, Rui},
-	date-added = {2023-06-06 10:49:08 -0500},
-	date-modified = {2023-06-06 10:50:08 -0500},
+	date-added = {2024-07-15 11:07:02 -0500},
+	date-modified = {2024-07-15 11:07:53 -0500},
+	doi = {10.1287/opre.2023.0135},
 	eid = {arXiv:2205.00362},
 	eprint = {2205.00362},
-	journal = {Oper. Res.},
 	fjournal = {Operations Research},
-	link = {https://pubsonline.informs.org/journal/opre},
+	journal = {Oper. Res.},
 	note = {Forthcoming},
-	keywords = {Mathematics - Optimization and Control, Computer Science - Machine Learning, Statistics - Machine Learning},
-	primaryclass = {math.OC},
-	title = {A simple and general duality proof for {W}asserstein distributionally robust optimization},
+	title = {A short and general duality proof for {W}asserstein distributionally robust optimization},
+	url = {https://doi.org/10.1287/opre.2023.0135},
 	year = {2024},
-	bdsk-url-1 = {https://doi.org/10.48550/arXiv.2205.00362}}
+	bdsk-url-1 = {https://doi.org/10.1287/opre.2023.0135}}
 
 @article{vasseur2024,
 	abstract = { We provide an unconditional L2 upper bound for the boundary layer separation of Leray--Hopf solutions in a smooth bounded domain. By layer separation, we mean the discrepancy between a (turbulent) low-viscosity Leray--Hopf solution uν and a fixed (laminar) regular Euler solution u¯ with similar initial conditions and body force. We show an asymptotic upper bound C||u¯||L∞3T on the layer separation, anomalous dissipation, and the work done by friction. This extends the previous result when the Euler solution is a regular shear in a finite channel. The key estimate is to control the boundary vorticity in a way that does not degenerate in the vanishing viscosity limit. },
 	author = {Alexis F. Vasseur and Jincheng Yang},
 	doi = {10.1080/03605302.2024.2346146},
 	eprint = {2303.05236},
-	journal = {Comm. Partial Differential Equations},
 	fjournal = {Communications in Partial Differential Equations},
+	journal = {Comm. Partial Differential Equations},
 	number = {4},
 	pages = {381--409},
 	publisher = {Taylor \& Francis},
@@ -45,22 +52,22 @@
 	abstract = { We study policy optimization for the feature-based newsvendor, which seeks an end-to-end policy that renders an explicit mapping from features to ordering decisions. Most existing works restrict the policies to some parametric class that may suffer from suboptimality (such as affine class) or lack of interpretability (such as neural networks). Differently, we aim to optimize over all functions of features. In this case, the classic empirical risk minimization yields a policy that is not well-defined on unseen feature values. To avoid such degeneracy, we consider a Wasserstein distributionally robust framework. This leads to an adjustable robust optimization, whose optimal solutions are notoriously difficult to obtain except for a few notable cases. Perhaps surprisingly, we identify a new class of policies that are proven to be exactly optimal and can be computed efficiently. The optimal robust policy is obtained by extending an optimal robust in-sample policy to unobserved feature values in a particular way and can be interpreted as a Lipschitz regularized critical fractile of the empirical conditional demand distribution. We compare our method with several benchmarks using synthetic and real data and demonstrate its superior empirical performance.This paper was accepted by J. George Shanthikumar, data science.Supplemental Material: The online appendix and data are available at https://doi.org/10.1287/mnsc.2023.4810. },
 	author = {Zhang, Luhao and Yang, Jincheng and Gao, Rui},
 	doi = {10.1287/mnsc.2023.4810},
+	eprinturl = {https://optimization-online.org/wp-content/uploads/2021/12/Big_Data_Newsvendor-2.pdf},
 	fjournal = {Management Science},
 	journal = {Manag. Sci.},
+	note = {\href{https://optimization-online.org/?p=18579}{\texttt{OptOnline:18579}}},
 	number = {4},
+	optonline = {18579},
 	pages = {2315-2329},
 	title = {Optimal robust policy for feature-based newsvendor},
 	url = {https://doi.org/10.1287/mnsc.2023.4810},
-	note = {\href{https://optimization-online.org/?p=18579}{\texttt{OptOnline:18579}}},
-	optonline = {18579},
-	eprinturl = {https://optimization-online.org/wp-content/uploads/2021/12/Big_Data_Newsvendor-2.pdf},
 	volume = {70},
 	year = {2024},
 	bdsk-url-1 = {https://doi.org/10.1287/mnsc.2023.4810}}
 
 @article{yang2023,
 	abstract = {We derive several nonlinear a priori trace estimates for the 3D incompressible Navier-Stokes equation, which extend the current picture of higher derivative estimates in the mixed norm. The main ingredient is the blow-up method and a novel averaging operator, which could apply to PDEs with scaling invariance and $\varepsilon$-regularity, possibly with a drift.},
-	author = {Jincheng Yang},
+	author = {Yang, Jincheng},
 	date-added = {2023-08-23 19:08:53 -0400},
 	date-modified = {2023-08-23 19:10:23 -0400},
 	eprint = {2308.09350},
@@ -72,7 +79,6 @@
 
 @article{vasseur2023,
 	author = {Alexis F. Vasseur and Jincheng Yang},
-	bdsk-url-1 = {https://doi.org/10.1137\%2F22m1503567},
 	date-added = {2023-08-23 18:48:09 -0400},
 	date-modified = {2023-08-23 18:51:03 -0400},
 	doi = {10.1137/22m1503567},
@@ -92,13 +98,12 @@
 	author = {Yang, Jincheng and Zhang, Luhao and Chen, Ningyuan and Gao, Rui and Hu, Ming},
 	date-added = {2023-06-06 11:06:40 -0500},
 	date-modified = {2023-06-06 11:08:15 -0500},
-	note = {\href{https://optimization-online.org/?p=20639}{\texttt{OptOnline:20639}}},
-	optonline = {20639},
 	eprinturl = {https://optimization-online.org/wp-content/uploads/2022/10/DRO_with_side_info__1st_part_-2-1.pdf},
 	journal = {OptOnline e-prints},
+	note = {\href{https://optimization-online.org/?p=20639}{\texttt{OptOnline:20639}}},
+	optonline = {20639},
 	title = {Decision-making with side information: a causal transport robust approach},
 	year = {2022}}
-
 
 @article{yang2022,
 	author = {Yang, Jincheng},
