@@ -15,6 +15,7 @@ I am interested in teaching mathematics, especially topics related to analysis a
 * linear algebra
 * differential equations
 * vector calculus
+* mathematical analysis
 
 </div>
 
@@ -58,15 +59,33 @@ I am interested in teaching mathematics, especially topics related to analysis a
 <div style="background-color:aliceblue">
 <div class="content" markdown="1">
 
-###### Directed Reading Program
+###### Mentoring
 
-The [Directed Reading Program](https://web.ma.utexas.edu/users/drp/about.html) is an RTG program that pairs undergraduate students with graduate student mentors to undertake independent projects in mathematics. 
+### Directed Reading Program (DRP)
 
-### Mentees
+The [Directed Rea](https://web.ma.utexas.edu/users/drp/about.html)[ding Program](https://math.uchicago.edu/~drp/) is an RTG program that pairs undergraduate students with graduate student and postdoc mentors to undertake independent projects in mathematics. 
 
 <ul>
 {% for drp in site.data.teach.DRP %}
 <li> {{ drp.Year }} {{ drp.Season }}: <b>{{ drp.Name }}</b>, {{ drp.Topic }}</li>
+{% endfor %}
+</ul>
+
+### Research Experiences for Undergraduates (REU)
+
+The [Research Experiences for Undergraduate](https://mathematics.uchicago.edu/undergraduate/mathematics-reu-program/) program pairs undergraduate students with faculty mentors. The heart of the REU is that all participants must write papers. The topics are chosen by the participants themselves, in consultation with their graduate mentors and faculty.
+
+<ul>
+{% for reu in site.data.teach.REU %}
+<li> {{ reu.Year }} {{ reu.Season }}: <b>{{ reu.Name }}</b>, {{ reu.Topic }}</li>
+{% endfor %}
+</ul>
+
+### Reading Course 
+
+<ul>
+{% for rc in site.data.teach.Reading_Course %}
+<li> {{ rc.Year }} {{ rc.Season }}: <b>{{ rc.Name }}</b>, {{ rc.Topic }}</li>
 {% endfor %}
 </ul>
 

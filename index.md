@@ -9,9 +9,12 @@ title: Jincheng's Website | About
 
 # About Me
 
-Hi, I am Jincheng! I am a Dickson instructor in the [Department of Mathematics](https://mathematics.uchicago.edu) at [The University of Chicago](https://www.uchicago.edu). I completed my Ph.D. in Mathematics at [The University of Texas at Austin](https://www.utexas.edu) in March 2022, under the supervision of [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/). My research interests include analysis, partial differential equations, fluid dynamics, especially the incompressible Euler equation and the Navier-Stokes equation. I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student in the Special Class for the Gifted Young before my undergraduate study. 
+Hi, I am Jincheng! I am a visiting member of the [Institute for Advanced Study](https://ias.edu). I was previously a Dickson instructor in the [Department of Mathematics](https://mathematics.uchicago.edu) at [The University of Chicago](https://www.uchicago.edu). I completed my Ph.D. in Mathematics at [The University of Texas at Austin](https://www.utexas.edu) in March 2022, under the supervision of [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/). My research interests include analysis, partial differential equations, fluid dynamics, especially the incompressible Euler equation and the Navier-Stokes equation. 
 
-This year, I co-organize the [Calderón-Zygmund Analysis Seminar](https://math.uchicago.edu/~cz/) at UChicago.
+<!-- I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student in the Special Class for the Gifted Young before my undergraduate study.  -->
+
+<!-- This year, I co-organize the [Calderón-Zygmund Analysis Seminar](https://math.uchicago.edu/~cz/) at UChicago. -->
+As in the fall of 2024, I am in the job market for a tenure-track position.
 
 </div>
 
@@ -32,25 +35,25 @@ This year, I co-organize the [Calderón-Zygmund Analysis Seminar](https://math.u
 <div style="float:right">
 <div style="display:inline" markdown="1">
 
-- Office: Eckhart 318
-- Email: [jincheng@uchicago.edu](mailto:jincheng@uchicago.edu)
-- Tel: +1 (773) 702-3023
+- Office: Simonyi 028
+- Email: [jcyang@ias.edu](mailto:jcyang@ias.edu)
+- Tel: +1 (609) 734-4505
 
 </div>
 </div>
 
 <div>
 <p style="margin:0px; padding:0px">
-Department of Mathematics
+School of Mathematics
 </p>
 <p style="margin:0px; padding:0px">
-The University of Chicago
+Institute for Advanced Study
 </p>
 <p style="margin:0px; padding:0px">
-5734 S University Ave
+1 Einstein Dr
 </p>
 <p style="margin-top:0px; padding:0px">
-Chicago, IL 60637, USA
+Princeton, NJ 08540, USA
 </p>
 </div>
 

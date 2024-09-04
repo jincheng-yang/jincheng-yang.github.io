@@ -7,7 +7,7 @@
 
 
 
-\documentclass[11pt,letterpaper,serif]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+\documentclass[11pt,letterpaper,roman]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
 
 \moderncvstyle{casual} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{utnavy} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
@@ -15,11 +15,13 @@
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
 \usepackage[scale=0.8]{geometry} % Reduce document margins
-%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+\setlength{\hintscolumnwidth}{5.8em} % Uncomment to change the width of the dates column
 %\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
 
 \renewcommand*{\namefont}{\fontsize{20}{20}\mdseries\upshape}
 \renewcommand*{\footsymbol}{\qquad}
+% \newcommand{\mysubsection}[1]{\subsection{\colorbox{color2!60!white}{\color{white}#1}}}
+\newcommand{\mysubsection}[1]{\subsection{\underline{#1}}}
 
 \usepackage{amsmath,amssymb, amsthm, enumerate, tikz-cd, etoolbox, colortbl, dsfont}
 \usepackage{spectralsequences, float}
@@ -32,7 +34,6 @@
 \AfterPreamble{
   \usepackage{doi}
 }
-
 
 \makeatletter
 \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
@@ -87,12 +88,13 @@
 \familyname{Yang} % Your last name
 
 % All information in this block is optional, comment out any lines you don't need
-% \title{Richard Wong}
-% \address{UT Austin Math Dept. $\bullet$ 2515 Speedway, PMA 11.130 $\bullet$ Austin, TX 78712}% \mobile{(302) 584 3464}
-\phone{+1 (512) 317-7231}
+\title{Curriculum Vitae}
+\address{Institute for Advanced Study $\bullet$ 1 Einstein Dr. $\bullet$ Princeton, NJ 08540}
+\mobile{(512) 317-7231}
+\phone{(609) 734-4505}
 % %\fax{(000) 111 1113}
-\homepage{https://math.uchicago.edu/$\sim$yang}
-\email{jincheng@uchicago.edu}
+\homepage{https://www.math.ias.edu/\textasciitilde jcyang/}
+\email{jcyang@ias.edu}
 % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
 %\extrainfo{additional information}
 %\photo[70pt][0.4pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
@@ -111,11 +113,8 @@
 \date{\today}
 \opening{Dear Search Committee,}
 \closing{Sincerely,}
-
 % \makelettertitle
- 
 % \input{section/letter.tex}
-
 % \makeletterclosing
 
 % \newpage
@@ -142,23 +141,15 @@
 \input{section/interest.tex}
 
 % \section{Publications and Preprints}
-
-\nocite{vasseur2024,zhang2022,zhang2024,yang2023,vasseur2023,yang2022a,yang2022,vasseur2021,lin2020,yang2018}
+\nocite{cao2024,yang2023,yang2022a,zhang2024b,vasseur2024,zhang2024,vasseur2023,yang2022a,yang2022,vasseur2021,lin2020,yang2018}
 \bibliographystyle{unsrturl}
 \bibliography{../../_data/publication.bib}
-% \input{pub.tex}
-% \input{publication}
 
-% \subsection{Ph.D. Thesis}
-
-% \input{section/thesis.tex}
+\input{section/thesis.tex}
 
 \section{Honors and Awards}
-
 \newcommand{\honor}[4]{\cvitem{#3 #4}{#1, \textit{#2}}}
 \input{section/honor.tex}
-
-% \section{Academic Experience}
 
 % \subsection{Conferences and Workshops}
 
@@ -166,37 +157,46 @@
 % \input{section/conference.tex}
 
 \section{Invited Talks}
-
 \newcommand{\talk}[6]{\cventry{\DTMdate{#2}}{\textnormal{#4,} \textnormal{\textit{#3}}}{}{}{}{#5}}%{\DTMdate{#2}}{#4}{#5}}
 \input{section/talk-invited.tex}
 
 % \subsection{Seminar Talks}
-
 % \renewcommand{\talk}[5]{\cvitem{\DTMdate{#2}}{#4, \textit{#1}}}
 % \input{section/talk-not-invited.tex}
 
-% \section{Service}
+\section{Service}
 
-% \subsection{Journal Refereeing}
+\mysubsection{Seminar Organizing}
+\cventry{2023--2024}{Calder\'on--Zygmund Analysis Seminar}{University of Chicago}{}{}{}
+\cventry{2019}{Harmonic Analysis Reading Seminar}{University of Texas at Austin}{}{}{}
 
-% \cvitem{}{SIAM Journal on Mathematical Analysis}
-% \cvitem{}{Journal of Differential Equations}
+\mysubsection{Journal Refereeing}
+\cvitem{}{SIAM Journal on Mathematical Analysis}
+\cvitem{}{Journal of Differential Equations}
+\cvitem{}{Mathematical Programming}
 
 \section{Teaching Experience}
 
 \newcommand{\teach}[4]{\cvitem{#3 #4}{#1 -- #2}}
-\subsection{Instructor}
-
+\mysubsection{Instructor}
 \input{section/uchicago.tex}
 
-\subsection{Teaching Assistant}
-
+\mysubsection{Teaching Assistant}
 \input{section/utaustin.tex}
 
-\subsection{Mentoring Undergraduate Students}
+\section{Mentoring Undergraduate Students}
 
 \newcommand{\drp}[4]{\cvitem{#3 #4}{#1, \textit{#2}}}
+
+\mysubsection{Research Experience for Undergraduates}
+\input{section/reu.tex}
+
+\mysubsection{Reading Course}
+\input{section/reading_course.tex}
+
+\mysubsection{Directed Reading Program}
 \input{section/drp.tex}
+
 
 % \input{section/work.tex}
 
