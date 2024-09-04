@@ -9,11 +9,27 @@
             "Type": "conference"
         },
         {
+            "Title": "Recent Advances in Nonlinear Partial Differential Equations",
+            "Start": "2024-05-13",
+            "End": "2024-05-17",
+            "Location": "University of Minnesota",
+            "URL": "https://cse.umn.edu/math/events/recent-advances-nonlinear-partial-differential-equations",
+            "Type": "conference"
+        },
+        {
             "Title": "AMS Spring Southeastern Sectional Meeting",
             "Start": "2024-03-23",
             "End": "2024-03-24",
             "Location": "Florida State University",
             "URL": "https://meetings.ams.org/math/spring2024se/meetingapp.cgi/",
+            "Type": "conference"
+        },
+        {
+            "Title": "Small scale dynamics in incompressible fluid flows",
+            "Start": "2023-11-06",
+            "End": "2023-11-10",
+            "Location": "American Institute of Mathematics",
+            "URL": "https://aimath.org/workshops/upcoming/smallscalefluid/",
             "Type": "conference"
         },
         {
