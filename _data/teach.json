@@ -96,9 +96,9 @@
     ], 
     "DRP": [
         {
-            "Name": "Dante Strollo and Jakob Wellington",
-            "Topic": "on the topic of Fourier Analysis",
-            "Season": "Spring",
+            "Name": "Ariana Qin",
+            "Topic": "on the topic of Stochastic Calculus and Stochastic Control",
+            "Season": "Summer",
             "Year": "2024"
         },
         {
@@ -130,6 +130,32 @@
             "Topic": "on the topic of Probability and Martingales",
             "Season": "Spring", 
             "Year": "2018"
+        }
+    ], "REU": [
+        {
+            "Name": "Minh Pham",
+            "Topic": "on the topic of Nonlinear Integral Equations",
+            "Season": "Summer",
+            "Year": "2024"
+        },
+        {
+            "Name": "Michael Lee",
+            "Topic": "on the topic of Partial Regularity Theory of Navier-Stokes Equations",
+            "Season": "Summer",
+            "Year": "2024"
+        },
+        {
+            "Name": "Zichen Lu",
+            "Topic": "on the topic of Inviscid Damping of Euler Equations",
+            "Season": "Summer",
+            "Year": "2024"
+        }
+    ], "Reading_Course": [
+        {
+            "Name": "Dante Strollo and Jakob Wellington",
+            "Topic": "on the topic of Fourier Analysis",
+            "Season": "Spring",
+            "Year": "2024"
         }
     ]
 }

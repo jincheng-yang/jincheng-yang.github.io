@@ -5,7 +5,7 @@
             "School": "The University of Texas at Austin",
             "Start": "2017-08-15",
             "End": "2022-05-30",
-            "Period": "2017-2022",
+            "Period": "2017--2022",
             "Location": "Austin, TX",
             "Note": "Advisor: Prof. Luis A. Caffarelli and Prof. Alexis F. Vasseur",
             "Degree": "doctor"
@@ -33,7 +33,7 @@
             "School": "Xi'an Jiaotong University",
             "Start": "2013-08-18",
             "End": "2017-06-24",
-            "Period": "2013-2017",
+            "Period": "2013--2017",
             "Location": "China",
             "Degree": "bachelor"
         },
@@ -42,7 +42,7 @@
             "School": "Xi'an Jiaotong University",
             "Start": "2011-08-30",
             "End": "2013-07-10",
-            "Period": "2011-2013",
+            "Period": "2011--2013",
             "Location": "China",
             "Degree": "non-degree"
         }
