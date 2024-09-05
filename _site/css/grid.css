@@ -194,7 +194,7 @@ input {
     padding-bottom: 4em;
     font-family: 'Cinzel', serif;
     font-size: 1.0em;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.12em;
 }
 
 /* Navigation */
@@ -214,7 +214,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     grid-template-columns: auto auto auto auto auto;
-    grid-template-areas: "academic cv icon teaching music";
+    grid-template-areas: "research cv icon teaching music";
 }
 
 nav a {
@@ -270,11 +270,11 @@ nav .dropdown a.dropdown-last {
     background-image: url("../assets/images/icon2-s.jpg");
 }
 
-#academic-dropdown-block:hover #academic-dropdown {
+#research-dropdown-block:hover #research-dropdown {
     display: grid;
 }
 
-#academic {
+#research {
     position: relative;
 }
 
@@ -295,7 +295,7 @@ nav .dropdown a.dropdown-last {
         display: none;
     }
 
-    #academic-dropdown-block, #cv, #teaching, #music {
+    #research-dropdown-block, #cv, #teaching, #music {
         display: none;
     }
 
