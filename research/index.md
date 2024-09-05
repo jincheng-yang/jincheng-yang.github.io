@@ -1,13 +1,13 @@
 ---
 layout: grid
-title: Jincheng's Website | Academic
+title: Jincheng's Website | Research
 use-math: true
 ---
 
 <div>
 <div class="content" markdown="1">
 
-# Academic
+# Research
 
 My general research interest includes the area of analysis, dynamic systems, and partial differential equations, especially those arising in the field of fluid mechanics, including 
 
