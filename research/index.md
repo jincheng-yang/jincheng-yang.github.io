@@ -11,10 +11,12 @@ use-math: true
 
 My general research interest includes the area of analysis, dynamic systems, and partial differential equations, especially those arising in the field of fluid mechanics, including 
 
-* incompressible Euler equations
-* incompressible Navier-Stokes equations 
-* surface quasi-geostrophic equations
-* transmission problems
+* Euler equations
+* Navier-Stokes equations 
+* Boltzmann equation
+* Fokker-Planck equation
+
+I am also interested in topics related to distributionally robust stochastic optimization.
 
 </div>
 </div>

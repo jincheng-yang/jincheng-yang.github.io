@@ -9,6 +9,14 @@
             "Abstract": "The modern theory of risk measures copes with uncertainty by considering multiple probability measures. While it is often assumed that a reference probability measure exists, under which all relevant probability measures are absolutely continuous, there are examples where this assumption does not hold, such as certain distributional robust functionals. In this talk, we introduce a novel class of dynamic risk measures that do not rely on this assumption. We will discuss its convexity, coherence, and time consistency properties."
         },
         {
+            "Title": "Energy dissipation near the outflow boundary in the vanishing viscosity limit",
+            "Date": "2024-10-04",
+            "Location": "Brown University",
+            "Series": "PDE Seminar",
+            "Type": "invited",
+            "Abstract": "We consider the incompressible Navier-Stokes and Euler equations in a bounded domain with non-characteristic boundary condition, and study the energy dissipation near the outflow boundary in the zero-viscosity limit. We show that in a general setting, the energy dissipation rate is proportional to $\\bar U \\bar V ^2$, where $\\bar U$ is the strength of the suction and $\\bar V$ is the strength of the shear. Moreover, we show that the rate of enstrophy production near the boundary is proportional to the Reynolds number."
+        },
+        {
             "Title": "The role of risk measure in multistage distributionally robust stochastic optimization",
             "Date": "2024-08-22",
             "Location": "University of Illinois Urbana-Champaign",
