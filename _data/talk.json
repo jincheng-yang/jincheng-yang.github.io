@@ -1,5 +1,13 @@
 {
     "Talk": [
+        {
+            "Title": "Energy dissipation near the outflow boundary in the vanishing viscosity limit",
+            "Date": "2024-11-22",
+            "Location": "CUNY Graduate Center",
+            "Series": "Harmonic Analysis & PDE Seminar",
+            "Type": "invited",
+            "Abstract": "We consider the incompressible Navier-Stokes and Euler equations in a bounded domain with non-characteristic boundary condition, and study the energy dissipation near the outflow boundary in the zero-viscosity limit. We show that in a general setting, the energy dissipation rate is proportional to $\\bar U \\bar V ^2$, where $\\bar U$ is the strength of the suction and $\\bar V$ is the strength of the shear. Moreover, we show that the rate of enstrophy production near the boundary is proportional to the Reynolds number."
+        },
         { 
             "Title": "Beyond absolute continuity: a new class of dynamic risk measures",
             "Date": "2024-10-22",
