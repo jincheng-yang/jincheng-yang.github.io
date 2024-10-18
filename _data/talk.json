@@ -1,5 +1,13 @@
 {
     "Talk": [
+        {
+            "Title": "Energy dissipation near the outflow boundary in the vanishing viscosity limit",
+            "Date": "2024-11-22",
+            "Location": "CUNY Graduate Center",
+            "Series": "Harmonic Analysis & PDE Seminar",
+            "Type": "invited",
+            "Abstract": "We consider the incompressible Navier-Stokes and Euler equations in a bounded domain with non-characteristic boundary condition, and study the energy dissipation near the outflow boundary in the zero-viscosity limit. We show that in a general setting, the energy dissipation rate is proportional to $\\bar U \\bar V ^2$, where $\\bar U$ is the strength of the suction and $\\bar V$ is the strength of the shear. Moreover, we show that the rate of enstrophy production near the boundary is proportional to the Reynolds number."
+        },
         { 
             "Title": "Beyond absolute continuity: a new class of dynamic risk measures",
             "Date": "2024-10-22",
@@ -15,6 +23,14 @@
             "Series": "PDE Seminar",
             "Type": "invited",
             "Abstract": "We consider the incompressible Navier-Stokes and Euler equations in a bounded domain with non-characteristic boundary condition, and study the energy dissipation near the outflow boundary in the zero-viscosity limit. We show that in a general setting, the energy dissipation rate is proportional to $\\bar U \\bar V ^2$, where $\\bar U$ is the strength of the suction and $\\bar V$ is the strength of the shear. Moreover, we show that the rate of enstrophy production near the boundary is proportional to the Reynolds number."
+        },
+        {
+            "Title": "Energy dissipation of Navier-Stokes equation with non-characteristic boundary condition",
+            "Date": "2024-10-02",
+            "Location": "Institute for Advanced Study",
+            "Series": "Short Talks by Postdoctoral Members",
+            "Type": "invited",
+            "Abstract": "In this talk, I will discuss the inviscid limit problem. I will start with a general introduction of the Euler and Navier-Stokes system, and describe the problem of inviscid limit. I will cite the result of Kato (1984) which gives a necessary and sufficient condition for inviscid limit to hold. This will lead to a discussion on the zero-viscosity limit of energy dissipation. I will present a theorem of Vasseur—Yang (2023,2024) which gives an upper bound in the case of the impermeable and non-slip boundary condition, and an ongoing work which shows upper and lower bound in the case of the inflow-outflow condition."
         },
         {
             "Title": "The role of risk measure in multistage distributionally robust stochastic optimization",
