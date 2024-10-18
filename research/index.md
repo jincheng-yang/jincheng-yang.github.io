@@ -83,7 +83,7 @@ I am also interested in topics related to distributionally robust stochastic opt
 {% for post in site.posts %}
 {% if post.hide %}
 {% else %}
-	<li><span>{{ post.date | date: "%b. %-d, %Y" }}</span> » <a href="{{ site.baseurl }}{{ post.url }}.html" title="{{ post.title }}">{{ post.title }}</a></li>
+	<li><span>{{ post.date | date: "%b. %-d, %Y" }}</span> » <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 {% endif %}
 {% endfor %}
 </ul>
