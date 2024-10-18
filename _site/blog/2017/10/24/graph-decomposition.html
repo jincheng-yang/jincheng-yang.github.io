@@ -5,11 +5,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/grid.css">
+		<link rel="stylesheet" type="text/css" href="/~jcyang/css/grid.css">
 		<!-- link to fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Exo:300,600|Roboto:400|Roboto+Condensed:300|Dancing+Script:400|PT+Serif:400,400i|Palanquin+Dark:400|Noto+Serif:400,400i" rel="stylesheet">
 		<!-- JavaScrips -->
-		<script type="text/javascript" src="/plugin/drag-and-drop.js"></script>
+		<script type="text/javascript" src="/~jcyang/plugin/drag-and-drop.js"></script>
 		
 			<script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -65,33 +65,33 @@
 			<div id="nav-container">
 
 				<div class = "dropdown-block" id = "research-dropdown-block">
-					<a href="/research#" ondrop="drop(event)" ondragover="allowDrop(event)" id="research">Research &#9662;</a>
+					<a href="/~jcyang/research#" ondrop="drop(event)" ondragover="allowDrop(event)" id="research">Research &#9662;</a>
 	
 					<div class= "dropdown" id="research-dropdown">
-						<a class = "dropdown-first" href="/research#publications">Publications</a>
-						<a href="/research#talks">Talks</a>
-						<a href="/research#blog">Blog</a>
-						<a class = "dropdown-last" href="/research#conferences">Conferences</a>
+						<a class = "dropdown-first" href="/~jcyang/research#publications">Publications</a>
+						<a href="/~jcyang/research#talks">Talks</a>
+						<a href="/~jcyang/research#blog">Blog</a>
+						<a class = "dropdown-last" href="/~jcyang/research#conferences">Conferences</a>
 					</div>
 				</div>
 
-				<a href="/cv" ondrop="drop(event)" ondragover="allowDrop(event)" id="cv">Curriculum Vitae</a>
+				<a href="/~jcyang/cv" ondrop="drop(event)" ondragover="allowDrop(event)" id="cv">Curriculum Vitae</a>
 				
-				<a id = "icon" href="/" draggable="true" ondragstart="drag(event)" title="Home Page"></a>
+				<a id = "icon" href="/~jcyang/" draggable="true" ondragstart="drag(event)" title="Home Page"></a>
 
-				<a href="/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="teaching">Teaching</a>
+				<a href="/~jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="teaching">Teaching</a>
 
-				<a href="/music" ondrop="drop(event)" ondragover="allowDrop(event)" id="music">Music</a>
+				<a href="/~jcyang/music" ondrop="drop(event)" ondragover="allowDrop(event)" id="music">Music</a>
 
 				<div class = "dropdown-block" id = "menu-dropdown-block">
 					<a href="#" id="menu">Menu &#9662;</a>
 	
 					<div class= "dropdown" id="menu-dropdown">
-						<a class="dropdown-first" href="/research">Research</a>
-						<a href="/cv">Curriculum Vitae</a>
-						<a href="/research#publications">Publications</a>
-						<a href="/teach">Teaching</a>
-						<a class="dropdown-last" href="/music">Music</a>
+						<a class="dropdown-first" href="/~jcyang/research">Research</a>
+						<a href="/~jcyang/cv">Curriculum Vitae</a>
+						<a href="/~jcyang/research#publications">Publications</a>
+						<a href="/~jcyang/teach">Teaching</a>
+						<a class="dropdown-last" href="/~jcyang/music">Music</a>
 					</div>
 				</div>
 			</div>
@@ -268,9 +268,9 @@
 <p>A graph $V, E$ contains a vertex set $V$ connected by a set of edges $E \subset V \times V$. The <strong>complete graph</strong> $K _n$ has $n$ vertices, and each pair is connected by an edge. The followings are examples of complete graphs.</p>
 
 <div style="text-align:center">
-    <img src="/assets/images/blog/2017-10-24-graph-decomposition/fig-k5.svg" width="30%" />
-    <img src="/assets/images/blog/2017-10-24-graph-decomposition/fig-k6.svg" width="25%" />
-    <img src="/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" width="30%" />
+    <img src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k5.svg" width="30%" />
+    <img src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k6.svg" width="25%" />
+    <img src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" width="30%" />
 </div>
 
 <p class="figure">Complete graphs $K _5$, $K _6$ and $K _7$</p>
@@ -278,7 +278,7 @@
 <p>A <strong>Hamiltonian cycle</strong> of a graph is a cycle that pass all vertices exactly once without walking repeated edges. For example, the orange cycle $C _7$, a cycle with 7 vertices, is a Hamiltonian cycle in $K _7$.</p>
 
 <div id="fig2" style="text-align:center">
-    <img class="emerge" src="/assets/images/blog/2017-10-24-graph-decomposition/fig-c7.svg" width="40%" /><img class="disappear" src="/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" width="40%" />
+    <img class="emerge" src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-c7.svg" width="40%" /><img class="disappear" src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig-k7.svg" width="40%" />
 </div>
 
 <p class="figure">A Hamiltonian Cycle $C _7$ in $K _7$</p>
@@ -290,7 +290,7 @@
 <p>For what $n$ can we decompose $K_n$ into $mC_n$? First, let’s check number of edges. If $K _n$ can be decomposed, then the number of edges of $K _n$ must be a multiple of number of edges in $C _n$, which has $n$ edges. A complete graph $K _n$ has $\mathcal{C} ^2 _n = \dfrac{n(n-1)}{2}$ edges. It is a multiple of $n$ if and only if $\dfrac{n-1}{2}$ is an integer, i.e. $n$ must be odd.</p>
 
 <div id="fig3" style="text-align:center">
-    <img class="mvleft" src="/assets/images/blog/2017-10-24-graph-decomposition/fig1.svg" width="30%" /><img class="mvmiddle" src="/assets/images/blog/2017-10-24-graph-decomposition/fig2.svg" width="30%" /><img class="mvright" src="/assets/images/blog/2017-10-24-graph-decomposition/fig3.svg" width="30%" />
+    <img class="mvleft" src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig1.svg" width="30%" /><img class="mvmiddle" src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig2.svg" width="30%" /><img class="mvright" src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/fig3.svg" width="30%" />
 </div>
 
 <p class="figure">Decompose $K _7$ into $3C _7$</p>
@@ -322,7 +322,7 @@ C^0 := 0 \rightarrow 1 \rightarrow w \rightarrow w^{-1} \rightarrow w ^2 \righta
 <p>Graphically, it can be seen as the following.</p>
 
 <div id="fig4" style="text-align:center">
-    <img class="mvll" src="/assets/images/blog/2017-10-24-graph-decomposition/w9-0.svg" width="25%" /><img class="mvl" src="/assets/images/blog/2017-10-24-graph-decomposition/w9-2.svg" width="25%" /><img class="mvr" src="/assets/images/blog/2017-10-24-graph-decomposition/w9-1.svg" width="25%" /><img class="mvrr" src="/assets/images/blog/2017-10-24-graph-decomposition/w9-3.svg" width="25%" />
+    <img class="mvll" src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/w9-0.svg" width="25%" /><img class="mvl" src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/w9-2.svg" width="25%" /><img class="mvr" src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/w9-1.svg" width="25%" /><img class="mvrr" src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/w9-3.svg" width="25%" />
 </div>
 
 <p class="figure">Walecki Decomposition of $K _9$ into $4C _3$</p>
@@ -340,7 +340,7 @@ C^0 := 0 \rightarrow 1 \rightarrow w \rightarrow w^{-1} \rightarrow w ^2 \righta
 <div class="boxl">
 
 <div id="fig5" style="text-align:center">
-    <img src="/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3.svg" width="40%" />
+    <img src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3.svg" width="40%" />
 </div>
 
 <p class="figure">Graph $K _9 ^{1, 3}$</p>
@@ -350,7 +350,7 @@ C^0 := 0 \rightarrow 1 \rightarrow w \rightarrow w^{-1} \rightarrow w ^2 \righta
 <div class="boxr">
 
 <div id="fig6" style="text-align:center">
-    <img class="mvlll" src="/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3-1.svg" width="40%" /><img class="mvrrr" src="/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3-2.svg" width="40%" />
+    <img class="mvlll" src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3-1.svg" width="40%" /><img class="mvrrr" src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/k9-1-3-2.svg" width="40%" />
 </div>
 
 <p class="figure">$K _9 ^{1, 3} = 2C _9 $</p>
@@ -382,7 +382,7 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
 <div class="boxl">
 
 <div id="fig5" style="text-align:center">
-    <img src="/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4.svg" width="40%" />
+    <img src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4.svg" width="40%" />
 </div>
 
 <p class="figure">Graph $K _{12} ^{1, 4}$</p>
@@ -391,7 +391,7 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
 
 <div class="boxr">
 <div id="fig7" style="text-align:center">
-    <img class="mvllll" src="/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4-1.svg" width="40%" /><img class="mvrrrr" src="/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4-2.svg" width="40%" />
+    <img class="mvllll" src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4-1.svg" width="40%" /><img class="mvrrrr" src="/~jcyang/assets/images/blog/2017-10-24-graph-decomposition/k12-1-4-2.svg" width="40%" />
 </div>
 
 <p class="figure">$K _{12} ^{1, 4} = 2C _{12} $</p>
@@ -525,7 +525,7 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
 
   
   
-  <h3>Recent <a href="/research#blog" style="color:#526d6d">Posts</a></h3>
+  <h3>Recent <a href="/~jcyang/research#blog" style="color:#526d6d">Posts</a></h3>
     
     <!-- 
     
@@ -534,7 +534,7 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
       
     
     <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
-    <div class="thumbpic" style="background-color:white;background-image:url('/assets/images/thumbnails/jensen.svg')"></div>
+    <div class="thumbpic" style="background-color:white;background-image:url('/~jcyang/assets/images/thumbnails/jensen.svg')"></div>
     </a>
     <h5>05 Feb 2021</h5>
     <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
@@ -543,7 +543,7 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
     </div><div class="thumb" style="margin-left:5%">
     
     <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
-    <div class="thumbpic" style="background-color:white;background-image:url('/assets/images/thumbnails/isoperimetric.png')"></div>
+    <div class="thumbpic" style="background-color:white;background-image:url('/~jcyang/assets/images/thumbnails/isoperimetric.png')"></div>
     </a>
     <h5>22 Jan 2021</h5>
     <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
@@ -552,7 +552,7 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
     </div><div class="thumb" style="margin-left:5%">
     
     <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
-    <div class="thumbpic" style="background-color:white;background-image:url('/assets/images/thumbnails/lorentz.svg')"></div>
+    <div class="thumbpic" style="background-color:white;background-image:url('/~jcyang/assets/images/thumbnails/lorentz.svg')"></div>
     </a>
     <h5>14 Apr 2020</h5>
     <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
@@ -566,11 +566,11 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
     
     
       <div class="thumb" style="background-color: #EEE;">
-      <a href="/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
-        <div class="thumbpic" style="background-image:url('/assets/images/thumbnails/jensen.svg')"></div>
+      <a href="/~jcyang/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+        <div class="thumbpic" style="background-image:url('/~jcyang/assets/images/thumbnails/jensen.svg')"></div>
       </a>
       <h5>05 Feb 2021</h5>
-      <a href="/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+      <a href="/~jcyang/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
         <h4>Jensen's Approximation</h4>
       </a>
       </div>
@@ -578,11 +578,11 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
     
     
       <div class="thumb" style="background-color: #EEE;">
-      <a href="/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
-        <div class="thumbpic" style="background-image:url('/assets/images/thumbnails/isoperimetric.png')"></div>
+      <a href="/~jcyang/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+        <div class="thumbpic" style="background-image:url('/~jcyang/assets/images/thumbnails/isoperimetric.png')"></div>
       </a>
       <h5>22 Jan 2021</h5>
-      <a href="/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+      <a href="/~jcyang/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
         <h4>De Giorgi</h4>
       </a>
       </div>
@@ -590,11 +590,11 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
     
     
       <div class="thumb" style="background-color: #EEE;">
-      <a href="/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
-        <div class="thumbpic" style="background-image:url('/assets/images/thumbnails/lorentz.svg')"></div>
+      <a href="/~jcyang/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+        <div class="thumbpic" style="background-image:url('/~jcyang/assets/images/thumbnails/lorentz.svg')"></div>
       </a>
       <h5>14 Apr 2020</h5>
-      <a href="/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+      <a href="/~jcyang/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
         <h4>Lorentz Space</h4>
       </a>
       </div>
@@ -611,8 +611,8 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
 		<footer>
 			<div id="footer-container">
 				<!-- <a href="https://www.utexas.edu"><img id="logo" src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a> -->
-				<!-- <a href="https://mathematics.uchicago.edu/"><img id="logo" src="/assets/images/uc_logo.jpeg"></a> -->
-				<a href="https://www.ias.edu/math"><img id="logo" src="/assets/images/ias_logo.svg"></a>
+				<!-- <a href="https://mathematics.uchicago.edu/"><img id="logo" src="/~jcyang/assets/images/uc_logo.jpeg"></a> -->
+				<a href="https://www.ias.edu/math"><img id="logo" src="/~jcyang/assets/images/ias_logo.svg"></a>
 				
 				<p id="copyright">Copyright &#169 2024 Jincheng Yang</p>
 
@@ -625,7 +625,7 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
 						rel="me noopener noreferrer"
 						style="vertical-align: bottom">
 						<img
-							src="/assets/images/orcid.svg"
+							src="/~jcyang/assets/images/orcid.svg"
 							style="width: 1em; vertical-align: text-bottom;"
 							alt="ORCID iD icon"/>
 							ORCiD
@@ -635,7 +635,7 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
 						href="https://arxiv.org/a/yang_j_6.html"
 						style="vertical-align: bottom">
 						<img
-							src="/assets/images/arxiv.svg"
+							src="/~jcyang/assets/images/arxiv.svg"
 							style="height: 1em; vertical-align: text-bottom;"
 							alt="arXiv icon"/>
 							arXiv
@@ -645,7 +645,7 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
 						href="https://scholar.google.com/citations?user=jiuXYIIAAAAJ"
 						style="vertical-align: bottom">
 						<img
-							src="/assets/images/googlescholar.svg"
+							src="/~jcyang/assets/images/googlescholar.svg"
 							style="height: 1em; vertical-align: text-bottom;"
 							alt="google scholar icon"/>
 							Google
@@ -655,7 +655,7 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
 						href="https://www.linkedin.com/in/jincheng-yang/"
 						style="vertical-align: bottom">
 						<img
-							src="/assets/images/linkedin.svg"
+							src="/~jcyang/assets/images/linkedin.svg"
 							style="height: 1em; vertical-align: text-bottom;"
 							alt="LinkedIn icon"/>
 							LinkedIn
@@ -665,7 +665,7 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
 						href="https://www.researchgate.net/profile/Jincheng-Yang"
 						style="vertical-align: bottom">
 						<img
-							src="/assets/images/ResearchGate.svg"
+							src="/~jcyang/assets/images/ResearchGate.svg"
 							style="height: 1em; vertical-align: text-bottom;"
 							alt="research gate icon"/>
 							ResearchGate
@@ -677,7 +677,7 @@ Why we are interested in $K _9 ^{1, 3}$? We know that $K _9 ^1$, $K _9 ^2$, $K _
 
 
 		
-		<script type="text/javascript" src="/plugin/Escher.js"></script>
-		<script type="text/javascript" src="/plugin/set_icon.js"></script>
+		<script type="text/javascript" src="/~jcyang/plugin/Escher.js"></script>
+		<script type="text/javascript" src="/~jcyang/plugin/set_icon.js"></script>
 	</body>
 </html>
