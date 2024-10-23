@@ -16,7 +16,7 @@
 {% if row["entry_type"] == "article" %}
 {% if row["journal"] contains "e-prints" %}
 {% else %}
-1. {{ row["author"] }}: *{{ row["title"] }}*, [{{ row["fjournal"] }}]({{ row["url"] }}{{ row["link"] }}), {% if row["volume"] and row["volume"] != 0 %}**{{ row["volume"] }}:** {{ row["pages"] }}{% else %}forthcoming{% endif %}. ({{ row["year"] }}) {% if row["eprint"] contains "." %}
+1. {{ row["author"] }}: *{{ row["title"] }}*, [{{ row["journal"] }}]({{ row["url"] }}{{ row["link"] }}), {% if row["volume"] and row["volume"] != 0 %}**{{ row["volume"] }}:** {{ row["pages"] }}{% else %}forthcoming{% endif %}. ({{ row["year"] }}) {% if row["eprint"] contains "." %}
 [[arXiv:{{ row["eprint"] }}](https://arxiv.org/abs/{{ row["eprint"] }})][[pdf](https://arxiv.org/pdf/{{ row["eprint"] }}.pdf)]
 {% else %}
 [[OptOnline:{{ row["optonline"] }}](https://optimization-online.org/?p={{ row["optonline"] }})][[pdf]({{ row["eprinturl"] }})]
