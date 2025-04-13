@@ -14,7 +14,10 @@ Hi, I am Jincheng! I am a member of [Institute for Advanced Study](https://ias.e
 <!-- I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student in the Special Class for the Gifted Young before my undergraduate study.  -->
 
 <!-- This year, I co-organize the [Calderón-Zygmund Analysis Seminar](https://math.uchicago.edu/~cz/) at UChicago. -->
-As in the fall of 2024, I am on the job market for a tenure-track position.
+
+<!-- As in the fall of 2024, I am on the job market for a tenure-track position. -->
+
+Starting fall of 2025, I will join the [Department of Applied Mathematics and Statistics](https://engineering.jhu.edu/ams/) of [Johns Hopkins University](https://www.jhu.edu).
 
 </div>
 

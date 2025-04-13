@@ -1,6 +1,57 @@
 {
     "Talk": [
         {
+            "Title": "Duality results for Wasserstein Robust Optimization",
+            "Date": "2025-05-17",
+            "Location": "University of Wisconsin, Madison",
+            "Series": "2025 AWM Research Symposium",
+            "Minisymposium": "Nonlinear Constraints: A Catalyst for Creativity in Analysis and its Applications",
+            "Type": "invited",
+            "Abstract": "Distributionally robust optimization is a popular framework in data-driven decision making. We present a general duality result for Wasserstein distributionally robust optimization that holds for any Kantorovich transport cost, measurable loss function, and nominal probability distribution. Assuming an interchangeability principle inherent in existing duality results, our proof only uses one-dimensional convex analysis. In this talk, I will present the proof, and motivate the results using example with geometric interpretations. "
+        },
+        {
+            "Title": "Quantitative Convergence Guarantees for the Mean-field Dispersion Process",
+            "Date": "2025-05-13",
+            "Location": "Denver",
+            "Series": "SIAM Conference on Applications of Dynamical Systems (DS25)",
+            "Minisymposium": "Mean Field Limits of Particle Dynamics - Part II of II",
+            "Type": "invited",
+            "Abstract": "We study the discrete Fokker-Planck equation associated with the mean-field dynamics of a particle system called the dispersion process. For different regimes of the average number of particles per site, we establish various quantitative long-time convergence guarantees toward the global equilibrium, which is also confirmed by numerical simulations."
+        },
+        {
+            "Title": "Energy dissipation near the outflow boundary in the vanishing viscosity limit",
+            "Date": "2025-04-15",
+            "Location": "University of California, Los Angeles",
+            "Series": "PDE and Analysis Seminar",
+            "Type": "invited",
+            "Abstract": "We consider the incompressible Navier-Stokes and Euler equations in a bounded domain with non-characteristic boundary condition, and study the energy dissipation near the outflow boundary in the zero-viscosity limit. We show that in a general setting, the energy dissipation rate is proportional to $\\bar U \\bar V ^2$, where $\\bar U$ is the strength of the suction and $\\bar V$ is the tangential component of the difference between Euler and Navier-Stokes on the outflow boundary. Moreover, we show that the enstrophy within a layer of order $\\nu / \\bar U$ is comparable with the total enstrophy. The rate of enstrophy production near the boundary is inversely proportional to $\\nu$. This is based on joint work with Vincent Martinez, Anna Mazzucato, and Alexis Vasseur."
+        },
+        {
+            "Title": "Energy dissipation near the outflow boundary in the vanishing viscosity limit",
+            "Date": "2025-04-09",
+            "Location": "The University of Texas at Austin",
+            "Series": "Analysis Seminar",
+            "Type": "invited",
+            "Abstract": "We consider the incompressible Navier-Stokes and Euler equations in a bounded domain with non-characteristic boundary condition, and study the energy dissipation near the outflow boundary in the zero-viscosity limit. We show that in a general setting, the energy dissipation rate is proportional to $\\bar U \\bar V ^2$, where $\\bar U$ is the strength of the suction and $\\bar V$ is the tangential component of the difference between Euler and Navier-Stokes on the outflow boundary. Moreover, we show that the enstrophy within a layer of order $\\nu / \\bar U$ is comparable with the total enstrophy. The rate of enstrophy production near the boundary is inversely proportional to $\\nu$. This is based on joint work with Vincent Martinez, Anna Mazzucato, and Alexis Vasseur."
+        },
+        {
+            "Title": "Energy dissipation near the outflow boundary in the vanishing viscosity limit",
+            "Date": "2025-03-27",
+            "Location": "Princeton University",
+            "Series": "Analysis of Fluids and Related Topics",
+            "Type": "invited",
+            "Abstract": "We consider the incompressible Navier-Stokes and Euler equations in a bounded domain with non-characteristic boundary condition, and study the energy dissipation near the outflow boundary in the zero-viscosity limit. We show that in a general setting, the energy dissipation rate is proportional to $\\bar U \\bar V ^2$, where $\\bar U$ is the strength of the suction and $\\bar V$ is the tangential component of the difference between Euler and Navier-Stokes on the outflow boundary. Moreover, we show that the enstrophy within a layer of order $\\nu / \\bar U$ is comparable with the total enstrophy. The rate of enstrophy production near the boundary is inversely proportional to $\\nu$."
+        },
+        {
+            "Title": "New Estimates for Navier–Stokes and the Inviscid Limit Problem",
+            "Date": "2024-11-26",
+            "Location": "Institute for Advanced Study",
+            "Series": "Analysis and Mathematical Physics",
+            "Type": "invited",
+            "Video": "https://www.youtube.com/watch?v=eoFGilagqkE",
+            "Abstract": "In this talk, I will present several a priori interior and boundary trace estimates for the 3D incompressible Navier–Stokes equation, which recover and extend the current picture of higher derivative estimates in the mixed norm. Then we discuss the applications in the inviscid limit problem, with both characteristic and noncharacteristic boundary conditions. In particular, we provide estimates on layer separation and energy dissipation in the zero viscosity limit. This talk will be based on several work in collaboration with Alexis Vasseur, Vincent Martinez, and Anna Mazzucato."
+        },
+        {
             "Title": "Energy dissipation near the outflow boundary in the vanishing viscosity limit",
             "Date": "2024-11-22",
             "Location": "CUNY Graduate Center",
@@ -30,6 +81,7 @@
             "Location": "Institute for Advanced Study",
             "Series": "Short Talks by Postdoctoral Members",
             "Type": "invited",
+            "Video": "https://www.youtube.com/watch?v=Avzh_u1Gno4",
             "Abstract": "In this talk, I will discuss the inviscid limit problem. I will start with a general introduction of the Euler and Navier-Stokes system, and describe the problem of inviscid limit. I will cite the result of Kato (1984) which gives a necessary and sufficient condition for inviscid limit to hold. This will lead to a discussion on the zero-viscosity limit of energy dissipation. I will present a theorem of Vasseur—Yang (2023,2024) which gives an upper bound in the case of the impermeable and non-slip boundary condition, and an ongoing work which shows upper and lower bound in the case of the inflow-outflow condition."
         },
         {
@@ -62,9 +114,9 @@
             "Location": "New York University Abu Dhabi (zoom talk)",
             "Series": "SITE Research Center Talk Series",
             "Type": "invited",
-            "link": "https://wp.nyu.edu/stability/tuesday-talk-series-2021/",
-            "video": "https://www.youtube.com/watch?v=oIlyjbkLpv4&feature=youtu.be",
-            "slide": "https://s18798.pcdn.co/stability/wp-content/uploads/sites/15485/2024/05/layer-separation.pdf",
+            "Link": "https://wp.nyu.edu/stability/tuesday-talk-series-2021/",
+            "Video": "https://www.youtube.com/watch?v=oIlyjbkLpv4&feature=youtu.be",
+            "Slide": "https://s18798.pcdn.co/stability/wp-content/uploads/sites/15485/2024/05/layer-separation.pdf",
             "Abstract": "In this talk, we consider the 3D incompressible Navier-Stokes equation in a bounded domain, with a canonical example of Poiseuille flow in mind. We provide an unconditional upper bound for the boundary layer separation and energy dissipation of Leray–Hopf weak solutions, uniformly in high Reynolds numbers. We estimate layer separation by measuring the energy norm of the discrepancy between a (turbulent) low-viscosity Leray–Hopf solution and a fixed (laminar) regular Euler solution with similar initial conditions and body force. This is accomplished by a new nonlinear boundary vorticity estimate."
         },
         {
