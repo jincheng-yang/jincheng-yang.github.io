@@ -14,13 +14,6 @@ Fei Cao and Jincheng Yang.
 \newblock {\em arXiv e-prints}, 2024.
 \newblock \href {http://arxiv.org/abs/2406.05043} {\path{arXiv:2406.05043}}.
 
-\bibitem{yang2023}
-Jincheng Yang.
-\newblock Vorticity interior trace estimates and higher derivative estimates
-  via blow-up method.
-\newblock {\em arXiv e-prints}, 2023.
-\newblock \href {http://arxiv.org/abs/2308.09350} {\path{arXiv:2308.09350}}.
-
 \bibitem{yang2022a}
 Jincheng Yang, Luhao Zhang, Ningyuan Chen, Rui Gao, and Ming Hu.
 \newblock Decision-making with side information: a causal transport robust
@@ -28,6 +21,15 @@ Jincheng Yang, Luhao Zhang, Ningyuan Chen, Rui Gao, and Ming Hu.
 \newblock {\em OptOnline e-prints}, 2022.
 \newblock
   \href{https://optimization-online.org/?p=20639}{\texttt{OptOnline:20639}}.
+
+\bibitem{yang2025}
+Jincheng Yang.
+\newblock Vorticity interior trace estimates and higher derivative estimates
+  via blow-up method.
+\newblock {\em Journal of Differential Equations}, 442:113486, 2025.
+\newblock \href {http://arxiv.org/abs/2308.09350} {\path{arXiv:2308.09350}},
+  \href {https://doi.org/10.1016/j.jde.2025.113486}
+  {\path{doi:10.1016/j.jde.2025.113486}}.
 
 \bibitem{zhang2024b}
 Luhao Zhang, Jincheng Yang, and Rui Gao.
@@ -41,8 +43,8 @@ Luhao Zhang, Jincheng Yang, and Rui Gao.
 
 \bibitem{vasseur2024}
 Alexis~F. Vasseur and Jincheng Yang.
-\newblock Layer separation of the 3d incompressible {N}avier--{S}tokes equation
-  in a bounded domain.
+\newblock Layer separation of the 3{D} incompressible {N}avier--{S}tokes
+  equation in a bounded domain.
 \newblock {\em Communications in Partial Differential Equations},
   49(4):381--409, 2024.
 \newblock \href {http://arxiv.org/abs/2303.05236} {\path{arXiv:2303.05236}},
