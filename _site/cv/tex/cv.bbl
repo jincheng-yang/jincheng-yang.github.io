@@ -1,12 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{martinez2024}
-Jincheng Yang, Vincent~R. Martinez, Anna~L. Mazzucato, and Alexis~F. Vasseur.
-\newblock Energy dissipation near the outflow boundary in the vanishing
-  viscosity limit.
-\newblock {\em arXiv e-prints}, 2024.
-\newblock \href {http://arxiv.org/abs/2410.13127} {\path{arXiv:2410.13127}}.
-
 \bibitem{cao2024}
 Fei Cao and Jincheng Yang.
 \newblock Quantitative convergence guarantees for the mean-field dispersion
@@ -21,6 +14,14 @@ Jincheng Yang, Luhao Zhang, Ningyuan Chen, Rui Gao, and Ming Hu.
 \newblock {\em OptOnline e-prints}, 2022.
 \newblock
   \href{https://optimization-online.org/?p=20639}{\texttt{OptOnline:20639}}.
+
+\bibitem{martinez2025}
+Jincheng Yang, Vincent~R. Martinez, Anna~L. Mazzucato, and Alexis~F. Vasseur.
+\newblock Energy dissipation near the outflow boundary in the vanishing
+  viscosity limit.
+\newblock {\em Indiana University Mathematics Journal}, 2025.
+\newblock Forthcoming.
+\newblock \href {http://arxiv.org/abs/2410.13127} {\path{arXiv:2410.13127}}.
 
 \bibitem{yang2025}
 Jincheng Yang.
