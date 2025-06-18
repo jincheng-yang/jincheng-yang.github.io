@@ -5,11 +5,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.8">
 		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/~jcyang/css/grid.css">
+		<link rel="stylesheet" type="text/css" href="/css/grid.css">
 		<!-- link to fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100i,200i,400|Cinzel|Playfair+Display:400,400i|Exo:300,600|Roboto:400|Roboto+Condensed:300|Dancing+Script:400|PT+Serif:400,400i|Palanquin+Dark:400|Noto+Serif:400,400i" rel="stylesheet">
 		<!-- JavaScrips -->
-		<script type="text/javascript" src="/~jcyang/plugin/drag-and-drop.js"></script>
+		<script type="text/javascript" src="/plugin/drag-and-drop.js"></script>
 		
 			<script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -65,33 +65,33 @@
 			<div id="nav-container">
 
 				<div class = "dropdown-block" id = "research-dropdown-block">
-					<a href="/~jcyang/research#" ondrop="drop(event)" ondragover="allowDrop(event)" id="research">Research &#9662;</a>
+					<a href="/research#" ondrop="drop(event)" ondragover="allowDrop(event)" id="research">Research &#9662;</a>
 	
 					<div class= "dropdown" id="research-dropdown">
-						<a class = "dropdown-first" href="/~jcyang/research#publications">Publications</a>
-						<a href="/~jcyang/research#talks">Talks</a>
-						<a href="/~jcyang/research#blog">Blog</a>
-						<a class = "dropdown-last" href="/~jcyang/research#conferences">Conferences</a>
+						<a class = "dropdown-first" href="/research#publications">Publications</a>
+						<a href="/research#talks">Talks</a>
+						<a href="/research#blog">Blog</a>
+						<a class = "dropdown-last" href="/research#conferences">Conferences</a>
 					</div>
 				</div>
 
-				<a href="/~jcyang/cv" ondrop="drop(event)" ondragover="allowDrop(event)" id="cv">Curriculum Vitae</a>
+				<a href="/cv" ondrop="drop(event)" ondragover="allowDrop(event)" id="cv">Curriculum Vitae</a>
 				
-				<a id = "icon" href="/~jcyang/" draggable="true" ondragstart="drag(event)" title="Home Page"></a>
+				<a id = "icon" href="/" draggable="true" ondragstart="drag(event)" title="Home Page"></a>
 
-				<a href="/~jcyang/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="teaching">Teaching</a>
+				<a href="/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="teaching">Teaching</a>
 
-				<a href="/~jcyang/music" ondrop="drop(event)" ondragover="allowDrop(event)" id="music">Music</a>
+				<a href="/music" ondrop="drop(event)" ondragover="allowDrop(event)" id="music">Music</a>
 
 				<div class = "dropdown-block" id = "menu-dropdown-block">
 					<a href="#" id="menu">Menu &#9662;</a>
 	
 					<div class= "dropdown" id="menu-dropdown">
-						<a class="dropdown-first" href="/~jcyang/research">Research</a>
-						<a href="/~jcyang/cv">Curriculum Vitae</a>
-						<a href="/~jcyang/research#publications">Publications</a>
-						<a href="/~jcyang/teach">Teaching</a>
-						<a class="dropdown-last" href="/~jcyang/music">Music</a>
+						<a class="dropdown-first" href="/research">Research</a>
+						<a href="/cv">Curriculum Vitae</a>
+						<a href="/research#publications">Publications</a>
+						<a href="/teach">Teaching</a>
+						<a class="dropdown-last" href="/music">Music</a>
 					</div>
 				</div>
 			</div>
@@ -267,23 +267,23 @@
 
   <p>In Riemannian Geometry class, we wanted to have a more intuitive understanding about hyperbolic halfspace (admitting negative constant Gauss curvature). At first we created a tool that enabled us to draw lines, circles, and polygons in a hyperbolic half space. You can also move, rotate and reflect shapes along geodesics.</p>
 
-<p><img width="100%" src="/~jcyang/assets/images/blog/2016-04-24-project-escher/drawing.gif" /></p>
+<p><img width="100%" src="/assets/images/blog/2016-04-24-project-escher/drawing.gif" /></p>
 
 <p>Now we can draw regular polygons on hyperbolic half plane with negative constant curvature, and map it onto an open ball isometrically. Moreover, we can tile polygons over the whole place.</p>
 
 <p>The following is an example of tiling pentagons on the half space. There are four pentagons around each point, and all the inner angles are right angles.</p>
 
-<p><img width="100%" src="/~jcyang/assets/images/blog/2016-04-24-project-escher/pentagon.png" /></p>
+<p><img width="100%" src="/assets/images/blog/2016-04-24-project-escher/pentagon.png" /></p>
 
 <p>The header of my homepage is a skeleton of this. You can actually try to hold and drag to see the deck transformation.</p>
 
 <p>The following is a picture of tiling octagons on the half space. Likewise all the angles are right angles.</p>
 
-<p><img width="100%" src="/~jcyang/assets/images/blog/2016-04-24-project-escher/octagon.gif" /></p>
+<p><img width="100%" src="/assets/images/blog/2016-04-24-project-escher/octagon.gif" /></p>
 
 <p>Notice that by quotient map of the half plane dividing its deck transformation group, we obtain a torus with genus 2. Thus we obtained a Riemannian metric on genus two torus which admits constant curvature. The following gif is to show the deck transform.</p>
 
-<p><img width="100%" src="/~jcyang/assets/images/blog/2016-04-24-project-escher/octagon-deck.gif" /></p>
+<p><img width="100%" src="/assets/images/blog/2016-04-24-project-escher/octagon-deck.gif" /></p>
 
 <p>We found that for any integer $n &gt; 4$, one can always tile 4 regular $n$-gons with right angles around a point, and cover the entire plane accordingly. Moreover, if $n &gt; 2$, $m &gt; 2$, one can always tile $m$ regular $n$-gons with inner angle $\frac{2\pi}{m}$ around each vertex, if $n-2 &gt; \frac{2n}{m}$.</p>
 
@@ -312,7 +312,7 @@
 
   
   
-  <h3>Recent <a href="/~jcyang/research#blog" style="color:#526d6d">Posts</a></h3>
+  <h3>Recent <a href="/research#blog" style="color:#526d6d">Posts</a></h3>
     
     <!-- 
     
@@ -321,7 +321,7 @@
       
     
     <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
-    <div class="thumbpic" style="background-color:white;background-image:url('/~jcyang/assets/images/thumbnails/jensen.svg')"></div>
+    <div class="thumbpic" style="background-color:white;background-image:url('/assets/images/thumbnails/jensen.svg')"></div>
     </a>
     <h5>05 Feb 2021</h5>
     <a href="/blog/2021/02/05/jensen-approximation" title="Jensen's Approximation">
@@ -330,7 +330,7 @@
     </div><div class="thumb" style="margin-left:5%">
     
     <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
-    <div class="thumbpic" style="background-color:white;background-image:url('/~jcyang/assets/images/thumbnails/isoperimetric.png')"></div>
+    <div class="thumbpic" style="background-color:white;background-image:url('/assets/images/thumbnails/isoperimetric.png')"></div>
     </a>
     <h5>22 Jan 2021</h5>
     <a href="/blog/2021/01/22/de-giorgi" title="De Giorgi">
@@ -339,7 +339,7 @@
     </div><div class="thumb" style="margin-left:5%">
     
     <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
-    <div class="thumbpic" style="background-color:white;background-image:url('/~jcyang/assets/images/thumbnails/lorentz.svg')"></div>
+    <div class="thumbpic" style="background-color:white;background-image:url('/assets/images/thumbnails/lorentz.svg')"></div>
     </a>
     <h5>14 Apr 2020</h5>
     <a href="/blog/2020/04/14/lorentz-space" title="Lorentz Space">
@@ -353,11 +353,11 @@
     
     
       <div class="thumb" style="background-color: #EEE;">
-      <a href="/~jcyang/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
-        <div class="thumbpic" style="background-image:url('/~jcyang/assets/images/thumbnails/jensen.svg')"></div>
+      <a href="/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+        <div class="thumbpic" style="background-image:url('/assets/images/thumbnails/jensen.svg')"></div>
       </a>
       <h5>05 Feb 2021</h5>
-      <a href="/~jcyang/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
+      <a href="/blog/2021/02/05/jensen-approximation.html" title="Jensen's Approximation">
         <h4>Jensen's Approximation</h4>
       </a>
       </div>
@@ -365,11 +365,11 @@
     
     
       <div class="thumb" style="background-color: #EEE;">
-      <a href="/~jcyang/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
-        <div class="thumbpic" style="background-image:url('/~jcyang/assets/images/thumbnails/isoperimetric.png')"></div>
+      <a href="/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+        <div class="thumbpic" style="background-image:url('/assets/images/thumbnails/isoperimetric.png')"></div>
       </a>
       <h5>22 Jan 2021</h5>
-      <a href="/~jcyang/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
+      <a href="/blog/2021/01/22/de-giorgi.html" title="De Giorgi">
         <h4>De Giorgi</h4>
       </a>
       </div>
@@ -377,11 +377,11 @@
     
     
       <div class="thumb" style="background-color: #EEE;">
-      <a href="/~jcyang/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
-        <div class="thumbpic" style="background-image:url('/~jcyang/assets/images/thumbnails/lorentz.svg')"></div>
+      <a href="/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+        <div class="thumbpic" style="background-image:url('/assets/images/thumbnails/lorentz.svg')"></div>
       </a>
       <h5>14 Apr 2020</h5>
-      <a href="/~jcyang/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
+      <a href="/blog/2020/04/14/lorentz-space.html" title="Lorentz Space">
         <h4>Lorentz Space</h4>
       </a>
       </div>
@@ -398,8 +398,8 @@
 		<footer>
 			<div id="footer-container">
 				<!-- <a href="https://www.utexas.edu"><img id="logo" src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a> -->
-				<!-- <a href="https://mathematics.uchicago.edu/"><img id="logo" src="/~jcyang/assets/images/uc_logo.jpeg"></a> -->
-				<a href="https://www.ias.edu/math"><img id="logo" src="/~jcyang/assets/images/ias_logo.svg"></a>
+				<!-- <a href="https://mathematics.uchicago.edu/"><img id="logo" src="/assets/images/uc_logo.jpeg"></a> -->
+				<a href="https://www.ias.edu/math"><img id="logo" src="/assets/images/ias_logo.svg"></a>
 				
 				<p id="copyright">Copyright &#169 2024 Jincheng Yang</p>
 
@@ -412,7 +412,7 @@
 						rel="me noopener noreferrer"
 						style="vertical-align: bottom">
 						<img
-							src="/~jcyang/assets/images/orcid.svg"
+							src="/assets/images/orcid.svg"
 							style="width: 1em; vertical-align: text-bottom;"
 							alt="ORCID iD icon"/>
 							ORCiD
@@ -422,7 +422,7 @@
 						href="https://arxiv.org/a/yang_j_6.html"
 						style="vertical-align: bottom">
 						<img
-							src="/~jcyang/assets/images/arxiv.svg"
+							src="/assets/images/arxiv.svg"
 							style="height: 1em; vertical-align: text-bottom;"
 							alt="arXiv icon"/>
 							arXiv
@@ -432,7 +432,7 @@
 						href="https://scholar.google.com/citations?user=jiuXYIIAAAAJ"
 						style="vertical-align: bottom">
 						<img
-							src="/~jcyang/assets/images/googlescholar.svg"
+							src="/assets/images/googlescholar.svg"
 							style="height: 1em; vertical-align: text-bottom;"
 							alt="google scholar icon"/>
 							Google
@@ -442,7 +442,7 @@
 						href="https://www.linkedin.com/in/jincheng-yang/"
 						style="vertical-align: bottom">
 						<img
-							src="/~jcyang/assets/images/linkedin.svg"
+							src="/assets/images/linkedin.svg"
 							style="height: 1em; vertical-align: text-bottom;"
 							alt="LinkedIn icon"/>
 							LinkedIn
@@ -452,7 +452,7 @@
 						href="https://www.researchgate.net/profile/Jincheng-Yang"
 						style="vertical-align: bottom">
 						<img
-							src="/~jcyang/assets/images/ResearchGate.svg"
+							src="/assets/images/ResearchGate.svg"
 							style="height: 1em; vertical-align: text-bottom;"
 							alt="research gate icon"/>
 							ResearchGate
@@ -464,7 +464,7 @@
 
 
 		
-		<script type="text/javascript" src="/~jcyang/plugin/Escher.js"></script>
-		<script type="text/javascript" src="/~jcyang/plugin/set_icon.js"></script>
+		<script type="text/javascript" src="/plugin/Escher.js"></script>
+		<script type="text/javascript" src="/plugin/set_icon.js"></script>
 	</body>
 </html>

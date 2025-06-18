@@ -1,4 +1,4 @@
-/* @pjs font="/~yang/assets/font/ArialRoundedMTBold.ttf, /~yang/assets/font/AvenirNextCondensed-Regular.ttf, /~yang/assets/font/YuKyo_Yoko-Medium.ttc"; */
+/* @pjs font="/assets/font/ArialRoundedMTBold.ttf, /assets/font/AvenirNextCondensed-Regular.ttf, /assets/font/YuKyo_Yoko-Medium.ttc"; */
 
 int act;
 
@@ -60,7 +60,7 @@ void setup() {
   size(1080, 720);
   
   pathToMe = "";
-  pathToMe = "/~yang/assets/files/pde/FiveHundredDays/";
+  pathToMe = "/assets/files/pde/FiveHundredDays/";
   readStuff();
   
   albumImg = new PImage[album.length];
