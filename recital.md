@@ -67,7 +67,7 @@ title: Graduation Recital
 
 <footer>
 <div id="footer-container">
-<a href="https://www.utexas.edu"><img id="logo" src="https://www.utexas.edu/sites/all/themes/utexas/img/general/logo.svg"></a>
+<a href="https://www.utexas.edu"><img id="logo" src="/assets/images/ut-logo.svg"></a>
 <p id="copyright">Copyright © 2022 Jincheng Yang</p>
 <ul>
 <li id="utmath"><a href="https://www.ma.utexas.edu/">UT Math</a></li>

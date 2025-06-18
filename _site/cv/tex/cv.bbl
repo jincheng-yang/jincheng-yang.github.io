@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{coiculescu2025}
+Matei~P. Coiculescu and Jincheng Yang.
+\newblock Conditional {L}iouville theorems for the {N}avier--{S}tokes
+  equations.
+\newblock {\em arXiv e-prints}, 2025.
+\newblock \href {http://arxiv.org/abs/2506.14533} {\path{arXiv:2506.14533}}.
+
 \bibitem{cao2024}
 Fei Cao and Jincheng Yang.
 \newblock Quantitative convergence guarantees for the mean-field dispersion

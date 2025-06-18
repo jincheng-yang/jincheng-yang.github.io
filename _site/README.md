@@ -1,4 +1,4 @@
 # jincheng-yang.github.io
 This is my webpage.
 
-Website: [https://www.math.ias.edu/~jcyang/](https://www.math.ias.edu/~jcyang/).
+Website: [https://jincheng-yang.github.io](https://https://jincheng-yang.github.io).
