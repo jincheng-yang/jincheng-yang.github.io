@@ -9,7 +9,7 @@ title: Jincheng's Website | About
 
 # About Me
 
-Hi, I am Jincheng! I am a member of [Institute for Advanced Study](https://ias.edu). I was previously a Dickson instructor in the [Department of Mathematics](https://mathematics.uchicago.edu) at [The University of Chicago](https://www.uchicago.edu). I completed my Ph.D. in Mathematics at [The University of Texas at Austin](https://www.ma.utexas.edu) in March 2022, under the supervision of [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/). My research interests include analysis, partial differential equations, fluid dynamics, especially the incompressible Euler and Navier-Stokes equation. 
+Hi, I am Jincheng! I am an assistant professor in the [Department of Applied Mathematics and Statistics](https://engineering.jhu.edu/ams/) of [Johns Hopkins University](https://www.jhu.edu). I was previously a member of [Institute for Advanced Study](https://ias.edu) and a Dickson instructor in the [Department of Mathematics](https://mathematics.uchicago.edu) at [The University of Chicago](https://www.uchicago.edu). I completed my Ph.D. in Mathematics at [The University of Texas at Austin](https://www.ma.utexas.edu) in March 2022, under the supervision of [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/). My research interests include analysis, partial differential equations, fluid dynamics, especially the incompressible Euler and Navier-Stokes equation. 
 
 <!-- I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student in the Special Class for the Gifted Young before my undergraduate study.  -->
 
@@ -17,7 +17,7 @@ Hi, I am Jincheng! I am a member of [Institute for Advanced Study](https://ias.e
 
 <!-- As in the fall of 2024, I am on the job market for a tenure-track position. -->
 
-Starting fall of 2025, I will join the [Department of Applied Mathematics and Statistics](https://engineering.jhu.edu/ams/) of [Johns Hopkins University](https://www.jhu.edu).
+<!-- Starting fall of 2025, I will join the [Department of Applied Mathematics and Statistics](https://engineering.jhu.edu/ams/) of [Johns Hopkins University](https://www.jhu.edu). -->
 
 </div>
 
@@ -38,25 +38,24 @@ Starting fall of 2025, I will join the [Department of Applied Mathematics and St
 <div style="float:right">
 <div style="display:inline" markdown="1">
 
-- Office: Simonyi 028
-- Email: [jcyang@ias.edu](mailto:jcyang@ias.edu)
-- Tel: +1 (609) 734-8323
+- Office: Wyman N418
+- Email: [jincheng@jhu.edu](mailto:jincheng@jhu.edu)
 
 </div>
 </div>
 
 <div>
 <p style="margin:0px; padding:0px">
-School of Mathematics
+Department of Applied Mathematics and Statistics
 </p>
 <p style="margin:0px; padding:0px">
-Institute for Advanced Study
+Johns Hopkins University
 </p>
 <p style="margin:0px; padding:0px">
-1 Einstein Dr
+3400 North Charles Street
 </p>
 <p style="margin-top:0px; padding:0px">
-Princeton, NJ 08540, USA
+Baltimore, MD 21218
 </p>
 </div>
 
