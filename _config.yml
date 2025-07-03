@@ -9,7 +9,7 @@ disqus:
   shortname: jcyang
 defaults:
   - scope:
-      path: ~yang/assets/files/shorthand-scans
+      path: /assets/files/shorthand-scans
     values:
       shorthand-scan: true
-baseurl: /
+baseurl: 
