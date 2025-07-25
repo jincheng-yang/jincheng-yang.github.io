@@ -4,13 +4,15 @@
             "title": "Frank Gerth III Outstanding Dissertation Award", 
             "from": "UT Austin",
             "month": "May", 
-            "year": "2022"
+            "year": "2022",
+            "show": true
         },
         {
             "title": "University Graduate Continuing Fellowship", 
             "from": "UT Austin",
             "month": "Mar", 
-            "year": "2021"
+            "year": "2021",
+            "show": true
         },
         {
             "title": "Frank Gerth III Teaching Excellence Award", 
@@ -22,7 +24,8 @@
             "title": "Senate of College Council's TA of the Year", 
             "from": "UT Austin",
             "month": "Apr", 
-            "year": "2019"
+            "year": "2019",
+            "show": true
         },
         {
             "title": "Frank Gerth III Graduate Excellence Award", 
