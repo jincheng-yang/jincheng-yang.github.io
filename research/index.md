@@ -36,39 +36,37 @@ I am also interested in topics related to distributionally robust stochastic opt
 
 ###### Talks
 
+<ol>
 {% for talk in site.data.talk.Talk %}
 {% assign today_date = 'now' | date: '%s' %}
 {% assign pre_date = talk.Date | date: '%s' %}
 {% if today_date > pre_date %}
+	<li>
+		<a href = "{{ conference.URL }}"> {{ conference.Title }} </a>
+		<p style="display: flex; justify-content: space-between">
+			<span>
+				<b>{{ talk.Title }}</b>
+			</span>
+			<span style="min-width: 6em; text-align: right">
+				{{ talk.Date }}
+			</span>
+		</p>
+		<p style="display: flex; justify-content: space-between">
+			<span>
+				{{ talk.Location }}, <i>{{ talk.Series }}</i>
+			</span>
+			<span style="min-width: 6em; text-align: right">
+				<a style = "cursor:pointer" onclick="detail = document.getElementById('{{ talk.Date }}'); if(detail.style.display === 'none'){detail.style.display = 'block';}else{detail.style.display='none';}">Abstract</a>
+			</span>
+		</p>
 
-<div>
-
-<h3 style="display: flex; justify-content: space-between">
-<span>
-	{{ talk.Title }}
-</span>
-<span class="talkdate">
-	{{ talk.Date }}
-</span>
-</h3>
-
-<div style="display: flex; justify-content: space-between">
-<span>
-	<b>{{ talk.Location }}</b>, <i>{{ talk.Series }}</i>
-</span>
-<span>
-	<a style = "cursor:pointer" onclick="detail = document.getElementById('{{ talk.Date }}'); if(detail.style.display === 'none'){detail.style.display = 'block';}else{detail.style.display='none';}">Abstract</a>
-</span>
-</div>
-
-<div id="{{ talk.Date }}" style='display:none'>
-	<p><b>Abstract</b>: {{ talk.Abstract }}</p>
-</div>	
-
-</div>
-
+		<div id="{{ talk.Date }}" style='display:none'>
+			<p><b>Abstract</b>: {{ talk.Abstract }}</p>
+		</div>	
+	</li>
 {% endif %}
 {% endfor %}
+</ol>
 
 </div>
 </div>

@@ -1,6 +1,15 @@
 {
     "Talk": [
         {
+            "Title": "Beyond absolute continuity: a new class of dynamic risk measures",
+            "Date": "2025-07-24",
+            "Location": "University of Southern California",
+            "Series": "ICCOPT 2025",
+            "Minisymposium": "Advances in Modeling and Optimization for MDP and Optimal Control",
+            "Type": "invited",
+            "Abstract": "The modern theory of risk measures copes with uncertainty by considering multiple probability measures. While it is often assumed that a reference probability measure exists, under which all relevant probability measures are absolutely continuous, there are examples where this assumption does not hold, such as certain distributional robust functionals. In this talk, we introduce a novel class of dynamic risk measures that do not rely on this assumption. We will discuss its convexity, coherence, and time consistency properties."
+        },
+        {
             "Title": "Duality results for Wasserstein Robust Optimization",
             "Date": "2025-05-17",
             "Location": "University of Wisconsin, Madison",
@@ -311,7 +320,7 @@
             "Date": "2019-04-12",
             "Location": "The University of Texas at Austin",
             "Series": "Junior Analysis Seminar",
-            "Abstract": "I would like to share the thesis of Dennis Kriventsov when he graduated from here four years ago. In his paper, he proposed a model for an SQG equation with different dissipation operators on two domains, corresponding to the ocean and the land, that partition the whole space. He constructed admissible weak solutions, and used De Giorgi method to show their H\u00f6lder continuity. He also bootstrapped to the optimal regularity in some cases. In this talk, I will focus on his De Giorgi part that proves the initial $C^\u03b1$ regularity, and show how he used a reflection method to deal with the main difficulty, the discrepancy in scaling."
+            "Abstract": "I would like to share the thesis of Dennis Kriventsov when he graduated from here four years ago. In his paper, he proposed a model for an SQG equation with different dissipation operators on two domains, corresponding to the ocean and the land, that partition the whole space. He constructed admissible weak solutions, and used De Giorgi method to show their H\u00f6lder continuity. He also bootstrapped to the optimal regularity in some cases. In this talk, I will focus on his De Giorgi part that proves the initial $C^\\alpha$ regularity, and show how he used a reflection method to deal with the main difficulty, the discrepancy in scaling."
         },
         {
             "Title": "An Introduction to Stochastic Integrals",

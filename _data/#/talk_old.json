@@ -26,7 +26,7 @@
             "Date": "2019-04-12",
             "Location": "The University of Texas at Austin",
             "Series": "Junior Analysis Seminar",
-            "Abstract": "I would like to share the thesis of Dennis Kriventsov when he graduated from here four years ago. In his paper, he proposed a model for an SQG equation with different dissipation operators on two domains, corresponding to the ocean and the land, that partition the whole space. He constructed admissible weak solutions, and used De Giorgi method to show their Hölder continuity. He also bootstrapped to the optimal regularity in some cases. In this talk, I will focus on his De Giorgi part that proves the initial $C^α$ regularity, and show how he used a reflection method to deal with the main difficulty, the discrepancy in scaling."
+            "Abstract": "I would like to share the thesis of Dennis Kriventsov when he graduated from here four years ago. In his paper, he proposed a model for an SQG equation with different dissipation operators on two domains, corresponding to the ocean and the land, that partition the whole space. He constructed admissible weak solutions, and used De Giorgi method to show their Hölder continuity. He also bootstrapped to the optimal regularity in some cases. In this talk, I will focus on his De Giorgi part that proves the initial $C^\\alpha$ regularity, and show how he used a reflection method to deal with the main difficulty, the discrepancy in scaling."
         },
         {
             "Title": "Manifold-valued Semimartingales and their Quadratic Variation",

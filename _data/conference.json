@@ -1,6 +1,30 @@
 {
     "Conference": [
         {
+            "Title": "ICCOPT 2025",
+            "Start": "2025-07-19",
+            "End": "2025-07-24",
+            "Location": "University of Southern California",
+            "URL": "https://www.iccopt2025.org/home/",
+            "Type": "conference"
+        },
+        {
+            "Title": "2025 AWM Research Symposium",
+            "Start": "2025-05-16",
+            "End": "2025-05-18",
+            "Location": "University of Wisconsin, Madison",
+            "URL": "https://awm-math.org/meetings/awm-research-symposium/",
+            "Type": "conference"
+        },
+        {
+            "Title": "SIAM Conference on Applications of Dynamical Systems (DS25)",
+            "Start": "2025-05-11",
+            "End": "2025-05-15",
+            "Location": "Denver, Colorado",
+            "URL": "https://www.siam.org/conferences-events/past-event-archive/ds25/",
+            "Type": "conference"
+        },
+        {
             "Title": "Integro-differential equations in many-particle interacting systems",
             "Start": "2025-04-14",
             "End": "2025-04-18",
