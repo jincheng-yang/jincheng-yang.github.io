@@ -41,10 +41,9 @@ Jincheng Yang.
 
 \bibitem{zhang2024b}
 Luhao Zhang, Jincheng Yang, and Rui Gao.
-\newblock A short and general duality proof for {W}asserstein distributionally
+\newblock A short and general duality proof for wasserstein distributionally
   robust optimization.
-\newblock {\em Operations Research}, 2024.
-\newblock Forthcoming.
+\newblock {\em Operations Research}, 73(4):2146--2155, 2025.
 \newblock \href {http://arxiv.org/abs/2205.00362} {\path{arXiv:2205.00362}},
   \href {https://doi.org/10.1287/opre.2023.0135}
   {\path{doi:10.1287/opre.2023.0135}}.
