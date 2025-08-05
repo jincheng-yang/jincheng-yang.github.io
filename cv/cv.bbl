@@ -7,13 +7,6 @@ Matei~P. Coiculescu and Jincheng Yang.
 \newblock {\em arXiv e-prints}, 2025.
 \newblock \href {http://arxiv.org/abs/2506.14533} {\path{arXiv:2506.14533}}.
 
-\bibitem{cao2024}
-Fei Cao and Jincheng Yang.
-\newblock Quantitative convergence guarantees for the mean-field dispersion
-  process.
-\newblock {\em arXiv e-prints}, 2024.
-\newblock \href {http://arxiv.org/abs/2406.05043} {\path{arXiv:2406.05043}}.
-
 \bibitem{yang2022a}
 Jincheng Yang, Luhao Zhang, Ningyuan Chen, Rui Gao, and Ming Hu.
 \newblock Decision-making with side information: a causal transport robust
@@ -29,6 +22,14 @@ Jincheng Yang, Vincent~R. Martinez, Anna~L. Mazzucato, and Alexis~F. Vasseur.
 \newblock {\em Indiana University Mathematics Journal}, 2025.
 \newblock Forthcoming.
 \newblock \href {http://arxiv.org/abs/2410.13127} {\path{arXiv:2410.13127}}.
+
+\bibitem{cao2025}
+Fei Cao and Jincheng Yang.
+\newblock Quantitative convergence guarantees for the mean-field dispersion
+  process.
+\newblock {\em Discrete and Continuous Dynamical Systems}, 2025.
+\newblock Forthcoming.
+\newblock \href {http://arxiv.org/abs/2406.05043} {\path{arXiv:2406.05043}}.
 
 \bibitem{yang2025}
 Jincheng Yang.

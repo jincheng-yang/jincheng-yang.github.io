@@ -1,8 +1,8 @@
 ,entry_type,author,title,journal,sjournal,year,volume,pages,eprint,url,eprinturl,publisher,address,link,optonline
 0,article,"Matei P. Coiculescu, Jincheng Yang",Conditional Liouville theorems for the Navier--Stokes equations,arXiv e-prints,,2025,,,2506.14533,,,,,,
 1,article,"Jincheng Yang, Vincent R. Martinez, Anna L. Mazzucato, Alexis F. Vasseur",Energy dissipation near the outflow boundary in the vanishing viscosity limit,Indiana University Mathematics Journal,Indiana Univ. Math. J.,2025,,,2410.13127,,,,,https://www.iumj.indiana.edu,
-2,article,Jincheng Yang,Vorticity interior trace estimates and higher derivative estimates via blow-up method,Journal of Differential Equations,J. Differ. Equ.,2025,442,113486,2308.09350,,,,,,
-3,article,"Fei Cao, Jincheng Yang",Quantitative convergence guarantees for the mean-field dispersion process,arXiv e-prints,,2024,,,2406.05043,,,,,,
+2,article,"Fei Cao, Jincheng Yang",Quantitative convergence guarantees for the mean-field dispersion process,Discrete and Continuous Dynamical Systems,Discrete Contin. Dyn. Syst.,2025,,,2406.05043,,,,,https://www.aimsciences.org/DCDS,
+3,article,Jincheng Yang,Vorticity interior trace estimates and higher derivative estimates via blow-up method,Journal of Differential Equations,J. Differ. Equ.,2025,442,113486,2308.09350,,,,,,
 4,article,"Luhao Zhang, Jincheng Yang, Rui Gao",A Short and General Duality Proof for Wasserstein Distributionally Robust Optimization,Operations Research,Oper. Res.,2025,73,2146-2155,2205.00362,https://doi.org/10.1287/opre.2023.0135,,,,,
 5,article,"Alexis F. Vasseur, Jincheng Yang",Layer separation of the 3D incompressible Navier--Stokes equation in a bounded domain,Communications in Partial Differential Equations,Comm. Partial Differential Equations,2024,49,381--409,2303.05236,https://doi.org/10.1080/03605302.2024.2346146,,Taylor \& Francis,,,
 6,article,"Luhao Zhang, Jincheng Yang, Rui Gao",Optimal robust policy for feature-based newsvendor,Management Science,Manag. Sci.,2024,70,2315-2329,,https://doi.org/10.1287/mnsc.2023.4810,https://optimization-online.org/wp-content/uploads/2021/12/Big_Data_Newsvendor-2.pdf,,,,18579
