@@ -1,4 +1,20 @@
 {
+    "jhu": [
+        {
+            "Code": "EN.553.798",
+            "Course": "Partial Differential Equations for Applied Mathematicians",
+            "Season": "Fall",
+            "Year": "2025",
+            "Link": "2025/en553798"
+        },
+        {
+            "Code": "EN.553.101",
+            "Course": "Freshman Experience in Applied Mathematics & Statistics",
+            "Season": "Fall",
+            "Year": "2025",
+            "Link": "2025/en553101"
+        }
+    ],
     "uchicago": [
         {
             "Code": "Math 18500", 
