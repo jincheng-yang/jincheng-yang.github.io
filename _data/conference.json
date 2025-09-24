@@ -1,6 +1,22 @@
 {
     "Conference": [
         {
+            "Title": "AMS Fall Southeastern Sectional Meeting",
+            "Start": "2025-10-03",
+            "End": "2025-10-05",
+            "Location": "Tulane University",
+            "URL": "https://meetings.ams.org/math/fall2025se/meetingapp.cgi/",
+            "Type": "conference"
+        },
+        {
+            "Title": "AMS Fall Western Sectional Meeting",
+            "Start": "2025-08-23",
+            "End": "2025-08-24",
+            "Location": "University of Denver",
+            "URL": "https://meetings.ams.org/math/fall2025w/meetingapp.cgi/",
+            "Type": "conference"
+        },
+        {
             "Title": "ICCOPT 2025",
             "Start": "2025-07-19",
             "End": "2025-07-24",
