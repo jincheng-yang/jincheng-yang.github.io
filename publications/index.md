@@ -11,8 +11,8 @@ title: Jincheng's Website | Publications
 
 <ol>
     <li>
-      <p>Fei Cao, Jincheng Yang: <em>Quantitative convergence guarantees for the mean-field dispersion process</em>, <a href="https://doi.org/10.3934/dcds.2025126">Discrete and Continuous Dynamical Systems</a>, forthcoming. (2025) [<a href="https://arxiv.org/abs/2406.05043">arXiv:2406.05043</a>][<a href="Quantitative convergence guarantees for the mean-field dispersion process.pdf">pdf</a>]</p>
-      </li>
+      <p>Fei Cao, Jincheng Yang: <em>Quantitative convergence guarantees for the mean-field dispersion process</em>, <a href="https://doi.org/10.3934/dcds.2025126">Discrete and Continuous Dynamical Systems</a>, <strong>47:</strong> 487-518. (2026) [<a href="https://arxiv.org/abs/2406.05043">arXiv:2406.05043</a>][<a href="Quantitative convergence guarantees for the mean-field dispersion process.pdf">pdf</a>]</p>
+    </li>
     <li>
       <p>Jincheng Yang: <em>Vorticity interior trace estimates and higher derivative estimates via blow-up method</em>, <a href="https://www.sciencedirect.com/science/article/pii/S0022039625005133">Journal of Differential Equations</a>, <strong>442:</strong> 113486. (2025) [<a href="https://arxiv.org/abs/2308.09350">arXiv:2308.09350</a>][<a href="Vorticity interior trace estimates and higher derivative estimates via blow-up method.pdf">pdf</a>]</p>
     </li>
