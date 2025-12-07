@@ -11,6 +11,10 @@ title: Jincheng's Website | Publications
 
 <ol>
     <li>
+    <p>Matei P. Coiculescu, Jincheng Yang: <em>Conditional Liouville theorems for the Navier–Stokes equations</em>, <a href="https://doi.org/10.1007/s00526-025-03196-y">Calculus of Variations and Partial Differential Equations</a>, <strong>65:</strong> 22. (2026) 
+    [<a href="https://arxiv.org/abs/2506.14533">arXiv:2506.14533</a>][<a href="Conditional Liouville theorems for the Navier–Stokes equations.pdf">pdf</a>]</p>
+    </li>
+    <li>
       <p>Fei Cao, Jincheng Yang: <em>Quantitative convergence guarantees for the mean-field dispersion process</em>, <a href="https://doi.org/10.3934/dcds.2025126">Discrete and Continuous Dynamical Systems</a>, <strong>47:</strong> 487-518. (2026) [<a href="https://arxiv.org/abs/2406.05043">arXiv:2406.05043</a>][<a href="Quantitative convergence guarantees for the mean-field dispersion process.pdf">pdf</a>]</p>
     </li>
     <li>
