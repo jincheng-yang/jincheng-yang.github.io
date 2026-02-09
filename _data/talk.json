@@ -1,6 +1,22 @@
 {
     "Talk": [
         {
+            "Title": "Singularity formation in Landau equation with very hard potential",
+            "Date": "2025-12-22",
+            "Location": "Chinese Academy of Sciences",
+            "Series": "PDE and Applications Seminar",
+            "Type": "invited",
+            "Abstract": "In this talk, we consider the inhomogeneous Landau equation with softness parameter $\\gamma$ between $\\sqrt3$ and $2$. We show the existence of solutions that arise from smooth, strictly positive initial data but that develop a finite time singularity. The singularity manifests as a Type II implosion for the mass, momentum, and energy of the system. The hydrodynamic fields blow up with a self-similar profile that asymptotically matches smooth implosion singularities of the compressible Euler equations. To our knowledge, this provides the first example of a collisional kinetic model which is globally well-posed in the homogeneous setting, but admits finite time singularities for inhomogeneous data. This talk is based on an ongoing joint work with several collaborators."
+        },
+        {
+            "Title": "Conditional Liouville theorem for the stationary Navier-Stokes equations",
+            "Date": "2025-12-16",
+            "Location": "Chinese Academy of Sciences",
+            "Series": "PDE and Applications Seminar",
+            "Type": "invited",
+            "Abstract": "We present a novel approach to the Liouville problem for the stationary Navier-Stokes equations. As an application of our method, we prove conditional Liouville theorems with assumptions on the antiderivative of the velocity that represent substantial improvements on what was heretofore known."
+        },
+        {
             "Title": "Conditional Liouville theorem for the stationary Navier-Stokes equations",
             "Date": "2025-10-05",
             "Location": "Tulane University",
