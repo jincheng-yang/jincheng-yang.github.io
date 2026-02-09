@@ -38,7 +38,7 @@ Hi, I am Jincheng! I am an assistant professor in the [Department of Applied Mat
 <div style="float:right">
 <div style="display:inline" markdown="1">
 
-- Office: Wyman N418
+- Office: Wyman S429
 - Email: [jincheng@jhu.edu](mailto:jincheng@jhu.edu)
 
 </div>

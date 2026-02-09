@@ -13,9 +13,10 @@ I am interested in teaching mathematics, especially topics related to analysis a
 * calculus
 * sequences and series
 * linear algebra
-* differential equations
+* ordinary differential equations
 * vector calculus
 * mathematical analysis
+* partial differential equations
 
 </div>
 
@@ -24,6 +25,14 @@ I am interested in teaching mathematics, especially topics related to analysis a
 <div class="content" markdown="1">
 
 ###### Instructor 
+
+### Johns Hopkins University
+
+<ul>
+{% for teach in site.data.teach.jhu %}
+<li> {{ teach.Year }} {{ teach.Season }}: {{ teach.Code }} <a href="{{ teach.Link }}">{{ teach.Course }}</a></li>
+{% endfor %}
+</ul>
 
 ### The University of Chicago
 
