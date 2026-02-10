@@ -1,5 +1,6 @@
 ---
 title: Graduation Recital
+layout: none
 ---
 
 <html>
