@@ -1,6 +1,13 @@
 {
     "jhu": [
         {
+            "Code": "EN.553.746",
+            "Course": "Stochastic Controls, Games, and Learning II",
+            "Season": "Spring", 
+            "Year": "2026",
+            "Link": "2026/en553746"
+        },
+        {
             "Code": "EN.553.798",
             "Course": "Partial Differential Equations for Applied Mathematicians",
             "Season": "Fall",
