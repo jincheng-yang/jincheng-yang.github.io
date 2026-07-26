@@ -1,6 +1,13 @@
 {
     "Honor": [
         {
+            "title": "AMS-Simons Travel Grant", 
+            "from": "American Mathematical Society",
+            "month": "June",
+            "year": "2026",
+            "show": true
+        },
+        {
             "title": "Frank Gerth III Outstanding Dissertation Award", 
             "from": "UT Austin",
             "month": "May", 

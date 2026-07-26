@@ -1,6 +1,46 @@
 {
     "Conference": [
         {
+            "Title": "Recent Breakthroughs and New Perspectives on the Interplay between Fluid Mechanics and Kinetic Theory",
+            "Start": "2026-08-16",
+            "End": "2026-08-21",
+            "Location": "Banff International Research Station",
+            "URL": "https://www.birs.ca/events/2026/5-day-workshops/26w5611",
+            "Type": "conference"
+        },
+        {
+            "Title": "Partial Differential Equations for Many Particles Systems",
+            "Start": "2026-08-03",
+            "End": "2026-08-07",
+            "Location": "ICERM",
+            "URL": "https://icerm.brown.edu/program/topical_workshop/tw-26-mps",
+            "Type": "conference"
+        },
+        {
+            "Title": "International Congress of Mathematicians",
+            "Start": "2026-07-24",
+            "End": "2026-07-30",
+            "Location": "Philadelphia, Pennsylvania",
+            "URL": "https://www.icm2026.org/",
+            "Type": "conference"
+        },
+        {
+            "Title": "2026 SIAM Annual Meeting",
+            "Start": "2026-07-06",
+            "End": "2026-07-10",
+            "Location": "Cleveland, Ohio",
+            "URL": "https://www.siam.org/conferences-events/siam-conferences/an26/",
+            "Type": "conference"
+        },
+        {
+            "Title": "Mathematical Developments in Geophysical Fluid Dynamics",
+            "Start": "2026-04-13",
+            "End": "2026-07-10",
+            "Location": "Institut Henri Poincaré",
+            "URL": "https://indico.math.cnrs.fr/event/13866/",
+            "Type": "conference"
+        },
+        {
             "Title": "AMS Fall Southeastern Sectional Meeting",
             "Start": "2025-10-03",
             "End": "2025-10-05",
