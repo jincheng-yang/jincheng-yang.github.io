@@ -1,6 +1,14 @@
 {
     "Talk": [
         {
+            "Title": "Conditional Liouville theorem for the stationary Navier-Stokes equations",
+            "Date": "2026-07-07",
+            "Location": "Cleveland",
+            "Series": "2026 SIAM Annual Meeting",
+            "Type": "invited",
+            "Abstract": "We present a novel approach to the Liouville problem for the stationary Navier-Stokes equations. Under assumptions on the growth rate of the antiderivative of the velocity, we prove that there exists no nontrivial solution to the three-dimensional stationary Navier-Stokes equation."
+        },
+        {
             "Title": "Boundary layers and inviscid limits",
             "Date": "2026-05-19",
             "Location": "Institut Henri Poincar\\'e",
