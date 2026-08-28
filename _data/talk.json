@@ -1,17 +1,33 @@
 {
     "Talk": [
         {
+            "Title": "Implosion in kinetic equations",
+            "Date": "2026-08-18",
+            "Location": "Banff International Research Station",
+            "Series": "Recent Breakthroughs and New Perspectives on the Interplay between Fluid Mechanics and Kinetic Theory",
+            "Type": "invited",
+            "Abstract": "We discuss the construction of a smooth solution to the kinetic Landau equation with \"very hard\" potential, that blows up in a self-similar fashion and exhibit implosion in macroscopic quantities. The solution is built around a local Maxwellian that corresponds to smooth imploding solution of compressible Euler. This is achieved by the stability analysis on macroscopic hydrodynamic quantities and the remaining microscopic kinetic quantities of the perturbation."
+        },
+        {
+            "Title": "Implosion in kinetic equations",
+            "Date": "2026-08-03",
+            "Location": "ICERM",
+            "Series": "Partial Differential Equations for Many Particles Systems",
+            "Type": "invited",
+            "Abstract": "We discuss the construction of a smooth solution to the kinetic Landau equation with \"very hard\" potential, that blows up in a self-similar fashion and exhibit implosion in macroscopic quantities. The solution is built around a local Maxwellian that corresponds to smooth imploding solution of compressible Euler. This is achieved by the stability analysis on macroscopic hydrodynamic quantities and the remaining microscopic kinetic quantities of the perturbation."
+        },
+        {
             "Title": "Conditional Liouville theorem for the stationary Navier-Stokes equations",
             "Date": "2026-07-07",
             "Location": "Cleveland",
-            "Series": "2026 SIAM Annual Meeting",
+            "Series": "2026 SIAM Annual Meeting (AN26)",
             "Type": "invited",
             "Abstract": "We present a novel approach to the Liouville problem for the stationary Navier-Stokes equations. Under assumptions on the growth rate of the antiderivative of the velocity, we prove that there exists no nontrivial solution to the three-dimensional stationary Navier-Stokes equation."
         },
         {
             "Title": "Boundary layers and inviscid limits",
             "Date": "2026-05-19",
-            "Location": "Institut Henri Poincar\\'e",
+            "Location": "Institut Henri Poincaré",
             "Series": "Mathematical Developments in Geophysical Fluid Dynamics: Instabilities and transitions in geophysical flows",
             "Type": "invited",
             "Abstract": "I will discuss several recent results on vanishing-viscosity limits for incompressible Navier-Stokes flows near boundaries. I will begin with boundary vorticity estimates and their application to weak inviscid limits near plug flow in a periodic tunnel, giving short-time control of deviations from the shear profile. I will then present unconditional $L ^2$ bounds on boundary layer separation between Leray-Hopf Navier-Stokes solutions and smooth Euler flows in bounded domains. Finally, I will discuss joint work on non-characteristic boundaries, where one can quantify energy dissipation and enstrophy production near outflow in terms of the boundary mismatch between Navier-Stokes and Euler flows." 
