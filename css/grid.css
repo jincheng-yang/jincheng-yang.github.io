@@ -214,7 +214,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     grid-template-columns: auto auto auto auto auto;
-    grid-template-areas: "research cv icon teaching music";
+    grid-template-areas: "research cv icon teaching miscellaneous";
 }
 
 nav a {
@@ -274,7 +274,15 @@ nav .dropdown a.dropdown-last {
     display: grid;
 }
 
+#miscellaneous-dropdown-block:hover #miscellaneous-dropdown {
+    display: grid;
+}
+
 #research {
+    position: relative;
+}
+
+#miscellaneous {
     position: relative;
 }
 
@@ -295,7 +303,7 @@ nav .dropdown a.dropdown-last {
         display: none;
     }
 
-    #research-dropdown-block, #cv, #teaching, #music {
+    #research-dropdown-block, #cv, #teaching, #miscellaneous {
         display: none;
     }
 
