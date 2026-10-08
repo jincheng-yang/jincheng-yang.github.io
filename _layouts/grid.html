@@ -59,7 +59,17 @@
 
 				<a href="{{ site.baseurl }}/teach" ondrop="drop(event)" ondragover="allowDrop(event)" id="teaching">Teaching</a>
 
-				<a href="{{ site.baseurl }}/music" ondrop="drop(event)" ondragover="allowDrop(event)" id="music">Music</a>
+				<div class = "dropdown-block" id = "miscellaneous-dropdown-block">
+					<a href="{{ site.baseurl }}/#" ondrop="drop(event)" ondragover="allowDrop(event)" id="miscellaneous">Miscellaneous &#9662;</a>
+	
+					<div class= "dropdown" id="miscellaneous-dropdown">
+						<a class = "dropdown-first" href="{{ site.baseurl }}/music">Music</a>
+						<a href="{{ site.baseurl }}/recital">Recital</a>
+						<a href="{{ site.baseurl }}/release/phase-portrait">Phase Portrait</a>
+						<a href="{{ site.baseurl }}/shorthand-dictionary">Shorthand</a>
+						<a class = "dropdown-last" href="{{ site.baseurl }}/mingkwai">Ming Kwai</a>
+					</div>
+				</div>
 
 				<div class = "dropdown-block" id = "menu-dropdown-block">
 					<a href="#" id="menu">Menu &#9662;</a>
