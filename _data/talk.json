@@ -2,6 +2,14 @@
     "Talk": [
         {
             "Title": "Implosion in kinetic equations",
+            "Date": "2026-09-10",
+            "Location": "University of Maryland, College Park",
+            "Series": "PDE-Applied Math Seminar",
+            "Type": "invited",
+            "Abstract": "We discuss the construction of a smooth solution to the kinetic Landau equation with \"very hard\" potential, that blows up in a self-similar fashion and exhibit implosion in macroscopic quantities. The solution is built around a local Maxwellian that corresponds to smooth imploding solution of compressible Euler. This is achieved by the stability analysis on macroscopic hydrodynamic quantities and the remaining microscopic kinetic quantities of the perturbation."
+        },
+        {
+            "Title": "Implosion in kinetic equations",
             "Date": "2026-08-18",
             "Location": "Banff International Research Station",
             "Series": "Recent Breakthroughs and New Perspectives on the Interplay between Fluid Mechanics and Kinetic Theory",

@@ -1,6 +1,6 @@
 ---
 layout: general
-title: EN.553.101.11 Freshman Experience in Applied Mathematics & Statistics
+title: EN.553.101 (11) Freshman Experience in Applied Mathematics & Statistics
 outer-class: Teaching
 use-math: true
 ---

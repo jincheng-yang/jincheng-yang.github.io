@@ -15,6 +15,7 @@ My general research interest includes the area of analysis, dynamic systems, and
 * Navier-Stokes equations 
 * Boltzmann equation
 * Fokker-Planck equation
+* Landau equation
 
 I am also interested in topics related to distributionally robust stochastic optimization.
 
