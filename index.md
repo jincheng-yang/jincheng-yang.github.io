@@ -5,11 +5,13 @@ title: Jincheng's Website | About
 
 <div class="content" markdown="1">
 
-![Photo]({{ site.baseurl }}/assets/images/photo7.jpg){: style="width:200px; float:right; padding-left:80px; max-width:100%"}
+![Photo]({{ site.baseurl }}/assets/images/photo9.jpg){: style="width:250px; float:right; padding-left:80px; max-width:100%"}
 
 # About Me
 
-Hi, I am Jincheng! I am an assistant professor in the [Department of Applied Mathematics and Statistics](https://engineering.jhu.edu/ams/) of [Johns Hopkins University](https://www.jhu.edu). I was previously a member of [Institute for Advanced Study](https://ias.edu) and a Dickson instructor in the [Department of Mathematics](https://mathematics.uchicago.edu) at [The University of Chicago](https://www.uchicago.edu). I completed my Ph.D. in Mathematics at [The University of Texas at Austin](https://www.ma.utexas.edu) in March 2022, under the supervision of [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/). My research interests include analysis, partial differential equations, fluid dynamics, especially the incompressible Euler and Navier-Stokes equation. 
+Hi, I am Jincheng! I am an assistant professor in the [Department of Applied Mathematics and Statistics](https://engineering.jhu.edu/ams/) of [Johns Hopkins University](https://www.jhu.edu). I was previously a member of [Institute for Advanced Study](https://ias.edu) and a Dickson instructor in the [Department of Mathematics](https://mathematics.uchicago.edu) at [The University of Chicago](https://www.uchicago.edu). I completed my Ph.D. in Mathematics at [The University of Texas at Austin](https://www.ma.utexas.edu). My research interests include analysis, partial differential equations, fluid dynamics, especially the Euler and Navier-Stokes equation. 
+
+<!-- in March 2022, under the supervision of [Prof. Caffarelli](https://web.ma.utexas.edu/users/caffarel/) and [Prof. Vasseur](https://web.ma.utexas.edu/users/vasseur/).  -->
 
 <!-- I received my bachelor's degree at [Xi'an Jiaotong University](http://www.xjtu.edu.cn), where I was also a student in the Special Class for the Gifted Young before my undergraduate study.  -->
 
@@ -19,15 +21,6 @@ Hi, I am Jincheng! I am an assistant professor in the [Department of Applied Mat
 
 <!-- Starting fall of 2025, I will join the [Department of Applied Mathematics and Statistics](https://engineering.jhu.edu/ams/) of [Johns Hopkins University](https://www.jhu.edu). -->
 
-</div>
-
-<div style="background:white;display:none">
-<div class="content" markdown="1">
-
-[![You Belong Here]({{ site.baseurl }}/assets/images/YouBelongHere.jpg){: width='35%'}](https://cns.utexas.edu/diversity)
-[![You Belong Here Flyer]({{ site.baseurl }}/assets/images/YouBelongHereFlyer.svg){: width='60%' style='float:right'}]({{ site.baseurl }}/assets/files/YouBelongHereFlyer.pdf)
-
-</div>
 </div>
 
 <div style="background:antiquewhite">
