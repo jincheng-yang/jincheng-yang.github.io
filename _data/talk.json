@@ -1,6 +1,22 @@
 {
     "Talk": [
         {
+            "Title": "Remarks on the inviscid limit problem",
+            "Date": "2026-10-30",
+            "Location": "Johns Hopkins University",
+            "Series": "Center for Environmental and Applied Fluid Mechanics",
+            "Type": "invited",
+            "Abstract": "In this talk, I will discuss recent study on the predictability of incompressible fluid system, with or without the effect of the boundary. We identify scenarios when Navier-Stokes and Euler solutions separate, which is related to the classical inviscid limit problem.In this talk, I will discuss recent study on the predictability of incompressible fluid system, with or without the effect of the boundary. We identify scenarios when Navier-Stokes and Euler solutions separate, which is related to the classical inviscid limit problem."
+        },
+        {
+            "Title": "Observability of viscosity",
+            "Date": "2026-09-21",
+            "Location": "Penn State University, University Park",
+            "Series": "PDE Seminar",
+            "Type": "invited",
+            "Abstract": "In this talk, I will discuss recent study on the predictability of incompressible fluid system, with or without the effect of the boundary. We identify scenarios when Navier-Stokes and Euler solutions separate, which is related to the classical inviscid limit problem."
+        },
+        {
             "Title": "Implosion in kinetic equations",
             "Date": "2026-09-10",
             "Location": "University of Maryland, College Park",
